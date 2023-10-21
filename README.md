@@ -5,20 +5,20 @@ Para usar este compilador, siga as instruções abaixo:
 
 ## Pré-requisitos
 
-Para utilizar o Compilador, você precisará dos seguintes pré-requisitos:
+Para obter um melhor aproveitamento das capacidades Compilador, você precisará cumprir os seguintes pré-requisitos:
 
-- [Notepad++](https://notepad-plus-plus.org/) instalado no seu sistema.
-- O plugin [NppExec](https://github.com/d0vgan/nppexec) instalado no Notepad++.
-- Algumas configurações adicionais no Notepad++ para otimizar a experiência de compilação.
+- Possuir o [Notepad++](https://notepad-plus-plus.org/) instalado no seu sistema.
+- Ter o plugin [NppExec](https://github.com/d0vgan/nppexec) instalado no Notepad++.
+- Além disso são recomendadas algumas configurações adicionais no Notepad++ para otimizar a experiência de compilação.
 
 ## Configurações do Notepad++
 
 Para configurar o Notepad++ para trabalhar com o Compilador, siga os passos abaixo:
 
-1. **Instale o Notepad++**: Se você ainda não possui o Notepad++ instalado, baixe e instale a versão mais recente do [site oficial](https://notepad-plus-plus.org/).
+1. **Instale o Notepad++**: Se você ainda não possui o Notepad++ instalado, baixe e instale a versão mais recente do [site oficial](https://notepad-plus-plus.org/downloads/).
 
 2. **Instale o Plugin NppExec**:
-   - Baixe o plugin NppExec [aqui](https://sourceforge.net/projects/npp-plugins/files/NppExec/).
+   - Instale o plugin NppExec através do gerenciador de Plugins do Notepad++ ou [aqui](https://github.com/d0vgan/nppexec/releases).
    - Siga as instruções de instalação fornecidas para adicionar o plugin ao Notepad++.
 
 3. **Configuração da Linguagem**: Para destacar a sintaxe da linguagem, importe o arquivo UDL (User Defined Language) fornecido neste repositório. Siga as instruções do Notepad++ para importar essa definição de linguagem.
