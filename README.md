@@ -33,9 +33,9 @@ Após configurar o Notepad++ conforme as instruções acima, siga os passos a se
 
 2. Certifique-se de que a linguagem está definida como para que o realce de sintaxe funcione corretamente.
 
-3. Clique em "Executar" no menu do Notepad++ e escolha "NppExec".
+3. Clique em "Plugins" no menu do Notepad++ e escolha "NppExec".
 
-4. Na janela de comando do NppExec, digite o comando de compilação específico para a linguagem. Por exemplo: `xyz-compiler meu-arquivo.xyz`.
+4. Na janela de comando do NppExec, digite o comando de compilação `C:\path-do-compilador.exe C:\pasta-que-será-compilada\`.
 
 5. Pressione Enter para executar o comando. As mensagens de saída do compilador serão exibidas na janela do NppExec.
 
@@ -47,8 +47,7 @@ Se você deseja contribuir para o desenvolvimento do Compilador, fique à vontad
 
 ## Licença
 
-Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
+Este projeto está licenciado sob a Unlicense - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
 
 ---
 
-Esse README fornece informações essenciais sobre o uso do Compilador e como configurar o ambiente de desenvolvimento. Certifique-se de personalizá-lo de acordo com as necessidades específicas do seu projeto e incluir informações adicionais, como documentação ou exemplos de código, conforme apropriado.
