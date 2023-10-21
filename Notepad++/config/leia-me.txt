@@ -1,0 +1,1 @@
+extraia o conteúdo deste arquivo em C:\Users\SeuNomeDeUsuario\AppData\Roaming\Notepad++\plugins\config\
