@@ -18,12 +18,12 @@ Para configurar o Notepad++ para trabalhar com o Compilador, siga os passos abai
 1. **Instale o Notepad++**: Se você ainda não possui o Notepad++ instalado, baixe e instale a versão mais recente do [site oficial](https://notepad-plus-plus.org/downloads/).
 
 2. **Instale o Plugin NppExec**:
-   - Instale o plugin NppExec através do gerenciador de Plugins do Notepad++ ou [aqui](https://github.com/d0vgan/nppexec/releases).
-   - Siga as instruções de instalação fornecidas para adicionar o plugin ao Notepad++.
+   - Instale o plugin NppExec através do gerenciador de Plugins do Notepad++ ou clique [aqui](https://github.com/d0vgan/nppexec/releases) para efetuar o procedimento de forma manual.
+   - Caso tenha optado pela instalação manual, siga as instruções de instalação fornecidas no arquivo README  para adicionar o plugin ao Notepad++.
 
-3. **Configuração da Linguagem**: Para destacar a sintaxe da linguagem, importe o arquivo UDL (User Defined Language) fornecido neste repositório. Siga as instruções do Notepad++ para importar essa definição de linguagem.
+3. **Configuração da Linguagem**: Para destacar a sintaxe da linguagem, importe o [arquivo UDL](https://github.com/elenderg/Portugues-Puro/blob/main/Notepad%2B%2B/CEL.xml) (User Defined Language) fornecido neste repositório . Siga as instruções do Notepad++ para importar essa definição de linguagem.
 
-4. **Fonte Recomendada**: Recomendamos que você instale e selecione a fonte Lexend para obter a melhor visualização do código. A fonte recomendada está disponível no arquivo `fonte-recomendada.txt` neste repositório.
+4. **Fonte Recomendada**: Recomendamos que você instale e selecione a fonte Lexend ou Readex Pro para obter a melhor visualização do código. As fontes recomendadas estão disponíveis dentro da pasta Notepad++ neste repositório.
 
 ## Compilando com o Compilador
 
