@@ -29,17 +29,19 @@ Para configurar o Notepad++ para trabalhar com o Compilador, siga os passos abai
 
 Após configurar o Notepad++ conforme as instruções acima, siga os passos a seguir para compilar seu código com o Compilador:
 
-1. Abra seu código na janela do Notepad++.
+1. Abra o arquivo de código fonte no Notepad++.
 
 2. Certifique-se de que a linguagem está definida como para que o realce de sintaxe funcione corretamente.
 
-3. Clique em "Plugins" no menu do Notepad++ e escolha "NppExec".
+3. Clique em "**Plugins**" no menu do Notepad++ selecione "**NppExec**" e clique em "**Show NppExec Console"**.
 
-4. Na janela de comando do NppExec, digite o comando de compilação `C:\path-do-compilador.exe C:\pasta-que-será-compilada\`.
+4. Na janela do console do NppExec, digite o comando de compilação `C:\path-do-compilador.exe C:\pasta-que-será-compilada\`.
 
-5. Pressione Enter para executar o comando. As mensagens de saída do compilador serão exibidas na janela do NppExec.
+5. Pressione Enter para executar o comando. As mensagens de saída do compilador serão exibidas no console do NppExec.
 
 Isso é tudo o que você precisa para começar a compilar seu código com o Compilador. Lembre-se de salvar seu código regularmente e verificar as mensagens de saída do compilador para solucionar problemas ou erros.
+
+Caso queira, é possível configurar um atalho para agilizar todo o processo de configuração. Consulte a documentação do NppExec para maiores detalhes.
 
 ## Contribuições
 
