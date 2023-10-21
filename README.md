@@ -1,11 +1,7 @@
 # Portugues-Puro
-Compilador para a linguagem de programação Português Puro.
+Repositório Oficial Compilador para a linguagem de programação Português Puro.
 
-Claro, vou ajudá-lo a criar um README para o seu repositório do GitHub. Abaixo, apresento um exemplo de README para um repositório que contém o código de um compilador:
-
-# Compilador
-
-Este é o repositório oficial do Compilador, uma ferramenta poderosa para compilar código na linguagem. Para usar este compilador, siga as instruções abaixo:
+Para usar este compilador, siga as instruções abaixo:
 
 ## Pré-requisitos
 
