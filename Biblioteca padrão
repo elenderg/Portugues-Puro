@@ -11285,9 +11285,20 @@ Rotina para que se escreva um byte:
   Atribua o byte para uma string.
   Escreva a string.
 
+Rotina para que se escreva uma string para StdOut:
+  Escreva o conteúdo deste caractere inicial desta string para StdOut.
+  \ Itere.
+    \ Se o byte for o caractere final desta string,
+      \ Escreva o byte para StdOut;
+      \ Pare.
+    \ Se o byte não for o caractere final desta string, 
+      \ Escreva o byte para StdOut;
+      \ Adicione 1 para o byte;
+      \ Reitere.
+  
 Rotina para que se escreva um byte para StdOut:
   Processe "kernel32.dll" "WriteFile" com
-    O stdout handle [hFile]
+    O número identificador do fluxo de saída padrão [hFile]
     e O endereçamento deste byte [lpBuffer]
     e 1 [nNumberOfBytesToWrite]
     e O endereçamento dum número [lpNumberOfBytesWritten]
