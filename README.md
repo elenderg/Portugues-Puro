@@ -1,6 +1,8 @@
 # Portugues-Puro
 Repositório Oficial Compilador para a linguagem de programação Português Puro.
 
+[Documentação](https://portugues-puro.gitbook.io/documentacao/)
+
 Para usar este compilador, siga as instruções abaixo:
 
 ## Pré-requisitos
