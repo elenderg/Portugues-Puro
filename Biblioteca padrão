@@ -465,9 +465,9 @@ Rotina para que se adicione uns twips horizontais e uns twips verticais para a l
   Adicione os twips verticais para a coordenada Y desta localização deste contexto.
 
 \ linha, traço, risco, traçado, listra
-Rotina para que se insira uma linha reta em uma figura geométrica:
-Rotina para que se acrescente uma linha reta em uma figura geométrica:
-Rotina para que se adicione uma linha reta em uma figura geométrica:
+Rotina para que se insira uma linha reta em uma figura geométrica;
+Rotina para que se acrescente uma linha reta em uma figura geométrica;
+\Rotina para que se adicione uma linha reta em uma figura geométrica;
 Rotina para que se adicione uma linha reta para uma figura geométrica:
   Se a figura geométrica for inexistente,
     Crie a figura geométrica;
@@ -595,18 +595,13 @@ Um ângulo é [composto de] uns graus. [cujos valores variam ente 0 e 3599]
 \acrescente
 Rotina para que se acrescente um trecho para o final de um arquivo;
 Rotina para que se acrescente um trecho para o fim de um arquivo;
-Rotina para que se acrescente um trecho em um arquivo;
-Rotina para que se acrescente um trecho no final de um arquivo;
-Rotina para que se acrescente um trecho no fim de um arquivo;
+Rotina para que se acrescente um trecho para um arquivo;
 \adicione
-Rotina para que se adicione um trecho em um arquivo;
 Rotina para que se adicione um trecho para um arquivo;
 Rotina para que se adicione um trecho para o fim de um arquivo;
 Rotina para que se adicione um trecho para o final de um arquivo;
 \anexe
-Rotina para que se anexe um trecho em um arquivo;
 Rotina para que se anexe um trecho no fim de um arquivo;
-Rotina para que se anexe um trecho no final de um arquivo;
 Rotina para que se anexe um trecho para um arquivo;
 Rotina para que se anexe um trecho para o final de um arquivo;
 \coloque
@@ -621,9 +616,7 @@ Rotina para que se inclua um trecho em um arquivo;
 Rotina para que se inclua um trecho no fim de um arquivo;
 Rotina para que se inclua um trecho no final de um arquivo;
 \posponha
-Rotina para que se posponha um trecho em um arquivo;
-Rotina para que se posponha um trecho para um arquivo;
-Rotina para que se acrescente um trecho para um arquivo:
+Rotina para que se posponha um trecho para um arquivo:
   Limpe o erro do fluxo de entrada/saída.
   Processe "kernel32.dll" "SetFilePointer" com \ Armazena o ponteiro do arquivo em dois valores LONG.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-setfilepointer
@@ -651,86 +644,60 @@ Rotina para que se acrescente um trecho para um arquivo:
     Retorne.
 
 \acrescente
+Rotina para que se acrescente um byte para uma string;
 Rotina para que se acrescente um byte para o final de uma string;
 Rotina para que se acrescente um byte para o fim de uma string;
-Rotina para que se acrescente um byte em uma string;
-Rotina para que se acrescente um byte no final de uma string;
-Rotina para que se acrescente um byte no fim de uma string;
 \adicione
-Rotina para que se adicione um byte em uma string;
 Rotina para que se adicione um byte para uma string;
 Rotina para que se adicione um byte para o fim de uma string;
 Rotina para que se adicione um byte para o final de uma string;
 \anexe
-Rotina para que se anexe um byte em uma string;
 Rotina para que se anexe um byte no fim de uma string;
-Rotina para que se anexe um byte no final de uma string;
 Rotina para que se anexe um byte para uma string;
 Rotina para que se anexe um byte para o final de uma string;
 \coloque
 Rotina para que se coloque um byte no fim de uma string;
-Rotina para que se coloque um byte para o fim de uma string;
 Rotina para que se coloque um byte no final de uma string;
-Rotina para que se coloque um byte para o final de uma string;
 \ponha
 Rotina para que se ponha um byte no fim de uma string;
-Rotina para que se ponha um byte para o fim de uma string;
 Rotina para que se ponha um byte no final de uma string;
-Rotina para que se ponha um byte para o final de uma string;
 \posponha
-Rotina para que se posponha um byte em uma string;
 Rotina para que se posponha um byte para uma string;
 \insira
 Rotina para que se insira um byte em uma string;
 Rotina para que se insira um byte no fim de uma string;
-Rotina para que se insira um byte para o fim de uma string;
 Rotina para que se insira um byte no final de uma string;
-Rotina para que se insira um byte para o final de uma string;
 \inclua
 Rotina para que se inclua um byte em uma string;
 Rotina para que se inclua um byte no fim de uma string;
-Rotina para que se inclua um byte para o fim de uma string;
-Rotina para que se inclua um byte no final de uma string;
-Rotina para que se inclua um byte para o final de uma string;
-\acrescente
-Rotina para que se acrescente um byte para uma string:
+Rotina para que se inclua um byte no final de uma string:
   Atribua a quantidade de caracteres desta string para uma quantidade de caracteres armazenados.
   Reaponte o caractere inicial desta string usando a quantidade de caracteres desta string mais 1.
   Atribua o caractere inicial desta string mais a quantidade de caracteres armazenados ao caractere final desta string.
   Atribua o byte para o conteúdo deste caractere final desta string.
 
 \adicione
-Rotina para que se adicione um byte em uma string usando uma contagem;
 Rotina para que se adicione um byte no fim de uma string usando uma contagem;
-Rotina para que se adicione um byte para o fim de uma string usando uma contagem;
 Rotina para que se adicione um byte no final de uma string usando uma contagem;
-Rotina para que se adicione um byte para o final de uma string usando uma contagem;
 \anexe
 Rotina para que se anexe um byte em uma string usando uma contagem;
 Rotina para que se anexe um byte no final de uma string usando uma contagem;
 \insira
 Rotina para que se insira um byte em uma string usando uma contagem;
 Rotina para que se insira um byte no fim de uma string usando uma contagem;
-Rotina para que se insira um byte para o fim de uma string usando uma contagem;
 Rotina para que se insira um byte no final de uma string usando uma contagem;
-Rotina para que se insira um byte para o final de uma string usando uma contagem;
 \coloque
 Rotina para que se coloque um byte em uma string usando uma contagem;
 Rotina para que se coloque um byte no fim de uma string usando uma contagem;
-Rotina para que se coloque um byte para o fim de uma string usando uma contagem;
 Rotina para que se coloque um byte no final de uma string usando uma contagem;
-Rotina para que se coloque um byte para o final de uma string usando uma contagem;
 \ponha
 Rotina para que se ponha um byte em uma string usando uma contagem;
 Rotina para que se ponha um byte no fim de uma string usando uma contagem;
-Rotina para que se ponha um byte para o fim de uma string usando uma contagem;
 Rotina para que se ponha um byte no final de uma string usando uma contagem;
-Rotina para que se ponha um byte para o final de uma string usando uma contagem;
 \posponha
 Rotina para que se posponha um byte para uma string usando uma contagem;
 \acrescente
 Rotina para que se acrescente um byte no fim de uma string usando uma contagem;
-Rotina para que se acrescente um byte no final de uma string usando uma contagem;
 Rotina para que se acrescente um byte para o final de uma string usando uma contagem;
 Rotina para que se acrescente um byte para uma string usando uma contagem:
   Preserve a contagem.
@@ -757,18 +724,14 @@ Rotina para que se inclua um sinalizador em uma string;
 Rotina para que se inclua um sinalizador no fim de uma string;
 Rotina para que se inclua um sinalizador no final de uma string;
 \posponha
-Rotina para que se posponha um sinalizador em uma string;
 Rotina para que se posponha um sinalizador para uma string;
 \acrecente
-Rotina para que se acrescente um sinalizador em uma string;
 Rotina para que se acrescente um sinalizador no fim de uma string;
-Rotina para que se acrescente um sinalizador no final de uma string;
 Rotina para que se acrescente um sinalizador para uma string:
   Converta o sinalizador para uma segunda string.
   Acrescente a segunda string para a string.
 
 \adicione
-Rotina para que se adicione uma fração em uma string;
 Rotina para que se adicione uma fração para uma string;
 Rotina para que se adicione uma fração para o fim de uma string;
 Rotina para que se adicione uma fração para o final de uma string;
@@ -777,13 +740,9 @@ Rotina para que se anexe uma fração em uma string;
 Rotina para que se anexe uma fração para o fim de uma string;
 Rotina para que se anexe uma fração para o final de uma string;
 \coloque
-Rotina para que se coloque uma fração no fim de uma string;
-Rotina para que se coloque uma fração no final de uma string;
 Rotina para que se coloque uma fração para o fim de uma string;
 Rotina para que se coloque uma fração para o final de uma string;
 \ponha
-Rotina para que se ponha uma fração no fim de uma string;
-Rotina para que se ponha uma fração no final de uma string;
 Rotina para que se ponha uma fração para o fim de uma string;
 Rotina para que se ponha uma fração para o final de uma string;
 \posponha
@@ -802,42 +761,28 @@ Rotina para que se acrescente uma fração para uma string:
   Acrescente a segunda string para a string.
 
 \adicione
-Rotina para que se adicione um número no fim de uma string;
 Rotina para que se adicione um número para o fim de uma string;
-Rotina para que se adicione um número no final de uma string;
 Rotina para que se adicione um número para o final de uma string;
 \anexe
 Rotina para que se anexe um número no fim de uma string;
-Rotina para que se anexe um número para o fim de uma string;
 Rotina para que se anexe um número no final de uma string;
-Rotina para que se anexe um número para o final de uma string;
 \coloque
 Rotina para que se coloque um número no fim de uma string;
-Rotina para que se coloque um número para o fim de uma string;
 Rotina para que se coloque um número no final de uma string;
-Rotina para que se coloque um número para o final de uma string;
 \ponha
 Rotina para que se ponha um número no fim de uma string;
-Rotina para que se ponha um número para o fim de uma string;
 Rotina para que se ponha um número no final de uma string;
-Rotina para que se ponha um número para o final de uma string;
 \posponha
 Rotina para que se posponha um número para uma string;
 \insira
 Rotina para que se insira um número no fim de uma string;
-Rotina para que se insira um número para o fim de uma string;
 Rotina para que se insira um número no final de uma string;
-Rotina para que se insira um número para o final de uma string;
 \inclua
 Rotina para que se inclua um número no fim de uma string;
-Rotina para que se inclua um número para o fim de uma string;
 Rotina para que se inclua um número no final de uma string;
-Rotina para que se inclua um número para o final de uma string;
 \acrescente
 Rotina para que se acrescente um número no fim de uma string;
-Rotina para que se acrescente um número para o fim de uma string;
 Rotina para que se acrescente um número no final de uma string;
-Rotina para que se acrescente um número para o final de uma string;
 Rotina para que se acrescente um número para uma string:
   Converta o número para uma segunda string.
   Acrescente a segunda string para a string.
@@ -967,7 +912,6 @@ Rotina para que se acrescente uma coordenada X e uma coordenada Y para um polígo
 Rotina para que se adicione zeros no final de uma string até chegar em um número;
 Rotina para que se insira zeros no final de uma string até chegar em um número;
 Rotina para que se posponha zeros para uma string até alcançar um número;
-Rotina para que se acrescente zeros em uma string até atingir um número;
 Rotina para que se acrescente zeros para uma string até atingir um número;
 Rotina para que se acrescente zeros para uma string até chegar em um número:
   Itere.
@@ -7710,8 +7654,6 @@ Rotina para que se inicialize winsock:
 Um input é um evento.
 
 Rotina para que se acrescente um byte em uma caixa de texto;
-Rotina para que se acrescente um byte para uma caixa de texto;
-Rotina para que se insira um byte em uma caixa de texto;
 Rotina para que se adicione um byte para uma caixa de texto;
 Rotina para que se insira um byte Para uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
@@ -7746,10 +7688,7 @@ Rotina para que se insira uma string Para uma segunda string antes de um byte#: 
   Atribua o ponteiro ao caractere inicial desta segunda string.
   Atribua o caractere inicial desta segunda string mais a quantidade de caracteres agrupados menos 1 ao caractere final desta segunda string.
 
-Rotina para que se insira uma string em uma caixa de texto;
 Rotina para que se acrescente uma string em uma caixa de texto;
-Rotina para que se acrescente uma string para uma caixa de texto;
-Rotina para que se adicione uma string em uma caixa de texto;
 Rotina para que se adicione uma string para uma caixa de texto;
 Rotina para que se insira uma string Para uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
@@ -11379,8 +11318,6 @@ Rotina para que se escreva uma string na saída predefinida;
 Rotina para que se escreva uma string na saída padrão;
 Rotina para que se escreva uma string no console do NppExec;
 Rotina para que se escreva uma string no console do Notepad++;
-Rotina para que se escreva uma string na StdOut;
-Rotina para que se escreva uma string em StdOut;
 Rotina para que se escreva uma string para StdOut:
   Processe "kernel32.dll" "GetStdHandle" com
   -11 [nStdHandle = STD_OUTPUT_HANDLE]
