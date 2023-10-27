@@ -545,7 +545,7 @@ Rotina para que se adicione uma unidade semântica para umas unidades semânticas 
     Atribua "usando" à string desta unidade semântica;
     Retorne.
   \\ para
-  \Se a string for "em", atribua "para" à string desta unidade semântica; Retorne.
+  Se a string for "em", atribua "para" à string desta unidade semântica; Retorne.
   Se a string for "a",
     Atribua "para" à string desta unidade semântica;
     Retorne. \  ver isso aqui com calma
@@ -2471,7 +2471,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
     Retorne.
   Se o tipo desta expressão matematica não for valor empilhável,
     Apresente a mensagem de erro contendo "Erro #59. O tipo '" 
-    junto com o nome deste tipo desta expressão matematica seguido de "' da expressão matematica é um valor empilhável." e o percorredor;
+    junto com o nome deste tipo desta expressão matematica seguido de "' da expressão matematica não é um valor empilhável." e o percorredor;
     Retorne.
   Se o segmento inicial deste percorredor for algum operador de continuidade, compile a próxima instrução usando o percorredor (palavra-chave 'processe' - cláusula com).
   Adicione um fragmento usando o etiqueta de inserção de valor [na stack] e a variável desta expressão matematica.
@@ -4281,6 +4281,15 @@ Rotina para que se determine se uma string é o início de alguma rotina:
   Se a string for "Procedimento", diga sim.
   Se a string for "Rotina", diga sim.
   Se a string for "Para", diga sim.
+  Se a string for "Função", diga sim.
+  Diga não.
+
+Rotina para que se determine se uma string é syntatic sugar:
+  \PAL
+  Se a string for "Passos", diga sim.
+  Se a string for "Etapas", diga sim.
+  Se a string for "Procedimento", diga sim.
+  Se a string for "Rotina", diga sim.
   Se a string for "Função", diga sim.
   Diga não.
 
@@ -6692,7 +6701,7 @@ Rotina para que se examine uma rotina usando um percorredor:
     \ Define o cabeçalho de rotina.
   Se existir algum problema de compilação, retorne.
   Adicione a rotina para as rotinas usando o caractere inicial deste segmento inicial deste percorredor.
-  Se o segmento inicial deste percorredor for "Rotina", mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor for syntatic sugar, mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for "para",
     Apresente uma mensagem de erro contendo "Erro #161. Erro de sintaxe. Insira a palavra-chave 'para' '" junto com o segmento inicial deste percorredor seguido de "' neste cabeçalho de rotina." e o percorredor;
     Retorne.
