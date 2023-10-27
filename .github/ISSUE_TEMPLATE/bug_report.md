@@ -1,6 +1,6 @@
 ---
 name: Relatório de Erro
-about: Crie um relatório para aprimorar nosso projeto
+about: Por favor, preencha o relatório para que possamos aprimorar nosso projeto
 title: ''
 labels: ''
 assignees: ''

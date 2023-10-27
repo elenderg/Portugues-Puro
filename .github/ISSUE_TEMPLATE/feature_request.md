@@ -1,6 +1,6 @@
 ---
 name: Solicitação de Funcionalidade
-about: Conte-nos a sua idéia para este projeto. 
+about: Conte-nos a sua idéia para este projeto.
 title: ''
 labels: ''
 assignees: ''
