@@ -7615,7 +7615,7 @@ Rotina para que se inicialize a janela do programa:
   Atribua a magnitude [tamanho em bytes] duma WNDCLASS [estrutura] ao cbSize desta classe da janela.
   Atribua 40 [CS_OWNDC + CS_DBLCLKS] ao style desta classe da janela.
   \ Consulte https://learn.microsoft.com/pt-br/windows/win32/winmsg/window-class-styles
-  Redirecione o lpfnWndProc desta classe da janela para rotina handle alguma mensagem com uma janela do programa um mensagem número um wParam e um lParam.
+  Redirecione o lpfnWndProc desta classe da janela para a rotina handle alguma mensagem com uma janela do programa um mensagem número um wParam e um lParam.
   \ Define o procedimento da classe da janela como sendo WndProc
   Atribua o número identificador deste módulo ao hInstance desta classe da janela.
   Atribua o caractere inicial deste nome deste módulo ao lpszClassName desta classe da janela.

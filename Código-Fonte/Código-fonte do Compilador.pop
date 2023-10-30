@@ -2707,9 +2707,10 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
     junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
+  Mova o percorredor (usando diretrizes de compilação).
   \Mova o percorredor (usando diretrizes de compilação). \ artigo definido
   Se o segmento inicial deste percorredor não for "rotina",
-    Apresente a mensagem de erro contendo "Erro #75. A sintaxe do comando é 'Aponte para rotina'. Encontrado termo: " 
+    Apresente a mensagem de erro contendo "Erro #75. A sintaxe do comando é 'Aponte para a rotina'. Encontrado termo: " 
     junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
