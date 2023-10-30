@@ -2920,48 +2920,48 @@ Rotina para que se produza o relatório de informações usando uma word:
   Converta o número para um relatório.
   Produza o relatório de informações usando o relatório.
 
-Rotina para que se determine se uma caixa é uma segunda caixa:
+Função para que se determine se uma caixa é uma segunda caixa:
   Se a coordenada X1 desta caixa não for a coordenada X1 desta segunda caixa, diga não.
   Se a coordenada Y1 desta caixa não for a coordenada Y1 desta segunda caixa, diga não.
   Se a coordenada X2 desta caixa não for a coordenada X2 desta segunda caixa, diga não.
   Se a coordenada Y2 desta caixa não for a coordenada Y2 desta segunda caixa, diga não.
   Diga sim.
 
-Rotina para que se determine se uma caixa está em uma segunda caixa;
-Rotina para que se determine se uma caixa está dentro de uma segunda caixa:
+Função para que se determine se uma caixa está em uma segunda caixa;
+Função para que se determine se uma caixa está dentro de uma segunda caixa:
   Se a coordenada X1 desta caixa for menor do que a coordenada X1 desta segunda caixa, diga não.
   Se a coordenada Y1 desta caixa for menor do que a coordenada Y1 desta segunda caixa, diga não.
   Se a coordenada X2 desta caixa for maior do que a coordenada X2 desta segunda caixa, diga não.
   Se a coordenada Y2 desta caixa for maior do que a coordenada Y2 desta segunda caixa, diga não.
   Diga sim.
 
-Rotina para que se determine se uma caixa está tocando uma segunda caixa:
+Função para que se determine se uma caixa está tocando uma segunda caixa:
   Se a coordenada X2 desta segunda caixa for menor do que a coordenada X1 desta caixa, diga não.
   Se a coordenada Y2 desta segunda caixa for menor do que a coordenada Y1 desta caixa, diga não.
   Se a coordenada X1 desta segunda caixa for maior do que a coordenada X2 desta caixa, diga não.
   Se a coordenada Y1 desta segunda caixa for maior do que a coordenada Y2 desta caixa, diga não.
   Diga sim.
 
-Rotina para que se determine se um byte é alfanumérico:
+Função para que se determine se um byte é alfanumérico:
   Se o byte for algum letra, diga sim.
   Se o byte for algum dígito, diga sim.
   Diga não.
 
-Rotina para que se determine se um byte é um segundo byte ou um terceiro byte:
+Função para que se determine se um byte é um segundo byte ou um terceiro byte:
   Se o byte for o segundo byte, diga sim.
   Se o byte for o terceiro byte, diga sim.
   Diga não.
 
-Rotina para que se determine se um byte é alguma consoante:
+Função para que se determine se um byte é alguma consoante:
   Se o byte estiver em "bcdfghjklmnpqrstvwxyzçñ", diga sim.
   Diga não.
 
-Rotina para que se determine se um byte é algum dígito:
+Função para que se determine se um byte é algum dígito:
   Se o byte for menor do que o número zero, diga não.
   Se o byte for maior do que o número nove, diga não.
   Diga sim.
 
-Rotina para que se determine se um byte é algum letra:
+Função para que se determine se um byte é algum letra:
   Se o byte estiver entre o 'A' maiúsculo e o Z maiúsculo, diga sim.
   Se o byte estiver entre o 'a' minúsculo e o z minúsculo, diga sim.
   Se o byte for 131 ou 138, diga sim.
@@ -2973,44 +2973,44 @@ Rotina para que se determine se um byte é algum letra:
   Se o byte estiver entre 248 e 255, diga sim.
   Diga não.
 
-Rotina para que se determine se um byte é algum indicador numérico:
+Função para que se determine se um byte é algum indicador numérico:
   Se o byte é algum dígito, diga sim.
   Se o byte é algum sinal aritmético, diga sim.
   Diga não.
 
-Rotina para que se determine se um byte é algum caractere não-alfanumérico:
+Função para que se determine se um byte é algum caractere não-alfanumérico:
   \ precisa ser aprimorado
   Se o byte for o caractere de espaço, diga não.
   Se o byte não for alfanumérico, diga sim.
   Diga não.
 
-Rotina para que se determine se um byte é algum sinal aritmético:
+Função para que se determine se um byte é algum sinal aritmético:
   Se o byte for o sinal de adição, diga sim.
   Se o byte for o sinal de subtração, diga sim.
   Diga não.
 
-Rotina para que se determine se um byte é algum unidade de disco válida:
+Função para que se determine se um byte é algum unidade de disco válida:
   Atribua o byte para um endereço completo.
   Acrescente ":\" para o endereço completo.
   Obtenha um categoria da unidade de disco pelo endereço completo.
   Se a categoria da unidade de disco for "", diga não.
   Diga sim.
 
-Rotina para que se determine se um byte é algum vogal:
+Função para que se determine se um byte é algum vogal:
   Se o byte estiver em "aeiouyáéíóúýãõäëïöüÿâêîôûàèìòù", diga sim.
   Diga não.
 
-Rotina para que se determine se um byte está entre um segundo byte e um terceiro byte:
+Função para que se determine se um byte está entre um segundo byte e um terceiro byte:
   Se o byte for menor do que o segundo byte, diga não.
   Se o byte for maior do que o terceiro byte, diga não.
   Diga sim.
 
-Rotina para que se determine se um byte está entre um número e um segundo número:
+Função para que se determine se um byte está entre um número e um segundo número:
   Se o byte for menor do que o número, diga não.
   Se o byte for maior do que o segundo número, diga não.
   Diga sim.
 
-Rotina para que se determine se um byte está em uma string:
+Função para que se determine se um byte está em uma string:
   Preserve o byte.
   Lowercase o byte.
   Lance um subtexto sobre a string.
@@ -3022,16 +3022,16 @@ Rotina para que se determine se um byte está em uma string:
     Adicione 1 para o caractere inicial deste subtexto.
   Reitere.
 
-Rotina para que se determine se um byte é parecido com um segundo byte;
-Rotina para que se determine se um byte é similar para um segundo byte;
-Rotina para que se determine se um byte é semelhante para um segundo byte:
+Função para que se determine se um byte é parecido com um segundo byte;
+Função para que se determine se um byte é similar para um segundo byte;
+Função para que se determine se um byte é semelhante para um segundo byte:
   \ used internally para palavra selecione o texto em
   Se o byte for algum espaço em branco, ative um sinalizador.
   Se o segundo byte for algum espaço em branco, ative um segundo sinalizador.
   Se o sinalizador for o segundo sinalizador, diga sim.
   Diga não.
 
-Rotina para que se determine se um byte é irrelevante:
+Função para que se determine se um byte é irrelevante:
   Se o byte for menor do que ou igual ao caractere de espaço, diga sim.
   Se o byte for o símbolo DEL [que agora está descontinuado], diga sim.
   Se o byte for o espaço rígido, diga sim.
@@ -3042,13 +3042,13 @@ Rotina para que se determine se um byte é irrelevante:
   Se o byte for 157, diga sim. \ Unused
   Diga não.
 
-Rotina para que se determine se um byte é igual para  um número ou para um segundo número;
-Rotina para que se determine se um byte é um número ou um segundo número:
+Função para que se determine se um byte é igual para  um número ou para um segundo número;
+Função para que se determine se um byte é um número ou um segundo número:
   Se o byte for o número, diga sim.
   Se o byte for o segundo número, diga sim.
   Diga não.
 
-Rotina para que se determine se um byte é imprimível:
+Função para que se determine se um byte é imprimível:
   Se o byte for menor do que o caractere de espaço, diga não.
   Se o byte for o símbolo DEL [que agora está descontinuado], diga não.
   Se o byte for 129, diga não.
@@ -3058,7 +3058,7 @@ Rotina para que se determine se um byte é imprimível:
   Se o byte for 157, diga não.
   Diga sim.
 
-Rotina para que se determine se um byte é uma string:
+Função para que se determine se um byte é uma string:
   Se a quantidade de caracteres desta string não for 1, diga não.
   Preserve o byte.
   Lowercase o byte.
@@ -3067,7 +3067,7 @@ Rotina para que se determine se um byte é uma string:
   Se o byte for o segundo byte, diga sim.
   Diga não.
 
-Rotina para que se determine se um byte é symbolic:
+Função para que se determine se um byte é symbolic:
   Se o byte estiver entre o ponto de exclamação e o barra inclinada, diga sim.
   Se o byte estiver entre o sinal de dois pontos e o sinal de arroba, diga sim.
   Se o byte estiver entre o colchete esquerdo e o acento grave, diga sim.
@@ -3084,229 +3084,229 @@ Rotina para que se determine se um byte é symbolic:
   Se o byte for 247, diga sim. \ ÷
   Diga não.
 
-Rotina para que se determine se um byte é algum espaço em branco:
+Função para que se determine se um byte é algum espaço em branco:
   Se o byte for o caractere de espaço, diga sim.
   Se o byte for o tabulação horizontal, diga sim.
   Se o byte for o retorno de carro, diga sim.
   Se o byte for a quebra de linha, diga sim.
   Diga não.
 
-Rotina para que se determine se o cursor de texto de uma caixa de texto está sob o começo:
+Função para que se determine se o cursor de texto de uma caixa de texto está sob o começo:
   Se a caixa de texto for inexistente, diga não.
   Se o número de linhas do cursor desta caixa de texto não for 1, diga não.
   Se o cursor de texto número de coluna desta caixa de texto não for 1, diga não.
   Diga sim.
 
-Rotina para que se determine se o cursor de texto de uma caixa de texto é sob o fim:
+Função para que se determine se o cursor de texto de uma caixa de texto é sob o fim:
   Se a caixa de texto for inexistente, diga não.
   Se o número de linhas do cursor desta caixa de texto não for a contagem destas linhas de texto desta caixa de texto, diga não.
   Obtenha uma linha de texto usando o número de linhas do cursor desta caixa de texto e a caixa de texto.
   Se o cursor de texto número de coluna desta caixa de texto não for a quantidade de caracteres desta string desta linha de texto, diga não.
   Diga sim.
 
-Rotina para que se determine se o cursor de texto de uma caixa de texto está sobre a primeira linha reta:
+Função para que se determine se o cursor de texto de uma caixa de texto está sobre a primeira linha reta:
   Se a caixa de texto for inexistente, diga não.
   Se o número de linhas do cursor desta caixa de texto não for 1, diga não.
   Diga sim.
 
-Rotina para que se determine se o cursor de texto de uma caixa de texto está sobre a última linha reta:
+Função para que se determine se o cursor de texto de uma caixa de texto está sobre a última linha reta:
   Se a caixa de texto for inexistente, diga não.
   Se as linhas de texto desta caixa de texto estiverem vazias, diga não.
   Se o número de linhas do cursor desta caixa de texto não for o número da linha desta última linha de texto desta caixa de texto, diga não.
   Diga sim.
 
-Rotina para que se determine se uma alternativa é uma string:
+Função para que se determine se uma alternativa é uma string:
   Se a alternativa for inexistente, diga não.
   Se o nome desta alternativa for a string, diga sim.
   Diga não.
 
-Rotina para que se determine se uma cor e uma segunda cor estão clear:
+Função para que se determine se uma cor e uma segunda cor estão clear:
   Se a cor não for clear, diga não.
   Se a segunda cor não for clear, diga não.
   Diga sim.
 
-Rotina para que se determine se uma cor é uma segunda cor:
+Função para que se determine se uma cor é uma segunda cor:
   Se a matiz desta cor não for a matiz desta segunda cor, diga não.
   Se a saturação desta cor não for a saturação desta segunda cor, diga não.
   Se a luminosidade desta cor não for a luminosidade desta segunda cor, diga não.
   Diga sim.
 
-Rotina para que se determine se uma cor é transparente;
-Rotina para que se determine se uma cor é clear:
+Função para que se determine se uma cor é transparente;
+Função para que se determine se uma cor é clear:
   Se a matiz desta cor for menor do que 0, diga sim.
   Diga não.
 
-Rotina para que se determine se uma cor é alguma cor escura;
-Rotina para que se determine se uma cor é escura:
+Função para que se determine se uma cor é alguma cor escura;
+Função para que se determine se uma cor é escura:
   Se a luminosidade desta cor estiver entre 250 e 374, diga sim.
   Diga não.
 
-Rotina para que se determine se uma cor é alguma cor clara;
-Rotina para que se determine se uma cor é clara:
+Função para que se determine se uma cor é alguma cor clara;
+Função para que se determine se uma cor é clara:
   Se a luminosidade desta cor estiver entre 625 e 749, diga sim.
   Diga não.
 
-Rotina para que se determine se uma cor é alguma cor normal;
-Rotina para que se determine se uma cor é normal:
+Função para que se determine se uma cor é alguma cor normal;
+Função para que se determine se uma cor é normal:
   Se a luminosidade desta cor estiver entre 375 e 624, diga sim.
   Diga não.
 
-\Rotina para que se determine se uma cor é uma cor bastante escura;
-\Rotina para que se determine se uma cor é uma cor bem escura;
-Rotina para que se determine se uma cor é alguma cor muito escura;
-Rotina para que se determine se uma cor é muito escura:
+\Função para que se determine se uma cor é uma cor bastante escura;
+\Função para que se determine se uma cor é uma cor bem escura;
+Função para que se determine se uma cor é alguma cor muito escura;
+Função para que se determine se uma cor é muito escura:
   Se a luminosidade desta cor estiver entre 125 e 249, diga sim.
   Diga não.
 
-\Rotina para que se determine se uma cor é cor bastante clara;
-\Rotina para que se determine se uma cor é cor bem clara;
-Rotina para que se determine se uma cor é alguma cor muito clara;
-Rotina para que se determine se uma cor é muito clara:
+\Função para que se determine se uma cor é cor bastante clara;
+\Função para que se determine se uma cor é cor bem clara;
+Função para que se determine se uma cor é alguma cor muito clara;
+Função para que se determine se uma cor é muito clara:
   Se a luminosidade desta cor estiver entre 750 e 874, diga sim.
   Diga não.
 
-Rotina para que se determine se uma cor é alguma cor muitíssimo escura;
-Rotina para que se determine se uma cor é muitíssimo escura:
+Função para que se determine se uma cor é alguma cor muitíssimo escura;
+Função para que se determine se uma cor é muitíssimo escura:
   Se a luminosidade desta cor for menor do que ou igual para 124, diga sim.
   Diga não.
 
-Rotina para que se determine se uma cor é alguma cor muitíssimo clara;
-Rotina para que se determine se uma cor é muitíssimo clara:
+Função para que se determine se uma cor é alguma cor muitíssimo clara;
+Função para que se determine se uma cor é muitíssimo clara:
   Se a luminosidade desta cor for maior do que ou igual para 875, diga sim.
   Diga não.
 
-Rotina para que se determine se um contador está ultrapassando um número:
+Função para que se determine se um contador está ultrapassando um número:
   Adicione 1 para o contador.
   Se o contador for maior do que o número, diga sim.
   Diga não.
 
-Rotina para que se determine se a localização atual está em cima ou em baixo de uma caixa:
+Função para que se determine se a localização atual está em cima ou em baixo de uma caixa:
   Se a localização deste contexto estiver em cima ou em baixo de a caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se a localização atual está no lado esquerdo ou no lado direito de uma caixa:
+Função para que se determine se a localização atual está no lado esquerdo ou no lado direito de uma caixa:
   Se a localização deste contexto estiver no lado esquerdo ou no lado direito de a caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se a localização atual está para o lado direito de uma caixa:
+Função para que se determine se a localização atual está para o lado direito de uma caixa:
   Se a coordenada X desta localização deste contexto for maior do que a coordenada X2 desta caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se a localização atual está dentre uns twips de_ uma caixa:
-  Se a localização deste contexto estiver dentre os twips de_ a caixa, diga sim.
+Função para que se determine se a localização atual está dentre uns twips d'uma caixa:
+  Se a localização deste contexto estiver dentre os twips d'a caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se uma valor da diferença está dentre uma malha quadriculada:
+Função para que se determine se uma valor da diferença está dentre uma malha quadriculada:
   Preserve o valor da diferença.
   De-sign o valor da diferença.
   Se o número X deste valor da diferença for maior do que ou igual ao número X desta malha quadriculada, diga não.
   Se o número Y deste valor da diferença for maior do que ou igual ao número Y desta malha quadriculada, diga não.
   Diga sim.
 
-Rotina para que se determine se um evento é algum atalho de tecla:
+Função para que se determine se um evento é algum atalho de tecla:
   Se o evento for inexistente, diga não.
   Se a categoria deste evento não for "pressionamento de tecla", diga não.
   Se o evento não foi alterado, diga não.
   Se a tecla deste evento estiver entre a tecla A/a e a tecla Z/z, diga sim.
   Diga não.
 
-Rotina para que se determine se um evento foi alterada;
-Rotina para que se determine se um evento foi alterado:
+Função para que se determine se um evento foi alterada;
+Função para que se determine se um evento foi alterado:
   Se o sinalizador de tecla Ctrl deste evento estiver ativo, diga sim.
   Se o sinalizador de tecla Alt deste evento estiver ativo, diga sim.
   Diga não.
 
-Rotina para que se determine se um finger ultrapassou o fim de uma string:
+Função para que se determine se um finger ultrapassou o fim de uma string:
   Se o finger for inexistente, diga sim.
   Se o finger for maior do que o caractere final desta string, diga sim.
   Diga não.
 
-\Rotina para que se determine se uma bandeira está levantada;
-\Rotina para que se determine se uma bandeira está sendo mostrada;
-\Rotina para que se determine se uma bandeira está sendo exibida;
-\Rotina para que se determine se um semáforo está verde/vermelho;
-\Rotina para que se determine se um alarme está tocando;
-\Rotina para que se determine se um alarme está soando;
-\Rotina para que se determine se um alarme soou;
-\Rotina para que se determine se um alarme já soou;
-\Rotina para que se determine se um alarme está disparando;
-\Rotina para que se determine se um alarme disparou;
-\Rotina para que se determine se um alarme está alarmando;
-\Rotina para que se determine se um sinalizador já está ativado;
-\Rotina para que se determine se um sinalizador foi ativado anteriomente;
-\Rotina para que se determine se um sinalizador já foi ativado anteriomente;
-\Rotina para que se determine se um sinalizador está presente;
-\Rotina para que se determine se um sinalizador está em vigor;
-Rotina para que se determine se um sinalizador está ligado; \foi ligado também funciona
-Rotina para que se determine se um sinalizador está ativo;
-Rotina para que se determine se um sinalizador está ativado:
+\Função para que se determine se uma bandeira está levantada;
+\Função para que se determine se uma bandeira está sendo mostrada;
+\Função para que se determine se uma bandeira está sendo exibida;
+\Função para que se determine se um semáforo está verde/vermelho;
+\Função para que se determine se um alarme está tocando;
+\Função para que se determine se um alarme está soando;
+\Função para que se determine se um alarme soou;
+\Função para que se determine se um alarme já soou;
+\Função para que se determine se um alarme está disparando;
+\Função para que se determine se um alarme disparou;
+\Função para que se determine se um alarme está alarmando;
+\Função para que se determine se um sinalizador já está ativado;
+\Função para que se determine se um sinalizador foi ativado anteriomente;
+\Função para que se determine se um sinalizador já foi ativado anteriomente;
+\Função para que se determine se um sinalizador está presente;
+\Função para que se determine se um sinalizador está em vigor;
+Função para que se determine se um sinalizador está ligado; \foi ligado também funciona
+Função para que se determine se um sinalizador está ativo;
+Função para que se determine se um sinalizador está ativado:
   Se o sinalizador for 1, diga sim.
   Diga não.
 
-\Rotina para que se determine se uma bandeira está vermelha/verde;
-\Rotina para que se determine se um sinalizador está dormente;
-Rotina para que se determine se um sinalizador está suspenso;
-Rotina para que se determine se um sinalizador está inativo;
-Rotina para que se determine se um sinalizador está desligado;
-Rotina para que se determine se um sinalizador está desativado:
+\Função para que se determine se uma bandeira está vermelha/verde;
+\Função para que se determine se um sinalizador está dormente;
+Função para que se determine se um sinalizador está suspenso;
+Função para que se determine se um sinalizador está inativo;
+Função para que se determine se um sinalizador está desligado;
+Função para que se determine se um sinalizador está desativado:
   Se o sinalizador for 0, diga sim.
   Diga não.
 
-Rotina para que se determine se uma fração é uma segunda fração:
+Função para que se determine se uma fração é uma segunda fração:
   Preserve a fração.
   Preserve a segunda fração.
   Normalize a fração e a segunda fração.
   Se o numerador desta fração é o numerador desta segunda fração, diga sim.
   Diga não.
 
-Rotina para que se determine se uma fração é maior que uma segunda fração;
-Rotina para que se determine se uma fração é maior do que uma segunda fração:
+Função para que se determine se uma fração é maior que uma segunda fração;
+Função para que se determine se uma fração é maior do que uma segunda fração:
   Preserve a fração.
   Preserve a segunda fração.
   Normalize a fração e a segunda fração.
   Se o numerador desta fração for maior do que o numerador desta segunda fração, diga sim.
   Diga não.
 
-Rotina para que se determine se uma fração é maior ou igual para uma segunda fração;
-Rotina para que se determine se uma fração é maior do que ou igual para uma segunda fração:
+Função para que se determine se uma fração é maior ou igual para uma segunda fração;
+Função para que se determine se uma fração é maior do que ou igual para uma segunda fração:
   Preserve a fração.
   Preserve a segunda fração.
   Normalize a fração e a segunda fração.
   Se o numerador desta fração for maior do que ou igual ao numerador desta segunda fração, diga sim.
   Diga não.
 
-Rotina para que se determine se uma fração é menor que uma segunda fração;
-Rotina para que se determine se uma fração é menor do que uma segunda fração:
+Função para que se determine se uma fração é menor que uma segunda fração;
+Função para que se determine se uma fração é menor do que uma segunda fração:
   Preserve a fração.
   Preserve a segunda fração.
   Normalize a fração e a segunda fração.
   Se o numerador desta fração for menor do que o numerador desta segunda fração, diga sim.
   Diga não.
 
-Rotina para que se determine se uma fração for menor do que ou igual para uma segunda fração;
-Rotina para que se determine se uma fração for menor que ou igual para uma segunda fração;
-Rotina para que se determine se uma fração for menor ou igual para uma segunda fração:
+Função para que se determine se uma fração for menor do que ou igual para uma segunda fração;
+Função para que se determine se uma fração for menor que ou igual para uma segunda fração;
+Função para que se determine se uma fração for menor ou igual para uma segunda fração:
   Preserve a fração.
   Preserve a segunda fração.
   Normalize a fração e a segunda fração.
   Se o numerador desta fração for menor do que ou igual ao numerador desta segunda fração, diga sim.
   Diga não.
 
-Rotina para que se determine se uma fração é negativa:
+Função para que se determine se uma fração é negativa:
   Se o numerador desta fração for menor do que 0, inverta um sinalizador.
   Se o denominador desta fração for menor do que 0, inverta o sinalizador.
   \ Diga o sinalizador. \ não funciona mais, pois não agora os balores booleanos são numéricos
   Se o sinalizador estiver ativo, diga sim.
   Diga não.
 
-Rotina para que se determine se uma fração é um número:
+Função para que se determine se uma fração é um número:
   Se a fração é o número / 1, diga sim.
   Diga não.
 
-Rotina para que se determine se um catálogo está vazia;
-Rotina para que se determine se um catálogo estão vazias;
-Rotina para que se determine se um catálogo estão vazios;
-Rotina para que se determine se um catálogo está vazio:
+Função para que se determine se um catálogo está vazia;
+Função para que se determine se um catálogo estão vazias;
+Função para que se determine se um catálogo estão vazios;
+Função para que se determine se um catálogo está vazio:
   Se o catálogo for inexistente, diga sim.
   Itere.
     Obtenha um recipiente usando o catálogo.
@@ -3314,34 +3314,34 @@ Rotina para que se determine se um catálogo está vazio:
     Se as referências deste recipiente não estiverem vazios, diga não.
   Reitere.
 
-Rotina para que se determine se um input é um clique:
+Função para que se determine se um input é um clique:
   Esvazie o clique.
   Se a categoria deste input não for "clique do botão esquerdo", diga não.
   Atribua o input ao clique.
 
-Rotina para que se determine se um item é encontrado:
+Função para que se determine se um item é encontrado:
   Se a categoria deste item não estiver em branco, diga sim.
   Diga não.
 
-Rotina para que se determine se uma tecla é alguma tecla de dígito:
+Função para que se determine se uma tecla é alguma tecla de dígito:
   Se a tecla estiver entre 48 e 57, diga sim.
   Diga não.
 
-Rotina para que se determine se uma tecla é alguma tecla de letra:
+Função para que se determine se uma tecla é alguma tecla de letra:
   Se a tecla estiver entre 65 e 90, diga sim.
   Diga não.
 
-Rotina para que se determine se uma tecla é algum tecla modificadora:
+Função para que se determine se uma tecla é algum tecla modificadora:
   Se a tecla for a tecla Alt, diga sim.
   Se a tecla for a tecla Ctrl, diga sim.
   Se a tecla for a tecla Shift, diga sim.
   Diga não.
 
-Rotina para que se determine se uma tecla é algum pad tecla:
+Função para que se determine se uma tecla é algum pad tecla:
   Se a tecla estiver entre 96 e 111, diga sim.
   Diga não.
 
-Rotina para que se determine se uma tecla é algum tecla imprimível:
+Função para que se determine se uma tecla é algum tecla imprimível:
   Se a tecla for o barra de espaço, diga sim.
   Se a tecla for alguma tecla de dígito, diga sim.
   Se a tecla for alguma tecla de letra, diga sim.
@@ -3349,12 +3349,12 @@ Rotina para que se determine se uma tecla é algum tecla imprimível:
   Se a tecla for alguma tecla de símbolo, diga sim.
   Diga não.
 
-Rotina para que se determine se uma tecla é alguma tecla de símbolo:
+Função para que se determine se uma tecla é alguma tecla de símbolo:
   Se a tecla estiver entre 186 e 192, diga sim.
   Se a tecla estiver entre 219 e 222, diga sim.
   Diga não.
 
-Rotina para que se determine se uma tecla é alguma tecla do tipo WM_CHAR:
+Função para que se determine se uma tecla é alguma tecla do tipo WM_CHAR:
   Se a tecla não for algum tecla imprimível , diga não.
   Se a tecla Alt está para baixo, diga não.
   Se a tecla Ctrl está para baixo, diga não.
@@ -3379,8 +3379,8 @@ Rotina para que se aguarde por uma tecla para go para baixo:
   \If the key is not down, repeat.
 
 \To decide if a key is down:
-Rotina para que se determine se uma tecla está sendo pressionado; [ou botão do mouse] 
-Rotina para que se determine se uma tecla [específica] está sendo pressionada:
+Função para que se determine se uma tecla está sendo pressionado; [ou botão do mouse] 
+Função para que se determine se uma tecla [específica] está sendo pressionada:
 \Se a tecla não estiver sendo pressionada, reitere.
 \If the key is not down, repeat.
   Processe "user32.dll" "GetAsyncKeyState" com \ Determina se uma tecla está ativada ou desativada no momento em que a função é chamada e se a tecla foi pressionada após uma chamada anterior para GetAsyncKeyState.
@@ -3398,7 +3398,7 @@ Rotina para que se aguarde por uma tecla para come back para cima:
   Se a tecla não estiver para cima, reitere.
   \If the key is not up, repeat.
 
-Rotina para que se determine se uma tecla está para cima:
+Função para que se determine se uma tecla está para cima:
   Se a tecla estiver sendo pressionada, diga não.
   Diga sim.
 
@@ -3410,7 +3410,7 @@ Rotina para que se aguarde sobre that there tecla com o ESC sobre it:
   Aguarde pela tecla Esc.
 
 \ To decide if a key was down:
-Rotina para que se determine se uma tecla está para baixo:
+Função para que se determine se uma tecla está para baixo:
 \ foi pressionada \ estava pra baixo
   Processe "user32.dll" "GetKeyState" com \Recupera o status da tecla virtual especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getkeystate
@@ -3420,9 +3420,9 @@ Rotina para que se determine se uma tecla está para baixo:
   Se o número for menor do que 0, diga sim.
   Diga não.
 
-Rotina para que se determine se uma tecla está ligada;
-Rotina para que se determine se uma tecla está alternada;
-Rotina para que se determine se uma tecla está ativada:
+Função para que se determine se uma tecla está ligada;
+Função para que se determine se uma tecla está alternada;
+Função para que se determine se uma tecla está ativada:
   Processe "user32.dll" "GetKeyState" com
     A tecla [nVirtKey]
   Retornando um word.
@@ -3433,7 +3433,7 @@ Rotina para que se determine se uma tecla está ativada:
 
 
 
-Rotina para que se determine se uma tecla com um lParam é alguma tecla de cancelamento ou tecla modificadora:
+Função para que se determine se uma tecla com um lParam é alguma tecla de cancelamento ou tecla modificadora:
   Atribua o lParam para um número.
   Conjuncione logicamente o número com 1073741824 [0x40000000].
   Se o número for 0, diga não.
@@ -3441,91 +3441,91 @@ Rotina para que se determine se uma tecla com um lParam é alguma tecla de cancel
   Se a tecla for algum tecla modificadora, diga sim.
   Diga não.
 
-Rotina para que se determine se o botão esquerdo do mouse está para baixo:
+Função para que se determine se o botão esquerdo do mouse está para baixo:
   Se o botão esquerdo deste mouse estiver sendo pressionado, diga sim.
   Diga não.
 
-Rotina para que se determine se uma linha reta está acima de uma caixa:
+Função para que se determine se uma linha reta está acima de uma caixa:
   Se a coordenada Y desta localização inicial desta linha reta for maior do que ou igual à coordenada Y1 desta caixa, diga não.
   Se a coordenada Y desta localização final desta linha reta for maior do que ou igual à coordenada Y1 desta caixa, diga não.
   Diga sim.
 
-Rotina para que se determine se uma linha reta está acima de uma coordenada:
+Função para que se determine se uma linha reta está acima de uma coordenada:
   Se a coordenada Y desta localização inicial desta linha reta for maior do que ou igual à coordenada, diga não.
   Se a coordenada Y desta localização final desta linha reta for maior do que ou igual à coordenada, diga não.
   Diga sim.
 
-Rotina para que se determine se uma linha reta está debaixo de uma caixa:
+Função para que se determine se uma linha reta está debaixo de uma caixa:
   Se a coordenada Y desta localização inicial desta linha reta for menor do que ou igual à coordenada Y2 desta caixa, diga não.
   Se a coordenada Y desta localização final desta linha reta for menor do que ou igual à coordenada Y2 desta caixa, diga não.
   Diga sim.
 
-Rotina para que se determine se uma linha reta está debaixo de uma coordenada:
+Função para que se determine se uma linha reta está debaixo de uma coordenada:
   Se a coordenada Y desta localização inicial desta linha reta for menor do que ou igual à coordenada, diga não.
   Se a coordenada Y desta localização final desta linha reta for menor do que ou igual à coordenada, diga não.
   Diga sim.
 
-Rotina para que se determine se uma linha reta está still em uma caixa;
-Rotina para que se determine se uma linha reta está em uma caixa:
+Função para que se determine se uma linha reta está still em uma caixa;
+Função para que se determine se uma linha reta está em uma caixa:
   Se a localização inicial desta linha reta não estiver na caixa, diga não.
   Se a localização final desta linha reta não estiver na caixa, diga não.
   Diga sim.
 
-Rotina para que se determine se um numeral misto é um número:
+Função para que se determine se um numeral misto é um número:
   Converta o numeral misto para uma fração.
   Se a fração for o número, diga sim.
   Diga não.
 
-Rotina para que se determine se o mouse foi arrastado desde uma localização usando uma malha quadriculada:
+Função para que se determine se o mouse foi arrastado desde uma localização usando uma malha quadriculada:
   Se o botão esquerdo deste mouse não estiver sendo pressionado, diga não.
   Atribua a localização deste mouse para uma segunda localização.
   Calcule um valor da diferença entre a segunda localização e a localização.
   Se o valor da diferença estiver dentre a malha quadriculada, reitere.
   Diga sim.
 
-Rotina para que se determine se o mouse está em uma caixa:
+Função para que se determine se o mouse está em uma caixa:
   Se a localização deste mouse estiver na caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se um número é um segundo número e uma string é uma segunda string:
+Função para que se determine se um número é um segundo número e uma string é uma segunda string:
   Se o número não for o segundo número, diga não.
   Se a string não for a segunda string, diga não.
   Diga sim.
 
-Rotina para que se determine se um número está entre um segundo número e um terceiro número:
+Função para que se determine se um número está entre um segundo número e um terceiro número:
   Se o número for menor do que o segundo número, diga não.
   Se o número for maior do que o terceiro número, diga não.
   Diga sim.
 
-Rotina para que se determine se um número é par:
+Função para que se determine se um número é par:
   Se o número for ímpar, diga não.
   Diga sim.
 
-Rotina para que se determine se um número é uniformemente divisível por um segundo número:
+Função para que se determine se um número é uniformemente divisível por um segundo número:
   Preserve o número.
   Divida o número pelo segundo número usando um quociente e um resto.
   Se o resto for 0, diga sim.
   Diga não.
 
-Rotina para que se determine se um número é um múltiplo de_ um segundo número:
+Função para que se determine se um número é um múltiplo d'um segundo número:
   Se o número for uniformemente divisível pelo segundo número, diga sim.
   Diga não.
 
-Rotina para que se determine se um número é negativo:
+Função para que se determine se um número é negativo:
   Se o número for menor do que 0, diga sim.
   Diga não.
 
-Rotina para que se determine se um número é ímpar:
+Função para que se determine se um número é ímpar:
   Preserve o número.
   Conjuncione logicamente o número com 1.
   Se o número for 0, diga não.
   Diga sim.
 
-Rotina para que se determine se um número é positive:
+Função para que se determine se um número é positive:
   Se o número for menor do que 0, diga não.
   Diga sim.
 
-Rotina para que se determine se um número é prime:
+Função para que se determine se um número é prime:
   Se o número for menor do que 2, diga não.
   Se o número for 2, diga sim.
   Atribua o número menos 1 para um segundo número.
@@ -3535,48 +3535,48 @@ Rotina para que se determine se um número é prime:
     Se o segundo número for maior do que 1, reitere.
   Diga sim.
 
-Rotina para que se determine se um par de números é um segundo par de números:
+Função para que se determine se um par de números é um segundo par de números:
   Se o número X deste par de números não for o número X deste segundo par de números, diga não.
   Se o número Y deste par de números não for o número Y deste segundo par de números, diga não.
   Diga sim.
 
-Rotina para que se determine se um par de números é um número:
+Função para que se determine se um par de números é um número:
   Se o número X deste par de números não for o número, diga não.
   Se o número Y deste par de números não for o número, diga não.
   Diga sim.
 
-Rotina para que se determine se um par de números é um número e um segundo número:
+Função para que se determine se um par de números é um número e um segundo número:
   Se o número X deste par de números não for o número, diga não.
   Se o número Y deste par de números não for o segundo número, diga não.
   Diga sim.
 
-Rotina para que se determine se um endereço completo é do tipo pasta:
+Função para que se determine se um endereço completo é do tipo pasta:
   Se o endereço completo estiver em branco, diga não.
   Se o conteúdo deste caractere final deste endereço completo for a barra invertida, diga sim.
   Diga não.
 
-Rotina para que se determine se um endereço completo é do tipo unidade:
+Função para que se determine se um endereço completo é do tipo unidade:
   Se o endereço completo começa com "\\", diga sim.
   Se a quantidade de caracteres deste endereço completo não for 3, diga não.
   Se o endereço completo termina com ":\", diga sim.
   Diga não.
 
-Rotina para que se determine se um endereço completo está vazia no sistema de arquivos;
-Rotina para que se determine se um endereço completo estão vazias no sistema de arquivos;
-Rotina para que se determine se um endereço completo estão vazios no sistema de arquivos;
-Rotina para que se determine se um endereço completo está vazio no sistema de arquivos:
+Função para que se determine se um endereço completo está vazia no sistema de arquivos;
+Função para que se determine se um endereço completo estão vazias no sistema de arquivos;
+Função para que se determine se um endereço completo estão vazios no sistema de arquivos;
+Função para que se determine se um endereço completo está vazio no sistema de arquivos:
   Se o endereço completo não estiver no sistema de arquivos, diga sim.
   Obtenha uma contagem de itens no endereço completo no sistema de arquivos.
   Se a contagem de itens for 0, diga sim.
   Diga não.
 
-Rotina para que se determine se um endereço completo é do tipo arquivo:
+Função para que se determine se um endereço completo é do tipo arquivo:
   Se o endereço completo estiver em branco, diga não.
   Se o conteúdo deste caractere final deste endereço completo for o sinal de dois pontos, diga não.
   Se o conteúdo deste caractere final deste endereço completo for a barra invertida, diga não.
   Diga sim.
 
-Rotina para que se determine se um endereço completo está no sistema de arquivos:
+Função para que se determine se um endereço completo está no sistema de arquivos:
   Preserve o endereço completo.
   Anexe o caractere NULL após o endereço completo.
   Processe "kernel32.dll" "GetFileAttributesA" com \Obtém atributos do sistema de arquivos para um arquivo ou diretório especificado.
@@ -3586,8 +3586,8 @@ Rotina para que se determine se um endereço completo está no sistema de arquivos
   Se o número for menor do que 0, diga não.
   Diga sim.
 
-Rotina para que se determine se um endereço completo está protegido contra gravação:
-Rotina para que se determine se um endereço completo é somente leitura:
+Função para que se determine se um endereço completo está protegido contra gravação:
+Função para que se determine se um endereço completo é somente leitura:
   Preserve o endereço completo.
   Anexe o caractere NULL após o endereço completo.
   Processe "kernel32.dll" "GetFileAttributesA" com
@@ -3597,26 +3597,26 @@ Rotina para que se determine se um endereço completo é somente leitura:
   Se o número não for 0, diga sim.
   Diga não.
 
-Rotina para que se determine se um ponteiro pode ser encontrado;
-Rotina para que se determine se um ponteiro foi encontrado;
-Rotina para que se determine se um ponteiro existe:
+Função para que se determine se um ponteiro pode ser encontrado;
+Função para que se determine se um ponteiro foi encontrado;
+Função para que se determine se um ponteiro existe:
   Se o ponteiro for inexistente, diga não.
   Diga sim.
 
-Rotina para que se determine se um ponteiro está sumido do mapa;
-Rotina para que se determine se um ponteiro é null e vazio:
+Função para que se determine se um ponteiro está sumido do mapa;
+Função para que se determine se um ponteiro é null e vazio:
   Se o ponteiro for inexistente, diga sim.
   Diga não.
 
-Rotina para que se determine se um polígono está closed:
+Função para que se determine se um polígono está closed:
   Se o polígono for inexistente, diga não.
   Se a contagem destes vértices deste polígono for menor do que 3, diga não.
   Se a localização deste primeiro vértice deste polígono for a localização deste último vértice deste polígono, diga sim.
   Diga não.
 
-Rotina para que se determine se um texto retornado é parecido com um segundo texto retornado;
-Rotina para que se determine se um texto retornado é similar para um segundo texto retornado;
-Rotina para que se determine se um texto retornado é semelhante para um segundo texto retornado:
+Função para que se determine se um texto retornado é parecido com um segundo texto retornado;
+Função para que se determine se um texto retornado é similar para um segundo texto retornado;
+Função para que se determine se um texto retornado é semelhante para um segundo texto retornado:
   Preserve o texto retornado.
   Preserve a segundo texto retornado.
   Simplifique o texto retornado.
@@ -3624,7 +3624,7 @@ Rotina para que se determine se um texto retornado é semelhante para um segundo 
   Se o texto retornado for o segundo texto retornado, diga sim.
   Diga não.
 
-Rotina para que se determine se uma linha de texto está em branco:
+Função para que se determine se uma linha de texto está em branco:
   Se a linha de texto for inexistente, diga sim.
   Lance um subtexto sobre a string desta linha de texto.
   Itere.
@@ -3633,8 +3633,8 @@ Rotina para que se determine se uma linha de texto está em branco:
     Adicione 1 para o caractere inicial deste subtexto.
   Reitere.
 
-Rotina para que se determine se uma linha de texto em uma caixa de texto está selecionada;
-Rotina para que se determine se uma linha de texto em uma caixa de texto está selecionado:
+Função para que se determine se uma linha de texto em uma caixa de texto está selecionada;
+Função para que se determine se uma linha de texto em uma caixa de texto está selecionado:
   Se a caixa de texto for inexistente, diga não.
   Se a linha de texto for inexistente, diga não.
   Se nada estiver selecionado na caixa de texto, diga não.
@@ -3645,7 +3645,7 @@ Rotina para que se determine se uma linha de texto em uma caixa de texto está se
   Se o cursor de texto número de coluna desta seleção for 1, diga não.
   Diga sim.
 
-Rotina para que se determine se uma linha de texto em uma caixa de texto é visível:
+Função para que se determine se uma linha de texto em uma caixa de texto é visível:
   Se a caixa de texto for inexistente, diga não.
   Se a linha de texto for inexistente, diga não.
   Obtenha uma caixa usando a linha de texto e a caixa de texto.
@@ -3654,39 +3654,39 @@ Rotina para que se determine se uma linha de texto em uma caixa de texto é visív
   Se a caixa estiver tocando a segunda caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se uma seleção é uma segunda seleção:
+Função para que se determine se uma seleção é uma segunda seleção:
   Se o anchor desta seleção não for o anchor desta segunda seleção, diga não.
   Se o cursor de texto desta seleção não for o cursor de texto desta segunda seleção, diga não.
   Diga sim.
 
-Rotina para que se determine se existe something selecionado em uma caixa de texto;
-Rotina para que se determine se há something selecionado em uma caixa de texto;
-Rotina para que se determine se something está selecionado em uma caixa de texto:
+Função para que se determine se existe something selecionado em uma caixa de texto;
+Função para que se determine se há something selecionado em uma caixa de texto;
+Função para que se determine se something está selecionado em uma caixa de texto:
   Se o anchor desta caixa de texto for o cursor de texto desta caixa de texto, diga não.
   Diga sim.
 
-Rotina para que se determine se uma localização está acima de uma caixa:
+Função para que se determine se uma localização está acima de uma caixa:
   Se a coordenada Y desta localização for menor do que a coordenada Y1 desta caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se uma localização está acima de um linha reta horizontal:
+Função para que se determine se uma localização está acima de um linha reta horizontal:
   Se a coordenada Y desta localização for menor do que o horizontal y desta localização inicial desta linha reta, diga sim.
   Diga não.
 
-Rotina para que se determine se uma localização está em cima ou em baixo de uma caixa:
+Função para que se determine se uma localização está em cima ou em baixo de uma caixa:
   Se a localização está acima de a caixa, diga sim.
   Se a localização é debaixo de a caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se uma localização é debaixo de uma caixa:
+Função para que se determine se uma localização é debaixo de uma caixa:
   Se a coordenada Y desta localização for maior do que a coordenada Y2 desta caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se uma localização é debaixo de um linha reta horizontal:
+Função para que se determine se uma localização é debaixo de um linha reta horizontal:
   Se a coordenada Y desta localização for maior do que o horizontal y desta localização inicial desta linha reta, diga sim.
   Diga não.
 
-Rotina para que se determine se uma localização está em uma elipse:
+Função para que se determine se uma localização está em uma elipse:
   Crie uma hRgn usando a elipse.
   Preserve a localização.
   Divida a localização pelo quantidade de twips/pixel .
@@ -3700,12 +3700,12 @@ Rotina para que se determine se uma localização está em uma elipse:
   Se o número for 0, diga não.
   Diga sim.
 
-Rotina para que se determine se uma localização está em uma imagem:
+Função para que se determine se uma localização está em uma imagem:
   Se a imagem for inexistente, diga não.
   Se a localização estiver na caixa desta imagem, diga sim.
   Diga não.
 
-Rotina para que se determine se uma localização está em um polígono:
+Função para que se determine se uma localização está em um polígono:
   Se o polígono for inexistente, diga não.
   Crie uma série de vértices usando os vértices deste polígono.
   Processe "gdi32.dll" "CreatePolygonRgn" com \ Cria uma região poligonal.
@@ -3727,13 +3727,13 @@ Rotina para que se determine se uma localização está em um polígono:
   Se o número for 0, diga não.
   Diga sim.
 
-Rotina para que se determine se uma localização está em [dentro de] uns polígonos:
+Função para que se determine se uma localização está em [dentro de] uns polígonos:
   Obtenha um polígono desde o polígonos.
   Se o polígono for inexistente, diga não.
   Se a localização estiver no polígono, diga sim.
   Reitere.
 
-Rotina para que se determine se uma localização está em uma caixa arredondada:
+Função para que se determine se uma localização está em uma caixa arredondada:
   Preserve a caixa arredondada.
   Adicione a quantidade de twips/pixel para a canto inferior direito desta caixa arredondada.
   Atribua o raio desta caixa arredondada vezes 2 para um diâmetro.
@@ -3760,39 +3760,39 @@ Rotina para que se determine se uma localização está em uma caixa arredondada:
   Se o número for 0, diga não.
   Diga sim.
 
-Rotina para que se determine se uma localização está em uma caixa de texto:
+Função para que se determine se uma localização está em uma caixa de texto:
   Se a caixa de texto for inexistente, diga não.
   Se a localização estiver na caixa desta caixa de texto, diga sim.
   Diga não.
 
-Rotina para que se determine se uma localização está dentro de uma caixa;
-\Rotina para que se determine se uma localização está dentro de uma caixa;
-Rotina para que se determine se uma localização está dentre uma caixa;
-Rotina para que se determine se uma localização está em uma caixa:
+Função para que se determine se uma localização está dentro de uma caixa;
+\Função para que se determine se uma localização está dentro de uma caixa;
+Função para que se determine se uma localização está dentre uma caixa;
+Função para que se determine se uma localização está em uma caixa:
   Se a coordenada X desta localização for menor do que a coordenada X1 desta caixa, diga não.
   Se a coordenada Y desta localização for menor do que a coordenada Y1 desta caixa, diga não.
   Se a coordenada X desta localização for maior do que a coordenada X2 desta caixa, diga não.
   Se a coordenada Y desta localização for maior do que a coordenada Y2 desta caixa, diga não.
   Diga sim.
 
-Rotina para que se determine se uma localização está para a esquerda de uma caixa;
-Rotina para que se determine se uma localização está para o lado esquerdo de uma caixa:
+Função para que se determine se uma localização está para a esquerda de uma caixa;
+Função para que se determine se uma localização está para o lado esquerdo de uma caixa:
   Se a coordenada X desta localização for menor do que a coordenada X1 desta caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se uma localização está para a direita ou para a esquerda de uma caixa;
-Rotina para que se determine se uma localização está para a esquerda ou para a direita de uma caixa;
-\Rotina para que se determine se uma localização está no lado esquerdo ou no lado direito de uma caixa;
-Rotina para que se determine se uma localização está no lado esquerdo ou no lado direito de uma caixa:
+Função para que se determine se uma localização está para a direita ou para a esquerda de uma caixa;
+Função para que se determine se uma localização está para a esquerda ou para a direita de uma caixa;
+\Função para que se determine se uma localização está no lado esquerdo ou no lado direito de uma caixa;
+Função para que se determine se uma localização está no lado esquerdo ou no lado direito de uma caixa:
   Se a localização estiver para o lado esquerdo de a caixa, diga sim.
   Se a localização estiver para o lado direito de a caixa, diga sim.
   Diga não.
 
-\Rotina para que se determine se uma localização está na parte de cima de uma caixa:
-\Rotina para que se determine se uma localização está em cima de uma caixa:
-\Rotina para que se determine se uma localização está acima de uma caixa:
-\Rotina para que se determine se uma localização está numa caixa;
-Rotina para que se determine se uma localização está sobre uma caixa: \ dentro de uma caixa
+\Função para que se determine se uma localização está na parte de cima de uma caixa:
+\Função para que se determine se uma localização está em cima de uma caixa:
+\Função para que se determine se uma localização está acima de uma caixa:
+\Função para que se determine se uma localização está numa caixa;
+Função para que se determine se uma localização está sobre uma caixa: \ dentro de uma caixa
   Atribua a caixa para uma segunda caixa.
   Atribua 2 vezes a quantidade de twips/pixel para um número.
   Recue a segunda caixa usando o número.
@@ -3803,7 +3803,7 @@ Rotina para que se determine se uma localização está sobre uma caixa: \ dentro d
   Se a localização estiver no terceira caixa, diga não.
   Diga sim.
 
-Rotina para que se determine se uma localização está sobre uma elipse:
+Função para que se determine se uma localização está sobre uma elipse:
   Atribua a elipse para uma segunda elipse.
   Atribua 2 vezes a quantidade de twips/pixel para um número.
   Recue a caixa desta segunda elipse usando o número.
@@ -3814,7 +3814,7 @@ Rotina para que se determine se uma localização está sobre uma elipse:
   Se a localização estiver na terceiro elipse, diga não.
   Diga sim.
 
-Rotina para que se determine se uma localização está sobre uma linha reta:
+Função para que se determine se uma localização está sobre uma linha reta:
   Preserve a linha reta.
   Atribua 3 vezes a quantidade de twips/pixel para um número.
   \ Atribua o triplo da quantidade de twips/pixel para um número.
@@ -3829,12 +3829,12 @@ Rotina para que se determine se uma localização está sobre uma linha reta:
     Se a distância for maior do que a segunda distância, atribua a segunda linha reta ao linha reta.
   Reitere.
 
-Rotina para que se determine se uma localização está sobre uma imagem:
+Função para que se determine se uma localização está sobre uma imagem:
   Se a imagem for inexistente, diga não.
   Se a localização estiver sobre a caixa desta imagem, diga sim.
   Diga não.
 
-Rotina para que se determine se uma localização está sobre um polígono:
+Função para que se determine se uma localização está sobre um polígono:
   Se o polígono for inexistente, diga não.
   Itere.
     Obtenha um vértice desde os vértices deste polígono.
@@ -3844,7 +3844,7 @@ Rotina para que se determine se uma localização está sobre um polígono:
     Se a localização estiver sobre a linha reta, diga sim.
   Reitere.
 
-Rotina para que se determine se uma localização está sobre uma caixa arredondada:
+Função para que se determine se uma localização está sobre uma caixa arredondada:
   Atribua a caixa arredondada para uma segunda caixa arredondada.
   Atribua 2 vezes a quantidade de twips/pixel para um número.
   Recue a segunda caixa arredondada usando o número.
@@ -3855,77 +3855,77 @@ Rotina para que se determine se uma localização está sobre uma caixa arredondada
   Se a localização estiver no terceiro caixa arredondada, diga não.
   Diga sim.
 
-Rotina para que se determine se uma localização está fora de uma caixa:
+Função para que se determine se uma localização está fora de uma caixa:
   Se a localização é dentro de a caixa, diga não.
   Diga sim.
 
-Rotina para que se determine se uma localização é para o lado direito de uma caixa:
+Função para que se determine se uma localização é para o lado direito de uma caixa:
   Se a coordenada X desta localização for maior do que a coordenada X2 desta caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se uma localização é tocando uma caixa:
+Função para que se determine se uma localização é tocando uma caixa:
   Se a localização estiver na caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se uma localização está dentre uma malha quadriculada de_ uma segunda localização:
+Função para que se determine se uma localização está dentre uma malha quadriculada d'uma segunda localização:
   Calcule um valor da diferença entre a segunda localização e a localização.
   Se o valor da diferença está dentre a malha quadriculada, diga sim.
   Diga não.
 
-Rotina para que se determine se uma localização está dentre uns twips de_ uma segunda localização:
+Função para que se determine se uma localização está dentre uns twips d'uma segunda localização:
   Atribua os twips e os twips para uma malha quadriculada.
-  Se a localização estiver dentre a malha quadriculada de_ a segunda localização, diga sim.
+  Se a localização estiver dentre a malha quadriculada d'a segunda localização, diga sim.
   Diga não.
 
-Rotina para que se determine se uma localização está dentre uns twips de_ uma caixa:
+Função para que se determine se uma localização está dentre uns twips d'uma caixa:
   Preserve a caixa.
   Recue a caixa usando os twips.
   Se a localização estiver dentre a caixa [recuada], diga sim.
   Diga não.
 
-Rotina para que se determine se o stack possui just one lista sobre it:
+Função para que se determine se o stack possui just one lista sobre it:
   Se a contagem deste stack for 1, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string termina com uma segunda string:
+Função para que se determine se uma string termina com uma segunda string:
   Se a quantidade de caracteres desta segunda string for maior do que a quantidade de caracteres desta string, diga não.
   Lance um subtexto sobre a string.
   Atribua o caractere final deste subtexto menos a quantidade de caracteres desta segunda string mais 1 ao caractere inicial deste subtexto.
   Se o subtexto for a segunda string, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string começa com uma segunda string:
+Função para que se determine se uma string começa com uma segunda string:
   Se a quantidade de caracteres desta segunda string for maior do que a quantidade de caracteres desta string, diga não.
   Lance um subtexto sobre a string.
   Atribua o caractere inicial deste subtexto mais a quantidade de caracteres desta segunda string menos 1 ao caractere final deste subtexto.
   Se o subtexto é a segunda string, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string começa com um byte:
+Função para que se determine se uma string começa com um byte:
   Se a string estiver em branco, diga não.
   Se o conteúdo deste caractere inicial desta string for o byte, diga sim.
   Diga não.
 
 
-Rotina para que se determine se uma string termina com um byte: \ adicionado por Mike Gonta
+Função para que se determine se uma string termina com um byte: \ adicionado por Mike Gonta
   Se a string estiver em branco, diga não.
   Se o conteúdo deste caractere final desta string for o byte, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é uma segunda string (comparação de caracteres acentuados):
+Função para que se determine se uma string é uma segunda string (comparação de caracteres acentuados):
   Compare a string para a segunda string usando a quantidade de caracteres desta string e a quantidade de caracteres desta segunda string e o tabela de caracteres minúsculos s/ acento ascii (iguais somente).
 
-Rotina para que se determine se uma string é igual para uma segunda string;
-Rotina para que se determine se uma string é uma segunda string:
+Função para que se determine se uma string é igual para uma segunda string;
+Função para que se determine se uma string é uma segunda string:
   Compare a string para a segunda string usando a quantidade de caracteres desta string e a quantidade de caracteres desta segunda string e o tabela de caracteres minúsculos ascii (iguais somente).
 
-Rotina para que se determine se uma string é uma segunda string ou uma terceira string:
+Função para que se determine se uma string é uma segunda string ou uma terceira string:
   Se a string é a segunda string, diga sim.
   Se a string é a terceira string, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum fração literal;
-Rotina para que se determine se uma string é algum proporção literal:
+Função para que se determine se uma string é algum fração literal;
+Função para que se determine se uma string é algum proporção literal:
   Lance um subtexto sobre a string.
   Se o subtexto estiver em branco, diga não.
   Se o conteúdo deste caractere inicial deste subtexto não for algum indicador numérico, diga não.
@@ -3935,8 +3935,8 @@ Rotina para que se determine se uma string é algum proporção literal:
   Se o denominador textual não for algum número inteiro, diga não.
   Diga sim.
 
-Rotina para que se determine se uma string é algum inteiro;
-Rotina para que se determine se uma string é algum número inteiro:
+Função para que se determine se uma string é algum inteiro;
+Função para que se determine se uma string é algum número inteiro:
   Lance um subtexto sobre a string.
   Se o subtexto estiver em branco, diga não.
   Se o conteúdo deste caractere inicial deste subtexto for algum sinal aritmético, adicione 1 para o caractere inicial deste subtexto.
@@ -3947,7 +3947,7 @@ Rotina para que se determine se uma string é algum número inteiro:
     Se o subtexto estiver em branco, diga sim.
   Reitere.
 
-Rotina para que se determine se uma string é algum numeral misto literal:
+Função para que se determine se uma string é algum numeral misto literal:
   Lance um subtexto sobre a string.
   Se o subtexto estiver em branco, diga não.
   Se o conteúdo deste caractere inicial deste subtexto não for algum indicador numérico, diga não.
@@ -3957,7 +3957,7 @@ Rotina para que se determine se uma string é algum numeral misto literal:
   Se a subtexto fracionário não for algum fração literal, diga não.
   Diga sim.
 
-Rotina para que se determine se uma string é algum valor numérico literal:
+Função para que se determine se uma string é algum valor numérico literal:
   Se a string estiver em branco, diga não.
   Se o conteúdo deste caractere inicial desta string não for algum indicador numérico, diga não.
   Se a string é algum número inteiro, diga sim.
@@ -3965,12 +3965,12 @@ Rotina para que se determine se uma string é algum valor numérico literal:
   Se a string é algum numeral misto literal, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum sinal aritmético:
+Função para que se determine se uma string é algum sinal aritmético:
   Se a quantidade de caracteres desta string não for 1, diga não.
   Se o conteúdo deste caractere inicial desta string é algum sinal aritmético, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é alguma palavra:
+Função para que se determine se uma string é alguma palavra:
   Se a quantidade de caracteres desta string for menor do que 2, diga não.
   Lance um subtexto sobre a string.
   Subtraia 1 desde o caractere inicial deste subtexto.
@@ -3981,13 +3981,13 @@ Rotina para que se determine se uma string é alguma palavra:
     Se o conteúdo deste caractere inicial deste subtexto for o single-quote byte, reitere.
   Diga não.
 
-Rotina para que se determine se uma string é igual para um byte;
-Rotina para que se determine se uma string é um byte:
+Função para que se determine se uma string é igual para um byte;
+Função para que se determine se uma string é um byte:
   Se a quantidade de caracteres desta string não for 1, diga não.
   Se o conteúdo deste caractere inicial desta string for o byte, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é compatível c/ o DOS:
+Função para que se determine se uma string é compatível c/ o DOS:
   Se a string estiver em branco, diga não.
   Se o conteúdo deste caractere inicial desta string é o ponto final, diga não.
   Lance um subtexto sobre a string.
@@ -4005,20 +4005,20 @@ Rotina para que se determine se uma string é compatível c/ o DOS:
     Adicione 1 para o caractere inicial deste subtexto.
   Reitere.
 
-Rotina para que se determine se uma string é maior que uma segunda string;
-Rotina para que se determine se uma string é maior do que uma segunda string:
+Função para que se determine se uma string é maior que uma segunda string;
+Função para que se determine se uma string é maior do que uma segunda string:
   Compare a string para a segunda string usando a quantidade de caracteres desta string e a quantidade de caracteres desta segunda string retornando um número.
   Se o número for maior do que 0, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é maior do que ou igual para uma segunda string;
-Rotina para que se determine se uma string é maior que ou igual para uma segunda string;
-Rotina para que se determine se uma string é maior ou igual para uma segunda string:
+Função para que se determine se uma string é maior do que ou igual para uma segunda string;
+Função para que se determine se uma string é maior que ou igual para uma segunda string;
+Função para que se determine se uma string é maior ou igual para uma segunda string:
   Compare a string para a segunda string usando a quantidade de caracteres desta string e a quantidade de caracteres desta segunda string retornando um número.
   Se o número for maior do que ou igual para 0, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string está em uma segunda string:
+Função para que se determine se uma string está em uma segunda string:
   Lance um subtexto sobre a segunda string.
   Atribua o caractere inicial deste subtexto mais a quantidade de caracteres desta string menos 1 ao caractere final deste subtexto.
   Itere.
@@ -4027,29 +4027,29 @@ Rotina para que se determine se uma string está em uma segunda string:
     Mova o subtexto usando 1.
   Reitere.
 
-Rotina para que se determine se uma string está em um catálogo:
+Função para que se determine se uma string está em um catálogo:
   Se o catálogo for inexistente, diga não.
   Se a string estiver em branco, diga não.
   Encontre uma referência usando a string e o catálogo.
   Se a referência for inexistente, diga não.
   Diga sim.
 
-Rotina para que se determine se uma string é menor que uma segunda string;
-Rotina para que se determine se uma string é menor do que uma segunda string:
+Função para que se determine se uma string é menor que uma segunda string;
+Função para que se determine se uma string é menor do que uma segunda string:
   Compare a string para a segunda string usando a quantidade de caracteres desta string e a quantidade de caracteres desta segunda string retornando um número.
   Se o número for menor do que 0, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é menor do que ou igual para uma segunda string;
-Rotina para que se determine se uma string é menor que ou igual para uma segunda string;
-Rotina para que se determine se uma string é menor ou igual para uma segunda string:
+Função para que se determine se uma string é menor do que ou igual para uma segunda string;
+Função para que se determine se uma string é menor que ou igual para uma segunda string;
+Função para que se determine se uma string é menor ou igual para uma segunda string:
   Compare a string para a segunda string usando a quantidade de caracteres desta string e a quantidade de caracteres desta segunda string retornando um número.
   Se o número for menor do que ou igual para 0, diga sim.
   Diga não.
 
 \ needs work por Spanish
-Rotina para que se determine se uma string está escrita incorretamente;
-Rotina para que se determine se uma string está escrito incorretamente:
+Função para que se determine se uma string está escrita incorretamente;
+Função para que se determine se uma string está escrito incorretamente:
   Se o dicionário léxico for inexistente, diga não.
   Se a string não for alguma palavra, diga não.
   Preserve a string.
@@ -4057,7 +4057,7 @@ Rotina para que se determine se uma string está escrito incorretamente:
   Se a string estiver no catálogo deste dicionário léxico, diga não.
   Diga sim.
 
-Rotina para que se determine se uma string é wider do que uma caixa:
+Função para que se determine se uma string é wider do que uma caixa:
   \ presume que a fonte esteja selecionada no contexto de dispositivo de memória
   Obtenha um abcA e um abcC usando a string e o contexto de dispositivo de memória.
   Obtenha uma largura usando a string e o contexto de dispositivo de memória.
@@ -4066,45 +4066,45 @@ Rotina para que se determine se uma string é wider do que uma caixa:
   Se a largura for maior do que a largura desta caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se um subtexto está sobre alguma espécie de contração:
+Função para que se determine se um subtexto está sobre alguma espécie de contração:
   Atribua o caractere inicial deste subtexto mais 1 para um endereço de byte .
   Se o endereço de byte for maior do que o caractere final deste subtexto, diga não.
   Se o conteúdo deste caractere inicial deste subtexto não for o single-quote byte, diga não.
   Se o conteúdo deste endereço de byte não for algum letra, diga não.
   Diga sim.
 
-Rotina para que se determine se um terminal está totalmente prenchido:
+Função para que se determine se um terminal está totalmente prenchido:
   Atribua a altura deste terminal dividido por 24 pixels para um número.
   Se a contagem destes quoras deste terminal for maior do que o número, diga sim.
   Diga não.
 
-Rotina para que se determine se uma caixa de texto pode ser refeita;
-Rotina para que se determine se uma caixa de texto pode ser refeito:
+Função para que se determine se uma caixa de texto pode ser refeita;
+Função para que se determine se uma caixa de texto pode ser refeito:
   Se a caixa de texto for inexistente, diga não.
   Se a última caixa de texto destas reconstruções desta caixa de texto for inexistente, diga não.
   Diga sim.
 
-Rotina para que se determine se uma caixa de texto pode ser desfeita;
-Rotina para que se determine se uma caixa de texto pode ser desfeito:
+Função para que se determine se uma caixa de texto pode ser desfeita;
+Função para que se determine se uma caixa de texto pode ser desfeito:
   Se a caixa de texto for inexistente, diga não.
   Se a última caixa de texto destes desmanches desta caixa de texto for inexistente, diga não.
   Diga sim.
 
-Rotina para que se determine se uma caixa de texto foi alterado:
+Função para que se determine se uma caixa de texto foi alterado:
   Se a caixa de texto for inexistente, diga não.
   Se o sinalizador de alteração desta caixa de texto estiver ativo, diga sim.
   Diga não.
 
-Rotina para que se determine se há something para backspace em uma caixa de texto;
-Rotina para que se determine se existe something para backspace em uma caixa de texto:
+Função para que se determine se há something para backspace em uma caixa de texto;
+Função para que se determine se existe something para backspace em uma caixa de texto:
   Se a caixa de texto for inexistente, diga não.
   Se something estiver selecionado na caixa de texto, diga sim.
   Se o número de linhas do cursor desta caixa de texto não for 1, diga sim.
   Se o cursor de texto número de coluna desta caixa de texto não for 1, diga sim.
   Diga não.
 
-Rotina para que se determine se há something para remover em uma caixa de texto;
-Rotina para que se determine se existe something para remover em uma caixa de texto:
+Função para que se determine se há something para remover em uma caixa de texto;
+Função para que se determine se existe something para remover em uma caixa de texto:
   Se a caixa de texto for inexistente, diga não.
   Se something estiver selecionado na caixa de texto, diga sim.
   Se o número de linhas do cursor desta caixa de texto não for a contagem de linhas desta caixa de texto, diga sim.
@@ -4112,8 +4112,8 @@ Rotina para que se determine se existe something para remover em uma caixa de te
   Se o cursor de texto número de coluna desta caixa de texto não for a quantidade de caracteres desta string desta linha de texto, diga sim.
   Diga não.
 
-Rotina para que se determine se há caixa de texto na área de transferência do Windows;
-Rotina para que se determine se existe caixa de texto sobre a área de transferência do Windows:
+Função para que se determine se há caixa de texto na área de transferência do Windows;
+Função para que se determine se existe caixa de texto sobre a área de transferência do Windows:
   Processe "user32.dll" "IsClipboardFormatAvailable" com \Determina se a área de transferência contém dados com o formato especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-isclipboardformatavailable
   1 [format = CF_TEXT]  \ Consulte https://learn.microsoft.com/pt-br/windows/win32/dataxchg/standard-clipboard-formats
@@ -4121,14 +4121,14 @@ Rotina para que se determine se existe caixa de texto sobre a área de transferên
   Se o número for 0, diga não.
   Diga sim.
 
-Rotina para que se determine se umas listas estão vazios;
-Rotina para que se determine se umas listas estão vazias;
-Rotina para que se determine se umas listas estão vazia;
-Rotina para que se determine se umas listas estão vazio:
+Função para que se determine se umas listas estão vazios;
+Função para que se determine se umas listas estão vazias;
+Função para que se determine se umas listas estão vazia;
+Função para que se determine se umas listas estão vazio:
   Se a lista inicial destas listas for inexistente, diga sim.
   Diga não.
 
-Rotina para que se determine se um segmento inicial é numeric:
+Função para que se determine se um segmento inicial é numeric:
   Preserve o segmento inicial.
   Remova os caracteres ignoráveis no início desde o segmento inicial.
   Se o segmento inicial estiver em branco, diga não.
@@ -4138,99 +4138,99 @@ Rotina para que se determine se um segmento inicial é numeric:
     Se o segmento inicial estiver em branco, diga sim.
   Reitere.
 
-Rotina para que se determine se o usuário clicou sobre umas alternativas;
-Rotina para que se determine se o usuário clicou em umas alternativas:
+Função para que se determine se o usuário clicou sobre umas alternativas;
+Função para que se determine se o usuário clicou em umas alternativas:
   Itere.
   Se o botão esquerdo deste mouse não estiver para baixo, diga não.
   Encontre uma alternativa usando a localização deste mouse.
   Se a alternativa não puder ser encontrada, diga não.
   Diga sim.
 
-Rotina para que se determine se we pode encontre um ponteiro:
+Função para que se determine se we pode encontre um ponteiro:
   \ deveria ser "can" not "ca", compilador bug
   Se o ponteiro for inexistente, diga não.
   Diga sim.
 
-Rotina para que se determine se we could encontre um ponteiro:
+Função para que se determine se we could encontre um ponteiro:
   Se o ponteiro for inexistente, diga não.
   Diga sim.
 
-Rotina para que se determine se we did encontre um ponteiro:
+Função para que se determine se we did encontre um ponteiro:
   Se o ponteiro for inexistente, diga não.
   Diga sim.
 
-Rotina para que se determine se estamos acima de uma caixa:
+Função para que se determine se estamos acima de uma caixa:
   Se a coordenada Y deste contexto for menor do que a coordenada Y1 desta caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se estamos acima de uma coordenada:
+Função para que se determine se estamos acima de uma coordenada:
   Se a coordenada Y deste contexto for menor do que a coordenada, diga sim.
   Diga não.
 
-Rotina para que se determine se estamos acima de um linha reta horizontal:
+Função para que se determine se estamos acima de um linha reta horizontal:
   Se a localização deste contexto está acima de o linha reta horizontal, diga sim.
   Diga não.
 
-Rotina para que se determine se estamos em cima ou em baixo de uma caixa:
+Função para que se determine se estamos em cima ou em baixo de uma caixa:
   Se a coordenada Y deste contexto for menor do que a coordenada Y1 desta caixa, diga sim.
   Se a coordenada Y deste contexto for maior do que a coordenada Y2 desta caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se estamos acima de uma localização:
+Função para que se determine se estamos acima de uma localização:
   Se a coordenada Y deste contexto for menor do que a coordenada Y desta localização, diga sim.
   Diga não.
 
-Rotina para que se determine se estamos debaixo de uma caixa:
+Função para que se determine se estamos debaixo de uma caixa:
   Se a coordenada Y deste contexto for maior do que a coordenada Y2 desta caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se estamos debaixo de uma coordenada:
+Função para que se determine se estamos debaixo de uma coordenada:
   Se a coordenada Y deste contexto for maior do que a coordenada, diga sim.
   Diga não.
 
-Rotina para que se determine se estamos debaixo de um linha reta horizontal:
+Função para que se determine se estamos debaixo de um linha reta horizontal:
   Se a localização deste contexto é debaixo de o linha reta horizontal, diga sim.
   Diga não.
 
-Rotina para que se determine se estamos debaixo de uma localização:
+Função para que se determine se estamos debaixo de uma localização:
   Se a coordenada Y deste contexto for maior do que a coordenada Y desta localização, diga sim.
   Diga não.
 
-Rotina para que se determine se estamos voltada para o north:
+Função para que se determine se estamos voltada para o north:
   \ *** need east, south, west
   Normalize a orientação deste contexto.
   Se a orientação deste contexto for 0, diga sim.
   Diga não.
 
-Rotina para que se determine se estamos no lado esquerdo de uma caixa;
-Rotina para que se determine se estamos na esquerda de uma caixa;
-Rotina para que se determine se estamos lado esquerdo de uma caixa:
+Função para que se determine se estamos no lado esquerdo de uma caixa;
+Função para que se determine se estamos na esquerda de uma caixa;
+Função para que se determine se estamos lado esquerdo de uma caixa:
   Se a coordenada X deste contexto for menor do que a coordenada X1 desta caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se estamos na esquerda ou na direita de uma caixa;
-Rotina para que se determine se estamos no lado esquerdo ou no lado direito de uma caixa:
+Função para que se determine se estamos na esquerda ou na direita de uma caixa;
+Função para que se determine se estamos no lado esquerdo ou no lado direito de uma caixa:
   Se a coordenada X deste contexto for menor do que a coordenada X1 desta caixa, diga sim.
   Se a coordenada X deste contexto for maior do que a coordenada X2 desta caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se estamos fora de uma caixa:
+Função para que se determine se estamos fora de uma caixa:
   Se a localização deste contexto estiver fora de a caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se estamos no lado direito de uma caixa:
+Função para que se determine se estamos no lado direito de uma caixa:
   Se a coordenada X deste contexto for maior do que a coordenada X2 desta caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se estamos em uma caixa:
+Função para que se determine se estamos em uma caixa:
   Se a localização deste contexto estiver na caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se estamos dentre uns twips de_ uma caixa:
-  Se a localização deste contexto está dentre os twips de_ a caixa, diga sim.
+Função para que se determine se estamos dentre uns twips d'uma caixa:
+  Se a localização deste contexto está dentre os twips d'a caixa, diga sim.
   Diga não.
 
-Rotina para que se determine se estamos com sorte:
+Função para que se determine se estamos com sorte:
   Escolha aleatoriamente um número entre 1 e 100.
   Se o número for menor do que 51, diga sim.
   Diga não.
@@ -5256,7 +5256,7 @@ Rotina para que se extraia uma string desde uma caixa de texto (trecho seleciona
   Itere.
     Obtenha uma linha de texto desde as linhas de texto desta caixa de texto.
     Se a linha de texto for inexistente, retorne.
-    Lance um subtexto sobre qualquer trecho selecionado na linha de texto de_ a caixa de texto.
+    Lance um subtexto sobre qualquer trecho selecionado na linha de texto d'a caixa de texto.
     Se o subtexto estiver em branco, reitere.
     Acrescente o subtexto para a string.
     Se o conteúdo deste caractere final deste subtexto for o retorno de carro, acrescente a quebra de linha para a string.
@@ -5528,7 +5528,7 @@ Rotina para que se encontre um sector usando uma malha quadriculada e uma locali
 Um delta é um número.
 Um número quadrado é um número.
 
-Rotina para que se encontre uma raiz quadrada de_ um número:
+Rotina para que se encontre uma raiz quadrada d'um número:
   \ arredonda para baixo
   Preserve o número.
   De-sign o número.
@@ -5928,7 +5928,7 @@ Rotina para que se obtenha uma distância entre uma localização e uma segunda loc
   De-sign o segundo número.
   Atribua o número vezes o número à distância.
   Adicione o segundo número vezes o segundo número para a distância.
-  Encontre uma raiz quadrada de_ a distância.
+  Encontre uma raiz quadrada d'a distância.
   Atribua o raiz quadrada à distância.
   Se a tecla D/d estiver sendo pressionada, produza o relatório de informações usando a distância.
 
@@ -7990,7 +7990,7 @@ Rotina para que se lowercase qualquer trecho selecionado em uma caixa de texto:
     Obtenha uma linha de texto desde as linhas de texto desta caixa de texto.
     Se a linha de texto for inexistente, retorne.
     Se a linha de texto na caixa de texto não estiver selecionado, reitere.
-    Lance um subtexto sobre qualquer trecho selecionado na linha de texto de_ a caixa de texto.
+    Lance um subtexto sobre qualquer trecho selecionado na linha de texto d'a caixa de texto.
     Lowercase o subtexto.
   Reitere.
 
@@ -8575,7 +8575,7 @@ Um endereço do caractere é um endereço de byte.
 
 Um pDevMode é um ponteiro [que aponta] para um devmode.
 
-Rotina para que se escolha aleatoriamente um número dentre uma quantia de_ um segundo número:
+Rotina para que se escolha aleatoriamente um número dentre uma quantia d'um segundo número:
   Escolha aleatoriamente o número entre o segundo número menos o quantia e o segundo número mais o quantia.
   Atribua o número ao número deste contexto.
 
@@ -8922,7 +8922,7 @@ Rotina para que se atribua a quantidade de caracteres selecionados duma caixa de
   Itere.
   Obtenha uma linha de texto desde as linhas de texto desta caixa de texto.
   Se a linha de texto for inexistente, retorne.
-  Lance um subtexto sobre qualquer trecho selecionado na linha de texto de_ a caixa de texto.
+  Lance um subtexto sobre qualquer trecho selecionado na linha de texto d'a caixa de texto.
   Adicione a quantidade de caracteres deste subtexto para a contagem.
   Reitere.
 
@@ -8951,7 +8951,7 @@ Rotina para que se atribua o painel de informações string duma caixa de texto pa
   Acrescente ":" para a string.
   Acrescente o cursor de texto número de coluna desta caixa de texto para a string.
 
-\Rotina para que se atribua uma lista sob o fim de_ umas listas;
+\Rotina para que se atribua uma lista sob o fim d'umas listas;
 Rotina para que se acrescente uma lista para umas listas:
   Se a lista for inexistente, retorne.
   Atribua a lista final destas listas à lista anterior desta lista.
@@ -9141,7 +9141,8 @@ Rotina para que se remova o último caractere desde uma string:
 Rotina para que se remova os dois últimos caracteres desde uma string:
   Remova os bytes finais desde a string usando 2.
 
-Rotina para que se remova os caracteres iniciais desde uma string usando uma contagem:
+Rotina para que se remova os caracteres iniciais desde uma string usando uma contagem;
+Rotina para que se remova os bytes iniciais desde uma string usando uma contagem:
   Preserve a contagem.
   Se a contagem for maior do que a quantidade de caracteres desta string,
     Limpe a string;
@@ -9182,6 +9183,7 @@ Rotina para que se remova uma lista desde umas listas:
   Esvazie a lista posterior desta lista.
   Esvazie a lista anterior desta lista.
 
+Rotina para que se remova os caracteres finais desde uma string usando uma contagem;
 Rotina para que se remova os bytes finais desde uma string usando uma contagem:
   Preserve a contagem.
   Se a contagem for maior do que a quantidade de caracteres desta string,
@@ -9193,9 +9195,9 @@ Rotina para que se remova os bytes finais desde uma string usando uma contagem:
 
 Rotina para que se remova os caracteres ignoráveis no final de uma string;
 Rotina para que se remova algum caractere ignorável final desde uma string:
-  Se a string estiver em branco, retorne.
-  Se o conteúdo deste caractere final desta string não for irrelevante, retorne.
-  Remova o último caractere desde a string.
+    Se a string estiver em branco, retorne.
+    Se o conteúdo deste caractere final desta string não for irrelevante, retorne.
+    Remova o último caractere desde a string.
   Reitere.
 
 Rotina para que se rename um endereço completo para um segundo endereço completo no sistema de arquivos:
@@ -10241,7 +10243,7 @@ Rotina para que se lance um percorredor sobre uma string:
   Lance o segmento final deste percorredor sobre a string.
   Posicione o segmento inicial deste percorredor sobre o segmento final deste percorredor.
 
-Rotina para que se lance um subtexto sobre qualquer trecho selecionado em uma linha de texto de_ uma caixa de texto:
+Rotina para que se lance um subtexto sobre qualquer trecho selecionado em uma linha de texto d'uma caixa de texto:
   Limpe o subtexto.
   Se a caixa de texto for inexistente, retorne.
   Se a linha de texto na caixa de texto não estiver selecionado, retorne.
@@ -11635,7 +11637,7 @@ Rotina para que se uppercase qualquer trecho selecionado em uma caixa de texto:
     Obtenha uma linha de texto desde as linhas de texto desta caixa de texto.
     Se a linha de texto for inexistente, retorne.
     Se a linha de texto na caixa de texto não estiver selecionado, reitere.
-    Lance um subtexto sobre qualquer trecho selecionado na linha de texto de_ a caixa de texto.
+    Lance um subtexto sobre qualquer trecho selecionado na linha de texto d'a caixa de texto.
     Uppercase o subtexto.
   Reitere.
 
@@ -15988,7 +15990,7 @@ O tamanho de letra pequena é um tamanho da letra.
 Rotina para que se use um tamanho da letra:
   Atribua o tamanho da letra à tamanho da letra deste contexto.
 
-Rotina para que se use um tamanho da letra de_ uns twips:
+Rotina para que se use um tamanho da letra d' uns twips:
   Atribua os twips ao tamanho da letra.
   Atribua os twips à tamanho da letra deste contexto.
 
@@ -16436,7 +16438,7 @@ Rotina para que se atribua o y-extent duma caixa para uma altura:
   Atribua a coordenada Y2 desta caixa à altura.
   Subtraia a coordenada Y1 desta caixa desde a altura.
 
-Rotina para que se escolha aleatoriamente uma localização no base uma fração de_ uma caixa:
+Rotina para que se escolha aleatoriamente uma localização no base uma fração d'uma caixa:
   Preserve a caixa.
   Atribua a altura desta caixa vezes a fração a uns twips.
   Atribua a coordenada Y2 desta caixa menos os twips à coordenada Y1 desta caixa.
@@ -16447,7 +16449,7 @@ Rotina para que se escolha aleatoriamente uma localização no interior de uma cai
   Escolha aleatoriamente a coordenada Y desta localização entre a coordenada Y1 desta caixa e a coordenada Y2 desta caixa.
   Atribua a localização à localização deste contexto.
 
-Rotina para que se escolha aleatoriamente uma localização no meio de uma fração de_ uma caixa:
+Rotina para que se escolha aleatoriamente uma localização no meio de uma fração d'uma caixa:
   Preserve a caixa.
   Atribua o y deste centro desta caixa para uma coordenada.
   Atribua a altura desta caixa vezes a fração dividido por 2 para um número.
@@ -16460,7 +16462,7 @@ Rotina para que se escolha aleatoriamente uma localização no topo half de uma ca
   Atribua o y deste centro desta caixa à coordenada Y2 desta caixa.
   Escolha aleatoriamente a localização na caixa.
 
-Rotina para que se escolha aleatoriamente uma localização na metade de cima de uma fração de_ uma caixa:
+Rotina para que se escolha aleatoriamente uma localização na metade de cima de uma fração d'uma caixa:
   Preserve a caixa.
   Atribua o y deste centro desta caixa para uma coordenada.
   Atribua a altura desta caixa vezes a fração para um número.
@@ -16503,9 +16505,9 @@ Rotina para que se escolha aleatoriamente uma localização em uma caixa uns twips
   Atribua a coordenada Y1 desta bounding caixa mais os outros twips à coordenada Y2 desta bounding caixa.
   Escolha aleatoriamente a localização na bounding caixa.
 
-Rotina para que se escolha aleatoriamente uma localização dentre uma distância de_ uma segunda localização:
-  Escolha aleatoriamente a coordenada X desta localização dentre a distância de_ a coordenada X desta segunda localização.
-  Escolha aleatoriamente a coordenada Y desta localização dentre a distância de_ a coordenada Y desta segunda localização.
+Rotina para que se escolha aleatoriamente uma localização dentre uma distância d'uma segunda localização:
+  Escolha aleatoriamente a coordenada X desta localização dentre a distância d'a coordenada X desta segunda localização.
+  Escolha aleatoriamente a coordenada Y desta localização dentre a distância d'a coordenada Y desta segunda localização.
   Atribua a localização à localização deste contexto.
 
 Rotina para que se escolha aleatoriamente uma orientação:
@@ -16620,7 +16622,7 @@ Rotina para que se mova para uma localização:
   Atribua a localização à localização deste contexto.
 
 Rotina para que se mova uma localização aproximadamente uns twips em algum direction:
-  Escolha aleatoriamente uma segunda localização dentre os twips de_ a localização.
+  Escolha aleatoriamente uma segunda localização dentre os twips d'a localização.
   Atribua a segunda localização à localização.
 
 Rotina para que se mova uma localização para uma segunda localização:
@@ -20542,7 +20544,7 @@ Rotina para que se compare uma string para uma segunda string usando uma quantid
   Decodifique $8B9D1C000000. \ mov ebx,[ebp+28] \ o número
   Decodifique $8903. \ mov [ebx],eax
 
-Rotina para que se determine se um byte é um segundo byte:
+Função para que se determine se um byte é um segundo byte:
   Decodifique $C7C001000000. \ mov eax,1 \ assume true
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o byte
   Decodifique $8A1B. \ mov bl,[ebx]
@@ -20551,8 +20553,8 @@ Rotina para que se determine se um byte é um segundo byte:
   Decodifique $0F8406000000. \ je sobre o próximo 1 statement
   Decodifique $C7C000000000. \ mov eax,0 \ now it is false
 
-Rotina para que se determine se um byte é maior que um segundo byte;
-Rotina para que se determine se um byte é maior do que um segundo byte:
+Função para que se determine se um byte é maior que um segundo byte;
+Função para que se determine se um byte é maior do que um segundo byte:
   Decodifique $C7C001000000. \ mov eax,1 \ assume true
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o byte
   Decodifique $8A1B. \ mov bl,[ebx]
@@ -20561,8 +20563,8 @@ Rotina para que se determine se um byte é maior do que um segundo byte:
   Decodifique $0F8706000000. \ ja sobre o próximo 1 statement
   Decodifique $C7C000000000. \ mov eax,0 \ now it is false
 
-Rotina para que se determine se um byte é maior que um número;
-Rotina para que se determine se um byte é maior do que um número:
+Função para que se determine se um byte é maior que um número;
+Função para que se determine se um byte é maior do que um número:
   Decodifique $C7C001000000. \ mov eax,1 \ assume true
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o byte
   Decodifique $0FB61B. \ movzx ebx,byte ptr [ebx]
@@ -20571,9 +20573,9 @@ Rotina para que se determine se um byte é maior do que um número:
   Decodifique $0F8F06000000. \ jg sobre o próximo 1 statement
   Decodifique $C7C000000000. \ mov eax,0 \ now it is false
 
-Rotina para que se determine se um byte é maior do que ou igual para um segundo byte;
-Rotina para que se determine se um byte é maior que ou igual para um segundo byte;
-Rotina para que se determine se um byte é maior ou igual para um segundo byte:
+Função para que se determine se um byte é maior do que ou igual para um segundo byte;
+Função para que se determine se um byte é maior que ou igual para um segundo byte;
+Função para que se determine se um byte é maior ou igual para um segundo byte:
   Decodifique $C7C001000000. \ mov eax,1 \ assume true
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o byte
   Decodifique $8A1B. \ mov bl,[ebx]
@@ -20582,8 +20584,8 @@ Rotina para que se determine se um byte é maior ou igual para um segundo byte:
   Decodifique $0F8306000000. \ ja sobre o próximo 1 statement
   Decodifique $C7C000000000. \ mov eax,0 \ now it is false
 
-Rotina para que se determine se um byte é menor que um segundo byte;
-Rotina para que se determine se um byte é menor do que um segundo byte:
+Função para que se determine se um byte é menor que um segundo byte;
+Função para que se determine se um byte é menor do que um segundo byte:
   Decodifique $C7C001000000. \ mov eax,1 \ assume true
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o byte
   Decodifique $8A1B. \ mov bl,[ebx]
@@ -20592,8 +20594,8 @@ Rotina para que se determine se um byte é menor do que um segundo byte:
   Decodifique $0F8206000000. \ jb sobre o próximo 1 statement
   Decodifique $C7C000000000. \ mov eax,0 \ now it is false
 
-Rotina para que se determine se um byte é menor que um número;
-Rotina para que se determine se um byte é menor do que um número:
+Função para que se determine se um byte é menor que um número;
+Função para que se determine se um byte é menor do que um número:
   Decodifique $C7C001000000. \ mov eax,1 \ assume true
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o byte
   Decodifique $0FB61B. \ movzx ebx,byte ptr [ebx]
@@ -20602,9 +20604,9 @@ Rotina para que se determine se um byte é menor do que um número:
   Decodifique $0F8C06000000. \ jl sobre o próximo 1 statement
   Decodifique $C7C000000000. \ mov eax,0 \ now it is false
 
-Rotina para que se determine se um byte é menor do que ou igual para um segundo byte;
-Rotina para que se determine se um byte é menor que ou igual para um segundo byte;
-Rotina para que se determine se um byte é menor ou igual para um segundo byte:
+Função para que se determine se um byte é menor do que ou igual para um segundo byte;
+Função para que se determine se um byte é menor que ou igual para um segundo byte;
+Função para que se determine se um byte é menor ou igual para um segundo byte:
   Decodifique $C7C001000000. \ mov eax,1 \ assume true
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o byte
   Decodifique $8A1B. \ mov bl,[ebx]
@@ -20613,8 +20615,8 @@ Rotina para que se determine se um byte é menor ou igual para um segundo byte:
   Decodifique $0F8606000000. \ jbe sobre o próximo 1 statement
   Decodifique $C7C000000000. \ mov eax,0 \ now it is false
 
-Rotina para que se determine se um byte é igual para um número;
-Rotina para que se determine se um byte é um número:
+Função para que se determine se um byte é igual para um número;
+Função para que se determine se um byte é um número:
   Decodifique $C7C001000000. \ mov eax,1 \ assume true
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o byte
   Decodifique $0FB61B. \ movzx ebx,byte ptr [ebx]
@@ -20623,12 +20625,12 @@ Rotina para que se determine se um byte é um número:
   Decodifique $0F8406000000. \ je sobre o próximo 1 statement
   Decodifique $C7C000000000. \ mov eax,0 \ now it is false
 
-Rotina para que se determine se um sinalizador é um número;
-Rotina para que se determine se um sinalizador é um segundo sinalizador;
-Rotina para que se determine se um ponteiro é um número;
-Rotina para que se determine se um ponteiro é um segunda ponteiro;
-Rotina para que se determine se um número é igual para um segundo número;
-Rotina para que se determine se um número é um segundo número:
+Função para que se determine se um sinalizador é um número;
+Função para que se determine se um sinalizador é um segundo sinalizador;
+Função para que se determine se um ponteiro é um número;
+Função para que se determine se um ponteiro é um segunda ponteiro;
+Função para que se determine se um número é igual para um segundo número;
+Função para que se determine se um número é um segundo número:
   Decodifique $C7C001000000. \ mov eax,1 \ assume true
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o número
   Decodifique $8B1B. \ mov ebx,[ebx]
@@ -20637,8 +20639,8 @@ Rotina para que se determine se um número é um segundo número:
   Decodifique $0F8406000000. \ je sobre o próximo 1 statement
   Decodifique $C7C000000000. \ mov eax,0 \ now it is false
 
-Rotina para que se determine se um ponteiro é maior do que um segundo ponteiro;
-Rotina para que se determine se um número é maior do que um segundo número:
+Função para que se determine se um ponteiro é maior do que um segundo ponteiro;
+Função para que se determine se um número é maior do que um segundo número:
   Decodifique $C7C001000000. \ mov eax,1 \ assume true
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o número
   Decodifique $8B1B. \ mov ebx,[ebx]
@@ -20647,17 +20649,17 @@ Rotina para que se determine se um número é maior do que um segundo número:
   Decodifique $0F8F06000000. \ jg sobre o próximo 1 statement
   Decodifique $C7C000000000. \ mov eax,0 \ now it is false
 
-Rotina para que se determine se um ponteiro é maior do que ou igual para um segundo ponteiro;
-Rotina para que se determine se um ponteiro é maior que ou igual para um segundo ponteiro;
-Rotina para que se determine se um ponteiro é igual ou maior do que um segundo ponteiro;
-Rotina para que se determine se um ponteiro é igual ou maior que um segundo ponteiro;
-Rotina para que se determine se um ponteiro é maior ou igual para um segundo ponteiro;
-Rotina para que se determine se um número é um segundo número ou more;
-Rotina para que se determine se um número é maior do que ou igual para um segundo número;
-Rotina para que se determine se um número é maior que ou igual para um segundo número;
-Rotina para que se determine se um número é igual ou maior do que um segundo número;
-Rotina para que se determine se um número é igual ou maior que um segundo número;
-Rotina para que se determine se um número é maior ou igual para um segundo número:
+Função para que se determine se um ponteiro é maior do que ou igual para um segundo ponteiro;
+Função para que se determine se um ponteiro é maior que ou igual para um segundo ponteiro;
+Função para que se determine se um ponteiro é igual ou maior do que um segundo ponteiro;
+Função para que se determine se um ponteiro é igual ou maior que um segundo ponteiro;
+Função para que se determine se um ponteiro é maior ou igual para um segundo ponteiro;
+Função para que se determine se um número é um segundo número ou more;
+Função para que se determine se um número é maior do que ou igual para um segundo número;
+Função para que se determine se um número é maior que ou igual para um segundo número;
+Função para que se determine se um número é igual ou maior do que um segundo número;
+Função para que se determine se um número é igual ou maior que um segundo número;
+Função para que se determine se um número é maior ou igual para um segundo número:
   Decodifique $C7C001000000. \ mov eax,1 \ assume true
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o número
   Decodifique $8B1B. \ mov ebx,[ebx]
@@ -20666,10 +20668,10 @@ Rotina para que se determine se um número é maior ou igual para um segundo númer
   Decodifique $0F8D06000000. \ jge sobre o próximo 1 statement
   Decodifique $C7C000000000. \ mov eax,0 \ now it is false
 
-Rotina para que se determine se um ponteiro é menor do que um segundo ponteiro;
-Rotina para que se determine se um ponteiro é menor que um segundo ponteiro;
-Rotina para que se determine se um número é menor que um segundo número;
-Rotina para que se determine se um número é menor do que um segundo número:
+Função para que se determine se um ponteiro é menor do que um segundo ponteiro;
+Função para que se determine se um ponteiro é menor que um segundo ponteiro;
+Função para que se determine se um número é menor que um segundo número;
+Função para que se determine se um número é menor do que um segundo número:
   Decodifique $C7C001000000. \ mov eax,1 \ assume true
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o número
   Decodifique $8B1B. \ mov ebx,[ebx]
@@ -20678,14 +20680,14 @@ Rotina para que se determine se um número é menor do que um segundo número:
   Decodifique $0F8C06000000. \ jl sobre o próximo 1 statement
   Decodifique $C7C000000000. \ mov eax,0 \ now it is false
 
-Rotina para que se determine se um ponteiro é menor do que ou igual para um segundo ponteiro;
-Rotina para que se determine se um ponteiro é menor que ou igual para um segundo ponteiro;
-Rotina para que se determine se um ponteiro é menor ou igual para um segundo ponteiro;
-Rotina para que se determine se um número é um segundo número ou menos;
-Rotina para que se determine se um número é um segundo número ou menor;
-Rotina para que se determine se um número é menor do que ou igual para um segundo número;
-Rotina para que se determine se um número é menor que ou igual para um segundo número;
-Rotina para que se determine se um número é menor ou igual para um segundo número:
+Função para que se determine se um ponteiro é menor do que ou igual para um segundo ponteiro;
+Função para que se determine se um ponteiro é menor que ou igual para um segundo ponteiro;
+Função para que se determine se um ponteiro é menor ou igual para um segundo ponteiro;
+Função para que se determine se um número é um segundo número ou menos;
+Função para que se determine se um número é um segundo número ou menor;
+Função para que se determine se um número é menor do que ou igual para um segundo número;
+Função para que se determine se um número é menor que ou igual para um segundo número;
+Função para que se determine se um número é menor ou igual para um segundo número:
   Decodifique $C7C001000000. \ mov eax,1 \ assume true
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o número
   Decodifique $8B1B. \ mov ebx,[ebx]
@@ -20694,7 +20696,7 @@ Rotina para que se determine se um número é menor ou igual para um segundo númer
   Decodifique $0F8E06000000. \ jle sobre o próximo 1 statement
   Decodifique $C7C000000000. \ mov eax,0 \ now it is false
 
-Rotina para que se determine se uma string está em branco:
+Função para que se determine se uma string está em branco:
   \ assume true
   Decodifique $B801000000. \ mov eax,1
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ a string

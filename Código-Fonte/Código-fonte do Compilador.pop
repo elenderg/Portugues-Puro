@@ -191,8 +191,8 @@ Um sinalizador de erros é um sinalizador.
 Um endereço do arquivo atual é um endereço completo.
 \Um problema é um número.
 
-Rotina para que se determine se há algum problema de compilação;
-Rotina para que se determine se existe algum problema de compilação:
+Função para que se determine se há algum problema de compilação;
+Função para que se determine se existe algum problema de compilação:
   Se o sinalizador de erros deste compilador estiver ativado, diga sim.
 
 Rotina para que se apresente uma mensagem de erro contendo uma string:
@@ -1163,14 +1163,14 @@ Rotina para que se acrescente uma variável para um trecho (com separador):
     Retorne.
   Acrescente o nome desta variável para o trecho (com separador).
 
-Rotina para que se determine se uma string é alguma contração de preposição com artigo definido:
+Função para que se determine se uma string é alguma contração de preposição com artigo definido:
   Se a string for "do", diga sim.
   Se a string for "da", diga sim.
   Se a string for "dos", diga sim.
   Se a string for "das", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum operador de concatenação contraído usando um percorredor:
+Função para que se determine se uma string é algum operador de concatenação contraído usando um percorredor:
   Se o segmento inicial deste percorredor de contrações for "seguido", mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor de contrações for "seguida", mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor de contrações for "junto", mova o percorredor (usando diretrizes de compilação).
@@ -1179,7 +1179,7 @@ Rotina para que se determine se uma string é algum operador de concatenação cont
   Se o segmento inicial deste percorredor de contrações for alguma contração de preposição com artigo definido, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string está precisando ser decomposta:
+Função para que se determine se uma string está precisando ser decomposta:
   Lance um percorredor sobre a string.
   Se a string for algum operador de concatenação contraído usando o percorredor, diga sim.
   Diga não.
@@ -1197,6 +1197,30 @@ Rotina para que se acrescente uma string para uma segunda string usando uma terc
     Retorne.
   Se a string for "às",
     Acrescente "a as" para a segunda string;
+    Retorne.
+  Se a string for "d'o",
+    Acrescente "d' o" para a segunda string;
+    Retorne.
+  Se a string for "d'os",
+    Acrescente "d' os" para a segunda string;
+    Retorne.
+  Se a string for "d'a",
+    Acrescente "d' a" para a segunda string;
+    Retorne.
+  Se a string for "d'as",
+    Acrescente "d' as" para a segunda string;
+    Retorne.
+  Se a string for "d'um",
+    Acrescente "d' um" para a segunda string;
+    Retorne.
+  Se a string for "d'uns",
+    Acrescente "d' uns" para a segunda string;
+    Retorne.
+  Se a string for "d'uma",
+    Acrescente "d' uma" para a segunda string;
+    Retorne.
+  Se a string for "d'umas",
+    Acrescente "d' umas" para a segunda string;
     Retorne.
   \Se a string estiver precisando ser decomposta, acrescente "de o" para a segunda string; Retorne.
   \Se a string for "dos", determine se a string precisa ser decomposta.
@@ -1773,6 +1797,63 @@ Rotina para que se compile um endereço da pasta:
   Compile o endereço da pasta (etapa final). \ #016
   Compile o endereço da pasta (interrupção). \ #017
 
+\ to define a global variable given a string:
+  \ if the compiler's abort flag is set, exit.
+  \ privatize the string.
+  \ if the string starts with "the ",
+    \ remove leading bytes from the string given 4.
+  \ trim the string.
+  \ slap a rider on the string.
+  \ scan a global given the rider.
+  \ put nil in the global's locus.
+  \ twin the global returning another global.
+  \ append the other global to the predefined globals.
+
+Rotina para que se defina uma variável global usando uma string:
+  Se existir algum problema de compilação, retorne.
+  Preserve a string.
+  Se a string começa com "O ", remova os caracteres iniciais desde a string usando 2.
+  Se a string começa com "A ", remova os caracteres iniciais desde a string usando 2.
+  Se a string começa com "Os ", remova os caracteres iniciais desde a string usando 3.
+  Se a string começa com "As ", remova os caracteres iniciais desde a string usando 3.
+  Remova os caracteres ignoráveis no final de a string.
+  Lance um percorredor sobre a string.
+  Examine uma variável global usando o percorredor.
+  Atribua inexistente no endereço local desta variável global.
+  Duplique a variável global retornando uma segunda variável global.
+  Acrescente a segunda variável global para as variáveis globais prededinidas.
+
+Rotina para que se duplique uma variável global retornando uma segunda variável global:
+  Se a variável global for inexistente, retorne.
+  Se a segunda variável global for inexistente, 
+    Aloque memória para a segunda variável global.
+  Atribua a categoria desta variável global para a categoria desta segunda variável global.
+  Atribua o nome desta variável global para o nome desta segunda variável global.
+  Atribua o nome do tipo desta variável global para o nome do tipo desta segunda variável global.
+  Atribua o corpo de variável global desta variável global para o corpo de variável global desta segunda variável global.
+
+Rotina para que se compile um endereço da pasta usando um nível de profundidade:
+  Atribua 1 ao nível de profundidade.
+  Compile o endereço da pasta (inicialização). \ #001
+  Compile o endereço da pasta (arquivos de código fonte). \ #002
+  \Compile o endereço da pasta usando o nível de profundidade (arquivos de código fonte). \ #002
+  Defina uma variável global usando "O código de retorno é um número.".
+  Compile o endereço da pasta (análise dos arquivos fornecidos). \ #003
+  Compile o endereço da pasta (identificação dos tipos das variáveis). \ #004
+  Compile o endereço da pasta (identificação de variáveis globais). \ #005
+  Compile o endereço da pasta (cabeçalhos de rotinas). \ #006
+  Compile o endereço da pasta (cálculo de tamanhos e deslocamentos). \ #007
+  Compile o endereço da pasta (adição de rotinas de memória incorporadas). \ #008
+  Compile o endereço da pasta (catalogue as rotinas por utilização). \ #009
+  Compile o endereço da pasta (conteúdo das rotinas). \ #010
+  Compile o endereço da pasta (adição e compilação da rotina de inicialização). \ #011
+  Compile o endereço da pasta (deslocamento de parâmetros e variáveis). \ #012
+  Compile o endereço da pasta (endereço). \ #013
+  Compile o endereço da pasta (transmutação). \ #014
+  Compile o endereço da pasta (vinculação). \ #015
+  Compile o endereço da pasta (etapa final). \ #016
+  Compile o endereço da pasta (interrupção). \ #017
+
 Rotina para que se compile um endereço da pasta (inicialização): \#001
   Escreva na saída padrão "Iniciando...".
   Escreva o retorno de carro para StdOut.
@@ -1781,6 +1862,16 @@ Rotina para que se compile um endereço da pasta (inicialização): \#001
   Comece o temporizador deste compilador.
   Inicialize o compilador usando o endereço da pasta.
   Adicione o tipos primitivos.
+
+Rotina para que se compile um endereço da pasta usando um nível de profundidade (arquivos de código fonte): \#002
+  Se existir algum problema de compilação, retorne.
+  Escreva na saída padrão "Carregando arquivos...".
+  Escreva o retorno de carro para StdOut.
+  Escreva a quebra de linha para StdOut.
+  Comece o temporizador de operacionalização.
+  Carregue os arquivos fontes usando o nível de profundidade.
+  Suspenda o temporizador de operacionalização.
+
 
 Rotina para que se compile um endereço da pasta (arquivos de código fonte): \#002
   Se existir algum problema de compilação, retorne.
@@ -2386,7 +2477,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
   Adicione um fragmento usando o etiqueta de interrupção.
   Mova o percorredor (usando diretrizes de compilação).
 
-Rotina para que se determine se uma string é alguma palavra-chave de devolução:
+Função para que se determine se uma string é alguma palavra-chave de devolução:
   Se a string for "retornando", diga sim.
   Se a string for "retornando", diga sim.
   Se a string for "recebendo", diga sim.
@@ -2528,7 +2619,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
   Mova o percorredor (usando diretrizes de compilação).
   Adicione um quarto fragmento usando o etiqueta delimitadora de bloco condicional.
 
-Rotina para que se determine se um subtexto é qualquer separador de comandos:
+Função para que se determine se um subtexto é qualquer separador de comandos:
   Se o subtexto for a vírgula, diga sim.
   Se o subtexto for "então", diga sim.
   [Caso contrário] 
@@ -3315,7 +3406,7 @@ O endereço pré-calculado atual é um endereço.
 
 A região de dados é um zona.
 
-Rotina para que se determine se algumas dentre umas unidades semânticas são advérbios de negação:
+Função para que se determine se algumas dentre umas unidades semânticas são advérbios de negação:
   Obtenha uma unidade semântica desde as unidades semânticas.
   Se a unidade semântica for inexistente, diga não.
   Se a string desta unidade semântica for algum advérbio de negação, diga sim.
@@ -3323,7 +3414,7 @@ Rotina para que se determine se algumas dentre umas unidades semânticas são advé
 
 Um byte ignorável é um byte.
 
-Rotina para que se determine se um byte é um byte ignorável:
+Função para que se determine se um byte é um byte ignorável:
   Se o byte for algum letra, diga sim.
   Se o byte for algum dígito, diga sim.
   Se o byte for o acento til, diga sim.
@@ -3339,7 +3430,7 @@ Rotina para que se determine se um byte é um byte ignorável:
   Se o byte for o símbolo da Libra Esterlina, diga sim.
   Diga não.
 
-Rotina para que se determine se um byte é algum sinal de pontuação:
+Função para que se determine se um byte é algum sinal de pontuação:
   Se o byte for o ponto final, diga sim.
   Se o byte for o vírgula, diga sim.
   Se o byte for o ponto&vírgula, diga sim.
@@ -3348,11 +3439,11 @@ Rotina para que se determine se um byte é algum sinal de pontuação:
   Se o byte for o ponto de interrogação, diga sim.
   Diga não.
 
-Rotina para que se determine se um byte é alguma vogal acentuada:
+Função para que se determine se um byte é alguma vogal acentuada:
   Se o byte estiver em "áãâàéèêëíîìïóõôöúùüûý", diga sim. \ na verdade a rotina apenas identifica caracteres acentuados
   Diga não.
 
-Rotina para que se determine se um byte é algum símbolo: \ deveria estar no cérebro
+Função para que se determine se um byte é algum símbolo: \ deveria estar no cérebro
   Se o byte for o acento circumflexo, diga sim.
   Se o byte for o barra vertical, diga sim.
   Se o byte for o asterisco, diga sim.
@@ -3376,22 +3467,64 @@ Rotina para que se determine se um byte é algum símbolo: \ deveria estar no cére
   Se o byte for 247, diga sim.
   Diga não.
 
-Rotina para que se determine se uma campo de estrutura está vazia;
-Rotina para que se determine se umas campo de estrutura estão vazias;
-Rotina para que se determine se uns campo de estrutura estão vazios;
-Rotina para que se determine se um campo de estrutura está vazio:
+Função para que se determine se uma campo de estrutura está vazia;
+Função para que se determine se umas campo de estrutura estão vazias;
+Função para que se determine se uns campo de estrutura estão vazios;
+Função para que se determine se um campo de estrutura está vazio:
   Se o campo deste campo de estrutura não for inexistente, diga não.
   Se a rotina de função deste campo de estrutura não for inexistente, diga não.
   Diga sim.
 
-Rotina para que se determine se uns campos deveriam ser finalizados;
-Rotina para que se determine se uns campos deveria ser finalizado:
+Função para que se determine se uns campos deveriam ser finalizados;
+Função para que se determine se uns campos deveria ser finalizado:
   Obtenha um campo desde o campos.
   Se o campo for inexistente, diga não.
   Se o tipo deste campo deveria ser finalizado, diga sim.
   Reitere.
 
-Rotina para que se determine se um item parece ser encadernável:
+Função para que se determine se uma variável global está causando conflitos: \ Jasper
+  Se o nome desta variável global não estiver no catálogo de variáveis globais, diga não.
+  Se a variável global estiver perfeitamente predefinida, diga não.
+  Diga sim.
+
+Função para que se determine se uma variável global está perfeitamente predefinida: \ Jasper
+  Itere.
+    Obtenha uma segunda variável global desde as variáveis globais prededinidas.
+    Se a segunda variável global for inexistente, diga não.
+    Se a variável for alguma cópia de a segunda variável global, diga sim.
+  Reitere.
+
+Função para que se determine se uma variável global é alguma cópia de uma segunda variável global: \ Jasper
+  Se a variável global for inexistente, diga não.
+  Se a segunda variável global for inexistente, diga não.
+  \ OK to have different loci.
+  Se a categoria desta variável global não for "global", diga não.
+  Se a categoria desta segunda variável global não for "global", diga não.
+  Se o nome desta variável global não for o nome desta segunda variável global, diga não.
+  Se o nome do tipo desta variável global não for o nome do tipo desta segunda variável global, diga não.
+  Se o corpo de variável global desta variável global não for o corpo de variável global desta segunda variável global, diga não.
+  Diga sim.
+
+Função para que se determine se um item parece ser lexical: \ Jasper
+  \Verifiqua progressivamente as porções maiores do arquivo (em bytes).
+  Se o item não parece ser lexical usando 200, diga não.
+  Se o item não parece ser lexical usando 10000, diga não.
+  Se o item não parece ser lexical usando o maior número, diga não.
+  Diga sim.
+
+Função para que se determine se um item parece ser lexical usando um tamanho: \ Jasper
+  \ O arquivo de léxico não inclui pontos.
+  \ Os arquivos de código incluem pontos.
+  Leia o endereço completo deste item em um trecho utilizando o tamanho.
+  Se o trecho contém um ".", diga não.
+  Diga sim.
+
+Função para que se determine se um trecho contém uma string;
+Função para que se determine se uma string contém uma segunda string:
+  Se a segunda string estiver na string, diga sim.
+  Diga não.
+
+Função para que se determine se um item parece ser encadernável:
   Carregue o endereço completo deste item para um trecho.
   Se o trecho começa com "ream cal", diga sim. \ ream
   Se o trecho começa com "ream SAL", diga sim. \
@@ -3399,13 +3532,13 @@ Rotina para que se determine se um item parece ser encadernável:
   Se o trecho começa com "Este documento foi produzido pelo Editor de Documentos - CEL", diga sim.
   Diga não.
 
-Rotina para que se determine se uma representação interna da rotina está em um catálogo:
+Função para que se determine se uma representação interna da rotina está em um catálogo:
   Encontre um referência usando a representação interna da rotina e o catálogo.
   Se o referência for inexistente, diga não.
   Se o ponteiro deste referência for inexistente, diga não.
   Diga sim.
 
-Rotina para que se determine se uma unidade semântica está indefinida:
+Função para que se determine se uma unidade semântica está indefinida:
   Se a unidade semântica for inexistente, diga sim.
   \Se a unidade semântica não for inexistente, diga não.\
   Se o tipo atual desta unidade semântica não for inexistente, diga não. 
@@ -3414,7 +3547,7 @@ Rotina para que se determine se uma unidade semântica está indefinida:
   \Se o subtexto atual desta unidade semântica  estiver em branco, diga sim.
   Diga sim.
 
-Rotina para que se determine se um nome é alguma palavra-chave de obtenção de tamanho de variável:
+Função para que se determine se um nome é alguma palavra-chave de obtenção de tamanho de variável:
   Se o nome for "magnitude", diga sim.  \ A "magnitude" retorna o tamanho em bytes de algo
   \Se o nome for "grandeza", diga sim.
   \Se o nome for " grandiosidade", diga sim.
@@ -3422,7 +3555,7 @@ Rotina para que se determine se um nome é alguma palavra-chave de obtenção de ta
   \ Exemplo: a magnitude duma string
   Diga não.
 
-Rotina para que se determine se um nome é algum conteúdo:
+Função para que se determine se um nome é algum conteúdo:
   Se o nome for "conteúdo", diga sim.
   \Este comando é usado apenas com ponteiros (endereços de memória).
   \ Serve pra saber para quais valores o ponteiro está apontando, ou seja, o conteúdo do ponteiro .
@@ -3430,17 +3563,17 @@ Rotina para que se determine se um nome é algum conteúdo:
   \"O conteúdo deste endereço de byte" refere-se, portanto aos dados no contidos no byte
   Diga não.
 
-Rotina para que se determine se um nome é algum endereçamento:
+Função para que se determine se um nome é algum endereçamento:
   Se o nome for "endereçamento", diga sim.  \ retorna o endereço do dado
   Diga não.
 
-Rotina para que se determine se um nome é algum nome de campo válido:
+Função para que se determine se um nome é algum nome de campo válido:
   Se o nome for alguma palavra-chave de obtenção de tamanho de variável, diga não.
   Se o nome for algum conteúdo, diga não.
   Se o nome for algum endereçamento, diga não.
   Diga sim.
 
-Rotina para que se determine se um percorredor está acompanhado por algum unidade de medida:
+Função para que se determine se um percorredor está acompanhado por algum unidade de medida:
   Preserve o percorredor.
   Mova o percorredor (usando diretrizes de compilação).
   Se o percorredor não estiver sobre algum indicador de início de variável, diga não.
@@ -3452,18 +3585,18 @@ Rotina para que se determine se um percorredor está acompanhado por algum unidad
   Se o segmento inicial deste percorredor for o início de alguma expressão matematica, diga não.
   Diga sim.
 
-Rotina para que se determine se um percorredor está sobre algum nested double-quote:
+Função para que se determine se um percorredor está sobre algum nested double-quote:
   Se o segmento final deste percorredor começa com """""", diga sim.
   Diga não.
 
-Rotina para que se determine se um percorredor está sobre algum possessivo inglês:
+Função para que se determine se um percorredor está sobre algum possessivo inglês:
   Se o segmento final deste percorredor estiver em branco, diga não.
   Se o conteúdo deste caractere inicial deste segmento final deste percorredor não for o single-quote byte, diga não. \ apóstrofo
   Se o percorredor estiver sobre algum possessivo inglês (tipo 1 - 's), diga sim.
   Se o percorredor estiver sobre algum possessivo inglês (tipo 2 - s'), diga sim.
   Diga não.
 
-Rotina para que se determine se um percorredor está sobre algum possessivo inglês (tipo 1 - 's):
+Função para que se determine se um percorredor está sobre algum possessivo inglês (tipo 1 - 's):
   Se o segmento final deste percorredor não começa com "'s", diga não.
   Preserve o percorredor.
   Adicione 2 para o caractere inicial deste segmento final deste percorredor.
@@ -3471,7 +3604,7 @@ Rotina para que se determine se um percorredor está sobre algum possessivo inglê
   Se o conteúdo deste caractere inicial deste segmento final deste percorredor não for um byte ignorável, diga sim.
   Diga não.
 
-Rotina para que se determine se um percorredor está sobre algum possessivo inglês (tipo 2 - s'):
+Função para que se determine se um percorredor está sobre algum possessivo inglês (tipo 2 - s'):
   Preserve o percorredor.
   Se o caractere inicial deste segmento final deste percorredor for o caractere inicial desta cópia da string original deste percorredor, diga não.
   Subtraia 1 desde o caractere inicial deste segmento final deste percorredor.
@@ -3481,7 +3614,7 @@ Rotina para que se determine se um percorredor está sobre algum possessivo inglê
   Se o conteúdo deste caractere inicial deste segmento final deste percorredor não for um byte ignorável, diga sim.
   Diga não.
 
-Rotina para que se determine se um percorredor está sobre algum simile:
+Função para que se determine se um percorredor está sobre algum simile:
   \ adicionado para as rotinas de grágico de tartatuga ***
   Preserve o percorredor.
   Se o segmento inicial deste percorredor for "like", diga sim.
@@ -3494,7 +3627,7 @@ Rotina para que se determine se um percorredor está sobre algum simile:
   Se o segmento inicial deste percorredor for algum artigo indefinido, diga não.
   Diga sim.
 
-Rotina para que se determine se um percorredor é o início de alguma função:
+Função para que se determine se um percorredor é o início de alguma função:
   Se existir algum problema de compilação, diga não.
   \Se o segmento inicial deste percorredor for "Ponha", diga sim.
   \Se o segmento inicial deste percorredor não for algum comando de atribuição, diga não.
@@ -3507,14 +3640,14 @@ Rotina para que se determine se um percorredor é o início de alguma função:
   Se o segmento inicial deste percorredor for algum possessivo inglês, diga sim. \TODO: REMOVER POSSESSIVOS INGLÊS
   Diga não.
 
-Rotina para que se determine se uma string deveria ser expandida usando uma segunda string (análise de termos compostos):
+Função para que se determine se uma string deveria ser expandida usando uma segunda string (análise de termos compostos):
   Se a string não for "partir", diga não.
   Se a string não for "partindo", diga não.
   \Se a string for alguma locução prepositiva, diga sim.
   Se a segunda string não for "de", diga não.
   Diga sim.
 
-Rotina para que se determine se uma string termina com alguma consoante e uma segunda string:
+Função para que se determine se uma string termina com alguma consoante e uma segunda string:
   Lance um subtexto sobre a string.
   Subtraia a quantidade de caracteres desta segunda string desde o caractere final deste subtexto.
   Se o subtexto estiver em branco, diga não.
@@ -3522,7 +3655,7 @@ Rotina para que se determine se uma string termina com alguma consoante e uma se
   Se a string não terminar com a segunda string, diga não.
   Diga sim.
 
-Rotina para que se determine se uma string termina com algum vogal e uma segunda string:
+Função para que se determine se uma string termina com algum vogal e uma segunda string:
   Lance um subtexto sobre a string.
   Subtraia a quantidade de caracteres desta segunda string desde o caractere final deste subtexto.
   Se o subtexto estiver em branco, diga não.
@@ -3530,55 +3663,55 @@ Rotina para que se determine se uma string termina com algum vogal e uma segunda
   Se a string não terminar com a segunda string, diga não.
   Diga sim.
 
-Rotina para que se determine se uma string termina com alguma vogal ou com alguma consoante:
+Função para que se determine se uma string termina com alguma vogal ou com alguma consoante:
   Se a string terminar com algum vogal, diga sim.
   Se a string terminar com alguma consoante, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string termina com alguma consoante:
+Função para que se determine se uma string termina com alguma consoante:
   Se a string estiver em branco, diga não.
   Se o conteúdo deste caractere final desta string não for alguma consoante, diga não.
   Diga sim.
 
-Rotina para que se determine se uma string termina com algum vogal:
+Função para que se determine se uma string termina com algum vogal:
   Se a string estiver em branco, diga não.
   Se o conteúdo deste caractere final desta string não for algum vogal, diga não.
   Diga sim.
 
-Rotina para que se determine se uma string é algum operador de adição:
+Função para que se determine se uma string é algum operador de adição:
   Se a string for "mais", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum comando de atribuição:
+Função para que se determine se uma string é algum comando de atribuição:
   \"Rotina para que se acrescente uma string para uma segunda string usando uma terceira string (para expandir contrações)"
   Se a string for "atribua", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum operador de subtração:
+Função para que se determine se uma string é algum operador de subtração:
   Se a string for "menos", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum operador de multiplicação:
+Função para que se determine se uma string é algum operador de multiplicação:
   Se a string for "vezes", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum operador de divisão:
+Função para que se determine se uma string é algum operador de divisão:
   Se a string for "dividido", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum objeto indireto:
+Função para que se determine se uma string é algum objeto indireto:
   Se a string for "via", diga sim. 
   Se a string for "por", diga sim. \ TODO: Testar a compatibilidade
   Diga não.
 
-Rotina para que se determine se uma string é alguma palavra de concatenação:
+Função para que se determine se uma string é alguma palavra de concatenação:
   Se a string for "com", diga sim.
   Se a string for "de", diga sim.
   Se a string for "a", diga sim.
   Se a string for "seguida", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum operador de concatenação:
+Função para que se determine se uma string é algum operador de concatenação:
   Se a string for "junto", diga sim. \ junto do/da, junto com o ...
   Se a string for "juntamente", diga sim. \ juntamente com o...
   Se a string for "seguido", diga sim. \ seguido do ....
@@ -3587,7 +3720,7 @@ Rotina para que se determine se uma string é algum operador de concatenação:
   \Se a string for "&", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum operador de atribuição de estruturas compostas:
+Função para que se determine se uma string é algum operador de atribuição de estruturas compostas:
   Se a string for "tem", diga sim.
   Se a string for "têm", diga sim.
   Se a string for "contém", diga sim.
@@ -3595,7 +3728,7 @@ Rotina para que se determine se uma string é algum operador de atribuição de est
   \Se a string for "possui", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum operador de atribuição simples:
+Função para que se determine se uma string é algum operador de atribuição simples:
   Se a string for "é", diga sim.
   Se a string for "está", diga sim.
   Se a string for "são", diga sim.
@@ -3609,21 +3742,21 @@ Rotina para que se determine se uma string é algum operador de atribuição simple
   \Se a string for "tem", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum operador de atribuição composto:
+Função para que se determine se uma string é algum operador de atribuição composto:
   Se a string for "igual", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é alguma palavra-chave de complementação:
+Função para que se determine se uma string é alguma palavra-chave de complementação:
   Se a string for "com", diga sim.
   Se a string for "contendo", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum artigo:
+Função para que se determine se uma string é algum artigo:
   Se a string for algum artigo indefinido, diga sim.
   Se a string for algum artigo definido, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é alguma conjunção:
+Função para que se determine se uma string é alguma conjunção:
   \# verificar depois o uso dos termos: "ambos", "mas" e "nenhum"
   Se a string for "e", diga sim.
   Se a string for "ou", diga sim.
@@ -3633,21 +3766,21 @@ Rotina para que se determine se uma string é alguma conjunção:
   Se a string for "nor", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum to:
+Função para que se determine se uma string é algum to:
   Se a string for "a", diga sim. \ questionável
   Se a string for "para", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum operador de continuidade:
+Função para que se determine se uma string é algum operador de continuidade:
   Se a string for "e", diga sim.
   Diga não. \repetido?
 
-Rotina para que se determine se uma string é alguma função possessiva reversa into:
+Função para que se determine se uma string é alguma função possessiva reversa into:
   Se a string for "em", diga sim.
   Se a string for "para", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum comando de deliberação literal:
+Função para que se determine se uma string é algum comando de deliberação literal:
   Se a string for "sim", diga sim.
   Se a string for "positivo", diga sim.
   Se a string for "positivamente", diga sim.
@@ -3658,25 +3791,25 @@ Rotina para que se determine se uma string é algum comando de deliberação litera
   Se a string for "no", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum decisor literal afirmativo:
+Função para que se determine se uma string é algum decisor literal afirmativo:
   Se a string for "sim", diga sim.
   Se a string for "positivo", diga sim.
   Se a string for "positivamente", diga sim.
   Se a string for "afirmativamente", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum decisor literal negativo:
+Função para que se determine se uma string é algum decisor literal negativo:
   Se a string for "não", diga sim.
   Se a string for "negativo", diga sim.
   Se a string for "negativamente", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum valor hexadecimal literal:
+Função para que se determine se uma string é algum valor hexadecimal literal:
   Se a string estiver em branco, diga não.
   Se o conteúdo deste caractere inicial desta string for o cifrão, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum artigo definido:
+Função para que se determine se uma string é algum artigo definido:
   Se a string for "o", diga sim.
   Se a string for "a", diga sim.
   Se a string for "os", diga sim.
@@ -3684,19 +3817,19 @@ Rotina para que se determine se uma string é algum artigo definido:
   Se a string for algum pronome demonstrativo adjacente, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum pronome demonstrativo:
+Função para que se determine se uma string é algum pronome demonstrativo:
   Se a string for algum pronome demonstrativo adjacente, diga sim.
   Se a string for algum pronome demonstrativo abrangente, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum pronome demonstrativo adjacente:
+Função para que se determine se uma string é algum pronome demonstrativo adjacente:
   Se a string for "este", diga sim.
   Se a string for "esta", diga sim.
   Se a string for "estes", diga sim.
   Se a string for "estas", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum pronome demonstrativo abrangente:
+Função para que se determine se uma string é algum pronome demonstrativo abrangente:
   Se a string for "esse", diga sim.
   Se a string for "essa", diga sim.
   Se a string for "aquele", diga sim.
@@ -3715,29 +3848,29 @@ Rotina para que se determine se uma string é algum pronome demonstrativo abrange
   Se a string for "determinadas", diga sim.
   Diga não.
 
-Rotina para que se determine se um percorredor está sobre algum artigo definido:
+Função para que se determine se um percorredor está sobre algum artigo definido:
   Se o percorredor estiver sobre algum preposição conectiva, diga não.
   Se o segmento inicial deste percorredor não for algum artigo definido, diga não.
   Diga sim.
 
-Rotina para que se determine se um percorredor está sobre algum artigo indefinido:
+Função para que se determine se um percorredor está sobre algum artigo indefinido:
   Se o percorredor estiver sobre algum preposição conectiva, diga não.
   Se o segmento inicial deste percorredor não for algum artigo indefinido, diga não.
   Diga sim.
 
-Rotina para que se determine se um percorredor está sobre algum preposição conectiva:
+Função para que se determine se um percorredor está sobre algum preposição conectiva:
   Se o segmento inicial deste percorredor não for "a", diga não.
   Preserve o percorredor.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor for algum artigo, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum artigo indefinido:
+Função para que se determine se uma string é algum artigo indefinido:
   Se a string for algum artigo indefinido português, diga sim.
   Se a string for algum pronome demonstrativo abrangente, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum artigo indefinido português: 
+Função para que se determine se uma string é algum artigo indefinido português: 
   \PAL
   Se a string for "um", diga sim.
   Se a string for "uma", diga sim.
@@ -3752,7 +3885,7 @@ Rotina para que se determine se uma string é algum artigo indefinido português:
   Se a string for algum pronome demonstrativo abrangente, diga sim. \ para funcionamento dos possessivos - local correto
   Diga não.
 
-Rotina para que se determine se uma string é algum valor literal:
+Função para que se determine se uma string é algum valor literal:
   Se a string for algum ponteiro literal, diga sim.
   Se a string for algum valor numérico literal, diga sim.
   Se a string for algum string literal, diga sim.
@@ -3760,12 +3893,12 @@ Rotina para que se determine se uma string é algum valor literal:
   Se a string for algum valor hexadecimal literal, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum sinal de pontuação:
+Função para que se determine se uma string é algum sinal de pontuação:
   Se a quantidade de caracteres desta string não for 1, diga não.
   Se o conteúdo deste caractere inicial desta string for algum sinal de pontuação, diga sim.
   Diga não.
 
-\Rotina para que se determine se uma string é algum unidade semântica string:
+\Função para que se determine se uma string é algum unidade semântica string:
 \Se a string estiver em branco, diga não.
 \Se a string for "the", diga não.
 \Se a string é algum artigo indefinido, diga não.
@@ -3775,7 +3908,7 @@ Rotina para que se determine se uma string é algum sinal de pontuação:
 \Se a string é algum símbolo, diga não.
 \Diga sim.
 
-Rotina para que se determine se um percorredor está sobre algum unidade semântica string:
+Função para que se determine se um percorredor está sobre algum unidade semântica string:
   Se o segmento inicial deste percorredor estiver em branco, diga não.
   Se o percorredor estiver sobre algum artigo definido, diga não.
   Se o percorredor estiver sobre algum artigo indefinido, diga não.
@@ -3786,7 +3919,7 @@ Rotina para que se determine se um percorredor está sobre algum unidade semântic
   Se o segmento inicial deste percorredor for "então", diga não.
   Diga sim.
 
-Rotina para que se determine se uma string é uma palavra-chave de designação:
+Função para que se determine se uma string é uma palavra-chave de designação:
   Se a string for "chamado", diga sim.
   Se a string for "chamados", diga sim.
   Se a string for "chamada", diga sim.
@@ -3799,11 +3932,11 @@ Rotina para que se determine se uma string é uma palavra-chave de designação:
 
 Uma palavra-chave de referenciamento é uma palavra-chave.
 
-Rotina para que se determine se uma string é uma palavra-chave de referenciamento:
+Função para que se determine se uma string é uma palavra-chave de referenciamento:
   Se a string for "(referência)", diga sim.
   Diga não.
 
-Rotina para que se determine se um percorredor está sobre algum indicador de fim de variável:
+Função para que se determine se um percorredor está sobre algum indicador de fim de variável:
   \ compare com indicador de início de variável
   Se o segmento inicial deste percorredor for algum sinal de pontuação, diga sim.
   Se o segmento inicial deste percorredor for algum símbolo, diga sim.
@@ -3823,7 +3956,7 @@ Rotina para que se determine se um percorredor está sobre algum indicador de fim
   Se o segmento inicial deste percorredor for algum advérbio de negação, diga sim.
   Diga não.
 
-Rotina para que se determine se um percorredor está sobre algum indicador de início de variável:
+Função para que se determine se um percorredor está sobre algum indicador de início de variável:
   \ compare com indicador de fim de variável
   Se o segmento inicial deste percorredor for algum sinal de pontuação, diga não.
   Se o segmento inicial deste percorredor for algum símbolo, diga não.
@@ -3841,11 +3974,11 @@ Rotina para que se determine se um percorredor está sobre algum indicador de iní
   Se o segmento inicial deste percorredor estiver em branco, diga não.
   Diga sim.
 
-Rotina para que se determine se uma string é algum advérbio de negação:
+Função para que se determine se uma string é algum advérbio de negação:
   Se a string for "não", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum operador aritmético:
+Função para que se determine se uma string é algum operador aritmético:
   Se a string for "mais", diga sim.
   Se a string for "menos", diga sim.
   Se a string for "vezes", diga sim.
@@ -3857,7 +3990,7 @@ Rotina para que se determine se uma string é algum operador aritmético:
   Se a string for "acompanhado", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é alguma pausa:
+Função para que se determine se uma string é alguma pausa:
   Se a string for "e", diga sim.
   Se a string for "ou", diga sim.
   \default
@@ -3865,7 +3998,7 @@ Rotina para que se determine se uma string é alguma pausa:
   Se a string for ";", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum ponteiro literal:
+Função para que se determine se uma string é algum ponteiro literal:
   Se a string for "nulo", diga sim.
   Se a string for "nula", diga sim.
   Se a string for "nulos", diga sim.
@@ -3877,12 +4010,12 @@ Rotina para que se determine se uma string é algum ponteiro literal:
   Se a string for "nil", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum possessivo inglês:
+Função para que se determine se uma string é algum possessivo inglês:
   Se a string for "'s", diga sim.
   Se a string for "'", diga sim.
   Diga não.
 
-Rotina para que se determine se um percorredor está sobre alguma preposição:
+Função para que se determine se um percorredor está sobre alguma preposição:
   Atribua o segmento inicial deste percorredor para um subtexto.
   Se o percorredor estiver sobre algum preposição conectiva, diga sim. \ "a" no sentido de "para"
   Se o subtexto for "a_partir_de", diga sim.
@@ -3984,7 +4117,8 @@ Rotina para que se determine se um percorredor está sobre alguma preposição:
   Se o subtexto for "semelhante", diga sim.
   Se o subtexto for "similar", diga sim.
   Se o subtexto for "em comprimento", diga sim.
-  Se o subtexto for "de_", diga sim.
+  Se o subtexto for "d'", diga sim.
+  Se o subtexto for "d'", diga sim.
   Se o subtexto for "só", diga sim.
   Se o subtexto for "somente", diga sim.
   Se o subtexto for "unicamente", diga sim.
@@ -4000,7 +4134,7 @@ Rotina para que se determine se um percorredor está sobre alguma preposição:
   Se o subtexto for "larga", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é alguma preposição:
+Função para que se determine se uma string é alguma preposição:
   Se a string for "a_partir_de", diga sim.
   Se a string for "aproximadamente", diga sim.
   Se a string for "através", diga sim.
@@ -4034,7 +4168,8 @@ Rotina para que se determine se uma string é alguma preposição:
   Se a string for "quanto", diga sim.
   Se a string for "dentro", diga sim.
   Se a string for "em comprimento", diga sim.
-  Se a string for "de_", diga sim.
+  Se a string for "d'", diga sim.
+  Se a string for "d'", diga sim.
   Se a string for "referente", diga sim.
   Se a string for "pertencente", diga sim.
   Se a string for "pertinente", diga sim.
@@ -4060,31 +4195,31 @@ Rotina para que se determine se uma string é alguma preposição:
   Se a string for "cerca", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum qualificador:
+Função para que se determine se uma string é algum qualificador:
   Se a string estiver em branco, diga não.
   Se o conteúdo deste caractere inicial desta string for o parênteses esquerdo, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum possessivo reverso:
+Função para que se determine se uma string é algum possessivo reverso:
   Se a string for "de", diga sim.
   \Se a string for "do", diga sim. \ short por "de o", expanded em "compile um termo usando um percorredor e um campo nome (possessivo reverso)"
   Diga não.
 
-Rotina para que se determine se um percorredor está sobre algum possessivo reverso:
+Função para que se determine se um percorredor está sobre algum possessivo reverso:
   Preserve o percorredor.
   Se o segmento inicial deste percorredor não for "de", diga não.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor for algum pronome demonstrativo, diga sim.
   Diga não.
 
-Rotina para que se determine se um percorredor está sobre ("de" como preposição):
+Função para que se determine se um percorredor está sobre ("de" como preposição):
   Preserve o percorredor.
   Se o segmento inicial deste percorredor não for "de", diga não.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor for algum artigo, diga sim.
   Diga não.
 
-Rotina para que se determine se um percorredor está sobre alguma locução prepositiva:
+Função para que se determine se um percorredor está sobre alguma locução prepositiva:
   Preserve o percorredor.
   Se o segmento inicial deste percorredor não for alguma locução prepositiva diga não.
   Mova o percorredor (usando diretrizes de compilação).
@@ -4095,21 +4230,21 @@ Rotina para que se determine se um percorredor está sobre alguma locução preposi
   Se o segmento inicial deste percorredor for "das", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é alguma locução prepositiva:
+Função para que se determine se uma string é alguma locução prepositiva:
   Se a string for alguma preposição, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum string literal:
+Função para que se determine se uma string é algum string literal:
   Se a string estiver em branco, diga não.
   Se o conteúdo deste caractere inicial desta string for as aspas duplas, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum símbolo:
+Função para que se determine se uma string é algum símbolo:
   Se a quantidade de caracteres desta string não for 1, diga não.
   Se o conteúdo deste caractere inicial desta string for algum símbolo, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum verbo:
+Função para que se determine se uma string é algum verbo:
   \PAL
   Se a string for "deve", diga sim.
   Se a string for "deveria", diga sim.
@@ -4172,60 +4307,58 @@ Rotina para que se determine se uma string é algum verbo:
   \\ trouble makers
   Diga não.
 
-Rotina para que se determine se uma string é o enunciado de alguma rotina ou variável:
-  Se a string for "Passos", diga sim.
-  Se a string for "Etapas", diga sim.
-  Se a string for "Rotina", diga sim.
+Função para que se determine se uma string é o enunciado de alguma rotina ou variável:
+  Se a string for syntatic sugar, diga sim.
   \default
   Se a string for algum artigo indefinido, diga sim.
   Se a string for algum artigo definido, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum comando condicional:
+Função para que se determine se uma string é algum comando condicional:
   Se a string for "se", diga sim.
   Se a string for "quando", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum comando de proteção:
+Função para que se determine se uma string é algum comando de proteção:
   Se a string for "isole", diga sim.
   Se a string for "conserve", diga sim.
   Se a string for "preserve", diga sim.
   \Se a string for "derive", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum comando de percorrimento:
+Função para que se determine se uma string é algum comando de percorrimento:
   Se a string for "percorra", diga sim.
   \Se a string for "comece", diga sim.
   Se a string for "itere", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum comando de interrupção de repetições:
+Função para que se determine se uma string é algum comando de interrupção de repetições:
   Se a string for "pare", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum comando de retorno de rotina:
+Função para que se determine se uma string é algum comando de retorno de rotina:
   Se a string for "Retorne", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum comando de repetição:
+Função para que se determine se uma string é algum comando de repetição:
   \Se a string for "recomece", diga sim.
   \Se a string for "repita", diga sim.
   Se a string for "reitere", diga sim.
   \Se a string for "reinicie", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum comando de confirmação ou negação:
+Função para que se determine se uma string é algum comando de confirmação ou negação:
   Se a string for "diga", diga sim.
   Se a string for "responda", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é algum comando de deliberação:
+Função para que se determine se uma string é algum comando de deliberação:
   Se a string for "decida", diga sim.
   Se a string for "determine", diga sim.
   Se a string for "esclareça", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é alguma chamada de biblioteca externa:
+Função para que se determine se uma string é alguma chamada de biblioteca externa:
   Se a string for "chame", diga sim.
   Se a string for "invoque", diga sim.
   \Se a string for "acione", diga sim.
@@ -4233,7 +4366,7 @@ Rotina para que se determine se uma string é alguma chamada de biblioteca extern
   \Se a string for "informe", diga sim.\ no caso de comandos como "informe os parâmetros x e y e z para a função "FunctionName" da biblioteca "MyLibrary.dll"
   Diga não.
 
-Rotina para que se determine se uma string é algum point:
+Função para que se determine se uma string é algum point:
   Se a string for "aponte", diga sim.
   Se a string for "direcione", diga sim.
   Se a string for "redirecione", diga sim.
@@ -4241,40 +4374,40 @@ Rotina para que se determine se uma string é algum point:
 
 Uma palavra-chave de reutilização de rotina é uma palavra-chave.
 
-Rotina para que se determine se uma string é uma palavra-chave de reutilização de rotina:
+Função para que se determine se uma string é uma palavra-chave de reutilização de rotina:
   \ Funcionalidade obsoleta desde a implantação da sobrecarga de cabeçalhos de rotina
   Se a string for "empregue", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é alguma palavra ignorável:
+Função para que se determine se uma string é alguma palavra ignorável:
   Se a string for "já", diga sim.
   Se a string for "ainda", diga sim.
   \Se a string for "que", diga sim.
   \Se a string for "se", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é o início de alguma expressão matematica:
+Função para que se determine se uma string é o início de alguma expressão matematica:
   Se a string for algum sinal aritmético, diga sim.
   Se a string for algum artigo indefinido, diga sim.
   Se a string for algum artigo definido, diga sim.
   Se a string for algum valor literal, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é o início de alguma variável global:
+Função para que se determine se uma string é o início de alguma variável global:
   Se a string for algum artigo definido, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é o início de alguma variável local:
+Função para que se determine se uma string é o início de alguma variável local:
   Se a string for algum artigo indefinido, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é o início de algum dado complementar:
+Função para que se determine se uma string é o início de algum dado complementar:
   \PAL
   Se a string for "com", diga sim.
   Se a string for "contendo", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é o início de alguma rotina:
+Função para que se determine se uma string é o início de alguma rotina:
   \PAL
   Se a string for "Passos", diga sim.
   Se a string for "Etapas", diga sim.
@@ -4284,7 +4417,7 @@ Rotina para que se determine se uma string é o início de alguma rotina:
   Se a string for "Função", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é syntatic sugar:
+Função para que se determine se uma string é syntatic sugar:
   \PAL
   Se a string for "Passos", diga sim.
   Se a string for "Etapas", diga sim.
@@ -4293,23 +4426,23 @@ Rotina para que se determine se uma string é syntatic sugar:
   Se a string for "Função", diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é o início de alguma declaração:
+Função para que se determine se uma string é o início de alguma declaração:
   Se a string for o enunciado de alguma rotina ou variável, diga não.
   Se a string for algum valor literal, diga não.
   Se a string for algum sinal de pontuação, diga não.
   Se a string estiver em branco, diga não.
   Diga sim.
 
-Rotina para que se determine se uma string é o início de algum tipo:
+Função para que se determine se uma string é o início de algum tipo:
   Se a string for algum artigo indefinido, diga sim.
   Diga não.
 
-Rotina para que se determine se uma string é o início de alguma variável:
+Função para que se determine se uma string é o início de alguma variável:
   Se a string for algum artigo definido, diga sim.
   \Se a string for "do", diga sim. \ this é iffy, here por reverse-possessives
   Diga não.
 
-Rotina para que se determine se uma string possui alguma vogal acentuada:
+Função para que se determine se uma string possui alguma vogal acentuada:
   Preserve a string.
   Itere.
     Se a string estiver em branco, diga não.
@@ -4317,15 +4450,15 @@ Rotina para que se determine se uma string possui alguma vogal acentuada:
     Subtraia 1 desde o caractere final desta string.
   Reitere.
 
-Rotina para que se determine se uma termo está vazia;
-Rotina para que se determine se uns termo estão vazias;
-Rotina para que se determine se uns termo estão vazios;
-Rotina para que se determine se um termo está vazio:
+Função para que se determine se uma termo está vazia;
+Função para que se determine se uns termo estão vazias;
+Função para que se determine se uns termo estão vazios;
+Função para que se determine se um termo está vazio:
   Se a variável deste termo não for inexistente, diga não.
   Se a frase deste termo não estiver em branco, diga não.
   Diga sim.
 
-Rotina para que se determine se um tipo pode ser reduzido para uma string usando o nome do tipo primitivo:
+Função para que se determine se um tipo pode ser reduzido para uma string usando o nome do tipo primitivo:
   Se o tipo for inexistente, diga não.
   Se o nome deste tipo for a string, diga sim.
   Se o sinalizador de recursividade deste tipo estiver ativo, diga não.
@@ -4340,7 +4473,7 @@ Rotina para que se determine se um tipo pode ser reduzido para uma string usando
   Desative o sinalizador de recursividade deste tipo.
   Diga não.
 
-Rotina para que se determine se um tipo pode ser reduzido para um nome do tipo:
+Função para que se determine se um tipo pode ser reduzido para um nome do tipo:
   Se o tipo for inexistente, diga não.
   Preserve o tipo.
   Itere.
@@ -4350,19 +4483,19 @@ Rotina para que se determine se um tipo pode ser reduzido para um nome do tipo:
     Atribua o tipo base deste tipo ao tipo.
   Reitere.
 
-Rotina para que se determine se um tipo é algum tipo pré-definido:
+Função para que se determine se um tipo é algum tipo pré-definido:
   Se o tipo for inexistente, diga não.
   Se o tipo for o tipo base deste tipo, diga sim.
   Diga não.
 
-Rotina para que se determine se um tipo é valor empilhável:
+Função para que se determine se um tipo é valor empilhável:
   Se o tipo for inexistente, diga não.
   Se a quantidade de caracteres deste tipo for 4, diga sim.
   Se a quantidade de caracteres deste tipo for 2, diga sim.
   Se a quantidade de caracteres deste tipo for 1, diga sim.
   Diga não.
 
-Rotina para que se determine se um tipo deveria ser finalizado: [determina se o compilador deveria liberar a memória alocada para algum tipo]
+Função para que se determine se um tipo deveria ser finalizado: [determina se o compilador deveria liberar a memória alocada para algum tipo]
   \The frase "should be finalized" means "ought to be/needs to be automatically deallocated".
   Se o tipo for inexistente, diga não.
   Se o tipo puder ser reduzido para "subtexto", diga não.\ substrings point to (parts of) real strings that get deallocated elsewhere
@@ -4371,7 +4504,7 @@ Rotina para que se determine se um tipo deveria ser finalizado: [determina se o 
   Se os campos deste tipo deveriam ser finalizados, diga sim.\ this is for strings dentro de records
   Diga não.
 
-Rotina para que se determine se um tipo deveria ser ignorado: [ou seja, o compilador não deveria finalizar esse tipo de forma automática]
+Função para que se determine se um tipo deveria ser ignorado: [ou seja, o compilador não deveria finalizar esse tipo de forma automática]
   \ ie, can be destroyed/needs a destroy routine generated for it
   \The frase "should be forgotten" means "ought to be forgotten" which really means "needs to have a destroy routine automatically generated for it".
   \See page 93 of the manual.
@@ -4389,7 +4522,7 @@ Rotina para que se determine se um tipo deveria ser ignorado: [ou seja, o compil
   Se o tipo do conteúdo deste tipo não deveria ser ignorado, diga não.\ no, because it's a pointer to something that shouldn't be destroyed. For example, a pointer to a thing
   Diga sim.\ The último condition is the hardest to wrap one's head around since it is recursive.
 
-Rotina para que se determine se uma variável está duplicada em umas variáveis:
+Função para que se determine se uma variável está duplicada em umas variáveis:
   Obtenha uma segunda variável desde as variáveis.
   Se a segunda variável for inexistente, diga não.
   Se o nome desta segunda variável estiver em branco, reitere.
@@ -4483,8 +4616,11 @@ Rotina para que se finalize o compilador:
   Destrua as rotinas.
   Destrua os valores literais.
   Destrua as variáveis globais.
+  Destrua as variáveis globais predefinidas.
   Destrua os tipos.
   Destrua os arquivos fontes.
+
+As variáveis globais predefinidas são umas variáveis globais.
 
 Rotina para que se encontre uma função usando uma string e uns funções:
   Esvazie a função.
@@ -5587,7 +5723,7 @@ Um Cabeçalho de Seção PE é uma estrutura com
 
 Uma frase é uma string.
 
-\Rotina para que se determine se uma string looks like English:
+\Função para que se determine se uma string looks like English:
 \Carregue o dicionário léxico.
 \Se o dicionário léxico for inexistente, Mostre na tela "Não foi possível encontrar o dicionário léxico."; diga não.
 \Se a string estiver em branco, diga não.
@@ -6046,26 +6182,71 @@ Rotina para que se atribua um termo para um segundo termo:
   Atribua a variável deste termo à variável deste segundo termo.
   Atribua a frase deste termo ao frase deste segundo termo.
 
-Rotina para que se carregue um arquivo fonte:
-  Se o arquivo fonte for inexistente, retorne.
-  \Carregue o endereço completo deste arquivo fonte para o trecho deste arquivo fonte.
-  Carregue o endereço completo deste arquivo fonte para uma string.
-  Se o erro do fluxo de entrada/saída não estiver em branco,
-    Apresente uma mensagem de erro contendo "Erro #133. Não foi possível carregar o arquivo: " junto com o endereço completo deste arquivo fonte seguido de ".";
-    Retorne.
-  Parse a string para o trecho deste arquivo fonte (para expandir contrações).
+
+Rotina para que se carregue uns arquivos fonte usando um nível de profundidade: \ Jasper
+  Leia os arquivos fonte usando o endereço completo deste compilador e o nível de profundidade.
+
+Rotina para que se carregue uns arquivos fonte usando um endereço da pasta e um nível de profundidade: \Jasper
+  Atribua ".pop" a uma nova extensão.
+  Anexe o caractere NULL após a nova extensão.
+  Se o nível de profundidade for menor do que 1, retorne.
+  Preserve a nível de profundidade.
+  Atribua o nível de profundidade para um segundo nível de profundidade.
+  Subtraia 1 desde o segundo nível de profundidade.
+  Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha um item desde o endereço da pasta.
+    Se o item não for encontrado, pare.
+    Se a categoria deste item for "endereço de pasta", 
+      Leia os arquivos fonte usando o endereço da pasta deste item e o segundo nível de profundidade;
+      Reitere.
+    Se a categoria deste item não for "arquivo", reitere.
+    Se a extensão deste  item não for a nova extensão, reitere.
+    Se o item parece ser encadernável, reitere.
+    Se o item parece ser lexical, reitere.
+    Adicione um arquivo fonte para os arquivos fontes usando o endereço completo deste item.
+    Carregue o arquivo fonte.
+  Reitere.
+
+\ Rotina para que se carregue uns arquivos fontes:
+  \ Atribua ".pop" a uma nova extensão.
+  \ Anexe o caractere NULL após a nova extensão.
+  \ Itere.
+    \ Se existir algum problema de compilação, retorne.
+    \ Obtenha um item desde o endereço da pasta deste compilador.
+    \ Se o item não for encontrado, pare.
+    \ Se a categoria deste item não for "arquivo", reitere.
+    \ Se a extensão deste  item não for a nova extensão, reitere.
+    \ Se o item parece ser encadernável, reitere.
+    \ Adicione um arquivo fonte para os arquivos fontes usando o endereço completo deste item.
+    \ Carregue o arquivo fonte.
+  \ Reitere.
 
 Rotina para que se carregue uns arquivos fontes:
+  Atribua ".pop" a uma nova extensão.
+  Anexe o caractere NULL após a nova extensão.
   Itere.
     Se existir algum problema de compilação, retorne.
     Obtenha um item desde o endereço da pasta deste compilador.
     Se o item não for encontrado, pare.
     Se a categoria deste item não for "arquivo", reitere.
-    Se a extensão deste item não estiver em branco, reitere.
+    Se a extensão deste  item não for a nova extensão, reitere.
     Se o item parece ser encadernável, reitere.
     Adicione um arquivo fonte para os arquivos fontes usando o endereço completo deste item.
     Carregue o arquivo fonte.
   Reitere.
+
+
+Rotina para que se carregue um arquivo fonte:
+  Se o arquivo fonte for inexistente, retorne.
+  \Carregue o endereço completo deste arquivo fonte para o trecho deste arquivo fonte.
+  Carregue o endereço completo deste arquivo fonte para uma string. \ necessário para expandir contrações.
+  Se o erro do fluxo de entrada/saída não estiver em branco,
+    Apresente uma mensagem de erro contendo "Erro #133. Não foi possível carregar o arquivo: " 
+      junto com o endereço completo deste arquivo fonte seguido de ".";
+    Retorne.
+  Parse a string para o trecho deste arquivo fonte (para expandir contrações).
+
 
 O percorredor de contrações é um percorredor.
 
@@ -7272,7 +7453,7 @@ Rotina para que se compile o cabeçalho referente para uma rotina usando um perco
 
 \ Rotina nova criada pelo Dahn para - reverse functions
 \ para atribua o xxx uv a/the yyy para zzz
-Rotina para que se determine se um percorredor é o início de alguma função possessiva reversa:
+Função para que se determine se um percorredor é o início de alguma função possessiva reversa:
   Se o sinalizador de erros deste compilador estiver ativo, diga não.
   Se o segmento inicial deste percorredor não for algum comando de atribuição, diga não.
   Preserve o percorredor.
@@ -7284,3 +7465,323 @@ Rotina para que se determine se um percorredor é o início de alguma função posse
   Diga sim.
 
 \finalmente  acabou
+
+
+\ O Código abaixo é baseado em uma implementação de Jasper Paulsen, disponível em 
+
+
+Uma quantidade é um número.
+Uma quantidade de bytes contíguos é uma quantidade.
+
+Uma array de bytes é uma estrutura com
+  Uma string e 
+  Uma quantidade de bytes contíguos.
+
+Um array de valores booleanos é uma estrutura com
+  Um array de bytes e 
+  Uma quantidade de bytes contíguos.
+
+Uma posição indexada é um número.
+
+Uma posição de índice '0' é uma posição indexada.
+Uma posição de índice '1' é uma posição indexada.
+
+Rotina para que se limpe uma posição indexada em uma array de valores booleanos:
+  Converta a posição de índice '1' para uma posição de índice '0'.
+  Divida a posição de índice '0' por 8 retornando um quociente e um resto.
+  Atribua o quociente para uma segunda posição de índice '0'.
+  Converta a segunda posição de índice '0' para uma segunda posição de índice '1'.
+  Obtenha um byte desde o array de bytes deste array de valores booleanos na segunda posição de índice '1'.
+  Atribua 2 para um número.
+  Eleve o número para o resto.
+  Atribua o número para um segundo byte.
+  Inverta o segundo byte.
+  Conjuncione logicamente o byte com o segundo byte.
+  Defina o byte no array de bytes deste array de valores booleanos na segunda posição de índice '1'.
+  Atribua a quantidade de bytes contíguos deste array de valores booleanos para uma quantidade.
+  Adicione 1 para a quantidade.
+  Se a posição de índice '1' for a quantidade, 
+    Atribua a quantidade para a quantidade de bytes contíguos deste array de valores booleanos.
+
+Rotina para que se converta uma posição de índice '1' para uma posição de índice '0':
+  Atribua a posição de índice '1' para a posição de índice '0'.
+  Subtraia 1 desde a posição de índice '0'.
+
+Rotina para que se converta uma posição de índice '0' para uma posição de índice '1':
+  Atribua a posição de índice '0' para a posição de índice '1'.
+  Adicione 1 para a posição de índice '1'.
+
+Função para que se determine se um array de bytes está vazio:
+  Se a quantidade de bytes contíguos deste array de bytes for menor do que 1, diga sim.
+  Se a string deste array de bytes for "", diga sim.
+  Diga não.
+
+Função para que se determine se um array de valores booleanos está vazio:
+  Se a quantidade de bytes contíguos deste array de valores booleanos for menor do que 1, diga sim.
+  Se a string deste array de valores booleanos for "", diga sim.
+  Diga não.
+
+Função para que se determine se uma posição de índice '1' está limpa em um array de valores booleanos:
+  Se a posição de índice '1' estiver definida no array de valores booleano, diga não.
+  Diga sim.
+  
+Função para que se determine se uma posição de índice '1' está definida em um array de valores booleanos:
+  Converta a posição de índice '1' para uma posição de índice '0'.
+  Divida a posição de índice '0' por 8 retornando um quociente e um resto.  
+  Atribua o quociente para uma segunda posição de índice '0'.
+  Converta a segunda posição de índice '0' para uma segunda posição de índice '1'.
+  Obtenha um byte desde o array de bytes deste array de valores booleanos na segunda posição de índice '1'.
+  Atribua 2 para um número.
+  Eleve o número para o resto.
+  Se o número estiver incluído bit a bit no byte, diga sim.
+  Diga não.
+
+Rotina para que se obtenha um array de bytes em uma posição de índice '1':
+  Obtenha o byte desde a string deste array de bytes na posição de índice '1'.
+
+Rotina para que se aumente o tamanho de um array de bytes até chegar em um número:
+  Se a capacidade deste array de bytes for maior do que o número, retorne.
+  Preserve o número.
+  Subtraia a capacidade deste array de bytes desde o número.
+  Preencha uma string com o byte nulo usando o número.
+  Posponha a string para a string deste array de bytes.
+
+Rotina para que se aumente o tamanho de um array de valores booleanos para um número:
+  Se a capacidade deste array de valores booleanos for maior do que o número, retorne.
+  Preserve o número.
+  \ Um byte tem 8 bits
+  Arredonde o número para o múltiplo imediato de 8.
+  Divida o número por 8.
+  Aumente o tamanho de o array de bytes deste array de valores booleanos até chegar no número.
+
+Rotina para que se atribua a capacidade dum array de bytes para um número:
+  Atribua o comprimento desta string deste array de bytes ao número.
+
+Rotina para que se atribua a capacidade dum array de valores booleanos para um número:
+  Atribua o capacidade deste array de bytes deste array de valores booleanos ao número.
+  Multiplique o número por 8.
+
+Rotina para que se defina um byte em um array de bytes em uma posição de índice '1':
+  Defina o byte na string deste byte na posição de índice '1'.
+  Atribua a quantidade de bytes contíguos para uma quantidade.
+  Adicione 1 para a quantidade.
+  Se a posição de índice '1' for igual à quantidade,
+    Atribua a quantidade para a quantidade de bytes contíguos.
+
+Rotina para que se defina um byte em uma string em uma posição de índice '1':
+  Se a posição de índice '1' for menor do que 1, retorne.
+  Se a posição de índice '1' for maior do que o comprimento desta string, retorne.
+  Atribua o caractere inicial desta string para um endereço de byte.
+  Converta a posição de índice '1' para uma posição de índice '0'.
+  Adicione a posição de índice '0' para o endereço de byte.
+  Atribua o byte para o conteúdo deste endereço de byte.
+
+Rotina para que se defina uma posição de índice '1' em um array de valores booleanos:
+  Converta a posição de índice '1' para uma posição de índice '0'.
+  Divida a posição de índice '0' por 8 retornando um quociente e um resto.
+  Atribua o quociente para uma segunda posição de índice '0'.
+  Converta a segunda posição de índice '0' para uma segunda posição de índice '1'.
+  Obtenha um byte desde o array de bytes deste array de valores booleanos na segunda posição de índice '1'.
+  Atribua 2 para um número.
+  Eleve o número para o resto.
+  Disjuncione logicamente o byte com o número.
+  Defina o byte no array de bytes deste array de valores booleanos na segunda posição de índice '1'.
+  Atribua a quantidade de bytes contíguos deste array de valores booleanos para uma quantidade.
+  Adicione 1 para a quantidade.
+  Se a posição de índice '1' for igual à quantidade,
+    Atribua a quantidade para a quantidade de bytes contíguos deste array de valores booleanos.
+
+\ to debug a flag array:
+  \ summarize the flag array returning a string (tersely).
+  \ debug the string.
+
+\ to summarize a byte array returning a string (tersely):
+  \ put the byte array's capacity in a capacity count.
+  \ put the byte array's bedrock count in a count.
+  \ if the capacity is less than the count,
+    \ put the capacity in the count.
+  \ slap a substring on the byte array's string.
+  \ put the substring's first plus the count minus 1 into the substring's last.
+  \ put the substring in another string.
+  \ convert the other string to a nibble string.
+  \ convert the nibble string to a hex string.
+  \ put the nibble string in the string.
+  \ if the string is not "", append "; " to the string.
+  \ append "valid bytes / capacity bytes = "
+    \ then the byte array's bedrock count then " / "
+    \ then the byte array's capacity to the string.
+
+\ to summarize a flag array returning a string (tersely):
+  \ put "" in the string.
+  \ put the flag array's capacity in a capacity count.
+  \ put the flag array's bedrock count in a count.
+  \ if the capacity is less than the count,
+    \ put the capacity in the count.
+  \ loop.
+    \ add 1 to a number.
+    \ if the number is greater than the count, break.
+    \ if the number is clear in the flag array, repeat.
+    \ if the string is not "", append ", " to the string.
+    \ append the number to the string.
+  \ repeat.
+  \ if the string is not "", append "; " to the string.
+  \ append "bedrock / capacity = "
+    \ then the flag array's bedrock count then " / "
+    \ then the flag array's capacity to the string.
+
+Um nível de profundidade é uns twips.
+
+\ Rotina para que se compile um endereço da pasta usando um nível de profundidade:
+  \ Limpe o endereço da pasta.
+  \ Atribua 1 ao nível de profundidade.
+  \ Atribua o endereço da pasta a um novo endereço da pasta.
+  \ Atribua o novo endereço da pasta seguido de "Biblioteca Padrão\" em um endereço completo.
+  \ Se o endereço completo estiver no sistema de arquivos,
+    \ Atribua 2 ao nível de profundidade;
+    \ Retorne.
+  
+
+\ to find a directory and a depth to compile:
+  \ clear the directory.
+  \ put 0 in the depth.
+  \ if the current tab's node is nil, exit.
+  \ if the current tab's node's source is nil, exit.
+  \ put 1 in the depth.
+  \ put the current tab's node's directory into the directory.
+  \ put the directory then "noodle\" in a path.
+  \ if the path is in the file system,
+    \ put 2 in the depth;
+    \ exit.
+  \ if the current tab's node's parent is nil, exit.
+  \ put the current tab's node's parent's directory into another directory.
+  \ put the other directory then "noodle\" in the path.
+  \ if the path is in the file system,
+    \ put the other directory into the directory;
+    \ put 2 in the depth.
+
+
+
+\ to get relevant path given a path and a string thing returning another path:
+  \ if the string thing is nil,
+    \ put the path in the other path.
+  \ put the string thing's string in a path called temp path.
+  \ if the temp path is absolute,
+    \ put the temp path in the other path; exit.
+  \ put the path then the temp path in the other path.
+
+\ to get requested leaf directory path returning a path:
+  \ if the requested leaf directory path is "",
+    \ get a string (command line);
+    \ get requested leaf directory path given the string
+      \ returning the requested leaf directory path.
+  \ put the requested leaf directory path in the path.
+
+\ to get requested paths returning some string things:
+  \ get a string (command line).
+  \ get requested paths returning the string things given the string.
+
+\ to get requested paths returning some string things given a string:
+  \ if "/files" is not important in the string, exit.
+  \ get a string called requests from the string given "/files".
+  \ parse the requests returning the string things (within an option).
+  \ unquote the string things.
+
+\ to get requested run files returning a string given a command line:
+  \ get the string from the command line given "/runfiles".
+  \ if the string is not "/files", exit.
+  \ if "/files" is not important in the command line,
+    \ put "" in the string; exit.
+  \ get the string from the command line given "/files".
+
+\ to get requested run folder returning a string given a command line:
+  \ get the string from the command line given "/runfolder".
+  \ if the string is not "/folder", exit.
+  \ if "/folder" is not important in the command line,
+    \ put "" in the string; exit.
+  \ get the string from the command line given "/folder".
+
+\ to get running option given a command line and a string returning another string:
+  \ put "" in the other string.
+  \ if the string is not important in the command line, exit.
+  \ put the string in the other string.
+  \ get a string called value from the command line given the string.
+  \ if the value is "", exit.
+  \ append "=" to the other string.
+  \ if the value does not contain " ", 
+    \ append the value to the other string; exit.
+  \ if the value is wrapped in double-quotes, 
+    \ append the value to the other string; exit.
+  \ append the double-quote byte to the other string.
+  \ append the value to the other string.
+  \ append the double-quote byte to the other string.
+
+\ to get running options given a command line returning a string:
+  \ if left was requested in the command line, 
+    \ put "/right" in the string.
+  \ if right was requested in the command line, 
+    \ put "/left" in the string.
+  \ if full was requested in the command line, 
+    \ put "/full" in the string.
+  \ if "/tt" [fixed-width] is important in the command line,
+    \ append " /tt" to the string.
+  \ if "/font" is important in the command line, 
+    \ get running option given the command line and "/font"  
+      \ returning a string called font option; 
+    \ append " " then the font option to the string.
+  \ if "/controlfont" is important in the command line, 
+    \ get running option given the command line and "/controlfont"  
+      \ returning a string called control font option; 
+    \ append " " then the control font option to the string.
+  \ if "/edfont" is important in the command line, 
+    \ get running option given the command line and "/edfont"  
+      \ returning a string called editor font option; 
+    \ append " " then the editor font option to the string.
+  \ put "" in a string called run folder.
+  \ if "/runfolder" is important in the command line,
+    \ get requested run folder returning the run folder given the command line.
+  \ if the run folder is not "",
+     \ append " /folder=" then the run folder to the string.
+  \ put "" in a string called run files.
+  \ if "/runfiles" are important in the command line,
+    \ get requested run files returning the run files given the command line.
+  \ if the run files are not "",
+     \ append " /files=" then the run files to the string.
+  \ put "" in a string called folder.
+  \ if "/folder" is important in the command line,
+    \ get the folder from the command line given "/folder".
+  \ if the folder is full and is the run folder,
+    \ append " /runfolder=/folder" to the string.
+  \ put "" in a string called files.
+  \ if "/files" are important in the command line,
+    \ get the files from the command line given "/files".
+  \ if the files are full and are the run files,
+    \ append " /runfiles=/files" to the string.
+
+\ to get a thread status of a thread handle:
+  \ clear the thread status' error flag.
+  \ put 0 in the thread status' error.
+  \ call "kernel32.dll" "GetExitCodeThread" with the thread handle
+    \ and the thread status' status' whereabouts
+    \ returning a number.
+  \ if the number is 0,
+    \ put the system's last error into the thread status' error;
+    \ set the thread status' error flag.
+
+
+\ to find a directory and a depth to compile:
+  \ clear the directory.
+  \ put 0 in the depth.
+  \ if the current tab's node is nil, exit.
+  \ if the current tab's node's source is nil, exit.
+  \ put 1 in the depth.
+  \ put the current tab's node's directory into the directory.
+  \ put the directory then "noodle\" in a path.
+  \ if the path is in the file system,
+    \ put 2 in the depth;
+    \ exit.
+  \ if the current tab's node's parent is nil, exit.
+  \ put the current tab's node's parent's directory into another directory.
+  \ put the other directory then "noodle\" in the path.
+  \ if the path is in the file system,
+    \ put the other directory into the directory;
+    \ put 2 in the depth.
