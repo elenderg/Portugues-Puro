@@ -2745,11 +2745,11 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
   Atribua o apelido deste termo ao apelido desta variável local.
   Atribua o nome do tipo deste termo ao nome do tipo desta variável local.
   Destrinche a variável local.
-  Anteponha "original " para o nome deste termo. 
-  \Acrescente " original" para o nome deste termo. 
+  \Anteponha "original " para o nome deste termo. 
+  Acrescente " original" para o nome deste termo. 
   Se o apelido deste termo não estiver em branco,
-    Anteponha "original " para o apelido deste termo.
-    \Acrescente " original" para o apelido deste termo.
+    \Anteponha "original " para o apelido deste termo.
+    Acrescente " original" para o apelido deste termo.
   Adicione fragmentos diversos usando "Atribua" e a variável deste termo e "para" e a variável local e o caractere inicial deste segmento inicial deste percorredor.
   Se o segmento inicial deste percorredor não for o ponto final,
     Apresente a mensagem de erro contendo "Erro #79. Necessário incluir um '.' ao fim do comando" e o percorredor;
@@ -4707,7 +4707,7 @@ Rotina para que se encontre uma rotina usando uma representação interna da rotin
     Se a rotina não for inexistente, pare.
     Defina o tipo de a unidade semântica.
     Se a unidade semântica estiver indefinida, pare.
-    Atribua o original representação interna da rotina ao representação interna da rotina.
+    Atribua a representação interna da rotina original para a representação interna da rotina.
   Reitere.
 
 Rotina para que se encontre uma rotina usando umas unidades semânticas:
@@ -6913,11 +6913,11 @@ Rotina para que se examine uma rotina usando um percorredor (sobrecarga de métod
   Preserve o percorredor.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for o início de alguma rotina,
-    Apresente uma mensagem de erro contendo "Erro #163. Erro de sintaxe. ';' ausente ou mal posicionado" e o original percorredor;
+    Apresente uma mensagem de erro contendo "Erro #163. Erro de sintaxe. ';' ausente ou mal posicionado" e o percorredor original;
     Retorne.
-  Atribua o caractere inicial deste segmento inicial deste original percorredor ao caractere inicial destas instruções desta rotina.
-  Atribua o caractere final deste segmento inicial deste original percorredor ao caractere final destas instruções desta rotina.
-  Mova o original percorredor (usando diretrizes de compilação).
+  Atribua o caractere inicial deste segmento inicial deste percorredor original ao caractere inicial destas instruções desta rotina.
+  Atribua o caractere final deste segmento inicial deste percorredor original ao caractere final destas instruções desta rotina.
+  Mova o percorredor original (usando diretrizes de compilação).
 
 Rotina para que se examine uma cabeçalho de rotina usando um percorredor:
   Se existir algum problema de compilação, retorne.

@@ -4708,7 +4708,7 @@ Rotina para que se cubra a parte de fora de uma caixa:
   Preserve a caixa.
   Encolha a caixa 1 pixel.
   Cubra externamente a caixa.
-  Atribua a original caixa à caixa deste contexto. \ *** original caixa ? ou indented one?
+  Atribua a caixa original à caixa deste contexto. \ *** original caixa ? ou indented one?
 
 Rotina para que se pinte uma imagem sobre um gpGraphic sob uma coordenada X e uma coordenada Y:
   Se a imagem for inexistente, retorne.
@@ -6124,7 +6124,7 @@ Rotina para que se obtenha um deslocamento vertical e um deslocamento horizontal
   \ A trigonometria racional evita o uso direto de funções transcendentes, como seno e cosseno, substituindo-as por seus equivalentes quadráticos.
   Preserve a orientação.
   Normalize a orientação.
-  Normalize a original orientação.
+  Normalize a orientação original.
   Se a orientação não for uniformemente divisível por 20,
     Estime o deslocamento vertical e o deslocamento horizontal usando a orientação;
     Retorne.
@@ -6148,7 +6148,7 @@ Rotina para que se obtenha um deslocamento vertical e um deslocamento horizontal
   Se a orientação for 3840,
     Produza o relatório de informações usando "orientação inválida";
     Produza o relatório de informações usando a orientação;
-    Produza o relatório de informações usando a original orientação.
+    Produza o relatório de informações usando a orientação original.
   \ force it ao primeiro eighth do círculo
   Obtenha o primeiro-oitavo equivalente de a orientação.
   \ encontre o primeiro eighth do círculo unsigned values
@@ -6250,29 +6250,29 @@ Rotina para que se obtenha um deslocamento vertical e um deslocamento horizontal
     Pare.  \ 45 degraus = 8/64 do caminho
   Reitere. \ não é realmente um comando de repetição, é apenas um marcador para as "breaks" aí de cima.
   \ ajuste por segunda eighths do círculo
-  Se o original orientação estiver entre 0 e 480,
+  Se o orientação original estiver entre 0 e 480,
     Inverta o sinal de o deslocamento vertical;
     Retorne. \ 1st eighth (12:00 para 1:30) -> negative
-  Se o original orientação estiver entre 480 e 960,
+  Se o orientação original estiver entre 480 e 960,
     Permute o deslocamento horizontal com o deslocamento vertical;
     Inverta o sinal de o deslocamento vertical;
     Retorne. \ 2nd eighth (1:30 para 3:00)
-  Se o original orientação estiver entre 960 e 1440,
+  Se o orientação original estiver entre 960 e 1440,
     Permute o deslocamento horizontal com o deslocamento vertical;
     Retorne. \ 3rd eighth (3:00 para 4:30)
-  Se o original orientação estiver entre 1440 e 1920, retorne. \ 4th eighth (4:30 para 6:00)
-  Se o original orientação estiver entre 1920 e 2400,
+  Se o orientação original estiver entre 1440 e 1920, retorne. \ 4th eighth (4:30 para 6:00)
+  Se o orientação original estiver entre 1920 e 2400,
     Inverta o sinal de o deslocamento horizontal;
     Retorne. \ 5th eighth (6:00 para 7:30)
-  Se o original orientação estiver entre 2400 e 2880,
+  Se o orientação original estiver entre 2400 e 2880,
     Permute o deslocamento horizontal com o deslocamento vertical;
     Inverta o sinal de o deslocamento horizontal;
     Retorne. \ 6th eighth (7:30 para 9:00)
-  Se o original orientação estiver entre 2880 e 3360,
+  Se o orientação original estiver entre 2880 e 3360,
     Permute o deslocamento horizontal com o deslocamento vertical;
     Inverta o sinal de o deslocamento horizontal; inverta o sinal de o deslocamento vertical;
     Retorne. \ 7th eighth (9:00 para 10:30)
-  Se o original orientação estiver entre 3360 e 3840,
+  Se o orientação original estiver entre 3360 e 3840,
     Inverta o sinal de o deslocamento horizontal;
     Inverta o sinal de o deslocamento vertical;
     Retorne. \ 8th eighth (10:30 para 12:00)
@@ -8713,7 +8713,7 @@ Rotina para que se converta um número para uma string:
     Se o quociente for 0, pare.
     Atribua o quociente ao número.
   Reitere.
-  Se o original número for menor do que 0, anteponha o hífem para a string.
+  Se o número original for menor do que 0, anteponha o hífem para a string.
 
 Rotina para que se atribua um número sobre o stack:
   Converta o número para um segmento inicial.
@@ -9438,11 +9438,11 @@ Rotina para que se inverta uma string:
 Rotina para que se reverta uma string:
   \ podia ser mais eficiente. Verificar se a quantidade de caracteres é menor do que 2, por exemplo.
   Preserve a string.
-  Limpe a original string.
+  Limpe a string original.
   Itere.
     Se a string estiver em branco, pare.
     Obtenha um caractere desde a string (regressivamente).
-    Acrescente o caractere para a original string.
+    Acrescente o caractere para a string original.
   Reitere.
 
 Rotina para que se inverta umas listas:
@@ -9542,9 +9542,9 @@ Rotina para que se arredonde um número usando o múltiplo imediato de um outro nú
   Divida o número pelo outro número usando um quociente e um resto.
   Divida o outro número por 2.
   Se o resto for maior do que ou igual ao outro número,
-    Arredonde o número para cima usando o múltiplo imediato de o original outro número;
+    Arredonde o número para cima usando o múltiplo imediato de o outro número original;
     Retorne.
-  Arredonde o número para baixo usando o múltiplo imediato de o original outro número.
+  Arredonde o número para baixo usando o múltiplo imediato de o outro número original.
 
 Rotina para que se arredonde para baixo um número usando o múltiplo imediato de um segundo número;
 Rotina para que se arredonde para baixo um número usando o múltiplo de um segundo número;
@@ -10368,7 +10368,7 @@ Rotina para que se subdivida um número em uma word e uma segunda word:
   Preserve o número.
   Desloque o número 16 bits para a direita.
   Atribua o número ao word.
-  Atribua o original número à segunda word.
+  Atribua o número original à segunda word.
 
 Rotina para que se subdivida as linhas de texto de uma caixa de texto em umas linhas de texto e umas linhas de texto selecionadas e umas segundas linhas de texto:
   Se a caixa de texto for inexistente,
@@ -10450,7 +10450,7 @@ Rotina para que se subdivida um word em um byte e um segundo byte:
   Preserve a word.
   Desloque a word 8 bits para a direita.
   Atribua a word ao byte.
-  Atribua o original word ao segundo byte.
+  Atribua a word original ao segundo byte.
 
 Um topo é [composto de] uns twips.
 Um left é [compostode] uns twips. \ IMPORTANTE
@@ -17633,8 +17633,9 @@ Rotina para que se converta uma string e um actual definição da fonte e um origi
     Obtenha um original largura usando o conteúdo deste caractere final deste subtexto e a larguras de fonte desta original definição da fonte.
     Atribua o original largura menos o current largura para um offset.
     Se o offset for 0,
-    Adicione 1 para o caractere final deste subtexto;
-    Adicione 1 para o current byte#; Reitere.
+      Adicione 1 para o caractere final deste subtexto;
+      Adicione 1 para o current byte#; 
+      Reitere.
     Converta o subtexto para um string pdf.
     Acrescente o string pdf seguido de " " junto com o offset seguido de " " para o trecho.
     Atribua o caractere final deste subtexto mais 1 ao caractere final deste subtexto.
