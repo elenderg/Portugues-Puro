@@ -1,7 +1,7 @@
 # Pull Request
 
 ## Descrição
-[Descreva a finalidade deste pull request de forma concisa e clara.]
+[Descreva a finalidade deste pull request de forma clara e concisa.]
 
 ## Problema Relacionado
 [Se aplicável, mencione o problema ou a tarefa relacionada que este pull request resolve.]
