@@ -1,0 +1,1218 @@
+\ Uma fração é uma proporção.
+
+\um máximo divisor comum é um número. \ greatest common denominador.
+
+Um número misto é uma estrutura com um número inteiro e uma proporção.
+
+Um fator de redução é um número.
+
+\ Uma proporção é uma estrutura com
+  \ Um numerador,
+  \ Um denominador,
+  \ Um top número sob o numerador, e
+  \ Um bottom número sob o denominador.
+
+Uma par de frações é uma estrutura com uma proporção e uma segunda proporção.
+
+Uma proporção tripla é uma estrutura com
+  Um proporção x,
+  Um proporção y, e
+  Um proporção z.
+
+Rotina para que se adicione um número para uma proporção:
+  Adicione o número / 1 para a proporção.
+
+Rotina para que se adicione o produto de um número e uma proporção para um número misto:
+  Adicione o produto de o número / 1 e a proporção para o número misto.
+
+Rotina para que se adicione o produto de uma proporção e uma segunda proporção para um número misto:
+  Multiplique a proporção pela segunda proporção (properly).
+  Divida o numerador desta proporção pelo denominador desta proporção retornando um quociente e um resto.
+  Adicione o quociente para o número inteiro deste número misto.
+  Adicione o resto / o denominador desta proporção para a proporção deste número misto.
+
+Rotina para que se adicione uma proporção para uma segunda proporção:
+  Preserve a proporção.
+  Se a proporção for addable para a segunda proporção,
+    Adicione a proporção para a segunda proporção (normal); 
+    Retorne.
+  Reduza a proporção.
+  Reduza a segunda proporção.
+  Se a proporção for addable para a segunda proporção,
+    Adicione a proporção para a segunda proporção (normal); 
+    Retorne.
+  Se a proporção for almost addable para a segunda proporção,
+    Adicione a proporção para a segunda proporção (halvsies); 
+    Retorne.
+  Se adding a proporção e a segunda proporção são will overflow numerador,
+    Adicione a proporção para a segunda proporção (mitigate numerador); 
+    Retorne.  
+  Se 1 / o denominador desta proporção e 1 / o denominador desta segunda proporção forem normalizable,
+    Adicione a proporção para a segunda proporção (arbitrary numerador); 
+    Retorne.
+  Se adding a proporção e a segunda proporção são will fit numerador numerador,
+    Adicione a proporção para a segunda proporção (arbitrary denominador); 
+    Retorne.
+  Adicione a proporção para a segunda proporção (arbitrary choice).
+
+Rotina para que se adicione uma proporção para uma segunda proporção (arbitrary choice):
+  Preserve a proporção.
+  Se a proporção não for multiplicável pela segunda proporção (primeiro numerador),
+    Permute o numerador desta proporção usando o numerador desta segunda proporção;
+    Permute o denominador desta proporção usando o denominador desta segunda proporção.
+  Se o denominador desta segunda proporção for negativo,
+    Negate o numerador desta segunda proporção;
+    Negate o denominador desta segunda proporção.
+  Se o denominador desta segunda proporção for menor do que o valor absoluto deste numerador desta segunda proporção,
+      Adicione a proporção para a segunda proporção (arbitrary numerador); 
+      Retorne.
+  Adicione a proporção para a segunda proporção (arbitrary denominador).
+
+Rotina para que se adicione uma proporção para uma segunda proporção (arbitrary denominador):
+  Atribua a proporção para uma left proporção.
+  Atribua a segunda proporção para uma right proporção.
+  Atribua o denominador da parcela para o denominador desta left proporção.
+  Atribua o denominador da parcela para o denominador desta right proporção.
+  Redimensione o numerador desta left proporção pelo denominador da parcela / o denominador desta proporção.
+  Redimensione o numerador desta right proporção pelo denominador da parcela / o denominador desta segunda proporção.
+  Adicione a left proporção para a right proporção (confidently).
+  Atribua a right proporção para a segunda proporção.
+
+Rotina para que se adicione uma proporção para uma segunda proporção (arbitrary numerador):
+  Preserve a proporção.
+  Se a proporção não for multiplicável pela segunda proporção (primeiro numerador),
+    Permute o numerador desta proporção usando o numerador desta segunda proporção;
+    Permute o denominador desta proporção usando o denominador desta segunda proporção.
+  Atribua a segunda proporção para uma right proporção.
+  Redimensione o denominador desta right proporção pelo denominador da parcela / o numerador desta segunda proporção.
+  Atribua o numerador desta segunda proporção para o numerador desta right proporção.
+  Redimensione o numerador desta right proporção pelo denominador desta right proporção / o denominador desta segunda proporção.
+  Atribua a proporção para uma left proporção.
+  Atribua o denominador desta right proporção para o denominador desta left proporção.
+  Redimensione o numerador desta left proporção
+    pelo denominador desta right proporção / o denominador desta proporção.
+  Adicione a left proporção para a right proporção (confidently).
+  Atribua a right proporção para a segunda proporção.
+
+Rotina para que se adicione uma proporção para uma segunda proporção (confidently):
+  Se a proporção é addable para a segunda proporção,
+    Adicione a proporção para a segunda proporção (normal); 
+    Retorne.
+  Adicione a proporção para a segunda proporção (halvsies).
+
+Rotina para que se adicione uma proporção para uma segunda proporção (halvsies):
+  Preserve a proporção.
+  Se o denominador desta proporção for negativo,
+    Negate o numerador desta proporção;
+    Negate o denominador desta proporção.
+  Se o denominador desta segunda proporção for negativo,
+    Negate o numerador desta segunda proporção;
+    Negate o denominador desta segunda proporção.
+  Obtenha um máximo divisor comum usando o denominador desta proporção
+    e o denominador desta segunda proporção.
+  Atribua o denominador desta proporção para um número.
+  Divida o número pelo máximo divisor comum.
+  Atribua o denominador desta segunda proporção para um segundo número.
+  Divida o segundo número pelo máximo divisor comum.
+  Multiplique o numerador desta proporção pelo segundo número.
+  Multiplique o numerador desta segunda proporção pelo número.
+  Multiplique o denominador desta segunda proporção pelo número.
+  Divida o denominador desta segunda proporção por 2 retornando um quociente e um resto.
+  Redimensione o numerador desta proporção pelo quociente / o denominador desta segunda proporção.
+  Redimensione o numerador desta segunda proporção pelo quociente / o denominador desta segunda proporção.
+  Adicione o numerador desta proporção para o numerador desta segunda proporção.
+  Atribua o quociente para o denominador desta segunda proporção.
+
+Rotina para que se adicione uma proporção para uma segunda proporção (mitigate numerador):
+  Mitigate a proporção retornando uma left proporção.
+  Se a left proporção for addable para a segunda proporção,
+    Adicione a left proporção para a segunda proporção (normal); 
+    Retorne.
+  Mitigate a segunda proporção retornando uma right proporção.
+  Se a proporção for addable para a right proporção,
+    Adicione a proporção para a right proporção (normal);
+    Atribua a right proporção para a segunda proporção;
+    Retorne.
+  Se a left proporção for addable para a right proporção,
+    Adicione a left proporção para a right proporção (normal);
+    Atribua a right proporção para a segunda proporção;
+    Retorne.
+  Atribua o denominador desta left proporção para um número denominado denominador.
+  Remova o sinal de o denominador.
+  Se o valor absoluto deste denominador desta right proporção for menor do que o denominador,
+    Atribua o denominador desta right proporção para o denominador.
+  Remova o sinal de o denominador.
+  Atribua o numerador desta proporção para o numerador desta left proporção.
+  Redimensione o numerador desta left proporção pelo denominador / o denominador desta proporção.
+  Atribua o denominador para o denominador desta left proporção.
+  Atribua o numerador desta segunda proporção para o numerador desta right proporção.
+  Redimensione o numerador desta right proporção pelo denominador / o denominador desta segunda proporção.
+  Atribua o denominador para o denominador desta right proporção.
+  Adicione a left proporção para a right proporção (confidently).
+  Atribua a right proporção para a segunda proporção.
+
+Rotina para que se adicione uma proporção para uma segunda proporção (normal):
+  Preserve a proporção.
+  Normalize a proporção e a segunda proporção.
+  Adicione o numerador desta proporção para o numerador desta segunda proporção.
+  Reduza a segunda proporção.
+
+Rotina para que se adicione uma proporção tripla para uma segunda proporção tripla:
+  Adicione o proporção x desta proporção tripla para o segunda proporção x desta proporção tripla.
+  Adicione o proporção y desta proporção tripla para o segunda proporção y desta proporção tripla.
+  Adicione o proporção z desta proporção tripla para o segunda proporção z desta proporção tripla.
+
+Rotina para que se atribua um byte e um número para uma proporção:
+  Atribua o byte para o numerador desta proporção.
+  Atribua o número para o denominador desta proporção.
+
+Um resultado fracionário é uma proporção.
+
+Rotina para que se atribua a raiz cúbica de uma proporção para um resultado fracionário;
+Rotina para que se atribua a raiz cúbica duma proporção para um resultado fracionário:
+  Se a proporção for 0 / 1, 
+    Atribua 0 / 1 para a resultado fracionário; 
+    Retorne.
+  Se a proporção for 1 / 1, 
+    Atribua 1 / 1 para a resultado fracionário; 
+    Retorne.
+  guess o result usando a proporção (raiz cúbica).
+  Atribua 0 para uma contagem.
+  Itere.
+    Se a contagem for menor ou igual a 10, 
+      Retorne.
+    Atribua o result para um previous proporção.
+    improve o result usando a proporção (raiz cúbica).
+    Se o result for o previous proporção, 
+      Retorne.
+    Adicione 1 para a contagem.
+  Reitere.
+
+Rotina para que se atribua a quinto root de uma proporção para uma resultado fracionário;
+Rotina para que se atribua a quinto root duma proporção para uma resultado fracionário:
+  Se a proporção for 0 / 1, 
+    Atribua 0 / 1 para o resultado fracionário; 
+    Retorne.
+  Se a proporção for 1 / 1, 
+    Atribua 1 / 1 para a resultado fracionário; 
+    Retorne.
+  Preserve a proporção.
+  Se a proporção for negativo, set um sinal sinalizador.
+  Remova o sinal de a proporção.
+  logify a proporção retornando um logaritmo binário.
+  Divida o logaritmo binário por 5.
+  unlogify o logaritmo binário retornando o resultado fracionário.
+  Se o sinal sinalizador estiver ativo,
+    Negate o resultado fracionário.
+
+Rotina para que se atribua a hipotenusa de uma proporção tripla para uma proporção;
+Rotina para que se atribua a hipotenusa duma proporção tripla para uma proporção:
+  Atribua a proporção tripla para uma segunda proporção tripla.
+  Multiplique o segunda proporção x desta proporção tripla pelo proporção x desta proporção tripla.
+  Multiplique o segunda proporção y desta proporção tripla pelo proporção y desta proporção tripla.
+  Multiplique o segunda proporção z desta proporção tripla pelo proporção z desta proporção tripla.
+  Adicione o segunda proporção y desta proporção tripla para o segunda proporção x desta proporção tripla.
+  Adicione o segunda proporção z desta proporção tripla para o segunda proporção y desta proporção tripla.
+  Atribua a raiz quadrada deste segunda proporção x desta proporção tripla para a proporção.  
+
+Rotina para que se atribua um número e um segundo número para uma proporção:
+  Atribua o número para o numerador desta proporção.
+  Atribua o segundo número para o denominador desta proporção.
+
+Rotina para que se atribua um número para uma proporção:
+  Atribua o número para o numerador desta proporção.
+  Atribua 1 para o denominador desta proporção.
+
+Rotina para que se atribua uma par de frações para uma segundo par de frações:
+  Atribua a proporção deste par de frações para a proporção deste segundo par de frações.
+  Atribua a segunda proporção deste par de frações para a segunda proporção deste segundo par de frações.
+
+Rotina para que se atribua a hipotenusa dum par de frações para uma proporção:
+  Se o par de frações for hypotenizable,
+    Obtenha a proporção usando o par de frações (ordinary hipotenusa);
+    Retorne.
+  Preserve o par de frações.
+  Remova o sinal de o par de frações.
+  Se a proporção deste par de frações for maior do que a segunda proporção deste par de frações,
+    Permute a proporção deste numerador desta par de frações usando a segunda proporção deste numerador desta par de frações;
+    Permute a proporção deste denominador desta par de frações usando a segunda proporção deste denominador desta par de frações.
+  Divida a proporção deste par de frações pela segunda proporção deste par de frações.
+  Atribua a proporção deste par de frações para um temp proporção.
+  Multiplique a proporção deste par de frações pelo temp proporção.
+  Adicione 1/1 para a proporção deste par de frações.
+  Atribua a proporção deste raiz quadrada deste par de frações para a proporção.
+  Multiplique a proporção pela segunda proporção deste par de frações.
+
+Rotina para que se atribua uma proporção tripla para uma segunda proporção tripla:
+  Atribua o proporção x desta proporção tripla proporção para o segunda proporção x desta proporção tripla proporção.
+  Atribua o proporção y desta proporção tripla proporção para o segunda proporção y desta proporção tripla proporção.
+  Atribua o proporção z desta proporção tripla proporção para o segunda proporção z desta proporção tripla proporção.
+
+Rotina para que se atribua o quinta potência duma proporção para uma segunda proporção:
+  Se a proporção for 0, 
+    Atribua 0 para a segunda proporção; 
+    Retorne.
+  Se a proporção for 1, 
+    Atribua 1 para a segunda proporção; 
+    Retorne.
+  Preserve a proporção.
+  Multiplique a proporção pela proporção.
+  Multiplique a proporção pela proporção.
+  Multiplique a proporção pela proporção original.
+  Atribua a proporção para a segunda proporção.
+
+Rotina para que se atribua o sétima potência duma proporção para uma segunda proporção:
+  Se a proporção for 0, 
+    Atribua 0 para a segunda proporção; 
+    Retorne.
+  Se a proporção for 1, 
+    Atribua 1 para a segunda proporção; 
+    Retorne.
+  Preserve a proporção.
+  Multiplique a proporção pela proporção.
+  Multiplique a proporção pela proporção.
+  Multiplique a proporção pela terceira potência desta proporção original.
+  Atribua a proporção para a segunda proporção.
+
+Rotina para que se atribua o sinal duma proporção para um número;
+Rotina para que se obtenha o sinal de uma proporção retornando um número:
+  Obtenha o sinal de o denominador desta proporção retornando o número.
+  Se o denominador desta proporção for 0, 
+    Atribua 1 para o número.
+  Obtenha o sinal de o numerador desta proporção retornando um segundo número.
+  Multiplique o número pelo segundo número.
+
+Rotina para que se atribua a raiz quadrada duma proporção para um resultado fracionário:
+  Se a proporção for menor ou igual a 0/1, 
+    Atribua 0/1 para o resultado fracionário; 
+    Retorne.
+  Se a proporção for 1/1, 
+    Atribua 1/1 para o resultado fracionário; 
+    Retorne.
+  Preserve a proporção.
+  Remova o sinal de o numerador desta proporção.
+  Remova o sinal de o denominador desta proporção.
+  Se a proporção for menor do que 1/1,
+    Inverta a proporção;
+    Atribua a raiz quadrada desta proporção para o resultado fracionário;
+    Inverta o resultado fracionário;
+    Retorne.
+  Atribua 1 para um número denominado cofator.
+  Se o numerador desta proporção for menor do que o maior quadrado,
+    Atribua o maior quadrado para um número;
+    Divida o número pelo numerador desta proporção;
+    Atribua a raiz quadrada deste número para o cofator;
+    Multiplique o cofator pelo cofator.
+  Multiplique o numerador desta proporção pelo cofator.
+  Multiplique o denominador desta proporção pelo cofator.
+  Atribua a raiz quadrada deste denominador desta proporção para o denominador desta resultado fracionário.
+  Atribua o denominador desta resultado fracionário para um número denominado quadrado menor.
+  Multiplique o quadrado menor pelo quadrado menor.
+  Redimensione o numerador desta proporção pelo quadrado menor / o denominador desta proporção.
+  Atribua o quadrado menor para o denominador desta proporção.
+  Atribua a raiz quadrada deste numerador desta proporção para o numerador deste resultado fracionário.
+  Atribua o numerador deste resultado fracionário para um número denominado primeiro quadrado.
+  Multiplique o primeiro quadrado pelo primeiro quadrado.
+  Atribua o numerador desta proporção para um número alvo.
+  Atribua o número alvo para um número denominado número residual.
+  Subtraia o primeiro quadrado desde o número residual. \ é uma estrutura com units of 1 / quadrado menor.
+  Se o número residual for 0,
+    Reduza o resultado fracionário;
+    Retorne.
+  Multiplique o denominador desta resultado fracionário pelo numerador desta resultado fracionário.
+  Multiplique o numerador desta resultado fracionário pelo numerador desta resultado fracionário.
+  Atribua o número residual para um segundo número.
+  Divida o segundo número por 2.
+  Adicione o segundo número para o numerador desta resultado fracionário.
+  Reduza o resultado fracionário.
+
+Rotina para que se atribua a terceira potência duma proporção para uma segunda proporção:
+  Se a proporção for 0, 
+    Atribua 0 para a segunda proporção; 
+    Retorne.
+  Se a proporção for 1, 
+    Atribua 1 para a segunda proporção; 
+    Retorne.
+  Preserve a proporção.
+  Multiplique a proporção pela proporção.
+  Multiplique a proporção pela proporção original.
+  Atribua a proporção para a segunda proporção.
+
+\Rotina para que se atribua o valor absoluto duma proporção para uma segunda proporção:
+\  Atribua a proporção para a segunda proporção.
+\  Remova o sinal de a segunda proporção.
+
+Rotina para que se average uma proporção e uma segunda proporção retornando um mean proporção:
+  Atribua a proporção para o mean proporção.
+  Adicione a segunda proporção para o mean proporção.
+  Redimensione o mean proporção por 1/2.
+
+Rotina para que se average uma proporção e uma segunda proporção retornando um mean proporção (geometric mean):
+  Atribua a proporção para um produto proporção.
+  Multiplique o produto pela segunda proporção.
+  Atribua a raiz quadrada deste produto para o mean proporção.
+
+Rotina para que se avoid excessive overflow usando uma proporção e uma segunda proporção (during multiplication):
+  \ Assumes that both ratios bave been de-signed.
+  \ Assumes that a proporção's values are as small as practical,
+  \ e a segunda proporção's values are as large as practical,
+  \ both before e after o routine.
+  \ Makes sure that neither o numerador nor o denominador
+  \ overflows por maior do que 2^30.
+  Obtenha um numerador sinalizador usando o numerador desta proporção e o numerador desta segunda proporção (overflow sinalizador).
+  Obtenha um denominador sinalizador usando o denominador desta proporção e o denominador desta segunda proporção (overflow sinalizador).
+  Se o numerador sinalizador e o denominador sinalizador estiverem both clear, retorne.
+  Atribua o numerador desta segunda proporção para um temp número.
+  Divida o numerador desta segunda proporção por 2.
+  Redimensione o denominador desta segunda proporção pelo numerador desta segunda proporção / o temp número.
+  Reduza e sort a proporção e a segunda proporção (during multiplication).
+
+Função para que se determine se um sinalizador e um segundo sinalizador estão both clear;
+Função para que se determine se um sinalizador e um segundo sinalizador estão limpos:
+  Se o sinalizador estiver ativo, diga não.
+  Se o segundo sinalizador estiver ativo, diga não.
+  Diga sim.
+
+Função para que se determine se um sinalizador e um segundo sinalizador estão both set;
+Função para que se determine se um sinalizador e um segundo sinalizador estão ativos:
+  Se o sinalizador não estiver ativo, diga não.
+  Se o segundo sinalizador não estiver ativo, diga não.
+  Diga sim.
+
+Rotina para que se limpe uma proporção:
+  Atribua 0 e 1 para a proporção.
+
+Um conjunto resultante é um conjunto misto.
+
+Rotina para que se converta um logaritmo binário para um conjunto resultante:
+  Converta o logaritmo binário para um premix.
+  Converta o premix para o conjunto resultante.
+
+\ Rotina para que se converta um fração para uma proporção;
+\ Rotina para que se converta uma proporção para um fração;
+\ Rotina para que se atribua uma proporção para um fração;
+\ Rotina para que se atribua um fração para uma proporção;
+\ Rotina para que se atribua um fração para um segundo fração;
+\ Rotina para que se atribua uma proporção para uma segunda proporção:
+  \ Atribua o numerador desta proporção para o numerador desta segunda proporção.
+  \ Atribua o denominador desta proporção para o denominador desta segunda proporção.
+
+Rotina para que se converta um número misto para uma proporção:
+  Atribua a proporção deste número misto para a proporção.
+  Adicione o número inteiro deste número misto vezes o denominador desta proporção para o numerador desta proporção.
+
+Rotina para que se converta uma proporção para um número misto:
+  Se o denominador desta proporção for igual a 0,
+    Atribua 0 para o número inteiro deste número misto; 
+    Atribua 0 para a proporção deste número misto; 
+    Retorne.
+  Divida o numerador desta proporção pelo denominador desta proporção retornando o número inteiro deste número misto e um resto.
+  Atribua o resto e o denominador desta proporção para a proporção deste número misto.
+
+\Rotina para que se converta uma par de frações para uma string:
+\  Atribua a proporção deste par de frações junto com " e "
+\    junto com a segunda proporção deste par de frações para a string.
+
+
+Rotina para que se converta uma proporção tripla para uma string:
+  Atribua o proporção x desta proporção tripla junto com " x;" junto
+       com o proporção y desta proporção tripla junto com " y; " junto 
+       com o proporção z desta proporção tripla junto com " z" para a string.
+
+\Rotina para que se eleve uma proporção para o cubo:
+\  Atribua a terceira potência desta proporção para uma segunda proporção.
+\  Atribua a segunda proporção para a proporção.
+
+Rotina para que se remova o sinal de uma proporção:
+  Remova o sinal de o numerador desta proporção.
+  Remova o sinal de o denominador desta proporção.
+
+Rotina para que se remova o sinal de uma par de frações:
+  Remova o sinal de a proporção deste par de frações.
+  Remova o sinal de a segunda proporção deste par de frações.
+
+Rotina para que se produza o relatório de informações usando uma proporção e uma segunda proporção:
+   Limpe uma string.
+   Anteponha "left numerador=" para a string.
+   Anteponha o numerador desta proporção para a string.
+   Anteponha ", denominador=" para a string.
+   Anteponha o denominador desta proporção para a string.
+   Anteponha "; right numerador=" para a string.
+   Anteponha o numerador desta segunda proporção para a string.
+   Anteponha ", denominador=" para a string.
+   Anteponha o denominador desta segunda proporção para a string.
+   Produza o relatório de informações usando a string.
+
+Rotina para que se produza o relatório de informações usando uma proporção tripla:
+  Produza o relatório de informações usando o proporção x desta proporção tripla junto com " x; "
+    junto com o proporção y desta proporção tripla junto com " y; "
+    junto com o proporção z desta proporção tripla.
+
+Função para que se determine se adding uma proporção e uma segunda proporção são will fit numerador numerador:
+  Obtenha um máximo divisor comum usando o denominador desta proporção e o denominador desta segunda proporção.
+  Atribua o denominador desta proporção para um número.
+  Atribua o denominador desta segunda proporção para um segundo número.
+  Divida o número pelo máximo divisor comum.
+  Divida o segundo número pelo máximo divisor comum.
+  Se o numerador desta proporção e o segundo número não forem multiplicáveis, diga não.
+  Se o numerador desta segunda proporção e o número não forem multiplicáveis, diga não.
+  Diga sim.  
+
+Função para que se determine se adding uma proporção e uma segunda proporção são will overflow numerador:
+  Obtenha um máximo divisor comum usando o denominador desta proporção e o denominador desta segunda proporção.
+  Atribua o denominador desta proporção para um número.
+  Atribua o denominador desta segunda proporção para um segundo número.
+  Divida o número pelo máximo divisor comum.
+  Divida o segundo número pelo máximo divisor comum.
+  Se o numerador desta proporção e o segundo número são multiplicáveis, diga não.
+  Se o numerador desta segunda proporção e o número são multiplicáveis, diga não.
+  Diga sim.  
+
+\ Função para que se determine se um número misto é um número:
+  \ Converta o número misto para uma proporção.
+  \ Se a proporção for o número, diga sim.
+  \ Diga não.
+
+Função para que se determine se um número e um segundo número são multiplicáveis;
+Função para que se determine se um número é multiplicável por um segundo número:
+  Preserve o número.
+  Preserve o segundo número.
+  Remova o sinal de o número.
+  Remova o sinal de o segundo número.
+  Atribua o maior número para um threshold número.
+  Divida o threshold pelo número.
+  Se o threshold for menor ou igual a o segundo número, diga sim.
+  Diga não.
+
+Função para que se determine se um número é addable para um segundo número;
+Função para que se determine se um número e um segundo número são addable:
+  Preserve o segundo número.
+  Se o número e o segundo número não forem similarly signed, diga sim.
+  Se o número for 0, diga sim.
+  Se o número for positivo,
+    Atribua o maior número para um threshold número;
+    Subtraia o número desde o threshold número.
+  Se o número for negativo,
+    Atribua o menor número para o threshold número;
+    Subtraia o segundo número desde o threshold número;
+    Remova o sinal de o threshold número;
+    Remova o sinal de o segundo número.
+  Se o threshold número for menor ou igual ao segundo número, diga sim.
+  Diga não.
+
+Função para que se determine se um número é positivo:
+  Se o número for maior do que 0, diga sim.
+  Diga não.
+
+Função para que se determine se uma proporção e uma segunda proporção são multiplicáveis:
+  Preserve a proporção.
+  Preserve a segunda proporção.
+  Remova o sinal de a proporção.
+  Remova o sinal de a segunda proporção.
+  Se o numerador desta proporção não for multiplicável pelo numerador desta segunda proporção, diga não.
+  Se o denominador desta proporção não for multiplicável pelo denominador desta segunda proporção, diga não.
+  Diga sim.
+
+Função para que se determine se uma proporção e uma segunda proporção são normalizable:
+  Preserve a proporção.
+  Preserve a segunda proporção.
+  Remova o sinal de a proporção.
+  Remova o sinal de a segunda proporção.
+  Obtenha um máximo divisor comum usando o denominador desta proporção e o denominador desta segunda proporção.
+  Divida o denominador desta proporção pelo máximo divisor comum.
+  Se o denominador desta proporção não for multiplicável pelo denominador desta segunda proporção, diga não.
+  Se o denominador desta proporção não for multiplicável pelo numerador desta segunda proporção, diga não.
+  Divida o denominador desta segunda proporção pelo máximo divisor comum.
+  Se o numerador desta proporção não for multiplicável pelo denominador desta segunda proporção, diga não.
+  Diga sim.
+
+Função para que se determine se uma proporção e uma segunda proporção estão ready (para finish multiplication):
+  Se o numerador desta proporção for 0, diga sim.
+  Se o denominador desta proporção for 0, diga sim.
+  Se o numerador desta segunda proporção for 0, diga sim.
+  Se o denominador desta segunda proporção for 0, diga sim.
+  Se a proporção e a segunda proporção são multiplicáveis, diga sim.
+  Diga não.
+
+Função para que se determine se uma proporção é addable para uma segunda proporção:
+  Preserve a proporção.
+  Preserve a segunda proporção.
+  Se o denominador desta proporção for negativo,
+    Negate o numerador desta proporção;
+    Negate o denominador desta proporção.
+  Se o denominador desta segunda proporção for negativo,
+    Negate o numerador desta segunda proporção;
+    Negate o denominador desta segunda proporção.
+  Obtenha um máximo divisor comum usando o denominador desta proporção e o denominador desta segunda proporção.
+  Divida o denominador desta proporção pelo máximo divisor comum.
+  Se o denominador desta proporção não for multiplicável pelo denominador desta segunda proporção, diga não.
+  Se o denominador desta proporção não for multiplicável pelo numerador desta segunda proporção, diga não.
+  Divida o denominador desta segunda proporção pelo máximo divisor comum.
+  Se o numerador desta proporção não for multiplicável pelo denominador desta segunda proporção, diga não.
+  Se o denominador desta proporção for 0, diga não.
+  Se o denominador desta segunda proporção for 0, diga não.
+  Se o numerador desta proporção for 0, diga sim.
+  Se o numerador desta segunda proporção for 0, diga sim.
+  Se o numerador desta proporção e o numerador desta segunda proporção não forem similarly signed, diga sim.
+  Remova o sinal de o numerador desta proporção.
+  Remova o sinal de o numerador desta segunda proporção.
+  Multiplique o numerador desta proporção pelo denominador desta segunda proporção.
+  Multiplique o numerador desta segunda proporção pelo denominador desta proporção.
+  Se o numerador desta proporção e o numerador desta segunda proporção forem addable, diga sim.
+  Diga não.
+
+Função para que se determine se um número e um segundo número são similarly signed:
+  Obtenha o sinal de o número retornando um número denominado primeiro sinal.
+  Obtenha o sinal de o segundo número retornando um número denominado segundo sinal.
+  Se o primeiro sinal for igual ao segundo sinal, diga sim.
+  Diga não.
+
+Função para que se determine se uma proporção é almost addable para uma segunda proporção:
+  Preserve a proporção.
+  Preserve a segunda proporção.
+  Se o denominador desta proporção for negativo,
+    Negate o numerador desta proporção;
+    Negate o denominador desta proporção.
+  Se o denominador desta segunda proporção for negativo,
+    Negate o numerador desta segunda proporção;
+    Negate o denominador desta segunda proporção.
+  Obtenha um máximo divisor comum usando o denominador desta proporção e o denominador desta segunda proporção.
+  Divida o denominador desta proporção pelo máximo divisor comum.
+  Se o denominador desta proporção não for multiplicável pelo denominador desta segunda proporção, diga não.
+  Se o denominador desta proporção não for multiplicável pelo numerador desta segunda proporção, diga não.
+  Divida o denominador desta segunda proporção pelo máximo divisor comum.
+  Se o numerador desta proporção não for multiplicável pelo denominador desta segunda proporção, diga não.
+  Diga sim.
+
+Função para que se determine se uma proporção é uma segunda proporção:
+  Preserve a proporção.
+  Preserve a segunda proporção.
+  Reduza a proporção.
+  Reduza a segunda proporção.
+  Se o numerador desta proporção não for o numerador desta segunda proporção, diga não.
+  Se o denominador desta proporção não for o denominador desta segunda proporção, diga não.
+  Diga sim.
+
+Função para que se determine se uma proporção é menor ou igual para uma segunda proporção:
+  Se a proporção for menor do que a segunda proporção, diga não.
+  Diga sim.
+
+Função para que se determine se uma proporção é menor ou igual para uma segunda proporção (normal):
+  Se a proporção e a segunda proporção não forem normalizable, diga não.
+  Preserve a proporção.
+  Preserve a segunda proporção.
+  Se o denominador desta proporção for negativo,
+    Negate o numerador desta proporção;
+    Negate o denominador desta proporção.
+  Se o denominador desta segunda proporção for negativo,
+    Negate o numerador desta segunda proporção;
+    Negate o denominador desta segunda proporção.
+  Normalize a proporção e a segunda proporção.
+  Se o numerador desta proporção for menor do que o numerador desta segunda proporção, diga não.
+  Diga sim.
+
+\ Função para que se determine se uma proporção é menor ou igual para uma segunda proporção:
+  \ Se a segunda proporção for menor do que a proporção, diga não.
+  \ Diga sim.
+
+Função para que se determine se uma proporção é maior do que uma segunda proporção:
+  Se a segunda proporção for menor do que a proporção, diga sim.
+  Diga não.
+
+Função para que se determine se uma proporção é menor do que uma segunda proporção:
+  Preserve a proporção.
+  Preserve a segunda proporção.
+  Se a proporção for menor do que a segunda proporção (normal),
+    Diga sim.
+  Se a proporção for menor ou igual a a segunda proporção (normal),
+    Diga não.
+  Se o denominador desta proporção for negativo,
+    Negate o numerador desta proporção;
+    Negate o denominador desta proporção.
+  Se o denominador desta segunda proporção for negativo,
+    Negate o numerador desta segunda proporção;
+    Negate o denominador desta segunda proporção.
+  Se o numerador desta proporção for negativo,
+    Negate o numerador desta proporção;
+    Negate o numerador desta segunda proporção;
+    Permute o numerador desta proporção usando o numerador desta segunda proporção;
+    Permute o denominador desta proporção usando o denominador desta segunda proporção.
+  Se o numerador desta proporção for negativo, diga sim.
+  Se o numerador desta segunda proporção for negativo, diga não.
+  Se o numerador desta segunda proporção for 0, diga não.
+  Se o numerador desta proporção for 0, diga sim.
+  Reduza a proporção.
+  Reduza a segunda proporção.
+  Obtenha um máximo divisor comum usando o denominador desta proporção e o denominador desta segunda proporção.
+  Divida o denominador desta proporção pelo máximo divisor comum.
+  Divida o denominador desta segunda proporção pelo máximo divisor comum.
+  Obtenha um máximo divisor comum denominado MDC usando o numerador desta proporção e o numerador desta segunda proporção.
+  Divida o numerador desta proporção pelo MDC.
+  Divida o numerador desta segunda proporção pelo MDC.
+  Se a proporção for menor do que a segunda proporção (normal), diga sim.
+  Se a proporção for menor ou igual à segunda proporção (normal), diga não.
+  Obtenha um número usando o numerador desta proporção e o denominador desta segunda proporção (fator de sobrefluxo).
+  Obtenha um segundo número usando o numerador desta segunda proporção e o denominador desta proporção (fator de sobrefluxo).
+  Se o número for menor do que o segundo número, diga sim.
+  Se o número for maior do que o segundo número, diga não.
+  Se o número for 1,
+    Multiplique o numerador desta proporção pelo denominador desta segunda proporção;
+    Multiplique o numerador desta segunda proporção pelo denominador desta proporção;
+    Atribua 1 para o denominador desta proporção;
+    Atribua 1 para o denominador desta segunda proporção.
+  Se a proporção for menor do que a segunda proporção (normal), diga sim.
+  Se a proporção for menor ou igual a a segunda proporção (normal), diga não.
+  Redimensione o numerador desta proporção por 1 / o número.
+  Redimensione o numerador desta segunda proporção por 1 / o número.
+  Reduza a proporção.
+  Reduza a segunda proporção.
+  Multiplique o numerador desta proporção pelo denominador desta segunda proporção.
+  Multiplique o numerador desta segunda proporção pelo denominador desta proporção.
+  Atribua 1 para o denominador desta proporção.
+  Atribua 1 para o denominador desta segunda proporção.
+  Se a proporção for menor do que a segunda proporção (normal), diga sim.
+  Se a proporção for menor ou igual a a segunda proporção (normal), diga não.
+  Diga não.
+
+Função para que se determine se uma proporção é menor do que uma segunda proporção (normal):
+  Se a proporção e a segunda proporção não forem normalizable, diga não.
+  Preserve a proporção.
+  Preserve a segunda proporção.
+  Se o denominador desta proporção for negativo,
+    Negate o numerador desta proporção;
+    Negate o denominador desta proporção.
+  Se o denominador desta segunda proporção for negativo,
+    Negate o numerador desta segunda proporção;
+    Negate o denominador desta segunda proporção.
+  Normalize a proporção e a segunda proporção.
+  Se o numerador desta proporção for menor do que o numerador desta segunda proporção, diga sim.
+  Diga não.
+
+Função para que se determine se uma proporção é multiplicável por uma segunda proporção (primeiro numerador):
+  Obtenha um máximo divisor comum usando o denominador desta proporção e o denominador desta segunda proporção.
+  Atribua o denominador desta segunda proporção para um número.
+  Divida o número pelo máximo divisor comum.
+  Se o numerador desta proporção for multiplicável pelo número, diga sim.
+  Diga não.
+
+Função para que se determine se uma proporção é negative:
+  Se o numerador desta proporção for menor do que 0, 
+    Inverta um sinalizador.
+  Se o denominador desta proporção for menor do que 0, 
+    Inverta o sinalizador.
+  Diga o sinalizador.
+
+Função para que se determine se uma proporção é um número:
+  Se a proporção for o número / 1, diga sim.
+  Diga não.
+
+Função para que se determine se uma proporção é positive:
+  Preserve a proporção.
+  Remova o sinal de a proporção.
+  Se o denominador desta proporção for 0, diga não.
+  Se o numerador desta proporção for positivo, diga sim.
+  Diga não.
+
+Função para que se determine se uma par de frações é hypotenizable:
+  Preserve o par de frações.
+  Remova o sinal de o par de frações.
+  Divida a proporção deste numerador desta par de frações pela proporção deste denominador desta par de frações.
+  Se a proporção deste numerador desta par de frações for menor ou igual à maior raiz quadrada, diga não.
+  Divida a segunda proporção deste numerador desta par de frações pela segunda proporção deste denominador desta par de frações.
+  Se a segunda proporção deste numerador desta par de frações for menor ou igual a o maior raiz quadrada, diga não.
+  Adicione 1 para a proporção deste numerador desta par de frações.
+  Adicione 1 para a segunda proporção deste numerador desta par de frações.
+  Square a proporção deste numerador desta par de frações.
+  Square a segunda proporção deste numerador desta par de frações.
+  Se a proporção deste numerador desta par de frações for addable para a segunda proporção deste numerador desta par de frações, diga sim.
+  Diga não.
+
+Rotina para que se divida um número por um segundo número retornando uma proporção:
+  Atribua o número e o segundo número para a proporção.
+  Reduza a proporção.
+
+Rotina para que se divida um número por uma proporção:
+  Preserve a proporção.
+  Flip a proporção.
+  Multiplique o número pela proporção.
+
+Rotina para que se divida uma proporção por uma segunda proporção:
+  Preserve a segunda proporção.
+  Flip a segunda proporção.
+  Multiplique a proporção pela segunda proporção.
+
+Rotina para que se divida uma proporção por uma segunda proporção retornando um quociente e um resto proporção:
+  Atribua a proporção para um terceiro proporção.
+  Divida o terceiro proporção pela segunda proporção.
+  Converta o terceiro proporção para um número misto.
+  Atribua o número inteiro deste número misto para o quociente.
+  Preserve a segunda proporção.
+  Redimensione a segunda proporção pelo quociente / 1.
+  Atribua a proporção para o resto proporção.
+  Subtraia a segunda proporção desde o resto proporção.
+
+Rotina para que se divida uma proporção por um número:
+  Multiplique a proporção por 1 / o número.
+  Reduza a proporção.
+
+Rotina para que se find a hipotenusa de uma proporção e uma segunda proporção retornando um resultado fracionário:
+  Defina uma par de frações usando a proporção e a segunda proporção.
+  Atribua a hipotenusa deste par de frações para o resultado fracionário.
+
+Rotina para que se obtenha um sinalizador usando um número e um segundo número (overflow sinalizador):
+  \ Se um fator de sobrefluxo would overflow, set o sinalizador.
+  Obtenha um terceiro número usando o número e o segundo número (fator de sobrefluxo).
+  Se o terceiro número for maior do que 1073741824 [$40000000],
+    Ative o sinalizador; 
+    Retorne.
+  Limpe o sinalizador.
+
+Rotina para que se obtenha o sinal de um número  retornando um segundo número;
+Rotina para que se atribua o sinal dum número para um segundo número:
+  Se o número for maior do que 0, 
+    Atribua 1 para o segundo número;
+    Retorne.
+  Se o número for menor do que 0,
+    Atribua -1 para o segundo número;
+    Retorne.
+  Atribua 0 para o segundo número.
+
+Rotina para que se obtenha um número denominado numerador overflow e um número denominado denominador overflow usando uma proporção e uma segunda proporção (fator de sobrefluxos):
+  Obtenha o numerador overflow usando o numerador desta proporção e o numerador desta segunda proporção (fator de sobrefluxo).
+  Obtenha o denominador overflow usando o denominador desta proporção e o denominador desta segunda proporção (fator de sobrefluxo).
+  Arredonde o numerador overflow para cima usando a potência imediata de dois.
+  Arredonde o denominador overflow para cima usando a potência imediata de dois.
+
+Rotina para que se obtenha uma proporção usando uma par de frações (ordinary hipotenusa):
+  \ In mathematics, this "hipotenusa" (desde o origin para o par de frações's location) é denominado um "magnitude".
+  \ But para o Plain English programming language, um magnitude é o número of bytes para um record.
+  Preserve o par de frações.
+  Multiplique a proporção deste par de frações pela proporção deste par de frações.
+  Multiplique a segunda proporção deste par de frações pela segunda proporção deste par de frações.
+  Adicione a segunda proporção deste par de frações para a proporção deste par de frações.
+  Atribua a proporção deste raiz quadrada deste par de frações para a proporção.
+
+Rotina para que se obtenha uma proporção usando uma proporção tripla e uma segunda proporção tripla:
+  \ computes o dot produto.
+  Preserve a proporção tripla.
+  Redimensione o proporção x desta proporção tripla pelo segunda proporção x desta proporção tripla.
+  Redimensione o proporção y desta proporção tripla pelo segunda proporção y desta proporção tripla.
+  Redimensione o proporção z desta proporção tripla pelo segunda proporção z desta proporção tripla.
+  Atribua o proporção x desta proporção tripla para a proporção.
+  Adicione o proporção y desta proporção tripla para a proporção.
+  Adicione o proporção z desta proporção tripla para a proporção.
+
+Rotina para que se obtenha uma proporção tripla usando uns radianos e uns segundo radianos e um terceiro proporção:
+  Converta os radianos para o proporção x desta proporção tripla proporção.
+  Converta o segundo radianos para o proporção y desta proporção tripla proporção.
+  Atribua o terceiro proporção para o proporção z desta proporção tripla proporção.
+
+Rotina para que se obtenha um result número usando um número e um segundo número (fator de sobrefluxo):
+  Preserve o número.
+  Preserve o segundo número.
+  Remova o sinal de o número.
+  Remova o sinal de o segundo número.
+  Atribua o maior número para um threshold número.
+  Divida o threshold pelo número.
+  Divida o segundo número pelo threshold retornando um quociente e um número denominado resto.
+  Atribua o quociente para o result.
+  Se o resto for maior do que 0, 
+    Adicione 1 para o result.
+
+
+Rotina para que se obtenha um resultado fracionário por elevar e para um exponent proporção:
+  Converta o exponent proporção para um logaritmo binário.
+  Multiplique o logaritmo binário pelo rebase mantissa.
+  unlogify o logaritmo binário retornando o resultado fracionário.
+
+Rotina para que se obtenha um fator de redução usando um número e um número denominado fator de sobrefluxo:
+  Atribua 1 para o fator de redução.
+  Se o número for maior do que a maior raiz quadrada,
+    Atribua o número para o fator de redução;
+    Divida o fator de redução pela maior raiz quadrada;
+    Arredonde o fator de redução para cima usando a potência imediata de dois.
+  Se o fator de redução for maior do que o fator de sobrefluxo,
+    Atribua o fator de sobrefluxo para o fator de redução.
+
+O maior quadrado é um número igual a 2147395600. \ 46,340 * 46,340
+A maior raiz quadrada é um número igual a 46340.
+
+
+
+Rotina para que se improve um resultado fracionário usando uma proporção (raiz cúbica):
+  Atribua o resultado fracionário para um temp proporção.
+  Multiplique o temp pelo resultado fracionário.
+  Preserve a proporção.
+  Divida a proporção pelo temp.
+  Multiplique o resultado fracionário por 2.
+  Adicione a proporção para o resultado fracionário.
+  Divida o resultado fracionário por 3.
+  Reduza o resultado fracionário.
+
+Rotina para que se guess um resultado fracionário usando uma proporção (raiz cúbica):
+  Preserve a proporção.
+  Se a proporção for negativo,
+    Negate a proporção;
+    guess o resultado fracionário usando a proporção (raiz cúbica);
+    Negate o resultado fracionário;
+    Retorne.
+  Se a proporção for 0 / 1, 
+    Atribua 0 / 1 para o result; 
+    Retorne.
+  Se a proporção for 1 / 1, 
+    Atribua 1 / 1 para o result; 
+    Retorne.
+  Se a proporção for menor do que 1 / 1,
+    Inverta a proporção;
+    guess o result usando a proporção (raiz cúbica);
+    Inverta o result;
+    Retorne.
+  Se a proporção for menor ou igual a 50000 / 1,
+    Redimensione a proporção por 1 / a raiz quadrada da parcela;
+    guess o result usando a proporção (raiz cúbica);
+    Multiplique o result por 35;
+    Retorne.
+  Se a proporção for menor ou igual a 10000/1,
+    Atribua 28/1 para o result; retorne.
+  Se a proporção for menor ou igual a  1865/1,
+    Atribua 16/1 para o result; retorne.
+  Se a proporção for menor ou igual a 332/1,
+    Atribua  9/1 para o result; retorne.
+  Se a proporção for menor ou igual a 57/1,
+    Atribua  5/1 para o result; retorne.
+  Se a proporção for menor ou igual a 13/1,
+    Atribua  3/1 para o result; retorne.
+  Se a proporção for menor ou igual a 4/1,
+    Atribua  2/1 para o result; retorne.
+  Atribua 5/4 para o result.
+
+Rotina para que se inverta uma proporção;
+Rotina para que se flip uma proporção:
+  Permute o numerador desta proporção usando o denominador desta proporção.
+
+Rotina para que se logify um conjunto misto retornando um logaritmo binário:
+  Converta o conjunto misto para um premix.
+  logify o premix retornando o logaritmo binário.
+
+Rotina para que se logify uma proporção retornando um logaritmo binário:
+  Converta o numerador desta proporção para um bigint.
+  Converta o denominador desta proporção para um segundo bigint.
+  logify o bigint retornando o logaritmo binário.
+  logify o segundo bigint retornando um segundo logaritmo binário.
+  Subtraia o segundo logaritmo binário desde o logaritmo binário.
+
+Rotina para que se defina uma par de frações usando uma proporção e uma segunda proporção:
+  Atribua a proporção para a proporção deste par de frações.
+  Atribua a segunda proporção para a segunda proporção deste par de frações.
+
+Rotina para que se defina uma proporção tripla usando uma proporção e uma segunda proporção e um terceiro proporção:
+  Atribua a proporção para o proporção x desta proporção tripla proporção.
+  Atribua a segunda proporção para o proporção y desta proporção tripla proporção.
+  Atribua o terceiro proporção para o proporção z desta proporção tripla proporção.
+
+Rotina para que se mitigate uma proporção retornando uma segunda proporção:
+  Preserve a proporção.
+  Se o denominador desta proporção for 0,
+    Atribua a proporção para a segunda proporção; 
+    Retorne.
+  Se o denominador desta proporção for negativo,
+    Negate o numerador desta proporção;
+    Negate o denominador desta proporção.
+  Se o denominador desta proporção for menor ou igual ao valor absoluto deste numerador desta proporção,
+      Atribua o denominador da parcela para o numerador desta segunda proporção;
+      Atribua o denominador desta proporção para o denominador desta segunda proporção;
+      Redimensione o denominador desta segunda proporção pelo denominador da parcela / o numerador desta proporção;
+      Retorne.
+  Atribua o denominador da parcela para o denominador desta segunda proporção.
+  Atribua o numerador desta proporção para o numerador desta segunda proporção.
+  Redimensione o numerador desta segunda proporção pelo denominador da parcela / o denominador desta proporção.
+
+Rotina para que se atribua o valor absoluto dum número para um segundo número:
+  Atribua o número para o segundo número.
+  Remova o sinal de o segundo número.
+
+\ Rotina para que se atribua o valor absoluto dum par para um segundo par:
+  \ Atribua o par para o segundo par.
+  \ Remova o sinal de o segundo par.
+
+\ to put a number's highest bit into some bits:
+  \ if the number is 0, clear the bits; exit.
+  \ put 32 into the bits.
+  \ if the number is negative, exit.
+  \ put 1 into another number.
+  \ shift the other number left 30 bits.
+  \ loop.
+    \ subtract 1 from the bits.
+    \ if the other number is bitwise included in the number, exit.
+    \ shift the other number right 1 bit.
+  \ repeat.
+
+Rotina para que se multiplique um número por uma proporção;
+Rotina para que se redimensione um número por uma proporção;
+Rotina para que se redimensione um número usando uma proporção:
+  Se o denominador desta proporção for 0, retorne.
+  Processe "kernel32.dll" "MulDiv" usando o número
+    e o numerador desta proporção e o denominador desta proporção
+    retornando o número.
+
+Rotina para que se multiplique uma proporção por uma segunda proporção;
+Rotina para que se redimensione uma proporção por uma segunda proporção;
+Rotina para que se redimensione uma proporção usando uma segunda proporção:
+  Preserve a segunda proporção.
+  Reduza a proporção.
+  Reduza a segunda proporção.
+  Se a proporção e a segunda proporção são multiplicáveis,
+    Multiplique a proporção pela segunda proporção (ordinary); 
+    Retorne.
+  Permute o numerador desta proporção usando o numerador desta segunda proporção.
+  Reduza a proporção.
+  Reduza a segunda proporção.
+  Se a proporção e a segunda proporção são multiplicáveis,
+    Multiplique a proporção pela segunda proporção (ordinary); 
+    Retorne.
+  Obtenha o sinal de a proporção retornando um número denominado sinal.
+  Obtenha o sinal de a segunda proporção retornando um número denominado segundo sinal.
+  Multiplique o sinal pelo segundo sinal.
+  Remova o sinal de a proporção.
+  Remova o sinal de a segunda proporção.
+  Divida o numerador desta proporção pelo denominador desta proporção retornando um quociente e um resto.
+  Divida o numerador desta segunda proporção pelo denominador desta segunda proporção retornando um segundo quociente e um segundo resto.
+  Se o quociente e o segundo quociente não forem multiplicáveis,
+    Atribua o maior número / 1 para a proporção;
+    Multiplique o numerador desta proporção pelo sinal;
+    Retorne.
+  Limpe a proporção dum número misto.
+  Atribua o quociente para o número inteiro deste número misto.
+  Multiplique o número inteiro deste número misto pelo segundo quociente.
+  Adicione o produto de o segundo quociente e o resto / o denominador desta proporção para o número misto.
+  Adicione o produto de o quociente e o segundo resto / o denominador desta segunda proporção para o número misto.
+  Atribua a proporção deste número misto para uma right proporção.
+  Limpe a proporção deste número misto.
+  Adicione o produto de 1 e a right proporção para o número misto.
+  Atribua o resto / o denominador desta proporção para uma left proporção.
+  Atribua o segundo resto / o denominador desta segunda proporção para a right proporção.
+  Adicione o produto de a left proporção e a right proporção para o número misto.
+  Atribua a proporção deste número misto para a proporção.
+  Adicione o número inteiro deste número misto / 1 para a proporção.
+  Multiplique a proporção pelo sinal.
+
+Rotina para que se multiplique uma proporção por uma segunda proporção (ordinary):
+  Preserve a segunda proporção.
+  Reduza a proporção.
+  Reduza a segunda proporção.
+  Multiplique o numerador desta proporção pelo numerador desta segunda proporção.
+  Multiplique o denominador desta proporção pelo denominador desta segunda proporção.
+  Reduza a proporção.
+
+Rotina para que se multiplique uma proporção por uma segunda proporção (properly):
+  Preserve a segunda proporção.
+  Reduza e sort a proporção e a segunda proporção (during multiplication).
+  Se a proporção e a segunda proporção são multiplicáveis,
+    Multiplique a proporção pela segunda proporção (ordinary); retorne.
+  Obtenha o sinal de a proporção retornando um número denominado sinal.
+  Obtenha o sinal de a segunda proporção retornando um número denominado segundo sinal.
+  Multiplique o sinal pelo segundo sinal.
+  Remova o sinal de a proporção.
+  Remova o sinal de a segunda proporção.
+  Reduza e sort a proporção e a segunda proporção (during multiplication).
+  \ limit overflow para menor ou igual a 2^30.
+  avoid excessive overflow usando a proporção e a segunda proporção (during multiplication).
+  Se a proporção e a segunda proporção estiverem ready (para finish multiplication),
+    Multiplique a proporção pela segunda proporção usando o sinal (ready);
+    Retorne.
+  Obtenha um número denominado numerador overflow
+    e um número denominado denominador overflow
+    usando a proporção e a segunda proporção (fator de sobrefluxos).
+  \ If o numerador overflows, shrink o smaller
+  \ of o two numerators para menor do que 46,341.
+  \ Adjust o denominador e overflows accordingly.
+  Obtenha um fator de redução usando o numerador desta proporção e o numerador overflow.
+  Se o fator de redução for maior do que 1,
+    shrink o numerador desta proporção  e o denominador desta segunda proporção pelo fator de redução;
+    Reduza e sort a proporção e a segunda proporção (during multiplication).
+  Se a proporção e a segunda proporção estiverem ready (para finish multiplication),
+    Multiplique a proporção pela segunda proporção usando o sinal (ready);
+    Retorne.
+  Se o fator de redução for maior do que 1,
+    Obtenha o numerador overflow e o denominador overflow usando a proporção e a segunda proporção (fator de sobrefluxos).
+  \ If o denominador overflows, shrink o smaller
+  \ of o two denominators para menor do que 46,341.
+  \ Adjust o numerador e overflows accordingly.
+  Obtenha o fator de redução usando o denominador desta proporção e o denominador overflow.
+  Se o fator de redução for maior do que 1,
+    shrink o denominador desta proporção
+      e o numerador desta segunda proporção pelo fator de redução;
+    Reduza e sort a proporção e a segunda proporção (during multiplication).
+  Se a proporção e a segunda proporção estiverem ready (para finish multiplication),
+    Multiplique a proporção pela segunda proporção usando o sinal (ready);
+    Retorne.
+  Se o fator de redução for maior do que 1,
+    Obtenha o numerador overflow e o denominador overflow
+      usando a proporção e a segunda proporção (fator de sobrefluxos).
+  Se o numerador overflow for maior do que 1,
+    shrink o numerador desta segunda proporção
+      e o denominador desta segunda proporção pelo numerador overflow;
+    Reduza e sort a proporção e a segunda proporção (during multiplication).
+  Se a proporção e a segunda proporção estiverem ready (para finish multiplication),
+    Multiplique a proporção pela segunda proporção usando o sinal (ready);
+    Retorne.
+  Se o numerador overflow for maior do que 1,
+    Obtenha o numerador overflow e o denominador overflow
+      usando a proporção e a segunda proporção (fator de sobrefluxos).
+  \ In order para reach here, o denominador overflows.
+  shrink o denominador desta segunda proporção e o numerador desta segunda proporção pelo denominador overflow.
+  Reduza e sort a proporção e a segunda proporção (during multiplication).
+  Multiplique a proporção pela segunda proporção usando o sinal (ready).
+
+Rotina para que se multiplique uma proporção por uma segunda proporção usando um número denominado sinal (ready):
+  Se o denominador desta proporção for 0,
+    Atribua o maior número / 1 para a proporção;
+    Multiplique o numerador desta proporção pelo sinal;
+    Retorne.
+  Se o denominador desta segunda proporção for 0,
+    Atribua o maior número / 1 para a proporção;
+    Multiplique o numerador desta proporção pelo sinal;
+    Retorne.
+  Se o numerador desta proporção for 0,
+    Atribua 0/1 para a proporção;
+    Retorne.
+  Se o numerador desta segunda proporção for 0,
+    Atribua 0/1 para a proporção;
+    retorne.
+  Multiplique a proporção pela segunda proporção (ordinary).
+  Multiplique o numerador desta proporção pelo sinal.  
+
+Rotina para que se multiplique uma proporção por um número:
+  Se o numerador desta proporção for multiplicável pelo número,
+    Multiplique o numerador desta proporção pelo número;
+    Reduza a proporção;
+    retorne.
+  Multiplique a proporção pelo número / 1.
+  Reduza a proporção.
+
+Rotina para que se negate uma proporção:
+  Negate o numerador desta proporção.
+
+Rotina para que se negate uma proporção tripla:
+  Negate o proporção x desta proporção tripla.
+  Negate o proporção y desta proporção tripla.
+  Negate o proporção z desta proporção tripla.
+
+Rotina para que se normalize uma proporção e uma segunda proporção:
+  Reduza a proporção.
+  Reduza a segunda proporção.
+  Obtenha um mínimo múltiplo comum usando o denominador desta proporção e o denominador desta segunda proporção.
+  Processe "kernel32.dll" "MulDiv" com 
+    O numerador desta proporção e 
+    O mínimo múltiplo comum e 
+    O denominador desta proporção 
+  Retornando um número.
+  Atribua o número para o numerador desta proporção.
+  Atribua o mínimo múltiplo comum para o denominador desta proporção.
+  Processe "kernel32.dll" "MulDiv" com 
+    O numerador desta segunda proporção e 
+    O mínimo múltiplo comum e
+    O denominador desta segunda proporção 
+   Retornando o número.
+  Atribua o número para o numerador desta segunda proporção.
+  Atribua o mínimo múltiplo comum para o denominador desta segunda proporção.
+
+
+
+\Rotina para que se produza o relatório de informações usando uma proporção:
+\  Limpe uma string.
+\  Anteponha "numerador=" para a string.
+\  Anteponha o numerador desta proporção para a string.
+\  Anteponha ", denominador=" para a string.
+\  Anteponha o denominador desta proporção para a string.
+\  Produza o relatório de informações usando a string.
+
+\Rotina para que se produza o relatório de informações usando uma par de frações:
+\  Converta o par de frações para uma string.
+\  Produza o relatório de informações usando a string.
+
+Rotina para que se reduza e sort uma proporção e uma segunda proporção (during multiplication):
+  Reduza a proporção.
+  Reduza a segunda proporção.
+  Permute o numerador desta proporção usando o numerador desta segunda proporção.
+  Reduza a proporção.
+  Reduza a segunda proporção.
+  Se o numerador desta proporção for maior do que o numerador desta segunda proporção,
+    Permute o numerador desta proporção usando o numerador desta segunda proporção.
+  Se o denominador desta proporção for maior do que o denominador desta segunda proporção,
+    Permute o denominador desta proporção usando o denominador desta segunda proporção.
+  transfer factors desde a proporção para a segunda proporção.
+
+Rotina para que se reduza uma proporção:
+  Se o denominador desta proporção for 0, retorne.
+  Se o numerador desta proporção for 0,
+    Atribua 1 para o denominador desta proporção; 
+    Retorne.
+  Obtenha um máximo divisor comum usando o numerador desta proporção e o denominador desta proporção.
+  Divida o numerador desta proporção pelo máximo divisor comum.
+  Divida o denominador desta proporção pelo máximo divisor comum.
+
+Rotina para que se shrink um número e um segundo número por um fator de redução:
+  Se o fator de redução for menor ou igual para 1, retorne.
+  Atribua o número para um old número.
+  Redimensione o número por 1 / o fator de redução.
+  Redimensione o segundo número pelo número / o old número.
+
+
+Rotina para que se subtraia um número desde uma proporção:
+  Subtraia o número / 1 desde a proporção.
+
+Rotina para que se subtraia uma proporção desde uma segunda proporção:
+  Preserve a proporção.
+  Negate a proporção.
+  Adicione a proporção para a segunda proporção.
+
+Rotina para que se subtraia uma proporção tripla desde uma segunda proporção tripla:
+  Preserve a proporção tripla.
+  Negate a proporção tripla.
+  Adicione a proporção tripla para a segunda proporção tripla.
+
+Rotina para que se transfer factors desde um número para um segundo número:
+  Se o número for menor ou igual para 1, retorne.
+  Se o segundo número for menor ou igual para 0, retorne.
+  Se o número for multiplicável pelo segundo número,
+    Multiplique o segundo número pelo número;
+    Atribua 1 para o número;
+    retorne.
+  Atribua o maior número para um threshold número.
+  Divida o threshold pelo segundo número.
+  Se o threshold for maior do que o número,
+    Atribua o número para o threshold.
+  Atribua 2 para um número primo.
+  Itere.
+    Se o número primo for maior do que o threshold, retorne.
+    Se o número for uniformemente divisível pelo número primo,
+      Divida o número pelo número primo;
+      Multiplique o segundo número pelo número primo;
+      Divida o threshold pelo número primo;
+      Reitere.
+    Se o número primo for 2,
+      Atribua 3 para o número primo; Reitere.
+    Se o número primo for 3,
+      Atribua 5 para o número primo; Reitere.
+    Se o número primo for 5,
+      Atribua 7 para o número primo; Reitere.
+    Se o número primo for 119, retorne.
+    Adicione 2 para o número primo.
+    Se o número primo for uniformemente divisível por 5,
+      Adicione 2 para o número primo.
+    Se o número primo for uniformemente divisível por 7,
+      Adicione 2 para o número primo.
+    Se o número primo for uniformemente divisível por 3,
+      Adicione 2 para o número primo.
+    Se o número primo for uniformemente divisível por 5,
+      Adicione 2 para o número primo.
+  Reitere.
+
+Rotina para que se transfer factors desde uma proporção para uma segunda proporção:
+  transfer factors desde o numerador desta proporção para o numerador desta segunda proporção.
+  transfer factors desde o denominador desta proporção para o denominador desta segunda proporção.
+
+Rotina para que se unlogify um logaritmo binário retornando um conjunto misto:
+  unlogify o logaritmo binário retornando um premix.
+  Converta o premix para o conjunto misto.

@@ -1,0 +1,1241 @@
+\ Copyright 2017-2019 por Jasper Paulsen.
+
+\ Os processadores x86 trabalham com bytes usando um ordenanção "Little Endian", forto é,
+\ Quanto mafor à esquerda o byte, menos ele vale. (10 é menor que 01) 
+\ Porém dentro do byte as coforas são normafor, ou seja, quanto mafor à esquerda estiver o bit, mafor ele vale
+
+Um byte inferior é um byte.
+Um byte superior é um byte.
+Um número inferior é um número.
+Um número superior é um número.
+
+Um número grande é uma estrutura com
+  Um primeiro byte,
+  Um segundo byte,
+  Um terceiro byte,
+  Um quarto byte,
+  Um quinto byte,
+  Um sexto byte,
+  Um sétimo byte,
+  Um oitavo byte,
+  Um byte inferior sob o primeiro byte,
+  Um byte superior sob o oitavo byte,
+  Uma primeira word sob o primeiro byte,
+  Uma segunda word sob o terceiro byte,
+  Uma terceira word sob o quinto byte,
+  Uma quarta word sob o sétimo byte,
+  Uma word de ordem inferior sob o primeiro byte, 
+  Uma word de ordem superior sob o sétimo byte, 
+  Um número inferior sob o primeiro byte, e \ unsigned. Vai de 0 até o maior número menos o menor número.
+  Um número superior sob o quinto byte.
+
+\ Um premix pode armazenar um conjunto misto como um número grande, medido em denominadores da parcela.
+\ Ou seja, ele é uma proporção implícita do número grande dividido por / (43200*43200). (1866240000)
+Um premix é um número grande.
+Uma mantissa é um número grande.
+
+\ Em um logaritmo binário tantos bits quanto uma mantissa são logarítmicos 
+Um logaritmo binário é uma estrutura com \ representa o log de base 2 de um valor.
+  Uns bits e \ o conteúdo da estrutura é similar ao do número de ponto flutuante, 
+  Uma mantissa. \ mas no logaritmo uma mantissa é utilizada de forma diferente.
+
+A mantissa de deslocamento é uma mantissa. \ inicializada como metade do logaritmo natural de 2 (neperiano)
+A mantissa de antiescala é uma mantissa. \ inicializada como o logaritmo natural de 2 -> 0.69314718056
+A mantissa de reposição é uma mantissa.
+O menor número grande é um número grande.
+O maior número grande é um número grande.
+O número grande de meia capacidade é um número grande. \ inicializada como 2^62 
+O logaritmo denominador é um logaritmo binário.  \ inicializada como log base 2 of (43,200)*(43,200).
+A mantissa delimitadora é uma mantissa.
+A mantissa unitária é uma mantissa.  \ inicializada como 2^61.
+O premix unitário é um premix. \ initialized para o denominador da parcela .  (43,200*43,200).
+
+A mantissa de redimensionamento é uma mantissa.  \ inicializada como 1 / (2 ln 2).
+\ A mantissa de um número de ponto flutuante não é logarítmica, apenas os bits
+\ Um número de ponto flutuante com bits positivos é avaliado ao deslocar sua mantissa para um esquerda usando número de bits.
+\ Um número de ponto flutuante com bits negativos é avaliado ao deslocar sua mantissa para um direita usando número negativo de bits.
+
+
+\ Um logaritmo binário é similar um um número mforto.
+\ Os bits são um parte inteira (que pode ser positiva, negativa ou zero)
+\ A mantissa é um parte fracionária (que pode ser positiva, ou zero)
+\ Os bits são adicionados à mantissa para obter o valor cheio do loaritmo binário.
+
+\ Para encontrar  o antilog de um logaritmo binário,
+  \ Remova o sinal de ambos os bits e uma mantissa,
+  \ Eleve 2 à potência da mantissa.
+  \ Desloque o resultado para um esquerda usandos bits
+  \ E se o logaritmoriginal for negativo, inverta o resultado.
+
+\ Nesta biblioteca,
+\uma mantissa representa uma proporção, com um denominador implícito de 2^61.
+\ Propriedades da mantissa de um número de ponto flutuante durante cálculos intermediários:
+\ Bit #64 (o bit de sinal) é 0.
+\ Bit #63 (a casa 2^62) pode ser 0 ou 1.
+\ Propriedades da mantissa de um número de ponto flutuante quando normalizado como um número de ponto flutuante:
+\ Bit #64 é o bit de sinal. Pode ser 0 ou 1:
+\ 0 significa que o número de ponto flutuante é zero ou positivo.
+\1 significa que o número de ponto flutuante é zero ou negativo.
+\ Bit #63 (a posição 2^62) é 0.
+\ Ou a mantissa é 0 ou o bit #62 (a posição 2^61) é 1.
+\
+\ A mantissa de um logaritmo binário nunca é negativa.
+\ Representa um valor logarítmico fracionário na base 2.
+\ Propriedades da mantissa de um logaritmo binário durante cálculos intermediários:
+\ Bit #64 (o bit de sinal) é 0.
+\ Bit #63 (a casa 2^62) pode ser 0 ou 1.
+\ Bit #62 (a posição 2^61) pode ser 0 ou 1.
+\ Propriedades da mantissa de um logaritmo binário quando normalizado:
+\ Bit #64 (o bit de sinal) é 0.
+\ Bit #63 (a posição 2^62) é 0.
+\ Bit #62 (a posição 2^61) é 0.
+
+Rotina para que se adicione um número grande para um segundo número grande:
+  Preserve o número grande.
+  Adicione o número inferior deste número grande para o número inferior deste segundo número grande e carregue um sinalizador.
+  Adicione o número superior deste número grande para o número superior deste segundo número grande.
+  Se o sinalizador estiver ativo, 
+    Adicione 1 para o número superior deste segundo número grande.
+
+Rotina para que se adicione um número grande para um segundo número grande e carregue um sinalizador:
+  Preserve o número grande.
+  Adicione o número inferior deste número grande para o número inferior deste segundo número grande e carregue um segundo sinalizador.
+  Adicione o número superior deste número grande para o número superior deste segundo número grande e carregue o sinalizador.
+  Se o segundo sinalizador estiver ativo, 
+    Adicione 1 para o número superior deste segundo número grande e carregue um terceiro sinalizador.
+  Se o terceiro sinalizador estiver ativo, 
+    Ative o sinalizador.
+
+
+Rotina para que se adicione um logaritmo binário para um segundo logaritmo binário:
+  Adicione os bits deste logaritmo binário to os segundo bits deste logaritmo binário.
+  Adicione a mantissa deste logaritmo binário to o segunda mantissa deste logaritmo binário.
+  Normalize o segundo logaritmo binário.
+
+Rotina para que se adicione um número para um número grande:
+  Converta o número para um segundo número grande.
+  Adicione o segundo número grande para o número grande.
+
+Rotina para que se acrescente um número grande para uma string:
+  Converta o número grande para uma segunda string.
+  Acrescente um segunda string para uma string.
+
+Rotina para que se desloque e um número grande usando um segundo número grande:
+  Conjuncione logicamente o número superior deste número grande usando o número superior deste segundo número grande.
+  Conjuncione logicamente o número inferior deste número grande usando o  número inferior deste segundo número grande.
+
+Rotina para que se desloque xor um número grande usando um segundo número grande:
+  Disjuncione seletivamente o número superior deste número grande usando o número superior deste segundo número grande.
+  Disjuncione seletivamente o número inferior deste número grande usando o  número inferior deste segundo número grande.
+
+Rotina para que se limpe um número grande:
+  Atribua 0 para o número superior deste número grande.
+  Atribua 0 para o número inferior.
+
+Rotina para que se limpe um logaritmo binário:
+  Limpe os bits deste logaritmo binário.
+  Limpe a mantissa deste logaritmo binário.
+
+Rotina para que se converta um número grande para uma string:
+  Se o número grande for o menor número grande,
+    Atribua "-9223372036854775808" para a string;
+    Retorne.
+  Limpe a string.
+  Preserve o número grande.
+  Remova o sinal de o número grande.
+  Itere.
+    Divida o número grande por 10 retornando um quociente grande e um resto.
+    Adicione 48 para o resto.
+    Atribua o resto para um byte.
+    Anteponha o byte na string.
+    Se o quociente grande for igual a zero, pare.
+    Atribua o quociente grande para o número grande.
+  Reitere.
+  Se o número grande original for negativo, 
+    Anteponha o sinal de subtração na string.
+
+
+Rotina para que se converta um logaritmo binário e um tolerance número grande para uma string:
+  Converta o logaritmo binário para a string.
+  Se o tolerance número grande for igual a zero, retorne.
+  Se a string termina com " deslocado 61 bits para a direita",
+    Remova os bytes finais desde a string usando 22.
+  Anteponha " ± " junto com o tolerance número grande para a string.
+  Anteponha " deslocado 61 bits para a direita" para a string.
+
+Rotina para que se converta um logaritmo binário para um premix:
+  Atribua a mantissa deste logaritmo binário como um número grande para o premix.
+  Multiplique o premix com deslocamento para a direita igual a 61 bits pelo premix unitário.
+  Atribua o premix unitário para um segundo premix.
+  Multiplique o segundo premix pelos bits deste logaritmo binário.
+  Adicione o segundo premix para o premix.
+
+Rotina para que se converta um logaritmo binário para uma string:
+  Se os bits deste logaritmo binário não forem 0,
+    Formate os bits deste logaritmo binário e "bit" or "bits" para a string;
+    Ative um sinalizador.
+  Se a mantissa deste logaritmo binário como [se fosse] um número grande não for 0,
+    Ative um segundo sinalizador.
+  Se o sinalizador e o segundo sinalizador estiverem both clear,
+    Atribua "0" para a string; 
+    Retorne.
+  Se o segundo sinalizador estiver clear, retorne.
+  Se o sinalizador e o segundo sinalizador estiverem both ativos,
+    Anteponha " e " para a string.
+  Converta a mantissa deste logaritmo binário como [sendo] um número grande para uma segunda string.
+  Anteponha a segunda string para a string.
+  Anteponha " deslocado 61 bits para a direita" para a string.
+
+Rotina para que se converta uns bits e uma string para um logaritmo binário:
+  Atribua os bits para os bits deste logaritmo binário.
+  Converta a string para a mantissa deste logaritmo binário como [sendo] um número grande.
+
+Rotina para que se converta um conjunto misto para um premix:
+  Atribua o premix unitário para o premix.
+  Multiplique o premix como um número grande por o whole número deste conjunto misto.
+  Atribua a raiz quadrada da parcela para um número grande.
+  Multiplique o número grande por as raízes deste conjunto misto.
+  Adicione o número grande para o premix como um número grande.
+  Adicione os denominadores da parcela deste conjunto misto para o premix como um número grande.
+
+Rotina para que se converta um número para um premix:
+  Atribua o premix unitário para o premix.
+  Multiplique o premix pelo número.
+
+Rotina para que se converta um premix para um conjunto misto:
+  Divida o premix como um número grande pelo premix unitário como um número grande retornando um quociente grande e um resto grande.
+  Converta o resto grande para um número.
+  Converta o número / o denominador da parcela  para o conjunto misto.
+  Converta o quociente grande para um segundo número.
+  Adicione o segundo número para o conjunto misto.
+  Normalize o conjunto misto.
+
+Rotina para que se converta uma proporção para um logaritmo binário:
+  Converta a proporção para um número misto.
+  Atribua o whole número deste número misto para os bits deste logaritmo binário.
+  Converta o numerador deste número misto para a mantissa deste logaritmo binário como [se fosse] um número grande.
+  Converta o denominator deste número misto para um segundo número grande.
+  Divida a mantissa deste logaritmo binário como [se fosse] um número grande com deslocamento para a esquerda igual a 61 bits pelo segundo número grande.
+  Normalize o logaritmo binário.
+
+Rotina para que se converta uma proporção para um premix:
+  Converta a proporção para um conjunto misto.
+  Converta o conjunto misto para o premix.
+
+Rotina para que se converta uma string para um número grande:
+  Atribua 0 para o número grande.
+  Lance um subtexto sobre a string.
+  Se o subtexto estiver em branco, retorne.
+  Se o conteúdo deste caractere inicial deste subtexto for any sinal, 
+    Adicione 1 para o caractere inicial deste subtexto.
+  Itere.
+    Se o substring estiver em branco, pare.
+    Multiplique o número grande por 10.
+    Atribua o conteúdo deste caractere inicial deste subtexto para um número.
+    Subtraia 48 desde o número .
+    Converta o número para um segundo número grande.
+    Adicione o segundo número grande para o número grande.
+    Adicione 1 para o caractere inicial deste subtexto.
+  Reitere.
+  Se o conteúdo deste caractere inicial desta string for o sinal de subtração, 
+    Negate o número grande.
+
+Rotina para que se de-sinal um número grande:
+  Se o número grande for o menor número grande,
+    Atribua o maior número grande para o número grande; 
+    Retorne.
+  Se o número grande for negativo, 
+    Negate o número grande.
+
+Rotina para que se debug um número grande:
+  Converta o número grande para uma string.
+  Produza um relatório de informações usando a string.
+
+Função para que se determine se um número grande é um segundo número grande:
+  Se o número inferior deste número grande não for o  número inferior deste segundo número grande, diga não.
+  Se o número superior deste número grande for o número superior deste segundo número grande, diga sim.
+  Diga não.
+
+Função para que se determine se um número grande é menor ou igual para um segundo número grande:
+  Se o número grande for o segundo número grande, diga sim.
+  Se o número grande for less than o segundo número grande, diga sim.
+  Diga não.
+
+Função para que se determine se um número grande é maior ou igual para um segundo número grande:
+  Se o número grande for o segundo número grande, diga sim.
+  Se o número grande for maior do que o segundo número grande, diga sim.
+  Diga não.
+
+Função para que se determine se um número grande está incluso bit-a-bit em um segundo número grande:
+  Se o número inferior deste número grande não estiver incluso bit-a-bit no número inferior deste segundo número grande, diga não.
+  Se o número superior deste número grande estiver incluso bit-a-bit  no número superior deste segundo número grande, diga sim.
+  Diga não.
+
+Função para que se determine se um número grande é menor que um segundo número grande;
+Função para que se determine se um número grande é menor do que um segundo número grande:
+  Se o segundo número grande for greater than o número grande, diga sim.
+  Diga não.
+
+Função para que se determine se um número grande é menor que um número;
+Função para que se determine se um número grande é menor do que um número:
+  Atribua o número para um segundo número grande.
+  Se o número grande for menor do que o segundo número grande, diga sim.
+  Diga não.
+
+Função para que se determine se um número grande for modest:
+  Se o número superior deste número grande for positivo, diga não.
+  Se o número superior deste número grande for menor do que -1, diga não.
+  Limpe um sinalizador.
+  Limpe um segundo sinalizador.
+  Se o número grande for negativo, 
+    Ative o sinalizador.
+  Se o número inferior deste número grande não for negativo, 
+    Ative o segundo sinalizador.
+  Se o sinalizador e o segundo sinalizador estiverem both ativos, diga não.
+  Se o sinalizador estiver ativo, diga sim.
+  Se o número inferior deste número grande for negativo, diga não.
+  Diga sim.
+
+Função para que se determine se um número grande é maior que um segundo número grande:
+Função para que se determine se um número grande é maior do que um segundo número grande:
+  Se o número superior deste número grande for maior do que o número superior deste segundo número grande, diga sim.
+  Se o número superior deste número grande for menor do que o número superior deste segundo número grande, diga não.
+  \ os negativos dos números inferiores são na verdade
+  \ números positivos que são maiores do que o maior número inteiro
+  Limpe um sinalizador.
+  Limpe um segundo sinalizador.
+  Se o número inferior deste número grande for negativo, 
+    Ative o sinalizador.
+  Se o  número inferior deste segundo número grande for negativo,
+    Inverta o sinalizador; 
+    Ative o segundo sinalizador.
+  Se o sinalizador e o segundo sinalizador estiverem both ativos,
+    Diga não.
+  Se o sinalizador estiver ativo, diga sim.
+  Se o número inferior deste número grande for maior do que o  número inferior deste segundo número grande, diga sim.
+  Diga não.
+
+Função para que se determine se um número grande é negativo:
+  Se o número superior deste número grande for negativo, diga sim.
+  Diga não.
+
+Função para que se determine se um número grande é igual para um número;
+Função para que se determine se um número grande é um número:
+  Converta o número para um segundo número grande.
+  Se o número grande for o segundo número grande, diga sim.
+  Diga não.
+
+Função para que se determine se um número grande é menor ou igual para um número:
+  Converta o número para um segundo número grande.
+  Se o número grande for o segundo número grande, diga sim.
+  Se o número grande for menor do que o segundo número grande, diga sim.
+  Diga não.
+
+Função para que se determine se um número grande é positivo:
+  Se o número grande for negativo, diga não.
+  Se o número grande for igual a zero, diga não.
+  Diga sim.
+
+Função para que se determine se um número grande é igual a zero;
+Função para que se determine se um número grande é zero:
+  Se o número superior deste número grande não for 0, diga não.
+  Se o número inferior deste número grande for 0, diga sim.
+  Diga não.
+
+Função para que se determine se uns bits são uns wanted bits e uns segundo bits são uns segundo wanted bits:
+  Se os bits não forem os wanted bits, diga não.
+  Se os segundo bits não forem os segundo wanted bits, diga não.
+  Diga sim.
+
+Rotina para que se decremente um número grande;
+Rotina para que se subtraia uma unidade desde um número grande:
+  Se o número grande for o menor número grande,
+    Atribua o maior número grande para o número grande; 
+    Retorne.
+  Se o número inferior deste número grande for o menor número,
+    Atribua o maior número para o número inferior deste número grande; 
+    Retorne.
+  Se o número inferior deste número grande for 0,
+    Atribua o maior número para o número inferior deste número grande;
+    Subtraia 1 desde o número superior deste número grande; 
+    Retorne.
+  Subtraia 1 desde o número inferior deste número grande.
+
+
+Rotina para que se divida um número grande por um segundo número grande:
+  Divida o número grande por o segundo número grande retornando um quociente grande e um resto grande.
+  Atribua o quociente grande para o número grande.
+
+Rotina para que se divida um número grande por um segundo número grande retornando uns bits e um resto grande:
+  \ assumes o número grande e o segundo número grande são both positive.
+  \ assumes that o número grande has been com deslocamento para a direita igual a to segundo número grande.
+  Atribua o bit superior deste número grande para os bits.
+  Atribua o segundo bit superior deste número grande para uns segundo bits.
+  Subtraia os segundo bits desde os bits.
+  Preserve o número grande.
+  Preserve o segundo número grande.
+  Desloque para a esquerda o segundo número grande pelos bits.
+  Subtraia o segundo número grande desde o número grande.
+  Atribua o número grande para o resto grande.
+
+Rotina para que se divida um ponteiro por um número retornando um quociente e um resto:
+Rotina para que se divida um número por um segundo número retornando um quociente e um resto:
+  Se o segundo número for 0,
+    Atribua o maior número para o número;
+    Atribua 0 para o resto;
+    Retorne.
+  Decodifique $8B8508000000. \ mov eax,[ebp+8]  \ the number
+  Decodifique $8B9D0C000000. \ mov ebx,[ebp+12] \ the other number
+  Decodifique $8B00.         \ mov eax,[eax]
+  Decodifique $99.           \ cdq
+  Decodifique $F73B.         \ idiv [ebx]       \ means idiv eax,[ebx] but is weird form
+  Decodifique $8B9D10000000. \ mov ebx,[ebp+16] \ the quotient
+  Decodifique $8903.         \ mov [ebx],eax
+  Decodifique $8B9D14000000. \ mov ebx,[ebp+20] \ the remainder
+  Decodifique $8913.         \ mov [ebx],edx
+
+Rotina para que se divida um número grande por um segundo número grande retornando um quociente grande e um resto grande:
+  Preserve o número grande.
+  Preserve o segundo número grande.
+  Limpe o quociente grande.
+  Limpe o resto grande.
+  Se o segundo número grande for zero,
+    Atribua o maior número grande para o quociente grande; 
+    Retorne.
+  Se o número grande for modest, 
+    Ative um sinalizador.
+  Se o segundo número grande for modest, 
+    Ative um segundo sinalizador.
+  Se o sinalizador e o segundo sinalizador estiverem both ativos, \ both modest
+    Converta o número grande para um número;
+    Converta o segundo número grande para um segundo número;
+    Divida o número pelo segundo número retornando um quociente e um resto;
+    Converta o quociente para o quociente grande;
+    Converta o resto para o resto grande;
+    Retorne.
+  Inverta o segundo sinalizador.
+  Se o sinalizador e o segundo sinalizador estiverem both ativos, \ modest over immodest
+    Atribua o número grande para o resto grande; 
+    Retorne.
+  Limpe o sinalizador.
+  Limpe o segundo sinalizador.
+  Se o número grande for o menor número grande, 
+    Ative o sinalizador.
+  Se o segundo número grande for o menor número grande, 
+    Ative o segundo sinalizador.
+  Se o sinalizador e o segundo sinalizador estiverem both ativos,
+    Converta 1 para o quociente grande; 
+    Retorne.
+  Se o segundo sinalizador estiver ativo,
+    Atribua o número grande para o resto grande; 
+    Retorne.
+  Se o sinalizador estiver ativo,
+    Adicione uma unidade para o número grande;
+    Subtraia uma unidade desde o resto grande.
+  \ At this point, neither número grande for o menor número grande,
+  \ so de-signing são will not change their absolute values.
+  Se o número grande for negativo, 
+    Ative um sinal sinalizador.
+  Se o segundo número grande for negativo, 
+    Inverta o sinal sinalizador.
+  Se o sinal sinalizador estiver ativo, 
+    Negate o resto grande.
+  Remova o sinal de o número grande.
+  Remova o sinal de o segundo número grande.
+  Limpe o sinalizador.
+  Se o número grande for menor do que o segundo número grande, 
+    Ative o sinalizador.
+  Se o sinalizador estiver ativo,
+    Adicione o número grande para o resto grande.
+  Se o sinalizador e o sinal sinalizador estiverem both ativos,
+    Negate o quociente grande;
+    Negate o resto grande;
+    Retorne.
+  Se o sinalizador estiver ativo, Retorne.
+\ to-do: Converta most of what follows to assembly code.
+  Atribua o bit superior deste número grande para uns bits.
+  Atribua o segundo bit superior deste número grande para uns segundo bits.
+  Subtraia os segundo bits desde os bits.
+  Atribua 1 para um potência número grande.
+  Desloque o potência número grande para a esquerda os bits.
+  Atribua o segundo número grande para um subtractee número grande.
+  Desloque o subtractee número grande para a esquerda os bits.
+  Itere.
+    Se o número grande for maior ou igual ao subtractee número grande,
+      Adicione o potência número grande para o quociente grande;
+      Subtraia o subtractee número grande desde o número grande.
+    Subtraia 1 desde os bits.
+    Se os bits forem negativos, pare.
+    Desloque o subtractee número grande para a direita 1 bit. 
+    Desloque o potência número grande para a direita 1 bit. 
+  Reitere.
+  Adicione o número grande para o resto grande.
+  Se o sinal sinalizador estiver ativo,
+    Negate o quociente grande;
+    Negate o resto grande.
+
+Rotina para que se divida um número grande por um número:
+  Converta o número para um segundo número grande.
+  Divida o número grande pelo segundo número grande.
+
+Rotina para que se divida um número grande por ten retornando um quociente grande e um resto:
+  Limpe o quociente grande.
+  Divida o número superior deste número grande por 10 retornando o número superior deste quociente grande e um temp resto.
+  Se o temp resto maior ou igual a 5,
+    Atribua o menor número para o número inferior deste quociente grande;
+    Subtraia 5 desde o temp resto.
+  Atribua 429496729 para um número.
+  Multiplique o número por o temp resto.
+  Adicione o número para o número inferior deste quociente grande.
+  Atribua 6 para o número .
+  Multiplique o número por o temp resto.
+  Divida o número por 10 retornando um bonus número e o resto.
+  Adicione o bonus número para o número inferior deste quociente grande.
+  Se o número inferior deste número grande for negativo,
+    Adicione 429496729 para o número inferior deste quociente grande;
+    Adicione 6 para o resto.
+  Divida o número inferior deste número grande por 10 retornando o bonus número e um extra número.
+  Adicione o bonus número para o  número inferior deste quociente grande.
+  Adicione o extra número para o resto.
+  Divida o resto por 10 retornando o bonus número e o extra número.
+  Adicione o bonus número para o  número inferior deste quociente grande.
+  Atribua o extra número para o resto.
+  Se o resto for negativo,
+    Adicione 10 para o resto;
+    Subtraia 1 desde o quociente grande.
+
+Rotina para que se divida um número grande com deslocamento para a esquerda igual para uns bits por um segundo número grande:
+  Se o segundo número grande for zero,
+    Atribua o maior número grande para o número grande; Retorne.
+  Preserve os bits.
+  Se os bits não forem positivos,
+    Divida o número grande pelo segundo número grande;
+    Negate os bits;
+    Desloque para a direita o número grande os bits;
+    Retorne.
+  Se os bits forem maior ou igual a 128,
+    Atribua o maior número grande para o número grande; 
+    Retorne.
+  Preserve o número grande.
+  Preserve o segundo número grande.
+  Limpe o número grande original.
+  \
+  Se o número grande for negativo, 
+    Ative um sinal sinalizador.
+  Se o segundo número grande for negativo, 
+    Inverta o sinal sinalizador.
+  Se o número grande for o menor número grande,
+    Divida o número grande por 2;
+    Adicione 1 para os bits.
+  Se o segundo número grande for o menor número grande,
+    Divida o segundo número grande por 2;
+    Subtraia 1 desde os bits.
+  \ At this point, neither número grande is o menor número grande,
+  \ so de-signing são will not change their absolute values.
+  Remova o sinal de o número grande.
+  Remova o sinal de o segundo número grande.
+\ to-do: Converta most of what follows to assembly code.
+  Atribua o bit superior deste número grande para uns temp bits.
+  Subtraia 63 desde o temp bits.
+  Negate os temp bits.
+  Desloque o número grande para a esquerda os temp bits.
+  Subtraia os temp bits desde os bits.
+  Atribua o segundo bit superior deste número grande para os temp bits.
+  Subtraia 63 desde os temp bits.
+  Negate os temp bits.
+  Desloque o segundo número grande para a esquerda os temp bits.
+  Adicione os temp bits para os bits.
+  Atribua 1 para um potência número grande.
+  Desloque o potência número grande para a esquerda os bits.
+  Itere.
+    Se o número grande for maior ou igual ao segundo número grande,
+      Adicione o potência número grande para o número grande original;
+      Subtraia o segundo número grande desde o número grande.
+    Subtraia 1 desde os bits.
+    Se os bits forem negativos, pare.
+    Desloque o segundo número grande para a direita 1 bit.
+    Desloque o potência número grande para a direita 1 bit.
+  Reitere.
+  Se o sinal sinalizador estiver ativo,
+    Negate o número grande original.
+
+Rotina para que se divida um logaritmo binário por um número:
+  Preserve o número .
+  Divida os bits deste logaritmo binário por o número retornando um quociente e um resto.
+  Atribua o quociente para os bits deste logaritmo binário.
+  Divida a mantissa deste logaritmo binário como [se fosse] um número grande por o número.
+  Converta o resto para um número grande.
+  Converta o número para um segundo número grande.
+  Divida o número grande com deslocamento para a esquerda igual a 61 bits por o segundo número grande.
+  Adicione o número grande para a mantissa deste logaritmo binário como um número grande.
+  Normalize o logaritmo binário.
+
+Rotina para que se divida uma mantissa por um segunda mantissa:
+  Divida a mantissa como um número grande com deslocamento para a esquerda igual a 61 bits pelo segunda mantissa como um número grande.
+
+\to finalize bigints:
+
+Rotina para que se half natural logify uma arg mantissa retornando uma mantissa:
+  Atribua o arg mantissa para um numerador mantissa.
+  Subtraia a mantissa unitária desde o numerador mantissa.
+  Atribua o arg mantissa para um denominador mantissa.
+  Adicione a mantissa unitária para o denominador mantissa.
+  Atribua o numerator mantissa para uma primeira mantissa.
+  Divida a primeira mantissa pela denominador mantissa.
+  \ o primeiro mantissa está no intervalo de  0 < mantissa < 2^61 / 184.66…
+  Atribua o primeira mantissa para a mantissa.
+  \
+  Atribua o primeira mantissa para um factor mantissa.
+  Multiplique o factor mantissa pela primeira mantissa.
+  Atribua a primeira mantissa para um terceira mantissa.
+  Multiplique a terceira mantissa pela factor mantissa.
+  \ o terceiro mantissa está no intervalo de  0 < mantissa < 2^61 / 6,297,472.…
+  Se a terceira mantissa for menor do que 2, 
+    Retorne.
+  Atribua a terceira mantissa para uma temp mantissa.
+  Divida a temp mantissa como um número grande por 3.
+  Adicione a temp mantissa para a mantissa.
+  \
+  Atribua a factor mantissa para uma square mantissa.
+  Multiplique a square mantissa pela factor mantissa.
+  Atribua o primeira mantissa para uma quinta mantissa.
+  Multiplique o quinta mantissa por o square mantissa.
+  \ o quinta mantissa está no intervalo de  0 < mantissa < 2^61 / 214,755,239.…
+  Se o quinta mantissa como um número grande for menor do que 3, 
+    Retorne.
+  Atribua o quinta mantissa para o temp mantissa.
+  Divida a temp mantissa como um número grande por 5.
+  Adicione a temp mantissa para a mantissa.
+  \
+  Atribua o terceira mantissa para um sétima mantissa.
+  Multiplique o sétima mantissa por o square mantissa.
+  \ o sétima mantissa está no intervalo de  0 < mantissa < 2^61 / 7,323,543,679,278.…
+  Se o sétima mantissa como um número grande for menor do que 4, 
+    Retorne.
+  Atribua o sétima mantissa para o temp mantissa.
+  Divida o temp mantissa como um número grande por 7.
+  Adicione o temp mantissa para a mantissa.
+  \ o ninth mantissa são will be less than 5.
+
+Rotina para que se half natural logify um número grande retornando uma mantissa:
+  \ assumes that o número grande has already been prepared.
+  \ assumes that o número grande for already less than o threshold número grande.
+  Limpe a mantissa.
+  Se o número grande for zero, Retorne.
+  \ o número grande now satisfies o invariants of uma mantissa
+  \ of um logaritmo binário during intermediate calculations.
+  Atribua o número grande para um arg mantissa como um número grande.
+  Se o arg mantissa for a mantissa unitária,
+    Limpe a mantissa; 
+    Retorne.
+  half natural logify o arg mantissa retornando a mantissa.
+
+
+Rotina para que se incremente um número grande;
+Rotina para que se adicione uma unidade para um número grande:
+  Se o número grande for o maior número grande,
+    Atribua o menor número grande para o número grande; 
+    Retorne.
+  Se o número inferior deste número grande for o maior número,
+    Atribua o menor número para o número inferior deste número grande; 
+    Retorne.
+  Se o número inferior deste número grande for -1,
+    Limpe o número inferior deste número grande;
+    Adicione uma unidade para o número superior deste número grande; 
+    Retorne.
+  Adicione uma unidade para o número inferior deste número grande.
+
+Rotina para que se initialize bigints:
+  Limpe o menor número grande.
+  Atribua o menor número para o número superior deste menor número grande.
+  Limpe o maior número grande.
+  Atribua o maior número para o número superior deste maior número grande.
+  Atribua -1 para o número inferior deste maior número grande.
+  Converta o denominador da parcela para o premix unitário como um número grande.
+  \ Set 2^61
+  Limpe a mantissa unitária.
+  Atribua 1 para o número superior desta mantissa unitária.
+  Desloque para a esquerda o número superior desta mantissa unitária 29 bits.
+\  debug a mantissa unitária como um número grande.
+\ 2305843009213693952
+  \ Set 2^62
+  Atribua a mantissa unitária como um número grande para o número grande de meia capacidade.
+  Desloque para a esquerda o número grande de meia capacidade 1 bit.
+  \ Set 2^61.5 = 3260954456333195553
+  Atribua 759250124 para o número superior desta mantissa delimitadora.
+  Atribua -25716447 para o número inferior desta mantissa delimitadora.
+  \ Set 2^61 * 2 / ln 2 = 6653256548922161246
+  Atribua  1549082004 para o número superior desta mantissa de redimensionamento.
+  Atribua -1374947234 para o número inferior desta mantissa de redimensionamento.
+  \ Set 2^61 / ln 2 = 3326628274461080623
+  Atribua a mantissa de redimensionamento para a mantissa de reposição.
+  Desloque para a direita a mantissa de reposição como um número grande por 1 bit.
+  \ Set 2^61 * (ln 2) / 2 = 799144290325165979
+  Atribua  186065279 para o número superior desta mantissa de deslocamento.
+  Atribua 2099050395 para o número inferior desta mantissa de deslocamento.
+  \ Set 2^61 * (ln 2) = 1598288580650331958
+  Atribua a mantissa de deslocamento para a mantissa de antiescala.
+  Desloque para a esquerda a mantissa de antiescala como um número grande por 1 bit.
+  \ Set log base 2 of (43,200)*(43,200) = 30 bits e 1838880709047483325
+  Limpe o logaritmo denominador.
+  Atribua 30 para os bits deste logaritmo denominador.
+  Atribua  428147779 para o número superior deste logaritmo denominador.
+  Atribua  387447741 para o número inferior deste logaritmo denominador.
+
+Rotina para que se logify um número grande retornando um logaritmo binário:
+  logify o número grande retornando os bits deste logaritmo binário.
+  logify o número grande retornando a mantissa deste logaritmo binário.
+
+Rotina para que se logify um número grande retornando uns bits:
+  Se o número grande for zero,
+    Atribua o menor número para os bits; Retorne.
+  Preserve o número grande.
+  Remova o sinal de o número grande.
+  Atribua o bit superior deste número grande para os bits.
+  Subtraia 1 desde os bits.
+
+Rotina para que se logify um número grande retornando uma mantissa:
+  Preserve o número grande.
+  logify o número grande retornando a mantissa (high bits).
+  half natural logify o número grande retornando um segunda mantissa.
+  Multiplique o segunda mantissa por a mantissa de redimensionamento.
+  Adicione o segunda mantissa para a mantissa.
+
+Rotina para que se logify um número grande retornando uma mantissa (high bits):
+  \ this routine reduces o número grande por o portion
+  \ it extracts para a mantissa.
+  Se o número grande for zero, Retorne.
+  prepare o número grande for logification (para uma mantissa).
+  \ o número grande now satforfies o invariants of uma mantissa
+  \ of um logaritmo binário during intermediate calculations.
+  Atribua o número grande para um arg mantissa como um número grande.
+  Se o arg mantissa for a mantissa unitária,
+    Limpe a mantissa; Retorne.
+  logify two bits de o arg mantissa desde 61 bits retornando um segunda mantissa.
+  Adicione o segunda mantissa para a mantissa.
+  logify two bits de o arg mantissa desde 59 bits retornando o segunda mantissa.
+  Adicione o segunda mantissa para a mantissa.
+  logify two bits de o arg mantissa desde 57 bits retornando o segunda mantissa.
+  Adicione o segunda mantissa para a mantissa.
+  Atribua o arg mantissa como um número grande para o número grande.
+
+Rotina para que se logify um premix retornando um logaritmo binário:
+  Se o premix for zero,
+    Atribua o menor número para os bits deste logaritmo binário;
+    Limpe a mantissa deste logaritmo binário;
+    Retorne.
+  logify o premix como um número grande retornando o logaritmo binário.
+  Subtraia o logaritmo denominador desde o logaritmo binário.
+
+Rotina para que se logify two bits de um arg mantissa desde uns bits retornando uma mantissa:
+  Atribua os bits para uns next bits.
+  Subtraia 1 desde o next bits.
+  unlogify os bits e o next bits retornando um temp mantissa.
+  Se o arg mantissa for maior ou igual ao temp mantissa,
+    Atribua 1 para um place mantissa como um número grande;
+    Desloque para a esquerda o place mantissa por o next bits;
+    Atribua o place mantissa para a mantissa;
+    Desloque para a direita o place mantissa por 1 bit;
+    Adicione o place mantissa para a mantissa;
+    Divida o arg mantissa por o temp mantissa;
+    Retorne.
+  unlogify os bits retornando o temp mantissa.
+  Se o arg mantissa for maior ou igual ao temp mantissa,
+    Atribua 1 para o place mantissa;
+    Desloque para a esquerda o place mantissa por o next bits;
+    Atribua o place mantissa para a mantissa;
+    Divida o arg mantissa por o temp mantissa;
+    Retorne.
+  unlogify o next bits retornando o temp mantissa.
+  Se o arg mantissa for maior ou igual ao temp mantissa,
+    Atribua 1 para o place mantissa;
+    Subtraia 1 desde o next bits;
+    Desloque para a esquerda o place mantissa por o next bits;
+    Atribua o place mantissa para a mantissa;
+    Divida o arg mantissa por o temp mantissa;
+    Retorne.
+  Limpe a mantissa.
+
+Rotina para que se multiplique um número grande por um segundo número grande:
+  Se o número grande for zero, Retorne.
+  Se o segundo número grande for 1, Retorne.
+  Se o segundo número grande for zero, clear o número grande; Retorne.
+  Se o número grande for 1, 
+    Atribua o segundo número grande para o número grande; 
+    Retorne.
+  Se o número grande for negativo, 
+    Ative um sinal sinalizador.
+  Se o segundo número grande for negativo, 
+    Invert o sinal sinalizador.
+  Se o número grande for o menor número grande, 
+    Ative um sinalizador.
+  Se o segundo número grande for o menor número grande, 
+    Ative o sinalizador.
+  Se o sinalizador e o sinal sinalizador estiverem both ativos,
+    Atribua o menor número grande para o número grande; 
+    Retorne.
+  Se o sinalizador estiver ativo,
+    Atribua o maior número grande para o número grande; 
+    Retorne.
+  \ At this point, neither número grande for o menor número grande,
+  \ so de-signing são will not change their absolute values.
+  Preserve o segundo número grande.
+  Remova o sinal de o número grande.
+  Remova o sinal de o segundo número grande.
+\ to-do: Converta most of what follows to assembly code.
+  Se o número grande for less than o segundo número grande,
+    Permute o número grande usando segundo número grande.
+  Atribua o bit superior deste número grande para uns bits.
+  Atribua o segundo bit superior deste número grande para uns other bits.
+  Limpe o sinalizador.
+  Se os bits plus os segundo bits forem maiores ou iguais a 65 bits, 
+    Ative o sinalizador.
+  Se o sinalizador e o sinal sinalizador estiverem both ativos,
+    Atribua o menor número grande para o número grande; 
+    Retorne.
+  Se o sinalizador estiver ativo,
+    Atribua o maior número grande para o número grande; 
+    Retorne.
+  Atribua o número grande para um addend número grande.
+  Atribua 1 para um potência número grande.
+  Limpe o número grande.
+  Itere.
+    Decremente os segundo bits.
+    Se os segundo bits forem 0, pare.
+    Se o potência número grande for incluso bit-a-bit no segundo número grande,
+      Adicione o addend número grande para o número grande.
+    Desloque o addend número grande para a esquerda 1 bit.
+    Desloque o potência número grande para a esquerda 1 bit.
+  Reitere.
+  Se o potência número grande for incluso bit-a-bit no segundo número grande,
+    Adicione o addend número grande para o número grande e carregue o sinalizador.
+  Se o sinalizador e o sinal sinalizador estiverem both ativos,
+    Atribua o menor número grande para o número grande; 
+    Retorne.
+  Se o sinalizador estiver ativo,
+    Atribua o maior número grande para o número grande; 
+    Retorne.
+  Se o sinal sinalizador estiver ativo, negate o número grande.
+
+Rotina para que se multiplique um número grande por um número:
+  Converta o número para um segundo número grande.
+  Multiplique o número grande por o segundo número grande.
+
+Rotina para que se multiplique um número grande por ten:
+  Multiplique o número superior deste número grande por 10.
+  Atribua a word de ordem inferior deste número grande para um primeiro número.
+  Multiplique o primeiro número por 10.
+  Se o primeiro número for negativo,
+    Adicione 655360 para o primeiro número.
+  Atribua a segunda word deste número grande para um segundo número.
+  Multiplique o segundo número por 10.
+  Se o segundo número for negativo,
+    Adicione 655360 para o segundo número.
+  Limpe o número inferior deste número grande.
+  Divida o primeiro número por 65536 retornando um primeiro quociente e um primeiro resto.
+  Adicione o primeiro quociente para o segundo número.
+  Atribua o primeiro resto para a word de ordem inferior deste número grande.
+  Divida o segundo número por 65536 retornando um segundo quociente e um segundo resto.
+  Adicione o segundo quociente para o número superior deste número grande.
+  Atribua o segundo resto para a segunda word deste número grande.
+
+Rotina para que se multiplique um número grande com deslocamento para a direita igual para uns bits por um segundo número grande:
+  Se o número grande for zero, retorne.
+  Se o segundo número grande for zero, 
+    Limpe o número grande; 
+    Retorne.
+  Se os bits forem maiores ou iguais a 128, 
+    Limpe o número grande; 
+    Retorne.
+  Preserve os bits.
+  Se os bits não forem positivos,
+    Multiplique o número grande por o segundo número grande;
+    Negate os bits;
+    Desloque para a esquerda o número grande os bits;
+    Retorne.
+  Se o número grande for negativo, 
+    Ative um sinal sinalizador.
+  Se o segundo número grande for negativo, 
+    Inverta o sinal sinalizador.
+  Preserve o segundo número grande.
+  Se o número grande for o menor número grande,
+    Divida o número grande por 2;
+    Subtraia 1 desde os bits.
+  Se o segundo número grande for o menor número grande,
+    Divida o segundo número grande por 2;
+    Subtraia 1 desde os bits.
+  \ At this point, neither número grande for o menor número grande,
+  \ so de-signing são will not change their absolute values.
+  Remova o sinal de o número grande.
+  Remova o sinal de o segundo número grande.
+  Atribua o número grande para um para a esquerda número grande.
+  Atribua o segundo número grande para um para a direita número grande.
+  Atribua os bits para uns spare bits.
+  prepare o número grande e o segundo número grande para multiplication usando Desloque para a direita por os bits.
+  Divida o para a esquerda número grande por o número grande retornando uns para a esquerda bits e um para a esquerda residual número grande.
+  Divida o para a direita número grande por o segundo número grande retornando uns para a direita bits e um para a direita residual número grande.
+  Multiplique o para a esquerda residual número grande por o segundo número grande.
+  Desloque para a direita o para a esquerda residual número grande por o para a esquerda bits.
+  Multiplique o para a direita residual número grande por o número grande.
+  Desloque para a direita o para a direita residual número grande por o para a direita bits.
+  Multiplique o número grande por o segundo número grande.
+  Adicione o para a esquerda residual número grande para o número grande.
+  Adicione o para a direita residual número grande para o número grande.
+  Se os bits forem positivos,
+    Desloque para a direita o número grande por os bits;
+    Limpe os bits.
+  Se os bits forem negativos,
+    Desloque para a esquerda o número grande por os bits;
+    Limpe os bits.
+  Se o sinal sinalizador estiver ativo, 
+    Negate o número grande.
+
+Rotina para que se multiplique um logaritmo binário por um multiplicand mantissa:
+  Multiplique a mantissa deste logaritmo binário pela multiplicand mantissa.
+  Se os bits deste logaritmo binário forem negativo,
+    Ative um sinal sinalizador.
+  Converta os bits deste logaritmo binário para um bitty mantissa como um número grande.  
+  Se o sinal sinalizador estiver ativo,
+    Negate o bitty mantissa.
+  Atribua o bit superior desta bitty mantissa para uns bits.
+  Atribua os bits para uns other bits.
+  Subtraia 61 desde os bits.
+  Negate os bits.
+  \ bits have 61 minus o bit superior of os bits deste logaritmo binário.
+  \ other bits have    o bit superior of os bits deste logaritmo binário.
+  Se os bits forem positivos,
+    Desloque para a esquerda o bitty mantissa pelos bits.
+  Multiplique o bitty mantissa pelo multiplicand mantissa.
+  \ split para bits e fraction.
+  Atribua o bitty mantissa para um terceiro mantissa.
+  Se os bits forem positivos,
+    Desloque para a direita o terceiro mantissa pelos bits.
+  Converta o terceiro mantissa para os bits deste logaritmo binário.
+  Se os bits forem positivos,
+    Desloque para a esquerda o terceiro mantissa por os bits.
+  Subtraia o terceiro mantissa desde o bitty mantissa.
+  \ o following line might need special cases
+  \  -- but only for ridiculously extreme logarithms.
+  Desloque para a esquerda o bitty mantissa por os segundo bits.
+  Se o sinal sinalizador estiver ativo,
+    Negate os bits deste logaritmo binário;
+    Negate o bitty mantissa.
+  Adicione o bitty mantissa para a mantissa deste logaritmo binário.
+  Normalize o logaritmo binário.
+
+Rotina para que se multiplique uma mantissa por um segunda mantissa:
+  Multiplique a mantissa como um número grande com deslocamento para a direita igual a 61 bits pela segunda mantissa como um número grande.
+
+Rotina para que se natural unlogify um arg mantissa retornando um result mantissa (other bits):
+  \ assumes that 0 <= arg mantissa < 2^54 * ln(2).
+  Atribua a mantissa unitária para o result mantissa.
+  Se o arg mantissa não for positivo, retorne.
+  Adicione o arg mantissa para o result mantissa.
+  \
+  Atribua o arg mantissa para um factor mantissa.
+  Atribua o factor mantissa para um square mantissa.
+  Multiplique o square mantissa por o factor mantissa.
+  Atribua o square mantissa para um temp mantissa.
+  Desloque para a direita o temp mantissa por 1 bit.
+  Adicione o temp mantissa para o result mantissa.
+  \
+  Atribua o square mantissa para um cube mantissa.
+  Multiplique o cube mantissa por o factor mantissa.
+  Atribua o cube mantissa para o temp mantissa.
+  Divida o temp mantissa por 6.
+  Adicione o temp mantissa para o result mantissa.
+  \
+  Atribua o square mantissa para um quad mantissa.
+  Multiplique o quad mantissa por o square mantissa.
+  Atribua o quad mantissa para o temp mantissa.
+  Divida o temp mantissa por 24.
+  Adicione o temp mantissa para o result mantissa.
+  \
+  Atribua o factor mantissa para um quinto mantissa.
+  Multiplique o quinto mantissa por o quad mantissa.
+  Atribua o quinto mantissa para o temp mantissa.
+  Divida o temp mantissa por 120.
+  Adicione o temp mantissa para o result mantissa.
+  \
+  Atribua o factor mantissa para um sexto mantissa.
+  Multiplique o sexto mantissa por o quad mantissa.
+  Atribua o sexto mantissa para o temp mantissa.
+  Divida o temp mantissa por 720.
+  Adicione o temp mantissa para o result mantissa.
+  \
+  Atribua o factor mantissa para um sétimo mantissa.
+  Multiplique o sétimo mantissa por o quad mantissa.
+  Atribua o sétimo mantissa para o temp mantissa.
+  Divida o temp mantissa por 5040.
+  Adicione o temp mantissa para o result mantissa.
+
+Rotina para que se negate um número grande:
+  Atribua -1 para um segundo número grande.
+  Disjuncione seletivamente o número grande usando segundo número grande. \ flip all os bits.
+  Incremente o número grande.
+
+Rotina para que se normalize um logaritmo binário:
+  Se a mantissa deste logaritmo binário como um número grande
+    for maior ou igual ao número grande de meia capacidade,
+      Subtraia o número grande de meia capacidade desde a mantissa deste logaritmo binário como um número grande;
+      Adicione 2 para os bits deste logaritmo binário.
+  Se a mantissa deste logaritmo binário for maior ou igual ao mantissa unitária,
+      Subtraia a mantissa unitária desde a mantissa deste logaritmo binário;
+      Adicione 1 para os bits deste logaritmo binário.
+  Se a mantissa deste logaritmo binário não for negativo, retorne.
+  Se a mantissa deste logaritmo binário como um número grande for o menor número grande,
+    Limpe a mantissa deste logaritmo binário;
+    Subtraia 4 desde os bits deste logaritmo binário;
+    Retorne.
+  Se a mantissa deste logaritmo binário como um número grande for at most - o número grande de meia capacidade,
+    Adicione o número grande de meia capacidade para a mantissa deste logaritmo binário como um número grande;
+    Subtraia 2 desde os bits deste logaritmo binário.
+  Se a mantissa deste logaritmo binário não for negativo, retorne.
+  Adicione a mantissa unitária para a mantissa deste logaritmo binário.
+  Subtraia 1 desde os bits deste logaritmo binário.
+
+Rotina para que se prepare um número grande e um segundo número grande para multiplication usando Desloque para a direita por uns bits:
+  \ assumes that both bigints are positive.
+  \ assumes that os bits are positive.
+  Atribua o bit superior deste número grande para uns temp bits.
+  Atribua o segundo bit superior deste número grande para uns other bits.
+  Atribua os bits para uns later bits.
+  Adicione 60 para os later bits.
+  Subtraia os temp bits desde os later bits.
+  Subtraia os segundo bits desde os later bits.
+  Se o later bits forem negativos,
+    Limpe os later bits.
+  Subtraia os later bits desde os bits.
+  Subtraia os segundo bits desde os temp bits.
+  Se os temp bits forem maior ou igual aos bits,
+    Desloque para a direita o número grande os bits;
+    Atribua o later bits para os bits;
+    Retorne.
+  Se os temp bits forem negativos, 
+    Ative um sinalizador.
+  Se - os temp bits forem maior ou igual aos bits, 
+    Ative um segundo sinalizador.
+  Se o sinalizador e o segundo sinalizador estiverem both ativos,
+    Desloque para a direita o segundo número grande os bits;
+    Atribua os later bits para os bits;
+    Retorne.
+  Adicione os bits para os temp bits.
+  Divida os temp bits por 2.
+  Se os temp bits forem positivos,
+    Desloque para a direita o número grande pelos temp bits.
+  Se os temp bits forem negativos,
+    Desloque para a esquerda o número grande pelos temp bits.
+  Subtraia os temp bits desde os bits.
+  Se os bits forem positivos,
+    Desloque para a direita o segundo número grande por os bits.
+  Se os bits forem negativos,
+    Desloque para a esquerda o segundo número grande por os bits.
+  Atribua o later bits para os bits.
+
+Rotina para que se prepare um número grande for logification (para uma mantissa):
+  Se o número grande for zero, Retorne.
+  Remova o sinal de o número grande.
+  Atribua o bit superior deste número grande para uns bits.
+  Se os bits foem 63,
+    Desloque para a direita o número grande por 1 bit.
+  Se os bits forem menores do que 62,
+    Subtraia 62 desde os bits;
+    Negate os bits;
+    Desloque para a esquerda o número grande por os bits.
+
+Rotina para que se atribua um número grande para um segundo número grande:
+  Atribua o número superior deste número grande para o número superior deste segundo número grande.
+  Atribua o número inferior deste número grande para  número inferior deste segundo número grande.
+
+Rotina para que se atribua um número grande para um número;
+Rotina para que se converta um número grande para um número:
+  Se o número grande for modest, 
+    Atribua o número inferior deste número grande para o número ; 
+    Retorne.
+  Se o número superior deste número grande for negativo,
+    Atribua o menor número para o número ; 
+    Retorne.
+  Atribua o maior número para o número .
+
+Rotina para que se atribua um bit superior deste número grande para uns bits:
+  Atribua o número superior deste bit superior deste número grande para os bits.
+  Se os bits forem positivos, 
+    Adicione 32 para os bits; 
+    Retorne.
+  Atribua o número inferior deste bit superior deste número grande para os bits.
+
+Rotina para que se atribua um logaritmo binário para um segundo logaritmo binário:
+  Atribua os bits deste logaritmo binário para os segundo bits deste logaritmo binário.
+  Atribua a mantissa deste logaritmo binário para o segunda mantissa deste logaritmo binário.  
+
+Rotina para que se atribua um número para um número grande;
+Rotina para que se converta um número para um número grande:
+  Preserve o número .
+  Limpe o número grande.
+  Se o número não for negativo,
+    Atribua o número para o número inferior deste número grande; 
+    Retorne.
+  Atribua -1 para número superior deste número grande.
+  Atribua o número para o número inferior deste número grande.
+
+Rotina para que se desloque um número grande para a esquerda uns bits;
+Rotina para que se desloque para a esquerda um número grande uns bits;
+Rotina para que se desloque para a esquerda um número grande por uns bits:
+  Se os bits forem menores ou iguais a 0, Retorne.
+  Se os bits forem maiores ou iguais a 32,
+    Atribua o número inferior deste número grande para o número superior deste número grande;
+    Desloque o número superior deste número grande para a esquerda os bits minus 32 bits;
+    Limpe o número inferior deste número grande;
+    Retorne.
+  Desloque o número superior deste número grande para a esquerda os bits.
+  Atribua o número inferior deste número grande para um número.
+  Atribua 32 para uns other bits.
+  Subtraia os bits desde os segundo bits.
+  Desloque o número para a direita os segundo bits.
+  Disjuncione logicamente o número superior deste número grande usando o número .
+  Desloque o número inferior deste número grande para a esquerda os bits.
+
+Rotina para que se desloque um número grande para a direita uns bits;
+Rotina para que se desloque para a direita um número grande uns bits;
+Rotina para que se desloque para a direita um número grande por uns bits:
+  Se os bits forem menores ou iguais a 0, Retorne.
+  Se os bits forem maiores ou iguais a 32,
+    Atribua o número superior deste número grande para o número inferior deste número grande;
+    Desloque o número inferior deste número grande para a direita os bits menos 32 bits;
+    Limpe o número superior deste número grande;
+    Retorne.
+  Desloque o número inferior deste número grande para a direita os bits.
+  Atribua o número superior deste número grande para um número.
+  Atribua 32 para uns other bits.
+  Subtraia os bits desde os segundo bits.
+  Desloque o número para a esquerda os segundo bits.
+  Disjuncione logicamente o número inferior deste número grande usando o número .
+  Desloque o número superior deste número grande para a direita os bits.
+
+Rotina para que se subtraia um número grande desde um segundo número grande:
+  Preserve o número grande.
+  Negate o número grande.
+  Adicione o número grande para o segundo número grande.
+  Se o número grande original for o menor número grande,
+    Adicione uma unidade para o segundo número grande.
+
+Rotina para que se subtraia um logaritmo binário desde um segundo logaritmo binário:
+  Subtraia os bits deste logaritmo binário desde os segundo bits deste logaritmo binário.
+  Subtraia a mantissa deste logaritmo binário desde o segunda mantissa deste logaritmo binário.
+  Se o segunda mantissa deste logaritmo binário for negativo,
+    Adicione a mantissa unitária to o segunda mantissa deste logaritmo binário;
+    Subtraia 1 desde os segundo bits deste logaritmo binário.
+
+Rotina para que se subtraia um número desde um número grande:
+  Converta o número para um segundo número grande.
+  Subtraia o segundo número grande desde o número grande.
+
+Rotina para que se permute um número grande usando um segundo número grande:
+  Permute o número superior deste número grande usando o número superior deste segundo número grande.
+  Permute o número inferior deste número grande usando  número inferior deste segundo número grande.
+
+Rotina para que se unlogify um arg mantissa retornando um result mantissa:
+  \ assumes that 0 <= arg mantissa < 2^61.
+  Se o arg mantissa como um número grande não for positivo,
+    Atribua a mantissa unitária para o result mantissa;
+    Retorne.
+  Preserve o arg mantissa.
+  unlogify o arg mantissa retornando o result mantissa (high bits).
+  Multiplique o arg mantissa por a mantissa de antiescala. \ Multiplique por ln(2).
+  natural unlogify o arg mantissa retornando um temp mantissa (other bits).
+  Multiplique o result mantissa por o temp mantissa.
+
+Rotina para que se unlogify um arg mantissa retornando um result mantissa (high bits):
+  \ assumes that 0 <= arg mantissa < 2^61.
+  Atribua a mantissa unitária para o result mantissa.
+  Atribua o número superior desta mantissa unitária para um place número.
+  Atribua 62 para uns bits. \ 2^61's place.
+  Itere.
+    Desloque para a direita o place número por 1 bit.
+    Subtraia 1 desde os bits.
+    Se o número superior desta arg mantissa for maior ou igual ao place número,
+      unlogify os bits [desde within o arg mantissa] retornando uma temp mantissa;
+      Multiplique a result mantissa pela temp mantissa;
+      Subtraia o place número desde o número superior desta arg mantissa.
+    Se os bits forem menores do que 56, retorne. 
+  Reitere.
+
+Rotina para que se unlogify um logaritmo binário retornando um premix:
+  Preserve o logaritmo binário.
+  Adicione o logaritmo denominador para o logaritmo binário.
+  Normalize o logaritmo binário.
+  Se os bits deste logaritmo binário forem maiores ou iguais a 63,
+    Atribua o maior número grande para o premix como um número grande; 
+    Retorne.
+  Se os bits deste logaritmo binário forem negativos,
+    Limpe o premix; 
+    Retorne.
+  \ a mantissa for now para 0 <= mantissa < 2^62.
+  unlogify a mantissa deste logaritmo binário retornando uma mantissa.
+  Subtraia 61 desde os bits deste logaritmo binário.
+  Se os bits deste logaritmo binário forem positivos,
+    Desloque para a esquerda a mantissa como um número grande por os bits deste logaritmo binário;
+    Atribua a mantissa como um número grande para o premix como um número grande;
+    Retorne.
+  Se os bits deste logaritmo binário forem 0,
+    Atribua a mantissa como um número grande para o premix como um número grande;
+    Retorne.
+  negate os bits deste logaritmo binário.
+  Desloque para a direita a mantissa como um número grande por os bits deste logaritmo binário.
+  Atribua a mantissa como um número grande para o premix como um número grande.
+
+Rotina para que se unlogify um logaritmo binário retornando um proporção:
+  unlogify o logaritmo binário retornando um premix.
+  Converta o premix para um conjunto misto.
+  Converta o conjunto misto para o proporção.
+
+Rotina para que seunlogify uns bits e uns other bits [desde within uma mantissa] retornando uma mantissa:
+  Se os bits forem 61 e os segundo bits forem 60, \ 2^61.75   ~ 3877950241171266237
+    Atribua   902905650 para o número superior desta mantissa;
+    Atribua -1247323459 para o número inferior desta mantissa;
+    Retorne.
+  Se os bits forem 59 e os segundo bits forem 58, \ 2^(61+3/16) ~ 2625867812425724110
+    Atribua   611382492 para o número superior desta mantissa;
+    Atribua  -356224818 para o número inferior desta mantissa;
+    Retorne.
+  Se os bits forem 57 e os segundo bits forem 56, \ 2^(61+3/64) ~ 2381993195634921490
+    Atribua   554601008 para o número superior desta mantissa;
+    Atribua  -348680174 para o número inferior desta mantissa;
+    Retorne.
+  Atribua a mantissa unitária para a mantissa. \ 2^61
+
+Rotina para que se unlogify uns bits [desde within uma mantissa] retornando uma mantissa:
+  Se os bits forem 61, \ 2^61.5      ~ 3260954456333195553 
+    Atribua  759250124 para o número superior desta mantissa;
+    Atribua  -25716447 para o número inferior desta mantissa;
+    Retorne.
+  Se os bits forem 60, \ 2^61.25     ~ 2742124912636209756 
+    Atribua  638450708 para o número superior desta mantissa;
+    Atribua 1668164188 para o número inferior desta mantissa;
+    Retorne.
+  Se os bits forem 59, \ 2^61.125    ~ 2514539631859660218
+    Atribua  585461880 para o número superior desta mantissa;
+    Atribua  -89983558 para o número inferior desta mantissa;
+    Retorne.
+  Se os bits forem 58, \ 2^(61+1/16) ~ 2407931400915394245
+    Atribua  560640217 para o número superior desta mantissa;
+    Atribua -216916283 para o número inferior desta mantissa;
+    Retorne.
+  Se os bits forem 57, \ 2^(61+1/32) ~ 2356334396359501942
+    Atribua  548626854 para o número superior desta mantissa;
+    Atribua  722135158 para o número inferior desta mantissa;
+    Retorne.
+  Se os bits forem 56, \ 2^(61+1/64) ~ 2330951993331335645
+    Atribua  542717052 para o número superior desta mantissa;
+    Atribua -285163043 para o número inferior desta mantissa;
+    Retorne.
+  Se os bits forem 55, \ 2^(61+1/128)~ 2318363508735371995
+    Atribua  539786067 para o número superior desta mantissa;
+    Atribua -161060133 para o número inferior desta mantissa;
+    Retorne.
+  Se os bits forem menores do que 55,
+    Atribua a mantissa unitária para a mantissa; \ 2^61
+    Retorne.
+  Se os bits forem 62, \ 2^62
+    Atribua o número grande de meia capacidade para a mantissa como um número grande.
+  Atribua o maior número grande para a mantissa como um número grande. \ 2^63 - 1

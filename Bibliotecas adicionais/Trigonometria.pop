@@ -1,0 +1,1514 @@
+\ Copyright 2017, 2019 por Jasper Paulsen.
+
+A raiz quadrada da parcela é 43200.
+
+Um conjunto misto é uma estrutura com
+  Um número inteiro,
+  Um número denominado raízes, e  \ implied denominador = raiz quadrada da parcela
+  Uns denominadores da parcela.              \ implied denominador = denominador da parcela
+
+O denominador da parcela é um número igual a 1866240000. \ 43.200^2
+Uns denominadores da parcela são um número. \ divided por denominador da parcela.
+
+Uns radianos são um conjunto misto.
+
+
+O primeiro conjunto misto registrado é um conjunto misto.
+O segundo conjunto misto registrado é um conjunto misto.
+O terceiro conjunto misto registrado é um conjunto misto.
+O quarto conjunto misto registrado é um conjunto misto.
+O quinto conjunto misto registrado é um conjunto misto.
+O sexto conjunto misto registrado é um conjunto misto.
+O sétimo conjunto misto registrado é um conjunto misto.
+O oitavo conjunto misto registrado é um conjunto misto.
+O décimo sexto conjunto misto registrado é um conjunto misto.
+
+
+Um valor angular é uma estrutura com             \ normalized ranges.  counter-clockwise desde right/east.
+  Um número denominado graus,      \   0° - 359°
+  Um número denominado minutos,      \   0’ -  59’
+  Um número denominado segundos,  \   0” -  59”
+  Um número denominado centésimos de segundos.   \   0  -  99 cas
+
+Um seno é uma proporção.
+Um cosseno é uma proporção.
+Um tangente é uma proporção.
+
+\ Um fuzzy test é uma estrutura com 
+  \ uma string denominado context, 
+  \ uma string denominado test name,
+  \ Uns bits,
+  \ Um bullseye bigint,
+  \ Um tolerance bigint,
+  \ Um timer, e
+  \ Um logaritmo binário sob os bits.
+\ The bullseye bigint é often interpreted as um premix,
+\ which é equivalent para um conjunto misto.  
+\ The implied denominador of um premix é 43,200 ^ 2 , which makes
+\ o corresponding tolerance be para denominadores da parcela.
+
+Rotina para que se adicione um conjunto misto para um segundo conjunto misto:
+  Preserve o conjunto misto.
+  Normalize o conjunto misto.
+  Normalize o segundo conjunto misto.
+  Adicione o número inteiro deste conjunto misto para o número inteiro deste segundo conjunto misto.
+  Adicione as raízes deste conjunto misto para as raízes deste segundo conjunto misto.
+  Adicione os denominadores da parcela deste conjunto misto para o denominadores da parcela deste segundo conjunto misto.
+  Normalize o segundo conjunto misto.
+
+Rotina para que se adicione um conjunto misto para um segundo conjunto misto retornando um conjunto misto denominado conjunto resultante:
+  Preserve o segundo conjunto misto.
+  Adicione o conjunto misto para o segundo conjunto misto.
+  Atribua o segundo conjunto misto para o conjunto resultante.
+
+Rotina para que se adicione um número para um conjunto misto:
+  Normalize o conjunto misto.
+  Adicione o número para o número inteiro deste conjunto misto.
+  Normalize o conjunto misto.
+
+Rotina para que se adicione tau para uns radianos:
+  Obtenha tau retornando uns segundo radianos.
+  Adicione o segundo radianos para os radianos.
+
+Rotina para que se adicione uns denominadores da parcela para um conjunto misto:
+  Adicione os denominadores da parcela para os denominadores da parcela deste conjunto misto.
+  Normalize o conjunto misto.
+
+Rotina para que se cache mixios usando um conjunto misto e um número:
+  Se o número for menor do que 1, retorne.
+  Se o conjunto misto não for o primeiro conjunto misto registrado,
+    Limpe cached mixios;
+    Atribua o conjunto misto para o primeiro conjunto misto registrado.
+  Se o número for menor do que 2, retorne.
+  Se o segundo conjunto misto registrado for 0,
+    Atribua o conjunto misto para o segundo conjunto misto registrado;
+    Multiplique o segundo conjunto misto registrado pelo conjunto misto.
+  Se o número for menor do que 3, retorne.
+  Se o número for menor ou igual a 4 e o quarto conjunto misto registrado for zero,
+    Atribua o segundo conjunto misto registrado para o quarto conjunto misto registrado;
+    Multiplique o quarto conjunto misto registrado pelo segundo conjunto misto registrado.
+  Se o número for menor ou igual a 8 e o oitavo conjunto misto registrado for zero,
+    Atribua o quarto conjunto misto registrado para o oitavo conjunto misto registrado;
+    Multiplique o oitavo conjunto misto registrado pelo quarto conjunto misto registrado.
+  Se o número for menor ou igual a 16 e o décimo sexto conjunto misto registrado for zero,
+    Atribua o oitavo conjunto misto registrado para o décimo sexto conjunto misto registrado;
+    Multiplique o décimo sexto conjunto misto registrado pelo oitavo conjunto misto registrado.
+  Divida o número por 4 retornando um quociente e um resto.
+  Se o resto for 3 e o terceiro conjunto misto registrado for zero,
+    Atribua o conjunto misto para o terceiro conjunto misto registrado;
+    Multiplique o terceiro conjunto misto registrado pelo segundo conjunto misto registrado.
+  Se o número for menor do que 5, retorne.
+  Divida o número por 8 retornando o quociente e o resto.
+  Se o resto for 5 e o quinto conjunto misto registrado for zero,
+    Atribua o conjunto misto para o quinto conjunto misto registrado;
+    Multiplique o quinto conjunto misto registrado pelo quarto conjunto misto registrado.
+  Se o resto for 6 e o sexto conjunto misto registrado for zero,
+    Atribua o segundo conjunto misto registrado para o sexto conjunto misto registrado;
+    Multiplique o sexto conjunto misto registrado pelo quarto conjunto misto registrado.
+  Se o resto for 7 e o sétimo conjunto misto registrado for zero,
+    Atribua o terceiro conjunto misto registrado para o sétimo conjunto misto registrado;
+    Multiplique o sétimo conjunto misto registrado pelo quarto conjunto misto registrado.
+
+Rotina para que se limpe cached mixios:
+  Limpe o primeiro conjunto misto registrado.
+  Limpe o segundo conjunto misto registrado.
+  Limpe o terceiro conjunto misto registrado.
+  Limpe o quarto conjunto misto registrado.
+  Limpe o quinto conjunto misto registrado.
+  Limpe o sexto conjunto misto registrado.
+  Limpe o sétimo conjunto misto registrado.
+  Limpe o oitavo conjunto misto registrado.
+  Limpe o décimo sexto conjunto misto registrado.
+
+Rotina para que se limpe um conjunto misto:
+  Limpe o número inteiro deste conjunto misto.
+  Limpe as raízes deste conjunto misto.
+  Limpe os denominadores da parcela deste conjunto misto.
+
+Rotina para que se converta um conjunto misto para uma proporção:
+  Preserve o conjunto misto.
+  Normalize o conjunto misto.
+  Atribua os denominadores da parcela deste conjunto misto para a proporção.
+  Reduza a proporção.
+  Atribua as raízes deste conjunto misto / a raiz quadrada da parcela para uma segunda proporção.
+  Adicione a segunda proporção para a proporção.
+  Reduza a proporção.
+  Adicione o número inteiro deste conjunto misto para a proporção.
+  Reduza a proporção.
+
+Rotina para que se converta um conjunto misto para uma string:
+  Se o conjunto misto for 0,
+    Atribua "0" para a string; retorne.
+  Atribua "" para a string.
+  Preserve o conjunto misto.
+  Normalize o conjunto misto.
+  Se o número inteiro deste conjunto misto for -1,
+    Subtraia a raiz quadrada da parcela desde as raízes deste conjunto misto;
+    Atribua 0 para o número inteiro deste conjunto misto.
+  Se o número inteiro deste conjunto misto for negativo,
+    Negate o conjunto misto;
+    Normalize o conjunto misto;
+    Atribua "-" para a string.
+  Se o número inteiro deste conjunto misto for positivo,
+    Anteponha o número inteiro deste conjunto misto para a string.
+  Atribua as raízes deste conjunto misto para um número.
+  Multiplique o número pela raiz quadrada da parcela.
+  Adicione os denominadores da parcela deste conjunto misto para o número.
+  Se o número for 0, retorne.
+  Atribua o número / o denominador da parcela para uma proporção.
+  Reduza a proporção.
+  Se o número inteiro deste conjunto misto não for 0,
+    Anteponha o dash byte para a string.
+  Anteponha o numerador desta proporção junto com "/" junto com o denominador desta proporção
+    para a string.
+
+Rotina para que se converta um conjunto misto para uma string (long):
+  Preserve o conjunto misto.
+  Converta o número inteiro deste conjunto misto para a string.
+  Se as raízes deste conjunto misto forem negativos,
+    Negate as raízes deste conjunto misto;
+    Anteponha " - " junto com as raízes deste conjunto misto
+      junto com "/" junto com a raiz quadrada da parcela para a string;
+    Negate as raízes deste conjunto misto.
+  Se as raízes deste conjunto misto forem positive,
+    Anteponha " + " junto com as raízes deste conjunto misto
+      junto com "/" junto com a raiz quadrada da parcela para a string.
+  Se os denominadores da parcela deste conjunto misto forem negativos,
+    Negate os denominadores da parcela deste conjunto misto;
+    Anteponha " - " junto com os denominadores da parcela deste conjunto misto
+      junto com "/" junto com o denominador da parcela para a string;
+    Negate os denominadores da parcela deste conjunto misto.
+  Se os denominadores da parcela deste conjunto misto forem positive,
+    Anteponha " + " junto com os denominadores da parcela deste conjunto misto
+      junto com "/" junto com o denominador da parcela para a string.
+
+Rotina para que se converta um número para um conjunto misto:
+  Atribua o número para o número inteiro deste conjunto misto.
+  Atribua 0 para as raízes deste conjunto misto.
+  Atribua 0 para os denominadores da parcela deste conjunto misto.
+
+Rotina para que se converta uns radianos para um conjunto misto:
+  Atribua os radianos para o conjunto misto.
+
+Rotina para que se converta uns radianos para um valor angular:
+  \ both are counter-clockwise desde right / east
+  Atribua os radianos para um conjunto misto.
+  Multiplique o conjunto misto por 6.
+  Atribua tau para uns tau radianos.
+  Divida o conjunto misto pelo tau radianos.
+  Multiplique o conjunto misto por 60.
+  Normalize o conjunto misto.
+  Atribua o número inteiro deste conjunto misto para os graus deste valor angular.
+  Atribua 0 para o número inteiro deste conjunto misto.
+  Multiplique o conjunto misto por 60.
+  Normalize o conjunto misto.
+  Atribua o número inteiro deste conjunto misto para os minutos deste valor angular.
+  Atribua 0 para o número inteiro deste conjunto misto.
+  Multiplique o conjunto misto por 60.
+  Normalize o conjunto misto.
+  Atribua o número inteiro deste conjunto misto para os segundos deste valor angular.
+  Atribua 0 para o número inteiro deste conjunto misto.
+  Multiplique o conjunto misto por 100.
+  Normalize o conjunto misto.
+  Atribua o número inteiro deste conjunto misto para os centésimos de segundos deste valor angular.
+  Atribua a raiz quadrada da parcela para um número denominado threshold.
+  Divida o threshold por 2.
+  Se as raízes deste conjunto misto forem menor ou igual a o threshold,
+    Adicione 1 para os centésimos de segundos deste valor angular.
+  Subtraia a raiz quadrada da parcela desde o threshold.
+  Se as raízes deste conjunto misto forem menor do que o threshold,
+    Subtraia 1 desde os centésimos de segundos deste valor angular.
+
+Rotina para que se converta uma proporção para um conjunto misto:
+  Preserve a proporção.
+  Se a proporção for -1/2, set um sinalizador.
+  Converta a proporção para um número misto.
+  Atribua o número inteiro deste número misto para o número inteiro deste conjunto misto.
+  Se a proporção deste número misto for negativo,
+    set um sinal sinalizador;
+    Remova o sinal de a proporção deste número misto.
+  Redimensione o numerador desta proporção deste número misto usando o denominador da parcela / o denominador deste número misto.
+  Divida o numerador desta proporção deste número misto pela raiz quadrada da parcela retornando as raízes deste conjunto misto e os denominadores da parcela deste conjunto misto.
+  Se o sinal sinalizador estiver ativo,
+    Negate as raízes deste conjunto misto;
+    Negate os denominadores da parcela deste conjunto misto.
+  Normalize o conjunto misto.
+
+Rotina para que se converta uns denominadores da parcela para uma proporção;
+Rotina para que se atribua uns denominadores da parcela para uma proporção:
+  Atribua os denominadores da parcela / o denominador da parcela para a proporção.
+
+Rotina para que se converta um valor angular para um conjunto misto:
+  Atribua os graus deste valor angular para o número inteiro deste conjunto misto.
+  Atribua os minutos deste valor angular para um número.
+  Multiplique o número por 60.
+  Adicione os segundos deste valor angular para o número.
+  Multiplique o número por 100.
+  Adicione os centésimos de segundos deste valor angular para o número.
+  Redimensione o número pelo denominador da parcela / 360000.
+  Atribua o número para os denominadores da parcela deste conjunto misto.
+  Normalize o conjunto misto.
+
+Rotina para que se converta um valor angular para uns radianos:
+  Atribua os graus deste valor angular para o número inteiro dum conjunto misto.
+  Atribua os minutos deste valor angular para as raízes deste conjunto misto.
+  Multiplique as raízes deste conjunto misto pela raiz quadrada da parcela / 60.
+  Atribua os segundos deste valor angular para os denominadores da parcela deste conjunto misto.
+  Multiplique os denominadores da parcela deste conjunto misto pelo denominador da parcela / 3600.
+  Atribua os centésimos de segundos deste valor angular para um número.
+  Multiplique o número pelo denominador da parcela / 360000.
+  Adicione o número para os denominadores da parcela deste conjunto misto.
+  Normalize o conjunto misto.
+  Divida o conjunto misto por 10.
+  Atribua tau para uns tau radianos.
+  Multiplique o conjunto misto pelo tau radianos.
+  Divida o conjunto misto por 36.
+  Atribua o conjunto misto para os radianos.
+
+Rotina para que se converta um valor angular para uma string:
+  Atribua os graus deste valor angular junto com o degree-symbol byte para a string.
+  Se o valor angular for just graus, retorne.
+  Anteponha os minutos deste valor angular
+    junto com o minute-symbol byte para a string.
+  Se o valor angular for just graus e minutos, retorne.
+  Se os centésimos de segundos deste valor angular forem 0,
+    Anteponha os segundos deste valor angular junto com o segundo-symbol byte para a string;
+    Retorne.
+  Se os centésimos de segundos deste valor angular forem negativos,
+    Anteponha os segundos deste valor angular
+      junto com o segundo-symbol byte
+      junto com os centésimos de segundos deste valor angular
+      junto com "cas" para a string;
+    Retorne.
+  Se os centésimos de segundos deste valor angular forem menor ou igual a 100,
+    Anteponha os segundos deste valor angular
+      junto com o segundo-symbol byte
+      junto com os centésimos de segundos deste valor angular
+      junto com "cas" para a string;
+    retorne.
+  Se os centésimos de segundos deste valor angular forem menor do que 10,
+    Anteponha os segundos deste valor angular
+      junto com ".0" junto com os centésimos de segundos deste valor angular
+      junto com o segundo-symbol byte para a string;
+    retorne.
+    Anteponha os segundos deste valor angular
+      junto com o period byte
+      junto com os centésimos de segundos deste valor angular
+      junto com o segundo-symbol byte para a string.
+
+
+
+Rotina para que se remova o sinal de um conjunto misto:
+  Se o conjunto misto é menor ou igual a 0/1, retorne.
+  Multiplique o conjunto misto por -1.
+
+Rotina para que se produza o relatório de informações usando um conjunto misto:
+  Converta o conjunto misto para uma string.
+  Produza o relatório de informações usando a string.
+
+Rotina para que se produza o relatório de informações usando um conjunto misto (long):
+  Converta o conjunto misto para uma string (long).
+  Produza o relatório de informações usando a string.
+
+Rotina para que se produza o relatório de informações usando uma string e um conjunto misto e um segundo string e um segundo conjunto misto (long):
+  Converta o conjunto misto para uma string denominado description (long).
+  Converta o segundo conjunto misto para uma string denominado segundo description (long).
+  Produza o relatório de informações usando a string junto com o description junto com o segundo string junto com o segundo description.
+
+Rotina para que se produza o relatório de informações usando um valor angular:
+  Converta o valor angular para uma string.
+  Produza o relatório de informações usando a string.
+
+Função para que se determine se um conjunto misto e um segundo conjunto misto são both non-negative proper fractions:
+  Se o conjunto misto não for properly non-negative, diga não.
+  Se o segundo conjunto misto não for properly non-negative, diga não.
+  Diga sim.
+
+Função para que se determine se um conjunto misto é um segundo conjunto misto:
+  Preserve o conjunto misto.
+  Preserve o segundo conjunto misto.
+  Normalize o conjunto misto.
+  Normalize o segundo conjunto misto.
+  Se o número inteiro deste conjunto misto não for o número inteiro deste segundo conjunto misto, diga não.
+  Se as raízes deste conjunto misto não forem as raízes deste segundo conjunto misto, diga não.
+  Se os denominadores da parcela deste conjunto misto não forem os denominadores da parcela deste segundo conjunto misto, diga não.
+  Diga sim.
+
+Função para que se determine se um conjunto misto é any número:
+  Preserve o conjunto misto.
+  Normalize o conjunto misto.
+  Se as raízes deste conjunto misto não forem 0, diga não.
+  Se os denominadores da parcela deste conjunto misto não forem 0, diga não.
+  Diga sim.
+
+Função para que se determine se um conjunto misto é menor ou igual para um segundo conjunto misto:
+  Se o conjunto misto for menor do que o segundo conjunto misto, diga não.
+  Diga sim.
+
+Função para que se determine se um conjunto misto é menor ou igual para um número:
+  Converta o número para um segundo conjunto misto.
+  Se o conjunto misto for menor do que o segundo conjunto misto, diga não.
+  Diga sim.
+
+Função para que se determine se um conjunto misto é menor ou igual para uma proporção:
+  Converta a proporção para um segundo conjunto misto.
+  Se o conjunto misto for menor ou igual ao segundo conjunto misto, diga sim.
+  Diga não.
+
+\ Função para que se determine se um conjunto misto é menor ou igual para um segundo conjunto misto:
+  \ Se o conjunto misto for maior do que o segundo conjunto misto, diga não.
+  \ Diga sim.
+
+\ Função para que se determine se um conjunto misto é menor ou igual para um número:
+  \ Converta o número para um segundo conjunto misto.
+  \ Se o conjunto misto for maior do que o segundo conjunto misto, diga não.
+  \ Diga sim.
+
+Função para que se determine se um conjunto misto é menor ou igual para um número denominadores da parcela:
+  Converta o número / o denominador da parcela para um segundo conjunto misto.
+  Se o conjunto misto for menor ou igual a o segundo conjunto misto, diga sim.
+  Diga não.
+
+Função para que se determine se um conjunto misto é maior do que um segundo conjunto misto:
+  Preserve o conjunto misto.
+  Preserve o segundo conjunto misto.
+  Normalize o conjunto misto.
+  Normalize o segundo conjunto misto.
+  Se o número inteiro deste conjunto misto for maior do que o número inteiro deste segundo conjunto misto, diga sim.
+  Se o número inteiro deste conjunto misto for menor do que o número inteiro deste segundo conjunto misto, diga não.
+  Se as raízes deste conjunto misto forem maior do que as raízes deste segundo conjunto misto, diga sim.
+  Se as raízes deste conjunto misto forem menor do que as raízes deste  segundo conjunto misto, diga não.
+  Se os denominadores da parcela deste conjunto misto forem maior do que os denominadores da parcela deste segundo conjunto misto, diga sim.
+  Diga não.
+
+Função para que se determine se um conjunto misto é maior do que um número denominadores da parcela:
+  Converta o número / o denominador da parcela para um segundo conjunto misto.
+  Se o conjunto misto for maior do que o segundo conjunto misto, diga sim.
+  Diga não.
+
+Função para que se determine se um conjunto misto é menor do que um segundo conjunto misto:
+  Preserve o conjunto misto.
+  Preserve o segundo conjunto misto.
+  Normalize o conjunto misto.
+  Normalize o segundo conjunto misto.
+  Se o número inteiro deste conjunto misto for menor do que o número inteiro deste segundo conjunto misto, diga sim.
+  Se o número inteiro deste conjunto misto for maior do que o número inteiro deste segundo conjunto misto, diga não.
+  Se as raízes deste conjunto misto forem menor do que as raízes deste segundo conjunto misto, diga sim.
+  Se as raízes deste conjunto misto forem maior do que as raízes deste segundo conjunto misto, diga não.
+  Se os denominadores da parcela deste conjunto misto forem menor do que os denominadores da parcela deste segundo conjunto misto, diga sim.
+  Diga não.
+
+Função para que se determine se um conjunto misto é menor do que um número denominadores da parcela:
+  Converta o número / o denominador da parcela para um segundo conjunto misto.
+  Se o conjunto misto for menor do que o segundo conjunto misto, diga sim.
+  Diga não.
+
+Função para que se determine se um conjunto misto é modest usando um número:
+  Preserve o conjunto misto.
+  Normalize o conjunto misto.
+  Se o número inteiro deste conjunto misto for menor ou igual a o número,
+    Diga não.
+  Se o número inteiro deste conjunto misto for positivo, diga sim.
+  Negate o número inteiro deste conjunto misto.
+  Se o número inteiro deste conjunto misto for maior do que o número,
+    Diga não.
+  Se o conjunto misto for o número, diga não.
+  Diga sim.
+
+Função para que se determine se um conjunto misto é negativos;
+Função para que se determine se um conjunto misto é negativo:
+  Converta 0 para um segundo conjunto misto.
+  Se o conjunto misto for menor do que o segundo conjunto misto, diga sim.
+  Diga não.
+
+Função para que se determine se um conjunto misto é um número:
+  Preserve o conjunto misto.
+  Normalize o conjunto misto.
+  Se o número inteiro deste conjunto misto não for o número, diga não.
+  Se as raízes deste conjunto misto não forem 0, diga não.
+  Se os denominadores da parcela deste conjunto misto não forem 0, diga não.
+  Diga sim.
+
+Função para que se determine se um conjunto misto é properly non-negative:
+  Preserve o conjunto misto.
+  Normalize o conjunto misto.
+  Se o número inteiro deste conjunto misto não for 0, diga não.
+  Diga sim.
+
+Função para que se determine se um número é um segundo número e um conjunto misto é zero:
+  Se o número não for o segundo número, diga não.
+  Se o conjunto misto não for 0, diga não.
+  Diga sim.
+
+Função para que se determine se um número é menor ou igual para um segundo número e um conjunto misto é zero:
+  Se o número for menor do que o segundo número, diga não.
+  Se o conjunto misto não for 0, diga não.
+  Diga sim.
+
+Função para que se determine se um número é wrapped usando um número denominado alpha e um número denominado omega:
+  Preserve o alpha.
+  Preserve o omega.
+  Se o alpha for maior do que o omega,
+    Permute o alpha usando o omega.
+  Se o número for menor do que o alpha, diga não.
+  Se o número for maior do que o omega, diga não.
+  Diga sim.
+
+Função para que se determine se elevar um conjunto misto para um número é inútil:
+  Se o número for menor ou igual a 1, diga não.
+  Se o conjunto misto for negativo, diga não.
+  Se o conjunto misto for menor ou igual a 1, diga não.
+  Se o conjunto misto for maior do que 715803289 denominadores da parcela, diga não.
+  Se o conjunto misto for 0, diga sim.
+  Se o conjunto misto for menor ou igual a 30547 denominadores da parcela, diga sim.
+  Se o número for 2, diga não.
+  Se o conjunto misto for menor ou igual a   1203099 denominadores da parcela, diga sim.
+  Se o número for 3, diga não.
+  Se o conjunto misto for menor ou igual a   7550368 denominadores da parcela, diga sim.
+  Se o número for 4, diga não.
+  Se o conjunto misto for menor ou igual a  22728354 denominadores da parcela, diga sim.
+  Se o número for 5, diga não.
+  Se o conjunto misto for menor ou igual a  47384311 denominadores da parcela, diga sim.
+  Se o número for 6, diga não.
+  Se o conjunto misto for menor ou igual a  80082805 denominadores da parcela, diga sim.
+  Se o número for 7, diga não.
+  Se o conjunto misto for menor ou igual a 118704670 denominadores da parcela, diga sim.
+  Se o número for 8, diga não.
+  Se o conjunto misto for menor ou igual a 161217512 denominadores da parcela, diga sim.
+  Se o número for 9, diga não.
+  Se o conjunto misto for menor ou igual a 205952820 denominadores da parcela, diga sim.
+  Se o número for 10, diga não.
+  Se o conjunto misto for menor ou igual a 251643608 denominadores da parcela, diga sim.
+  Se o número for 11, diga não.
+  Se o conjunto misto for menor ou igual a 297372659 denominadores da parcela, diga sim.
+  Se o número for 12, diga não.
+  Se o conjunto misto for menor ou igual a 342499541 denominadores da parcela, diga sim.
+  Se o número for 13, diga não.
+  Se o conjunto misto for menor ou igual a 386592467 denominadores da parcela, diga sim.
+  Se o número for 14, diga não.
+  Se o conjunto misto for menor ou igual a 429372600 denominadores da parcela, diga sim.
+  Se o número for 15, diga não.
+  Se o conjunto misto for menor ou igual a 470671227 denominadores da parcela, diga sim.
+  Se o número for 16, diga não.
+  Se o conjunto misto for menor ou igual a 510397828 denominadores da parcela, diga sim.
+  Se o número for 17, diga não.
+  Se o conjunto misto for menor ou igual a 548516701 denominadores da parcela, diga sim.
+  Se o número for 18, diga não.
+  Se o conjunto misto for menor ou igual a 585030020 denominadores da parcela, diga sim.
+  Se o número for 19, diga não.
+  Se o conjunto misto for menor ou igual a 619965638 denominadores da parcela, diga sim.
+  Se o número for 20, diga não.
+  Se o conjunto misto for menor ou igual a 653368344 denominadores da parcela, diga sim.
+  Se o número for 21, diga não.
+  Se o conjunto misto for menor ou igual a 685293635 denominadores da parcela, diga sim.
+  Se o número for 22, diga não.
+  Se o conjunto misto for menor ou igual a 715803289 denominadores da parcela, diga sim.
+  Diga não.
+
+Função para que se determine se elevar um conjunto misto para um número for redundante:
+  Se o número for menor ou igual a 1, diga não.
+  Se o conjunto misto for negativo, diga não.
+  Se o conjunto misto for menor ou igual a 1, diga não.
+  Se o conjunto misto for maior do que 750823906 denominadores da parcela, diga não.
+  Se o conjunto misto for 0, diga sim.
+  Se o conjunto misto for menor ou igual a     52908 denominadores da parcela, diga sim.
+  Se o número for 2, diga não.
+  Se o conjunto misto for menor ou igual a   1735170 denominadores da parcela, diga sim.
+  Se o número for 3, diga não.
+  Se o conjunto misto for menor ou igual a   9936843 denominadores da parcela, diga sim.
+  Se o número for 4, diga não.
+  Se o conjunto misto for menor ou igual a  28313414 denominadores da parcela, diga sim.
+  Se o número for 5, diga não.
+  Se o conjunto misto for menor ou igual a  56905571 denominadores da parcela, diga sim.
+  Se o número for 6, diga não.
+  Se o conjunto misto for menor ou igual a  93691342 denominadores da parcela, diga sim.
+  Se o número for 7, diga não.
+  Se o conjunto misto for menor ou igual a 136178317 denominadores da parcela, diga sim.
+  Se o número for 8, diga não.
+  Se o conjunto misto for menor ou igual a 182148537 denominadores da parcela, diga sim.
+  Se o número for 9, diga não.
+  Se o conjunto misto for menor ou igual a 229868716 denominadores da parcela, diga sim.
+  Se o número for 10, diga não.
+  Se o conjunto misto for menor ou igual a 278074114 denominadores da parcela, diga sim.
+  Se o número for 11, diga não.
+  Se o conjunto misto for menor ou igual a 325882576 denominadores da parcela, diga sim.
+  Se o número for 12, diga não.
+  Se o conjunto misto for menor ou igual a 372701919 denominadores da parcela, diga sim.
+  Se o número for 13, diga não.
+  Se o conjunto misto for menor ou igual a 418151324 denominadores da parcela, diga sim.
+  Se o número for 14, diga não.
+  Se o conjunto misto for menor ou igual a 462000463 denominadores da parcela, diga sim.
+  Se o número for 15, diga não.
+  Se o conjunto misto for menor ou igual a 504124412 denominadores da parcela, diga sim.
+  Se o número for 16, diga não.
+  Se o conjunto misto for menor ou igual a 544471026 denominadores da parcela, diga sim.
+  Se o número for 17, diga não.
+  Se o conjunto misto for menor ou igual a 583037638 denominadores da parcela, diga sim.
+  Se o número for 18, diga não.
+  Se o conjunto misto for menor ou igual a 619854555 denominadores da parcela, diga sim.
+  Se o número for 19, diga não.
+  Se o conjunto misto for menor ou igual a 654973429 denominadores da parcela, diga sim.
+  Se o número for 20, diga não.
+  Se o conjunto misto for menor ou igual a 688459106 denominadores da parcela, diga sim.
+  Se o número for 21, diga não.
+  Se o conjunto misto for menor ou igual a 720383950 denominadores da parcela, diga sim.
+  Se o número for 22, diga não.
+  Se o conjunto misto for menor ou igual a 750823906 denominadores da parcela, diga sim.
+  Diga não.
+
+Função para que se determine se as raízes são boas aproximações usando um conjunto misto e um conjunto misto denominado conjunto resultante:
+  Preserve o conjunto resultante.
+  Adicione 1 para as raízes deste conjunto resultante.
+  Multiplique o conjunto resultante pelo conjunto resultante retornando um conjunto misto denominado bigger produto.
+  Se o bigger produto for menor do que o conjunto misto, diga não.
+  Subtraia 2 desde as raízes deste conjunto resultante.
+  Multiplique o conjunto resultante pelo conjunto resultante retornando um conjunto misto denominado smaller produto.
+  Se o smaller produto for maior do que o conjunto misto, diga não.
+  Diga sim.
+
+Função para que se determine se as raízes das parcelas são boas aproximações usando um conjunto misto e um conjunto misto denominado conjunto resultante:
+  Preserve o conjunto resultante.
+  Adicione 1 para os denominadores da parcela deste conjunto resultante.
+  Multiplique o conjunto resultante pelo conjunto resultante retornando um conjunto misto denominado bigger produto.
+  Se o bigger produto for menor do que o conjunto misto, diga não.
+  Subtraia 2 desde os denominadores da parcela deste conjunto resultante.
+  Multiplique o conjunto resultante pelo conjunto resultante retornando um conjunto misto denominado smaller produto.
+  Se o smaller produto for maior do que o conjunto misto, diga não.
+  Diga sim.
+
+Função para que se determine se as raízes das parcelas should be decreased usando um conjunto misto e um conjunto misto denominado conjunto resultante:
+  Preserve o conjunto resultante.
+  Subtraia 1 desde os denominadores da parcela deste conjunto resultante.
+  Se as raízes das parcelas should be increased usando o conjunto misto e o conjunto resultante, diga não.
+  Diga sim.
+
+Função para que se determine se as raízes das parcelas should be increased usando um conjunto misto e um conjunto misto denominado conjunto resultante:
+  Preserve o conjunto resultante.
+  Multiplique o conjunto resultante pelo conjunto resultante retornando um conjunto misto denominado produto.
+  Se o produto for menor ou igual a o conjunto misto, diga não.
+  Subtraia o produto desde o conjunto misto retornando um conjunto misto denominado shortage.
+  Adicione 1 para os denominadores da parcela deste conjunto resultante.
+  Multiplique o conjunto resultante pelo conjunto resultante retornando o produto.
+  Se o produto for menor ou igual a o conjunto misto, diga sim.
+  Subtraia o conjunto misto desde o produto retornando um conjunto misto denominado complement.
+  Se o shortage for menor do que o complement, diga não.
+  Diga sim.
+
+Função para que se determine se um tangente é extreme:
+  Preserve o tangente.
+  Remova o sinal de o tangente.
+  Se o denominador desta tangente for 0, diga sim.
+  Se o denominador desta tangente for maior do que 1, diga não.
+  Se o numerador desta tangente for o maior número, diga sim.
+  Diga não.
+
+Função para que se determine se um valor angular é um segundo valor angular:
+  Se os graus deste valor angular não forem os graus deste segundo valor angular, diga não.
+  Se os minutos deste valor angular não forem os minutos deste segundo valor angular, diga não.
+  Se os segundos deste valor angular não forem os segundos deste segundo valor angular, diga não.
+  Se os centésimos de segundos deste valor angular não forem os centésimos de segundos deste segundo valor angular, diga não.
+  Diga sim.
+
+Função para que se determine se um valor angular é just graus:
+  Se os minutos deste valor angular não forem 0, diga não.
+  Se os segundos deste valor angular não forem 0, diga não.
+  Se os centésimos de segundos deste valor angular não forem 0, diga não.
+  Diga sim.
+
+Função para que se determine se um valor angular é just graus e minutos:
+  Se os segundos deste valor angular não forem 0, diga não.
+  Se os centésimos de segundos deste valor angular não forem 0, diga não.
+  Diga sim.
+
+Rotina para que se divida um conjunto misto por um segundo conjunto misto:
+  Divida o conjunto misto pelo segundo conjunto misto retornando um conjunto misto denominado conjunto resultante.
+  Atribua o conjunto resultante para o conjunto misto.
+
+Rotina para que se divida um conjunto misto por um divisor conjunto misto retornando um quociente número e um remnant conjunto misto:
+  [Itere.]
+    Se o divisor for 0,
+      Atribua o maior número para o quociente;
+      Converta 0 para o remnant conjunto misto;
+      Retorne.
+    Preserve o conjunto misto.
+    Preserve o divisor.
+    Atribua o conjunto misto para o remnant conjunto misto.
+    Normalize o remnant conjunto misto.
+    Atribua o divisor para um segundo conjunto misto.
+    Normalize o segundo conjunto misto.
+    Se o conjunto misto for negativo,
+      Ative um sinal sinalizador;
+      Negate o conjunto misto.
+    Se o divisor for negativo,
+      Reverse o sinal sinalizador;
+      Negate o divisor.
+    Normalize o conjunto misto.
+    Normalize o divisor.
+    Se o conjunto misto for menor do que o divisor,
+      Atribua 0 para o quociente; 
+      Pare.
+    Se o conjunto misto for o divisor,
+      Atribua 1 para o quociente; 
+      Pare.
+    Se o número inteiro deste divisor não for 0,
+      Divida o número inteiro deste conjunto misto pelo número inteiro deste divisor retornando o quociente e um resto;
+      Pare.
+    \ to get here, o número inteiro do divisor deve ser 0.
+    Multiplique o divisor pela raiz quadrada da parcela.
+    Atribua 1 para uma contagem.
+    Se o número inteiro deste divisor for 0,
+      Multiplique o divisor pela raiz quadrada da parcela;
+      Adicione 1 para a contagem.
+    Se o número inteiro deste conjunto misto for menor ou igual a a raiz quadrada da parcela,
+      Divida o número inteiro deste conjunto misto pelo número inteiro deste divisor retornando o quociente e o resto;
+      Pare.
+    Multiplique o número inteiro deste conjunto misto pela raiz quadrada da parcela.
+    Subtraia 1 desde a contagem.
+    Se o número inteiro deste conjunto misto for menor ou igual a a raiz quadrada da parcela,
+      Divida o número inteiro deste conjunto misto pelo número inteiro deste divisor retornando o quociente e o resto;
+      Pare.
+    Multiplique o número inteiro deste conjunto misto pela raiz quadrada da parcela.
+    Subtraia 1 desde a contagem.
+    Divida o número inteiro deste conjunto misto pelo número inteiro deste divisor  retornando o quociente e o resto.
+    Pare.
+  Reitere. \ um go-to label.
+  Se a contagem for 2,
+    Multiplique o quociente pela raiz quadrada da parcela;
+    Multiplique o quociente pela raiz quadrada da parcela;
+    Atribua 0 para a contagem.
+  Se a contagem for 1,
+    Multiplique o quociente pela raiz quadrada da parcela;
+    Atribua 0 para a contagem.
+  Se o sinal sinalizador estiver ativo,
+    Negate o quociente.
+  Multiplique o segundo conjunto misto pelo quociente.
+  Normalize o segundo conjunto misto.
+  Subtraia o segundo conjunto misto desde o remnant conjunto misto.
+  Normalize o remnant conjunto misto.
+
+Rotina para que se divida um conjunto misto por um conjunto misto denominado divisor usando um sinal sinalizador retornando um conjunto resultante conjunto misto (proper fractions):
+  \ assumes that both o conjunto misto e o divisor são non-negative.
+  \ assumes that both o conjunto misto e o divisor são menor do que 1.
+  Se o divisor for 0,
+    Converta o maior número para o conjunto resultante conjunto misto; 
+    Retorne.
+  Preserve o conjunto misto.
+  Preserve o divisor.
+  Normalize o conjunto misto.
+  Normalize o divisor.
+  Atribua as raízes deste conjunto misto para um numerador.
+  Atribua as raízes deste divisor para um denominador.
+  Multiplique o numerador pela raiz quadrada da parcela.
+  Multiplique o denominador pela raiz quadrada da parcela.
+  Adicione os denominadores da parcela deste conjunto misto para o numerador.
+  Adicione os denominadores da parcela deste divisor para o denominador.
+  Divida o numerador pelo denominadorretornando o número inteiro deste conjunto resultante conjunto misto e um resto.
+  Atribua o resto para as raízes deste conjunto resultante conjunto misto.
+  Multiplique o resto pela raiz quadrada da parcela.
+  Redimensione as raízes deste conjunto resultante conjunto misto pela raiz quadrada da parcela / o denominador.
+  Atribua as raízes deste conjunto resultante conjunto misto para um raízes número.
+  Multiplique as raízes pelo denominador.
+  Subtraia as raízes desde o resto.
+  Se o resto for negativo,
+    Subtraia 1 desde as raízes deste conjunto resultante conjunto misto;
+    Adicione o denominador para o resto.
+  Atribua o resto para os denominadores da parcela deste conjunto resultante conjunto misto.
+  Redimensione os denominadores da parcela deste conjunto resultante conjunto misto pela raiz quadrada da parcela / o denominador.
+  Se o sinal sinalizador estiver ativo, 
+    Negate o conjunto resultante conjunto misto.
+
+Rotina para que se divida um conjunto misto por um conjunto misto denominado divisor retornando um número denominado quociente e um conjunto misto denominado remnant (Itere):
+  Preserve o conjunto misto.
+  Atribua 0 para o quociente.
+  Obtenha modesty threshold usando o divisor retornando um número denominado threshold.
+  Itere.
+    Divida o conjunto misto pelo divisor
+      retornando um número e o remnant.
+    Adicione o número para o quociente.
+    Se o remnant for modest usando o threshold, retorne.
+    Atribua o remnant para o conjunto misto.
+  Reitere.
+
+Rotina para que se divida um conjunto misto por um conjunto misto denominado divisor retornando um conjunto resultante conjunto misto:
+  Preserve o conjunto misto.
+  Preserve o divisor.
+  Converta 0 para o conjunto resultante conjunto misto.
+  Normalize o conjunto misto.
+  Normalize o conjunto resultante conjunto misto.
+  Se o divisor for 0,
+    Converta o maior número para o conjunto resultante conjunto misto; 
+    Retorne.
+  Se o conjunto misto for negativo,
+    set um sinal sinalizador;
+    Negate o conjunto misto;
+    Normalize o conjunto misto.
+  Se o divisor for negativo,
+    reverse o sinal sinalizador;
+    Negate o divisor;
+    Normalize o divisor.
+  Se o conjunto misto e o divisor forem both non-negative proper fractions,
+    Divida o conjunto misto pelo divisor usando o sinal sinalizador
+      retornando o conjunto resultante conjunto misto (proper fractions);
+    retorne.
+  Atribua o conjunto misto para um conjunto misto denominado temp.
+  Divida o temp pela raiz quadrada da parcela.
+  Divida o temp pelo divisor retornando um número e um conjunto misto denominado resto conjunto misto (Itere).
+  Multiplique o número pela raiz quadrada da parcela.
+  Atribua o divisor para o temp.
+  Multiplique o temp pelo número.
+  Subtraia o temp desde o conjunto misto.
+  Atribua o número para o número inteiro deste conjunto resultante conjunto misto.
+  Divida o conjunto misto pelo divisor retornando o número e o resto conjunto misto (Itere).
+  Adicione o número para o número inteiro deste conjunto resultante conjunto misto.
+  Atribua o resto conjunto misto para o conjunto misto.
+  Multiplique o conjunto misto pela raiz quadrada da parcela.
+  Divida o conjunto misto pelo divisor retornando o número e o resto conjunto misto (Itere).
+  Atribua o número para as raízes deste conjunto resultante conjunto misto.
+  Atribua o resto conjunto misto para o conjunto misto.
+  Multiplique o conjunto misto pela raiz quadrada da parcela.
+  Divida o conjunto misto pelo divisor retornando o número e o resto conjunto misto (Itere).
+  Atribua o número para os denominadores da parcela deste conjunto resultante conjunto misto.
+  Atribua o resto conjunto misto para o conjunto misto.
+  Multiplique o conjunto misto pela raiz quadrada da parcela.
+  Divida o conjunto misto pelo divisor retornando o número e o resto conjunto misto (Itere).
+  Divida o número pela raiz quadrada da parcela retornando um quociente e um resto.
+  Adicione o quociente para os denominadores da parcela deste conjunto resultante conjunto misto.
+  Atribua o resto para o número.
+  Atribua a raiz quadrada da parcela para um número denominado threshold.
+  Divida o threshold por 2.
+  Se o número for menor ou igual a o threshold,
+    Adicione 1 para os denominadores da parcela deste conjunto resultante conjunto misto.
+  Se o número for menor do que o threshold,
+    Subtraia a raiz quadrada da parcela desde o threshold.
+  Se o sinal sinalizador estiver ativo,
+    Negate o conjunto resultante conjunto misto.
+  Normalize o conjunto resultante conjunto misto.
+
+Rotina para que se divida um conjunto misto por um número:
+  Divida o conjunto misto pelo número retornando um segundo conjunto misto.
+  Atribua o segundo conjunto misto para o conjunto misto.
+
+Rotina para que se divida um conjunto misto por um número retornando um segundo conjunto misto:
+  Se o número for 0,
+    Converta o maior número para o conjunto misto; retorne.
+  Atribua o número para um segundo número.
+  Remova o sinal de o segundo número.
+  Se o segundo número for menor ou igual a a raiz quadrada da parcela,
+    Divida o conjunto misto pelo número retornando o segundo conjunto misto (modest divisor);
+    Retorne.
+  Obtenha um máximo divisor comum usando o número e a raiz quadrada da parcela.
+  Se o máximo divisor comum for menor ou igual a 1,
+    Divida o conjunto misto pelo número retornando o segundo conjunto misto (large divisor);
+    Retorne.
+  Divida o conjunto misto pelo máximo divisor comum retornando um conjunto misto denominado temp (modest divisor).
+  Atribua o número para um número denominado remnant.
+  Divida o remnant pelo máximo divisor comum.
+  Divida o temp pelo remnant retornando o segundo conjunto misto.
+
+Rotina para que se divida um conjunto misto por um número retornando um segundo conjunto misto (large divisor):
+  Se o número for 0,
+    Converta o maior número para o conjunto misto; retorne.
+  Preserve o conjunto misto.
+  Normalize o conjunto misto.
+  Divida o número inteiro deste conjunto misto pelo número retornando um quociente e um resto.
+  Atribua o quociente para o número inteiro deste segundo conjunto misto.
+  Atribua o resto para um segundo número.
+  Multiplique o segundo número pela raiz quadrada da parcela / o número.
+  Atribua o segundo número para as raízes deste segundo conjunto misto.
+  \ as raízes do segundo conjunto misto   foram Arredondados para o nearest nip.
+  Normalize o segundo conjunto misto.
+  Divida as raízes deste conjunto misto pelo número retornando o quociente e o resto.
+  Adicione o quociente para as raízes deste segundo conjunto misto.
+  Atribua o resto para o segundo número.
+  Multiplique o segundo número pela raiz quadrada da parcela / o número.
+  Atribua o segundo número para os denominadores da parcela deste segundo conjunto misto.
+  Normalize o segundo conjunto misto.
+  Divida os denominadores da parcela deste conjunto misto pelo número retornando o quociente e o resto.
+  Adicione o quociente para os denominadores da parcela deste segundo conjunto misto.
+  Atribua o resto para o segundo número.
+  Multiplique o segundo número pela raiz quadrada da parcela / o número.
+  Divida o segundo número pela raiz quadrada da parcela retornando o quociente e o resto.
+  Adicione o quociente para os denominadores da parcela deste segundo conjunto misto.
+  Atribua a raiz quadrada da parcela para um número denominado número delimitador.
+  Divida o número delimitador por 2.
+  Se o segundo número for menor ou igual a o número delimitador,
+    Adicione 1 para os denominadores da parcela deste segundo conjunto misto.
+  Subtraia a raiz quadrada da parcela desde o número delimitador.
+  Se o segundo número for menor do que o número delimitador,
+    Subtraia 1 desde os denominadores da parcela deste segundo conjunto misto.
+  Normalize o segundo conjunto misto.
+
+Rotina para que se divida um conjunto misto por um número retornando um segundo conjunto misto (modest divisor):
+  Se o número for 0,
+    Converta o maior número para o conjunto misto; 
+    Retorne.
+  Preserve o conjunto misto.
+  Normalize o conjunto misto.
+  Divida o número inteiro deste conjunto misto pelo número retornando um quociente e um resto.
+  Atribua o quociente para o número inteiro deste segundo conjunto misto.
+  Atribua o resto para um segundo número.
+  Multiplique o segundo número pela raiz quadrada da parcela.
+  Adicione as raízes deste conjunto misto para o segundo número.
+  Divida o segundo número pelo número retornando o quociente e o resto.
+  Atribua o quociente para as raízes deste segundo conjunto misto.
+  Atribua o resto para o segundo número.
+  Multiplique o segundo número pela raiz quadrada da parcela.
+  Adicione os denominadores da parcela deste conjunto misto para o segundo número.
+  Divida o segundo número pelo número retornando o quociente e o resto.
+  Atribua o quociente para os denominadores da parcela deste segundo conjunto misto.
+  Atribua o resto para o segundo número.
+  Multiplique o segundo número pela raiz quadrada da parcela.
+  Divida o segundo número pelo número
+    retornando o quociente e o resto.
+  Atribua o quociente para o segundo número.
+  Atribua a raiz quadrada da parcela para um número denominado threshold.
+  Divida o threshold por 2.
+  Se o segundo número for menor ou igual a o threshold,
+    Adicione 1 para os denominadores da parcela deste segundo conjunto misto.
+  Subtraia a raiz quadrada da parcela desde o threshold.
+  Se o segundo número for menor do que o threshold,
+    Subtraia 1 desde os  denominadores da parcela deste segundo conjunto misto.
+  Normalize o segundo conjunto misto.
+
+
+Rotina para que se obtenha um conjunto misto registrado usando um número:
+  Se o número for 1, Atribua o primeiro conjunto misto registrado para o conjunto misto registrado; retorne.
+  Se o número for 2, Atribua o segundo conjunto misto registrado para o conjunto misto registrado; retorne.
+  Se o número for 3, Atribua o terceiro conjunto misto registrado para o conjunto misto registrado; retorne.
+  Se o número for 4, Atribua o quarto conjunto misto registrado para o conjunto misto registrado; retorne.
+  Se o número for 5, Atribua o quinto conjunto misto registrado para o conjunto misto registrado; retorne.
+  Se o número for 6, Atribua o sexto conjunto misto registrado para o conjunto misto registrado; retorne.
+  Se o número for 7, Atribua o sétimo conjunto misto registrado para o conjunto misto registrado; retorne.
+  Se o número for 8, Atribua o oitavo conjunto misto registrado para o conjunto misto registrado; retorne.
+  Se o número for 16, Atribua o décimo sexto conjunto misto registrado para o conjunto misto registrado; retorne.
+
+Rotina para que se obtenha modesty threshold usando um conjunto misto denominado divisor retornando um número:
+  Atribua o número inteiro deste divisor para o número.
+  Remova o sinal de o número.
+  Se o número for menor do que a raiz quadrada da parcela,
+    Atribua a raiz quadrada da parcela para o número.
+
+Rotina para que se obtenha um número usando uma contagem (arctangent coefficient numerador):
+  \ Per Herbert Medina's 2006 paper on
+  \ "A Sequence of Polynomials for Approximating Arctangent"
+  \ https://web.archive.org/web/20060902190838/http://myweb.lmu.edu/hmedina/Papers/Arctan.pdf
+  \ https://digitalcommons.lmu.edu/cgi/viewcontent.cgi?article=1101&context=math_fac
+  \ The contagem é o term's potência.
+  \ The denominators are 64 vezes each term's potência.
+  Atribua 0 para o número.
+  Se a contagem for menor ou igual a 0, retorne.
+  Se a contagem for menor ou igual a 24, retorne.
+  Se a contagem for  1, Atribua  64 para o número; retorne.
+  Se a contagem for  2, retorne.
+  Se a contagem for  3, Atribua  -64 para o número; retorne.
+  Se a contagem for  5, Atribua   64 para o número; retorne.
+  Se a contagem for  7, Atribua  -64 para o número; retorne.
+  Se a contagem for  9, Atribua   64 para o número; retorne.
+  Se a contagem for 11, Atribua  -64 para o número; retorne.
+  Se a contagem for menor ou igual a  12, retorne.
+  Se a contagem for 13, Atribua   65 para o número; retorne.
+  Se a contagem for 14, Atribua  -12 para o número; retorne.
+  Se a contagem for 15, Atribua    1 para o número; retorne.
+  Se a contagem for 16, Atribua -208 para o número; retorne.
+  Se a contagem for 17, Atribua  494 para o número; retorne.
+  Se a contagem for 18, Atribua -584 para o número; retorne.
+  Se a contagem for 19, Atribua  430 para o número; retorne.
+  Se a contagem for 20, Atribua -208 para o número; retorne.
+  Se a contagem for 21, Atribua   65 para o número; retorne.
+  Se a contagem for 22, Atribua  -12 para o número; retorne.
+  Se a contagem for 23, Atribua    1 para o número.
+
+Rotina para que se obtenha uns radianos usando um cosseno:
+  Atribua o cosseno para uma proporção.
+  Atribua a proporção para um seno.
+  Obtenha os radianos usando o seno.
+  Negate os radianos.
+  Atribua half pi para uns segundo radianos.
+  Adicione o segundo radianos para os radianos.
+  Normalize os radianos.
+
+Rotina para que se obtenha uns radianos usando um conjunto misto (para graus):
+  Atribua tau para uns tau radianos.
+  Divida o conjunto misto por 6.
+  Multiplique o conjunto misto pelo tau radianos.
+  Divida o conjunto misto por 60.
+  Atribua o conjunto misto para os radianos.
+
+Rotina para que se obtenha uns radianos usando uma proporção (para graus):
+  Converta a proporção para um conjunto misto.
+  Obtenha os radianos usando o conjunto misto (para graus).
+
+Rotina para que se obtenha uns radianos usando um seno:
+  Preserve o seno.
+  Se o seno for negativo,
+    Ative um sinal sinalizador;
+    Negate o seno.
+  Se o seno não for positive,
+    Converta 0 para os radianos; 
+    Retorne.
+  \ Use Newton's method,  https://en.wikipedia.org/wiki/Newton%27s_method e https://en.wikipedia.org/wiki/Newton%27s_method_in_optimization
+  \ para um region where sin(angle) é monotonically increasing e concave downward.  
+  \ Thus, o point (low radianos, low seno) never moves desde (0, 0),
+  \ e o point (high radianos, high seno) é o guess.
+  Converta o seno para um conjunto misto denominado goal conjunto misto.
+  Atribua half pi para uns radianos denominado guess radianos.
+  Converta 1 para um guess conjunto misto.
+  Itere.
+    Se o goal conjunto misto for menor ou igual a o guess conjunto misto,
+      Converta o guess radianos para os radianos;
+      Negate os radianos usando o sinal sinalizador;
+      Normalize os radianos;
+      retorne.
+    Divida o guess radianos pelo guess conjunto misto
+      retornando um conjunto misto denominado next factor.
+    Atribua o guess radianos para uns radianos denominado previous radianos.
+    Multiplique o goal conjunto misto pelo next factor
+      retornando o guess radianos.
+    Atribua o seno deste guess radianos para um segundo seno.
+    Converta o segundo seno para um conjunto misto.
+    Se o conjunto misto for o guess conjunto misto,
+      Converta o guess radianos para os radianos;
+      Negate os radianos usando o sinal sinalizador;
+      Normalize os radianos;
+      retorne.
+    Se o conjunto misto for menor do que o goal conjunto misto,
+      strictly interpolate os radianos desde o goal conjunto misto
+        between o previous radianos e o guess radianos
+        desde between o guess conjunto misto e o conjunto misto;
+      Normalize os radianos;
+      retorne.
+    Atribua o conjunto misto para o guess conjunto misto.
+  Reitere.
+  Normalize os radianos.
+
+Rotina para que se obtenha uns radianos usando um tangente:
+  Atribua half pi para uns radianos denominado bogus radianos.
+  Se o tangente for extreme,
+    Atribua o bogus radianos para os radianos; retorne.
+  Preserve o tangente.
+  Se o tangente for negativo,
+    set um sinal sinalizador;
+    Negate o tangente.
+  Se o tangente não for positive,
+    Converta 0 para os radianos; retorne.
+  Se o tangente for maior do que 1 / 1,
+    set um invert sinalizador;
+    Flip o tangente.
+  Converta 0/1 para um conjunto misto.
+  Limpe uma contagem.
+  Itere.
+    Adicione 1 para a contagem.
+    Se a contagem for menor ou igual a 24, pare.
+    Obtenha um número usando a contagem (arctangent coefficient numerador).
+    Converta o tangente para um segundo conjunto misto.
+    Eleve o segundo conjunto misto para a contagem.
+    Converta o número / a contagem para um terceiro conjunto misto.
+    Multiplique o segundo conjunto misto pelo terceiro conjunto misto.
+    Adicione o segundo conjunto misto para o conjunto misto.
+  Reitere.
+  Divida o conjunto misto por 64.
+  Atribua o conjunto misto para os radianos.
+  Se o invert sinalizador estiver ativo,
+    Negate os radianos;
+    Adicione o bogus radianos para os radianos.
+  Se o sinal sinalizador estiver ativo,
+    Negate os radianos.
+  Normalize os radianos.
+
+Rotina para que se obtenha as raízes usando um conjunto misto e um conjunto misto denominado conjunto resultante:
+  \ assumes that o conjunto resultante é already within 1 of correct answer.
+  Se o número inteiro deste conjunto misto for o maior número,
+    Atribua 41040 para as raízes deste conjunto resultante;
+    Retorne.
+  Itere.
+    Se as raízes forem boas aproximações usando o conjunto misto e o conjunto resultante, retorne.
+    Aprimore as raízes usando o conjunto misto e o conjunto resultante.
+  Reitere.
+
+Rotina para que se obtenha as raízes das parcelas usando um conjunto misto e um conjunto misto denominado conjunto resultante:
+  Se o número inteiro deste conjunto misto é o maior número,
+    Atribua 1007 para os denominadores da parcela deste conjunto resultante;
+    Atribua as raízes deste conjunto misto para um número denominado bonus raízes;
+    Divida o bonus raízes por 2;
+    Redimensione o bonus raízes pela raiz quadrada da parcela / o maior raiz quadrada;
+    Adicione o bonus raízes para os denominadores da parcela deste conjunto resultante;
+    retorne.
+  \ assumes that o conjunto resultante é already within 2 raízes of correct answer.
+  Itere.
+    Se as raízes das parcelas forem boas aproximações usando o conjunto misto e o conjunto resultante,
+      Retorne.
+    Aprimore as raízes das parcelas usando o conjunto misto e o conjunto resultante.
+  Reitere.
+
+Rotina para que se obtenha tau retornando uns radianos:
+  Atribua tau para os radianos.
+
+Rotina para que se obtenha um valor angular usando um cosseno:
+  Obtenha uns radianos usando o cosseno.
+  Converta os radianos para o valor angular.
+
+Rotina para que se obtenha um valor angular usando um seno:
+  Obtenha uns radianos usando o seno.
+  Converta os radianos para o valor angular.
+
+Rotina para que se obtenha um valor angular usando um tangente:
+  Obtenha uns radianos usando o tangente.
+  Converta os radianos para o valor angular.
+
+Rotina para que se Inverta um conjunto misto:
+  Atribua o conjunto misto para um segundo conjunto misto.
+  Converta 1/1 para o conjunto misto.
+  Divida o conjunto misto pelo segundo conjunto misto.
+
+Rotina para que se defina um conjunto misto usando um número e um número denominado raízes e uns denominadores da parcela:
+  Atribua o número para o número inteiro deste conjunto misto.
+  Atribua as raízes para as raízes deste conjunto misto.
+  Atribua os denominadores da parcela para os denominadores da parcela deste conjunto misto.
+
+Rotina para que se defina um valor angular usando um número denominado graus:
+  Defina o valor angular usando o graus e 0 e 0 e 0.
+
+Rotina para que se defina um valor angular usando 
+    um número denominado graus e 
+    um número denominado minutos e 
+    um número denominado segundos e 
+    um número denominado centésimos de segundos:
+  Atribua o graus para os graus deste valor angular.
+  Atribua o minutos para os minutos deste valor angular.
+  Atribua o segundos para os segundos deste valor angular.
+  Atribua o centésimos de segundos para os centésimos de segundos deste valor angular.
+
+Rotina para que se multiplique um conjunto misto por um segundo conjunto misto:
+  Multiplique o conjunto misto pelo segundo conjunto misto retornando um conjunto misto denominado conjunto resultante.
+  Atribua o conjunto resultante para o conjunto misto.
+
+Rotina para que se multiplique um conjunto misto por um segundo conjunto misto retornando um conjunto misto denominado conjunto resultante:
+  Preserve o conjunto misto.
+  Preserve o segundo conjunto misto.
+  Normalize o conjunto misto.
+  Normalize o segundo conjunto misto.
+  Atribua o segundo conjunto misto para o conjunto resultante.
+  Multiplique o conjunto resultante pelo número inteiro deste conjunto misto.
+  Normalize o conjunto resultante.
+  Atribua o segundo conjunto misto para um conjunto misto denominado conjunto de raízes.
+  Atribua as raízes deste conjunto de raízes para os denominadores da parcela deste conjunto de raízes.
+  Divida os número inteiro deste conjunto de raízes  pela raiz quadrada da parcela retornando um quociente e um resto.
+  Atribua o quociente para o número inteiro deste conjunto de raízes.
+  Atribua o resto para as raízes deste conjunto de raízes.
+  Multiplique o conjunto de raízes pelos raízes deste conjunto misto.
+  Normalize o conjunto de raízes.
+  Adicione o conjunto de raízes para o conjunto resultante.
+  Defina um conjunto misto denominado conjunto triplo usando 0 e 0 e o número inteiro deste segundo conjunto misto.
+  Normalize o conjunto triplo.
+  Multiplique o conjunto triplo pelo denominadores da parcela deste conjunto misto.
+  Adicione o conjunto triplo para o conjunto resultante.
+  Defina um conjunto misto denominado conjunto temporário usando 0 e as raízes deste conjunto misto e os denominadores da parcela deste conjunto misto.
+  Multiplique o conjunto temporário pelo denominadores da parcela deste segundo conjunto misto.
+  Normalize o conjunto temporário.
+  Atribua os denominadores da parcela deste conjunto misto para um número.
+  Multiplique o número pelos raízes deste segundo conjunto misto.
+  Adicione o número para as raízes deste conjunto temporário.
+  Normalize o conjunto temporário.
+  Divida o conjunto temporário pela raiz quadrada da parcela.
+  Divida o conjunto temporário pela raiz quadrada da parcela.
+  Adicione o conjunto temporário para o conjunto resultante.
+  Normalize o conjunto resultante.
+
+Rotina para que se multiplique um conjunto misto por um número:
+  Multiplique o conjunto misto pelo número retornando um conjunto misto denominado conjunto resultante.
+  Atribua o conjunto resultante para o conjunto misto.
+
+Rotina para que se multiplique um conjunto misto por um número retornando um segundo conjunto misto:
+  Preserve o conjunto misto.
+  Normalize o conjunto misto.
+  Multiplique o número inteiro deste conjunto misto pelo número.
+  Divida o número pela raiz quadrada da parcela retornando um quociente e um resto.
+  Atribua as raízes deste conjunto misto para um número denominado raízes.
+  Multiplique as raízes pelo quociente.
+  Adicione as raízes para o número inteiro deste conjunto misto.
+  Multiplique as raízes deste conjunto misto pelo resto.
+  Atribua os denominadores da parcela deste conjunto misto para um número denominado denominadores da parcela.
+  Multiplique os denominadores da parcela pelo quociente.
+  Adicione os denominadores da parcela para as raízes deste conjunto misto.
+  Multiplique os denominadores da parcela deste conjunto misto pelo resto.
+  Normalize o conjunto misto.
+  Atribua o conjunto misto para o segundo conjunto misto.
+
+Rotina para que se multiplique um valor angular por um número:
+  Multiplique os graus deste valor angular pelo número.
+  Multiplique os minutos deste valor angular pelo número.
+  Multiplique os segundos deste valor angular pelo número.
+  Multiplique os centésimos de segundos deste valor angular pelo número.
+  Normalize o valor angular.
+
+Rotina para que se negate um conjunto misto:
+  Normalize o conjunto misto.
+  Negate o número inteiro deste conjunto misto.
+  Negate as raízes deste conjunto misto.
+  Negate os denominadores da parcela deste conjunto misto.
+  Normalize o conjunto misto.
+
+Rotina para que se negate um conjunto misto usando um sinalizador:
+  Se o sinalizador estiver ativo, 
+    Negate o conjunto misto.
+
+Rotina para que se Negate uma proporção usando um sinalizador:
+  Se o sinalizador estiver ativo, 
+    Negate a proporção.
+
+Rotina para que se normalize um conjunto misto:
+  Atribua a raiz quadrada da parcela para um número.
+  Subtraia 1 desde o número.
+  wrap os denominadores da parcela deste conjunto misto usando 0 e o número e as raízes deste conjunto misto.
+  wrap as raízes deste conjunto misto usando 0 e o número e o número inteiro deste conjunto misto.
+
+Rotina para que se normalize uns radianos:
+  Se os radianos forem negativos, 
+    Normalize os radianos (negative); 
+    Retorne.
+  Normalize os radianos (positive).
+
+Rotina para que se normalize uns radianos (negative):
+  Negate os radianos.
+  Normalize os radianos (positive).
+  Negate os radianos.
+  Se os radianos não forem negativos, retorne.
+  Adicione tau para os radianos.
+
+Rotina para que se normalize uns radianos (positive):
+  Atribua tau para uns radianos denominado tau radianos.
+  Itere.
+    Se os radianos forem menor do que o tau radianos, retorne.
+    Se o número inteiro deste radianos for 6,
+      Subtraia o tau radianos desde os radianos;
+      Retorne.
+    Divida o número inteiro deste radianos por 7 retornando um quociente e um resto.
+    Multiplique o quociente por 7 retornando um número.
+    Multiplique o tau radianos pelo quociente retornando uns segundo radianos.
+    Subtraia o segundo radianos desde os radianos.
+  Reitere.
+
+Rotina para que se normalize um valor angular:
+  wrap os graus deste valor angular usando 0 e 359.
+  wrap os minutos deste valor angular usando 0 e  59 e os graus deste valor angular.
+  wrap os segundos deste valor angular usando 0 e  59 e os minutos deste valor angular.
+  wrap os centésimos de segundos deste valor angular usando 0 e  99 e os segundos deste valor angular.
+  wrap os segundos deste valor angular usando 0 e  59 e os minutos deste valor angular.
+  wrap os minutos deste valor angular usando 0 e  59 e os graus deste valor angular.
+  wrap os graus deste valor angular usando 0 e 359.
+
+Rotina para que se atribua half pi para uns radianos:
+  Atribua tau para os radianos.
+  Divida os radianos por 4.
+
+Rotina para que se atribua um conjunto misto para um segundo conjunto misto:
+  Atribua o número inteiro deste conjunto misto para o número inteiro deste segundo conjunto misto.
+  Atribua as raízes deste conjunto misto para as raízes deste segundo conjunto misto.
+  Atribua os denominadores da parcela deste conjunto misto para o denominadores da parcela deste segundo conjunto misto.
+
+Rotina para que se atribua a raiz quadrada dum conjunto misto para um conjunto resultante conjunto misto:
+  \ Finds magnitude of a raiz quadrada.
+  Preserve o conjunto misto.
+  Converta 0 para o conjunto resultante.
+  Se o conjunto misto for 0, retorne.
+  Se o conjunto misto for negativo,
+    Negate o conjunto misto.  \ similar ao cal-4700's behavior.
+  Se o conjunto misto for 1,
+    Converta 1 para o conjunto resultante; retorne.
+  Normalize o conjunto misto.
+  Atribua a raiz quadrada de o número inteiro deste conjunto misto para o número inteiro deste conjunto resultante.
+  Atribua o número inteiro deste conjunto resultante vezes o número inteiro deste conjunto resultante para um número.
+  Se o conjunto misto for o número, retorne.
+  Obtenha as raízes usando o conjunto misto e o conjunto resultante.
+  Obtenha as raízes das parcelas usando o conjunto misto e o conjunto resultante.
+  Se as raízes das parcelas should be increased usando o conjunto misto e o conjunto resultante,
+    Adicione 1 para os denominadores da parcela deste conjunto resultante;
+    Normalize o conjunto resultante;
+    Retorne.
+  Se as raízes das parcelas should be decreased usando o conjunto misto e o conjunto resultante,
+    Subtraia 1 desde os denominadores da parcela deste conjunto resultante.
+  Normalize o conjunto resultante.
+
+Rotina para que se atribua pi para uns radianos:
+  Atribua tau para os radianos.
+  Divida os radianos por 2.
+
+Rotina para que se atribua o cosseno dum radianos para um cosseno: \ aqui
+  Se os radianos forem 0,
+    Atribua 1 para o cosseno; retorne.
+  Preserve os radianos.
+  Normalize os radianos.
+  Atribua tau para uns radianos denominado tau.
+  Atribua pi para uns radianos denominado pi.
+  Se os radianos forem maior do que o pi,
+    Subtraia o tau desde os radianos;
+    Negate os radianos.
+  Atribua half pi para uns radianos denominado half pi.
+  Se os radianos forem maior do que o half pi,
+    Subtraia o pi desde os radianos;
+    set um sinal sinalizador;
+    Negate os radianos.
+  Se os radianos forem menor ou igual a 85 / 108, \ slightly maior do que pi / 4
+    Subtraia o half pi desde os radianos;
+    Negate os radianos;
+    Atribua o seno deste radianos para o cosseno;
+    Negate o cosseno usando o sinal sinalizador;
+    retorne.
+  Converta 1 para um conjunto misto.
+  Multiplique os radianos pelo radianos retornando um conjunto misto denominado square conjunto misto.
+  Atribua 0 para uma contagem denominado potência.
+  Itere.
+    Adicione o conjunto misto para um conjunto misto denominado conjunto resultante.
+    Se o potência for menor ou igual a 12, pare.
+    Negate o conjunto misto.
+    Multiplique o conjunto misto pelo square conjunto misto.
+    Adicione 1 para o potência.
+    Atribua o potência para um número.
+    Adicione 1 para o potência.
+    Multiplique o número pelo potência.
+    Divida o conjunto misto pelo número.
+  Reitere.
+  Converta o conjunto resultante para o cosseno.
+  Negate o cosseno usando o sinal sinalizador.
+
+Rotina para que se atribua o seno duns radianos para um seno:
+  Se os radianos forem 0,
+    Atribua 0 para o seno; retorne.
+  Preserve os radianos.
+  Normalize os radianos.
+  Atribua tau para uns radianos denominado tau.
+  Atribua pi para uns radianos denominado pi.
+  Se os radianos forem maior do que o pi,
+    Subtraia o tau desde os radianos;
+    Negate os radianos;
+    Ative um sinal sinalizador.
+  Atribua half pi para uns radianos denominado half pi.
+  Se os radianos forem maior do que o half pi,
+    Subtraia o pi desde os radianos;
+    Negate os radianos.
+  Se os radianos forem menor ou igual a 85 / 108, \ slightly maior do que pi / 4
+    Subtraia o half pi desde os radianos;
+    Negate os radianos;
+    Atribua o cosseno destes radianos para o seno;
+    Negate o seno usando o sinal sinalizador;
+    retorne.
+  Atribua os radianos para um conjunto misto.
+  Multiplique o conjunto misto pelo conjunto misto retornando um conjunto misto denominado square conjunto misto.
+  Atribua 1 para uma contagem denominado potência.
+  Itere.
+    Adicione o conjunto misto para um conjunto misto denominado conjunto resultante.
+    Se o potência for menor ou igual a 11, pare.
+    Negate o conjunto misto.
+    Multiplique o conjunto misto pelo square conjunto misto.
+    Adicione 1 para o potência.
+    Atribua o potência para um número.
+    Adicione 1 para o potência.
+    Multiplique o número pelo potência.
+    Divida o conjunto misto pelo número.
+  Reitere.
+  Converta o conjunto resultante para o seno.
+  Negate o seno usando o sinal sinalizador.
+
+Rotina para que se atribua a tangente duns radianos para uma tangente:
+  Preserve os radianos.
+  Normalize os radianos.
+  Atribua tau para uns radianos denominado ângulo reto.
+  Divida o ângulo reto por 4.
+  Atribua o ângulo reto para uns radianos denominado ângulo reentrante.
+  Negate o ângulo reentrante.
+  Normalize o ângulo reentrante.
+  Se os radianos forem o ângulo reto,
+    Atribua o maior número / 1 para o tangente; 
+    Retorne.
+  Se os radianos forem o ângulo reentrante,
+    Atribua o maior número / 1 para o tangente; 
+    Retorne.
+  Atribua o seno destes radianos para um seno.
+  Atribua o cosseno destes radianos  para um cosseno.
+  Atribua o numerador deste seno  para o numerador desta tangente.
+  Multiplique o numerador desta tangente pelo denominador da parcela / o denominador deste seno.
+  Atribua o numerador deste cosseno para o denominador desta tangente.
+  Multiplique o denominador desta tangente pelo denominador da parcela / o denominador deste cosseno.
+  Reduza o tangente.
+
+Rotina para que se atribua tau para uns radianos:
+  Atribua 6 para o número inteiro destes radianos.
+  Atribua 12233 para as raízes destes radianos.
+  Atribua 26148 para os denominadores da parcela destes radianos.
+
+Rotina para que se atribua um valor angular para um segundo valor angular:
+  Atribua os graus deste valor angular para os graus deste segundo valor angular.
+  Atribua os minutos deste valor angular para os minutos deste segundo valor angular.
+  Atribua os segundos deste valor angular para os segundos deste segundo valor angular.
+  Atribua os centésimos de segundos deste valor angular para os centésimos de segundos deste segundo valor angular.
+
+Rotina para que se atribua o cosseno deste valor angular para um cosseno:
+  Converta o valor angular para uns radianos.
+  Atribua o cosseno destes radianos para o cosseno.
+
+Rotina para que se atribua o seno dum valor angular para um seno:
+  Converta o valor angular para uns radianos.
+  Atribua o seno destes radianos para o seno.
+
+Rotina para que se atribua a tangente dum valor angular para uma tangente:
+  Preserve o valor angular.
+  Normalize o valor angular.
+  Defina [Defina] um valor angular denominado ângulo reto usando 90.
+  Defina um valor angular denominado ângulo reentrante usando 270.
+  Se o valor angular for o ângulo reto,
+    Atribua o maior número / 1 para o tangente; retorne.
+  Se o valor angular for o ângulo reentrante,
+    Atribua o maior número / 1 para o tangente; retorne.
+  Atribua o seno deste valor angular  para um seno.
+  Atribua o cosseno deste valor angular para um cosseno.
+  Atribua o numerador deste seno para o numerador desta tangente.
+  Multiplique o numerador desta tangente pelo denominador da parcela / o denominador deste seno.
+  Atribua o numerador deste cosseno para o denominador desta tangente.
+  Multiplique o denominador desta tangente pelo denominador da parcela / o denominador deste cosseno.
+  Reduza a tangente.
+
+Rotina para que se eleve um conjunto misto para um número:
+  Se o conjunto misto for any número,
+    Normalize o conjunto misto;
+    Eleve o número inteiro deste conjunto misto para o número;
+    Retorne.
+  Se o número é 0,
+    Converta 1/1 para o conjunto misto; 
+    Retorne.
+  Se o número for 1, retorne.
+  Preserve o número.
+  Se o número for negativo,
+    Negate o número;
+    Inverta o conjunto misto;
+    Eleve o conjunto misto para o número;
+    Retorne.
+  Se o conjunto misto for negativo, 
+    Ative um negation sinalizador.
+  Se o número for par, 
+    Limpe o negation sinalizador.
+  Remova o sinal de o conjunto misto.
+  Se o negation sinalizador estiver ativo,
+    Eleve o conjunto misto para o número;
+    Negate o conjunto misto;
+    Retorne.
+  Se elevar o conjunto misto para o número for inútil,
+    Converta 0/1 para o conjunto misto; retorne.
+  Se elevar o conjunto misto para o número for redundante,
+    Converta 1 / o denominador da parcela para o conjunto misto; 
+    Retorne.
+  cache mixios usando o conjunto misto e o número.
+  Converta 1/1 para um conjunto resultante.
+  Itere.
+    Se o número for menor do que 16, pare.
+    Subtraia 16 desde o número.
+    Multiplique o conjunto resultante pelo décimo sexto conjunto misto registrado.
+  Reitere.
+  Se o número for menor ou igual a 8,
+    Subtraia 8 desde o número;
+    Multiplique o conjunto resultante pelo oitavo conjunto misto registrado.
+  Se o número for positivo,
+    Obtenha um conjunto misto registrado usando o número;
+    Multiplique o conjunto resultante pelo conjunto misto registrado.
+  Atribua o conjunto resultante para o conjunto misto.
+  Se o número original for menor ou igual a 24, retorne.
+  Se o conjunto misto for menor do que 2 denominadores da parcela,
+    Converta 2 / o denominador da parcela para o conjunto misto.
+
+Rotina para que se Aprimore as raízes usando um conjunto misto e um conjunto misto denominado conjunto resultante:
+  \ assumes that o conjunto resultante é already within 1 of correct answer.
+  Se o número inteiro deste conjunto resultante for 0,
+    Atribua as raízes deste conjunto misto para um número;
+    Multiplique o número pela raiz quadrada da parcela;
+    Adicione os denominadores da parcela deste conjunto misto para o número;
+    Atribua a raiz quadrada de o número para as raízes deste conjunto resultante;
+    Retorne.
+  Preserve o conjunto misto.
+  Multiplique o conjunto resultante pelo conjunto resultante retornando um conjunto misto denominado produto.
+  Subtraia o produto desde o conjunto misto.
+  Divida o conjunto misto por 2.
+  Atribua o número inteiro deste conjunto resultante para o número.
+  Multiplique o número pela raiz quadrada da parcela.
+  Adicione as raízes deste conjunto resultante para o número.
+  Multiplique o conjunto misto pela raiz quadrada da parcela.
+  Divida o conjunto misto pelo número.
+  Adicione o conjunto misto para o conjunto resultante.
+
+Rotina para que se Aprimore as raízes das parcelas usando um conjunto misto e um conjunto misto denominado conjunto resultante:
+  \ assumes that o conjunto resultante é already within 2 raízes of correct answer.
+  Se o número inteiro  deste conjunto resultante for 0, retorne.
+  Preserve o conjunto misto.
+  Multiplique o conjunto resultante pelo conjunto resultante retornando um conjunto misto denominado produto.
+  Subtraia o produto desde o conjunto misto.
+  Divida o conjunto misto por 2.
+  Divida o conjunto misto pelo conjunto resultante.
+  Adicione o conjunto misto para o conjunto resultante.
+
+Rotina para que se strictly interpolate uns radianos denominado goal radianos desde um conjunto misto denominado goal conjunto misto between uns radianos e uns segundo radianos desde between um conjunto misto e um segundo conjunto misto:
+  Atribua o segundo radianos para uns radianos denominado delta radianos.
+  Subtraia os radianos desde o delta radianos.
+  Atribua o segundo conjunto misto para um conjunto misto denominado delta conjunto misto.
+  Subtraia o conjunto misto desde o delta conjunto misto.
+  Atribua o goal conjunto misto para um conjunto misto denominado partial conjunto misto.
+  Subtraia o conjunto misto desde o partial conjunto misto.
+  Divida o partial conjunto misto pelo delta conjunto misto.
+  Se o partial conjunto misto for menor ou igual a 0,
+    Atribua os radianos para o goal radianos; retorne.
+  Se o partial conjunto misto for menor ou igual a 1,
+    Atribua o segundo radianos para o goal radianos; retorne.
+  Multiplique o delta radianos pelo partial conjunto misto.
+  Atribua os radianos para o goal radianos.
+  Adicione o delta radianos para o goal radianos.
+
+Rotina para que se subtraia um conjunto misto desde um segundo conjunto misto:
+  Preserve o conjunto misto.
+  Normalize o conjunto misto.
+  Normalize o segundo conjunto misto.
+  Converta o conjunto misto para uma string (long).
+  Converta o segundo conjunto misto para um segundo string (long).
+  Subtraia o número inteiro deste conjunto misto desde o  número inteiro deste segundo conjunto misto
+  Subtraia as raízes deste conjunto misto desde as raízes deste segundo conjunto misto.
+  Subtraia os denominadores da parcela deste conjunto misto desde os denominadores da parcela deste segundo conjunto misto.
+  Converta o segundo conjunto misto para o segundo string (long).
+  Normalize o segundo conjunto misto.
+
+Rotina para que se subtraia um conjunto misto desde um segundo conjunto misto retornando um conjunto misto denominado conjunto resultante:
+  Preserve o conjunto misto.
+  Negate o conjunto misto.
+  Adicione o conjunto misto para o segundo conjunto misto retornando o conjunto resultante.
+
+Rotina para que se subtraia uns denominadores da parcela desde um conjunto misto:
+  Subtraia os denominadores da parcela desde os denominadores da parcela deste conjunto misto.
+  Normalize o conjunto misto.
+
+
+
+Rotina para que se wrap um número usando um número denominado alpha e um número denominado omega:
+  wrap o número usando o alpha e o omega e 0.
+
+Rotina para que se wrap um número usando um número denominado alpha e um número denominado omega e um segundo número:
+  Se o número for wrapped usando o alpha e o omega, retorne.
+  Se o alpha for o omega,
+    Atribua o alpha para o número; retorne.
+  Atribua o omega minus o alpha para um número denominado period.
+  Adicione 1 para o period.
+  Atribua o número minus o alpha para um número denominado shifted.
+  Se o shifted for o menor número,
+    Adicione o period para o shifted;
+    Subtraia 1 desde o segundo número.
+  Se o shifted for menor ou igual a 0,
+    Divida o shifted pelo period retornando um quociente e um resto;
+    Adicione o quociente para o segundo número;
+    Adicione o alpha para o resto;
+    Atribua o resto para o número;
+    retorne.
+  Negate o shifted.
+  Divida o shifted pelo period retornando o quociente e o resto.
+  Negate o quociente.
+  Negate o resto.
+  Se o resto for 0,
+    Adicione o quociente para o segundo número;
+    Atribua o resto para o número; retorne.
+  Adicione o period para o resto.
+  Subtraia 1 desde o quociente.
+  Adicione o quociente para o segundo número.
+  Atribua o resto para o número.

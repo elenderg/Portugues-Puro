@@ -1,0 +1,330 @@
+
+\ O Código abaixo é baseado em uma implementação de Jasper Paulsen, disponível em 
+
+
+Uma quantidade é um número.
+Uma quantidade de bytes contíguos é uma quantidade.
+
+Uma array de bytes é uma estrutura com
+  Uma string e 
+  Uma quantidade de bytes contíguos.
+
+Um array de valores booleanos é uma estrutura com
+  Um array de bytes e 
+  Uma quantidade de bytes contíguos.
+
+Uma posição indexada é um número.
+
+Uma posição de índice '0' é uma posição indexada.
+Uma posição de índice '1' é uma posição indexada.
+
+Rotina para que se limpe uma posição indexada em uma array de valores booleanos:
+  Converta a posição de índice '1' para uma posição de índice '0'.
+  Divida a posição de índice '0' por 8 retornando um quociente e um resto.
+  Atribua o quociente para uma segunda posição de índice '0'.
+  Converta a segunda posição de índice '0' para uma segunda posição de índice '1'.
+  Obtenha um byte desde o array de bytes deste array de valores booleanos na segunda posição de índice '1'.
+  Atribua 2 para um número.
+  Eleve o número para o resto.
+  Atribua o número para um segundo byte.
+  Inverta o segundo byte.
+  Conjuncione logicamente o byte com o segundo byte.
+  Defina o byte no array de bytes deste array de valores booleanos na segunda posição de índice '1'.
+  Atribua a quantidade de bytes contíguos deste array de valores booleanos para uma quantidade.
+  Adicione 1 para a quantidade.
+  Se a posição de índice '1' for a quantidade, 
+    Atribua a quantidade para a quantidade de bytes contíguos deste array de valores booleanos.
+
+Rotina para que se converta uma posição de índice '1' para uma posição de índice '0':
+  Atribua a posição de índice '1' para a posição de índice '0'.
+  Subtraia 1 desde a posição de índice '0'.
+
+Rotina para que se converta uma posição de índice '0' para uma posição de índice '1':
+  Atribua a posição de índice '0' para a posição de índice '1'.
+  Adicione 1 para a posição de índice '1'.
+
+Função para que se determine se um array de bytes está vazio:
+  Se a quantidade de bytes contíguos deste array de bytes for menor do que 1, diga sim.
+  Se a string deste array de bytes for "", diga sim.
+  Diga não.
+
+Função para que se determine se um array de valores booleanos está vazio:
+  Se a quantidade de bytes contíguos deste array de valores booleanos for menor do que 1, diga sim.
+  Se a string deste array de valores booleanos for "", diga sim.
+  Diga não.
+
+Função para que se determine se uma posição de índice '1' está limpa em um array de valores booleanos:
+  Se a posição de índice '1' estiver definida no array de valores booleano, diga não.
+  Diga sim.
+  
+Função para que se determine se uma posição de índice '1' está definida em um array de valores booleanos:
+  Converta a posição de índice '1' para uma posição de índice '0'.
+  Divida a posição de índice '0' por 8 retornando um quociente e um resto.  
+  Atribua o quociente para uma segunda posição de índice '0'.
+  Converta a segunda posição de índice '0' para uma segunda posição de índice '1'.
+  Obtenha um byte desde o array de bytes deste array de valores booleanos na segunda posição de índice '1'.
+  Atribua 2 para um número.
+  Eleve o número para o resto.
+  Se o número estiver incluído bit a bit no byte, diga sim.
+  Diga não.
+
+Rotina para que se obtenha um array de bytes em uma posição de índice '1':
+  Obtenha o byte desde a string deste array de bytes na posição de índice '1'.
+
+Rotina para que se aumente o tamanho de um array de bytes até chegar em um número:
+  Se a capacidade deste array de bytes for maior do que o número, retorne.
+  Preserve o número.
+  Subtraia a capacidade deste array de bytes desde o número.
+  Preencha uma string com o byte nulo usando o número.
+  Posponha a string para a string deste array de bytes.
+
+Rotina para que se aumente o tamanho de um array de valores booleanos para um número:
+  Se a capacidade deste array de valores booleanos for maior do que o número, retorne.
+  Preserve o número.
+  \ Um byte tem 8 bits
+  Arredonde o número para o múltiplo imediato de 8.
+  Divida o número por 8.
+  Aumente o tamanho de o array de bytes deste array de valores booleanos até chegar no número.
+
+Rotina para que se atribua a capacidade dum array de bytes para um número:
+  Atribua o comprimento desta string deste array de bytes ao número.
+
+Rotina para que se atribua a capacidade dum array de valores booleanos para um número:
+  Atribua o capacidade deste array de bytes deste array de valores booleanos ao número.
+  Multiplique o número por 8.
+
+Rotina para que se defina um byte em um array de bytes em uma posição de índice '1':
+  Defina o byte na string deste byte na posição de índice '1'.
+  Atribua a quantidade de bytes contíguos para uma quantidade.
+  Adicione 1 para a quantidade.
+  Se a posição de índice '1' for igual à quantidade,
+    Atribua a quantidade para a quantidade de bytes contíguos.
+
+Rotina para que se defina um byte em uma string em uma posição de índice '1':
+  Se a posição de índice '1' for menor do que 1, retorne.
+  Se a posição de índice '1' for maior do que o comprimento desta string, retorne.
+  Atribua o caractere inicial desta string para um endereço de byte.
+  Converta a posição de índice '1' para uma posição de índice '0'.
+  Adicione a posição de índice '0' para o endereço de byte.
+  Atribua o byte para o conteúdo deste endereço de byte.
+
+Rotina para que se defina uma posição de índice '1' em um array de valores booleanos:
+  Converta a posição de índice '1' para uma posição de índice '0'.
+  Divida a posição de índice '0' por 8 retornando um quociente e um resto.
+  Atribua o quociente para uma segunda posição de índice '0'.
+  Converta a segunda posição de índice '0' para uma segunda posição de índice '1'.
+  Obtenha um byte desde o array de bytes deste array de valores booleanos na segunda posição de índice '1'.
+  Atribua 2 para um número.
+  Eleve o número para o resto.
+  Disjuncione logicamente o byte com o número.
+  Defina o byte no array de bytes deste array de valores booleanos na segunda posição de índice '1'.
+  Atribua a quantidade de bytes contíguos deste array de valores booleanos para uma quantidade.
+  Adicione 1 para a quantidade.
+  Se a posição de índice '1' for igual à quantidade,
+    Atribua a quantidade para a quantidade de bytes contíguos deste array de valores booleanos.
+
+\ to debug a flag array:
+  \ summarize the flag array returning a string (tersely).
+  \ debug the string.
+
+\ to summarize a byte array returning a string (tersely):
+  \ put the byte array's capacity in a capacity count.
+  \ put the byte array's bedrock count in a count.
+  \ if the capacity is less than the count,
+    \ put the capacity in the count.
+  \ slap a substring on the byte array's string.
+  \ put the substring's first plus the count minus 1 into the substring's last.
+  \ put the substring in another string.
+  \ convert the other string to a nibble string.
+  \ convert the nibble string to a hex string.
+  \ put the nibble string in the string.
+  \ if the string is not "", append "; " to the string.
+  \ append "valid bytes / capacity bytes = "
+    \ then the byte array's bedrock count then " / "
+    \ then the byte array's capacity to the string.
+
+\ to summarize a flag array returning a string (tersely):
+  \ put "" in the string.
+  \ put the flag array's capacity in a capacity count.
+  \ put the flag array's bedrock count in a count.
+  \ if the capacity is less than the count,
+    \ put the capacity in the count.
+  \ loop.
+    \ add 1 to a number.
+    \ if the number is greater than the count, break.
+    \ if the number is clear in the flag array, repeat.
+    \ if the string is not "", append ", " to the string.
+    \ append the number to the string.
+  \ repeat.
+  \ if the string is not "", append "; " to the string.
+  \ append "bedrock / capacity = "
+    \ then the flag array's bedrock count then " / "
+    \ then the flag array's capacity to the string.
+
+Um nível de profundidade é uns twips.
+
+\ Rotina para que se compile um endereço da pasta usando um nível de profundidade:
+  \ Limpe o endereço da pasta.
+  \ Atribua 1 ao nível de profundidade.
+  \ Atribua o endereço da pasta a um novo endereço da pasta.
+  \ Atribua o novo endereço da pasta seguido de "Biblioteca Padrão\" em um endereço completo.
+  \ Se o endereço completo estiver no sistema de arquivos,
+    \ Atribua 2 ao nível de profundidade;
+    \ Retorne.
+  
+
+\ to find a directory and a depth to compile:
+  \ clear the directory.
+  \ put 0 in the depth.
+  \ if the current tab's node is nil, exit.
+  \ if the current tab's node's source is nil, exit.
+  \ put 1 in the depth.
+  \ put the current tab's node's directory into the directory.
+  \ put the directory then "noodle\" in a path.
+  \ if the path is in the file system,
+    \ put 2 in the depth;
+    \ exit.
+  \ if the current tab's node's parent is nil, exit.
+  \ put the current tab's node's parent's directory into another directory.
+  \ put the other directory then "noodle\" in the path.
+  \ if the path is in the file system,
+    \ put the other directory into the directory;
+    \ put 2 in the depth.
+
+
+
+\ to get relevant path given a path and a string thing returning another path:
+  \ if the string thing is nil,
+    \ put the path in the other path.
+  \ put the string thing's string in a path called temp path.
+  \ if the temp path is absolute,
+    \ put the temp path in the other path; exit.
+  \ put the path then the temp path in the other path.
+
+\ to get requested leaf directory path returning a path:
+  \ if the requested leaf directory path is "",
+    \ get a string (command line);
+    \ get requested leaf directory path given the string
+      \ returning the requested leaf directory path.
+  \ put the requested leaf directory path in the path.
+
+\ to get requested paths returning some string things:
+  \ get a string (command line).
+  \ get requested paths returning the string things given the string.
+
+\ to get requested paths returning some string things given a string:
+  \ if "/files" is not important in the string, exit.
+  \ get a string called requests from the string given "/files".
+  \ parse the requests returning the string things (within an option).
+  \ unquote the string things.
+
+\ to get requested run files returning a string given a command line:
+  \ get the string from the command line given "/runfiles".
+  \ if the string is not "/files", exit.
+  \ if "/files" is not important in the command line,
+    \ put "" in the string; exit.
+  \ get the string from the command line given "/files".
+
+\ to get requested run folder returning a string given a command line:
+  \ get the string from the command line given "/runfolder".
+  \ if the string is not "/folder", exit.
+  \ if "/folder" is not important in the command line,
+    \ put "" in the string; exit.
+  \ get the string from the command line given "/folder".
+
+\ to get running option given a command line and a string returning another string:
+  \ put "" in the other string.
+  \ if the string is not important in the command line, exit.
+  \ put the string in the other string.
+  \ get a string called value from the command line given the string.
+  \ if the value is "", exit.
+  \ append "=" to the other string.
+  \ if the value does not contain " ", 
+    \ append the value to the other string; exit.
+  \ if the value is wrapped in double-quotes, 
+    \ append the value to the other string; exit.
+  \ append the double-quote byte to the other string.
+  \ append the value to the other string.
+  \ append the double-quote byte to the other string.
+
+\ to get running options given a command line returning a string:
+  \ if left was requested in the command line, 
+    \ put "/right" in the string.
+  \ if right was requested in the command line, 
+    \ put "/left" in the string.
+  \ if full was requested in the command line, 
+    \ put "/full" in the string.
+  \ if "/tt" [fixed-width] is important in the command line,
+    \ append " /tt" to the string.
+  \ if "/font" is important in the command line, 
+    \ get running option given the command line and "/font"  
+      \ returning a string called font option; 
+    \ append " " then the font option to the string.
+  \ if "/controlfont" is important in the command line, 
+    \ get running option given the command line and "/controlfont"  
+      \ returning a string called control font option; 
+    \ append " " then the control font option to the string.
+  \ if "/edfont" is important in the command line, 
+    \ get running option given the command line and "/edfont"  
+      \ returning a string called editor font option; 
+    \ append " " then the editor font option to the string.
+  \ put "" in a string called run folder.
+  \ if "/runfolder" is important in the command line,
+    \ get requested run folder returning the run folder given the command line.
+  \ if the run folder is not "",
+     \ append " /folder=" then the run folder to the string.
+  \ put "" in a string called run files.
+  \ if "/runfiles" are important in the command line,
+    \ get requested run files returning the run files given the command line.
+  \ if the run files are not "",
+     \ append " /files=" then the run files to the string.
+  \ put "" in a string called folder.
+  \ if "/folder" is important in the command line,
+    \ get the folder from the command line given "/folder".
+  \ if the folder is full and is the run folder,
+    \ append " /runfolder=/folder" to the string.
+  \ put "" in a string called files.
+  \ if "/files" are important in the command line,
+    \ get the files from the command line given "/files".
+  \ if the files are full and are the run files,
+    \ append " /runfiles=/files" to the string.
+
+\ to get a thread status of a thread handle:
+  \ clear the thread status' error flag.
+  \ put 0 in the thread status' error.
+  \ call "kernel32.dll" "GetExitCodeThread" with the thread handle
+    \ and the thread status' status' whereabouts
+    \ returning a number.
+  \ if the number is 0,
+    \ put the system's last error into the thread status' error;
+    \ set the thread status' error flag.
+
+
+\ to find a directory and a depth to compile:
+  \ clear the directory.
+  \ put 0 in the depth.
+  \ if the current tab's node is nil, exit.
+  \ if the current tab's node's source is nil, exit.
+  \ put 1 in the depth.
+  \ put the current tab's node's directory into the directory.
+  \ put the directory then "noodle\" in a path.
+  \ if the path is in the file system,
+    \ put 2 in the depth;
+    \ exit.
+  \ if the current tab's node's parent is nil, exit.
+  \ put the current tab's node's parent's directory into another directory.
+  \ put the other directory then "noodle\" in the path.
+  \ if the path is in the file system,
+    \ put the other directory into the directory;
+    \ put 2 in the depth.
+
+
+\ The number 2 is considered to be a cached prime by default.
+\ The flag array is a 1-indexed array containing 23,170 bits.
+\ Each bit represents whether an odd number
+\ between 1 and 46,340 (inclusive) is prime.
+\ Populated lazily based on whether each item
+\ is less than the square root of the largest number
+\ for which primality has been tested so far.
+\ All primes less than double the flag array's
+\ bedrock count will also be in the list.
