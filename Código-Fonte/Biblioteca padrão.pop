@@ -1856,7 +1856,8 @@ Rotina para que se converta uma string para uma fração:
   Se o numerador número for negativo, retorne.
   Se o denominador número for negativo, retorne.
   Se o denominador número for 0, retorne.
-  Se o número inteiro não for 0, adicione o denominador número vezes o número inteiro para o numerador número.
+  Se o número inteiro não for 0, 
+    Adicione o denominador número vezes o número inteiro para o numerador número.
   Atribua o numerador número ao numerador desta fração.
   Atribua o denominador número ao denominador desta fração.
   Se o conteúdo deste caractere inicial desta string for o hífem, inverta o sinal de a fração.
@@ -2573,7 +2574,7 @@ Rotina para que se crie uma linha de texto usando uma string:
 Um timeout de envio é um número.
 Um timeout de recepção é um número.
 
-Rotina para que se crie um soquete [ipv4] usando um host string e um número de porta:
+Rotina para que se crie um soquete [ipv4] usando uma host string e um número de porta:
   \ esta rotina cria, conecta e define o erro se houver um problema
   Limpe o erro do fluxo de entrada/saída.
   Obtenha um SOCKADDR usando o host.
@@ -2724,20 +2725,24 @@ Um date/time é uma estrutura com
   Um número de segundos,
   Um número de milissegundos.
 
+Rotina para que se remova o sinal de uma fração;
 Rotina para que se de-sign uma fração:
   De-sign o numerador desta fração.
   De-sign o denominador desta fração.
 
+Rotina para que se remova o sinal de um número;
 Rotina para que se de-sign um número:
   Se o número for o menor número,
     Atribua o maior número ao número;
     Retorne.
   Se o número for menor do que 0, inverta o sinal de o número.
 
+Rotina para que se  remova o sinal de um par de números;
 Rotina para que se de-sign um par de números:
   De-sign o número X deste par de números.
   De-sign o número Y deste par de números.
 
+Rotina para que se  remova o sinal de uma string;
 Rotina para que se de-sign uma string:
   Se a string estiver em branco, retorne.
   Se o conteúdo deste caractere inicial desta string for algum sinal aritmético, remova o primeiro caractere desde a string.
@@ -5690,8 +5695,8 @@ Rotina para que se format um número e uma string singular ou uma string plural p
   Se o número não for 1, acrescente a string plural para a string.
 
 Uma fração é uma estrutura com
-  Um numerador número e
-  Um denominador número, e
+  Um número denominado numerador e
+  Um número denominado denominador, e
   Um topo número sob o numerador e
   Um base número sob o denominador.
 
