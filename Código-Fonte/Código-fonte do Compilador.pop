@@ -9,15 +9,18 @@ Rotina para que se execute o programa:
   Escreva "" para StdOut.
   Escreva o retorno de carro para StdOut.
   Escreva a quebra de linha para StdOut.
-  Escreva "Operação finalizada. Pressione Enter para continuar" para StdOut.
+  Escreva "Operação finalizada." para StdOut.
   Escreva o retorno de carro para StdOut.
   Escreva a quebra de linha para StdOut.
-  Execute os eventos.\
+  \Execute os eventos.\
   Feche o programa.
 
 Rotina para que se faça tudo:
   Obtenha uma string desde os argumentos da linha de comando.
   Se a string estiver em branco, 
+    Escreva "--------------------------------------------------------------------------------------------------------------- " para StdOut;
+    Escreva o retorno de carro para StdOut;
+    Escreva a quebra de linha para StdOut;
     Escreva "Aviso. Para utilizar este compilador, você deve invocá-lo através da linha de comando. " para StdOut;
     Escreva o retorno de carro para StdOut;
     Escreva a quebra de linha para StdOut;

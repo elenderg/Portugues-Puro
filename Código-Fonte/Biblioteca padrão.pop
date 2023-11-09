@@ -7329,7 +7329,7 @@ Rotina para que se inicialize o terminal:
 
 Um nome da biblioteca é uma string.
 Um nome do processo é uma string.
-Um número identificado do processo é um número.
+Um número identificador do processo é um número.
 
 Rotina para que se obtenha o ponto de entrada do aplicativo;
 Rotina para que se inicialize antes da execução:
@@ -7827,7 +7827,7 @@ Uma key é um número.
 
 
 
-Um categoria é uma string.
+Uma categoria é uma string.
 
 Um lParam é um número.
 
