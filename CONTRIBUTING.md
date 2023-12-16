@@ -248,4 +248,4 @@ Admin / Proprietário | Concedido às pessoas responsáveis ??pelo projeto, sua 
 
 ## Atribuição
 
-Este guia foi gerado usando o gerador WeAllJS `CONTRIBUTING.md`. [Faça o seu aqui](https://www.npmjs.com/package/weallcontribute)!
+Este guia foi gerado usando o gerador WeAllJS `CONTRIBUTING.md`. [Faça o seu aqui!](https://www.npmjs.com/package/weallcontribute)
