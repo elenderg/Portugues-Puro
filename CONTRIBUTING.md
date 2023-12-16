@@ -3,14 +3,14 @@
 ## Como eu faço para ... <a name="toc"> </a>
 
 * [Usar este guia](#Introdução)?
-* Perguntar ou dizer alguma coisa? ??????
+* Perguntar ou dizer alguma coisa? 🤔🐛😱
    * [Para solicitar ajuda](#Solicitar-ajuda)
    * [Para relatar um erro ou bug](#Reportar-um-erro-ou-bug)
    * [Para solicitar um recurso](#Solicitando-um-recurso)
-* Fazer alguma coisa? ?????????????
+* Fazer alguma coisa? 🤓👩🏽‍💻📜🍳
    * [Configurar o projeto](#Configuração-do-projeto)
    * [Contribiur com a Documentação](#Contribuir-com-a-documentação)
-* Gerenciar alguma coisa??????????
+* Gerenciar alguma coisa?✅🙆🏼💃👔
    * [Fornecer suporte para problemas](#Fornecendo-suporte-em-questões)
    * [Catalogar problemas em aberto](#lIdentificação-adequada-de-problemas)
    * [Arquivar Solicitações Antigas](#Arquivamento-de-Solicitações-antigas)
@@ -18,7 +18,7 @@
    * [Unificar Solicitações](#Unificando-Solicitações)
    * [Anunciar um lançamento](#Anunciando-um-novo-Lançamento)
    * [Me Juntar à equipe do projeto](#Junte-se-à-equipe-do-projeto)
-* Adicionar um guia como este [para meu projeto](#Atribuição)? ??????
+* Adicionar um guia como este [para meu projeto](#Atribuição)?🤖😻👻
 
 ## Introdução
 
