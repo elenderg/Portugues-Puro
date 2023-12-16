@@ -22,11 +22,11 @@
 
 ## Introdução
 
-Muito obrigado pelo seu interesse em contribuir !. Todos os tipos de contribuições são encorajadas e valorizadas. Veja o [índice](#toc) para diferentes maneiras de ajudar e detalhes sobre como este projeto os trata! ??
+Muito obrigado pelo seu interesse em contribuir !. Todos os tipos de contribuições são encorajadas e valorizadas. Veja o [índice](#toc) para diferentes maneiras de ajudar e detalhes sobre como este projeto os trata! 📝
 
-Por favor, certifique-se de ler a seção relevante antes de fazer sua contribuição! Isso tornará muito mais fácil para nós, mantenedores, tirar o máximo proveito disso e suavizar a experiência de todos os envolvidos. ??
+Por favor, certifique-se de ler a seção relevante antes de fazer sua contribuição! Isso tornará muito mais fácil para nós, mantenedores, tirar o máximo proveito disso e suavizar a experiência de todos os envolvidos. 💚
 
-A [equipe do projeto](#Junte-se-à-equipe-do-projeto) aguarda suas contribuições. ?
+A [equipe do projeto](#Junte-se-à-equipe-do-projeto) aguarda suas contribuições.🙌🏾✨
 
 ## Solicitar ajuda
 
@@ -110,7 +110,7 @@ Uma vez que você tenha enviado a solicitação:
 
 * Um ou mais mantenedores usarão o recurso de revisão do GitHub para revisar sua solicitação.
 * Se o mantenedor solicitar que você faça alguma alteração, edite o que for preciso, e submeta uma nova solicitação..
-* Se o mantenedor decidir rejeitar sua solicitação, ele agradecerá pela contribuição e explicará por quais motivos não aceitará as alterações. Sem problemas Ainda apreciamos muito o seu tempo para fazer isso, e não consideramos isso levianamente. ??
+* Se o mantenedor decidir rejeitar sua solicitação, ele agradecerá pela contribuição e explicará por quais motivos não aceitará as alterações. Sem problemas Ainda apreciamos muito o seu tempo para fazer isso, e não consideramos isso levianamente. 💚
 * Se a sua solicitação for aceita, ela será devidamente identificada e incorporada ao "branch" `mais recente` logo em seguida. Sua contribuição será distribuída para as todos na próxima vez que os mantenedores [fizerem um lançamento](#tag-a-release)
 
 ## Contribuir com Código
@@ -136,7 +136,7 @@ Uma vez que você tenha feito isso:
 * Exceto em circunstâncias especiais, os mantenedores não revisarão as solicitações até que todas as verificações sejam feitas.
 * Um ou mais mantenedores usarão o recurso de revisão do GitHub para revisar a sua solicitação.
 * Se o mantenedor solicitar que você faça qualquer alteração, modifique o que for necessário e envie uma nova solicitação. Tags adicionais (como `não-testado`) serão adicionadas dependendo do nível de análise que foi feito em sua solicitação.
-* Se o mantenedor decidir rejeitar sua solicitação, ele agradecerá pela contribuição e explicará por quais motivos ele não aceitou as alterações. Sem problemas! Ainda apreciamos muito o seu tempo para fazer isso, e não consideramos isso levianamente. ??
+* Se o mantenedor decidir rejeitar sua solicitação, ele agradecerá pela contribuição e explicará por quais motivos ele não aceitou as alterações. Sem problemas! Ainda apreciamos muito o seu tempo para fazer isso, e não consideramos isso levianamente. 💚
 * Se a sua solicitação for aceita, ela será identificada e incorporado ao branch `mais recente` logo em seguida. Sua contribuição será distribuída para todos na próxima vez que os mantenedores [realizarem um lançamento](#tag-a-release)
 
 ## Fornecendo suporte em questões
