@@ -258,7 +258,7 @@ Rotina para que se converta uma fração para uma string:
   Preserve a fração.
   Se a fração for negativa,
     Atribua "-" à string;
-    De-sign a fração.
+    Remova o sinal desde a fração.
     Reduza a fração.
     Converta a fração para um numeral misto.
   Se o numeral misto for 0,
@@ -278,7 +278,7 @@ Rotina para que se atribua um par de números fracionários para um segundo par de
 
 Rotina para que se atribua o absolute value duma fração para uma segunda fração:
   Atribua a fração à segunda fração.
-  De-sign a segunda fração.
+  Remova o sinal desde a segunda fração.
 
 Rotina para que se atribua um byte e um número para uma fração:
   Atribua o byte ao numerador desta fração.
@@ -1618,7 +1618,7 @@ Rotina para que se converta uma fração para uma string usando um número:
   Preserve a fração.
   Se a fração for negativa,
     Ative um sinalizador;
-    De-sign a fração.
+    Remova o sinal desde a fração.
   Multiplique o valor numérico pela fração.
   Zero preencha o valor numérico usando o número e acrescente o mesmo para a string.
   Atribua a quantidade de caracteres desta string menos o número mais 1 para um byte#.
@@ -2725,24 +2725,24 @@ Um date/time é uma estrutura com
   Um número de segundos,
   Um número de milissegundos.
 
-Rotina para que se remova o sinal de uma fração;
+Rotina para que se remova o sinal desde uma fração;
 Rotina para que se de-sign uma fração:
-  De-sign o numerador desta fração.
-  De-sign o denominador desta fração.
+  Remova o sinal desde o numerador desta fração.
+  Remova o sinal desde o denominador desta fração.
 
-Rotina para que se remova o sinal de um número;
+Rotina para que se remova o sinal desde um número;
 Rotina para que se de-sign um número:
   Se o número for o menor número,
     Atribua o maior número ao número;
     Retorne.
   Se o número for menor do que 0, inverta o sinal de o número.
 
-Rotina para que se  remova o sinal de um par de números;
+Rotina para que se  remova o sinal desde um par de números;
 Rotina para que se de-sign um par de números:
-  De-sign o número X deste par de números.
-  De-sign o número Y deste par de números.
+  Remova o sinal desde o número X deste par de números.
+  Remova o sinal desde o número Y deste par de números.
 
-Rotina para que se  remova o sinal de uma string;
+Rotina para que se  remova o sinal desde uma string;
 Rotina para que se de-sign uma string:
   Se a string estiver em branco, retorne.
   Se o conteúdo deste caractere inicial desta string for algum sinal aritmético, remova o primeiro caractere desde a string.
@@ -3203,7 +3203,7 @@ Função para que se determine se a localização atual está dentre uns twips d'uma 
 
 Função para que se determine se uma valor da diferença está dentre uma malha quadriculada:
   Preserve o valor da diferença.
-  De-sign o valor da diferença.
+  Remova o sinal desde o valor da diferença.
   Se o número X deste valor da diferença for maior do que ou igual ao número X desta malha quadriculada, diga não.
   Se o número Y deste valor da diferença for maior do que ou igual ao número Y desta malha quadriculada, diga não.
   Diga sim.
@@ -5536,7 +5536,7 @@ Um número quadrado é um número.
 Rotina para que se encontre uma raiz quadrada d'um número:
   \ arredonda para baixo
   Preserve o número.
-  De-sign o número.
+  Remova o sinal desde o número.
   Se o número for 0,
     Atribua 0 à raiz quadrada;
     Retorne.
@@ -5928,9 +5928,9 @@ Rotina para que se calcule um valor da diferença entre um par de números e um se
 
 Rotina para que se obtenha uma distância entre uma localização e uma segunda localização (valores aproximados):
   Atribua a coordenada X desta localização menos o x desta segunda localização para um número.
-  De-sign o número.
+  Remova o sinal desde o número.
   Atribua a coordenada Y desta localização menos o y desta segunda localização para um segundo número.
-  De-sign o segundo número.
+  Remova o sinal desde o segundo número.
   Atribua o número vezes o número à distância.
   Adicione o segundo número vezes o segundo número para a distância.
   Encontre uma raiz quadrada d'a distância.
@@ -5939,9 +5939,9 @@ Rotina para que se obtenha uma distância entre uma localização e uma segunda loc
 
 Rotina para que se obtenha uma distância entre uma localização e uma segunda localização (trigonometria racional):
   Atribua a coordenada X desta localização menos a coordenada X desta segunda localização para um número.
-  De-sign o número.
+  Remova o sinal desde o número.
   Atribua a coordenada Y desta localização menos a coordenada Y desta segunda localização para um segundo número.
-  De-sign o segundo número.
+  Remova o sinal desde o segundo número.
   Atribua o número à distância.
   Se o segundo número for maior do que o número, atribua o segundo número à distância.
 
@@ -5994,7 +5994,7 @@ Rotina para que se obtenha o primeiro-oitavo equivalente de uma orientação:
   Obtenha o primeiro-quarto equivalente de a orientação.
   Se a orientação for menor do que 480, retorne.
   Subtraia 960 desde a orientação.
-  De-sign a orientação.
+  Remova o sinal desde a orientação.
 
 Rotina para que se obtenha o primeiro-quarto equivalente de uma orientação:
   Se a orientação for menor do que 960, retorne.
@@ -6008,8 +6008,8 @@ Rotina para que se seed o número aleatório generator:
 Rotina para que se obtenha um máximo divisor comum usando um número e um segundo número:
   Atribua o número para um dividendo número.
   Atribua o segundo número ao máximo divisor comum.
-  De-sign o dividendo número.
-  De-sign o máximo divisor comum.
+  Remova o sinal desde o dividendo número.
+  Remova o sinal desde o máximo divisor comum.
   Se o dividendo número for menor do que o máximo divisor comum, permute o dividendo número com o máximo divisor comum.
   Se o máximo divisor comum for 0,
     Atribua 1 ao máximo divisor comum;
@@ -8709,7 +8709,7 @@ Rotina para que se atribua um número para uma string;
 Rotina para que se converta um número para uma string:
   Limpe a string.
   Preserve o número.
-  De-sign o número.
+  Remova o sinal desde o número.
   Itere.
     Divida o número por 10 usando um quociente e um resto.
     Adicione 48 para o resto.
@@ -8726,14 +8726,14 @@ Rotina para que se atribua um número sobre o stack:
 
 Rotina para que se atribua o absolute value dum número para um segundo número:
   Atribua o número ao segundo número.
-  De-sign o segundo número.
+  Remova o sinal desde o segundo número.
 
 Rotina para que se atribua um OutlineTextmetric para uma segunda OutlineTextmetric:
   Copie bytes desde o endereçamento deste OutlineTextmetric para o endereçamento desta segunda OutlineTextmetric pela magnitude deste OutlineTextmetric.
 
 Rotina para que se atribua o absolute value dum par de números para um segundo par de números:
   Atribua o par de números ao segundo par de números.
-  De-sign o segundo par de números.
+  Remova o sinal desde o segundo par de números.
 
 \ unclear why this does not get called properly when hoja apaisada is replaced with  caja ***
 Rotina para que se atribua uma imagem no meio de uma caixa;
