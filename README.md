@@ -23,7 +23,7 @@ Para configurar o Notepad++ para trabalhar com o Compilador, siga os passos abai
    - Instale o plugin NppExec através do gerenciador de Plugins do Notepad++ ou clique [aqui](https://github.com/d0vgan/nppexec/releases) para efetuar o procedimento de forma manual.
    - Caso tenha optado pela instalação manual, siga as instruções de instalação fornecidas no arquivo README  para adicionar o plugin ao Notepad++.
 
-3. **Configuração da Linguagem**: Para destacar a sintaxe da linguagem, importe o [arquivo UDL](https://github.com/elenderg/Portugues-Puro/blob/main/Notepad%2B%2B/CEL.xml) (User Defined Language) fornecido neste repositório . Siga as instruções do Notepad++ para importar essa definição de linguagem.
+3. **Configuração da Linguagem**: Para realçar a sintaxe da linguagem, importe o [arquivo UDL](https://github.com/elenderg/Portugues-Puro/blob/main/Notepad%2B%2B/CEL.xml) (User Defined Language) fornecido neste repositório . Siga as instruções do Notepad++ para importar essa definição de linguagem.
 
 4. **Fonte Recomendada**: Recomendamos que você instale e selecione a fonte [Lexend](https://github.com/elenderg/Portugues-Puro/blob/main/Notepad%2B%2B/Lexend.zip) ou [Readex Pro](https://github.com/elenderg/Portugues-Puro/blob/main/Notepad%2B%2B/Readex%20Pro.zip) para obter a melhor visualização do código. As fontes recomendadas estão disponíveis dentro da pasta [Notepad++](https://github.com/elenderg/Portugues-Puro/tree/main/Notepad%2B%2B) neste repositório.
 
@@ -53,5 +53,4 @@ Se você deseja contribuir para o desenvolvimento do Compilador, fique à vontad
 
 Este projeto está licenciado sob a Unlicense - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
 
----
-
+<hr>
