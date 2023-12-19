@@ -1,7 +1,7 @@
 ---
-name: Relatório de Erro
-about: Por favor, preencha o relatório para que possamos aprimorar nosso projeto
-description: 
+name: 'Relatório de Erro'
+about: 'Por favor, preencha o relatório para que possamos aprimorar nosso projeto'
+description: 'Cria um relatório eletrônico de um bug, um erro, uma falha ou outra funcionalidade incorreta. Ao enviar o Relatório de Erros, você fornece informações valiosas que ajudam a corrigir problemas e melhorar sua experiência. ' 
 title: 'Erro no ....'
 labels: 'bug'
 assignees: 'elenderg'
