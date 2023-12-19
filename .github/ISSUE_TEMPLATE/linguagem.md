@@ -1,3 +1,12 @@
+---
+name: 'Solicitação de alteração na linguagem'
+about: 'Por favor, preencha o relatório para que possamos aprimorar nosso projeto'
+title: 'Incluir/Remover ....'
+labels: 'aprimoramento'
+assignees: 'elenderg'
+
+---
+
 ### Nível de experiência
 
 - **Como você avalia o seu grau de experiência com Português Puro? Iniciante, intermediário ou experiente?**
