@@ -628,6 +628,8 @@ Rotina para que se posponha um trecho para um arquivo:
   Se o número resultante for -1,
     Atribua "Erro na função 'SetFilePointer'. Ocorreu um erro na hora de posicionar o ponteiro do arquivo." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída para StdOut;
+    Escreva o retorno de carro para StdOut;
+    Escreva a quebra de linha para StdOut;
     Retorne.
   Processe "kernel32.dll" "WriteFile" com \ Grava dados no arquivo ou dispositivo de entrada / saída (E/S) especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-writefile
@@ -641,6 +643,8 @@ Rotina para que se posponha um trecho para um arquivo:
   Se o número resultante for 0,
     Atribua "Erro ao salvar o arquivo. Função: 'WriteFile' (kernel32.dll)." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída para StdOut;
+    Escreva o retorno de carro para StdOut;
+    Escreva a quebra de linha para StdOut;
     Retorne.
 
 \acrescente
@@ -2104,6 +2108,8 @@ Rotina para que se crie o identificador de conexão de uma requisição WinHTTP usa
   Se o número identificador de conexão desta requisição WinHTTP for 0,
     Atribua "Erro ao estabelecer a conexão HTTP." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída para StdOut;
+    Escreva o retorno de carro para StdOut;
+    Escreva a quebra de linha para StdOut;
     Retorne.
 
 Rotina para que se crie um console:
@@ -2147,6 +2153,8 @@ Rotina para que se crie uma sessão criptografada com uma palavra-passe:
   Se o número resultante for 0,
     Atribua "Erro ao adquirir o identificador do contêiner de chave do Provedor de Serviços Criptográficos ." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída para StdOut;
+    Escreva o retorno de carro para StdOut;
+    Escreva a quebra de linha para StdOut;
     Destrua a Sessão Criptografada;
     Retorne.
   Processe "advapi32.dll" "CryptCreateHash" com \ Inicializa o hash de um fluxo de dados.
@@ -8737,7 +8745,8 @@ Rotina para que se atribua o absolute value dum par de números para um segundo p
   Remova o sinal desde o segundo par de números.
 
 \ unclear why this does not get called properly when hoja apaisada is replaced with  caja ***
-Rotina para que se atribua uma imagem no meio de uma caixa;
+Rotina para que se centralize uma imagem no centro duma caixa;
+Rotina para que se centralize uma imagem no meio duma caixa;
 Rotina para que se centralize uma imagem em uma caixa:
   Se a imagem for inexistente, retorne.
   Centralize a imagem na caixa (horizontalmente).
@@ -16791,12 +16800,14 @@ Rotina para que se mova uma caixa para o lado esquerdo de uma segunda caixa;
 Rotina para que se mova uma caixa para a esquerda de uma segunda caixa:
   Mova a caixa para a esquerda a coordenada X1 desta caixa menos a coordenada X1 desta segunda caixa.
 
+Rotina para que se mova uma caixa uns twips para a esquerda;
 Rotina para que se mova uma caixa para a esquerda uns twips:
   Mova a caixa usando - os twips e 0.
 
 Rotina para que se mova uma caixa para o lado direito de uma segunda caixa:
   Mova a caixa para a direita a coordenada X2 desta segunda caixa menos a coordenada X2 desta caixa.
 
+Rotina para que se mova uma caixa uns twip para a direita;
 Rotina para que se mova uma caixa para a direita uns twips:
   Mova a caixa usando os twips e 0.
 
@@ -16810,6 +16821,7 @@ Rotina para que se mova uma caixa para o canto superior esquerdo de uma segunda 
 Rotina para que se mova uma caixa para o topo de uma segunda caixa:
   Mova a caixa para cima a coordenada Y1 desta caixa menos a coordenada Y1 desta segunda caixa.
 
+Rotina para que se mova uma caixa uns twips para cima;
 Rotina para que se mova uma caixa para cima uns twips:
   Mova a caixa usando 0 e - os twips.
 
@@ -16827,6 +16839,7 @@ Rotina para que se mova uma caixa perto da esquerda de uma segunda caixa:
   Escolha aleatoriamente uma quantidade de caracteres entre 0 e a largura desta caixa vezes 3/4.
   Mova a caixa para a direita a quantidade de caracteres.
 
+Rotina para que se mova uma caixa uns twips para baixo;
 Rotina para que se mova uma caixa para baixo uns twips:
   Mova a caixa usando 0 e os twips.
 
