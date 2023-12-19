@@ -1,6 +1,6 @@
 ---
 name: 'Solicitação de alteração na linguagem'
-about: 'Por favor, preencha o relatório para que possamos aprimorar nosso projeto'
+about: 'Conte-nos a sua idéia para este projeto.'
 title: 'Incluir/Remover ....'
 labels: 'aprimoramento'
 assignees: 'elenderg'
