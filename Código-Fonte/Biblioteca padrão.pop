@@ -2735,7 +2735,8 @@ Rotina para que se de-sign um número:
   Se o número for o menor número,
     Atribua o maior número ao número;
     Retorne.
-  Se o número for menor do que 0, inverta o sinal de o número.
+  Se o número for menor do que 0, 
+    Inverta o sinal de o número.
 
 Rotina para que se  remova o sinal desde um par de números;
 Rotina para que se de-sign um par de números:
@@ -6002,8 +6003,8 @@ Rotina para que se obtenha o primeiro-quarto equivalente de uma orientação:
   Reitere.
 
 Rotina para que se obtenha novos números aleatórios;
-Rotina para que se seed o número aleatório generator:
-  Atribua a contagem de intervalos do sistema à seed.
+Rotina para que se semeie o gerador de números aleatórios:
+  Atribua a contagem de intervalos do sistema à semente aleatória.
 
 Rotina para que se obtenha um máximo divisor comum usando um número e um segundo número:
   Atribua o número para um dividendo número.
@@ -7388,7 +7389,7 @@ Rotina para que se inicialize um contexto: \ canvas?
   Atribua a cor verde à cor deste contexto.
   Atribua o tamanho de letra pequena à tamanho da letra deste contexto.
   \Atribua 1/60 second ao delay. ***
-  Seed o número aleatório generator.
+  Semeie o gerador de números aleatórios.
 
 Rotina para que se inicialize os cursors:
   Inicialize os cursores (seta do mouse).
@@ -9877,7 +9878,7 @@ Um sector é um par de números com
   Uma coordenada X e
   Uma coordenada Y [indicating o canto superior esquerdo of o sector].
 
-A seed é um número.
+A semente aleatória é um número.
 
 Rotina para que se selecione cada byte em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
@@ -20287,7 +20288,7 @@ Rotina para que se escolha aleatoriamente um número entre um min número e um max
 Rotina para que se escolha aleatoriamente um número desde um min número para um max número;
 Rotina para que se defina um número para something entre um segundo número e um terceiro número;
 Rotina para que se escolha aleatoriamente um número aleatório entre um min número e um max número:
-  Atribua o endereçamento deste seed para EAX.
+  Atribua o endereçamento desteasemente aleatória para EAX.
   \ atribui address of randseed para ecx
   Decodifique $8BC8. \ mov ecx,eax
   \ calcule zero based max
