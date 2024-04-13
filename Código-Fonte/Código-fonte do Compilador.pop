@@ -16,6 +16,9 @@ Rotina para que se execute o programa:
   Feche o programa.
 
 Rotina para que se faça tudo:
+  Atribua 1252 a um número denominado codepage.
+  Processe "kernel32.dll" "SetConsoleOutputCP" com o codepage retornando um número denominado status de erro.
+  Se o status de erro for 0 [NULL], escreva "Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT.
   Obtenha uma string desde os argumentos da linha de comando.
   Se a string estiver em branco, 
     Escreva "--------------------------------------------------------------------------------------------------------------- " junto com o texto CRLF para StdOut;
@@ -35,7 +38,7 @@ Rotina para que se faça tudo:
   Se existir algum problema de compilação, 
     Exiba o erro de compilação; 
     Retorne.
-  Escreva "Tempo de compilação: " junto com a string deste temporizador deste compilador seguido de " ms" junto com o texto CRLF para StdOut..
+  Escreva "Tempo de compilação: " junto com a string deste temporizador deste compilador seguido de " ms" junto com o texto CRLF para StdOut.
 
 Rotina para que se obtenha uma string desde os argumentos da linha de comando:
   Processe "kernel32.dll" "GetCommandLineA" 
@@ -1973,18 +1976,18 @@ Rotina para que se compile um endereço da pasta (endereço): \ #013
   Escreva a quebra de linha para StdOut.
   Comece o temporizador de endereçamento.
   Atribua 4096 para um endereço.
-  Atribua o endereço à endereço base desta seção de DLLs.
+  Atribua o endereço à endereço base desta Seção de DLLs.
   Enderece as DLLs usando o endereço.
-  Atribua o endereço menos a endereço base desta seção de DLLs à quantidade de caracteres desta seção de DLLs.
+  Atribua o endereço menos a endereço base desta Seção de DLLs à quantidade de caracteres desta Seção de DLLs.
   Arredonde o endereço para cima usando o múltiplo imediato de 4096.
-  Atribua o endereço à endereço base desta região de dados.
+  Atribua o endereço à endereço base desta Região de Dados.
   Enderece as variáveis globais usando o endereço.
   Enderece os valores literais usando o endereço.
-  Atribua o endereço menos a endereço base desta região de dados à quantidade de caracteres desta região de dados.
+  Atribua o endereço menos a endereço base desta Região de Dados à quantidade de caracteres desta Região de Dados.
   Arredonde o endereço para cima usando o múltiplo imediato de 4096.
-  Atribua o endereço à endereço base desta região de código. \ Uma zona é uma estrutura que contém um endereço base, uma quantidade de caracteres e um tamanho.
+  Atribua o endereço à endereço base desta Região de Código. \ Uma zona é uma estrutura que contém um endereço base, uma quantidade de caracteres e um tamanho.
   Enderece as rotinas usando o endereço.
-  Atribua o endereço menos a endereço base desta região de código à quantidade de caracteres desta região de código.
+  Atribua o endereço menos a endereço base desta Região de Código à quantidade de caracteres desta Região de Código.
   Suspenda o temporizador de endereçamento.
 
 Rotina para que se compile um endereço da pasta (transmutação): \ #014
@@ -2023,7 +2026,7 @@ Rotina para que se compile um endereço da pasta (interrupção): \ #017
   Escreva o retorno de carro para StdOut.
   Escreva a quebra de linha para StdOut.
 
-A região de código é um zona.
+A Região de Código é um zona.
 
 Rotina para que se compile uma expressão matematica usando um percorredor:
   Se existir algum problema de compilação, retorne.
@@ -5041,10 +5044,10 @@ Rotina para que se inicialize um Cabeçalho PE:
 Rotina para que se inicialize um Cabeçalho PE (seção de código):
   Atribua "code  " para uma string.
   Copie bytes desde o caractere inicial desta string para o endereçamento deste nome desta Code Section deste Cabeçalho PE por 6.
-  Atribua a quantidade de caracteres desta região de código ao SizeInBytes desta Code Section deste Cabeçalho PE.
-  Atribua o endereço base desta região de código ao AddressInMemory desta Code Section deste Cabeçalho PE.
-  Atribua a quantidade de caracteres desta região de código ao SizeInFile desta Code Section deste Cabeçalho PE.
-  Atribua o endereço base desta região de código ao AddressInFile desta Code Section deste Cabeçalho PE.
+  Atribua a quantidade de caracteres desta Região de Código ao SizeInBytes desta Code Section deste Cabeçalho PE.
+  Atribua o endereço base desta Região de Código  ao AddressInMemory desta Code Section deste Cabeçalho PE.
+  Atribua a quantidade de caracteres desta Região de Código  ao SizeInFile desta Code Section deste Cabeçalho PE.
+  Atribua o endereço base desta Região de Código  ao AddressInFile desta Code Section deste Cabeçalho PE.
   Atribua -536870880 [$E0000020 ] para as Characteristics desta Code Section deste Cabeçalho PE. \ executable, readable, writable, code object
   \IMAGE_FILE_LARGE_ADDRESS_ AWARE 0x0020 - Application can handle > 2-GB addresses.
 
@@ -5117,7 +5120,7 @@ Rotina para que se inicialize um Cabeçalho PE (informação da versão):
   Atribua 0 ao UserMinorVersion deste Cabeçalho PE.
   Atribua 4 [$0004] ao SubsystemMajorVersion deste Cabeçalho PE.
   Atribua 0 [$0000] ao SubsystemMinorVersion deste Cabeçalho PE.
-  Atribua 2 [$0002] ao Subsystem deste Cabeçalho PE.
+  Atribua 3 [$0003] ao Subsystem deste Cabeçalho PE.
 
 Um variável intermediária é uma variável local.
 
