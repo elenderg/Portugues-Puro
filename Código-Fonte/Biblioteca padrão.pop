@@ -652,9 +652,7 @@ Rotina para que se posponha um trecho para um arquivo:
   Retornando um número resultante.\Se a função retornar -1 (INVALID_SET_FILE_POINTER), isso significa que a chamada para SetFilePointer não foi bem-sucedida.
   Se o número resultante for -1,
     Atribua "Erro na função 'SetFilePointer'. Ocorreu um erro na hora de posicionar o ponteiro do arquivo." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Processe "kernel32.dll" "WriteFile" com \ Grava dados no arquivo ou dispositivo de entrada / saída (E/S) especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-writefile
@@ -667,9 +665,7 @@ Rotina para que se posponha um trecho para um arquivo:
   Retornando o número resultante.
   Se o número resultante for 0,
     Atribua "Erro ao salvar o arquivo. Função: 'WriteFile' (kernel32.dll)." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
 
 \acrescente
@@ -2156,9 +2152,7 @@ Rotina para que se crie o identificador de conexão de uma requisição WinHTTP usa
   Retornando o número identificador de conexão desta requisição WinHTTP.
   Se o número identificador de conexão desta requisição WinHTTP for 0,
     Atribua "Erro ao estabelecer a conexão HTTP." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
 
 Rotina para que se crie um console:
@@ -2201,9 +2195,7 @@ Rotina para que se crie uma sessão criptografada com uma palavra-passe:
   Retornando um número resultante.
   Se o número resultante for 0,
     Atribua "Erro ao adquirir o identificador do contêiner de chave do Provedor de Serviços Criptográficos ." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Destrua a Sessão Criptografada;
     Retorne.
   Processe "advapi32.dll" "CryptCreateHash" com \ Inicializa o hash de um fluxo de dados.
@@ -2216,9 +2208,7 @@ Rotina para que se crie uma sessão criptografada com uma palavra-passe:
   Retornando o número resultante.
   Se o número resultante for 0,
     Atribua "Erro ao possível inicializar o hash da palavra-passe." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Destrua a Sessão Criptografada;
     Retorne.
   Processe "advapi32.dll" "CryptHashData" com \ Adiciona dados para um hash.
@@ -2230,9 +2220,7 @@ Rotina para que se crie uma sessão criptografada com uma palavra-passe:
   Retornando o número resultante.
   Se o número resultante for 0,
     Atribua "Erro. Não foi possível adicionar dados ao hash da senha." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Destrua a Sessão Criptografada;
     Retorne.
   Processe "advapi32.dll" "CryptDeriveKey" com \ Gera chaves de sessão criptográficas
@@ -2245,9 +2233,7 @@ Rotina para que se crie uma sessão criptografada com uma palavra-passe:
   Retornando o número resultante.
   Se o número resultante for 0,
     Atribua "Erro ao gerar as chaves da sessão criptografada." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Destrua a Sessão Criptografada;
     Retorne.
 
@@ -2357,9 +2343,7 @@ Rotina para que se crie um gpBitmap usando um trecho:
   Retornando um número.
   Se o número não for 0,
     Atribua "Não sei como processar este tipo de imagem." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Esvazie o gpBitmap.
   Processe o release deste VTable deste istream com o istream. \ monet
 
@@ -2517,9 +2501,7 @@ Rotina para que se crie o número identificador de abertura de uma requisição Win
   Retornando o número identificador de sessão deste número identificador de requisição desta requisição WinHTTP.
   Se o número identificador de sessão deste número identificador de requisição desta requisição WinHTTP for 0,
     Atribua "Erro. Não foi possível iniciar a conexão." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
 
 Rotina para que se crie um endereço completo no sistema de arquivos:
@@ -2627,9 +2609,7 @@ Rotina para que se crie o número identificador da requisição de uma requisição W
   Retornando o número identificador de requisição desta requisição WinHTTP.
   Se o número identificador de requisição desta requisição WinHTTP for 0,
     Atribua "Erro ao chamar a função 'WinHttpOpenRequest'. Não foi possível obter o número identificador da requisição http." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
 
 Rotina para que se crie uma linha de texto usando um byte:
@@ -2658,9 +2638,7 @@ Rotina para que se crie um soquete [ipv4] usando uma host string e um número de 
   Retornando o soquete.
   Se o soquete for -1 [INVALID_SOCKET ],
     Atribua "Erro na função socket (ws2_32.dll). O soquete retornado é inválido." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Processe "ws2_32.dll" "connect" com \ Estabelece uma conexão com um soquete especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winsock2/nf-winsock2-connect
@@ -2670,9 +2648,7 @@ Rotina para que se crie um soquete [ipv4] usando uma host string e um número de 
   Retornando um número resultante.
   Se o número resultante não for 0 [SOCKET_ERROR],
     Atribua "Erro. Não foi possível estabelecer uma conexão com o soquete informado." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Atribua 30 segundos para um timeout de envio. \ timeout
   Processe "ws2_32.dll" "setsockopt" com \ Define as opções do soquete.
@@ -2685,9 +2661,7 @@ Rotina para que se crie um soquete [ipv4] usando uma host string e um número de 
   Retornando o número resultante.
   Se o número resultante não for 0 [SOCKET_ERROR ],
     Atribua "Erro SO_SNDTIMEO (0x00001005) na função 'setsockopt' (ws2_32.dll). Não foi possível definir o tempo delimite de envio do soquete." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   \ abra receba timeout 30 segundos
   Atribua 30 segundos para um timeout de recepção.
@@ -2700,9 +2674,7 @@ Rotina para que se crie um soquete [ipv4] usando uma host string e um número de 
   Retornando o número resultante.
   Se o número resultante não for 0,
     Atribua "Erro SO_RCVTIMEO (0x00001006) na função 'setsockopt' (ws2_32.dll). Não foi possível definir o tempo delimite de recepção do soquete." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
 
 Rotina para que se crie um conjunto de texto usando uma string:
@@ -4345,16 +4317,14 @@ Rotina para que se decifre um trecho usando uma palavra-passe:
     e O endereçamento deste quantidade de caracteres [*pdwDataLen]
   Retornando um número resultante.
   Se o número resultante for 0,
-    Atribua "Erro ao tentar decifrar os dados." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Atribua "Erro ao decifrar os dados." ao erro do fluxo de entrada/saída;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Destrua a Sessão Criptografada;
     Retorne.
   Destrua a Sessão Criptografada.
   Atribua o texto hexadecimal ao trecho.
 
-O fonte padrão é uma fonte.
+A fonte padrão é uma fonte.
 
 O servidor SMTP padrão é uma string igual a "localhost".
 
@@ -5088,15 +5058,11 @@ Rotina para que se duplique um endereço completo para uma segunda endereço compl
 Rotina para que se duplique um endereço completo para uma segundo endereço completo no sistema de arquivos (pasta)[endereço]:
   Se o endereço completo estiver no segundo endereço completo,
     Atribua "Erro ao duplicar a pasta: " junto com o endereço completo seguido de ". - erro de recursão inválida." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Se o endereço completo não estiver no sistema de arquivos,
     Atribua "Erro. Pasta '" junto com o endereço completo seguido de "' não encontrada." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Se o segundo endereço completo não estiver no sistema de arquivos,
     Crie o segundo endereço completo no sistema de arquivos.
@@ -5126,9 +5092,7 @@ Rotina para que se duplique um endereço completo para um segundo endereço comple
     Defina o endereço completo para modo de leitura&gravação;
     Retorne.
   Atribua "Erro ao duplicar o arquivo: " junto com o endereço completo seguido de "." ao erro do fluxo de entrada/saída.
-  Escreva o erro do fluxo de entrada/saída para StdOut;
-  Escreva o retorno de carro para StdOut;
-  Escreva a quebra de linha para StdOut.
+  Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut.
 
 
 Uma elipse é uma estrutura com uma caixa.
@@ -5160,9 +5124,7 @@ Rotina para que se encrypt um trecho usando um palavra-passe:
   Retornando um número resultante.
   Se o número resultante for 0,
     Atribua "Ocorreu um erro ao criptografar os dados." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Destrua a Sessão Criptografada;
     Retorne.
   Destrua a Sessão Criptografada.
@@ -5843,9 +5805,7 @@ Rotina para que se obtenha umas rotinas da função AddrInfo:
   Retornando um número identificador.
   Se o número identificador for 0,
     Atribua "A função LoadLibraryA da biblioteca ws2_32.dll retornou um erro. Não foi possível obter o identificador do módulo a ser carregado." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Atribua "getaddrinfo" para uma nome de função.
   Processe "kernel32.dll" "GetProcAddress" com \ Recupera o endereço de uma função ou variável exportada da biblioteca de vínculo dinâmico (DLL) especificada.
@@ -5855,9 +5815,7 @@ Rotina para que se obtenha umas rotinas da função AddrInfo:
   Retornando um ponteiro.
   Se o ponteiro for inexistente,
     Atribua "Erro. Este compilador é compatível com Windows XP ou superior." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Atribua o ponteiro ao ponteiro da função GetAddrInfo destas rotinas da função AddrInfo.
   Atribua "freeaddrinfo" para um nome de processo.
@@ -5867,9 +5825,7 @@ Rotina para que se obtenha umas rotinas da função AddrInfo:
   Retornando o ponteiro.
   Se o ponteiro for inexistente,
     Atribua "Erro. Este compilador é compatível apenas com o Windows XP ou versões superiores." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Atribua o ponteiro ao ponteiro da função FreeAddrInfo destas rotinas da função AddrInfo.
 
@@ -6474,15 +6430,11 @@ Rotina para que se obtenha um SockAddr usando um host string:
    Retornando um número resultante.
   Se o número resultante não for 0, \ Consulte https://learn.microsoft.com/en-us/windows/desktop/WinSock/windows-sockets-error-codes-2
     Atribua "Não foi possível encontrar o nome do seguinte anfitrião (host): " junto com o host seguido de "." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Se o AddrInfoPtr for inexistente,
     Atribua "Não foi possível encontrar o nome do seguinte anfitrião (host): " junto com o host seguido de "." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Atribua o conteúdo deste AI_Addr deste AddrInfoPtr ao SOCKADDR.
   Processe o FeeAddrInfo ponteiro destas rotinas da função AddrInfo com o AddrInfoPtr.
@@ -10016,9 +9968,8 @@ Rotina para que se envie um trecho para um soquete:
     Retornando um número.
     Se o número for -1 [SOCKET_ERROR ],
       Atribua "Erro ao enviar os dado para o soquete." ao erro do fluxo de entrada/saída;
-      Escreva o retorno de carro para StdOut;
-      Escreva a quebra de linha para StdOut;
-      Escreva o erro do fluxo de entrada/saída para StdOut;
+    
+      Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
       Retorne.
     Subtraia o número desde a quantidade de caracteres.
     Adicione o número para o ponteiro.
@@ -10040,91 +9991,67 @@ Rotina para que se envie uma data string para uma requisição WinHTTP:
   Retornando um número resultante.
   Se o número resultante for 0,
     Atribua "Erro. Não foi possível enviar a solicitação." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
 
 Rotina para que se envie um email:
   Limpe o erro do fluxo de entrada/saída.
   Crie um soquete usando o servidor SMTP deste email e 25.
   Se o erro do fluxo de entrada/saída não estiver em branco,
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Receba uma response string desde o soquete.
   Se o erro do fluxo de entrada/saída não estiver em branco,
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Destrua o soquete;
     Retorne.
   Se o response string começa com "5",
     Atribua a response string ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Elimine os resíduos no erro do fluxo de entrada/saída;
     Destrua o soquete;
     Retorne.
   Envie "HELO " junto com o nome deste módulo junto com o texto CRLF para o soquete e receba o response string.
   Se o erro do fluxo de entrada/saída não estiver em branco,
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Destrua o soquete;
     Retorne.
   Se o response string começa com "5",
     Atribua o response string ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Elimine os resíduos no erro do fluxo de entrada/saída;
     Destrua o soquete;
     Retorne.
   Envie "MAIL FROM: <" junto com o remetente deste email seguido de ">" junto com o texto CRLF para o soquete e receba o response string.
   Se o erro do fluxo de entrada/saída não estiver em branco,
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Destrua o soquete;
     Retorne.
   Se o response string começa com "5",
     Atribua o response string ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Elimine os resíduos no erro do fluxo de entrada/saída;
     Destrua o soquete;
     Retorne.
   Envie "RCPT TO: <" junto com o destinatário deste email seguido de ">" junto com o texto CRLF para o soquete e receba o response string.
   Se o erro do fluxo de entrada/saída não estiver em branco,
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Destrua o soquete;
     Retorne.
   Se o response string começa com "5",
     Atribua o response string ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Elimine os resíduos no erro do fluxo de entrada/saída;
     Destrua o soquete;
     Retorne.
   Envie "DATA" junto com o texto CRLF para o soquete e receba o response string.
   Se o erro do fluxo de entrada/saída não estiver em branco,
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Destrua o soquete;
     Retorne.
   Se o response string começa com "5",
     Atribua o response string ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Elimine os resíduos no erro do fluxo de entrada/saída;
     Destrua o soquete;
     Retorne.
@@ -10138,16 +10065,12 @@ Rotina para que se envie um email:
   Acrescente o texto CRLF seguido de "." junto com o texto CRLF para a temp string.
   Envie a temp string para o soquete e receba a response string.
   Se o erro do fluxo de entrada/saída não estiver em branco,
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Destrua o soquete;
     Retorne.
   Se o response string começa com "5",
     Atribua o response string ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Elimine os resíduos no o erro do fluxo de entrada/saída;
     Destrua o soquete;
     Retorne.
@@ -10901,9 +10824,7 @@ Rotina para que se comece um process usando um endereço completo:
   Limpe o erro do fluxo de entrada/saída.
   Se o process não for 0,
     Atribua "Erro. Este processo já está sendo executado." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Atribua a magnitude duma StartupInfo ao CB desta startupinfo.
   Extraia um endereço da pasta desde o endereço completo.
@@ -10930,9 +10851,7 @@ Rotina para que se comece um process usando um endereço completo:
   Retornando um número.\Se a função for bem-sucedida, o valor de retorno será diferente de zero.
   Se o número for 0,
     Atribua "Erro. Não foi possível executar o programa." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Atribua o hprocess deste PROCESS_INFORMATION ao process.
   Processe "kernel32.dll" "CloseHandle" com \ Fecha um identificador de objeto aberto.
@@ -11362,9 +11281,7 @@ Rotina para que se escreva um trecho para um arquivo:
   Retornando um número resultante.
   Se o número resultante for -1,
     Atribua "Erro na função SetFilePointer. Não foi possível posicionar o ponteiro no início do arquivo solicitado." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Processe "kernel32.dll" "WriteFile" com \ Serve pra gravar dados no arquivo
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-writefile
@@ -11376,9 +11293,7 @@ Rotina para que se escreva um trecho para um arquivo:
   Retornando o número resultante.
   Se o número resultante for 0,
     Atribua "Erro ao tentar gravar o arquivo." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
 
 Rotina para que se salve um trecho em um endereço completo;
@@ -11389,9 +11304,7 @@ Rotina para que se escreva um trecho para um endereço completo:
   Extraia um endereço da pasta desde o endereço completo.
   Se o endereço da pasta não estiver no sistema de arquivos,
     Atribua "A pasta: " junto com o endereço da pasta seguido de " não existe." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Defina o endereço completo para modo de leitura&gravação.
   Preserve o endereço completo.
@@ -11413,9 +11326,7 @@ Rotina para que se escreva um trecho para um endereço completo:
   Retornando um número identificador.
   Se o número identificador for -1 [INVALID_HANDLE_VALUE],
     Atribua "Erro ao tentar abrir o arquivo: " junto com o endereço completo seguido de "." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Processe "kernel32.dll" "WriteFile" com \ Grava dados no arquivo ou dispositivo de entrada / saída (E/S) especificada
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-writefile
@@ -11478,11 +11389,9 @@ Rotina para que se escreva uma string para StdOut:
   Retornando um novo número.
   Se o novo número for 0,
     Atribua "Erro. Não foi possível escrever em STDOUT" ao erro do fluxo de entrada/saída;
-    \Escreva o erro do fluxo de entrada/saída para StdOut;
+    \Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Avise o usuário;
     Retorne.
-    \Escreva o retorno de carro para StdOut.
-    \Escreva a quebra de linha para StdOut.
 
 Rotina para que se escreva um byte sem passar pra próxima linha:
   Atribua o byte para uma string.
@@ -12101,9 +12010,7 @@ Rotina para que se atribua stdin para um trecho:
   Encontre uma string usando o environment variáveis e "CONTENT_LENGTH".
   Se a string estiver em branco,
     Atribua "Erro ao tentar obter o conteúdo da variável de ambiente CONTENT_LENGTH." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Converta a string para uma quantidade de caracteres.
   Se a quantidade de caracteres for 0, retorne.
@@ -12118,9 +12025,7 @@ Rotina para que se atribua stdin para um trecho:
   \ Se a função for bem-sucedida, o valor retornado será não zero (TRUE).
   Se o número [lpNumberOfBytesRead] não for a quantidade de caracteres,
     Atribua "Erro ao ler o fluxo de dados da entrada padrão (stdin)." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Limpe o trecho;
     Retorne.
   Atribua o caractere inicial deste trecho mais a quantidade de caracteres menos 1 ao caractere final deste trecho.
@@ -12147,9 +12052,7 @@ Rotina para que se leia um endereço completo para um trecho:
   Anexe o caractere NULL após o endereço completo.
   Se o endereço completo não estiver no sistema de arquivos,
     Atribua "Erro. O Arquivo: '" junto com o endereço completo seguido de "' não existe." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Avise o usuário;
     Retorne.
   \ coloca o endereço no modo de leitura/gravação.
@@ -12165,9 +12068,7 @@ Rotina para que se leia um endereço completo para um trecho:
   Retornando um número identificador.
   Se o número identificador for -1 [INVALID_HANDLE_VALUE],
     Atribua "Erro ao tentar abrir o arquivo: '" junto com o endereço completo seguido de "'." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Avise o usuário;
     Retorne.
   Processe "kernel32.dll" "GetFileSize" com \ Recupera o tamanho do arquivo especificado, em bytes.
@@ -12192,9 +12093,7 @@ Rotina para que se leia um endereço completo para um trecho:
     Retorne.
   Se o número  for 0,
     Atribua "Erro ao tentar ler o arquivo: " junto com o endereço completo seguido de "." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Avise o usuário.
 
 Rotina para que se atribua um endereço completo para uma imagem;
@@ -12267,9 +12166,7 @@ Rotina para que se leia um arquivo para um trecho:
   Retornando um número resultante. \Se a função for bem-sucedida, o valor de retorno será diferente de zero (VERDADEIRO).
   Se o número resultante for 0,
     Atribua "Ocorreu um erro ao tentar ler o arquivo." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
 
 Rotina para que se obtenha a Bíblia;
@@ -12352,9 +12249,7 @@ Rotina para que se abra um arquivo usando um endereço completo:
   Extraia um endereço da pasta desde o endereço completo.
   Se o endereço da pasta não estiver no sistema de arquivos,
     Atribua "A Pasta: " junto com o endereço da pasta seguido de " não existe." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Ative o endereço completo para modo de leitura&gravação.
   Preserve o endereço completo.
@@ -12370,9 +12265,7 @@ Rotina para que se abra um arquivo usando um endereço completo:
   Retornando o arquivo. \Se a função falhar, o valor de retorno é -1 (INVALID_HANDLE_VALUE).
   Se o arquivo for -1 [INVALID_HANDLE_VALUE],
     Atribua "Erro ao abrir o arquivo: " junto com o endereço completo seguido de "." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
 
 O módulo é uma estrutura com
@@ -12406,9 +12299,8 @@ Rotina para que se leia uma response string desde uma requisição WinHTTP:
     Retornando um número resultante.
     Se o número resultante for 0 [FALSE],
       Atribua "Erro. Não foi possível verificar a quantidade de dados disponíveis." ao erro do fluxo de entrada/saída;
-      Escreva o erro do fluxo de entrada/saída para StdOut;
-      Escreva o retorno de carro para StdOut;
-      Escreva a quebra de linha para StdOut;
+      Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
+    
       Limpe a response string;
       Pare.
     Atribua a quantidade de caracteres desta response string para uma quantidade de caracteres armazenados.
@@ -12423,9 +12315,8 @@ Rotina para que se leia uma response string desde uma requisição WinHTTP:
     Retornando o número resultante.
     Se o número resultante for 0 [FALSE],
       Atribua "Erro durante a leitura dos dados da requisição WinHTTP." ao erro do fluxo de entrada/saída;
-      Escreva o erro do fluxo de entrada/saída para StdOut;
-      Escreva o retorno de carro para StdOut;
-      Escreva a quebra de linha para StdOut;
+      Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
+    
       Limpe a response string;
       Pare.
     Atribua o ponteiro mais a contagem menos 1 ao caractere final desta response string.
@@ -12448,9 +12339,7 @@ Rotina para que se leia uma URL para um trecho:
   Retornando um número identificador da conexão de internet.
   Se o número identificador da conexão de internet for 0 [NULL],
     Atribua "Erro. Não foi possível se conectar à internet. Verifique sua conexão" ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Avise o usuário;
     Retorne.
   Preserve a URL.
@@ -12467,9 +12356,7 @@ Rotina para que se leia uma URL para um trecho:
   Se o número identificador da URL for 0 [NULL],
     Avise o usuário;
     Atribua "Erro. Não foi possível abrir a seguinte URL: " junto com o URL seguido de "." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Processe "wininet.dll" "InternetCloseHandle" com \Fecha um identificador de Internet único.
     \ Documentação> -> https://learn.microsoft.com/pt-br/windows/win32/api/wininet/nf-wininet-internetclosehandle
       O número identificador da conexão de internet; [hInternet]
@@ -12489,9 +12376,8 @@ Rotina para que se leia uma URL para um trecho:
     Retornando um número resultante.
     Se o número resultante for 0 [FALSE],
       Atribua "Ocorreu um erro ao ler a URL '" junto com a URL seguido de "'." ao erro do fluxo de entrada/saída;
-      Escreva o erro do fluxo de entrada/saída para StdOut;
-      Escreva o retorno de carro para StdOut;
-      Escreva a quebra de linha para StdOut;
+      Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
+    
       Pare.
     Atribua o ponteiro mais a contagem menos 1 ao caractere final deste trecho.
     Se a contagem for 0, pare.
@@ -12511,9 +12397,7 @@ Rotina para que se receba o response string desde uma requisição WinHTTP:
   Retornando um número resultante.
   Se o número resultante for 0 [FALSE],
     Atribua "Erro ao receber a questão da solicitação HTTP. Funcção WinHttpReceiveResponse (winhttp.dll)." ao erro do fluxo de entrada/saída;
-    Escreva o erro do fluxo de entrada/saída para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
 
 Rotina para que se receba um trecho desde um soquete:
@@ -12538,9 +12422,8 @@ Rotina para que se receba um trecho desde um soquete:
       Retorne.
     Se o último erro do windows sockets não for 10040 [WSAMSGSIZE],
       Atribua "Erro ao receber os dados. Função 'recv' da lib 'ws2_32.dll'." ao erro do fluxo de entrada/saída;
-      Escreva o erro do fluxo de entrada/saída para StdOut;
-      Escreva o retorno de carro para StdOut;
-      Escreva a quebra de linha para StdOut;
+      Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
+    
       Limpe o trecho;
       Retorne.
   \Se o último winsock erro dum system não for 10040 [WSAMSGSIZE],  \ "dum" não é permitido aqui
