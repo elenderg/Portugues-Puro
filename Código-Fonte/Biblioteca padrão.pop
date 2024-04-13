@@ -616,6 +616,11 @@ Uma anchor é um posicionamento.
 Uma máscara de conjunção lógica é uma mask.
 Um ângulo é [composto de] uns graus. [cujos valores variam ente 0 e 3599]
 
+Um status de erro é um número.
+Rotina para que se retorne um status de erro:
+  Processe "kernel32.dll" "GetLastError" retornando o status de erro.
+
+
 \ Proposta: Rotina para que se (adicione/insira/acrescente/posponha//etc) um trecho (para/em) [o (fim/final) de]  um arquivo;
 \acrescente
 Rotina para que se acrescente um trecho para o final de um arquivo;
@@ -650,7 +655,7 @@ Rotina para que se posponha um trecho para um arquivo:
     e 0 [lpDistanceToMoveHigh]
     e 2 [dwMoveMethod = FILE_END]
   Retornando um número resultante.\Se a função retornar -1 (INVALID_SET_FILE_POINTER), isso significa que a chamada para SetFilePointer não foi bem-sucedida.
-  Se o número resultante for -1,
+  Se o número resultante for -1, [4294967295]
     Atribua "Erro na função 'SetFilePointer'. Ocorreu um erro na hora de posicionar o ponteiro do arquivo." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
@@ -660,7 +665,7 @@ Rotina para que se posponha um trecho para um arquivo:
     e O caractere inicial deste trecho [lpBuffer]
     e A quantidade de caracteres deste trecho [nNumberOfBytesToWrite]
     [Creio que seja preciso corrigir o texto abaixo]
-    e um [o] endereçamento dum número [lpNumberOfBytesWritten]
+    e o [um] endereçamento dum número [lpNumberOfBytesWritten] \ TESTAR AQUI
     e 0 [lpOverlapped]
   Retornando o número resultante.
   Se o número resultante for 0,

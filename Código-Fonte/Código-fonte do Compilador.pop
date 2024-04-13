@@ -18,45 +18,30 @@ Rotina para que se execute o programa:
 Rotina para que se faça tudo:
   Obtenha uma string desde os argumentos da linha de comando.
   Se a string estiver em branco, 
-    Escreva "--------------------------------------------------------------------------------------------------------------- " para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
-    Escreva "Aviso. Para utilizar este compilador, você deve invocá-lo através da linha de comando. " para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
-    Escreva "Para fazer isso, abra o Prompt de Comando (cmd.exe), navegue até a pasta do compilador e digite:" para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
-    Escreva " " para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
-    Escreva " c:\endereço_do_compilador.exe\  c:\pasta_do_projeto_atual\ " para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva "--------------------------------------------------------------------------------------------------------------- " junto com o texto CRLF para StdOut;
+    Escreva "Aviso. Para utilizar este compilador, você deve invocá-lo através da linha de comando. " junto com o texto CRLF para StdOut;
+    Escreva "Para fazer isso, abra o Prompt de Comando (cmd.exe), navegue até a pasta do compilador e digite:" junto com o texto CRLF para StdOut;
+    Escreva " " junto com o texto CRLF para StdOut;
+    Escreva " c:\endereço_do_compilador.exe\  c:\pasta_do_projeto_atual\ " junto com o texto CRLF para StdOut;
   Retorne.
   Se o conteúdo deste caractere final desta string não for a barra invertida, 
     Acrescente a barra invertida para a string.
   Se a string não estiver no sistema de arquivos, 
-    Escreva  "Erro. O diretório '" junto com a string seguido de "' não foi encontrado." para StdOut;
-    Escreva o retorno de carro para StdOut;
-    Escreva a quebra de linha para StdOut;
+    Escreva  "Erro. O diretório '" junto com a string seguido de "' não foi encontrado." junto com o texto CRLF para StdOut;
     Retorne.
-  Escreva "Compilando o diretório '" junto com a string seguido de "' ..." para StdOut. \ #0
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva "Compilando o diretório '" junto com a string seguido de "' ..." junto com o texto CRLF para StdOut. \ #0
+  Escreva o texto CRLF para StdOut.
   Compile a string.
   Se existir algum problema de compilação, 
     Exiba o erro de compilação; 
     Retorne.
-  Escreva "Tempo de compilação: " junto com a string deste temporizador deste compilador seguido de " ms" para StdOut.
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva "Tempo de compilação: " junto com a string deste temporizador deste compilador seguido de " ms" junto com o texto CRLF para StdOut..
 
 Rotina para que se obtenha uma string desde os argumentos da linha de comando:
   Processe "kernel32.dll" "GetCommandLineA" 
     Retornando um endereço do caractere.
-  Converta o endereço do caractere para uma segunda string.
-  Lance um subtexto sobre a segunda string.
+  Converta o endereço do caractere para uma string denominada argumentos.
+  Lance um subtexto sobre os argumentos.
   Itere.
     Se o subtexto estiver em branco, 
       Limpe a string; 
@@ -73,14 +58,12 @@ Rotina para que se exiba o erro de compilação:
     Escreva a mensagem de erro deste compilador para StdOut; 
     Retorne.
   Escreva 
-    A mensagem de erro deste compilador 
-      seguido de " - " 
+    A mensagem de erro deste compilador  seguido de " - " 
       junto com o endereço do arquivo atual deste compilador 
       seguido de " linha: " 
       junto com o número da linha de erro deste compilador
     para StdOut.
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva o texto CRLF para StdOut.
 
 Rotina para que se execute os eventos:
   [Itere.]
