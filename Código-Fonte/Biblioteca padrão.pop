@@ -10410,7 +10410,7 @@ Rotina para que se subdivida um trecho em umas díades: \ desmembre / subdivida /
     Acrescente a díade para as díades.
     Subdivida o segmento inicial deste percorredor em um subtexto de denominação e um subtexto de consulta usando o sinal de igualdade. \ URL?
     Atribua o subtexto de denominação ao nome deste díade.
-    Converta o subtexto de consulta como um texto de consulta ao value deste díade.
+    Converta o subtexto de consulta como um texto de consulta ao valor da díade desta díade.
   Reitere.
 
 Rotina para que se subdivida um byte em uma cifra binária e uma segunda cifra binária:
