@@ -133,6 +133,36 @@ Rotina para que se modifique uma string para uma outra string;
 Rotina para que se mude uma string para uma outra string:
   Atribua a outra string para a string.
 
+Rotina para que se substitua um subtexto em uma string usando um segundo subtexto:
+  Se o subtexto não estiver na string, 
+    Escreva "string vazia" junto com o texto CRLF para STDOUT;
+    Retorne.
+  Atribua a quantidade de caracteres deste subtexto para um número denominado comprimento.
+  Atribua "" para uma string denominada resultado.
+  Lance um percorredor sobre a string.
+  Adicione o comprimento para o caractere final deste segmento inicial deste percorredor.
+  Adicione o comprimento para o caractere inicial deste segmento final deste percorredor.
+  Acrescente o segmento inicial deste percorredor para o resultado.
+  Remova os caracteres finais desde o resultado usando 1.
+  Itere.
+    Se o segmento final deste percorredor estiver em branco,
+      Remova o último caractere desde o resultado;
+      Pare.
+    Se o segmento inicial deste percorredor for igual ao subtexto,
+      Remova os caracteres finais desde o resultado usando o comprimento menos 1;
+      Acrescente o segundo subtexto para o resultado;
+      Adicione 1 para o caractere inicial deste segmento inicial deste percorredor;
+      Adicione 1 para o caractere final deste segmento inicial deste percorredor;
+      Reitere.
+    Se o segmento final deste percorredor não for igual ao subtexto,
+      Acrescente o conteúdo deste caractere final deste segmento inicial deste percorredor para o resultado;
+      Adicione 1 para o caractere inicial deste segmento inicial deste percorredor;
+      Adicione 1 para o caractere final deste segmento inicial deste percorredor;
+      Adicione 1 para o caractere inicial deste segmento final deste percorredor;
+      Reitere.
+    Atribua o resultado para a string.
+
+
 Rotina para que se defina um número como um outro número;
 Rotina para que se coloque um outro número em um número;
 Rotina para que se substitua um número por um outro número;
