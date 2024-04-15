@@ -6390,10 +6390,10 @@ Rotina para que se destrinche um tipo (expand lista): \ tipo base deste tipo não
   \Se o nome deste tipo for "elemento", retorne.
   Se o tipo não puder ser reduzido para "lista" usando o nome do tipo primitivo, retorne.
   Encontre um tipo base usando o nome do tipo primitivo deste tipo e o catálogo de tipos.
-  \ adicione lista estrutura - o número of secret campos é hard coded em two places: search por "do que 4" \ was 6
-  Atribua o nome deste tipo seguido de " estrutura" para um nome.
-  Atribua o nome deste tipo seguido de " estruturas" para um nome plural.
-  Atribua o nome deste tipo base seguido de " estrutura" para um nome do tipo primitivo.
+  \ adiciona a lista estruturada - o número of secret campos é hard coded em two places: search por "do que 4" \ was 6
+  Atribua o nome deste tipo seguido de " estruturada" para um nome.
+  Atribua o nome deste tipo seguido de " estruturadas" para um nome plural.
+  Atribua o nome deste tipo base seguido de " estruturada" para um nome do tipo primitivo.
   Adicione um tipo estruturado para os tipos usando 
     O nome e 
     O nome plural e 
@@ -6476,7 +6476,7 @@ Rotina para que se destrinche um tipo (dados opcionais - conjunto):
     Retorne.
   Reitere.
   Elimine apelidos duplicados desde os campos deste tipo.
-  Se o tipo não puder ser reduzido para "lista estrutura", retorne.
+  Se o tipo não puder ser reduzido para "lista estruturada", retorne.
   Se a contagem destes campos deste tipo for maior do que 4, retorne. \ already copied? was 2 por próximo e prev, now 6 para included Spanish redefiniions
   Copie os campos deste tipo base deste tipo aos campos deste tipo (apenas campos de dados).
 

@@ -1,35 +1,13 @@
-\ O Cérebro - A Sociedade Osmosiana de Programadores - Fundada em 2006.
-Uma lista é um ponteiro [que aponta] para uma lista estrutura.
-\Um conjunto de texto é uma lista com uma string.
-Uma lista estrutura é uma estrutura com
-  Uma lista posterior e
-  Uma lista anterior.
+\O conteúdo deste arquivo foi traduzido a parir do arquivo "The noodle" do projeto "CAL-4700" 
+\Todos os direitos originais pertencem à "Osmosian Order of Plain Language Programmers"-  - Fundada em 2006
+\O conteúdo deste arquivo, porém, possui autorização para divulgação, modificação e redistribuição no domínio público sem a necessidade de prévia autorização.
 
-Umas listas são uma estrutura com
-  Uma lista inicial e
-  Uma lista final.
-
-\ Todos os tipos são derivados dos tipos base "byte" e "estrutura"
-Uma cópia é um número.
-
-Uma string é uma estrutura com
-  Um caractere inicial e
-  Um caractere final.
-
-Um caractere inicial é um ponteiro [que aponta] para um byte.
-Um caractere final é um ponteiro [que aponta] para um byte.
-Um endereço de byte é um ponteiro [que aponta] para um byte.
-
-Um ponteiro é uma estrutura com 4 bytes.
-
-Um número é uma estrutura com
-  Um primeiro byte,
-  Um segundo byte,
-  Um terceiro byte,
-  Um quarto byte, \ 4 bytes = 32 bits
-  Uma word de ordem inferior sob o primeiro byte,
-  Uma word de ordem superior sob o terceiro byte. \ Devido à extremidade (ordenação) dos processadores x86
-
+\ Um byte tem 8 bits.
+\ Uma estrutura ocupa a soma do tamanho de seus campos. Uma estrutura vazia ocupa 0 bytes.
+\ Todos os tipos são derivados dos tipos base "byte" e "estrutura".
+Um caractere é um byte.
+Um ponteiro é uma estrutura com 4 bytes. \ 32 bits
+Uma word big-endian unsigned é uma estrutura com 2 bytes.
 Uma word é uma estrutura com
   Um byte inicial [high byte] e
   Um byte final [low byte].
@@ -37,7 +15,45 @@ Uma word é uma estrutura com
 Uma word de ordem inferior é uma word.
 Uma word de ordem superior é uma word.
 
+Um número é uma estrutura com
+  Um primeiro byte,
+  Um segundo byte,
+  Um terceiro byte,
+  Um quarto byte, \ 4 bytes = 32 bits
+  Uma word de ordem inferior sob o primeiro byte,
+  Uma word de ordem superior sob o terceiro byte. \ A word de ordem superior vem depois devido à extremidade (ordenação) dos processadores x86
+
+Um caractere inicial é um ponteiro [que aponta] para um byte. \ TODO: avaliar a possibilidade de substituir "byte" por "caractere".
+Um caractere final é um ponteiro para um byte.
+Um endereço de byte é um ponteiro para um byte.
+
+Uma string é uma estrutura com
+  Um caractere inicial e
+  Um caractere final.
+
+Uma lista estruturada é uma estrutura com
+  Uma lista posterior e
+  Uma lista anterior.
+
+Uma lista é um ponteiro [que aponta] para uma lista estruturada.
+\Um conjunto de texto é uma lista com uma string.
+
+Umas listas são uma estrutura com
+  Uma lista inicial e
+  Uma lista final.
+
+Um twip é um número. \ corresponde a 1/20 de um ponto tipográfico
+\ Um twip é 1/1440 de  uma polegada, ou 0,01763888.....9 centímetros
+\ Twip (em inglês "Twentieth of a Point" ou "um vinte avos de um ponto") é uma medida tipográfica.
+\ Também usada como medida padrão no Visual Basic 6 e outras versões anteriores
+\ quando no modo "Fontes pequenas" do Windows, 15 twips são iguais para um pixel, e 567 twips equivale a 1 cm ou 17.64 µm
+\ Obs: O certo seriaa 566,93 twips ao ao invés de 567 
+\ Twips são unidades independentes de tela para garantir que a proporção dos elementos da tela seja a mesma em todos os sistemas de exibição.
+\ Um twip seriam 1,7638...9 milímetros, ou seja 900.000 twips corresponderiam a 625 polegadas
+\ Um centímetro é 56693/100 twips.
+
 Uma coordenada é [composta de] uns twips.
+
 Uma localização é um par de números com
   Uma coordenada X e
   Uma coordenada Y e
@@ -62,37 +78,26 @@ Um numeral misto é uma estrutura com
   Um número inteiro e
   Uma proporção e
   Uma fração sob a proporção.
-
-Um twip é um número. \ corresponde a 1/20 de um ponto tipográfico
-\Um twip é 1/1440 de  uma polegada, ou 0,0176388889 milímetros
-\ Twip (em inglês "Twentieth of a Point" ou "um vinte avos de um ponto") é uma medida tipográfica.
-\Também usada como medida padrão no Visual Basic 6 e outras versões anteriores
-\quando no modo "Fontes pequenas" do Windows, 15 twips são iguais para um pixel, e 567 twips equivale a 1 cm ou 17.64 µm
-\ Twips são unidades independentes de tela para garantir que a proporção dos elementos da tela seja a mesma em todos os sistemas de exibição.
- \Um TWIP é definida como sendo 1 / 1440 de uma polegada (cerca de 0,01764 milímetros).
- \ Um twip seriam 1,76389 milímetros
-\900.000 twips dá 625 polegadas
-\ O certo seira 567 / 566,93 cm
-\Um centímetro é 56693/100 twips.
  
 Um pixel são 15 twips.
 Uns pixels são 15 twips.
+\Uns píxeis são 15 twips.
 Um px são 15 twips.
 \Uns pxs são 15 twips.
 Um píxel são 15 twips.
-Um inch são 1440 twips.
+\Um inch são 1440 twips.
 Uma polegada são 1440 twips. \  56,7
 
 Uma unidade numérica é um número.
-Um kilobyte é 1024 unidades numéricas.
-Um megabyte é 1024 kilobytes. 
+Um kilobyte são 1024 unidades numéricas.
+Um megabyte são 1024 kilobytes. 
 Um cm são 254/100 polegadas.
 Um centímetro são 254/100 polegadas.
 Um mm é 1/10 centímetros. 
 Um milímetro é 1/10 centímetros. \
 Um micrômetro é 1/1000 milímetros.
 Um metro são 100 centímetros. 
-Um quadrado é 1440 unidades numéricas. 
+Um quadrado são 1440 unidades numéricas. 
 Um percentual é um número. \ uma escala com 100 no denominador
 Uma raiz quadrada é um número.
 Um número fracionário é uma fração.
@@ -104,13 +109,13 @@ Uma centena são 10 dezenas.
 Um milhar são 10 centenas.
 Um milhão são 1000 milhares.
 Um bilhão são 1000 milhões.
-Um millisecond é um número.
+\Um millisecond é um número.
 Um ms é 1 milissegundo.
 Um milissegundo é um número.
-Um grain é 10 milissegundos.
-Um second é 1000 milliseconds.
+\Um grain é 10 milissegundos.
+\Um second é 1000 milliseconds.
 Um segundo são 1000 milissegundos.
-Um minute é 60 seconds.
+\Um minute é 60 seconds.
 Um minuto são 60 segundos.
 Uma hora são 60 minutos.
 Um dia são 24 horas.
@@ -123,9 +128,7 @@ Um número aleatório é um número.
 Uma proporção é uma fração.
 Um par de números racionais é uma par de números fracionários.
 Um múltiplo é um número.
-
-[SEÇÃO]
-
+Uma cópia é um número.
 Um intervalo é um número.
 \Um intervalo inicial é um intervalo.
 \Um intervalo total é um intervalo.
@@ -145,8 +148,8 @@ Uma caixa de texto é uma lista com
   Uma seleção,
   Um sinalizador de alteração,
   Uma última operação,
-  Umas caixas de texto denominadas desmanches,
-  Umas caixas de texto denominadas reconstruções.
+  Umas caixas de texto denominadas restaurações,
+  Umas caixas de texto denominadas alterações.
 
 Um sinalizador de quebra de texto é um sinalizador.
 
@@ -165,8 +168,8 @@ Um campo de texto é uma lista com
   Uma seleção,
   Um sinalizador de alteração,
   Uma última operação,
-  Umas caixas de texto denominadas desmanches, \, desfeiteado ou manipulações anteriores
-  Umas caixas de texto denominadas reconstruções. \ manipulações posteriores
+  Umas caixas de texto denominadas restaurações, \, desfeiteado ou manipulações anteriores
+  Umas caixas de texto denominadas alterações. \ manipulações posteriores
 
 Um número do texto é um número.
 
@@ -195,7 +198,7 @@ Um valor da díade é uma string.
 
 Uma díade é uma lista com
   Um nome,
-  Um valor da díade.
+  Um valor da díade. 
 
 Um contexto é uma lista com \Um contexto de dispositivo é uma estrutura que define um conjunto de objetos gráficos e seus atributos associados,
   Uma localização,  \bem como os modos gráficos que afetam a saída. Pense nele como a tela do monitor.
@@ -243,8 +246,6 @@ Um título de índice remissivo é uma string.
 
 Um versículo é uma lista com uma string.
 
-Uma word big-endian unsigned é uma estrutura com 2 bytes.
-
 Um código binário é uma string.
 
 Um brilho é uma luminosidade.
@@ -257,7 +258,7 @@ Um trecho é uma string.
 Uma quantidade de bytes é uma contagem.
 Um cursor de texto é um posicionamento.
 Um nome da fonte é um nome.
-Um caractere é um byte.
+
 
 Uma alternativa é uma lista com um nome e uma caixa.
 
@@ -423,7 +424,7 @@ Um hIcon é um número identificador.
 
 Um linha reta horizontal é uma linha reta.
 
-Um hour é 60 minutes.
+\Um hour é 60 minutes.
 
 Um hPen é um número identificador.
 
@@ -2407,7 +2408,7 @@ O texto CRLF é uma string igual a $0D0A.
 A quantidade de cópias é um número.
 O texto pesquisado é uma string.
 O recurso de fonte osmosiana é um identificador de fonte.
-O valor máximo de desmanches de caixa é uma contagem igual a 32.
+O valor máximo de restaurações de caixa é uma contagem igual a 32.
 
 O tamanho de letra médio é um tamanho da letra.
 
@@ -4245,7 +4246,7 @@ Rotina para que se copie as propriedades de uma caixa de texto para um segunda c
   Atribua a seleção desta caixa de texto à seleção desta segunda caixa de texto.
   Atribua o sinalizador de alteração desta caixa de texto ao sinalizador de alteração desta segunda caixa de texto.
   Atribua a última operação desta caixa de texto ao última operação desta segunda caixa de texto.
-  \ dont copie desmanches e reconstruções
+  \ não copia restaurações e alterações
 
 Rotina para que se copie uma imagem Para uma segunda imagem:
   Se a imagem for inexistente,
@@ -6261,13 +6262,13 @@ Função para que se determine se um terminal está totalmente prenchido:
 Função para que se determine se uma caixa de texto pode ser refeita;
 Função para que se determine se uma caixa de texto pode ser refeito:
   Se a caixa de texto for inexistente, diga não.
-  Se a última caixa de texto destas reconstruções desta caixa de texto for inexistente, diga não.
+  Se a última caixa de texto destas alterações desta caixa de texto for inexistente, diga não.
   Diga sim.
 
 Função para que se determine se uma caixa de texto pode ser desfeita;
 Função para que se determine se uma caixa de texto pode ser desfeito:
   Se a caixa de texto for inexistente, diga não.
-  Se a última caixa de texto destes desmanches desta caixa de texto for inexistente, diga não.
+  Se a última caixa de texto destas restaurações desta caixa de texto for inexistente, diga não.
   Diga sim.
 
 Função para que se determine se uma caixa de texto foi alterado:
@@ -7709,7 +7710,7 @@ Rotina para que se encontre um valor da díade usando umas díades e um nome:
     Retorne.
   Atribua o valor da díade deste díade ao valor da díade.
 
-Rotina para que se encontre uma valor da díade usando o environment variáveis e um nome:
+Rotina para que se encontre um valor da díade usando as variáveis de ambiente e um nome:
   Preserve o nome.
   Anexe o caractere NULL após o nome.
   Atribua 32767 para uma quantidade de caracteres. \ tamanho máximo da variável de ambiente
@@ -9104,11 +9105,11 @@ Rotina para que se modifique a cor usando uma caixa de texto e uma cor:
 
 Rotina para que se refaça a ação usando uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
-  Se a última caixa de texto destas reconstruções desta caixa de texto for inexistente, retorne.
+  Se a última caixa de texto destas alterações desta caixa de texto for inexistente, retorne.
   Copie a caixa de texto para um segunda caixa de texto.
-  Acrescente o segunda caixa de texto para os desmanches desta caixa de texto.
-  Atribua a última caixa de texto destas reconstruções desta caixa de texto para uma terceira caixa de texto.
-  Remova a terceira caixa de texto desde as reconstruções desta caixa de texto.
+  Acrescente o segunda caixa de texto para as restaurações desta caixa de texto.
+  Atribua a última caixa de texto destas alterações desta caixa de texto para uma terceira caixa de texto.
+  Remova a terceira caixa de texto desde as alterações desta caixa de texto.
   Copie as propriedades de a terceira caixa de texto para a caixa de texto.
   Destrua a terceira caixa de texto.
   Ative o sinalizador de alteração desta caixa de texto.
@@ -9135,11 +9136,11 @@ Rotina para que se execute classifique algumas linhas de texto selecionadas usan
 
 Rotina para que se desfaça a ação usando uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
-  Se a última caixa de texto destes desmanches desta caixa de texto for inexistente, retorne.
+  Se a última caixa de texto destas restaurações desta caixa de texto for inexistente, retorne.
   Copie a caixa de texto para um segunda caixa de texto.
-  Acrescente o segunda caixa de texto para as reconstruções desta caixa de texto.
-  Atribua a última caixa de texto destes desmanches desta caixa de texto para uma terceira caixa de texto.
-  Remova a terceira caixa de texto desde os desmanches desta caixa de texto.
+  Acrescente o segunda caixa de texto para as alterações desta caixa de texto.
+  Atribua a última caixa de texto destas restaurações desta caixa de texto para uma terceira caixa de texto.
+  Remova a terceira caixa de texto desde as restaurações desta caixa de texto.
   Copie as propriedades de a terceira caixa de texto para a caixa de texto.
   Destrua a terceira caixa de texto.
   Ative o sinalizador de alteração desta caixa de texto.
@@ -9398,7 +9399,7 @@ Rotina para que se inicialize um contexto: \ canvas?
   Atribua 0 à orientação deste contexto.
   Atribua a cor verde à cor deste contexto.
   Atribua o tamanho de letra pequena à tamanho da letra deste contexto.
-  \Atribua 1/60 second ao delay. ***
+  \Atribua 1/60 segundos ao delay. ***
   Semeie o gerador de números aleatórios.
 
 Rotina para que se inicialize os cursors:
@@ -10451,18 +10452,18 @@ Rotina para que se transcreva o arco de uma elipse usando uma string: \\ interes
   Se a string for "canto inferior direito", atribua a coordenada X2 desta elipse e a coordenada Y deste centro mais o y-offset ao primeiro control localização.
   Se a string for "canto inferior esquerdo ", atribua a coordenada X deste centro menos o x-offset e a coordenada Y2 desta elipse ao primeiro control localização.
   \ control point 2
-  Se a string for "canto superior esquerdo", atribua a coordenada X deste centro menos o x-offset e a coordenada Y1 desta elipse para um second control localização.
-  Se a string for "canto superior direito", atribua a coordenada X2 desta elipse e a coordenada Y deste centro menos o y-offset ao second control localização.
-  Se a string for "canto inferior direito", atribua a coordenada X deste centro mais o x-offset e a coordenada Y2 desta elipse ao second control localização.
-  Se a string for "canto inferior esquerdo ", atribua a coordenada X1 desta elipse e a coordenada Y deste centro mais o y-offset ao second control localização.
+  Se a string for "canto superior esquerdo", atribua a coordenada X deste centro menos o x-offset e a coordenada Y1 desta elipse para um segundo control localização.
+  Se a string for "canto superior direito", atribua a coordenada X2 desta elipse e a coordenada Y deste centro menos o y-offset ao segundo control localização.
+  Se a string for "canto inferior direito", atribua a coordenada X deste centro mais o x-offset e a coordenada Y2 desta elipse ao segundo control localização.
+  Se a string for "canto inferior esquerdo ", atribua a coordenada X1 desta elipse e a coordenada Y deste centro mais o y-offset ao segundo control localização.
   \ ending point
-  Se a string for "canto superior esquerdo", atribua a coordenada X1 desta elipse mais o half largura e a coordenada Y1 desta elipse para um ending localização.
-  Se a string for "canto superior direito", atribua a coordenada X2 desta elipse e a coordenada Y1 desta elipse mais o half altura ao ending localização.
-  Se a string for "canto inferior direito", atribua a coordenada X2 desta elipse menos o half largura e a coordenada Y2 desta elipse ao ending localização.
-  Se a string for "canto inferior esquerdo ", atribua a coordenada X1 desta elipse e a coordenada Y2 desta elipse menos o half altura ao ending localização.
+  Se a string for "canto superior esquerdo", atribua a coordenada X1 desta elipse mais o half largura e a coordenada Y1 desta elipse para uma ending localização.
+  Se a string for "canto superior direito", atribua a coordenada X2 desta elipse e a coordenada Y1 desta elipse mais o half altura para a ending localização.
+  Se a string for "canto inferior direito", atribua a coordenada X2 desta elipse menos o half largura e a coordenada Y2 desta elipse para a ending localização.
+  Se a string for "canto inferior esquerdo ", atribua a coordenada X1 desta elipse e a coordenada Y2 desta elipse menos o half altura para a ending localização.
   \ spit it out
   Transcreva o primeiro control localização sem passar pra próxima linha.
-  Transcreva o second control localização sem passar pra próxima linha.
+  Transcreva o segundo control localização sem passar pra próxima linha.
   Transcreva o ending localização sem passar pra próxima linha.
   Transcreva "c".
 
@@ -10923,11 +10924,11 @@ Rotina para que se atualize a tela usando uma caixa:
 
 Rotina para que se relembre uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
-  Destrua as reconstruções desta caixa de texto.
+  Destrua as alterações desta caixa de texto.
   Copie a caixa de texto para um segunda caixa de texto.
   Redimensione proporcionalmente o segunda caixa de texto para 1/1.
-  Acrescente o segunda caixa de texto para os desmanches desta caixa de texto.
-  Delimite os desmanches desta caixa de texto para o valor máximo de desmanches de caixa.
+  Acrescente a segunda caixa de texto para as restaurações desta caixa de texto.
+  Delimite as restaurações desta caixa de texto para o valor máximo de restaurações de caixa.
   Ative o sinalizador de alteração desta caixa de texto.
 
 Rotina para que se relembre uma caixa de texto com um operação:
@@ -13658,7 +13659,7 @@ Rotina para que se atribua o conteúdo da entrada padrão para um trecho;
 Rotina para que se atribua stdin para um trecho:
   Limpe o erro do fluxo de entrada/saída.
   Limpe o trecho.
-  Encontre uma string usando o environment variáveis e "CONTENT_LENGTH".
+  Encontre uma string usando as variáveis de ambiente e "CONTENT_LENGTH".
   Se a string estiver em branco,
     Atribua "Erro ao tentar obter o conteúdo da variável de ambiente CONTENT_LENGTH." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
