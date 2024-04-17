@@ -1,17 +1,398 @@
-\ Este arquivo contém o código fonte do compilador da linguagemd e programação "Português Puro"
+\ Este arquivo contém o código fonte do compilador da linguagem de programação "Português Puro"
+Uma mensagem de erro é uma string.
+Uma contagem de nomes é uma contagem.
+Um trecho de listagem é um trecho.
+Um sinalizador de erros é um sinalizador.
+
+Um endereço do arquivo atual é um endereço completo.
+\Um problema é um número.
+Um nome plural é um nome.
+Um nome da DLL é um nome.
+Um nome da função é um nome.
+Um sinalizador de compilação é um sinalizador.
+Um endereço é um número.
+Um endereço base é um endereço.
+
+Uma zona é uma estrutura com
+  Um endereço base,
+  Uma quantidade de caracteres e
+  Um tamanho.
+
+Um tipo primitivo é um tipo.
+Uma rotina alvo é uma rotina.
+Um sinalizador de possessivo reverso é um sinalizador.
+Um campo de estrutura-membro é um campo de estrutura.
+Um sinalizador de redirecionamento é um sinalizador.
+Um byte ignorável é um byte.
+Uma palavra-chave de referenciamento é uma palavra-chave.
+Uma palavra-chave de reutilização de rotina é uma palavra-chave.
+
+Um cabeçalho DOS é uma estrutura com
+\ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/debug/pe-format
+  Uma word denominada Signature,
+  Uma word denominada NumberOfBytesOnLastPage,
+  Uma word denominada NumberOfPages,
+  Uma word denominada Relocations,
+  Uma word denominada SizeOfHeaderInParagraphs,
+  Uma word denominada MinimumExtraParagraphsNeeded,
+  Uma word denominada MamixmumExtraParagraphsNeeded,
+  Uma word denominada InitialRelativeSS,  \\ Initial Sstack segment
+  Uma word denominada InitialSP,  \\ Initial Stack Pointer value.
+  Uma word denominada InitialChecksum,
+  Uma word denominada InitialIP,  \\ Initial Instruction Pointer value.
+  Uma word denominada InitialRelativeCS, \\ Pre-relocated initial CS register value.
+  Uma word denominada AddressOfRelocationTableInFile, \
+  Uma word denominada OverlyNumber,
+  8 bytes denominados ReservedBytes,
+  Uma word denominada OEM_Identifier,
+  Uma word denominada OEM_Info,
+  20 bytes denominados ReservedWords,
+  Um número denominado AddressOfPEHeaderInFile.
+
+Um endereço thunk é um endereço.
+Um endereço do nome é um endereço.
+
+Uma função é uma lista com
+  Um endereço do nome,
+  Um endereço thunk, \ Consulte https://en.wikipedia.org/wiki/Thunk e http://ftp.informatik.rwth-aachen.de/jargon300/thunk.html
+  Um nome e
+  Um endereço.
+
+Uma expressão matematica é um termo.
+
+Um campo é uma variável.
+
+Um sinalizador de empilhamento é um sinalizador.
+
+Uma rotina de função é uma rotina.
+
+Um campo de estrutura é uma estrutura com
+  Um sinalizador de redirecionamento,
+  Um campo (referência),
+  Uma rotina de função (referência),
+  Um sinalizador de empilhamento.
+
+Um fragmento é uma lista com
+  \ we have three lists in the compiler memory — tipos, variables, and rotinas
+  \ each rotina consists of a series of logical instructions called “fragments.” There are just 22 fragmento tipos:
+  Uma etiqueta [break, Demanda Externa, Demanda Indireta, Demanda Interna, redirecionamento, end if, etapa conclusiva, exit, finalize, increment, Decodifique, jump false, load address, load eax, loop, not, etapa preliminar, push address, empilhamento de valor, salve eax, repeat, rotina address],
+  Uma variável (referência) [Demanda Indireta, redirecionamento, increment, load address, load eax, pop, push address, empilhamento de valor, rotina address, salve eax],
+  Uma segunda variável (referência) [load address],
+  Uma rotina (referência) [Demanda Interna, rotina address],
+  Uma função (referência) [Demanda Externa],
+  Um número [increment],
+  Um sinalizador [load eax], \SAL
+  Um endereço,
+  Um texto hexadecimal denominado código.
+
+Um corpo de variável global é um subtexto.
+Uma variável global é uma variável.
+
+Um cabeçalho da DLL é uma estrutura com
+\traduzir isso aqui
+  Um endereço denominado primeiro thunk, \ consulte https://www.linkedin.com/pulse/why-pe-need-original-primeiro-thunkoft-milad-kahsari-alhadi/
+  \ https://stackoverflow.com/questions/42413937/why-pe-need-original-first-thunkoft
+  \ Thunks são as partes definitivas dos códigos em um sistema operacional que manipula as transições entre o código de 16 e 32 bits.
+  \ Assim, eles garantem a compatibilidade com versões anteriores entre as chamadas feitas pelo aplicativo.
+  \ O OS está sujeito a esta facilidade para compatibilidade com versões anteriores, de modo que os aplicativos de 16 bits possam funcionar sem problemas em ambientes de 32 bits.
+  Um número denominado TimeStamp, \ Set to zero until bound; then this feld is set to the TimeDateStamp of the exporting FileHeader of the DLL
+  Um endereço denominado corrente de encaminhamento, \ forward chain: The 32-bit index of the primeiro forwarder in the list of imported functions
+  Um endereço denominado endereço do nome, \Esse endereço contém o RVA [Endereço Virtual Relativo] da DLL a ser carregada na memória. É um valor dword.
+  \É composto por: RVA = Base da Imagem + Ordem Endian
+  Um endereço denominado primeiro endereço thunk de memória.
+
+Uma DLL é uma lista com
+  Um endereço do nome,
+  Um endereço do cabeçalho,
+  Um nome,
+  Um cabeçalho da DLL,
+  Umas funções.
+
+Um endereço do cabeçalho é um endereço.
+Um variável intermediária é uma variável local.
+Um valor literal é uma variável.
+Uma variável local é uma variável.
+Um endereço local é um endereço de byte .
+Uma representação interna da rotina é uma string.  \ moniker
+\ https://learn.microsoft.com/pt-br/windows/win32/com/monikers
+\ Trata-se de uma representação interna de um nome de rotina, sendo que
+\ • Não há artigos precedendo os tipos dos parâmetros. 
+\ • Os tipos dos parâmetros estão rodeados por colchetes. 
+\ • As preposições são expandidas para incluir seus sinônimos.
+\ Cada pedaço de um moniker é uma unidade semântica. Por exemplo:
+\ Nome da rotina: Rotina para que se adicione um número para uma contagem:
+\ Moniker: adicione [número] em/para [contagem]
+\ Monikettes: 
+\ 1º: adicione 
+\ 2º [número] 
+\ 3º em/para 
+\ 4º [contagem]
+\ Essa representação interna é necessária porque
+\ • quando o compilador busca a rotina a ser chamada, 
+\   a representação interna faz com que seja fácil detectar o tipo base do tipo atual
+\   (por exemplo, [contagem] é um tipo derivado de [número])  when looking for an appropriate routine to call;
+\ • tampém faz com que seja fácil expandir as preposições
+\ • Nos ajuda a entender como o compilador entendeu a invoação da rotina, pois ele exibe a representação nas suas mensagens de erro.
+
+Uma unidade semântica é uma lista com
+  Uma string,
+  Um tipo (referência),
+  Um variável (referência),
+  \ para fazer o bubbling
+  Um tipo atual (referência),
+  Um subtexto atual.
+
+Um cabeçalho compactado é uma representação interna da rotina.
+Uma string de erro é uma string.
+Um parte da cifra binária é um subtexto.
+Um apelido é um nome.
+
+Um parâmetro é uma variável.
+
+Um Cabeçalho PE é uma estrutura com   \ O formato Portable Executable (PE) é baseado na especificação COFF (Common Object File Format).
+\Para obter mais informações, consulte https://learn.microsoft.com/pt-br/windows/win32/debug/pe-format
+\ O cabeçalho MS-DOS ocupa os primeiros 64 bytes do arquivo. A estrutura básica está representada abaixo:
+  Um número denominado Signature,
+  Uma word denominada MachineType,
+  Uma word denominada NumberOfSections,
+  Um número denominado TimeStamp,
+  Um número denominado PointerToSymbolTable,
+  Um número denominado NumberOfSymbols,
+  Uma word denominada SizeOfOptionalHeaderInBytes,
+  Uma word denominada Characteristics,
+  \ PARTE OPCIONAL - _IMAGE_OPTIONAL_HEADER64
+  Uma word denominada MagicNumber,
+  Um byte denominado MajorLinkerVersion,
+  Um byte denominado MinorLinkerVersion,
+  Um número denominado SizeOfCodeInFile, \ SizeOfCode
+  Um número denominado SizeOfInitializedDataInFile,
+  Um número denominado SizeOfUninitializedDataInFile,
+  Um número denominado AddressOfEntryPointInMemory, \ AddressOfEntryPoint
+  Um número denominado AddressOfCodeInMemory,  [BaseOfCode]
+  Um número denominado AddressOfInitializedDataInMemory, [BaseOfData]
+  Um número denominado ImageBase,
+  Um número denominado MemoryAlignment, [SectionAlignment]
+  Um número denominado FileAlignment,
+  Uma word denominada OS_MajorVersion, [MajorOperatingSystemVersion]
+  Uma word denominada OS_MinorVersion, [MinorOperatingSystemVersion]
+  Uma word denominada UserMajorVersion,  [MajorImageVersion]
+  Uma word denominada UserMinorVersion, [MinorImageVersion]
+  Uma word denominada SubsystemMajorVersion, [MajorSubsystemVersion]
+  Uma word denominada SubsystemMinorVersion, [MinorSubsystemVersion]
+  Um número denominado Reserved,  [Win32VersionValue]
+  Um número denominado SizeOfImageInMemory, [SizeOfImage]
+  Um número denominado SizeOfAllHeadersInFile, [SizeOfHeaders]
+  Um número denominado CheckSum,
+  Uma word denominada Subsystem,
+  Uma word denominada DLLCharacteristics,
+  Um número denominado MaxStack, [SizeOfStackReserve]
+  Um número denominado MinStack, [SizeOfStackCommit]
+  Um número denominado MaxHeap, [SizeOfHeapReserve]
+  Um número denominado MinHeap, [SizeOfHeapCommit]
+  Um número denominado LoaderFlags,  \ _IMAGE_OPTIONAL_HEADER64
+  Um número denominado NumberOfDirectories, [NumberOfRvaAndSizes]
+  8 bytes denominados Directory0,
+  Um número denominado ImageDirectoryEntryImportAddress,
+  Um número denominado ImageDirectoryEntryImportSize,
+  112 bytes denominados Directories2-15,
+  Um Cabeçalho de Seção PE denominado Idata Section,
+  Um Cabeçalho de Seção PE denominado Data Section,
+  Um Cabeçalho de Seção PE denominado Code Section.
+
+Um Cabeçalho de Seção PE é uma estrutura com
+  8 bytes denominados Nome, \ Each section header has a name fielf up to eight characters em comprimento, for which the primeiro character must be a period.
+  Um número denominado SizeInBytes,
+  Um número denominado AddressInMemory,
+  Um número denominado SizeInFile,
+  Um número denominado AddressInFile,
+  12 bytes denominados Reserved,
+  Um número denominado Characteristics. \ Defines the section Characteristics.
+  \These values are encontrado both em WINNT.H and in the Portable Executable Format specification.
+
+Uma frase é uma string.
+
+Um protótipo de string é uma estrutura com
+  Um caractere inicial e
+  Um caractere final .
+
+Um campo português é um campo.
+Um campo português feminino é um campo.
+Um tipo encadeado é um tipo.
+Um tipo estruturado é um tipo.
+Um tipo base é um tipo.
+Uma instrução é um subtexto.
+Um cabeçalho de rotina é um subtexto.
+Um tamanho local é um tamanho.
+Um sinalizador de função é um sinalizador.
+Uma representação de emprego é uma representação interna da rotina.
+\Um catálogo de apelidos é um catálogo.
+
+Uma rotina é uma lista com
+  Um endereço local (referência),
+  Um sinalizador de compatibilidade,
+  Um sinalizador de deliberação,
+  Um sinalizador de função,
+  Um sinalizador de compilação,
+  Um catálogo denominado catálogo de apelidos, \ alocação dinâmica. Verificar
+  Uma representação interna da rotina,
+  Umas unidades semânticas,
+  Uns parâmetros,
+  Um tamanho do parâmetro,
+  Uma representação de emprego,
+  Umas variáveis locais,
+  Um tamanho local,
+  Um cabeçalho de rotina,
+  Uma string do cabeçalho,
+  Umas instruções,
+  Uma string do corpo,
+  Uns fragmentos,
+  Um endereço.
+
+Uma string do corpo é uma string.
+Uma string do cabeçalho é uma string.
+Uma referência da rotina é [composta de] umas unidades semânticas.
+Uma palavra-chave é uma string.
+Uma palavra-chave de designação é uma palavra-chave.
+Um scratch é uma variável local.
+
+Um arquivo fonte é uma lista com
+  Um endereço completo e
+  Um trecho.
+
+Os arquivos fontes são uns arquivos fontes.
+
+Uma etiqueta é um número.
+
+Um termo é uma estrutura com
+  Uma variável e
+  Uma frase.
+
+Um tamanho do parâmetro é um tamanho.
+Um nome do tipo primitivo é um nome.
+Um sinalizador de informações complementares é um sinalizador.
+
+Um tipo é uma lista com
+  Um endereço local (referência),
+  Um nome, um nome plural,
+  Um cabeçalho compactado,
+  Uma quantidade de caracteres,
+  Um nome do tipo primitivo,
+  Um tipo base (referência),
+  Um nome do conteúdo,
+  Um tipo do conteúdo (referência) [aplicável somente a ponteiros],
+  Uma razão de escala,
+  Uns campos [aplicável somente a estruturas],
+  Um sinalizador de recursividade,
+  Um sinalizador de informações complementares.
+
+Um sinalizador de recursividade é um sinalizador.
+Um nome do tipo é um nome.
+
+Uma variável é uma lista com
+  Um endereço local (referência),
+  Um categoria [lvalor iteral, variável global, variável local, parâmetro, scratch],
+  Um sinalizador de compilação,
+  Um nome,
+  Um apelido,
+  Um nome do tipo,
+  Um tipo (referência), \ tipo real em literal, variável global e local; tipos revogados em parâmetros e scratches
+  Um endereço [variáveis globais e valores literais somente] ou
+  Um deslocamento sob o endereço [variáveis locais, parâmetros, e campos somente],
+  Uma contagem [campos somente],
+  Um sinalizador de referência [campos somente],
+  Um novo nome [campos somente],
+  Um sinalizador de passagem por-valor [parâmetros somente],
+  Um corpo de variável global [variáveis globais somente],
+  Um texto inicializador [variáveis globais somente],
+  Um valor literal (referência) [variáveis globais somente - constante com a qual se inicializa a variável global],
+  Um texto hexadecimal denominado data [literais somente].
+
+Um deslocamento é um número.
+Um texto inicializador é uma string.
+Um sinalizador de referência é um sinalizador.
+Um sinalizador de passagem por-valor é um sinalizador.
+Um novo nome é um nome.
+
+O temporizador de escrita é um temporizador. \ Um temporizador é uma estrutura com uma contagem, uns intervalos iniciais e uns intervalos totais. \ Um intervalo é um número.
+O temporizador de transmutação é um temporizador.
+O temporizador de análise/verificação é um temporizador.
+O temporizador de resolução de variáveis globais é um temporizador.
+O temporizador de resolução de tipos é um temporizador.
+O temporizador de operacionalização é um temporizador.
+O temporizador de deslocamentos é um temporizador.
+O temporizador de vinculação é um temporizador.
+O temporizador de ferramentas de catalogação é um temporizador.
+O temporizador de compilação do conteúdo das rotinas é um temporizador.
+O temporizador de compilação de cabeçalhos de rotina é um temporizador.
+O temporizador de etapas de cálculo é um temporizador.
+O temporizador de endereçamento é um temporizador.
+O temporizador de adição de rotinas pré-definidas de mémoria é um temporizador.
+O temporizador de adição de rotinas pré-definidas de inicialização é um temporizador.
+
+A etiqueta de interrupção é uma etiqueta igual a 1.
+A etiqueta de demanda externa é uma etiqueta igual a 2.
+A etiqueta de demanda indireta é uma etiqueta igual a 3.
+A etiqueta de demanda interna é uma etiqueta igual a 4.
+A etiqueta de redirecionamento é uma etiqueta igual a 5.
+A etiqueta delimitadora de bloco condicional é uma etiqueta igual a 6.
+A etiqueta conclusiva é uma etiqueta igual a 7.
+A etiqueta de retorno é uma etiqueta igual a 8.
+A etiqueta de finalização é uma etiqueta igual a 9.
+A etiqueta de acréscimo é uma etiqueta igual a 10.
+A etiqueta de decodificação é uma etiqueta igual a 11.
+A etiqueta de desvio falso é uma etiqueta igual a 12.
+A etiqueta de carregamento de endereço é uma etiqueta igual a 13.
+A etiqueta de carregamento de registrador EAX é uma etiqueta igual a 14.
+A etiqueta de laço é uma etiqueta igual a 15.
+A etiqueta de negação lógica é uma etiqueta igual a 16.
+A etiqueta preliminar é uma etiqueta igual a 17.
+A etiqueta de inserção de endereço [na stack] é uma etiqueta igual a 18.
+A etiqueta de inserção de valor [na stack] é uma etiqueta igual a 19.
+A etiqueta de obtenção do registrador EAX é uma etiqueta igual a 20.
+A etiqueta de repetição é uma etiqueta igual a 21.
+A etiqueta de endereço de rotina é uma etiqueta igual a 22.
+
+O compilador é uma estrutura com
+  Um endereço da pasta,
+  Um temporizador,
+  Um sinalizador de erros,
+  Um mensagem de erro,
+  Um endereço do arquivo atual,
+  Um número da linha de erro,
+  Uma contagem de nomes,
+  Um trecho exe,
+  Um trecho de listagem.
+
+O catálogo de variáveis globais é um catálogo.
+As variáveis globais são umas variáveis globais.
+A image base é um endereço igual a 4194304 [$00400000].
+A seção de DLLs é uma zona.
+As DLLs são umas DLLs.
+O catálogo de variáveis hexadecimais é um catálogo.
+Os valores literais são uns valores literais.
+O catálogo geral de rotinas é um catálogo.
+As rotinas são umas rotinas.
+O catálogo de tipos é um catálogo.
+O nome do conteúdo é um nome.
+O tipo do conteúdo é um tipo.
+Os tipos são uns tipos.
+O catálogo de rotinas úteis é um catálogo.
+O endereço do cabeçalho usado atualmente é um endereço.
+O endereço do nome usado atualmente é um endereço.
+O rotina utilizada atualmente é uma rotina.
+O endereço pré-calculado atual é um endereço.
+A região de dados é um zona.
+O percorredor de contrações é um percorredor.
+A Região de Código é um zona.
+As variáveis globais predefinidas são umas variáveis globais.
 
 Rotina para que se execute o programa:
   Inicialize os componentes.
   \Inicialize o compilador.
   Faça tudo.
   Finalize o compilador.
-  \Use letras de tamanho médio.
-  Escreva "" para StdOut.
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
-  Escreva "Operação finalizada." para StdOut.
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva na próxima linha em StdOut.
+  Escreva "Operação finalizada." junto com o texto CRLF para StdOut.
   \Execute os eventos.\
   Feche o programa.
 
@@ -121,65 +502,6 @@ Rotina para que se execute um evento:
 \ Para colocar e retirar coisas maiores da pilha, precisamos lidar diretamente com o registro ESP.
 \ Subtrair 16 do endereço no ESP, por exemplo, abre espaço para 16 bytes de dados locais no “topo” da pilha; adicionar 16 tira esses bytes da pilha.
 
-Uma mensagem de erro é uma string.
-Uma contagem de nomes é uma contagem.
-
-O temporizador de escrita é um temporizador. \ Um temporizador é uma estrutura com uma contagem, uns intervalos iniciais e uns intervalos totais. \ Um intervalo é um número.
-O temporizador de transmutação é um temporizador.
-O temporizador de análise/verificação é um temporizador.
-O temporizador de resolução de variáveis globais é um temporizador.
-O temporizador de resolução de tipos é um temporizador.
-O temporizador de operacionalização é um temporizador.
-O temporizador de deslocamentos é um temporizador.
-O temporizador de vinculação é um temporizador.
-O temporizador de ferramentas de catalogação é um temporizador.
-O temporizador de compilação do conteúdo das rotinas é um temporizador.
-O temporizador de compilação de cabeçalhos de rotina é um temporizador.
-O temporizador de etapas de cálculo é um temporizador.
-O temporizador de endereçamento é um temporizador.
-O temporizador de adição de rotinas pré-definidas de mémoria é um temporizador.
-O temporizador de adição de rotinas pré-definidas de inicialização é um temporizador.
-
-A etiqueta de interrupção é uma etiqueta igual a 1.
-A etiqueta de demanda externa é uma etiqueta igual a 2.
-A etiqueta de demanda indireta é uma etiqueta igual a 3.
-A etiqueta de demanda interna é uma etiqueta igual a 4.
-A etiqueta de redirecionamento é uma etiqueta igual a 5.
-A etiqueta delimitadora de bloco condicional é uma etiqueta igual a 6.
-A etiqueta conclusiva é uma etiqueta igual a 7.
-A etiqueta de retorno é uma etiqueta igual a 8.
-A etiqueta de finalização é uma etiqueta igual a 9.
-A etiqueta de acréscimo é uma etiqueta igual a 10.
-A etiqueta de decodificação é uma etiqueta igual a 11.
-A etiqueta de desvio falso é uma etiqueta igual a 12.
-A etiqueta de carregamento de endereço é uma etiqueta igual a 13.
-A etiqueta de carregamento de registrador EAX é uma etiqueta igual a 14.
-A etiqueta de laço é uma etiqueta igual a 15.
-A etiqueta de negação lógica é uma etiqueta igual a 16.
-A etiqueta preliminar é uma etiqueta igual a 17.
-A etiqueta de inserção de endereço [na stack] é uma etiqueta igual a 18.
-A etiqueta de inserção de valor [na stack] é uma etiqueta igual a 19.
-A etiqueta de obtenção do registrador EAX é uma etiqueta igual a 20.
-A etiqueta de repetição é uma etiqueta igual a 21.
-A etiqueta de endereço de rotina é uma etiqueta igual a 22.
-
-O compilador é uma estrutura com
-  Um endereço da pasta,
-  Um temporizador,
-  Um sinalizador de erros,
-  Um mensagem de erro,
-  Um endereço do arquivo atual,
-  Um número da linha de erro,
-  Uma contagem de nomes,
-  Um trecho exe,
-  Um trecho de listagem.
-
-Um trecho de listagem é um trecho.
-Um sinalizador de erros é um sinalizador.
-
-Um endereço do arquivo atual é um endereço completo.
-\Um problema é um número.
-
 Função para que se determine se há algum problema de compilação;
 Função para que se determine se existe algum problema de compilação:
   Se o sinalizador de erros deste compilador estiver ativado, diga sim.
@@ -248,8 +570,6 @@ Rotina para que se adicione e compile as rotinas de inicialização pré-execução e
 Rotina para que se adicione os tipos primitivos:
   Adicione um tipo primitivo usando "byte" e "bytes" e 1.
   Adicione um outro tipo primitivo usando "estrutura" e "estruturas" e 0.
-
-Um nome plural é um nome.
 
 Rotina para que se adicione um tipo primitivo usando um nome e um nome plural e uma quantidade de caracteres:
   Adicione o tipo primitivo para os tipos usando o nome e o nome plural e o nome. \ o nome do tipo
@@ -329,9 +649,6 @@ Rotina para que se adicione a rotina de destruição para um tipo (listas):
   Lance a cabeçalho de rotina desta rotina sobre a string do cabeçalho desta rotina.
   Lance as instruções desta rotina sobre a string do corpo desta rotina.
   Compile o cabeçalho referente à rotina.
-
-Um nome da DLL é um nome.
-Um nome da função é um nome.
 
 Rotina para que se adicione uma função para umas DLLs usando um nome da DLL e um nome da função:
   Encontre uma DLL usando o nome da DLL.
@@ -438,8 +755,6 @@ Rotina para que se adicione um fragmento usando uma etiqueta e uma rotina:
   Acrescente o fragmento para os fragmentos desta rotina utilizada atualmente.
   Atribua a rotina à rotina deste fragmento.
   Compile o corpo referente à rotina.
-
-Um sinalizador de compilação é um sinalizador.
 
 Rotina para que se adicione um fragmento usando uma etiqueta e uma variável:
   Se a rotina utilizada atualmente for inexistente,
@@ -943,8 +1258,6 @@ Rotina para que se enderece umas DLLs usando um endereço:
   Reitere.
   Atribua o endereço do nome usado atualmente menos o endereço para um número.
   Adicione o número para o endereço.
-
-Um endereço é um número.
 
 Rotina para que se enderece uma rotina usando um endereço:
   Se existir algum problema de compilação, retorne.
@@ -1546,13 +1859,6 @@ Rotina para que se disponibilize umas variáveis para um trecho:
   Disponibilize a variável ao trecho.
   Reitere.
 
-Um endereço base é um endereço.
-
-Uma zona é uma estrutura com
-  Um endereço base,
-  Uma quantidade de caracteres e
-  Um tamanho.
-
 Rotina para que se defina o tipo de uma unidade semântica:
   Se a unidade semântica for inexistente, retorne.
   Se o subtexto atual desta unidade semântica não estiver em branco,
@@ -1563,8 +1869,6 @@ Rotina para que se defina o tipo de uma unidade semântica:
     Atribua nil ao tipo atual desta unidade semântica;
     Retorne.
   Atribua o tipo base deste tipo atual desta unidade semântica ao tipo atual desta unidade semântica.
-
-Um tipo primitivo é um tipo.
 
 Rotina para que se calcule a quantidade de caracteres referentes para um tipo;
 Rotina para que se calcule a quantidade de caracteres referente para um tipo:
@@ -1739,8 +2043,6 @@ Rotina para que se compile o corpo referente para a rotina denominado uma string
     Retorne.
   Compile o corpo referente à rotina.
 
-Uma rotina alvo é uma rotina.
-
 Rotina para que se compile o corpo referente para uma rotina usando um percorredor (cláusula de reutilização):
   Se existir algum problema de compilação, retorne.
   Mova o percorredor (usando diretrizes de compilação).
@@ -1844,9 +2146,7 @@ Rotina para que se compile um endereço da pasta usando um nível de profundidade:
   Compile o endereço da pasta (interrupção). \ #017
 
 Rotina para que se compile um endereço da pasta (inicialização): \#001
-  Escreva na saída padrão "Iniciando...".
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva "Iniciando..." junto com o texto CRLF para StdOut.
   Finalize o compilador.
   Comece o temporizador deste compilador.
   Inicialize o compilador usando o endereço da pasta.
@@ -1854,36 +2154,28 @@ Rotina para que se compile um endereço da pasta (inicialização): \#001
 
 Rotina para que se compile um endereço da pasta usando um nível de profundidade (arquivos de código fonte): \#002
   Se existir algum problema de compilação, retorne.
-  Escreva na saída padrão "Carregando arquivos...".
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva "Carregando arquivos..." junto com o texto CRLF para StdOut.
   Comece o temporizador de operacionalização.
   Carregue os arquivos fontes usando o nível de profundidade.
   Suspenda o temporizador de operacionalização.
 
 Rotina para que se compile um endereço da pasta (arquivos de código fonte): \#002
   Se existir algum problema de compilação, retorne.
-  Escreva na saída padrão "Carregando arquivos...".
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva "Carregando arquivos..." junto com o texto CRLF para StdOut.
   Comece o temporizador de operacionalização.
   Carregue os arquivos fontes.
   Suspenda o temporizador de operacionalização.
 
 Rotina para que se compile um endereço da pasta (análise dos arquivos fornecidos): \#003
   Se existir algum problema de compilação, retorne.
-  Escreva na saída padrão "Analisando código fonte dos arquivos...".
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva "Analisando código fonte dos arquivos..." junto com o texto CRLF para StdOut.
   Comece o temporizador de análise/verificação.
   Examine os arquivos fontes.
   Suspenda o temporizador de análise/verificação.
 
 Rotina para que se compile um endereço da pasta (identificação dos tipos das variáveis): \ #004
   Se existir algum problema de compilação, retorne.
-  Escreva na saída padrão "Identificando os tipos das variáveis...".
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva "Identificando os tipos das variáveis..." junto com o texto CRLF para StdOut.
   Comece o temporizador de resolução de tipos.
   Destrinche os tipos (expansão de listas).
   Destrinche os tipos (registro de plurais).
@@ -1893,27 +2185,21 @@ Rotina para que se compile um endereço da pasta (identificação dos tipos das var
 
 Rotina para que se compile um endereço da pasta (identificação de variáveis globais): \ #005
   Se existir algum problema de compilação, retorne.
-  Escreva na saída padrão "Identificando variáveis globais...".
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva "Identificando variáveis globais..." junto com o texto CRLF para StdOut.
   Comece o temporizador de resolução de variáveis globais.
   Destrinche as variáveis globais.
   Suspenda o temporizador de resolução de variáveis globais.
 
 Rotina para que se compile um endereço da pasta (cabeçalhos de rotinas): \ #006
   Se existir algum problema de compilação, retorne.
-  Escreva na saída padrão "Agrupando os nomes das rotinas...".
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva "Agrupando os nomes das rotinas..." junto com o texto CRLF para StdOut.
   Comece o temporizador de compilação de cabeçalhos de rotina.
   Compile os cabelalhos referente às rotinas.
   Suspenda o temporizador de compilação de cabeçalhos de rotina.
 
 Rotina para que se compile um endereço da pasta (cálculo de tamanhos e deslocamentos): \ #007
   Se existir algum problema de compilação, retorne.
-  Escreva na saída padrão "Calculando tamanhos de variáveis e deslocamentos de memória...".
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva "Calculando tamanhos de variáveis e deslocamentos de memória..." junto com o texto CRLF para StdOut.
   Comece o temporizador de etapas de cálculo.
   Calcule os comprimentos referente aos tipos.
   Calcule os deslocamentos no tipos.
@@ -1922,18 +2208,14 @@ Rotina para que se compile um endereço da pasta (cálculo de tamanhos e deslocame
 
 Rotina para que se compile um endereço da pasta (adição de rotinas de memória incorporadas): \ #008
   Se existir algum problema de compilação, retorne.
-  Escreva na saída padrão "Adicionando tarefas predefinidas na memória...".
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva "Adicionando tarefas predefinidas na memória..." junto com o texto CRLF para StdOut.
   Comece o temporizador de adição de rotinas pré-definidas de mémoria .
   Adicione as rotinas de alocação e desalocação e finalização e destruição.
   Suspenda o temporizador de adição de rotinas pré-definidas de mémoria .
 
 Rotina para que se compile um endereço da pasta (catalogue as rotinas por utilização): \ #009
   Se existir algum problema de compilação, retorne.
-  Escreva na saída padrão "Catalogando tarefas...".
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva "Catalogando tarefas..." junto com o texto CRLF para StdOut.
   Comece o temporizador de ferramentas de catalogação.
   Catalogue as rotinas por utilização.
   Scrub o catálogo de rotinas úteis.
@@ -1942,27 +2224,21 @@ Rotina para que se compile um endereço da pasta (catalogue as rotinas por utiliz
 
 Rotina para que se compile um endereço da pasta (conteúdo das rotinas): \ #010
   Se existir algum problema de compilação, retorne.
-  Escreva na saída padrão "Agrupando o conteúdo das rotinas...".
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva "Agrupando o conteúdo das rotinas..." junto com o texto CRLF para StdOut.
   Comece o temporizador de compilação do conteúdo das rotinas.
   Compile os corpos referentes às rotinas.
   Suspenda o temporizador de compilação do conteúdo das rotinas.
 
 Rotina para que se compile um endereço da pasta (adição e compilação da rotina de inicialização): \ #011
   Se existir algum problema de compilação, retorne.
-  Escreva na saída padrão "Adicionando e agrupando as tarefas padrão de inicialização..".
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva "Adicionando e agrupando as tarefas padrão de inicialização.." junto com o texto CRLF para StdOut.
   Comece o temporizador de adição de rotinas pré-definidas de inicialização.
   Adicione e compile as rotinas de inicialização pré-execução e finalização pós-execução.
   Suspenda o temporizador de adição de rotinas pré-definidas de inicialização.
 
 Rotina para que se compile um endereço da pasta (deslocamento de parâmetros e variáveis): \ #012
   Se existir algum problema de compilação, retorne.
-  Escreva na saída padrão "Deslocando parâmetros e variáveis...".
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva "Deslocando parâmetros e variáveis..." junto com o texto CRLF para StdOut.
   Comece o temporizador de deslocamentos.
   Alinhe o parâmetros na rotinas.
   Alinhe as variáveis locais na rotinas.
@@ -1970,9 +2246,7 @@ Rotina para que se compile um endereço da pasta (deslocamento de parâmetros e va
 
 Rotina para que se compile um endereço da pasta (endereço): \ #013
   Se existir algum problema de compilação, retorne.
-  Escreva na saída padrão "Obtendo endereço dos itens...".
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva "Obtendo endereço dos itens..." junto com o texto CRLF para StdOut.
   Comece o temporizador de endereçamento.
   Atribua 4096 para um endereço.
   Atribua o endereço à endereço base desta Seção de DLLs.
@@ -1991,27 +2265,21 @@ Rotina para que se compile um endereço da pasta (endereço): \ #013
 
 Rotina para que se compile um endereço da pasta (transmutação): \ #014
   Se existir algum problema de compilação, retorne.
-  Escreva na saída padrão "Convertendo código em instruções de máquina...".
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva "Convertendo código em instruções de máquina..." junto com o texto CRLF para StdOut.
   Comece o temporizador de transmutação.
   Transforme as rotinas em código hexadecimal.
   Suspenda o temporizador de transmutação.
 
 Rotina para que se compile um endereço da pasta (vinculação): \ #015
   Se existir algum problema de compilação, retorne.
-  Escreva na saída padrão "Elencando arquivos..".
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva "Elencando arquivos.." junto com o texto CRLF para StdOut.
   Comece o temporizador de vinculação.
   Vincule.
   Suspenda o temporizador de vinculação.
 
 Rotina para que se compile um endereço da pasta (etapa final): \ #016
   Se existir algum problema de compilação, retorne.
-  Escreva na saída padrão "Gerando arquivo executável...".
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
+  Escreva "Gerando arquivo executável..." junto com o texto CRLF para StdOut.
   Comece o temporizador de escrita.
   Escreva o trecho EXE deste compilador para o endereço EXE completo deste compilador.
   \Se o erro do fluxo de entrada/saída não estiver em branco, apresente uma mensagem de erro contendo o erro do fluxo de entrada/saída.
@@ -2021,11 +2289,7 @@ Rotina para que se compile um endereço da pasta (etapa final): \ #016
 
 Rotina para que se compile um endereço da pasta (interrupção): \ #017
   Suspenda o temporizador deste compilador.
-  Escreva na saída padrão "---------------------------------------".
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
-
-A Região de Código é um zona.
+  Escreva "---------------------------------------" junto com o texto CRLF para StdOut.
 
 Rotina para que se compile uma expressão matematica usando um percorredor:
   Se existir algum problema de compilação, retorne.
@@ -3112,8 +3376,6 @@ Rotina para que se compile um termo usando um percorredor (variável):
   Acrescente o nome para a frase deste termo.
   Compile o termo usando o percorredor (possessivos).
 
-Um sinalizador de possessivo reverso é um sinalizador.
-
 Rotina para que se compile um termo usando um percorredor e um campo nome (possessivo reverso):
   \ função recursiva
   \ Rotina nova criada pelo Dahn para version 2
@@ -3226,8 +3488,6 @@ Rotina para que se compile um termo usando um percorredor e um campo de estrutur
   Se o deslocamento deste campo não for 0, adicione um terceiro fragmento usando a etiqueta de acréscimo e a variável deste termo e o deslocamento deste campo.
   Limpe a frase deste termo.
 
-Um campo de estrutura-membro é um campo de estrutura.
-
 Rotina para que se compile um termo usando um percorredor e um nome (possessivo - campo):
   Se existir algum problema de compilação, retorne.
   Se a variável deste termo não for inexistente, atribua o tipo deste termo para um tipo.
@@ -3259,8 +3519,6 @@ Rotina para que se compile um termo usando um percorredor e um nome (possessivo 
   Se o tipo deste termo puder ser reduzido para "ponteiro", ative o sinalizador de redirecionamento deste primeiro campo de estrutura.
   Compile o termo usando o percorredor e o primeiro campo de estrutura.
   Compile o termo usando o percorredor e o campo de estrutura-membro.
-
-Um sinalizador de redirecionamento é um sinalizador.
 
 Rotina para que se converta umas unidades semânticas para uma representação interna da rotina :
   Converta as unidades semânticas para a representação interna da rotina usando a última unidade semântica destas unidades semânticas.
@@ -3386,23 +3644,11 @@ Rotina para que se crie uma variável usando um categoria:
   Atribua a categoria à categoria desta variável.
   Atribua 1 à contagem desta variável.
 
-O endereço do cabeçalho usado atualmente é um endereço.
-
-O endereço do nome usado atualmente é um endereço.
-
-O rotina utilizada atualmente é uma rotina.
-
-O endereço pré-calculado atual é um endereço.
-
-A região de dados é um zona.
-
 Função para que se determine se algumas dentre umas unidades semânticas são advérbios de negação:
-  Obtenha uma unidade semântica desde as unidades semânticas.
-  Se a unidade semântica for inexistente, diga não.
-  Se a string desta unidade semântica for algum advérbio de negação, diga sim.
+    Obtenha uma unidade semântica desde as unidades semânticas.
+    Se a unidade semântica for inexistente, diga não. \ return true
+    Se a string desta unidade semântica for algum advérbio de negação, diga sim.\ return false
   Reitere.
-
-Um byte ignorável é um byte.
 
 Função para que se determine se um byte é um byte ignorável:
   Se o byte for algum letra, diga sim.
@@ -3920,8 +4166,6 @@ Função para que se determine se uma string é uma palavra-chave de designação:
   Se a string for "denominadas", diga sim.
   Diga não.
 
-Uma palavra-chave de referenciamento é uma palavra-chave.
-
 Função para que se determine se uma string é uma palavra-chave de referenciamento:
   Se a string for "(referência)", diga sim.
   Diga não.
@@ -4362,8 +4606,6 @@ Função para que se determine se uma string é algum point:
   Se a string for "redirecione", diga sim.
   Diga não.
 
-Uma palavra-chave de reutilização de rotina é uma palavra-chave.
-
 Função para que se determine se uma string é uma palavra-chave de reutilização de rotina:
   \ Funcionalidade obsoleta desde a implantação da sobrecarga de cabeçalhos de rotina
   Se a string for "empregue", diga sim.
@@ -4520,28 +4762,6 @@ Função para que se determine se uma variável está duplicada em umas variáveis:
   Se o nome desta segunda variável for o nome desta variável, diga sim.
   Reitere.
 
-Um cabeçalho DOS é uma estrutura com
-\ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/debug/pe-format
-  Uma word denominada Signature,
-  Uma word denominada NumberOfBytesOnLastPage,
-  Uma word denominada NumberOfPages,
-  Uma word denominada Relocations,
-  Uma word denominada SizeOfHeaderInParagraphs,
-  Uma word denominada MinimumExtraParagraphsNeeded,
-  Uma word denominada MamixmumExtraParagraphsNeeded,
-  Uma word denominada InitialRelativeSS,  \\ Initial Sstack segment
-  Uma word denominada InitialSP,  \\ Initial Stack Pointer value.
-  Uma word denominada InitialChecksum,
-  Uma word denominada InitialIP,  \\ Initial Instruction Pointer value.
-  Uma word denominada InitialRelativeCS, \\ Pre-relocated initial CS register value.
-  Uma word denominada AddressOfRelocationTableInFile, \
-  Uma word denominada OverlyNumber,
-  8 bytes denominados ReservedBytes,
-  Uma word denominada OEM_Identifier,
-  Uma word denominada OEM_Info,
-  20 bytes denominados ReservedWords,
-  Um número denominado AddressOfPEHeaderInFile.
-
 Rotina para que se elimine apelidos duplicados desde umas variáveis:
   Crie um catálogo usando 101.
   Elimine apelidos duplicados desde as variáveis usando o catálogo.
@@ -4566,33 +4786,10 @@ Rotina para que se elimine apelidos duplicados usando uma variável e um catálogo
   Limpe o apelido desta segunda variável.
   Limpe o apelido desta variável.
 
-Um endereço thunk é um endereço.
-Um endereço do nome é um endereço.
-
-Uma função é uma lista com
-  Um endereço do nome,
-  Um endereço thunk, \ Consulte https://en.wikipedia.org/wiki/Thunk e http://ftp.informatik.rwth-aachen.de/jargon300/thunk.html
-  Um nome
-  e Um endereço.
-
-Uma expressão matematica é um termo.
-
 Rotina para que se expanda uma string com uma segunda string:
   Se a segunda string estiver em branco, retorne.
   Se a string não estiver em branco, acrescente o caractere de espaço para a string.
   Acrescente a segunda string para a string.
-
-Um campo é uma variável.
-
-Um sinalizador de empilhamento é um sinalizador.
-
-Uma rotina de função é uma rotina.
-
-Um campo de estrutura é uma estrutura com
-  Um sinalizador de redirecionamento,
-  Um campo (referência),
-  Uma rotina de função (referência),
-  Um sinalizador de empilhamento.
 
 Rotina para que se finalize o compilador:
   Destrua o catálogo de rotinas úteis.
@@ -4608,8 +4805,6 @@ Rotina para que se finalize o compilador:
   Destrua as variáveis globais predefinidas.
   Destrua os tipos.
   Destrua os arquivos fontes.
-
-As variáveis globais predefinidas são umas variáveis globais.
 
 Rotina para que se encontre uma função usando uma string e uns funções:
   Esvazie a função.
@@ -4643,7 +4838,8 @@ Rotina para que se encontre um campo de estrutura usando um tipo e um nome:
   Se o campo não for inexistente,
     Atribua o campo ao campo deste campo de estrutura;
     Retorne.
-  Se o tipo do conteúdo deste tipo não for inexistente, encontre o campo usando o nome e os campos deste tipo do conteúdo deste tipo.
+  Se o tipo do conteúdo deste tipo não for inexistente,
+    Encontre o campo usando o nome e os campos deste tipo do conteúdo deste tipo.
   Se o campo não for inexistente,
     Ative o sinalizador de redirecionamento deste campo de estrutura;
     Atribua o campo ao campo deste campo de estrutura;
@@ -4839,19 +5035,6 @@ Rotina para que se encontre uma variável usando um nome e umas variáveis:
     Se o apelido desta variável for o nome, retorne.
   Reitere.
 
-Um fragmento é uma lista com
-  \ we have three lists in the compiler memory — tipos, variables, and rotinas
-  \ each rotina consists of a series of logical instructions called “fragments.” There are just 22 fragmento tipos:
-  Uma etiqueta [break, Demanda Externa, Demanda Indireta, Demanda Interna, redirecionamento, end if, etapa conclusiva, exit, finalize, increment, Decodifique, jump false, load address, load eax, loop, not, etapa preliminar, push address, empilhamento de valor, salve eax, repeat, rotina address],
-  Uma variável (referência) [Demanda Indireta, redirecionamento, increment, load address, load eax, pop, push address, empilhamento de valor, rotina address, salve eax],
-  Uma segunda variável (referência) [load address],
-  Uma rotina (referência) [Demanda Interna, rotina address],
-  Uma função (referência) [Demanda Externa],
-  Um número [increment],
-  Um sinalizador [load eax], \SAL
-  Um endereço,
-  Um texto hexadecimal denominado código.
-
 Rotina para que se gere um nome usando uma string:
   Atribua a string ao nome.
   Adicione 1 para a contagem de nomes deste compilador.
@@ -4884,43 +5067,6 @@ Rotina para que se obtenha uma contagem usando umas DLLs (todas as funções mais 
     Adicione a contagem destas funções desta DLL para a contagem.
     Adicione 1 para a contagem.
   Reitere.
-
-Um corpo de variável global é um subtexto.
-
-O catálogo de variáveis globais é um catálogo.
-
-Uma variável global é uma variável.
-
-As variáveis globais são umas variáveis globais.
-
-A image base é um endereço igual a 4194304 [$00400000].
-
-A seção de DLLs é uma zona.
-
-Um cabeçalho da DLL é uma estrutura com
-\traduzir isso aqui
-  Um endereço denominado primeiro thunk, \ consulte https://www.linkedin.com/pulse/why-pe-need-original-primeiro-thunkoft-milad-kahsari-alhadi/
-  \ https://stackoverflow.com/questions/42413937/why-pe-need-original-primeiro-thunkoft#:~:caixa de texto=The%20original%20first%20thunk%20is,%2C%20user32%20etc)%20are%20known.
-  \ Thunks são as partes definitivas dos códigos em um sistema operacional que manipula as transições entre o código de 16 e 32 bits.
-  \ Assim, eles garantem a compatibilidade com versões anteriores entre as chamadas feitas pelo aplicativo.
-  \ O OS está sujeito a esta facilidade para compatibilidade com versões anteriores, de modo que os aplicativos de 16 bits possam funcionar sem problemas em ambientes de 32 bits.
-  Um número denominado TimeStamp, \ Set para zero até que bound; seguido de this feld is set para the TimeDateStamp of the exporting FileHeader da DLL
-  Um endereço denominado corrente de encaminhamento, \ corrente de encaminhamento: The 32-bit index of the primeiro forwarder in the list of imported functions
-  Um endereço denominado endereço do nome,
-  \Esse endereço contém o RVA [Endereço Virtual Relativo] da DLL a ser carregada na memória. É um valor dword.
-  \É composto por: RVA = Base da Imagem + Ordem Endian
-  Um endereço denominado primeiro endereço thunk de memória.
-
-Uma DLL é uma lista com
-  Um endereço do nome,
-  Um endereço do cabeçalho,
-  Um nome,
-  Um cabeçalho da DLL,
-  Umas funções.
-
-Um endereço do cabeçalho é um endereço.
-
-As DLLs são umas DLLs.
 
 Rotina para que se catalogue uma variável global:
   Se existir algum problema de compilação, retorne.
@@ -5117,8 +5263,6 @@ Rotina para que se inicialize um Cabeçalho PE (informação da versão):
   Atribua 4 [$0004] ao SubsystemMajorVersion deste Cabeçalho PE.
   Atribua 0 [$0000] ao SubsystemMinorVersion deste Cabeçalho PE.
   Atribua 3 [$0003] ao Subsystem deste Cabeçalho PE.
-
-Um variável intermediária é uma variável local.
 
 Rotina para que se vincule:
   Arredonde para cima tamanhos de zona.
@@ -5421,40 +5565,6 @@ Rotina para que se liste umas variáveis depois de uma string em um trecho:
   Liste as variáveis no trecho.
   Insira quebra de linha no trecho.
 
-O catálogo de variáveis hexadecimais é um catálogo.
-
-Um valor literal é uma variável.
-
-Os valores literais são uns valores literais.
-
-Uma variável local é uma variável.
-
-Um endereço local é um endereço de byte .
-
-Uma representação interna da rotina é uma string.  \ moniker
-  \ https://learn.microsoft.com/pt-br/windows/win32/com/monikers
- \ A moniker is the internal representation of a routine header with
-\ • no articles preceding parameter tipos,
-\ • parameter tipos in quadrado brackets, and
-\ • expanded prepositions.
-\ Each piece of a moniker is a unidade semântica. For example:
-\ Routine header: To add a number to a count:
-\ Moniker: add [number] in/into/to [count]
-\ Monikettes: (1) add (2) [number] (3) in/into/to (4) [count]
-\ We use this internal representation because it...
-\ • makes it easy reduce tipos (like [count] to [number]) when looking for an appropriate routine to call;
-\ • makes it easy to expand prepositions (like "to" into "in/into/to"); and
-\ • shows how the compiler interpreted various phrases in error messages.
-Uma unidade semântica é uma lista com
-  Uma string,
-  Um tipo (referência),
-  Um variável (referência),
-  \ para bubbling
-  Um tipo atual (referência),
-  Um subtexto atual.
-
-Um cabeçalho compactado é uma representação interna da rotina.
-
 Rotina para que se mova um percorredor (ignorando os comentários):
   Avance o percorredor.
   Se o segmento final deste percorredor estiver em branco, retorne.
@@ -5595,12 +5705,6 @@ Rotina para que se mova um percorredor retornando uma string de erro (englobando
     Mova o percorredor retornando a string de erro (diretrizes de validação de qualificadores);
     Retorne.
 
-Uma string de erro é uma string.
-
-Um parte da cifra binária é um subtexto.
-
-Um apelido é um nome.
-
 Rotina para que se alinhe as variáveis locais em uma rotina:
   Se a rotina for inexistente, retorne.
   Se a sinalizador de compilação desta rotina não estiver ativo, retorne.
@@ -5644,71 +5748,6 @@ Rotina para que se alinhe o parâmetros em umas rotinas:
   Se a rotina for inexistente, retorne.
   Alinhe o parâmetros na rotina.
   Reitere.
-
-
-Um parâmetro é uma variável.
-
-Um Cabeçalho PE é uma estrutura com   \ O formato Portable Executable (PE) é baseado na especificação COFF (Common Object File Format).
-\Para obter mais informações, consulte https://learn.microsoft.com/pt-br/windows/win32/debug/pe-format
-\ O cabeçalho MS-DOS ocupa os primeiros 64 bytes do arquivo. A estrutura básica está representada abaixo:
-  Um número denominado Signature,
-  Uma word denominada MachineType,
-  Uma word denominada NumberOfSections,
-  Um número denominado TimeStamp,
-  Um número denominado PointerToSymbolTable,
-  Um número denominado NumberOfSymbols,
-  Uma word denominada SizeOfOptionalHeaderInBytes,
-  Uma word denominada Characteristics,
-  \ PARTE OPCIONAL - _IMAGE_OPTIONAL_HEADER64
-  Uma word denominada MagicNumber,
-  Um byte denominado MajorLinkerVersion,
-  Um byte denominado MinorLinkerVersion,
-  Um número denominado SizeOfCodeInFile, \ SizeOfCode
-  Um número denominado SizeOfInitializedDataInFile,
-  Um número denominado SizeOfUninitializedDataInFile,
-  Um número denominado AddressOfEntryPointInMemory, \ AddressOfEntryPoint
-  Um número denominado AddressOfCodeInMemory,  [BaseOfCode]
-  Um número denominado AddressOfInitializedDataInMemory, [BaseOfData]
-  Um número denominado ImageBase,
-  Um número denominado MemoryAlignment, [SectionAlignment]
-  Um número denominado FileAlignment,
-  Uma word denominada OS_MajorVersion, [MajorOperatingSystemVersion]
-  Uma word denominada OS_MinorVersion, [MinorOperatingSystemVersion]
-  Uma word denominada UserMajorVersion,  [MajorImageVersion]
-  Uma word denominada UserMinorVersion, [MinorImageVersion]
-  Uma word denominada SubsystemMajorVersion, [MajorSubsystemVersion]
-  Uma word denominada SubsystemMinorVersion, [MinorSubsystemVersion]
-  Um número denominado Reserved,  [Win32VersionValue]
-  Um número denominado SizeOfImageInMemory, [SizeOfImage]
-  Um número denominado SizeOfAllHeadersInFile, [SizeOfHeaders]
-  Um número denominado CheckSum,
-  Uma word denominada Subsystem,
-  Uma word denominada DLLCharacteristics,
-  Um número denominado MaxStack, [SizeOfStackReserve]
-  Um número denominado MinStack, [SizeOfStackCommit]
-  Um número denominado MaxHeap, [SizeOfHeapReserve]
-  Um número denominado MinHeap, [SizeOfHeapCommit]
-  Um número denominado LoaderFlags,  \ _IMAGE_OPTIONAL_HEADER64
-  Um número denominado NumberOfDirectories, [NumberOfRvaAndSizes]
-  8 bytes denominados Directory0,
-  Um número denominado ImageDirectoryEntryImportAddress,
-  Um número denominado ImageDirectoryEntryImportSize,
-  112 bytes denominados Directories2-15,
-  Um Cabeçalho de Seção PE denominado Idata Section,
-  Um Cabeçalho de Seção PE denominado Data Section,
-  Um Cabeçalho de Seção PE denominado Code Section.
-
-Um Cabeçalho de Seção PE é uma estrutura com
-  8 bytes denominados Nome, \ Each section header has a name fielf up to eight characters em comprimento, for which the primeiro character must be a period.
-  Um número denominado SizeInBytes,
-  Um número denominado AddressInMemory,
-  Um número denominado SizeInFile,
-  Um número denominado AddressInFile,
-  12 bytes denominados Reserved,
-  Um número denominado Characteristics. \ Defines the section Characteristics.
-  \These values are encontrado both em WINNT.H and in the Portable Executable Format specification.
-
-Uma frase é uma string.
 
 \Função para que se determine se uma string looks like English:
 \Carregue o dicionário léxico.
@@ -6144,10 +6183,6 @@ Rotina para que se pluralize uma string:
   Reitere.
   Atribua a string plural à string.
 
-Uma protótipo de string é uma estrutura com
-  Um caractere inicial e
-  Um caractere final .
-
 Rotina para que se atribua o endereço EXE completo deste compilador para um endereço completo:
   Extraia um designador desde o endereço da pasta deste compilador.
   Remova alguma barra invertida final desde o designador.
@@ -6230,8 +6265,6 @@ Rotina para que se carregue um arquivo fonte:
       junto com o endereço completo deste arquivo fonte seguido de ".";
     Retorne.
   Parse a string para o trecho deste arquivo fonte (para expandir contrações).
-
-O percorredor de contrações é um percorredor.
 
 Rotina para que se parse uma string para uma segunda string (para expandir contrações):
   Limpe a segunda string.
@@ -6376,12 +6409,6 @@ Rotina para que se destrinche um tipo (tipos de dados primitivos):
   Destrinche o tipo base deste tipo (tipos de dados primitivos).
   Desative o sinalizador de recursividade deste tipo.
 
-Um campo português é um campo.
-Um campo português feminino é um campo.
-
-Um tipo encadeado é um tipo.
-Um tipo estruturado é um tipo.
-
 Rotina para que se destrinche um tipo (expand lista): \ tipo base deste tipo não está resolved yet
   Se existir algum problema de compilação, retorne.
   Se o tipo for inexistente, retorne.
@@ -6490,8 +6517,6 @@ Rotina para que se destrinche um tipo (dados opcionais - scale):
   Multiplique a razão de escala deste tipo pela razão de escala deste tipo base.
   Atribua o tipo base deste tipo base ao tipo base deste tipo.
 
-Um tipo base é um tipo.
-
 Rotina para que se destrinche um tipo (dados complementares):
   Se existir algum problema de compilação, retorne.
   Se o tipo for inexistente, retorne.
@@ -6562,46 +6587,6 @@ Rotina para que se arredonde para cima tamanhos de zona:
   Atribua a quantidade de caracteres desta região de código ao tamanho desta região de código.
   Arredonde para cima o tamanho desta região de código  usando o múltiplo imediato de 4096.
 
-Uma instrução é um subtexto.
-
-Um cabeçalho de rotina é um subtexto.
-
-O catálogo geral de rotinas é um catálogo.
-
-Um tamanho local é um tamanho.
-
-Um sinalizador de função é um sinalizador.
-
-Uma representação de emprego é uma representação interna da rotina.
-\Um catálogo de apelidos é um catálogo.
-
-Uma rotina é uma lista com
-  Um endereço local (referência),
-  Um sinalizador de compatibilidade,
-  Um sinalizador de deliberação,
-  Um sinalizador de função,
-  Um sinalizador de compilação,
-  Um catálogo denominado catálogo de apelidos, \ alocação dinâmica. Verificar
-  Uma representação interna da rotina,
-  Umas unidades semânticas,
-  Uns parâmetros,
-  Um tamanho do parâmetro,
-  Uma representação de emprego,
-  Umas variáveis locais,
-  Um tamanho local,
-  Um cabeçalho de rotina,
-  Uma string do cabeçalho,
-  Umas instruções,
-  Uma string do corpo,
-  Uns fragmentos,
-  Um endereço.
-
-Uma string do corpo é uma string.
-Uma string do cabeçalho é uma string.
-Uma referência da rotina é [composta de] umas unidades semânticas.
-
-As rotinas são umas rotinas.
-
 \Rotina para que se examine algum dado complementar de um tipo usando um percorredor:
 Rotina para que se examine algum dado complementar para um tipo usando um percorredor:
   Se existir algum problema de compilação, retorne.
@@ -6632,9 +6617,6 @@ Rotina para que se examine algum pauses usando um percorredor:
   Se o segmento inicial deste percorredor não for alguma pausa, retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Reitere.
-
-Uma palavra-chave é uma string.
-Uma palavra-chave de designação é uma palavra-chave.
 
 Rotina para que se examine um campo usando um percorredor:
   Se existir algum problema de compilação, retorne.
@@ -6838,8 +6820,8 @@ Rotina para que se examine um nome usando um percorredor:
     Mova o percorredor (usando diretrizes de compilação).
   Reitere.
   Se o nome estiver em branco,
-    Apresente uma mensagem de erro contendo "Erro #159. Nome '" 
-    junto com o segmento inicial deste percorredor seguido de "' em branco." e o percorredor;
+    Apresente uma mensagem de erro contendo "Erro #159. A variável '" 
+    junto com o segmento inicial deste percorredor seguido de "' não foi definida ainda." e o percorredor;
     Retorne.
 
 Rotina para que se examine uma instruções usando um percorredor:
@@ -7005,8 +6987,6 @@ Rotina para que se examine um tipo usando um percorredor (unidade de medida):
   Mova o percorredor (usando diretrizes de compilação).
   Catalogue o tipo.
 
-Um scratch é uma variável local.
-
 Rotina para que se scrub um catálogo:
   Itere.
     Obtenha um recipiente usando o catálogo.
@@ -7061,18 +7041,6 @@ Rotina para que se passe para a palavra anterior em um subtexto:
   Subtraia 1 desde o caractere final deste subtexto.
   Reitere.
   Ignore algum caractere ignorável final no subtexto.
-
-Um arquivo fonte é uma lista com
-  Um endereço completo e
-  Um trecho.
-
-Os arquivos fontes são uns arquivos fontes.
-
-Uma etiqueta é um número.
-
-Um termo é uma estrutura com
-  Uma variável e
-  Uma frase.
 
 Rotina para que se transforme um fragmento em código hexadecimal:
   Se existir algum problema de compilação, retorne.
@@ -7170,8 +7138,6 @@ Rotina para que se transforme um fragmento em código hexadecimal (etapa conclusi
   Acrescente $8BE5 para o código deste fragmento. \ mov esp,ebp -> não seria 89EC?
   Acrescente $5D para o código deste fragmento. \ pop ebp
   Acrescente $C2 e o tamanho do parâmetro desta rotina utilizada atualmente para o código deste fragmento. \ ret + o tamanho do parâmetro da rotina utilizada atualmente
-
-Um tamanho do parâmetro é um tamanho.
 
 Rotina para que se transforme um fragmento em código hexadecimal (cláusula de retorno):
   Encontre um segundo fragmento usando o fragmento e a etiqueta de finalização.
@@ -7335,62 +7301,6 @@ Rotina para que se transforme umas rotinas em código hexadecimal:
     Se a rotina for inexistente, pare.
     Transforme a rotina em código hexadecimal.
   Reitere.
-
-O catálogo de tipos é um catálogo.
-
-Um nome do tipo primitivo é um nome.
-O nome do conteúdo é um nome.
-O tipo do conteúdo é um tipo.
-Um sinalizador de informações complementares é um sinalizador.
-
-Um tipo é uma lista com
-  Um endereço local (referência),
-  Um nome, um nome plural,
-  Um cabeçalho compactado,
-  Uma quantidade de caracteres,
-  Um nome do tipo primitivo,
-  Um tipo base (referência),
-  Um nome do conteúdo,
-  Um tipo do conteúdo (referência) [aplicável somente a ponteiros],
-  Uma razão de escala,
-  Uns campos [aplicável somente a estruturas],
-  Um sinalizador de recursividade,
-  Um sinalizador de informações complementares.
-
-Um sinalizador de recursividade é um sinalizador.
-
-Um nome do tipo é um nome.
-
-Os tipos são uns tipos.
-
-O catálogo de rotinas úteis é um catálogo.
-
-Uma variável é uma lista com
-  Um endereço local (referência),
-  Um categoria [lvalor iteral, variável global, variável local, parâmetro, scratch],
-  Um sinalizador de compilação,
-  Um nome,
-  Um apelido,
-  Um nome do tipo,
-  Um tipo (referência), \ tipo real em literal, variável global e local; tipos revogados em parâmetros e scratches
-  Um endereço [variáveis globais e valores literais somente] ou
-  Um deslocamento sob o endereço [variáveis locais, parâmetros, e campos somente],
-  Uma contagem [campos somente],
-  Um sinalizador de referência [campos somente],
-  Um novo nome [campos somente],
-  Um sinalizador de passagem por-valor [parâmetros somente],
-  Um corpo de variável global [variáveis globais somente],
-  Um texto inicializador [variáveis globais somente],
-  Um valor literal (referência) [variáveis globais somente - constante com a qual se inicializa a variável global],
-  Um texto hexadecimal denominado data [literais somente].
-
-Um deslocamento é um número.
-
-Um texto inicializador é uma string.
-
-Um sinalizador de referência é um sinalizador.
-Um sinalizador de passagem por-valor é um sinalizador.
-Um novo nome é um nome.
 
 Rotina para que se ignore algum caractere ignorável final em um subtexto:
   Itere.
