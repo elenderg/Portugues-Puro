@@ -3455,7 +3455,7 @@ Rotina para que se mude uma caixa de texto usando uma altura da fonte:
   Atribua a altura da fonte à altura desta fonte desta caixa de texto.
   Redimensione proporcionalmente a altura desta fonte desta caixa de texto usando o fator de escala desta caixa de texto.
   Atribua o par de números vezes a malha quadriculada desta caixa de texto à origem desta caixa de texto. \ calculated field
-  Adicione a margem desta caixa de texto para a coordenada X desta caixa de texto.
+  Adicione a margem desta caixa de texto para a coordenada X desta caixa desta caixa de texto.
   Delimite a origem de a caixa de texto.
   Selecione o texto na caixa de texto.
 
