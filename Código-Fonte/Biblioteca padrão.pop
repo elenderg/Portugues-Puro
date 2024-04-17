@@ -158,6 +158,14 @@ Uma caixa de texto é uma lista com
   Umas caixas de texto denominadas restaurações, \reversões 
   Umas caixas de texto denominadas alterações. \ 
 
+Uma seleção é uma estrutura com
+  Um anchor número de coluna,
+  Um anchor número da linha,
+  Um anchor sob o anchor número de coluna,
+  Um cursor de texto número de coluna,
+  Um número de linhas do cursor,
+  Um cursor de texto sob o cursor de texto número de coluna.
+
 Um sinalizador de quebra de texto é um sinalizador.
 
 Um campo de texto é uma lista com
@@ -577,14 +585,6 @@ Um sector é um par de números com
   Uma coordenada Y. [indicando o canto superior esquerdo do sector]
 
 Uma caixa de seleção é uma caixa.
-
-Uma seleção é uma estrutura com
-  Um anchor número de coluna,
-  Um anchor número da linha,
-  Um anchor sob o anchor número de coluna,
-  Um cursor de texto número de coluna,
-  Um número de linhas do cursor,
-  Um cursor de texto sob o cursor de texto número de coluna.
 
 Um remetente é uma string.
 
@@ -5281,14 +5281,14 @@ Função para que se determine se um byte é algum espaço em branco:
 Função para que se determine se o cursor de texto de uma caixa de texto está sob o começo:
   Se a caixa de texto for inexistente, diga não.
   Se o número de linhas do cursor desta seleção desta caixa de texto não for 1, diga não.
-  Se o cursor de texto número de coluna desta caixa de texto não for 1, diga não.
+  Se o cursor de texto número de coluna desta seleção desta caixa de texto não for 1, diga não.
   Diga sim.
 
 Função para que se determine se o cursor de texto de uma caixa de texto é sob o fim:
   Se a caixa de texto for inexistente, diga não.
   Se o número de linhas do cursor desta seleção desta caixa de texto não for a contagem destas linhas de texto desta caixa de texto, diga não.
   Obtenha uma linha de texto usando o número de linhas do cursor desta seleção desta caixa de texto e a caixa de texto.
-  Se o cursor de texto número de coluna desta caixa de texto não for a quantidade de caracteres desta string desta linha de texto, diga não.
+  Se o cursor de texto número de coluna desta seleção desta caixa de texto não for a quantidade de caracteres desta string desta linha de texto, diga não.
   Diga sim.
 
 Função para que se determine se o cursor de texto de uma caixa de texto está sobre a primeira linha reta:
@@ -5849,7 +5849,7 @@ Função para que se determine se uma seleção é uma segunda seleção:
 Função para que se determine se existe something selecionado em uma caixa de texto;
 Função para que se determine se há something selecionado em uma caixa de texto;
 Função para que se determine se something está selecionado em uma caixa de texto:
-  Se o anchor desta caixa de texto for o cursor de texto desta caixa de texto, diga não.
+  Se o anchor desta seleção desta caixa de texto for o cursor de texto desta seleção desta caixa de texto, diga não.
   Diga sim.
 
 Função para que se determine se uma localização está acima de uma caixa:
@@ -6288,16 +6288,16 @@ Função para que se determine se existe something para backspace em uma caixa de 
   Se a caixa de texto for inexistente, diga não.
   Se something estiver selecionado na caixa de texto, diga sim.
   Se o número de linhas do cursor desta seleção desta caixa de texto não for 1, diga sim.
-  Se o cursor de texto número de coluna desta caixa de texto não for 1, diga sim.
+  Se o cursor de texto número de coluna desta seleção desta caixa de texto não for 1, diga sim.
   Diga não.
 
 Função para que se determine se há something para remover em uma caixa de texto;
 Função para que se determine se existe something para remover em uma caixa de texto:
   Se a caixa de texto for inexistente, diga não.
   Se something estiver selecionado na caixa de texto, diga sim.
-  Se o número de linhas do cursor desta seleção desta caixa de texto não for a contagem de linhas desta caixa de texto, diga sim.
+  Se o número de linhas do cursor desta seleção desta caixa de texto não for a contagem de linhas desta caixa de texto, diga sim. \ calculated field
   Obtenha uma linha de texto usando o número de linhas do cursor desta seleção desta caixa de texto e a caixa de texto.
-  Se o cursor de texto número de coluna desta caixa de texto não for a quantidade de caracteres desta string desta linha de texto, diga sim.
+  Se o cursor de texto número de coluna desta seleção desta caixa de texto não for a quantidade de caracteres desta string desta linha de texto, diga sim.
   Diga não.
 
 Função para que se determine se há caixa de texto na área de transferência do Windows;
@@ -6455,7 +6455,7 @@ Rotina para que se decifre um trecho usando uma palavra-passe:
 
 Rotina para que se solte uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
-  Atribua o cursor de texto desta caixa de texto ao anchor desta seleção desta caixa de texto. \seleção
+  Atribua o cursor de texto desta seleção desta caixa de texto ao anchor desta seleção desta caixa de texto. \seleção
 
 Rotina para que se destrua um Sessão Criptografada:
   Se a Sessão Criptografada for inexistente, retorne.
@@ -7244,7 +7244,7 @@ Rotina para que se estime um deslocamento vertical e um deslocamento horizontal 
 
 Rotina para que se expanda alguma seleção em uma caixa de texto usando uma localização:
   Se a caixa de texto for inexistente, retorne.
-  Obtenha o cursor de texto desta caixa de texto usando a localização e a caixa de texto.
+  Obtenha o cursor de texto desta seleção desta caixa de texto usando a localização e a caixa de texto.
   Limpe a última operação desta caixa de texto.
 
 Rotina para que se expanda uma caixa para include uma segunda caixa:
@@ -7570,7 +7570,7 @@ Rotina para que se encontre próximo usando uma linha de texto e uma caixa de tex
   Ative o sinalizador.
   Atribua o caractere inicial deste subtexto menos o caractere inicial desta string desta linha de texto mais 1 ao anchor número de coluna desta caixa de texto.
   Atribua o número da linha desta linha de texto ao anchor número da linha desta caixa de texto .
-  Atribua o caractere final deste subtexto menos o caractere inicial desta string desta linha de texto mais 2 ao cursor de texto número de coluna desta caixa de texto.
+  Atribua o caractere final deste subtexto menos o caractere inicial desta string desta linha de texto mais 2 ao cursor de texto número de coluna desta seleção desta caixa de texto.
   Atribua o número da linha desta linha de texto ao número de linhas do cursor desta seleção desta caixa de texto.
 
 Rotina para que se encontre próximo usando uma caixa de texto e um sinalizador:
@@ -7603,8 +7603,8 @@ Rotina para que se encontre próximo usando uma caixa de texto e um sinalizador (
   Ative o sinalizador.
   Atribua o caractere inicial deste subtexto menos o caractere inicial desta string mais 1 para um anchor posicionamento absoluto.
   Atribua o caractere final deste subtexto menos o caractere inicial desta string mais 2 para um cursor de texto posicionamento absoluto.
-  Converta o anchor posicionamento absoluto para o anchor desta caixa de texto usando a caixa de texto.
-  Converta o cursor de texto posicionamento absoluto para o cursor de texto desta caixa de texto usando a caixa de texto.
+  Converta o anchor posicionamento absoluto para o anchor desta seleção desta caixa de texto usando a caixa de texto.
+  Converta o cursor de texto posicionamento absoluto para o cursor de texto desta seleção desta caixa de texto usando a caixa de texto.
 
 Rotina para que se encontre o próximo misspelling usando uma linha de texto e uma caixa de texto e um sinalizador:
   Desative o sinalizador.
@@ -7620,7 +7620,7 @@ Rotina para que se encontre o próximo misspelling usando uma linha de texto e um
   Ative o sinalizador.
   Atribua o caractere inicial deste segmento inicial deste percorredor menos o caractere inicial desta string desta linha de texto mais 1 ao anchor número de coluna desta caixa de texto.
   Atribua o número da linha desta linha de texto ao anchor número da linha desta caixa de texto .
-  Atribua o caractere final deste segmento inicial deste percorredor menos o caractere inicial desta string desta linha de texto mais 2 ao cursor de texto número de coluna desta caixa de texto.
+  Atribua o caractere final deste segmento inicial deste percorredor menos o caractere inicial desta string desta linha de texto mais 2 ao cursor de texto número de coluna desta seleção desta caixa de texto.
   Atribua o número da linha desta linha de texto ao número de linhas do cursor desta seleção desta caixa de texto.
 
 Rotina para que se encontre o próximo misspelling em uma caixa de texto usando um sinalizador:
@@ -7870,7 +7870,7 @@ Rotina para que se obtenha uma caixa pelo cursor de texto em uma caixa de texto:
   Se a caixa de texto for inexistente,
     Zero a caixa;
     Retorne.
-  Obtenha uma localização usando o cursor de texto desta caixa de texto e a caixa de texto.
+  Obtenha uma localização usando o cursor de texto desta seleção desta caixa de texto e a caixa de texto.
   Atribua a localização e a localização ao caixa.
   Adicione a altura da linha desta caixa de texto para a coordenada Y2 desta caixa.
   Ajuste a caixa usando 0 e a quantidade de twips/pixel e 0 e - a quantidade de twips/pixel .
@@ -8388,7 +8388,7 @@ Rotina para que se obtenha uma linha de texto usando uma localização e uma caixa
   Atribua a coordenada Y desta localização para uma coordenada Y.
   Delimite a coordenada Y para a coordenada Y1 desta caixa de texto e a coordenada Y2 desta caixa de texto.
   Atribua a coordenada Y menos a coordenada Y desta globalized origem desta caixa de texto dividido pela altura da linha desta caixa de texto mais 1 para um número da linha.
-  Delimite o número da linha para 1 e a contagem de linhas desta caixa de texto.
+  Delimite o número da linha para 1 e a contagem de linhas desta caixa de texto. \ calculated field
   Obtenha a linha de texto usando o número da linha e a caixa de texto.
 
 Rotina para que se obtenha uma caixa de seleção usando uma linha de texto e uma caixa de texto:
@@ -9029,7 +9029,7 @@ Rotina para que se execute um evento usando uma caixa de texto (tecla Tab):
   Relembre a caixa de texto com "insert".
   Remova qualquer trecho selecionado na caixa de texto.
   Insira o caractere de espaço ao caixa de texto.
-  Divida o cursor de texto número de coluna desta caixa de texto por 2 usando um quociente e um resto.
+  Divida o cursor de texto número de coluna desta seleção desta caixa de texto por 2 usando um quociente e um resto.
   Se o resto for 0, insira o caractere de espaço ao caixa de texto.
   Role a caixa de texto para o cursor de texto.
 
@@ -9713,9 +9713,9 @@ Rotina para que se adicione uma string para uma caixa de texto;
 Rotina para que se insira uma string Para uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Obtenha uma linha de texto usando o número de linhas do cursor desta seleção desta caixa de texto e a caixa de texto.
-  Atribua a quantidade de caracteres desta string desta linha de texto menos o cursor de texto número de coluna desta caixa de texto para um número.
+  Atribua a quantidade de caracteres desta string desta linha de texto menos o cursor de texto número de coluna desta seleção desta caixa de texto para um número.
   Atribua a string desta linha de texto para uma segunda string.
-  Insira a string à segunda string antes de o cursor de texto número de coluna desta caixa de texto.
+  Insira a string à segunda string antes de o cursor de texto número de coluna desta seleção desta caixa de texto.
   Converta a segunda string para umas linhas de texto.
   Atribua a última linha de texto destas linhas de texto para uma segunda linha de texto.
   Insira as linhas de texto A as linhas de texto desta caixa de texto antes de a linha de texto.
@@ -9723,7 +9723,7 @@ Rotina para que se insira uma string Para uma caixa de texto:
   Destrua a linha de texto.
   Enumere novamente as linhas de texto desta caixa de texto.
   Atribua o número da linha desta segunda linha de texto ao número de linhas do cursor desta seleção desta caixa de texto.
-  Atribua a quantidade de caracteres desta string desta segunda linha de texto menos o número ao cursor de texto número de coluna desta caixa de texto.
+  Atribua a quantidade de caracteres desta string desta segunda linha de texto menos o número ao cursor de texto número de coluna desta seleção desta caixa de texto.
   Solte a caixa de texto.
 
 Rotina para que se insira uma lista para umas listas após uma segunda lista:
@@ -9804,9 +9804,9 @@ Rotina para que se intersect uma caixa com uma segunda caixa usando um terceiro 
 Rotina para que se jump o cursor de texto para a esquerda em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Mova o cursor de texto para a esquerda para algum non-noise byte na caixa de texto.
-  Se o cursor de texto número de coluna desta caixa de texto for 1, retorne.
+  Se o cursor de texto número de coluna desta seleção desta caixa de texto for 1, retorne.
   Obtenha uma linha de texto usando o número de linhas do cursor desta seleção desta caixa de texto e a caixa de texto.
-  Atribua o caractere inicial desta string desta linha de texto mais o cursor de texto número de coluna desta caixa de texto menos 2 para um endereço de byte .
+  Atribua o caractere inicial desta string desta linha de texto mais o cursor de texto número de coluna desta seleção desta caixa de texto menos 2 para um endereço de byte .
   Se o conteúdo deste endereço de byte for alfanumérico, mova o cursor de texto para a esquerda para algum non-alfanumérico byte na caixa de texto.
   Se o conteúdo deste endereço de byte não for alfanumérico, mova o cursor de texto para a esquerda para algum non-symbolic byte na caixa de texto.
   Mova o cursor de texto para a esquerda para algum non-noise byte na caixa de texto.
@@ -9815,8 +9815,8 @@ Rotina para que se jump o cursor de texto para a direita em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Mova o cursor de texto para a direita para algum non-noise byte na caixa de texto.
   Obtenha uma linha de texto usando o número de linhas do cursor desta seleção desta caixa de texto e a caixa de texto.
-  Se o cursor de texto número de coluna desta caixa de texto é a quantidade de caracteres desta string desta linha de texto, retorne.
-  Atribua o caractere inicial desta string desta linha de texto mais o cursor de texto número de coluna desta caixa de texto menos 1 para um endereço de byte .
+  Se o cursor de texto número de coluna desta seleção desta caixa de texto é a quantidade de caracteres desta string desta linha de texto, retorne.
+  Atribua o caractere inicial desta string desta linha de texto mais o cursor de texto número de coluna desta seleção desta caixa de texto menos 1 para um endereço de byte .
   Se o conteúdo deste endereço de byte é alfanumérico, mova o cursor de texto para a direita para algum non-alfanumérico byte na caixa de texto.
   Se o conteúdo deste endereço de byte não for alfanumérico, mova o cursor de texto para a direita para algum non-symbolic byte na caixa de texto.
   Mova o cursor de texto para a direita para algum non-noise byte na caixa de texto.
@@ -9851,9 +9851,9 @@ Rotina para que se delimite uma caixa para uma segunda caixa:
 
 Rotina para que se delimite o cursor de texto em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
-  Delimite o número de linhas do cursor desta seleção desta caixa de texto para 1 e a contagem de linhas desta caixa de texto.
+  Delimite o número de linhas do cursor desta seleção desta caixa de texto para 1 e a contagem de linhas desta caixa de texto. \ calculated field
   Obtenha uma linha de texto usando o número de linhas do cursor desta seleção desta caixa de texto e a caixa de texto.
-  Delimite o cursor de texto número de coluna desta caixa de texto para 1 e a quantidade de caracteres desta string desta linha de texto.
+  Delimite o cursor de texto número de coluna desta seleção desta caixa de texto para 1 e a quantidade de caracteres desta string desta linha de texto.
 
 Rotina para que se delimite um número para um segundo número e um terceiro número:
   Se o número for menor do que o segundo número,
@@ -9864,7 +9864,7 @@ Rotina para que se delimite um número para um segundo número e um terceiro númer
 Rotina para que se delimite a origem de uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Delimite a coordenada X desta caixa de texto para o menor número e a margem desta caixa de texto.
-  Atribua a contagem de linhas desta caixa de texto menos 1 vezes a altura da linha desta caixa de texto para um número.
+  Atribua a contagem de linhas desta caixa de texto menos 1 vezes a altura da linha desta caixa de texto para um número. \ calculated field
   Delimite a coordenada Y desta caixa de texto para - o número e 0.
 
 Rotina para que se delimite uma localização para uma caixa:
@@ -10136,91 +10136,91 @@ Rotina para que se mova o cursor de texto para baixo one página em uma caixa de 
 
 Rotina para que se mova o cursor de texto para o primeiro caractere da linha de texto atual de uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
-  Atribua 1 ao cursor de texto número de coluna desta caixa de texto.
+  Atribua 1 ao cursor de texto número de coluna desta seleção desta caixa de texto.
 
 Rotina para que se mova o cursor de texto para o primeiro caractere de uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
-  Atribua 1 e 1 ao cursor de texto desta caixa de texto.
+  Atribua 1 e 1 ao cursor de texto desta seleção desta caixa de texto.
 
 Rotina para que se mova o cursor de texto para o último caractere de a linha de texto atual de  uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Obtenha uma linha de texto usando o número de linhas do cursor desta seleção desta caixa de texto e a caixa de texto.
-  Atribua a quantidade de caracteres desta string desta linha de texto ao cursor de texto número de coluna desta caixa de texto.
+  Atribua a quantidade de caracteres desta string desta linha de texto ao cursor de texto número de coluna desta seleção desta caixa de texto.
 
 Rotina para que se mova o cursor de texto para o último caractere de uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
-  Atribua a contagem de linhas desta caixa de texto ao número de linhas do cursor desta seleção desta caixa de texto.
+  Atribua a contagem de linhas desta caixa de texto ao número de linhas do cursor desta seleção desta caixa de texto. \ calculated field
   Obtenha uma linha de texto usando o número de linhas do cursor desta seleção desta caixa de texto e a caixa de texto.
-  Atribua a quantidade de caracteres desta string desta linha de texto ao cursor de texto número de coluna desta caixa de texto.
+  Atribua a quantidade de caracteres desta string desta linha de texto ao cursor de texto número de coluna desta seleção desta caixa de texto.
 
 Rotina para que se mova o cursor de texto para a esquerda para algum non-alfanumérico byte em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Obtenha uma linha de texto usando o número de linhas do cursor desta seleção desta caixa de texto e a caixa de texto.
   Itere.
-    Se o cursor de texto número de coluna desta caixa de texto for 1, retorne.
-    Atribua o caractere inicial desta string desta linha de texto mais o cursor de texto número de coluna desta caixa de texto menos 2 para um endereço de byte .
+    Se o cursor de texto número de coluna desta seleção desta caixa de texto for 1, retorne.
+    Atribua o caractere inicial desta string desta linha de texto mais o cursor de texto número de coluna desta seleção desta caixa de texto menos 2 para um endereço de byte .
     Se o conteúdo deste endereço de byte não for alfanumérico, retorne.
-    Subtraia 1 desde o cursor de texto número de coluna desta caixa de texto.
+    Subtraia 1 desde o cursor de texto número de coluna desta seleção desta caixa de texto.
   Reitere.
 
 Rotina para que se mova o cursor de texto para a esquerda para algum non-noise byte em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Obtenha uma linha de texto usando o número de linhas do cursor desta seleção desta caixa de texto e a caixa de texto.
   Itere.
-    Se o cursor de texto número de coluna desta caixa de texto for 1, retorne.
-    Atribua o caractere inicial desta string desta linha de texto mais o cursor de texto número de coluna desta caixa de texto menos 2 para um endereço de byte .
+    Se o cursor de texto número de coluna desta seleção desta caixa de texto for 1, retorne.
+    Atribua o caractere inicial desta string desta linha de texto mais o cursor de texto número de coluna desta seleção desta caixa de texto menos 2 para um endereço de byte .
     Se o conteúdo deste endereço de byte não for irrelevante, retorne.
-    Subtraia 1 desde o cursor de texto número de coluna desta caixa de texto.
+    Subtraia 1 desde o cursor de texto número de coluna desta seleção desta caixa de texto.
   Reitere.
 
 Rotina para que se mova o cursor de texto para a esquerda para algum non-symbolic byte em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Obtenha uma linha de texto usando o número de linhas do cursor desta seleção desta caixa de texto e a caixa de texto.
   Itere.
-    Se o cursor de texto número de coluna desta caixa de texto for 1, retorne.
-    Atribua o caractere inicial desta string desta linha de texto mais o cursor de texto número de coluna desta caixa de texto menos 2 para um endereço de byte .
+    Se o cursor de texto número de coluna desta seleção desta caixa de texto for 1, retorne.
+    Atribua o caractere inicial desta string desta linha de texto mais o cursor de texto número de coluna desta seleção desta caixa de texto menos 2 para um endereço de byte .
     Se o conteúdo deste endereço de byte não for symbolic, retorne.
-    Subtraia 1 desde o cursor de texto número de coluna desta caixa de texto.
+    Subtraia 1 desde o cursor de texto número de coluna desta seleção desta caixa de texto.
   Reitere.
 
 Rotina para que se mova o cursor de texto para a esquerda em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
-  Subtraia 1 desde o cursor de texto número de coluna desta caixa de texto.
+  Subtraia 1 desde o cursor de texto número de coluna desta seleção desta caixa de texto.
   Delimite o cursor de texto na caixa de texto.
 
 Rotina para que se mova o cursor de texto para a direita para algum non-alfanumérico byte em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Obtenha uma linha de texto usando o número de linhas do cursor desta seleção desta caixa de texto e a caixa de texto.
   Itere.
-    Se o cursor de texto número de coluna desta caixa de texto é a quantidade de caracteres desta string desta linha de texto, retorne.
-    Atribua o caractere inicial desta string desta linha de texto mais o cursor de texto número de coluna desta caixa de texto menos 1 para um endereço de byte .
+    Se o cursor de texto número de coluna desta seleção desta caixa de texto é a quantidade de caracteres desta string desta linha de texto, retorne.
+    Atribua o caractere inicial desta string desta linha de texto mais o cursor de texto número de coluna desta seleção desta caixa de texto menos 1 para um endereço de byte .
     Se o conteúdo deste endereço de byte não for alfanumérico, retorne.
-    Adicione 1 para o cursor de texto número de coluna desta caixa de texto.
+    Adicione 1 para o cursor de texto número de coluna desta seleção desta caixa de texto.
   Reitere.
 
 Rotina para que se mova o cursor de texto para a direita para algum non-noise byte em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Obtenha uma linha de texto usando o número de linhas do cursor desta seleção desta caixa de texto e a caixa de texto.
   Itere.
-    Se o cursor de texto número de coluna desta caixa de texto é a quantidade de caracteres desta string desta linha de texto, retorne.
-    Atribua o caractere inicial desta string desta linha de texto mais o cursor de texto número de coluna desta caixa de texto menos 1 para um endereço de byte .
+    Se o cursor de texto número de coluna desta seleção desta caixa de texto é a quantidade de caracteres desta string desta linha de texto, retorne.
+    Atribua o caractere inicial desta string desta linha de texto mais o cursor de texto número de coluna desta seleção desta caixa de texto menos 1 para um endereço de byte .
     Se o conteúdo deste endereço de byte não for irrelevante, retorne.
-    Adicione 1 para o cursor de texto número de coluna desta caixa de texto.
+    Adicione 1 para o cursor de texto número de coluna desta seleção desta caixa de texto.
   Reitere.
 
 Rotina para que se mova o cursor de texto para a direita para algum non-symbolic byte em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Obtenha uma linha de texto usando o número de linhas do cursor desta seleção desta caixa de texto e a caixa de texto.
   Itere.
-    Se o cursor de texto número de coluna desta caixa de texto é a quantidade de caracteres desta string desta linha de texto, retorne.
-    Atribua o caractere inicial desta string desta linha de texto mais o cursor de texto número de coluna desta caixa de texto menos 1 para um endereço de byte .
+    Se o cursor de texto número de coluna desta seleção desta caixa de texto é a quantidade de caracteres desta string desta linha de texto, retorne.
+    Atribua o caractere inicial desta string desta linha de texto mais o cursor de texto número de coluna desta seleção desta caixa de texto menos 1 para um endereço de byte .
     Se o conteúdo deste endereço de byte não for symbolic, retorne.
-    Adicione 1 para o cursor de texto número de coluna desta caixa de texto.
+    Adicione 1 para o cursor de texto número de coluna desta seleção desta caixa de texto.
   Reitere.
 
 Rotina para que se mova o cursor de texto para a direita em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
-  Adicione 1 para o cursor de texto número de coluna desta caixa de texto.
+  Adicione 1 para o cursor de texto número de coluna desta seleção desta caixa de texto.
   Delimite o cursor de texto na caixa de texto.
 
 Rotina para que se mova o cursor de texto para cima em uma caixa de texto:
@@ -10853,7 +10853,7 @@ Rotina para que se atribua o painel de informações string duma caixa de texto pa
   Se a caixa de texto for inexistente,
     Limpe a string;
     Retorne.
-  Atribua a selecionado contagem de linhas desta caixa de texto para uma contagem.
+  Atribua a selecionado contagem de linhas desta caixa de texto para uma contagem. \ calculated field
   Se a contagem não for 0,
     Format a contagem e "linha selecionada" ou "linhas selecionadas" à string;
     Retorne.
@@ -10863,7 +10863,7 @@ Rotina para que se atribua o painel de informações string duma caixa de texto pa
     Retorne.
   Converta o número de linhas do cursor desta seleção desta caixa de texto para a string.
   Acrescente ":" para a string.
-  Acrescente o cursor de texto número de coluna desta caixa de texto para a string.
+  Acrescente o cursor de texto número de coluna desta seleção desta caixa de texto para a string.
 
 \Rotina para que se atribua uma lista sob o fim d'umas listas;
 Rotina para que se acrescente uma lista para umas listas:
@@ -10962,14 +10962,14 @@ Rotina para que se remova qualquer trecho selecionado em uma caixa de texto:
   Atribua o caractere inicial deste segundo subtexto mais o cursor de texto número de coluna desta seleção menos 1 ao caractere inicial deste segundo subtexto.
   Atribua o subtexto junto com o segundo subtexto à string desta linha de texto.
   Remova as linhas de texto de a caixa de texto entre a próxima linha de texto desta linha de texto e a segunda linha de texto.
-  Atribua o anchor desta seleção ao cursor de texto desta caixa de texto.
+  Atribua o anchor desta seleção ao cursor de texto desta seleção desta caixa de texto.
   Solte a caixa de texto.
 
 Rotina para que se remova bytes de uma caixa de texto (backspace depois de um Enter):
   Se a caixa de texto for inexistente, retorne.
   Se o número de linhas do cursor desta seleção desta caixa de texto for 1, retorne.
   Obtenha uma linha de texto usando o número de linhas do cursor desta seleção desta caixa de texto menos 1 e a caixa de texto.
-  Atribua a quantidade de caracteres desta string desta linha de texto e o número de linhas do cursor desta seleção desta caixa de texto menos 1 ao cursor de texto desta caixa de texto.
+  Atribua a quantidade de caracteres desta string desta linha de texto e o número de linhas do cursor desta seleção desta caixa de texto menos 1 ao cursor de texto desta seleção desta caixa de texto.
   Remova qualquer trecho selecionado na caixa de texto.
 
 Rotina para que se remova bytes de uma caixa de texto (backspace com pulo):
@@ -10977,7 +10977,7 @@ Rotina para que se remova bytes de uma caixa de texto (backspace com pulo):
   Se something estiver selecionado na caixa de texto,
     Remova qualquer trecho selecionado na caixa de texto;
     Retorne.
-  Se o cursor de texto número de coluna desta caixa de texto for 1,
+  Se o cursor de texto número de coluna desta seleção desta caixa de texto for 1,
     Remova bytes de a caixa de texto (backspace depois de um Enter);
     Retorne.
   Jump o cursor de texto para a esquerda na caixa de texto.
@@ -10988,7 +10988,7 @@ Rotina para que se remova bytes de uma caixa de texto (backspace):
   Se something estiver selecionado na caixa de texto,
     Remova qualquer trecho selecionado na caixa de texto;
     Retorne.
-  Se o cursor de texto número de coluna desta caixa de texto for 1,
+  Se o cursor de texto número de coluna desta seleção desta caixa de texto for 1,
     Remova bytes de a caixa de texto (backspace depois de um Enter);
     Retorne.
   Mova o cursor de texto para a esquerda na caixa de texto.
@@ -10996,8 +10996,8 @@ Rotina para que se remova bytes de uma caixa de texto (backspace):
 
 Rotina para que se remova bytes de uma caixa de texto (Delete + Enter):
   Se a caixa de texto for inexistente, retorne.
-  Se o número de linhas do cursor desta seleção desta caixa de texto for a contagem de linhas desta caixa de texto, retorne.
-  Atribua 1 e o número de linhas do cursor desta seleção desta caixa de texto mais 1 ao cursor de texto desta caixa de texto.
+  Se o número de linhas do cursor desta seleção desta caixa de texto for a contagem de linhas desta caixa de texto, retorne. \ calculated field
+  Atribua 1 e o número de linhas do cursor desta seleção desta caixa de texto mais 1 ao cursor de texto desta seleção desta caixa de texto.
   Remova qualquer trecho selecionado na caixa de texto.
 
 Rotina para que se remova bytes de uma caixa de texto (Delete + pulo):
@@ -11006,7 +11006,7 @@ Rotina para que se remova bytes de uma caixa de texto (Delete + pulo):
     Remova qualquer trecho selecionado na caixa de texto;
     Retorne.
   Obtenha uma linha de texto usando o número de linhas do cursor desta seleção desta caixa de texto e a caixa de texto.
-  Se o cursor de texto número de coluna desta caixa de texto é a quantidade de caracteres desta string desta linha de texto,
+  Se o cursor de texto número de coluna desta seleção desta caixa de texto é a quantidade de caracteres desta string desta linha de texto,
     Remova bytes de a caixa de texto (Delete + Enter);
     Retorne.
   Jump o cursor de texto para a direita na caixa de texto.
@@ -11018,7 +11018,7 @@ Rotina para que se remova bytes de uma caixa de texto (Tecla Del):
     Remova qualquer trecho selecionado na caixa de texto;
     Retorne.
   Obtenha uma linha de texto usando o número de linhas do cursor desta seleção desta caixa de texto e a caixa de texto.
-  Se o cursor de texto número de coluna desta caixa de texto é a quantidade de caracteres desta string desta linha de texto,
+  Se o cursor de texto número de coluna desta seleção desta caixa de texto é a quantidade de caracteres desta string desta linha de texto,
     Remova bytes de a caixa de texto (Delete + Enter);
     Retorne.
   Mova o cursor de texto para a direita na caixa de texto.
@@ -11141,7 +11141,7 @@ Rotina para que se redefina o alfabeto:
 
 Rotina para que se redefina o cursor de texto de uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
-  Atribua 1 e 1 ao cursor de texto desta caixa de texto.
+  Atribua 1 e 1 ao cursor de texto desta seleção desta caixa de texto.
 
 Rotina para que se redefina o contexto:
   Restaure o contexto.
@@ -11656,7 +11656,7 @@ Rotina para que se role um console usando um evento:
 Rotina para que se role uma caixa de texto para a base:
   Se a caixa de texto for inexistente, retorne.
   Se o sinalizador de rolagem vertical desta caixa de texto não estiver ativo, retorne.
-  Atribua a contagem de linhas desta caixa de texto menos 1 para um número.
+  Atribua a contagem de linhas desta caixa de texto menos 1 para um número. \ calculated field
   Atribua - o número vezes a altura da linha desta caixa de texto à coordenada Y desta caixa de texto.
   Delimite a origem de a caixa de texto.
 
@@ -11667,7 +11667,7 @@ Rotina para que se role uma caixa de texto para a base:
 
 Rotina para que se role uma caixa de texto para o cursor de texto:
   Se a caixa de texto for inexistente, retorne.
-  Se o número de coluna deste cursor de texto desta caixa de texto for 1, atribua a margem desta caixa de texto à coordenada X desta caixa de texto.
+  Se o número de coluna deste cursor de texto desta seleção desta caixa de texto for 1, atribua a margem desta caixa de texto à coordenada X desta caixa de texto.
   Obtenha uma caixa pelo cursor de texto na caixa de texto.
   Ajuste a caixa usando 0 e - a quantidade de twips/pixel e 0 e a quantidade de twips/pixel . \ cursor de texto caixas do not preencha entire linha de texto
   Se a coordenada Y1 desta caixa for menor do que a coordenada Y1 desta caixa de texto, atribua a coordenada Y1 desta caixa de texto menos a coordenada Y1 desta caixa ao número Y duma valor da diferença.
@@ -11737,8 +11737,8 @@ Rotina para que se role uma caixa de texto para cima one página:
 
 Rotina para que se selecione cada byte em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
-  Atribua 1 e 1 ao anchor desta caixa de texto.
-  Atribua a quantidade de caracteres desta string desta última linha de texto destas linhas de texto desta caixa de texto e a contagem de linhas desta caixa de texto ao cursor de texto desta caixa de texto.
+  Atribua 1 e 1 ao anchor desta seleção desta caixa de texto.
+  Atribua a quantidade de caracteres desta string desta última linha de texto destas linhas de texto desta caixa de texto e a contagem de linhas desta caixa de texto ao cursor de texto desta seleção desta caixa de texto. \ calculated field
 
 Rotina para que se selecione um número da linha usando uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
@@ -11747,7 +11747,7 @@ Rotina para que se selecione um número da linha usando uma caixa de texto:
   Atribua o número da linha ao anchor número da linha desta caixa de texto .
   Atribua 1 ao anchor número de coluna desta caixa de texto.
   Atribua o número da linha ao número de linhas do cursor desta seleção desta caixa de texto.
-  Atribua a quantidade de caracteres desta string desta linha de texto ao cursor de texto número de coluna desta caixa de texto.
+  Atribua a quantidade de caracteres desta string desta linha de texto ao cursor de texto número de coluna desta seleção desta caixa de texto.
 
 Rotina para que se envie um trecho para um soquete:
   Limpe o erro do fluxo de entrada/saída.
@@ -12293,12 +12293,12 @@ Rotina para que se enquadre a seleção atual em uma caixa de texto:
   Normalize a seleção desta caixa de texto.
   Obtenha uma linha de texto usando o número de linhas do cursor desta seleção desta caixa de texto e a caixa de texto.
   Atribua 1 ao anchor número de coluna desta caixa de texto.
-  Se o cursor de texto número de coluna desta caixa de texto não for 1,
+  Se o cursor de texto número de coluna desta seleção desta caixa de texto não for 1,
     Adicione 1 para o número de linhas do cursor desta seleção desta caixa de texto;
-    Atribua 1 ao cursor de texto número de coluna desta caixa de texto.
-  Se o número de linhas do cursor desta seleção desta caixa de texto for menor do que ou igual à contagem de linhas desta caixa de texto, retorne.
-  Atribua a contagem de linhas desta caixa de texto ao número da linha deste cursor de texto desta caixa de texto.
-  Atribua a quantidade de caracteres desta string desta linha de texto ao número de coluna deste cursor de texto desta caixa de texto.
+    Atribua 1 ao cursor de texto número de coluna desta seleção desta caixa de texto.
+  Se o número de linhas do cursor desta seleção desta caixa de texto for menor do que ou igual à contagem de linhas desta caixa de texto, retorne. \ calculated field
+  Atribua a contagem de linhas desta caixa de texto ao número da linha deste cursor de texto desta seleção desta caixa de texto. \ calculated field
+  Atribua a quantidade de caracteres desta string desta linha de texto ao número de coluna deste cursor de texto desta seleção desta caixa de texto.
 
 Rotina para que se comece aleatoriamente em uma caixa:
   Escolha aleatoriamente a localização deste contexto na caixa.
@@ -12949,8 +12949,8 @@ Rotina para que se aguarde até que narração esteja concluída:
 Rotina para que se selecione o texto em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Se o sinalizador de quebra de texto desta caixa de texto não estiver ativo, retorne.
-  Converta o anchor desta caixa de texto para um posicionamento absoluto usando a caixa de texto.
-  Converta o cursor de texto desta caixa de texto para uma segundo posicionamento absoluto usando a caixa de texto.
+  Converta o anchor desta seleção desta caixa de texto para um posicionamento absoluto usando a caixa de texto.
+  Converta o cursor de texto desta seleção desta caixa de texto para uma segundo posicionamento absoluto usando a caixa de texto.
   Atribua o fator de escala desta caixa de texto para uma fração.
   Redimensione proporcionalmente a caixa de texto para 1/1.
   Extraia uma string desde a caixa de texto.
@@ -12967,8 +12967,8 @@ Rotina para que se selecione o texto em uma caixa de texto:
   Destrua o número da fonte de o contexto de dispositivo de memória.
   Enumere novamente as linhas de texto desta caixa de texto.
   Redimensione proporcionalmente a caixa de texto para a fração.
-  Converta o posicionamento absoluto para o anchor desta caixa de texto usando a caixa de texto.
-  Converta o segundo posicionamento absoluto para o cursor de texto desta caixa de texto usando a caixa de texto.
+  Converta o posicionamento absoluto para o anchor desta seleção desta caixa de texto usando a caixa de texto.
+  Converta o segundo posicionamento absoluto para o cursor de texto desta seleção desta caixa de texto usando a caixa de texto.
   Delimite a origem de a caixa de texto.
 
 Rotina para que se salve um trecho em um arquivo;
