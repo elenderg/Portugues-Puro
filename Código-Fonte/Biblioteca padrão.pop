@@ -77,12 +77,12 @@ Uma caixa é uma estrutura com
   Uma localização denominada canto superior esquerdo sob a coordenada X1, [left-top]
   Uma localização denominada canto inferior direito sob a coordenada X2, [right-bottom]
   Uma localização denominada canto esquerdo superior sob a coordenada X1, [top-left]
-  Um localização denominada canto direito inferior sob a coordenada X2. [bottom-right]
+  Uma localização denominada canto direito inferior sob a coordenada X2. [bottom-right]
 
 Uma proporção é uma fração.
 
 Um numeral misto é uma estrutura com
-  Um número denominado número inteiro e
+  Um número denominado número inteiro,
   Uma proporção e
   Uma fração sob a proporção.
  
@@ -156,7 +156,7 @@ Uma caixa de texto é uma lista com
   Um sinalizador de alteração,
   Uma última operação,
   Umas caixas de texto denominadas restaurações, \reversões 
-  Umas caixas de texto denominadas alterações. \ 
+  Umas caixas de texto denominadas alterações. \ modificações
 
 Uma seleção é uma estrutura com
   Um anchor número de coluna,
@@ -352,12 +352,9 @@ Um email é uma estrutura com
 
 Uma fila de eventos é [composta de] uns eventos.
 Uns extra pontos osmosianos são uns pontos osmosianos.
-
 Um delta é um número.
 Um número quadrado é um número.
-
-Um finger é um endereço de byte .
-
+Um índice é um endereço de byte.
 Um sinalizador é uma estrutura com 4 bytes.
 
 Uma fonte é uma estrutura com
@@ -365,11 +362,8 @@ Uma fonte é uma estrutura com
   Uma altura.
 
 Um altura da fonte é [composta de] uns twips. \ indica a altura da linha - as letras devem encaixar-se sem problemas na altura da fonte
-
 Um identificador de fonte é um número identificador.
-
 Um pé são 12 polegadas.
-
 Uma string plural é uma string.
 Uma string singular é uma string.
 
@@ -391,13 +385,9 @@ Um nome de dll é uma string.
 Um nome de função é uma string.
 Um nome de processo é uma string.
 Uma contagem de itens é uma contagem.
-
-Um gigabyte é 1024 megabytes.
-
+Um gigabyte são 1024 megabytes.
 Um GpBitmap é um GpImage.
-
 Um GpGraphic é um ponteiro.
-
 Um GpImage é um ponteiro.
 
 Um GpRect é uma estrutura com
@@ -407,9 +397,7 @@ Um GpRect é uma estrutura com
   Um número denominado altura.
 
 O gpToken é um gpToken.
-
 Um gpToken é um número.
-
 Uma malha quadriculada é um par de números.
 
 Um GUID é um UUID. \ identificador único global
@@ -5403,9 +5391,9 @@ Função para que se determine se um evento foi alterado:
   Se o sinalizador de tecla Alt deste evento estiver ativo, diga sim.
   Diga não.
 
-Função para que se determine se um finger ultrapassou o fim de uma string:
-  Se o finger for inexistente, diga sim.
-  Se o finger for maior do que o caractere final desta string, diga sim.
+Função para que se determine se um índice ultrapassou o fim de uma string:
+  Se o índice for inexistente, diga sim.
+  Se o índice for maior do que o caractere final desta string, diga sim.
   Diga não.
 
 \Função para que se determine se uma bandeira está levantada;
@@ -7568,8 +7556,8 @@ Rotina para que se encontre próximo usando uma linha de texto e uma caixa de tex
     Mova o subtexto usando 1.
   Reitere.
   Ative o sinalizador.
-  Atribua o caractere inicial deste subtexto menos o caractere inicial desta string desta linha de texto mais 1 ao anchor número de coluna desta caixa de texto.
-  Atribua o número da linha desta linha de texto ao anchor número da linha desta caixa de texto .
+  Atribua o caractere inicial deste subtexto menos o caractere inicial desta string desta linha de texto mais 1 ao anchor número de coluna desta seleção desta caixa de texto.
+  Atribua o número da linha desta linha de texto ao anchor número da linha desta seleção desta caixa de texto .
   Atribua o caractere final deste subtexto menos o caractere inicial desta string desta linha de texto mais 2 ao cursor de texto número de coluna desta seleção desta caixa de texto.
   Atribua o número da linha desta linha de texto ao número de linhas do cursor desta seleção desta caixa de texto.
 
@@ -7618,8 +7606,8 @@ Rotina para que se encontre o próximo misspelling usando uma linha de texto e um
     Se o segmento inicial deste percorredor estiver em branco, retorne.
     Se o segmento inicial deste percorredor não estiver escrito incorretamente, reitere.
   Ative o sinalizador.
-  Atribua o caractere inicial deste segmento inicial deste percorredor menos o caractere inicial desta string desta linha de texto mais 1 ao anchor número de coluna desta caixa de texto.
-  Atribua o número da linha desta linha de texto ao anchor número da linha desta caixa de texto .
+  Atribua o caractere inicial deste segmento inicial deste percorredor menos o caractere inicial desta string desta linha de texto mais 1 ao anchor número de coluna desta seleção desta caixa de texto.
+  Atribua o número da linha desta linha de texto ao anchor número da linha desta seleção desta caixa de texto .
   Atribua o caractere final deste segmento inicial deste percorredor menos o caractere inicial desta string desta linha de texto mais 2 ao cursor de texto número de coluna desta seleção desta caixa de texto.
   Atribua o número da linha desta linha de texto ao número de linhas do cursor desta seleção desta caixa de texto.
 
@@ -7872,15 +7860,15 @@ Rotina para que se obtenha uma caixa pelo cursor de texto em uma caixa de texto:
     Retorne.
   Obtenha uma localização usando o cursor de texto desta seleção desta caixa de texto e a caixa de texto.
   Atribua a localização e a localização ao caixa.
-  Adicione a altura da linha desta caixa de texto para a coordenada Y2 desta caixa.
+  Adicione a altura da linha desta caixa de texto para a coordenada Y2 desta caixa.\ calculated field
   Ajuste a caixa usando 0 e a quantidade de twips/pixel e 0 e - a quantidade de twips/pixel .
-  Atribua a globalized origem desta caixa de texto para um origem.
+  Atribua a globalized origem desta caixa de texto para um origem. \ calculated field
   Se a coordenada X1 desta caixa for menor do que a coordenada X desta origem,
     Atribua a coordenada X desta origem à coordenada X1 desta caixa;
     Atribua a coordenada X desta origem à coordenada X2 desta caixa.
   Se o sinalizador de quebra de texto desta caixa de texto não estiver ativo, retorne.
-  Delimite a coordenada X1 desta caixa para a coordenada X1 desta caixa de texto e a coordenada X2 desta caixa de texto.
-  Delimite a coordenada X2 desta caixa para a coordenada X1 desta caixa de texto e a coordenada X2 desta caixa de texto.
+  Delimite a coordenada X1 desta caixa para a coordenada X1 desta caixa desta caixa de texto e a coordenada X2 desta caixa desta caixa de texto.
+  Delimite a coordenada X2 desta caixa para a coordenada X1 desta caixa desta caixa de texto e a coordenada X2 desta caixa desta caixa de texto.
 
 Rotina para que se obtenha uma caixa por uma linha reta:
   Atribua a localização inicial desta linha reta ao canto superior esquerdo desta caixa.
@@ -7894,10 +7882,10 @@ Rotina para que se obtenha uma caixa usando uma linha de texto e uma caixa de te
   Se a linha de texto for inexistente,
     Zero a caixa;
     Retorne.
-  Atribua a globalized origem desta caixa de texto ao canto superior esquerdo desta caixa.
-  Adicione o número da linha desta linha de texto menos 1 vezes a altura da linha desta caixa de texto para a coordenada Y1 desta caixa.
-  Atribua a coordenada X2 desta caixa de texto à coordenada X2 desta caixa.
-  Atribua a coordenada Y1 desta caixa mais a altura da linha desta caixa de texto à coordenada Y2 desta caixa.
+  Atribua a globalized origem desta caixa de texto ao canto superior esquerdo desta caixa. \ calculated field
+  Adicione o número da linha desta linha de texto menos 1 vezes a altura da linha desta caixa de texto para a coordenada Y1 desta caixa.\ calculated field
+  Atribua a coordenada X2 desta caixa desta caixa de texto à coordenada X2 desta caixa.
+  Atribua a coordenada Y1 desta caixa mais a altura da linha desta caixa de texto à coordenada Y2 desta caixa.\ calculated field
 
 Rotina para que se obtenha um recipiente usando um recipiente# e um catálogo:
   \ Se o catálogo for inexistente, esvazie o recipiente;    Retorne. \ para deixar o compilador mais rápido
@@ -8386,8 +8374,8 @@ Rotina para que se obtenha uma linha de texto usando uma localização e uma caixa
     Esvazie a linha de texto;
     Retorne.
   Atribua a coordenada Y desta localização para uma coordenada Y.
-  Delimite a coordenada Y para a coordenada Y1 desta caixa de texto e a coordenada Y2 desta caixa de texto.
-  Atribua a coordenada Y menos a coordenada Y desta globalized origem desta caixa de texto dividido pela altura da linha desta caixa de texto mais 1 para um número da linha.
+  Delimite a coordenada Y para a coordenada Y1 desta caixa desta caixa de texto e a coordenada Y2 desta caixa desta caixa de texto.
+  Atribua a coordenada Y menos a coordenada Y desta globalized origem desta caixa de texto dividido pela altura da linha desta caixa de texto mais 1 para um número da linha. \ calculated field
   Delimite o número da linha para 1 e a contagem de linhas desta caixa de texto. \ calculated field
   Obtenha a linha de texto usando o número da linha e a caixa de texto.
 
@@ -8402,19 +8390,19 @@ Rotina para que se obtenha uma caixa de seleção usando uma linha de texto e uma 
 
 Rotina para que se obtenha uma caixa de seleção usando uma linha de texto e uma caixa de texto (lado esquerdo):
   Atribua a normalized seleção desta caixa de texto para uma seleção. \ calculated field
-  Atribua a coordenada X desta globalized origem desta caixa de texto à coordenada X1 desta caixa de seleção.
+  Atribua a coordenada X desta globalized origem desta caixa de texto à coordenada X1 desta caixa de seleção. \ calculated field
   Se o anchor número da linha desta seleção for o número da linha desta linha de texto,
     Obtenha uma localização usando o anchor desta seleção e a caixa de texto;
     Atribua a coordenada X desta localização à coordenada X1 desta caixa de seleção.
-  Delimite a coordenada X1 desta caixa de seleção para a coordenada X1 desta caixa de texto e a coordenada X2 desta caixa de texto.
+  Delimite a coordenada X1 desta caixa de seleção para a coordenada X1 desta caixa desta caixa de texto e a coordenada X2 desta caixa desta caixa de texto.
 
 Rotina para que se obtenha uma caixa de seleção usando uma linha de texto e uma caixa de texto (lado direito):
   Atribua a normalized seleção desta caixa de texto para uma seleção. \ calculated field
-  Atribua a coordenada X2 desta caixa de texto à coordenada X2 desta caixa de seleção.
+  Atribua a coordenada X2 desta caixa desta caixa de texto à coordenada X2 desta caixa de seleção.
   Se o número de linhas do cursor desta seleção for o número da linha desta linha de texto,
     Obtenha uma localização usando o cursor de texto desta seleção e a caixa de texto;
     Atribua a coordenada X desta localização à coordenada X2 desta caixa de seleção.
-  Delimite a coordenada X2 desta caixa de seleção para a coordenada X1 desta caixa de texto e a coordenada X2 desta caixa de texto.
+  Delimite a coordenada X2 desta caixa de seleção para a coordenada X1 desta caixa desta caixa de texto e a coordenada X2 desta caixa desta caixa de texto.
 
 Rotina para que se obtenha um tamanho usando um endereço completo no sistema de arquivos:
   Se o endereço completo for do tipo pasta, obtenha o tamanho usando o endereço completo no sistema de arquivos (pasta)[endereço].
@@ -8495,7 +8483,7 @@ Rotina para que se obtenha um comece largura e um subtexto usando uma linha de t
   Obtenha uma caixa usando a linha de texto e a caixa de texto.
   Lance o subtexto sobre o working string desta linha de texto.
   Obtenha um offset par de números usando o subtexto e a caixa e a fonte desta caixa de texto e o alinhamento desta caixa de texto (rapidamente).
-  Atribua a coordenada X desta globalized origem desta caixa de texto mais o número X deste offset par de números ao comece largura.
+  Atribua a coordenada X desta globalized origem desta caixa de texto mais o número X deste offset par de números ao comece largura. \ calculated field
   Atribua o caractere inicial deste subtexto mais a caixa de texto cutoff menos 1 ao caractere final deste subtexto.
   Itere.
     Se o caractere final deste subtexto for maior do que ou igual ao caractere final desta string desta linha de texto, pare.
@@ -9718,7 +9706,7 @@ Rotina para que se insira uma string Para uma caixa de texto:
   Insira a string à segunda string antes de o cursor de texto número de coluna desta seleção desta caixa de texto.
   Converta a segunda string para umas linhas de texto.
   Atribua a última linha de texto destas linhas de texto para uma segunda linha de texto.
-  Insira as linhas de texto A as linhas de texto desta caixa de texto antes de a linha de texto.
+  Insira as linhas de texto PARA as linhas de texto desta caixa de texto antes de a linha de texto. \ PARA \ A
   Remova a linha de texto desde as linhas de texto desta caixa de texto.
   Destrua a linha de texto.
   Enumere novamente as linhas de texto desta caixa de texto.
@@ -9969,9 +9957,9 @@ Rotina para que se lowercase um byte:
   \adicione 32 para cada letra entre "A" and "Z" da string.
   Substitua o byte usando o tabela de caracteres minúsculos ASCII .
 
-Rotina para que se lowercase o caractere depois de um finger e atribua it para uma string:
-  Se o finger for inexistente, retorne.
-  Atribua o conteúdo deste finger à string.
+Rotina para que se lowercase o caractere depois de um índice e atribua it para uma string:
+  Se o índice for inexistente, retorne.
+  Atribua o conteúdo deste índice à string.
   Lowercase a string.
 
 Rotina para que se lowercase uma string:
@@ -10115,12 +10103,12 @@ Rotina para que se inverta horizontalmente uma imagem:
 
 Rotina para que se mova o anchor para o lado esquerdo para algum non-alfanumérico byte em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
-  Obtenha uma linha de texto usando o anchor número da linha desta caixa de texto e a caixa de texto.
+  Obtenha uma linha de texto usando o anchor número da linha desta seleção desta caixa de texto e a caixa de texto.
   Itere.
-    Se o anchor número de coluna desta caixa de texto for 1, retorne.
-    Atribua o caractere inicial desta string desta linha de texto mais o anchor número de coluna desta caixa de texto menos 2 para um endereço de byte .
+    Se o anchor número de coluna desta seleção desta caixa de texto for 1, retorne.
+    Atribua o caractere inicial desta string desta linha de texto mais o anchor número de coluna desta seleção desta caixa de texto menos 2 para um endereço de byte .
     Se o conteúdo deste endereço de byte não for alfanumérico, retorne.
-    Subtraia 1 desde o anchor número de coluna desta caixa de texto.
+    Subtraia 1 desde o anchor número de coluna desta seleção desta caixa de texto.
   Reitere.
 
 Rotina para que se mova o cursor de texto para baixo em uma caixa de texto:
@@ -10130,7 +10118,7 @@ Rotina para que se mova o cursor de texto para baixo em uma caixa de texto:
 
 Rotina para que se mova o cursor de texto para baixo one página em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
-  Adicione as linhas de texto/box desta caixa de texto para o número de linhas do cursor desta seleção desta caixa de texto.
+  Adicione as linhas de texto/box desta caixa de texto para o número de linhas do cursor desta seleção desta caixa de texto. \ calculated field
   Subtraia 1 desde o número de linhas do cursor desta seleção desta caixa de texto.
   Delimite o cursor de texto na caixa de texto.
 
@@ -10230,13 +10218,13 @@ Rotina para que se mova o cursor de texto para cima em uma caixa de texto:
 
 Rotina para que se mova o cursor de texto para cima one página em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
-  Subtraia as linhas de texto/box desta caixa de texto desde o número de linhas do cursor desta seleção desta caixa de texto.
+  Subtraia as linhas de texto/box desta caixa de texto desde o número de linhas do cursor desta seleção desta caixa de texto. \ calculated field
   Adicione 1 para o número de linhas do cursor desta seleção desta caixa de texto.
   Delimite o cursor de texto na caixa de texto.
 
-Rotina para que se mova um finger sobre um número:
-  Se o finger for inexistente, retorne.
-  Adicione 1 para o finger.
+Rotina para que se mova um índice sobre um número:
+  Se o índice for inexistente, retorne.
+  Adicione 1 para o índice.
 
 Rotina para que se mova uma imagem para baixo uns twips:
   Mova a imagem usando 0 e os twips.
@@ -10562,11 +10550,11 @@ Rotina para que se anteponha umas listas para umas outras listas:
   Anteponha a lista para a outras listas.
   Reitere.
 
-Rotina para que se atribua o caractere depois de um finger para um caractere:
-  Se o finger for inexistente,
+Rotina para que se atribua o caractere depois de um índice para um caractere:
+  Se o índice for inexistente,
     Limpe o caractere;
     Retorne.
-  Atribua o conteúdo deste finger ao caractere.
+  Atribua o conteúdo deste índice ao caractere.
 
 Rotina para que se atribua um date/time para uma segunda date/time:
   Atribua o número do ano deste date/time ao número do ano desta segunda date/time.
@@ -10594,8 +10582,8 @@ Rotina para que se atribua a string dum date/time para uma string:
   Acrescente ":" para a string.
   Zero preencha o número de milissegundos  deste date/time usando 3 e acrescente o mesmo para a string.
 
-Rotina para que se atribua um finger sobre o primeiro caractere de uma string:
-  Atribua o caractere inicial desta string ao finger.
+Rotina para que se atribua um índice sobre o primeiro caractere de uma string:
+  Atribua o caractere inicial desta string ao índice.
 
 Rotina para que se atribua a contagem dum catálogo para uma contagem:
   Atribua 0 à contagem.
@@ -10827,7 +10815,7 @@ Rotina para que se atribua as linhas de texto/box duma caixa de texto para uma c
   Se a caixa de texto for inexistente,
     Atribua 0 à contagem;
     Retorne.
-  Atribua a altura desta caixa desta caixa de texto dividido pela altura da linha desta caixa de texto à contagem.
+  Atribua a altura desta caixa desta caixa de texto dividido pela altura da linha desta caixa de texto à contagem.\ calculated field
 
 Rotina para que se atribua a quantidade de caracteres selecionados duma caixa de texto para uma contagem:
   Atribua 0 à contagem.
@@ -11657,7 +11645,7 @@ Rotina para que se role uma caixa de texto para a base:
   Se a caixa de texto for inexistente, retorne.
   Se o sinalizador de rolagem vertical desta caixa de texto não estiver ativo, retorne.
   Atribua a contagem de linhas desta caixa de texto menos 1 para um número. \ calculated field
-  Atribua - o número vezes a altura da linha desta caixa de texto à coordenada Y desta caixa de texto.
+  Atribua - o número vezes a altura da linha desta caixa de texto à coordenada Y desta caixa de texto.\ calculated field
   Delimite a origem de a caixa de texto.
 
   Multiplique o número por -1.
@@ -11670,10 +11658,10 @@ Rotina para que se role uma caixa de texto para o cursor de texto:
   Se o número de coluna deste cursor de texto desta seleção desta caixa de texto for 1, atribua a margem desta caixa de texto à coordenada X desta caixa de texto.
   Obtenha uma caixa pelo cursor de texto na caixa de texto.
   Ajuste a caixa usando 0 e - a quantidade de twips/pixel e 0 e a quantidade de twips/pixel . \ cursor de texto caixas do not preencha entire linha de texto
-  Se a coordenada Y1 desta caixa for menor do que a coordenada Y1 desta caixa de texto, atribua a coordenada Y1 desta caixa de texto menos a coordenada Y1 desta caixa ao número Y duma valor da diferença.
-  Se a coordenada Y2 desta caixa for maior do que a coordenada Y2 desta caixa de texto, atribua a coordenada Y2 desta caixa de texto menos a coordenada Y2 desta caixa ao número Y deste valor da diferença.
-  Se a coordenada X1 desta caixa for menor do que a coordenada X1 desta caixa de texto , atribua a coordenada X1 desta caixa de texto menos a coordenada X1 desta caixa ao número X deste valor da diferença.
-  Se a coordenada X2 desta caixa for maior do que a coordenada X2 desta caixa de texto, atribua a coordenada X2 desta caixa de texto menos a coordenada X2 desta caixa ao número X deste valor da diferença.
+  Se a coordenada Y1 desta caixa for menor do que a coordenada Y1 desta caixa desta caixa de texto, atribua a coordenada Y1 desta caixa desta caixa de texto menos a coordenada Y1 desta caixa ao número Y duma valor da diferença.
+  Se a coordenada Y2 desta caixa for maior do que a coordenada Y2 desta caixa desta caixa de texto, atribua a coordenada Y2 desta caixa desta caixa de texto menos a coordenada Y2 desta caixa ao número Y deste valor da diferença.
+  Se a coordenada X1 desta caixa for menor do que a coordenada X1 desta caixa desta caixa de texto , atribua a coordenada X1 desta caixa desta caixa de texto menos a coordenada X1 desta caixa ao número X deste valor da diferença.
+  Se a coordenada X2 desta caixa for maior do que a coordenada X2 desta caixa desta caixa de texto, atribua a coordenada X2 desta caixa desta caixa de texto menos a coordenada X2 desta caixa ao número X deste valor da diferença.
   Se o valor da diferença for 0, retorne.
   Role a caixa de texto usando o valor da diferença.
 
@@ -11684,27 +11672,27 @@ Rotina para que se role uma caixa de texto para o cursor de texto e centralize-o
   Se a caixa estiver dentro de a caixa desta caixa de texto, retorne.
   Ajuste a caixa usando 0 e - a quantidade de twips/pixel e 0 e a quantidade de twips/pixel . \ cursor de texto caixas don not preencha entire linha de texto
   Atribua o y-extent desta caixa desta caixa de texto dividido por 2 para uma altura.
-  Arredonde a altura para baixo usando o múltiplo imediato de a altura da linha desta caixa de texto.
+  Arredonde a altura para baixo usando o múltiplo imediato de a altura da linha desta caixa de texto.\ calculated field
   Atribua a coordenada Y1 desta caixa desta caixa de texto mais a altura para uma coordenada Y1.
-  Atribua a coordenada Y1 mais a altura da linha desta caixa de texto para uma coordenada Y2.
+  Atribua a coordenada Y1 mais a altura da linha desta caixa de texto para uma coordenada Y2.\ calculated field
   Se a coordenada Y1 desta caixa for menor do que a coordenada Y1, atribua a coordenada Y1 menos a coordenada Y1 desta caixa ao número Y duma valor da diferença.
   Se a coordenada Y2 desta caixa for maior do que a coordenada Y2, atribua a coordenada Y2 menos a coordenada Y2 desta caixa ao número Y deste valor da diferença.
-  Se a coordenada X1 desta caixa for menor do que a coordenada X1 desta caixa de texto , atribua a coordenada X1 desta caixa de texto menos a coordenada X1 desta caixa ao número X deste valor da diferença.
-  Se a coordenada X2 desta caixa for maior do que a coordenada X2 desta caixa de texto, atribua a coordenada X2 desta caixa de texto menos a coordenada X2 desta caixa ao número X deste valor da diferença.
+  Se a coordenada X1 desta caixa for menor do que a coordenada X1 desta caixa desta caixa de texto , atribua a coordenada X1 desta caixa desta caixa de texto menos a coordenada X1 desta caixa ao número X deste valor da diferença.
+  Se a coordenada X2 desta caixa for maior do que a coordenada X2 desta caixa desta caixa de texto, atribua a coordenada X2 desta caixa desta caixa de texto menos a coordenada X2 desta caixa ao número X deste valor da diferença.
   Se o valor da diferença for 0, retorne.
   Role a caixa de texto usando o valor da diferença.
 
 Rotina para que se role uma caixa de texto para baixo one linha reta:
   Se a caixa de texto for inexistente, retorne.
   Se o sinalizador de rolagem vertical desta caixa de texto não estiver ativo, retorne.
-  Atribua - a altura da linha desta caixa de texto ao número Y duma valor da diferença. \ reescrever esse comando
+  Atribua - a altura da linha desta caixa de texto ao número Y duma valor da diferença. \ \ calculated field. reescrever esse comando
   Role a caixa de texto usando o valor da diferença.
 
 Rotina para que se role uma caixa de texto para baixo one página:
   Se a caixa de texto for inexistente, retorne.
   Se o sinalizador de rolagem vertical desta caixa de texto não estiver ativo, retorne.
   Subtraia o y-extent desta caixa desta caixa de texto desde a coordenada Y desta caixa de texto.
-  Adicione a altura da linha desta caixa de texto para a coordenada Y desta caixa de texto.
+  Adicione a altura da linha desta caixa de texto para a coordenada Y desta caixa de texto.\ calculated field
   Delimite a origem de a caixa de texto.
 
 Rotina para que se role uma caixa de texto usando uma valor da diferença:
@@ -11725,14 +11713,14 @@ Rotina para que se role uma caixa de texto para o topo:
 Rotina para que se role uma caixa de texto para cima one linha reta:
   Se a caixa de texto for inexistente, retorne.
   Se o sinalizador de rolagem vertical desta caixa de texto não estiver ativo, retorne.
-  Atribua a altura da linha desta caixa de texto ao número Y duma valor da diferença.
+  Atribua a altura da linha desta caixa de texto ao número Y duma valor da diferença.\ calculated field
   Role a caixa de texto usando o valor da diferença.
 
 Rotina para que se role uma caixa de texto para cima one página:
   Se a caixa de texto for inexistente, retorne.
   Se o sinalizador de rolagem vertical desta caixa de texto não estiver ativo, retorne.
   Adicione o y-extent desta caixa desta caixa de texto para a coordenada Y desta caixa de texto.
-  Subtraia a altura da linha desta caixa de texto desde a coordenada Y desta caixa de texto.
+  Subtraia a altura da linha desta caixa de texto desde a coordenada Y desta caixa de texto.\ calculated field
   Delimite a origem de a caixa de texto.
 
 Rotina para que se selecione cada byte em uma caixa de texto:
@@ -11744,8 +11732,8 @@ Rotina para que se selecione um número da linha usando uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Obtenha uma linha de texto usando o número da linha e a caixa de texto.
   Se a linha de texto for inexistente, retorne.
-  Atribua o número da linha ao anchor número da linha desta caixa de texto .
-  Atribua 1 ao anchor número de coluna desta caixa de texto.
+  Atribua o número da linha ao anchor número da linha desta seleção desta caixa de texto .
+  Atribua 1 ao anchor número de coluna desta seleção desta caixa de texto.
   Atribua o número da linha ao número de linhas do cursor desta seleção desta caixa de texto.
   Atribua a quantidade de caracteres desta string desta linha de texto ao cursor de texto número de coluna desta seleção desta caixa de texto.
 
@@ -12292,7 +12280,7 @@ Rotina para que se enquadre a seleção atual em uma caixa de texto:
   Se nada estiver selecionado na caixa de texto, retorne.
   Normalize a seleção desta caixa de texto.
   Obtenha uma linha de texto usando o número de linhas do cursor desta seleção desta caixa de texto e a caixa de texto.
-  Atribua 1 ao anchor número de coluna desta caixa de texto.
+  Atribua 1 ao anchor número de coluna desta seleção desta caixa de texto.
   Se o cursor de texto número de coluna desta seleção desta caixa de texto não for 1,
     Adicione 1 para o número de linhas do cursor desta seleção desta caixa de texto;
     Atribua 1 ao cursor de texto número de coluna desta seleção desta caixa de texto.
@@ -13396,9 +13384,9 @@ Rotina para que se anteponha uma string para uma segunda string:
   Atribua o ponteiro ao caractere inicial desta segunda string.
   Atribua o caractere inicial desta segunda string mais a quantidade de caracteres agrupados menos 1 ao caractere final desta segunda string.
 
-Rotina para que se uppercase o caractere depois de um finger e atribua it para uma string:
-  Se o finger for inexistente, retorne.
-  Atribua o conteúdo deste finger à string.
+Rotina para que se uppercase o caractere depois de um índice e atribua it para uma string:
+  Se o índice for inexistente, retorne.
+  Atribua o conteúdo deste índice à string.
   Uppercase a string.
 
 Rotina para que se uppercase uma string:
