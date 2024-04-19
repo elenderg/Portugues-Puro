@@ -168,23 +168,23 @@ Uma seleção é uma estrutura com
 
 Um sinalizador de quebra de texto é um sinalizador.
 
-Um campo de texto é uma lista com
-  Uma caixa,
-  Uma origem,
-  Uma cor da canetinha,
-  Uma fonte,
-  Um alinhamento,
-  Umas linhas de texto,
-  Uma margem,
-  Uma fator de escala,
-  Um sinalizador de quebra de texto,
-  Um sinalizador de rolagem horizontal,
-  Um sinalizador de rolagem vertical,
-  Uma seleção,
-  Um sinalizador de alteração,
-  Uma última operação,
-  Umas caixas de texto denominadas restaurações, \, desfeiteado ou manipulações anteriores -> reversões
-  Umas caixas de texto denominadas alterações. \ manipulações posteriores
+\Um campo de texto é uma lista com
+  \Uma caixa,
+  \Uma origem,
+  \Uma cor da canetinha,
+  \Uma fonte,
+  \Um alinhamento,
+  \Umas linhas de texto,
+  \Uma margem,
+  \Uma fator de escala,
+  \Um sinalizador de quebra de texto,
+  \Um sinalizador de rolagem horizontal,
+  \Um sinalizador de rolagem vertical,
+  \Uma seleção,
+  \Um sinalizador de alteração,
+  \Uma última operação,
+  \Umas caixas de texto denominadas restaurações, \, desfeiteado ou manipulações anteriores -> reversões
+  \Umas caixas de texto denominadas alterações. \ manipulações posteriores
 
 Um número do texto é um número.
 
@@ -215,22 +215,19 @@ Uma díade é uma lista com
   Um nome,
   Um valor da díade. 
 
-Um contexto é uma lista com \Um contexto de dispositivo é uma estrutura que define um conjunto de objetos gráficos e seus atributos associados,
-  Uma localização,  \bem como os modos gráficos que afetam a saída. Pense nele como a tela do monitor.
+Um contexto é uma lista com \ Um contexto de dispositivo é uma estrutura que define um conjunto de objetos gráficos e seus atributos associados,
+  Uma localização,                     \ bem como os modos gráficos que afetam a saída. Pense nele como a tela do monitor.
   Uma caixa,
   Uma orientação,
   Um tamanho da letra,
   Uma cor,
   Uma canetinha sob a cor,
   Um número e
-  Uma grossura da canetinha.
+  Uma grossura da canetinha. \ check
 
 Um byte# é um número.
-
 Um canvas é um hDC. \ hDC = handle to a device context
-
 Um recipiente# é um número.
-
 Um bit é uma unidade.
 
 Um percorredor é uma estrutura com \ Não se esqueça de alterar as rotinas "avance um percorredor" e "recue um percorredor" se você alterar isso aqui
@@ -262,22 +259,19 @@ Um título de índice remissivo é uma string.
 Um versículo é uma lista com uma string.
 
 Um código binário é uma string.
-
 Um brilho é uma luminosidade.
-
 Um contagem de recipientes é uma contagem.
 Um conjunto de recipientes é uma estrutura com umas referências.
 Um recipiente é um ponteiro [que aponta] para um conjunto de recipientes.
-
 Um trecho é uma string.
 Uma quantidade de bytes é uma contagem.
 Um cursor de texto é um posicionamento.
 Um nome da fonte é um nome.
-
-
-Uma alternativa é uma lista com um nome e uma caixa.
-
 Um número de coluna é um número.
+
+Uma alternativa é uma lista com 
+  Um nome e 
+  Uma caixa.
 
 Um console é uma lista com
   Uma caixa,
@@ -285,16 +279,14 @@ Um console é uma lista com
   Uma cor de preenchimento,
   Uma caixa de texto,
   Uma malha quadriculada,
-  Um texto retornado string.
+  Um texto retornado.
 
 Um valor numérico é um número.
 Um subtexto numérico é um subtexto.
 Um subtexto fracionário é um subtexto.
 Um numerador textual é um subtexto.
 Um denominador textual é um subtexto.
-
 Uma contagem é um número.
-
 Um contador é um número.
 Uma palavra-passe é uma string.
 Um diâmetro é um número.
@@ -307,13 +299,9 @@ Um relatório de bugs é uma string.
 Um relatório de erros é uma string.
 Um relatório de falhas é uma string.
 Um relatório de panes é uma string.
-
-Um degrau é um número [cujos valores variam entre 0 até 359].
-
+Um degrau é um número [cujos valores variam entre 0 até 359]. \ grau
 Uma profundidade é [composta de] uns twips.
-
 Um description é uma string.
-
 Uma valor da diferença é um par de números.
 
 [ARQUIVOS]
@@ -339,7 +327,7 @@ Uma distância é [composta de] uns twips.
 \Um ponteiro denominado lpszdatadtype,
 \Um número denominado fwtype.
 
-Um dot é uma elipse.
+Um ponto circular é uma elipse.
 \Uma elipse é uma estrutura com uma caixa.
 Uma elipse é uma estrutura com uma caixa.
 
@@ -370,17 +358,15 @@ Uma string singular é uma string.
 Uma fração é uma estrutura com
   Um número denominado numerador e
   Um número denominado denominador, e
-  Um topo número sob o numerador e
-  Um base número sob o denominador.
+  Um número denominado número de cima sob o numerador e
+  Um número denominado número de baixo sob o denominador.
 
 Um par de números fracionários é uma estrutura com
   Uma fração e
   Uma segunda fração.
 
 Um máximo divisor comum é um número.
-
-Uma figura geométrica geométrica é uma figura geométrica.
-
+\Uma figura geométrica geométrica é uma figura geométrica.
 Um nome de dll é uma string.
 Um nome de função é uma string.
 Um nome de processo é uma string.
@@ -405,39 +391,22 @@ Um GUID é um UUID. \ identificador único global
 \ Um GUID é um valor de 128 bits. Exemplo: 6B29FC40-CA47-1067-B31D-00DD010662DA.
 
 Um número identificador é um número.
-
 Um hBitMap é um número identificador.
-
 Um hBrush é um número identificador.
-
 Um hDC é um número identificador.
-
 Um orientação é [composta de] uns pontos osmosianos.
-
 A contagem do heap é um número.
-
 O endereço heap é um ponteiro.
-
 Um altura é [composta de] uns twips.
-
 Um texto hexadecimal é uma string.
-
 Um número da fonte é um número identificador.
-
 Um hIcon é um número identificador.
-
 Um linha reta horizontal é uma linha reta.
-
 \Um hour é 60 minutes.
-
 Um hPen é um número identificador.
-
 Uma hRgn é um número identificador.
-
 O i-beam cursor é um cursor.
-
 Um IID é um UUID. \ Um interface identifier é um Identificador único universal de Interface
-
 Um quantidade de espaços é uma contagem.
 
 Um catálogo é uma lista com
@@ -468,23 +437,14 @@ Um item é uma estrutura com
   Um número identificador.
 
 Uma key é um número.
-
 Uma categoria é uma string.
-
 Um lParam é um número.
-
 \Uma folha no modo paisagem é uma folha.
-
 Um mínimo múltiplo comum é um número.
-
 Um clique é um input.
-
 Uma quantidade de caracteres é [composta de] uns twips.
-
 Um tamanho da letra é [composto de] uns twips. \ indica a altura real de uma letra maiúscula
-
 Uma letra é um byte.
-
 Uma localização inicial é uma localização.
 Uma localização final é uma localização.
 
@@ -494,21 +454,15 @@ Uma linha reta é uma estrutura com \ linha, traço, risco, traçado, listra
 
 Um margem é um número.
 Um mask é um texto hexadecimal.
-
 Um offset é um número.
-
 Uma operação é uma string.
-
 Uma origem é uma localização.
-
 Um recuo externo é um número.
 Um x-offset é um offset.
 Um y-offset é um offset.
 Um número X é um número.
 Um número Y é um número.
-
 Um endereço do caractere é um endereço de byte.
-
 Um pDevMode é um ponteiro [que aponta] para um devmode.
 
 Uma imagem é uma lista com \FIGURA?
@@ -522,9 +476,7 @@ Uma imagem é uma lista com \FIGURA?
   Um gpBitmap.
 
 Um process é um número identificador.
-
 Um process ponteiro é um ponteiro [que aponta] para um process.
-
 Um punch linha reta é uma string.
 
 Um quora é uma lista com \ quora deve ser abreviação de "question or answer"
@@ -551,9 +503,7 @@ Um date/time é uma estrutura com
   Um número de milissegundos.
 
 Um nome base da fonte é um nome.
-
 Um texto retornado é uma string.
-
 Um deslocamento vertical é um número.
 Um deslocamento horizontal é um número.
 
@@ -573,30 +523,18 @@ Um sector é um par de números com
   Uma coordenada Y. [indicando o canto superior esquerdo do sector]
 
 Uma caixa de seleção é uma caixa.
-
 Um remetente é uma string.
-
 Um folha é uma caixa. \ Uma folha de papel virtual consiste de um retângulo
-
 Um tamanho é[composto de] uns twips.
-
 Umas vezes é um número.
-
 Um servidor SMTP é uma string.
-
 Um soquete é um ponteiro.
 Um subtexto de denominação é um subtexto.
 Um subtexto de consulta é um subtexto.
-
-
 Uma ponteiro da localização é um ponteiro [que aponta] para uma localização.
-
 Um assunto é uma string.
-
 Um talker é um ponteiro [que aponta] para um talker object.
-
 Um talker object é uma estrutura com um talker VTable denominado VTable.
-
 Um talker VTable é um ponteiro [que aponta] para um talker VTable conjunto.
 
 Um terminal é uma lista com
@@ -612,7 +550,6 @@ Um temporizador é uma estrutura com
   Uns intervalos totais.
 
 \Umas vezes é um número. \ TODO: verificar se é necessário. Rotina:  "suavize um polígono umas vezes"
-
 Um número de porta é um número.
 Um nome de protocolo é uma string.
 Um nome de host é uma string.
@@ -627,7 +564,6 @@ Uma URL simplificada é uma estrutura com
   Um número de porta. \ nPort? -> números de porta ocupam (geralmente) 16 bits
 
 Um série de vértices é um ponteiro [que aponta] para uma série de vértices conjunto.
-
 Uma quantidade de vértices é um número.
 
 Um série de vértices conjunto é uma estrutura com
@@ -640,9 +576,7 @@ Um vértice é uma lista com
   Uma localização sob a coordenada X.
 
 Um arquivo de som é um endereço completo.
-
 Um wave é um texto hexadecimal.
-
 Uma largura é [composta de] uns twips.
 
 [FONTES TIPOGRÁFICAS]
@@ -658,17 +592,14 @@ Uma mensagem é uma string.
 Uma palavra é um subtexto. \ não confundir com word
 
 Um conjunto de texto é uma lista com uma string.
-
 Um nome é uma string.
 
 [PROTOCOLOS DE REDE]
 Uma URL é uma string.
 Um query byte é um texto de consulta.
 Um texto de consulta é uma string.
-
 Um número identificador da URL é um número.
 Um número identificador da conexão de internet é um número.
-
 Uma tecla é um número.
 Uma tabela de tradução é um texto hexadecimal.
 
@@ -717,11 +648,8 @@ Uma tree é um figura geométrica.
 Um objeto pai é um objeto pdf.
 \Um folha no modo retrato é uma folha.
 Uma destinação numérica é um número.
-
 Uma string pdf é uma string. \ string surrounded by ( ) e has \( for (, \) for ), \\ for barra invertida
-
 Um pdf é um trecho.
-
 Um endereço pdf é um ponteiro [que aponta] para um pdf.
 
 Umas larguras de fonte é uma lista com \ usado para pdf conversion
@@ -1291,7 +1219,8 @@ Um ponteiro RGB é um ponteiro [que aponta] para um espaço de cor RGB.
 Uma saturação é um número [cujos valores vão de 0 até 1000].
 
 Uma cor é uma estrutura com
-  Uma matiz, Uma tonalidade sob a matiz,
+  Uma matiz, 
+  Uma tonalidade sob a matiz,
   Uma saturação,
   Uma luminosidade,
   Um brilho sob a luminosidade.
@@ -1472,7 +1401,7 @@ A esquerda é uma fração igual a -1/4.
 O lado esquerdo é uma fração igual a -1/4.
 O menor número é -2147483648. \ número de 4 bytes/32 bits
 O tamanho do quadrado é [igual a] uns twips.
-Os campos de textos são uns campos de texto.
+\Os campos de textos são uns campos de texto.
 A stack é [composta de] uns elementos das stacks.
 A contagem total é um número igual a 0.
 
@@ -3331,8 +3260,8 @@ Rotina para que se centralize uma caixa em uma segunda caixa (verticalmente):
   Arredonde o número usando o múltiplo imediato de a quantidade de twips/pixel .
   Mova a caixa usando 0 e o número.
 
-Rotina para que se centralize um dot sobre a localização atual:
-  Centralize o dot sobre a localização deste contexto.
+Rotina para que se centralize um ponto circular sobre a localização atual:
+  Centralize o ponto circular sobre a localização deste contexto.
 
 Rotina para que se centralize uma elipse em uma caixa (horizontalmente):
   Centralize a caixa desta elipse na caixa (horizontalmente).
@@ -3341,12 +3270,12 @@ Rotina para que se centralize uma elipse em uma caixa (verticalmente):
   Centralize a caixa desta elipse na caixa (verticalmente).
 
 Rotina para que se centralize uma linha reta em uma caixa (horizontalmente):
-  Atribua a coordenada X deste centro desta caixa menos a coordenada X deste centro desta linha reta para um número.
+  Atribua a coordenada X deste centro desta caixa menos a coordenada X deste centro desta linha reta para um número. \ calculated field
   Arredonde o número usando o múltiplo imediato de a quantidade de twips/pixel .
   Mova a linha reta usando o número e 0.
 
 Rotina para que se centralize uma linha reta em uma caixa (verticalmente):
-  Atribua a coordenada Y deste centro desta caixa menos a coordenada Y deste centro desta linha reta para um número.
+  Atribua a coordenada Y deste centro desta caixa menos a coordenada Y deste centro desta linha reta para um número.\ calculated field
   Arredonde o número usando o múltiplo imediato de a quantidade de twips/pixel .
   Mova a linha reta usando 0 e o número.
 
@@ -3415,7 +3344,7 @@ Rotina para que se centralize uma caixa de texto em uma caixa (verticalmente):
 Rotina para que se modifique a matiz do contexto por uns pontos osmosianos;
 Rotina para que se altere a matiz do contexto por uns pontos osmosianos;
 Rotina para que se mude a matiz do contexto por uns pontos osmosianos:
-  Mude a matiz deste contexto por os pontos osmosianos.
+  Mude a matiz desta cor deste contexto por os pontos osmosianos.
 
 Rotina para que se modifique uma matiz por uns pontos osmosianos;
 Rotina para que se altere uma matiz por uns pontos osmosianos;
@@ -4430,7 +4359,7 @@ Rotina para que se crie umas larguras de fonte usando uma fonte:
   Aloque memória para a larguras de fonte.
   Atribua a fonte à fonte destas larguras de fonte.
   Atribua 256 à contagem destas larguras de fonte.
-  Associe o data destes larguras de fonte usando a contagem destas larguras de fonte vezes a magnitude dum número.
+  Associe o data destas larguras de fonte usando a contagem destas larguras de fonte vezes a magnitude dum número.
   Crie o número da fonte de o contexto de dispositivo de memória usando a fonte.
   Associe um original endereço do ABC usando 256 vezes a magnitude dum ABC.
   Processe "gdi32.dll" "GetCharABCWidthsA" com \ Recupera as larguras de caracteres de uma fonte
@@ -4441,7 +4370,7 @@ Rotina para que se crie umas larguras de fonte usando uma fonte:
     e o original endereço do ABC. [lpABC] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/ns-wingdi-ABC
   Destrua o número da fonte de o contexto de dispositivo de memória.
   Atribua o original endereço do ABC para um endereço do ABC.
-  Atribua o data destes larguras de fonte para um endereço numérico.
+  Atribua o data destas larguras de fonte para um endereço numérico.
   Atribua 0 para um contador.
   Itere.
     Se o contador for maior do que 256, pare.
@@ -4473,7 +4402,7 @@ Rotina para que se crie umas larguras de fonte usando uma fonte e uma string:
     e O endereçamento deste GcpResults [lpResults]
     e 0. [dwFlags]
   Destrua o número da fonte de o contexto de dispositivo de memória.
-  Atribua o lpDX destes GcpResults ao data destes larguras de fonte.
+  Atribua o lpDX destes GcpResults ao data destas larguras de fonte.
 
 Rotina para que se crie um gpBitmap usando um trecho:
   Limpe o erro do fluxo de entrada/saída.
@@ -5994,7 +5923,7 @@ Função para que se determine se uma localização está sobre uma linha reta:
   Atribua 3 vezes a quantidade de twips/pixel para um número.
   \ Atribua o triplo da quantidade de twips/pixel para um número.
   Itere.
-    Obtenha uma distância entre a localização e o centro desta linha reta (trigonometria racional).
+    Obtenha uma distância entre a localização e o centro desta linha reta (trigonometria racional).\ calculated field
     Se a distância for menor do que ou igual ao número, diga sim.
     Obtenha a distância entre a localização inicial desta linha reta e a localização final desta linha reta (trigonometria racional).
     Se a distância for menor do que ou igual à quantidade de twips/pixel , diga não.
@@ -6336,11 +6265,11 @@ Função para que se determine se we did encontre um ponteiro:
   Diga sim.
 
 Função para que se determine se estamos acima de uma caixa:
-  Se a coordenada Y deste contexto for menor do que a coordenada Y1 desta caixa, diga sim.
+  Se a coordenada Y desta localização deste contexto for menor do que a coordenada Y1 desta caixa, diga sim.
   Diga não.
 
 Função para que se determine se estamos acima de uma coordenada:
-  Se a coordenada Y deste contexto for menor do que a coordenada, diga sim.
+  Se a coordenada Y desta localização deste contexto for menor do que a coordenada, diga sim.
   Diga não.
 
 Função para que se determine se estamos acima de um linha reta horizontal:
@@ -6348,20 +6277,20 @@ Função para que se determine se estamos acima de um linha reta horizontal:
   Diga não.
 
 Função para que se determine se estamos em cima ou em baixo de uma caixa:
-  Se a coordenada Y deste contexto for menor do que a coordenada Y1 desta caixa, diga sim.
-  Se a coordenada Y deste contexto for maior do que a coordenada Y2 desta caixa, diga sim.
+  Se a coordenada Y desta localização deste contexto for menor do que a coordenada Y1 desta caixa, diga sim.
+  Se a coordenada Y desta localização deste contexto for maior do que a coordenada Y2 desta caixa, diga sim.
   Diga não.
 
 Função para que se determine se estamos acima de uma localização:
-  Se a coordenada Y deste contexto for menor do que a coordenada Y desta localização, diga sim.
+  Se a coordenada Y desta localização deste contexto for menor do que a coordenada Y desta localização, diga sim.
   Diga não.
 
 Função para que se determine se estamos debaixo de uma caixa:
-  Se a coordenada Y deste contexto for maior do que a coordenada Y2 desta caixa, diga sim.
+  Se a coordenada Y desta localização deste contexto for maior do que a coordenada Y2 desta caixa, diga sim.
   Diga não.
 
 Função para que se determine se estamos debaixo de uma coordenada:
-  Se a coordenada Y deste contexto for maior do que a coordenada, diga sim.
+  Se a coordenada Y desta localização deste contexto for maior do que a coordenada, diga sim.
   Diga não.
 
 Função para que se determine se estamos debaixo de um linha reta horizontal:
@@ -6369,7 +6298,7 @@ Função para que se determine se estamos debaixo de um linha reta horizontal:
   Diga não.
 
 Função para que se determine se estamos debaixo de uma localização:
-  Se a coordenada Y deste contexto for maior do que a coordenada Y desta localização, diga sim.
+  Se a coordenada Y desta localização deste contexto for maior do que a coordenada Y desta localização, diga sim.
   Diga não.
 
 Função para que se determine se estamos voltada para o north:
@@ -6381,13 +6310,13 @@ Função para que se determine se estamos voltada para o north:
 Função para que se determine se estamos no lado esquerdo de uma caixa;
 Função para que se determine se estamos na esquerda de uma caixa;
 Função para que se determine se estamos lado esquerdo de uma caixa:
-  Se a coordenada X deste contexto for menor do que a coordenada X1 desta caixa, diga sim.
+  Se a coordenada X desta localização deste contexto for menor do que a coordenada X1 desta caixa, diga sim.
   Diga não.
 
 Função para que se determine se estamos na esquerda ou na direita de uma caixa;
 Função para que se determine se estamos no lado esquerdo ou no lado direito de uma caixa:
-  Se a coordenada X deste contexto for menor do que a coordenada X1 desta caixa, diga sim.
-  Se a coordenada X deste contexto for maior do que a coordenada X2 desta caixa, diga sim.
+  Se a coordenada X desta localização deste contexto for menor do que a coordenada X1 desta caixa, diga sim.
+  Se a coordenada X desta localização deste contexto for maior do que a coordenada X2 desta caixa, diga sim.
   Diga não.
 
 Função para que se determine se estamos fora de uma caixa:
@@ -6395,7 +6324,7 @@ Função para que se determine se estamos fora de uma caixa:
   Diga não.
 
 Função para que se determine se estamos no lado direito de uma caixa:
-  Se a coordenada X deste contexto for maior do que a coordenada X2 desta caixa, diga sim.
+  Se a coordenada X desta localização deste contexto for maior do que a coordenada X2 desta caixa, diga sim.
   Diga não.
 
 Função para que se determine se estamos em uma caixa:
@@ -6690,15 +6619,15 @@ Rotina para que se pinte um console:
   Pinte a caixa de texto deste console.
   Restaure o contexto do dispositivo atual.
 
-Rotina para que se pinte um dot uns twips em largura sobre a localização atual com uma cor:
-  Faça o dot os twips em largura.
-  Centralize o dot sobre a localização deste contexto.
-  Pinte o dot com a cor.
+Rotina para que se pinte um ponto circular uns twips em largura sobre a localização atual com uma cor:
+  Faça o ponto circular os twips em largura.
+  Centralize o ponto circular sobre a localização deste contexto.
+  Pinte o ponto circular com a cor.
 
-Rotina para que se pinte um dot uns twips em largura sobre uma localização com uma cor:
-  Faça o dot os twips em largura.
-  Centralize o dot sobre a localização.
-  Pinte o dot com a cor.
+Rotina para que se pinte um ponto circular uns twips em largura sobre uma localização com uma cor:
+  Faça o ponto circular os twips em largura.
+  Centralize o ponto circular sobre a localização.
+  Pinte o ponto circular com a cor.
 
 Rotina para que se pinte uma elipse:
   Pinte a elipse com a cor preta e a cor branca.
@@ -6806,8 +6735,8 @@ Rotina para que se pinte uma linha reta uns twips para uns outros twips em compr
 
 Rotina para que se pinte uma linha reta uns twips em comprimento:
   \Aguarde pelo delay. ***
-  Atribua a localização deste contexto ao localização inicial desta linha reta.
-  Atribua a localização deste contexto ao localização final desta linha reta.
+  Atribua a localização deste contexto à localização inicial desta linha reta.
+  Atribua a localização deste contexto à localização final desta linha reta.
   Obtenha um deslocamento vertical e um deslocamento horizontal usando a orientação deste contexto.
   Adicione o deslocamento horizontal vezes os twips dividido por 10000 para a coordenada X desta localização final desta linha reta.
   Adicione o deslocamento vertical vezes os twips dividido por 10000 para a coordenada Y desta localização final desta linha reta.
@@ -6826,9 +6755,9 @@ Rotina para que se pinte uma linha reta com uma cor aproximadamente uns twips em
 
 Rotina para que se pinte uma linha reta com uma cor uns twips em comprimento:
   Atribua a cor à cor deste contexto.
-  Atribua a localização deste contexto ao localização inicial desta linha reta.
+  Atribua a localização deste contexto à localização inicial desta linha reta.
   Pinte os twips.
-  Atribua a localização deste contexto ao localização final desta linha reta.
+  Atribua a localização deste contexto à localização final desta linha reta.
 
 Rotina para que se pinte uma linha reta com uma cor uns twips para uns outros twips em comprimento:
   Escolha aleatoriamente uns terceiro twips entre os twips e os outros twips.
@@ -7943,7 +7872,7 @@ Rotina para que se obtenha um byte desde uma string (regressivamente):
 
 Rotina para que se obtenha um centro localização usando uma localização e uma segunda localização:
   Atribua a localização e a segunda localização para uma linha reta.
-  Atribua o centro desta linha reta ao centro.
+  Atribua o centro desta linha reta ao centro. \ calculated field
 
 Rotina para que se obtenha uma cor usando uma localização:
   Processe "gdi32.dll" "GetPixel" com \ Recupera o valor COLORREF do pixel nas coordenadas especificadas.
@@ -9187,15 +9116,15 @@ Rotina para que se imagine uma cor desde uma matiz e um saturação e um luminosid
 Rotina para que se faça uma cor desde uma matiz e um saturação e um luminosidade:
   Atribua a matiz e o saturação e o luminosidade à cor.
 
-Rotina para que se imagine um dot aproximadamente uns twips em largura;
-Rotina para que se faça um dot aproximadamente uns twips em largura;
-Rotina para que se faça um dot uns twips em largura:
-  Faça o dot os twips pelo twips.
+Rotina para que se imagine um ponto circular aproximadamente uns twips em largura;
+Rotina para que se faça um ponto circular aproximadamente uns twips em largura;
+Rotina para que se faça um ponto circular uns twips em largura:
+  Faça o ponto circular os twips pelo twips.
 
-Rotina para que se imagine um dot entre uns twips e uns outros twips em largura;
-Rotina para que se faça um dot entre uns twips e uns outros twips em largura:
+Rotina para que se imagine um ponto circular entre uns twips e uns outros twips em largura;
+Rotina para que se faça um ponto circular entre uns twips e uns outros twips em largura:
   Escolha aleatoriamente uns terceiro twips entre os twips e os outros twips.
-  Faça o dot o terceiro twips em largura.
+  Faça o ponto circular o terceiro twips em largura.
 
 Rotina para que se imagine uma elipse usando uma caixa;
 Rotina para que se faça uma elipse usando uma caixa:
@@ -11178,7 +11107,7 @@ Rotina para que se redimensione uma elipse usando um twip par de números:
 
 Rotina para que se redimensione uma linha reta usando um par de números racionais;
 Rotina para que se redimensione uma linha reta usando uma par de números fracionários:
-  Atribua a caixa desta linha reta para uma caixa.
+  Atribua a caixa desta linha reta para uma caixa.\ calculated field
   Subtraia o canto superior esquerdo desta caixa desde a localização inicial desta linha reta.
   Redimensione proporcionalmente a localização inicial desta linha reta usando o par de números fracionários.
   Adicione o canto superior esquerdo desta caixa para a localização inicial desta linha reta.
@@ -11633,8 +11562,8 @@ Rotina para que se role um console usando um evento:
   Encontre um sector usando a malha quadriculada deste console e a localização deste evento.
   Itere.
     Se o botão direito deste mouse não estiver sendo pressionado, retorne.
-    Encontre uma segunda sector usando a malha quadriculada deste console e a localização deste mouse.
-    Calcule um valor da diferença entre a segunda sector e o sector.
+    Encontre um segundo sector usando a malha quadriculada deste console e a localização deste mouse.
+    Calcule um valor da diferença entre o segundo sector e o sector.
     Se o valor da diferença for 0, reitere.
     Role a caixa de texto deste console usando o valor da diferença.
     Mostre o console.
@@ -12645,8 +12574,8 @@ Rotina para que se comece uns twips acima de o meio de a base de uma caixa:
 
 Rotina para que se comece uns twips para baixo desde uma localização;
 Rotina para que se comece uns twips debaixo de uma localização:
-  Atribua a coordenada X desta localização ao x deste contexto.
-  Atribua a coordenada Y desta localização mais os twips ao y deste contexto.
+  Atribua a coordenada X desta localização à coodenada X desta localização deste contexto.
+  Atribua a coordenada Y desta localização mais os twips à coodenada Y desta localização deste contexto.
 
 Rotina para que se comece uns twips desde o centro de uma caixa:
   Atribua o centro desta caixa à localização deste contexto.
@@ -12654,33 +12583,33 @@ Rotina para que se comece uns twips desde o centro de uma caixa:
 
 Rotina para que se comece uns twips para o lado esquerdo e uns outros twips para baixo desde uma localização;
 Rotina para que se comece uns twips para a esquerda e uns outros twips para baixo desde uma localização:
-  Atribua a coordenada X desta localização menos os twips ao x deste contexto.
-  Atribua a coordenada Y desta localização mais os outros twips ao y deste contexto.
+  Atribua a coordenada X desta localização menos os twips à coodenada X desta localização deste contexto.
+  Atribua a coordenada Y desta localização mais os outros twips à coodenada Y desta localização deste contexto.
 
 Rotina para que se comece uns twips para o lado esquerdo e uns outros twips para cima desde uma localização;
 Rotina para que se comece uns twips para a esquerda e uns outros twips para cima desde uma localização:
-  Atribua a coordenada X desta localização menos os twips ao x deste contexto.
-  Atribua a coordenada Y desta localização menos os outros twips ao y deste contexto.
+  Atribua a coordenada X desta localização menos os twips à coodenada X desta localização deste contexto.
+  Atribua a coordenada Y desta localização menos os outros twips à coodenada Y desta localização deste contexto.
 
 Rotina para que se comece uns twips para o lado esquerdo de uma localização;
 Rotina para que se comece uns twips para a esquerda de uma localização:
-  Atribua a coordenada X desta localização menos os twips ao x deste contexto.
+  Atribua a coordenada X desta localização menos os twips à coodenada X desta localização deste contexto.
 
 Rotina para que se comece uns twips para o lado direito e uns outros twips para baixo desde uma localização:
-  Atribua a coordenada X desta localização mais os twips ao x deste contexto.
-  Atribua a coordenada Y desta localização mais os outros twips ao y deste contexto.
+  Atribua a coordenada X desta localização mais os twips à coodenada X desta localização deste contexto.
+  Atribua a coordenada Y desta localização mais os outros twips à coodenada Y desta localização deste contexto.
 
 Rotina para que se comece uns twips para o lado direito  e uns outros twips para cima desde uma localização:
-  Atribua a coordenada X desta localização mais os twips ao x deste contexto.
-  Atribua a coordenada Y desta localização menos os outros twips ao y deste contexto.
+  Atribua a coordenada X desta localização mais os twips à coodenada X desta localização deste contexto.
+  Atribua a coordenada Y desta localização menos os outros twips à coodenada Y desta localização deste contexto.
 
 Rotina para que se comece uns twips para cima desde uma coordenada:
-  Atribua a coordenada menos os twips ao y deste contexto.
+  Atribua a coordenada menos os twips à coodenada Y desta localização deste contexto.
 
 Rotina para que se comece uns twips para cima desde uma localização;
 Rotina para que se comece uns twips acima de uma localização:
-  Atribua a coordenada Y desta localização ao y deste contexto.
-  Subtraia os twips desde a coordenada Y deste contexto.
+  Atribua a coordenada Y desta localização à coodenada Y desta localização deste contexto.
+  Subtraia os twips desde a coordenada Y desta localização deste contexto.
 
 Rotina para que se carregue tudo;
 Rotina para que se carregue as bibliotecas;
@@ -17132,8 +17061,8 @@ Rotina para que se atribua uma localização e uma segunda localização para uma el
   Atribua a segunda localização ao canto inferior direito desta elipse.
 
 Rotina para que se atribua uma localização e uma segunda localização para uma linha reta:
-  Atribua a localização ao localização inicial desta linha reta.
-  Atribua a segunda localização ao localização final desta linha reta.
+  Atribua a localização à localização inicial desta linha reta.
+  Atribua a segunda localização à localização final desta linha reta.
 
 Rotina para que se atribua uma localização no meio de uma caixa;
 Rotina para que se centralize uma localização em uma caixa:
@@ -17457,8 +17386,8 @@ Rotina para que se atribua a altura duma caixa para uma altura: \ OK
   Adicione a quantidade de twips/pixel para a altura.
 
 Rotina para que se atribua a linha reta do lado esquerdo duma caixa para uma linha reta:
-  Atribua a coordenada X1 desta caixa e a coordenada Y1 desta caixa ao localização inicial desta linha reta.
-  Atribua a coordenada X1 desta caixa e a coordenada Y2 desta caixa ao localização final desta linha reta.
+  Atribua a coordenada X1 desta caixa e a coordenada Y1 desta caixa à localização inicial desta linha reta.
+  Atribua a coordenada X1 desta caixa e a coordenada Y2 desta caixa à localização final desta linha reta.
 
 Rotina para que se atribua a canto inferior esquerdo duma caixa para uma localização:
   Atribua a coordenada X1 desta caixa à coordenada X desta localização.
@@ -17614,25 +17543,25 @@ Rotina para que se ande uns twips para baixo;
 Rotina para que se ande para baixo uns twips;
 Rotina para que se mova uns twips para baixo;
 Rotina para que se mova para baixo uns twips:
-  Adicione os twips para a coordenada Y deste contexto.
+  Adicione os twips para a coordenada Y desta localização deste contexto.
 
 Rotina para que se ande uns twips para a esquerda;
 Rotina para que se ande para a esquerda uns twips;
 Rotina para que se mova uns twips para a esquerda;
 Rotina para que se mova para a esquerda uns twips:
-  Subtraia os twips desde a coordenada X deste contexto.
+  Subtraia os twips desde a coordenada X desta localização deste contexto.
 
 Rotina para que se ande uns twips para a direita;
 Rotina para que se ande para a direita uns twips;
 Rotina para que se mova uns twips para a direita;
 Rotina para que se mova para a direita uns twips:
-  Adicione os twips para a coordenada X deste contexto.
+  Adicione os twips para a coordenada X desta localização deste contexto.
 
 Rotina para que se ande uns twips para cima;
 Rotina para que se ande para cima uns twips;
 Rotina para que se mova uns twips para cima;
 Rotina para que se mova para cima uns twips:
-  Subtraia os twips desde a coordenada Y deste contexto.
+  Subtraia os twips desde a coordenada Y desta localização deste contexto.
 
 Rotina para que se mova um vértice para baixo uns twips:
   Mova o vértice usando 0 e os twips.
@@ -17928,7 +17857,7 @@ Rotina para que se atribua umas larguras de fonte para um trecho:
   \ usado na conversão de pdf
   Limpe o trecho.
   Se a larguras de fonte forem inexistente, retorne.
-  Atribua o data destes larguras de fonte para um endereço numérico.
+  Atribua o data destas larguras de fonte para um endereço numérico.
   Atribua 0 para um contador.
   Itere.
     Se o contador for maior do que a contagem destas larguras de fonte, pare.
@@ -18240,7 +18169,7 @@ Rotina para que se acabe de imprimir um pdf (deslocamento e inserção de objetos)
   Obtenha um objeto pdf desde os objetos deste pdf state.
   Se o objeto pdf for inexistente, pare.
   Atribua a quantidade de caracteres deste pdf ao offset deste objeto pdf.
-  Acrescente o data deste objeto pdf para o pdf.
+  Acrescente o data trecho deste objeto pdf para o pdf.
   Acrescente o texto CRLF para o pdf.
   Reitere.
 
@@ -18490,8 +18419,8 @@ Rotina para que se pinte uma linha reta com uma cor:
   Processe "gdi32.dll" "SetPixelV" com \ Define o pixel nas coordenadas especificadas para a aproximação mais próxima da cor especificada.
   \https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setpixelv
     O contexto do dispositivo atual [hdc]
-    e A coordenada X desta localização final desta linha reta [z]
-    e A coordenada Y desta localização final desta linha reta  [y]
+    e A coordenada X desta localização final desta linha reta [x]
+    e A coordenada Y desta localização final desta linha reta [y]
     e O código da cor.
   Destrua o hPen de o contexto do dispositivo atual.
 
@@ -18854,11 +18783,11 @@ Rotina para que se inicie uma folha no modo paisagem usando um título de índice 
 
 Rotina para que se acrescente uma string para um objeto pdf:
   \ Adiciona o CRLF ao final da string
-  Acrescente a string para o data deste objeto pdf.
-  Acrescente o texto CRLF para o data deste objeto pdf.
+  Acrescente a string para o data trecho deste objeto pdf.
+  Acrescente o texto CRLF para o data trecho deste objeto pdf.
 
 Rotina para que se acrescente uma string para um objeto pdf sem passar pra próxima linha:
-  Acrescente a string para o data deste objeto pdf.
+  Acrescente a string para o data trecho deste objeto pdf.
 
 Rotina para que se adicione um objeto pdf usando um categoria:
   Crie o objeto pdf usando a categoria.
@@ -20854,4 +20783,3 @@ Rotina para que se divida um número por um segundo número usando um quociente e 
   Decodifique $8903. \ mov [ebx],eax ; -> salva eax no endereço de ebx
   Decodifique $8B9D14000000. \ mov ebx,[ebp+20] ; ->salva o resto (ebp+20) no registrador ebx
   Decodifique $8913. \ mov [ebx],edx ; -> salva o conteúdo de edx no registrador ebx
-
