@@ -1,3 +1,4 @@
+A cor eigengrau é uma cor.
 \O conteúdo deste arquivo foi traduzido a parir do arquivo "The noodle" do projeto "CAL-4700" 
 \Todos os direitos originais pertencem à "Osmosian Order of Plain Language Programmers"-  - Fundada em 2006
 \O conteúdo deste arquivo, porém, possui autorização para divulgação, modificação e redistribuição no domínio público sem a necessidade de prévia autorização.
@@ -18826,6 +18827,11 @@ Rotina para que se inicialize as cores:
   Processe "gdi32.dll" "GetStockObject" com
   5 [NULL_BRUSH]
   Retornando o null hBrush.
+  Atribua
+    160 [cor/tonalidade/matiz]
+    e 330[saturação]
+    e 24 [brilho/luminosidade]
+  à cor eigengrau. \->  rgb(22,22,29)
   Atribua
     -1 [cor/tonalidade/matiz]
     e 0 [saturação]
