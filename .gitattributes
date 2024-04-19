@@ -18,6 +18,7 @@ LICENSE text
 AUTHORS text
 
 # (binary is a macro for -text -diff)
+*.pop binary
 *.png binary
 *.jpg binary
 *.jpeg binary
