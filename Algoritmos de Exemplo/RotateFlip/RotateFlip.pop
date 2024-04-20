@@ -3,9 +3,10 @@ Rotina para que se execute o programa:
   Limpe a tela usando a cor eigengrau.
   Extraia o endereço da pasta deste módulo desde o endereço completo deste módulo.
   Atribua o endereço da pasta deste módulo seguido de "lobo.png" para um endereço completo.
+  \ AJUSTE O PATH CONFORME NECESSÁRIO 
   Atribua o endereço completo para uma string denominada path.
   \Escreva o path junto com o texto CRLF para StdOut.
-  Carregue uma primeira imagem usando o path. \ AJUSTE O PATH CONFORME NECESSÁRIO 
+  Carregue uma primeira imagem usando o path. 
   Carregue uma segunda imagem usando o path.
   Carregue uma terceira imagem usando o path.
   Carregue uma quarta imagem usando o path.
