@@ -2057,6 +2057,7 @@ A grossura da canetinha é um número.
 \CORES
 
 \CORES VÍVIDAS
+A cor eigengrau é uma cor.
 A cor branco é uma cor.
 A cor branca é uma cor.
 A cor preta é uma cor.  \
@@ -18826,6 +18827,11 @@ Rotina para que se inicialize as cores:
   Processe "gdi32.dll" "GetStockObject" com
   5 [NULL_BRUSH]
   Retornando o null hBrush.
+  Atribua
+    160 [cor/tonalidade/matiz]
+    e 330[saturação]
+    e 24 [brilho/luminosidade]
+  à cor eigengrau. \->  rgb(22,22,29)
   Atribua
     -1 [cor/tonalidade/matiz]
     e 0 [saturação]

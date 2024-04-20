@@ -1,14 +1,18 @@
 Rotina para que se execute o programa:
   Carregue as bibliotecas padrão do sistema. 
   Limpe a tela usando a cor eigengrau.
-  Carregue uma primeira imagem usando "F:\lobo\lobo.png".
-  Carregue uma segunda imagem usando "F:\lobo\lobo.png".
-  Carregue uma terceira imagem usando "F:\lobo\lobo.png".
-  Carregue uma quarta imagem usando "F:\lobo\lobo.png".
-  Carregue uma quinta imagem usando "F:\lobo\lobo.png".
-  Carregue uma sexta imagem usando "F:\lobo\lobo.png".
-  Carregue uma sétima imagem usando "F:\lobo\lobo.png".
-  Carregue uma oitava imagem usando "F:\lobo\lobo.png".
+  Extraia o endereço da pasta deste módulo desde o endereço completo deste módulo.
+  Atribua o endereço da pasta deste módulo seguido de "lobo.png" para um endereço completo.
+  Atribua o endereço completo para uma string denominada path.
+  \Escreva o path junto com o texto CRLF para StdOut.
+  Carregue uma primeira imagem usando o path. \ AJUSTE O PATH CONFORME NECESSÁRIO
+  Carregue uma segunda imagem usando o path.
+  Carregue uma terceira imagem usando o path.
+  Carregue uma quarta imagem usando o path.
+  Carregue uma quinta imagem usando o path.
+  Carregue uma sexta imagem usando o path.
+  Carregue uma sétima imagem usando o path.
+  Carregue uma oitava imagem usando o path.
   Mova a primeira imagem usando 50 pixels e 100 pixels.
   Processe "gdiplus.dll" "GdipImageRotateFlip" com o gpBitmap desta primeira imagem e o Rotate90FlipNone. \ Rotate90FlipNone/Rotate270FlipXY
   Pinte a primeira imagem. \ 
