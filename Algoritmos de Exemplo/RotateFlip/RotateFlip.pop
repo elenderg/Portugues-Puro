@@ -46,26 +46,26 @@ Rotina para que se execute o programa:
     Se a tecla Esc estiver sendo pressionada, pare.
     Se a tecla Enter estiver sendo pressionada, pare.
   Reitere.
-Se a tecla Esc estiver sendo pressionada, 
-  Destrua a primeira imagem;
-  Destrua a segunda imagem;
-  Destrua a terceira imagem;
-  Destrua a quarta imagem;
-  Destrua a quinta imagem;
-  Destrua a sexta imagem;
-  Destrua a sétima imagem;
-  Destrua a oitava imagem;
-  Feche o programa.
-Se a tecla Enter estiver sendo pressionada, 
-  Destrua a primeira imagem;
-  Destrua a segunda imagem;
-  Destrua a terceira imagem;
-  Destrua a quarta imagem;
-  Destrua a quinta imagem;
-  Destrua a sexta imagem;
-  Destrua a sétima imagem;
-  Destrua a oitava imagem;
-  Feche o programa.
+  Se a tecla Esc estiver sendo pressionada, 
+    Destrua a primeira imagem;
+    Destrua a segunda imagem;
+    Destrua a terceira imagem;
+    Destrua a quarta imagem;
+    Destrua a quinta imagem;
+    Destrua a sexta imagem;
+    Destrua a sétima imagem;
+    Destrua a oitava imagem;
+    Feche o programa.
+  Se a tecla Enter estiver sendo pressionada, 
+    Destrua a primeira imagem;
+    Destrua a segunda imagem;
+    Destrua a terceira imagem;
+    Destrua a quarta imagem;
+    Destrua a quinta imagem;
+    Destrua a sexta imagem;
+    Destrua a sétima imagem;
+    Destrua a oitava imagem;
+    Feche o programa.
 
 Rotina para que se carregue uma imagem usando um endereço completo:
   Leia o endereço completo para a imagem.
