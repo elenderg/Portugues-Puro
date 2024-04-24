@@ -1,3 +1,9 @@
+Um array é uma estrutura com
+  Um ponteiro denominado endereço,
+  Um número denominado tamanho.
+
+
+A cor eigengrau é uma cor.
 \O conteúdo deste arquivo foi traduzido a parir do arquivo "The noodle" do projeto "CAL-4700" 
 \Todos os direitos originais pertencem à "Osmosian Order of Plain Language Programmers"-  - Fundada em 2006
 \O conteúdo deste arquivo, porém, possui autorização para divulgação, modificação e redistribuição no domínio público sem a necessidade de prévia autorização.
@@ -260,14 +266,9 @@ Um versículo é uma lista com uma string.
 
 Um código binário é uma string.
 Um brilho é uma luminosidade.
-
 Um contagem de recipientes é uma contagem.
-
-Um conjunto de recipientes é uma estrutura com 
-  Umas referências.
-
+Um conjunto de recipientes é uma estrutura com umas referências.
 Um recipiente é um ponteiro [que aponta] para um conjunto de recipientes.
-
 Um trecho é uma string.
 Uma quantidade de bytes é uma contagem.
 Um cursor de texto é um posicionamento.
@@ -2062,7 +2063,6 @@ A grossura da canetinha é um número.
 \CORES
 
 \CORES VÍVIDAS
-A cor eigengrau é uma cor.
 A cor branco é uma cor.
 A cor branca é uma cor.
 A cor preta é uma cor.  \
@@ -6029,8 +6029,8 @@ Função para que se determine se uma string é uma segunda string:
   Compare a string para a segunda string usando a quantidade de caracteres desta string e a quantidade de caracteres desta segunda string e o tabela de caracteres minúsculos ascii (iguais somente).
 
 Função para que se determine se uma string é uma segunda string ou uma terceira string:
-  Se a string é a segunda string, diga sim.
-  Se a string é a terceira string, diga sim.
+  Se a string for a segunda string, diga sim.
+  Se a string for a terceira string, diga sim.
   Diga não.
 
 Função para que se determine se uma string é algum fração literal;
@@ -11578,15 +11578,15 @@ Rotina para que se role um console usando um evento:
 
 Rotina para que se role uma caixa de texto para a base:
   Se a caixa de texto for inexistente, retorne.
-  Se o sinalizador de rolagem vertical desta caixa de texto não estiver ativo, retorne.
+  Se o sinalizador de rolagem vertical desta caixa de texto não estiver ativo, retorne.  
   Atribua a contagem de linhas desta caixa de texto menos 1 para um número. \ calculated field
   Atribua - o número vezes a altura da linha desta caixa de texto à coordenada Y desta caixa de texto.\ calculated field
   Delimite a origem de a caixa de texto.
-
   Multiplique o número por -1.
-  Multiplique o número pela altura da linha deste texto.
+  Multiplique o número pela altura da linha desta caixa de texto.
   Adicione 2 ao número.
-  Atribua o número à Coordenada Y deste texto.
+  Atribua o número à Coordenada Y desta caixa de texto.
+  
 
 Rotina para que se role uma caixa de texto para o cursor de texto:
   Se a caixa de texto for inexistente, retorne.
@@ -12523,7 +12523,7 @@ Rotina para que se comece um process usando um endereço completo:
     Atribua "Erro. Este processo já está sendo executado." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
-  Atribua a magnitude duma StartupInfo ao CB desta startupinfo.
+  Atribua a magnitude duma STARTUPINFO ao CB desta STARTUPINFO.
   Extraia um endereço da pasta desde o endereço completo.
   Anexe o caractere NULL após o endereço da pasta.
   Preserve o endereço completo. Anexe o caractere NULL após o endereço completo.
@@ -12541,7 +12541,7 @@ Rotina para que se comece um process usando um endereço completo:
     \ https://learn.microsoft.com/pt-br/windows/desktop/api/processthreadsapi/nf-processthreadsapi-getpriorityclass
     e 0 [lpEnvironment]
     e O caractere inicial deste endereço da pasta [lpCurrentDirectory]
-    e O endereçamento desta startupinfo [lpStartupInfo]
+    e O endereçamento desta STARTUPINFO [lpStartupInfo]
     \ Consulte https://learn.microsoft.com/pt-br/windows/win32/api/processthreadsapi/ns-processthreadsapi-startupinfoa
     e O endereçamento duma PROCESS_INFORMATION [lpProcessInformation]
     \ Consulte https://learn.microsoft.com/pt-br/windows/win32/api/processthreadsapi/ns-processthreadsapi-process_information
@@ -13593,7 +13593,8 @@ Rotina para que se atribua stdin para um trecho:
   Se o valor da díade estiver em branco,
     Atribua "Erro ao tentar obter o conteúdo da variável de ambiente CONTENT_LENGTH." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
-    Retorne.
+    Atribua "256" para o valor da díade.
+    \Retorne.
   Converta o valor da díade para uma quantidade de caracteres.
   Se a quantidade de caracteres for 0, retorne.
   Reaponte o caractere inicial deste trecho usando a quantidade de caracteres.

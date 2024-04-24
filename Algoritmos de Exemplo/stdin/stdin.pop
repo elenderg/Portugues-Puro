@@ -1,0 +1,48 @@
+O STD_INPUT_HANDLE é um número igual a -10.
+O CodePage é um número igual a 1252.
+O INVALID_HANDLE_VALUE é um número igual a -1.
+
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  Obtenha o Número Identificador do Fluxo de Entrada Padrão.
+  Defina o CodePage do Console.
+  Obtenha o Modo do Console.
+  Leia um trecho desde a STDIN.
+  Escreva o trecho para StdOut.
+  Feche o programa.
+
+Rotina para que se obtenha o Número Identificador do Fluxo de Entrada Padrão:
+  Processe "kernel32.dll" "GetStdHandle" com 
+    O STD_INPUT_HANDLE [nStdHandle = STD_INPUT_HANDLE]
+    Retornando o Número Identificador do Fluxo de Entrada Padrão.
+  Se o Número Identificador do Fluxo de Entrada Padrão for a INVALID_HANDLE_VALUE,
+    Escreva "Erro ao obter o número identificador do fluxo de entrada padrão." junto com o texto CRLF para STDOUT.
+  Escreva "STDIN HANDLE: " junto com o número identificador do fluxo de entrada padrão junto com o texto CRLF para STDOUT.
+
+Rotina para que se defina o CodePage do Console:
+  Processe "kernel32.dll" "SetConsoleOutputCP" com 
+    O codepage 
+    Retornando um número denominado status de erro.
+  Se o status de erro for 0 [NULL], 
+    Escreva "Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT.  
+
+Rotina para que se obtenha o modo do console:
+  Processe "kernel32.dll" "GetConsoleMode" com
+    O número identificador do fluxo de entrada padrão e
+    O endereçamento dum número denominado modo do console
+    Retornando um status de erro.
+  Se o status de erro for 0 [NULL], 
+     Escreva "Erro ao obter o modo do Console." junto com o texto CRLF para STDOUT.
+  Se o status de erro não for 0 [NULL], 
+     Escreva "Modo do console: " junto com o modo do console junto com o texto CRLF para STDOUT.
+
+Rotina para que se leia um trecho desde a STDIN:
+  Processe "kernel32.dll" "ReadFile" com
+    O número identificador do fluxo de entrada padrão [hFile] e
+    O endereçamento deste trecho [lpBuffer] e
+    A magnitude deste trecho [nNumberOfBytesToRead] e 
+    O endereçamento dum número [lpNumberOfBytesRead] \ O número de bytes lidos ao usar o parâmetro hFile síncrono.
+    e 0 [NULL]
+    Retornando um status de erro.
+  Se o status de erro for 0 [NULL], 
+    Escreva "Erro ao ler do Console." junto com o texto CRLF para STDOUT.
