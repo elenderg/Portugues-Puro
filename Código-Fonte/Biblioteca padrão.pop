@@ -7354,10 +7354,12 @@ Rotina para que se preencha uma string com um byte usando uma contagem:
 
 Rotina para que se exiba a contagem de elementos presentes no heap;
 Rotina para que se finalize após execução:
-  Se a contagem do heap for 0, retorne.
-  Atribua a contagem do heap para uma contagem.
-  Atribua "Aviso: Você esqueceu de destruir " junto com a contagem seguido de " elemento(s) no heap." para uma string.
-  Produza o relatório de informações usando a string.
+  Se a contagem do heap for 0, 
+    Retorne.
+  \Se a contagem do heap não for 0,
+    Atribua a contagem do heap para uma contagem.
+    Atribua "Aviso: Você esqueceu de destruir " junto com a contagem seguido de " elemento(s) no heap." para uma string.
+    Produza o relatório de informações usando a string.
 
 Rotina para que se finalize os canvases:
   Finalize o contexto de dispositivo de memória.
@@ -9573,7 +9575,7 @@ Rotina para que se inicialize a janela do programa:
     0 [dwExStyle] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/winmsg/extended-window-styles
     e O caractere inicial deste nome deste módulo [lpClassName]
     e O caractere inicial deste nome deste módulo  [lpWindowName]
-    e 2147483648 [dwStyle]  [-2147483648 = WS_POPUP 0x80000000]
+    e 13565952 \2147483648 [dwStyle]  [-2147483648 = WS_POPUP 0x80000000]
     [13565952  WS_OVERLAPPEDWINDOW 0x00CF0000]
     \ Consulte https://www.autoitscript.com/autoit3/docs/appendix/GUIStyles.htm
     \ https://www.magnumdb.com/ . Para uma janela padrão, use o valor 13565952
@@ -12554,7 +12556,7 @@ Rotina para que se comece um process usando um endereço completo:
   Processe "kernel32.dll" "CloseHandle" com \ Fecha um identificador de objeto aberto.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/handleapi/nf-handleapi-closehandle
     O hthread deste PROCESS_INFORMATION. [hObject]
-  Direcione um ponteiro para rotina Aguarde por um process ponteiro.
+  Direcione um ponteiro para a rotina Aguarde por um process ponteiro.
   Processe "kernel32.dll" "CreateThread" com
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/processthreadsapi/nf-processthreadsapi-createthread
   \ Cria um thread a ser executado no espaço de endereço virtual do processo de chamada.
