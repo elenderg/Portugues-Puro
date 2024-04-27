@@ -3,12 +3,6 @@ Repositório Oficial do Compilador da Linguagem de Programação Português Puro
 
 [Documentação](https://portugues-puro.gitbook.io/documentacao/)
 
-## Descrição
-Este é um compilador que funciona atrav
-
-## Funcionalidades Principais
-- [Lista de funcionalidades principais do compilador, como análise léxica, análise sintática, geração de código, etc.]
-
 ## Instalação
 Não é necessário qualquer instalação, bastando invocar o compilador através da linha de comando.
 
