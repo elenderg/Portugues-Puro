@@ -9592,7 +9592,7 @@ Rotina para que se inicialize a janela do programa:
     A janela principal do programa [hWnd]
     e 1. [nCmdShow = SW_SHOWNORMAL]
 
-Rotina para que se inicialize winsock:
+Rotina para que se inicialize a infraestrutura WinSock:
   Processe "ws2_32.dll" "WSAStartup" com \ Inicia o uso da DLL Winsock por um processo.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winsock/nf-winsock-wsastartup
     2 [wVersionRequired]
@@ -12626,7 +12626,7 @@ Rotina para que se carregue as bibliotecas padrão do sistema;
 Rotina para que se inicialize tudo;
 Rotina para que se inicialize os componentes:
   Inicialize o Component Object Model.
-  Inicialize winsock.
+  Inicialize a infraestrutura WinSock.
   Inicialize gdi+.
   Inicialize o talker.
   Inicialize o módulo.
@@ -12642,7 +12642,7 @@ Rotina para que se inicialize os componentes:
   Crie o console.
 
 Rotina para que se comece para cima o cgi:
-  Inicialize winsock.
+  Inicialize a infraestrutura WinSock.
   Inicialize o módulo.
   Inicialize o cgi.
 
