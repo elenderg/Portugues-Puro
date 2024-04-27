@@ -36,11 +36,11 @@ Disponível [aqui](https://github.com/elenderg/Portugues-Puro/blob/main/CODE_OF_
 [Elender Góis Gallas](https://www.linkedin.com/in/elender/)
 
 ## Contribuidores
-[Gerry Rzeppa](https://www.linkedin.com/in/gerry-rzeppa-17b8051b/)
-Dan Rzeppa
-[Pablo Cayuella](https://www.linkedin.com/in/pablo-cayuela-a42b019/)
-Jasper Paulsen
-[Walter Moura Júnior](https://github.com/waltermourajr)
+[Gerry Rzeppa](https://www.linkedin.com/in/gerry-rzeppa-17b8051b/)  
+Dan Rzeppa  
+[Pablo Cayuella](https://www.linkedin.com/in/pablo-cayuela-a42b019/)  
+Jasper Paulsen  
+[Walter Moura Júnior](https://github.com/waltermourajr)  
 
 ---
 
