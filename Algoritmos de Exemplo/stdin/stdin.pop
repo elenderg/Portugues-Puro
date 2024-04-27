@@ -10,9 +10,9 @@ Rotina para que se execute o programa:
   Escreva "Digite alguma coisa: " para Stdout.
   Leia um trecho desde a STDIN.
   Remova o último caractere desde o trecho.
-  Escreva "String digitada: " junto com o trecho junto com o texto CRLF para StdOut.
-  \Desenfileire um evento.
-  \Delegue o controle.
+  \Escreva "String digitada: " junto com o trecho junto com o texto CRLF para StdOut.
+  Desenfileire um evento.
+  Delegue o controle.
   Feche o programa.
 
 Rotina para que se obtenha o Número Identificador do Fluxo de Entrada Padrão:
@@ -41,13 +41,14 @@ Rotina para que se obtenha o modo do console:
      Escreva "Modo do console: " junto com o modo do console junto com o texto CRLF para STDOUT.
 
 Rotina para que se leia um trecho desde a STDIN:
-  Atribua "123456789" para o trecho.
+  Atribua "" para o trecho.
+  Preencha o trecho com o caractere NULL usando 255.
   Anexe o caractere NULL após o trecho.
   Processe "kernel32.dll" "ReadFile" com
     O número identificador do fluxo de entrada padrão [hFile] e
     O caractere inicial deste trecho [lpBuffer] e
-    A magnitude deste trecho [nNumberOfBytesToRead] e 
-    O endereçamento dum número [lpNumberOfBytesRead] \ O número de bytes lidos ao usar o parâmetro hFile síncrono.
+    256 [nNumberOfBytesToRead] e 
+    Um número [lpNumberOfBytesRead] \ O número de bytes lidos ao usar o parâmetro hFile síncrono.
     e 0 [NULL] 
     Retornando um status de erro.
   Se o status de erro for 0 [NULL], 

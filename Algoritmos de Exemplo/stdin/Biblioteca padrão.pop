@@ -7359,9 +7359,9 @@ Rotina para que se finalize após execução:
   Atribua "Aviso: Você esqueceu de destruir " junto com a contagem seguido de " elemento(s) no heap." para uma string.
   Produza o relatório de informações usando a string.
 
-Rotina para que se finalize os canvases:
+Rotina para que se finalize os contextos de dispositivo:
   Finalize o contexto de dispositivo de memória.
-  \Finalize o canvas da tela.
+  \Finalize o canvas da tela. -> Rotina ainda não criada.
 
 Rotina para que se finalize o CGI:
   Processe "kernel32.dll" "FreeConsole".  \ Desanexa o processo chamador de seu respectivo console.
@@ -7369,7 +7369,7 @@ Rotina para que se finalize o CGI:
 
 \Rotina para que se finalize as cores:
 
-Rotina para que se finalize COM:
+Rotina para que se finalize o Component Object Model:
   Processe "ole32.dll" "CoUninitialize". \ Decha a biblioteca COM no thread atual
   \ Descarrega todas as DLLs carregadas pelo thread,
   \ Libera quaisquer outros recursos que o thread mantém e
@@ -9301,7 +9301,7 @@ Rotina para que se inicialize antes da execução:
       e O endereçamento deste novo número [HeapInformation => buffer que contém informações de heap]
       e 4. [HeapInformationLength]
 
-Rotina para que se inicialize os canvases:
+Rotina para que se inicialize os contextos de dispositivo:
   Inicialize o canvas da tela.
   Inicialize o contexto de dispositivo de memória.
   Atribua o contexto de dispositivo de memória ao contexto do dispositivo atual.
@@ -11943,7 +11943,7 @@ Rotina para que se desligue:
   Destrua o console.
   Destrua o terminal.
   Finalize o contexto.
-  Finalize os canvases.
+  Finalize os contextos de dispositivo.
   \Finalize o mouse.
   Finalize os cursors.
   Finalize as fontes.
@@ -11954,7 +11954,7 @@ Rotina para que se desligue:
   Finalize o talker.
   Finalize gdi+.
   Finalize winsock.
-  Finalize COM.
+  Finalize o Component Object Model.
 
 Rotina para que se desligue o cgi:
   Finalize o cgi.
@@ -12634,7 +12634,7 @@ Rotina para que se inicialize os componentes:
   \Inicialize as fontes.
   \Inicialize os cursors.
   \Inicialize o mouse.
-  \Inicialize os canvases.
+  \Inicialize os contextos de dispositivo.
   \Inicialize o contexto.
   \Inicialize o terminal.
   \Crie o console.
