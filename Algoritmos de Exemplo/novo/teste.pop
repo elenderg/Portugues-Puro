@@ -1,0 +1,7 @@
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  \Obtenha o Número Identificador do Fluxo de Entrada Padrão.
+  \Defina o CodePage do Console.
+  \Obtenha o Modo do Console.
+  Escreva "123" junto com o texto CRLF para StdOut.
+  Feche o nosso programa.

@@ -7,14 +7,15 @@ Rotina para que se execute o programa:
   Obtenha o Número Identificador do Fluxo de Entrada Padrão.
   Defina o CodePage do Console.
   Obtenha o Modo do Console.
-  Escreva "Digite alguma coisa: " para Stdout.
+  Escreva "Digite alguma coisa: " junto com o texto CRLF para StdOut.
   Leia um trecho desde a STDIN.
   Remova o último caractere desde o trecho.
-  Escreva "String digitada: " junto com o trecho junto com o texto CRLF para StdOut.
+  Escreva "String digitada: " junto com o trecho para StdOut.
+  \Escreva "Pressione Ctrl+C para sair do programa" para StdOut.
   \Aguarde 1 segundo.
   \Desenfileire um evento.
-  \Delegue o controle.
-  Feche o programa.
+  Delegue o controle.
+  Feche o nosso programa.
 
 Rotina para que se obtenha o Número Identificador do Fluxo de Entrada Padrão:
   Processe "kernel32.dll" "GetStdHandle" com 
