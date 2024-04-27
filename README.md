@@ -26,18 +26,18 @@ Se você deseja contribuir para o desenvolvimento do Compilador, fique à vontad
 Envie suas dúvidas [aqui] (https://github.com/elenderg/Portugues-Puro/issues/new/choose)
 
 ## Código de Conduta
-Disponível [aqui] (https://github.com/elenderg/Portugues-Puro/blob/main/CODE_OF_CONDUCT.md  )
+Disponível [aqui](https://github.com/elenderg/Portugues-Puro/blob/main/CODE_OF_CONDUCT.md  )
 
 ## Licença
-[Unlicense] (https://github.com/elenderg/Portugues-Puro/blob/main/LICENSE)
+[Unlicense](https://github.com/elenderg/Portugues-Puro/blob/main/LICENSE)
 
 ## Autor
-[Elender Góis Gallas] (https://www.linkedin.com/in/elender/)
+[Elender Góis Gallas](https://www.linkedin.com/in/elender/)
 
 ## Contribuidores
-[Gerry Rzeppa] (https://www.linkedin.com/in/gerry-rzeppa-17b8051b/)
+[Gerry Rzeppa](https://www.linkedin.com/in/gerry-rzeppa-17b8051b/)
 Dan Rzeppa
-[Pablo Cayuella] (https://www.linkedin.com/in/pablo-cayuela-a42b019/)
+[Pablo Cayuella](https://www.linkedin.com/in/pablo-cayuela-a42b019/)
 Jasper Paulsen
 Walter Moura
 
