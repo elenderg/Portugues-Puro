@@ -23,7 +23,7 @@ Certifique-se de incluir o arquivo que contém a biblioteca padrão no mesmo dir
 Se você deseja contribuir para o desenvolvimento do Compilador, fique à vontade para abrir problemas (issues) e solicitações de pull (pull requests) neste repositório. Estamos ansiosos para receber seu feedback e [colaboração](https://github.com/elenderg/Portugues-Puro/blob/main/CONTRIBUTING.md) !
 
 ## Suporte
-Envie suas dúvidas [aqui] (https://github.com/elenderg/Portugues-Puro/issues/new/choose)
+Envie suas dúvidas [aqui](https://github.com/elenderg/Portugues-Puro/issues/new/choose)
 
 ## Código de Conduta
 Disponível [aqui](https://github.com/elenderg/Portugues-Puro/blob/main/CODE_OF_CONDUCT.md  )
