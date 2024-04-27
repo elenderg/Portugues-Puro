@@ -39,7 +39,7 @@ Disponível [aqui](https://github.com/elenderg/Portugues-Puro/blob/main/CODE_OF_
 Dan Rzeppa
 [Pablo Cayuella](https://www.linkedin.com/in/pablo-cayuela-a42b019/)
 Jasper Paulsen
-Walter Moura
+[Walter Moura Júnior](https://github.com/waltermourajr)
 
 ---
 
