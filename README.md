@@ -1,7 +1,7 @@
 # Portugues-Puro
 Repositório Oficial do Compilador da Linguagem de Programação Português Puro.
 
-[Documentação](https://portugues-puro.gitbook.io/documentacao/)
+[Documentação Oficial da Linguagem](https://portugues-puro.gitbook.io/documentacao/)
 
 ## Instalação
 Não é necessário qualquer instalação, bastando invocar o compilador através da linha de comando.
