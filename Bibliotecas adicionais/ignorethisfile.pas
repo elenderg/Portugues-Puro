@@ -1,4 +1,0 @@
-program empty;
-
-begin
-end.
