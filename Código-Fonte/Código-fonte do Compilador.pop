@@ -27,7 +27,7 @@ Um byte ignorável é um byte.
 Uma palavra-chave de referenciamento é uma palavra-chave.
 Uma palavra-chave de reutilização de rotina é uma palavra-chave.
 
-Um cabeçalho DOS é uma estrutura com
+Um Cabeçalho DOS é uma estrutura com
 \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/debug/pe-format
   Uma word denominada Signature,
   Uma word denominada NumberOfBytesOnLastPage,
@@ -411,7 +411,7 @@ Rotina para que se faça tudo:
   Se o conteúdo deste caractere final desta string não for a barra invertida, 
     Acrescente a barra invertida para a string.
   Se a string não estiver no sistema de arquivos, 
-    Escreva  "Erro. O diretório '" junto com a string seguido de "' não foi encontrado." junto com o texto CRLF para StdOut;
+    Escreva "Erro. O diretório '" junto com a string seguido de "' não foi encontrado." junto com o texto CRLF para StdOut;
     Retorne.
   Escreva "Compilando o diretório '" junto com a string seguido de "' ..." junto com o texto CRLF para StdOut. \ #0
   Escreva o texto CRLF para StdOut.
@@ -442,7 +442,7 @@ Rotina para que se exiba o erro de compilação:
     Escreva a mensagem de erro deste compilador para StdOut; 
     Retorne.
   Escreva 
-    A mensagem de erro deste compilador  seguido de " - " 
+    A mensagem de erro deste compilador seguido de " - " 
       junto com o endereço do arquivo atual deste compilador 
       seguido de " linha: " 
       junto com o número da linha de erro deste compilador
@@ -1285,7 +1285,7 @@ Rotina para que se enderece uma variável usando um endereço:
   Se o tipo desta variável puder ser reduzido para "string", adicione a quantidade de caracteres deste data desta variável mais 1 para o endereço.
   Se o tipo desta variável puder ser reduzido para "cadeia de caracteres", adicione a quantidade de caracteres deste data desta variável mais 1 para o endereço.
   Se o tipo desta variável puder ser reduzido para "texto", adicione a quantidade de caracteres deste data desta variável mais 1 para o endereço.
-  Arredonde  para cima o endereço usando o múltiplo imediato de 4.
+  Arredonde para cima o endereço usando o múltiplo imediato de 4.
 
 Rotina para que se enderece umas variáveis usando um endereço:
   Se existir algum problema de compilação, retorne.
@@ -3796,7 +3796,7 @@ Função para que se determine se uma unidade semântica está indefinida:
   Se o tipo atual desta unidade semântica não for inexistente, diga não. 
   \Se o tipo atual desta unidade semântica for inexistente, diga sim. 
   Se o subtexto atual desta unidade semântica não estiver em branco, diga não.
-  \Se o subtexto atual desta unidade semântica  estiver em branco, diga sim.
+  \Se o subtexto atual desta unidade semântica estiver em branco, diga sim.
   Diga sim.
 
 Função para que se determine se um nome é alguma palavra-chave de obtenção de tamanho de variável:
@@ -6297,9 +6297,8 @@ Rotina para que se parse uma string para uma segunda string (para expandir contr
     Posicione o segmento inicial deste percorredor de contrações sobre o segmento final deste percorredor de contrações.
     Mova o percorredor de contrações (englobando tudo).
     Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor de contrações não for um byte ignorável,
-    Acrescente o segmento inicial deste percorredor de contrações para a segunda string;
-    
-   Reitere.
+      Acrescente o segmento inicial deste percorredor de contrações para a segunda string;
+      Reitere.
     Acrescente o segmento inicial deste percorredor de contrações para a segunda string usando a terceira string (para expandir contrações).
     Atribua o segmento inicial deste percorredor de contrações à terceira string.
   Reitere.

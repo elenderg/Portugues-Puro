@@ -2,8 +2,6 @@ Um array é uma estrutura com
   Um ponteiro denominado endereço,
   Um número denominado tamanho.
 
-
-A cor eigengrau é uma cor.
 \O conteúdo deste arquivo foi traduzido a parir do arquivo "The noodle" do projeto "CAL-4700" 
 \Todos os direitos originais pertencem à "Osmosian Order of Plain Language Programmers"-  - Fundada em 2006
 \O conteúdo deste arquivo, porém, possui autorização para divulgação, modificação e redistribuição no domínio público sem a necessidade de prévia autorização.
@@ -1309,7 +1307,7 @@ Um tom de cor monótono é uma cor.
 Uma cor monótona é uma cor.
 Um tom de cor multicolorido é uma cor.
 Uma cor multicolorida é uma cor.
-Um tom de cor  neutro é uma cor.
+Um tom de cor neutro é uma cor.
 Uma cor neutra é uma cor.
 Um tom opaco é uma cor.
 Uma cor opaca é uma cor.
@@ -2063,6 +2061,7 @@ A grossura da canetinha é um número.
 \CORES
 
 \CORES VÍVIDAS
+A cor eigengrau é uma cor.
 A cor branco é uma cor.
 A cor branca é uma cor.
 A cor preta é uma cor.  \
@@ -5143,7 +5142,7 @@ Função para que se determine se um byte é semelhante para um segundo byte:
 
 Função para que se determine se um byte é irrelevante:
   Se o byte for menor do que ou igual ao caractere de espaço, diga sim.
-  Se o byte for o símbolo DEL [que agora está descontinuado], diga sim.
+  Se o byte for o [ANTIGO] símbolo DEL [O descontinuado], diga sim.
   Se o byte for o espaço rígido, diga sim.
   Se o byte for 129, diga sim. \ Unused
   Se o byte for 141, diga sim. \ Unused
