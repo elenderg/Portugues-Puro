@@ -5151,7 +5151,7 @@ Função para que se determine se um byte é irrelevante:
   Se o byte for 157, diga sim. \ Unused
   Diga não.
 
-Função para que se determine se um byte é igual para  um número ou para um segundo número;
+Função para que se determine se um byte é igual para um número ou para um segundo número;
 Função para que se determine se um byte é um número ou um segundo número:
   Se o byte for o número, diga sim.
   Se o byte for o segundo número, diga sim.
