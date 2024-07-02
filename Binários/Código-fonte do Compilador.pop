@@ -1,0 +1,1013 @@
+\ ** Rotina Principal
+
+Rotina para que se execute o programa:
+  Inicialize os componentes. 
+  \Inicialize o compilador.
+  Faça tudo. \ <---------------------------------------------------------------------------- 
+  Finalize o compilador.
+  Escreva na próxima linha em StdOut.
+  Escreva "Operação finalizada." junto com o texto CRLF para StdOut.
+  \Execute os eventos.\
+  Feche o programa.
+
+Rotina para que se faça tudo:
+  Atribua 1252 a um número denominado codepage.
+  Processe "kernel32.dll" "SetConsoleOutputCP" com o codepage retornando um número denominado status de erro.
+  Se o status de erro for 0 [NULL], escreva "Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT.
+  Obtenha uma string denominada endereço da pasta desde os argumentos da linha de comando.
+  Se o endereço da pasta estiver em branco, 
+    Escreva "--------------------------------------------------------------------------------------------------------------- " junto com o texto CRLF para StdOut;
+    Escreva "Aviso. Para utilizar este compilador, você deve invocá-lo através da linha de comando. " junto com o texto CRLF para StdOut;
+    Escreva "Para fazer isso, abra o Prompt de Comando (cmd.exe), navegue até a pasta do compilador e digite:" junto com o texto CRLF para StdOut;
+    Escreva " " junto com o texto CRLF para StdOut;
+    Escreva " c:\endereço_do_compilador.exe\  c:\pasta_do_projeto_atual\ " junto com o texto CRLF para StdOut;
+  Retorne.
+  Se o conteúdo deste caractere final deste endereço da pasta não for a barra invertida, 
+    Acrescente a barra invertida para o endereço da pasta.
+  Se o endereço da pasta não estiver no sistema de arquivos, 
+    Escreva "Erro. O diretório '" junto com o endereço da pasta seguido de "' não foi encontrado." junto com o texto CRLF para StdOut;
+    Retorne.
+  Escreva "Compilando o diretório '" junto com o endereço da pasta seguido de "' ..." junto com o texto CRLF para StdOut. \ #0
+  Escreva o texto CRLF para StdOut.
+  Compile o endereço da pasta. \ <---------------------------------------------------------------------------- 
+  Se existir algum problema de compilação, 
+    Exiba o erro de compilação; 
+    Retorne.
+  Escreva "Tempo de compilação: " junto com a string deste temporizador deste compilador seguido de " ms" junto com o texto CRLF para StdOut.
+
+Rotina para que se obtenha uma string desde os argumentos da linha de comando:
+  Processe "kernel32.dll" "GetCommandLineA" 
+    Retornando um endereço do caractere.
+  Converta o endereço do caractere para uma string denominada argumentos.
+  Lance um subtexto sobre os argumentos.
+  Itere.
+    Se o subtexto estiver em branco, 
+      Limpe a string; 
+      Retorne. 
+    Se o conteúdo deste caractere inicial deste subtexto não for o caractere de espaço, 
+      Adicione 1 para o caractere inicial deste subtexto; 
+      Reitere.
+    Atribua o subtexto para a string.
+    Elimine os resíduos na string.
+  \Reitere. 
+
+Rotina para que se compile um endereço da pasta: 
+  Compile o endereço da pasta (inicialização). \ #001
+  Compile o endereço da pasta (arquivos de código fonte). \ #002
+  Compile o endereço da pasta (análise dos arquivos fornecidos). \ #003
+  Compile o endereço da pasta (identificação dos tipos das variáveis). \ #004
+  Compile o endereço da pasta (identificação de variáveis globais). \ #005
+  Compile o endereço da pasta (cabeçalhos de rotinas). \ #006
+  Compile o endereço da pasta (cálculo de tamanhos e deslocamentos). \ #007
+  Compile o endereço da pasta (adição de rotinas de memória incorporadas). \ #008
+  Compile o endereço da pasta (catalogue as rotinas por utilização). \ #009
+  Compile o endereço da pasta (conteúdo das rotinas). \ #010
+  Compile o endereço da pasta (adição e compilação da rotina de inicialização). \ #011
+  Compile o endereço da pasta (deslocamento de parâmetros e variáveis). \ #012
+  Compile o endereço da pasta (endereço). \ #013
+  Compile o endereço da pasta (transmutação). \ #014
+  Compile o endereço da pasta (vinculação). \ #015
+  Compile o endereço da pasta (etapa final). \ #016
+  Compile o endereço da pasta (interrupção). \ #017
+
+Rotina para que se compile um endereço da pasta (inicialização): \#001
+  Escreva "Iniciando..." junto com o texto CRLF para StdOut.
+  Finalize o compilador. \ <------------------------ Por quê? 
+  Comece o temporizador deste compilador.
+  Inicialize o compilador usando o endereço da pasta. \ <----------------------------------------
+  Adicione o tipos primitivos.
+
+Rotina para que se finalize o compilador:
+  Destrua o catálogo de rotinas úteis.
+  Destrua o catálogo geral de rotinas.
+  Destrua o catálogo de variáveis hexadecimais.
+  Destrua o catálogo de variáveis globais.
+  Destrua o catálogo de tipos.
+  \Destrua o catálogo de apelidos.
+  Destrua as DLLs.
+  Destrua as rotinas.
+  Destrua os valores literais.
+  Destrua as variáveis globais.
+  Destrua as variáveis globais predefinidas.
+  Destrua os tipos.
+  Destrua os arquivos fontes.
+
+Rotina para que se inicialize o compilador usando um endereço da pasta:
+  Atribua o endereço da pasta ao endereço da pasta deste compilador.
+  Atribua 0 à contagem de nomes deste compilador.
+  Desative o sinalizador de erros deste compilador.
+  Limpe a mensagem de erro deste compilador.
+  Limpe o endereço do arquivo atual deste compilador.
+  Atribua 0 ao número da linha de erro deste compilador.
+  Esvazie a rotina utilizada atualmente.
+  Crie o catálogo de tipos com 13001 [recipientes]. \ era 4027
+  Crie o catálogo de variáveis globais com 13001 [recipientes]. \ era 4027
+  Crie o catálogo de variáveis hexadecimais com 13001 [recipientes]. \ era 4027
+  Crie o catálogo geral de rotinas com 13001 [recipientes]. \ era 7919
+  Crie o catálogo de rotinas úteis com 13001 [recipientes]. \ era 4027
+
+Rotina para que se adicione os tipos primitivos:
+  Adicione um tipo primitivo usando "byte" e "bytes" e 1.
+  Adicione um outro tipo primitivo usando "estrutura" e "estruturas" e 0.
+
+Rotina para que se adicione um tipo primitivo usando um nome e um nome plural e uma quantidade de caracteres:
+  Adicione o tipo primitivo para os tipos usando o nome e o nome plural e o nome. \ o nome do tipo
+  Atribua a quantidade de caracteres à quantidade de caracteres deste tipo primitivo.
+  Atribua o tipo primitivo ao tipo base deste tipo primitivo.
+  Catalogue o tipo primitivo. \ < -------------------------------------------------------------
+
+Rotina para que se adicione um tipo para uns tipos usando um nome e um nome plural e um nome do tipo primitivo:
+  Adicione o tipo para os tipos usando o nome e o nome plural e o nome do tipo primitivo e nulo [endereço local].
+
+Rotina para que se adicione um tipo para uns tipos usando um nome e um nome plural e um nome do tipo primitivo e um endereço local:
+  Crie o tipo. \ < -------------------------------------------------------------
+  Acrescente o tipo para a [lista de] tipos. \ Um tipo é uma lista duplamente encadeada
+  Atribua o endereço local ao endereço local deste tipo.
+  Atribua o nome ao nome deste tipo.
+  Atribua o nome plural ao nome plural deste tipo.
+  Atribua o nome do tipo primitivo ao nome do tipo primitivo deste tipo.
+
+Rotina para que se crie um tipo:
+  Aloque memória para o tipo.
+  Atribua 0/1 à razão de escala deste tipo.
+  Atribua -1 à quantidade de caracteres deste tipo.
+
+Rotina para que se catalogue um tipo:
+  Se o tipo for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Catalogue o tipo usando o nome deste tipo. \ < -------------------------------------------------------------
+
+Função para que se determine se há algum problema de compilação;
+Função para que se determine se existe algum problema de compilação:
+  Se o sinalizador de erros deste compilador estiver ativado, diga sim.
+
+Rotina para que se catalogue um tipo usando um nome:
+  Se o tipo for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Encontre um existing tipo usando o nome e o catálogo de tipos.
+  Se o existing tipo for inexistente,
+    Catalogue o tipo usando o nome e o catálogo de tipos;
+    Retorne.
+  [Se o existing tipo já existir, então:]
+  Atribua o endereço local deste tipo para um endereço local.
+  Se o endereço local for inexistente, 
+    Atribua o endereço local deste existing tipo ao endereço local. \ Aponta o erro para um tipo presente no código fonte, não no catálogo de tipos (not a generated type)
+  Se o endereço local não for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #125. Tipo: " junto com o nome seguido de "' duplicado." e o endereço local.
+
+Rotina para que se compile um endereço da pasta (arquivos de código fonte): \#002
+  Se existir algum problema de compilação, retorne.
+  Escreva "Carregando arquivos..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de operacionalização.
+  Carregue os arquivos fontes. \ < -------------------------------------------------------------
+  Suspenda o temporizador de operacionalização.
+
+Rotina para que se carregue uns arquivos fontes: \ Lê os arquivos fonte do diretório especificado, armazenando-os em uma lista de arquivos
+  Atribua ".pop" a uma nova extensão.
+  Anexe o caractere NULL após a nova extensão.
+  Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha um item desde o endereço da pasta deste compilador.
+    Se o item não for encontrado, pare.
+    Se a categoria deste item não for "arquivo", reitere.
+    Se a extensão deste  item não for a nova extensão, reitere.
+    Se o item parece ser encadernável, reitere. \ na versão atual essa linha pode ser removida, já que é específica do CAL/CEL
+    Adicione um arquivo fonte para os arquivos fontes usando o endereço completo deste item.
+    Carregue o arquivo fonte. \ < -------------------------------------------------------------
+  Reitere.
+
+Rotina para que se carregue um arquivo fonte: 
+\ Carrega o conteúdo de um arquivo fonte para o `Trecho` do objeto `ArquivoFonte`,
+\ expandindo contrações e armazenando o código fonte original em uma string separada.
+  Se o arquivo fonte for inexistente, retorne.
+  \Carregue o endereço completo deste arquivo fonte para o trecho deste arquivo fonte.
+  Carregue o endereço completo deste arquivo fonte para uma string. \ necessário para expandir contrações.
+  Se o erro do fluxo de entrada/saída não estiver em branco,
+    Apresente uma mensagem de erro contendo "Erro #133. Não foi possível carregar o arquivo: " 
+      junto com o endereço completo deste arquivo fonte seguido de ".";
+    Retorne.
+  Parse a string para o trecho deste arquivo fonte (para expandir contrações). \ < -------------------------------------------------------------
+
+
+Rotina para que se parse uma string para uma segunda string (para expandir contrações):
+\ Faz o parse da string do código fonte, expandindo contrações para o `Trecho` do objeto `ArquivoFonte`.
+  Limpe a segunda string.
+  Limpe uma terceira string.
+  Lance o percorredor de contrações sobre a string.
+  Itere.
+    Se o segmento final deste percorredor de contrações estiver em branco, retorne.
+    Posicione o segmento inicial deste percorredor de contrações sobre o segmento final deste percorredor de contrações.
+    Mova o percorredor de contrações (englobando tudo). \ < -------------------------------------------------------------
+    Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor de contrações não for um byte ignorável,
+      Acrescente o segmento inicial deste percorredor de contrações para a segunda string;
+      Reitere.
+    Acrescente o segmento inicial deste percorredor de contrações para a segunda string usando a terceira string (para expandir contrações).  \ < -------------------------------------------------------------
+    Atribua o segmento inicial deste percorredor de contrações à terceira string.
+  Reitere.
+
+
+Rotina para que se mova um percorredor (englobando tudo):
+  Posicione o segmento inicial deste percorredor sobre o segmento final deste percorredor.
+  Se o segmento final deste percorredor estiver em branco, retorne.
+  Se o conteúdo deste caractere inicial deste segmento final deste percorredor for irrelevante,
+    Mova o percorredor (ignorando os caracteres irrelevantes);
+    Retorne.
+  Se o conteúdo deste caractere inicial deste segmento final deste percorredor for a barra invertida,
+    Mova o percorredor (ignorando os comentários);
+    Retorne.
+  Se o conteúdo deste caractere inicial deste segmento final deste percorredor for o colchete esquerdo,
+    Mova o percorredor (ignorando as observações);
+    Retorne.
+  Se o conteúdo deste caractere inicial deste segmento final deste percorredor for as aspas duplas,
+    Mova o percorredor (conteúdo de texto);
+    Retorne.
+  Se o conteúdo deste caractere inicial deste segmento final deste percorredor for o parênteses esquerdo,
+    Mova o percorredor (qualificadores);
+    Retorne.
+  Se o conteúdo deste caractere inicial deste segmento final deste percorredor for algum sinal de pontuação,
+    Mova o percorredor (sinais de pontuação);
+    Retorne.
+  Se o percorredor estiver sobre algum possessivo inglês,
+    Mova o percorredor (possessivo inglês);
+    Retorne.
+  Mova o percorredor (símbolos conectivos).
+
+Rotina para que se mova um percorredor (ignorando os caracteres irrelevantes):
+  Avance o percorredor.
+  Se o segmento final deste percorredor estiver em branco, retorne.
+  Se o conteúdo deste caractere inicial deste segmento final deste percorredor for irrelevante, reitere.
+
+Rotina para que se mova um percorredor (ignorando os comentários):
+  Avance o percorredor.
+  Se o segmento final deste percorredor estiver em branco, retorne.
+  Se o conteúdo deste caractere inicial deste segmento final deste percorredor não for o retorno de carro, reitere.
+
+Rotina para que se mova um percorredor (ignorando as observações):
+  Se o segmento final deste percorredor estiver em branco, retorne.
+  Se o conteúdo deste caractere inicial deste segmento final deste percorredor for o retorno de carro, pare.
+  Se o conteúdo deste caractere inicial deste segmento final deste percorredor for o colchete esquerdo, adicione 1 para uma contagem.
+  Se o conteúdo deste caractere inicial deste segmento final deste percorredor for o colchete direito, subtraia 1 desde a contagem.
+  Avance o percorredor.
+  Se a contagem for 0, pare.
+  Reitere.
+
+Rotina para que se mova um percorredor (conteúdo de texto):
+  Avance o percorredor.
+  Se o segmento final deste percorredor estiver em branco, retorne.
+  Se o conteúdo deste caractere inicial deste segmento final deste percorredor for o retorno de carro, retorne.
+  Se o percorredor estiver sobre algum nested double-quote,
+    Avance o percorredor;
+    Reitere.
+  Se o conteúdo deste caractere inicial deste segmento final deste percorredor for as aspas duplas,
+    Avance o percorredor;
+    Retorne.
+  Reitere.
+
+Rotina para que se mova um percorredor (qualificadores):
+  Se o segmento final deste percorredor estiver em branco, retorne.
+  Se o conteúdo deste caractere inicial deste segmento final deste percorredor for o retorno de carro, pare.
+  Se o conteúdo deste caractere inicial deste segmento final deste percorredor for o parênteses esquerdo, adicione 1 para uma contagem.
+  Se o conteúdo deste caractere inicial deste segmento final deste percorredor for o parênteses direito, subtraia 1 desde a contagem.
+  Avance o percorredor.
+  Se a contagem for 0, pare.
+  Reitere.
+
+Rotina para que se mova um percorredor (sinais de pontuação):
+  Avance o percorredor.
+
+Rotina para que se mova um percorredor (possessivo inglês):
+  Avance o percorredor.
+  Se o segmento final deste percorredor estiver em branco, retorne.
+  Se o segmento final deste percorredor começa com "s", avance o percorredor.
+
+Rotina para que se mova um percorredor (símbolos conectivos):
+  Avance o percorredor.
+  Se o segmento final deste percorredor estiver em branco, retorne.
+  Se o percorredor estiver sobre algum possessivo inglês, retorne.
+  Se o conteúdo deste caractere inicial deste segmento final deste percorredor for um byte ignorável, reitere.
+
+Rotina para que se acrescente uma string para uma segunda string usando uma terceira string (para expandir contrações):
+  \contrações
+  Se a string for "ao",
+    Acrescente "a o" para a segunda string;
+    Retorne.
+  Se a string for "à",
+    Acrescente "a a" para a segunda string;
+    Retorne.
+  Se a string for "aos",
+    Acrescente "a os" para a segunda string;
+    Retorne.
+  Se a string for "às",
+    Acrescente "a as" para a segunda string;
+    Retorne.
+  Se a string for "d'o",
+    Acrescente "d' o" para a segunda string;
+    Retorne.
+  Se a string for "d'os",
+    Acrescente "d' os" para a segunda string;
+    Retorne.
+  Se a string for "d'a",
+    Acrescente "d' a" para a segunda string;
+    Retorne.
+  Se a string for "d'as",
+    Acrescente "d' as" para a segunda string;
+    Retorne.
+  Se a string for "d'um",
+    Acrescente "d' um" para a segunda string;
+    Retorne.
+  Se a string for "d'uns",
+    Acrescente "d' uns" para a segunda string;
+    Retorne.
+  Se a string for "d'uma",
+    Acrescente "d' uma" para a segunda string;
+    Retorne.
+  Se a string for "d'umas",
+    Acrescente "d' umas" para a segunda string;
+    Retorne.
+  \Se a string estiver precisando ser decomposta, acrescente "de o" para a segunda string; Retorne.
+  \Se a string for "dos", determine se a string precisa ser decomposta.
+  \Se a string precisa ser decomposta, acrescente "de os" para a segunda string; exit
+  \Se a string for "da", determine se a string precisa ser decomposta.
+  \Se a string precisa ser decomposta, acrescente "de a" para a segunda string; exit
+  \Se a string for "das", determine se a string precisa ser decomposta.
+  \Se a string precisa ser decomposta, acrescente "de as" para a segunda string; exit
+  \Se a string for "do", acrescente "de o" para a segunda string; Retorne.
+  \Se a string for "da", acrescente "de a" para a segunda string; Retorne.
+  \Se a string for "dos", acrescente "de os" para a segunda string; Retorne.
+  \Se a string for "das", acrescente "de as" para a segunda string; Retorne.
+  Se a string for "dum",
+    Acrescente "de esse" para a segunda string;
+    Retorne.
+  Se a string for "duma",
+    Acrescente "de essa" para a segunda string;
+    Retorne.
+  Se a string for "dumas",
+    Acrescente "de esses" para a segunda string;
+    Retorne.
+  Se a string for "duns",
+    Acrescente "de esses" para a segunda string;
+    Retorne.
+  Se a string for "daqui",
+    Acrescente "de aqui" para a segunda string;
+    Retorne.
+  Se a string for "dali",
+    Acrescente "de ali" para a segunda string;
+    Retorne.
+  Se a string for "dele",
+    Acrescente "de ele" para a segunda string;
+    Retorne.
+  Se a string for "dela",
+    Acrescente "de ela" para a segunda string;
+    Retorne.
+  Se a string for "desse",
+    Acrescente "de esse" para a segunda string;
+    Retorne.
+  Se a string for "dessa",
+    Acrescente "de essa" para a segunda string;
+    Retorne.
+  Se a string for "desses",
+    Acrescente "de esses" para a segunda string;
+    Retorne.
+  Se a string for "dessas",
+    Acrescente "de essas" para a segunda string;
+    Retorne.
+  Se a string for "deste",
+    Acrescente "de este" para a segunda string;
+    Retorne.
+  Se a string for "desta",
+    Acrescente "de esta" para a segunda string;
+    Retorne.
+  Se a string for "destes",
+    Acrescente "de estes" para a segunda string;
+    Retorne.
+  Se a string for "destas",
+    Acrescente "de estas" para a segunda string;
+    Retorne.
+  Se a string for "disso",
+    Acrescente "de isso" para a segunda string;
+    Retorne.
+  Se a string for "disto",
+    Acrescente "de isto" para a segunda string;
+    Retorne.
+  Se a string for "nesse",
+    Acrescente "em esse" para a segunda string;
+    Retorne.
+  Se a string for "nesses",
+    Acrescente "em esses" para a segunda string;
+    Retorne.
+  Se a string for "neste",
+    Acrescente "em este" para a segunda string;
+    Retorne.
+  Se a string for "nestes",
+    Acrescente "em estes" para a segunda string;
+    Retorne.
+  Se a string for "nisso",
+    Acrescente "em isso" para a segunda string;
+    Retorne.
+  Se a string for "nisto",
+    Acrescente "em isto" para a segunda string;
+    Retorne.
+  Se a string for "nessa",
+    Acrescente "em essa" para a segunda string;
+    Retorne.
+  Se a string for "nessas",
+    Acrescente "em essas" para a segunda string;
+    Retorne.
+  Se a string for "nesta",
+    Acrescente "em esta" para a segunda string;
+    Retorne.
+  Se a string for "nestas",
+    Acrescente "em estas" para a segunda string;
+    Retorne.
+  \Se a string for "donde", acrescente "de onde" para a segunda string; Retorne.
+  \Se a string for "dentre", acrescente "de entre" para a segunda string; Retorne.
+  \Se a string for "dantes", acrescente "de antes" para a segunda string; Retorne.
+  Se a string for "dalguém",
+    Acrescente "de alguém" para a segunda string;
+    Retorne.
+  Se a string for "dalgum",
+    Acrescente "de um" para a segunda string;
+    Retorne.
+  Se a string for "dalguma",
+    Acrescente "de uma" para a segunda string;
+    Retorne.
+  Se a string for "dalguns",
+    Acrescente "de uns" para a segunda string;
+    Retorne.
+  Se a string for "dalgumas",
+    Acrescente "de umas" para a segunda string;
+    Retorne.
+  Se a string for "nalgum",
+    Acrescente "em um" para a segunda string;
+    Retorne.
+  Se a string for "nalguma",
+    Acrescente "em uma" para a segunda string;
+    Retorne.
+  Se a string for "nalguns",
+    Acrescente "em uns" para a segunda string;
+    Retorne.
+  Se a string for "nalgumas",
+    Acrescente "em umas" para a segunda string;
+    Retorne.
+  Se a string for "doutro",
+    Acrescente "de outro" para a segunda string;
+    Retorne.
+  Se a string for "doutra",
+    Acrescente "de outra" para a segunda string;
+    Retorne.
+  Se a string for "doutros",
+    Acrescente "de outros" para a segunda string;
+    Retorne.
+  Se a string for "doutras",
+    Acrescente "de outras" para a segunda string;
+    Retorne.
+  Se a string for "noutro",
+    Acrescente "em outro" para a segunda string;
+    Retorne.
+  Se a string for "noutra",
+    Acrescente "em outra" para a segunda string;
+    Retorne.
+  Se a string for "noutros",
+    Acrescente "em outros" para a segunda string;
+    Retorne.
+  Se a string for "noutras",
+    Acrescente "em outras" para a segunda string;
+    Retorne.
+   \Se a string deveria ser expandida usando a terceira string (análise de termos compostos), atribua "desde" para a string; atribua "" para a segunda string; Retorne.
+  Se a string for "na",
+    Acrescente "em a" para a segunda string;
+    Retorne.
+  Se a string for "no",
+    Acrescente "em o" para a segunda string;
+    Retorne.
+  Se a string for "nos",
+    Acrescente "em os" para a segunda string;
+    Retorne.
+  Se a string for "nas",
+    Acrescente "em as" para a segunda string;
+    Retorne.
+  \Se a string for "noutro", acrescente "em outro" para a segunda string; Retorne.
+  \Se a string for "noutra", acrescente "em outra" para a segunda string; Retorne.
+  \Se a string for "noutros", acrescente "em outros" para a segunda string; Retorne.
+  \Se a string for "noutras", acrescente "em outras" para a segunda string; Retorne.
+  Se a string for "num",
+    Acrescente "em um" para a segunda string;
+    Retorne.
+  Se a string for "numa",
+    Acrescente "em uma" para a segunda string;
+    Retorne.
+  Se a string for "nuns",
+    Acrescente "em uns" para a segunda string;
+    Retorne.
+  Se a string for "numas",
+    Acrescente "em umas" para a segunda string;
+    Retorne.
+  Se a string for "pelo",
+    Acrescente "por o" para a segunda string;
+    Retorne.
+  Se a string for "pela",
+    Acrescente "por a" para a segunda string;
+    Retorne.
+  Se a string for "pelos",
+    Acrescente "por os" para a segunda string;
+    Retorne.
+  Se a string for "pelas",
+    Acrescente "por as" para a segunda string;
+    Retorne.
+  Acrescente a string para a segunda string.
+
+Rotina para que se compile um endereço da pasta (análise dos arquivos fornecidos): \#003
+  Se existir algum problema de compilação, retorne.
+  Escreva "Analisando código fonte dos arquivos..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de análise/verificação.
+  Examine os arquivos fontes. \ < -------------------------------------------------------------
+  Suspenda o temporizador de análise/verificação.
+
+Rotina para que se examine uns arquivos fontes:
+  [Itere.]
+    Se existir algum problema de compilação, retorne.
+    Obtenha um arquivo fonte desde os arquivos fontes.
+    Se o arquivo fonte for inexistente, retorne.
+    Examine o arquivo fonte. \ < -------------------------------------------------------------
+  Reitere.
+
+Rotina para que se examine um arquivo fonte:
+  Se o arquivo fonte for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Lance um percorredor sobre o trecho deste arquivo fonte.
+  Mova o percorredor (usando diretrizes de compilação). \ < -------------------------------------------------------------
+  Itere.
+    Se existir algum problema de compilação, retorne.
+    Se o segmento inicial deste percorredor estiver em branco, retorne.
+    Se o segmento inicial deste percorredor for o início de algum tipo,
+      Examine um tipo usando o percorredor; \ < -------------------------------------------------------------
+      Reitere.
+    Se o segmento inicial deste percorredor for o início de alguma variável global,
+      Examine uma variável global usando o percorredor; \ < -------------------------------------------------------------
+      Reitere.
+    Se o segmento inicial deste percorredor for o início de alguma rotina,
+      Examine uma rotina usando o percorredor; \ < -------------------------------------------------------------
+      Reitere.
+    Apresente uma mensagem de erro contendo "Erro #164. O compilador não reconhece a sintaxe '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor.
+  Reitere.
+
+Rotina para que se mova um percorredor (usando diretrizes de compilação): \ talvez aqui conserte o comando "subtraia"
+  [Itere.]
+    Se o sinalizador de erros deste compilador estiver ativo,
+       Limpe o segmento inicial deste percorredor;
+       Retorne.
+    Mova o percorredor retornando uma string de erro (englobando tudo).\ < -------------------------------------------------------------
+    Se a string de erro não estiver em branco,
+       Apresente uma mensagem de erro contendo a string de erro e o caractere inicial deste segmento inicial deste percorredor; \#191
+       Retorne.
+    \Se o segmento inicial deste percorredor for "del", recue o percorredor; Retorne. \ Spanish contraction "del"; fudged para "de l", short por "de el"
+    Se o segmento inicial deste percorredor estiver em branco, retorne.
+    Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor for irrelevante, reitere.
+    Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor for a barra invertida, reitere.
+    Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor for o colchete esquerdo, reitere.
+
+Rotina para que se mova um percorredor retornando uma string de erro (englobando tudo):
+  Limpe a string de erro.
+  Mova o percorredor (englobando tudo).
+  Se o segmento inicial deste percorredor estiver em branco, retorne.
+  Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor for o colchete esquerdo,
+    Mova o percorredor retornando a string de erro (diretrizes de validação de observações); \ < -------------------------------------------------------------
+    Retorne.
+  Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor for as aspas duplas,
+    Mova o percorredor retornando a string de erro (diretrizes de validação de conteúdos de texto); \ < -------------------------------------------------------------
+    Retorne.
+  Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor for o parênteses esquerdo,
+    Mova o percorredor retornando a string de erro (diretrizes de validação de qualificadores); \ < -------------------------------------------------------------
+    Retorne.
+
+Rotina para que se mova um percorredor retornando uma string de erro (diretrizes de validação de observações):
+  Se a quantidade de caracteres deste segmento inicial deste percorredor for menor do que 2,
+    Atribua "Erro #129. Observações devem terminar com um colchete ']'." para a string de erro;
+    Retorne.
+  Se o conteúdo deste caractere final deste segmento inicial deste percorredor não for o colchete direito,
+    Atribua "Erro #130. Observações precisam terminar com um colchete ']'." para a string de erro;
+    Retorne.
+
+Rotina para que se mova um percorredor retornando uma string de erro (diretrizes de validação de conteúdos de texto):
+  Se a quantidade de caracteres deste segmento inicial deste percorredor for menor do que 2,
+    Atribua "Erro #131. Textos precisam terminar com aspas: ""." para a string de erro;
+    Retorne.
+  Se o conteúdo deste caractere final deste segmento inicial deste percorredor não for as aspas duplas,
+    Atribua "Erro #132. Textos devem terminar com aspas: ""." para a string de erro;
+    Retorne.
+
+Rotina para que se mova um percorredor retornando uma string de erro (diretrizes de validação de qualificadores):
+  Se a quantidade de caracteres deste segmento inicial deste percorredor for menor do que 2,
+    Atribua "Erro #127. Qualificadores devem terminar com parêntese ')'." para a string de erro;
+    Retorne.
+  Se o conteúdo deste caractere final deste segmento inicial deste percorredor não for o parênteses direito,
+    Atribua "Erro #128. Qualificadores precisam terminar com um parêntese ')'." para a string de erro;
+    Retorne.
+
+Rotina para que se examine um tipo usando um percorredor:
+  Se existir algum problema de compilação, retorne.
+  Se o segmento inicial deste percorredor for algum artigo indefinido português, 
+    Ative um português sinalizador.
+  Adicione o tipo para os tipos usando o caractere inicial deste segmento inicial deste percorredor. \ <-----------------------------
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine o nome deste tipo usando o percorredor. \ <-------------------------------------------------
+  Atribua o nome deste tipo ao nome plural deste tipo.
+  Atribua 0 para uma contagem.
+  Se o português sinalizador estiver ativo,
+    Pluralize o nome plural deste tipo (strings em português);
+    Adicione 1 à contagem.
+  Se a contagem for igual ou maior do que 2,
+    Apresente uma mensagem de erro contendo "Erro #165. não foi possível detectar o idioma desta variável" e o endereço local deste tipo;
+    Retorne.
+  Se o segmento inicial deste percorredor for algum operador de atribuição de estruturas compostas,
+    Examine o tipo usando o percorredor(cláusula 'tem');
+    Retorne.
+  Se o segmento inicial deste percorredor não for algum operador de atribuição simples,
+    Apresente a mensagem de erro contendo "Erro #166. Esperado 'é/está'. Encontrado '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor for algum valor numérico literal,
+    Examine o tipo usando o percorredor (unidade de medida);
+    Retorne.
+  Se o segmento inicial deste percorredor não for algum artigo indefinido,
+    Apresente a mensagem de erro contendo "Erro #167. Esperado 'um/uma'. Encontrado '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine o nome do tipo primitivo deste tipo usando o percorredor.
+  Examine algum dado complementar para o tipo usando o percorredor.
+  Se o segmento inicial deste percorredor não for o ponto final,
+    Apresente a mensagem de erro contendo "Erro #168. Insira um '.' após a declaração do tipo."
+    Junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
+    Retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Catalogue o tipo.
+
+Rotina para que se adicione um tipo para uns tipos usando um endereço local:
+  Crie o tipo.
+  Acrescente o tipo para a [lista de] tipos.
+  Atribua o endereço local ao endereço local deste tipo.
+
+Rotina para que se examine um nome usando um percorredor:
+  Limpe o nome.
+  Se existir algum problema de compilação, retorne.
+  Se o percorredor estiver sobre algum indicador de início de variável, \ <-----------------------------
+    Expanda o nome com o segmento inicial deste percorredor;
+    Mova o percorredor (usando diretrizes de compilação).
+  Itere.
+    Se existir algum problema de compilação, retorne.
+    Se o percorredor estiver sobre algum indicador de fim de variável, pare.
+    Expanda o nome com o segmento inicial deste percorredor.
+    Mova o percorredor (usando diretrizes de compilação).
+  Reitere.
+  Se o nome estiver em branco,
+    Apresente uma mensagem de erro contendo "Erro #159. A variável '" 
+    junto com o segmento inicial deste percorredor seguido de "' não foi definida ainda." e o percorredor;
+    Retorne.
+
+Função para que se determine se um percorredor está sobre algum indicador de início de variável:
+  \ compare com indicador de fim de variável
+  Se o segmento inicial deste percorredor for algum sinal de pontuação, diga não.
+  Se o segmento inicial deste percorredor for algum símbolo, diga não.
+  Se o segmento inicial deste percorredor for algum artigo, diga não.
+  Se o segmento inicial deste percorredor for alguma conjunção, diga sim.
+  Se o segmento inicial deste percorredor for algum possessivo inglês, diga não.
+  Se o segmento inicial deste percorredor for algum verbo, diga sim.
+  Se o segmento inicial deste percorredor for algum operador aritmético, diga sim.
+  Se o percorredor estiver sobre alguma preposição, diga sim.
+  Se o segmento inicial deste percorredor for algum qualificador, diga não.
+  Se o segmento inicial deste percorredor for algum valor literal, diga não.
+  Se o segmento inicial deste percorredor for uma palavra-chave de designação, diga sim.
+  Se o segmento inicial deste percorredor for "então", diga sim.
+  Se o segmento inicial deste percorredor for algum operador de atribuição composto, diga sim.
+  Se o segmento inicial deste percorredor estiver em branco, diga não.
+
+Função para que se determine se um byte é algum sinal de pontuação:
+  Se o byte for o ponto final, diga sim.
+  Se o byte for o vírgula, diga sim.
+  Se o byte for o ponto&vírgula, diga sim.
+  Se o byte for o sinal de dois pontos, diga sim.
+  Se o byte for o ponto de exclamação, diga sim.
+  Se o byte for o ponto de interrogação, diga sim.
+  Diga não.
+
+Função para que se determine se um byte é algum símbolo: \ deveria estar no cérebro
+  Se o byte for o acento circumflexo, diga sim.
+  Se o byte for o barra vertical, diga sim.
+  Se o byte for o asterisco, diga sim.
+  Se o byte for o sinal de adição, diga sim.
+  Se o byte for o hífem, diga sim.
+  Se o byte for o barra inclinada, diga sim.
+  Se o byte for o símbolo menor do que, diga sim.
+  Se o byte for o símbolo maior do que, diga sim.
+  Se o byte for a chave esquerda, diga sim.
+  Se o byte for a chave direita, diga sim.
+  Se o byte for o sinal de igualdade, diga sim.
+  Se o byte for 128, diga sim.
+  Se o byte for 130, diga sim.
+  Se o byte estiver entre 132 e 137, diga sim.
+  Se o byte for 139, diga sim.
+  Se o byte estiver entre 145 e 153, diga sim.
+  Se o byte for 155, diga sim.
+  Se o byte estiver entre 161 e 180, diga sim.
+  Se o byte estiver entre 183 e 191, diga sim.
+  Se o byte for 215, diga sim.
+  Se o byte for 247, diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum artigo:
+  Se a string for algum artigo indefinido, diga sim.
+  Se a string for algum artigo definido, diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum artigo indefinido:
+  Se a string for algum artigo indefinido português, diga sim.
+  Se a string for algum pronome demonstrativo abrangente, diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum artigo indefinido português: 
+  \PAL
+  Se a string for "um", diga sim.
+  Se a string for "uma", diga sim.
+  Se a string for "uns", diga sim.
+  Se a string for "umas", diga sim.
+  \Se a string for "outro", diga sim.
+  \Se a string for "outra", diga sim.
+  \Se a string for "algum", diga sim.
+  \Se a string for "alguma", diga sim.
+  \Se a string for "alguns", diga sim.
+  \Se a string for "algumas", diga sim.
+  Se a string for algum pronome demonstrativo abrangente, diga sim. \ para funcionamento dos possessivos - local correto
+  Diga não.
+
+Função para que se determine se uma string é algum pronome demonstrativo abrangente:
+  Se a string for "esse", diga sim.
+  Se a string for "essa", diga sim.
+  Se a string for "aquele", diga sim.
+  Se a string for "aquela", diga sim.
+  Se a string for "esses", diga sim.
+  Se a string for "essas", diga sim.
+  Se a string for "aqueles", diga sim.
+  Se a string for "aquelas", diga sim.
+  Se a string for "certo", diga sim.
+  Se a string for "certa", diga sim.
+  Se a string for "certos", diga sim.
+  Se a string for "certas", diga sim.
+  Se a string for "determinado", diga sim.
+  Se a string for "determinada", diga sim.
+  Se a string for "determinados", diga sim.
+  Se a string for "determinadas", diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum artigo definido:
+  Se a string for "o", diga sim.
+  Se a string for "a", diga sim.
+  Se a string for "os", diga sim.
+  Se a string for "as", diga sim.
+  Se a string for algum pronome demonstrativo adjacente, diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum pronome demonstrativo adjacente:
+  Se a string for "este", diga sim.
+  Se a string for "esta", diga sim.
+  Se a string for "estes", diga sim.
+  Se a string for "estas", diga sim.
+  Diga não.
+
+Função para que se determine se uma string é alguma conjunção:
+  \# verificar depois o uso dos termos: "ambos", "mas" e "nenhum"
+  Se a string for "e", diga sim.
+  Se a string for "ou", diga sim.
+  Se a string for "nem", diga sim.
+  \CAL
+  Se a string for "neither", diga sim.
+  Se a string for "nor", diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum possessivo inglês:
+  Se a string for "'s", diga sim.
+  Se a string for "'", diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum verbo:
+  \PAL
+  Se a string for "deve", diga sim.
+  Se a string for "deveria", diga sim.
+  Se a string for "deveriam", diga sim.
+  Se a string for "devem", diga sim.
+  Se a string for "estar", diga sim.
+  Se a string for "ser", diga sim.
+  Se a string for "for", diga sim.
+  Se a string for "forem", diga sim.
+  Se a string for "estiver", diga sim.
+  Se a string for "estiverem", diga sim.
+  Se a string for "estamos", diga sim.
+  Se a string for "há", diga sim.
+  Se a string for "houver", diga sim.
+  Se a string for "é", diga sim.
+  Se a string for "está", diga sim.
+  Se a string for "são", diga sim.
+  Se a string for "estão", diga sim.
+  Se a string for "foi", diga sim.
+  Se a string for "estava", diga sim.
+  Se a string for "foram", diga sim.
+  Se a string for "estavam", diga sim.
+  Se a string for "será", diga sim.
+  Se a string for "estará", diga sim.
+  Se a string for "serão", diga sim.
+  Se a string for "estarão", diga sim.
+  Se a string for "existir", diga sim.
+  Se a string for "existe", diga sim.
+  \Se a string for "seja", diga sim.
+  Se a string for "supera", diga sim.
+  Se a string for "superam", diga sim.
+  Se a string for "excede", diga sim.
+  Se a string for "excedem", diga sim.
+  Se a string for "pode", diga sim.
+  Se a string for "puder", diga sim.
+  Se a string for "puderem", diga sim.
+  Se a string for "podem", diga sim.
+  Se a string for "poderia", diga sim.
+  Se a string for "poderia", diga sim.
+  Se a string for "podemos", diga sim.
+  Se a string for "tem", diga sim.
+  Se a string for "têm", diga sim.
+  Se a string for "ter", diga sim.
+  Se a string for "possui", diga sim.
+  Se a string for "possuem", diga sim.
+  Se a string for "possuir", diga sim.
+  \\ trouble makers
+  Se a string for "inicia", diga sim.
+  Se a string for "iniciar", diga sim.
+  Se a string for "começa", diga sim.
+  Se a string for "começar", diga sim.
+  Se a string for "termina", diga sim.
+  Se a string for "terminar", diga sim.
+  Se a string for "finaliza", diga sim.
+  Se a string for "finalizar", diga sim.
+  Se a string for "parece", diga sim.
+  Se a string for "necessita", diga sim.
+  Se a string for "necessitar", diga sim.
+  Se a string for "requer", diga sim.
+  \\ trouble makers
+  Diga não.
+
+Função para que se determine se uma string é algum operador aritmético:
+  Se a string for "mais", diga sim.
+  Se a string for "menos", diga sim.
+  Se a string for "vezes", diga sim.
+  Se a string for "dividido", diga sim.
+  Se a string for "depois", diga sim.
+  Se a string for "seguido", diga sim.
+  Se a string for "juntamente", diga sim.
+  Se a string for "junto", diga sim.
+  Se a string for "acompanhado", diga sim.
+  Diga não.
+
+Função para que se determine se um percorredor está sobre alguma preposição:
+  Atribua o segmento inicial deste percorredor para um subtexto.
+  Se o percorredor estiver sobre algum preposição conectiva, diga sim. \ "a" no sentido de "para"
+  Se o subtexto for "a_partir_de", diga sim.
+  Se o subtexto for "abaixo", diga sim.
+  \Se o subtexto for "baixo", diga sim.
+  Se o subtexto for "acima", diga sim.
+  \Se o subtexto for "cima", diga sim.
+  Se o subtexto for "ante", diga sim.
+  Se o subtexto for "perante", diga sim.
+  Se o subtexto for "antes", diga sim.
+  Se o subtexto for "debaixo", diga sim.
+  Se o subtexto for "sob", diga sim.
+  Se o subtexto for "acerca", diga sim.
+  Se o subtexto for "cerca", diga sim.
+  Se o subtexto for "cuja", diga sim.
+  Se o subtexto for "cujo", diga sim.
+  Se o subtexto for "cujas", diga sim.
+  Se o subtexto for "cujos", diga sim.
+  \Se o subtexto for "próximo", diga sim.
+  Se o subtexto for "perto", diga sim.
+  Se o subtexto for "com", diga sim.
+  \Se o subtexto for "contendo", diga sim.
+  Se o subtexto for "como", diga sim.
+  Se o subtexto for "contra", diga sim.
+  Se o subtexto for "dada", diga sim.
+  Se o subtexto for "dado", diga sim.
+  Se o subtexto for "dando", diga sim.
+  Se o subtexto for "gerando", diga sim.
+  Se o subtexto for "resultando", diga sim.
+  Se o subtexto for "retornando", diga sim.
+  Se o subtexto for "desde", diga sim.
+  Se o subtexto for "depois", diga sim.
+  Se o subtexto for "após", diga sim.
+  Se o subtexto for "durante", diga sim.
+  Se o subtexto for "em", diga sim.
+  Se o subtexto for "entre", diga sim.
+  Se o subtexto for "dentre", diga sim.
+  Se o subtexto for "até", diga sim.
+  \Se o subtexto for "que", diga sim.
+  \Se o subtexto for "esquerda", diga sim.
+  Se o subtexto for "mediante", diga sim.
+  Se o subtexto for "para", diga sim.
+  Se o subtexto for "via", diga sim.
+  Se o subtexto for "segundo", diga sim.
+  Se o subtexto for "acordo", diga sim.
+  Se o subtexto for "sem", diga sim.
+  Se o subtexto for "então", diga sim.
+  Se o subtexto for "sobre", diga sim.
+  Se o subtexto for "usando", diga sim.
+  Se o subtexto for "versus", diga sim.
+  Se o subtexto for "enquanto", diga sim.
+  Se o subtexto for "aproximadamente", diga sim.
+  Se o subtexto for "através", diga sim.
+  Se o subtexto for "algum", diga sim.
+  Se o subtexto for "sob", diga sim.
+  Se o subtexto for "debaixo", diga sim.
+  Se o subtexto for "entre", diga sim.
+  \Se o subtexto for "baixo", diga sim. -> erro
+  Se o subtexto for "por", diga sim.
+  Se o subtexto for "usando", diga sim.
+  Se o subtexto for "referente", diga sim.
+  Se o subtexto for "pertencente", diga sim.
+  Se o subtexto for "pertinente", diga sim.
+  Se o subtexto for "relativo", diga sim.
+  Se o subtexto for "relativa", diga sim.
+  Se o subtexto for "concernente", diga sim.
+  Se o subtexto for "atinente", diga sim.
+  Se o subtexto for "pertinente", diga sim.
+  Se o subtexto for "retornando", diga sim.
+  Se o subtexto for "começando", diga sim.
+  Se o subtexto for "começando", diga sim.
+  Se o subtexto for "iniciando", diga sim.
+  Se o subtexto for "usando", diga sim.
+  Se o subtexto for "via", diga sim.
+  Se o subtexto for "com", diga sim.
+  Se o subtexto for "aproada", diga sim.
+  Se o subtexto for "aproado", diga sim.
+  Se o subtexto for "aproando", diga sim.
+  Se o subtexto for "orientada", diga sim.
+  Se o subtexto for "orientado", diga sim.
+  Se o subtexto for "orientando", diga sim.
+  Se o subtexto for "orientando-se", diga sim.
+  Se o subtexto for "voltada", diga sim.
+  Se o subtexto for "voltado", diga sim.
+  Se o subtexto for "virada", diga sim.
+  Se o subtexto for "virado", diga sim.
+  Se o subtexto for "virando", diga sim.
+  Se o subtexto for "virando-se", diga sim.
+  Se o subtexto for "tão", diga sim.
+  Se o subtexto for "tanto", diga sim.
+  Se o subtexto for "quanto", diga sim.
+  Se o subtexto for "quão", diga sim.
+  Se o subtexto for "after", diga sim.
+  Se o subtexto for "regressivamente", diga sim.
+  Se o subtexto for "dentro de", diga sim.
+  Se o subtexto for "dentro", diga sim.
+  Se o subtexto for "parecida", diga sim.
+  Se o subtexto for "parecido", diga sim.
+  Se o subtexto for "semelhante", diga sim.
+  Se o subtexto for "similar", diga sim.
+  Se o subtexto for "em comprimento", diga sim.
+  Se o subtexto for "d'", diga sim.
+  Se o subtexto for "d'", diga sim.
+  Se o subtexto for "só", diga sim.
+  Se o subtexto for "somente", diga sim.
+  Se o subtexto for "unicamente", diga sim.
+  Se o subtexto for "exclusivamente", diga sim.
+  Se o subtexto for "apenas", diga sim.
+  Se o subtexto for "fora", diga sim.
+  Se o subtexto for "menores", diga sim.
+  Se o subtexto for "alta", diga sim.
+  Se o subtexto for "alto", diga sim.
+  Se o subtexto for "comprido", diga sim.
+  Se o subtexto for "comprida", diga sim.
+  Se o subtexto for "largo", diga sim.
+  Se o subtexto for "larga", diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum qualificador:
+  Se a string estiver em branco, diga não.
+  Se o conteúdo deste caractere inicial desta string for o parênteses esquerdo, diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum valor literal:
+  Se a string for algum ponteiro literal, diga sim.
+  Se a string for algum valor numérico literal, diga sim.
+  Se a string for algum string literal, diga sim.
+  \Se a string for algum sinalizador literal, diga sim. ***
+  Se a string for algum valor hexadecimal literal, diga sim.
+  Diga não.
+
+Função para que se determine se uma string é uma palavra-chave de designação:
+  Se a string for "chamado", diga sim.
+  Se a string for "chamados", diga sim.
+  Se a string for "chamada", diga sim.
+  Se a string for "chamadas", diga sim.
+  Se a string for "denominado", diga sim.
+  Se a string for "denominados", diga sim.
+  Se a string for "denominada", diga sim.
+  Se a string for "denominadas", diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum operador de atribuição composto:
+  Se a string for "igual", diga sim.
+  Diga não.
+
+
