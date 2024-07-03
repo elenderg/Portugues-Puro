@@ -1684,7 +1684,8 @@ Rotina para que se examine uma variável global usando um percorredor:
     Examine a variável global usando o percorredor (cláusula 'tem'); \ <-----------------------
     Retorne.
   Se o segmento inicial deste percorredor não for algum operador de atribuição simples,
-    Apresente uma mensagem de erro contendo "Erro #152. Erro de sintaxe. Esperado: 'é/está'. Encontrado: '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Apresente uma mensagem de erro contendo "Erro #152. Erro de sintaxe. O compilador esperava encontrar o termo 'é' ou 'são'. Termo encontrado: '" 
+    junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum artigo indefinido,
@@ -1726,21 +1727,7 @@ Rotina para que se catalogue uma variável global:
     Apresente uma mensagem de erro contendo "Erro #123. '" 
     junto com o nome desta variável global seguido de "' é uma variável variável global duplicada." e o endereço local desta variável global;
     Retorne.
-  Catalogue a variável global usando o nome desta variável global e o catálogo de variáveis globais. \ <-----------------------
-
-Rotina para que se examine uma variável global usando um percorredor (data part):
-  Se existir algum problema de compilação, retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor não for algum to,
-    Apresente uma mensagem de erro contendo "Erro #154. Erro de sintaxe na declaração da variável global. Esperava encontrar a expressão: 'igual a'. Encontrou: '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Examine o corpo de variável global desta variável global usando o percorredor.
-  Se o segmento inicial deste percorredor não for o ponto final,
-    Apresente a mensagem de erro contendo "Erro #155. Erro de sintaxe. Esperado '.' ao final de uma declaração variável variável global" e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Catalogue a variável global.
+  Catalogue a variável global usando o nome desta variável global e o catálogo de variáveis globais. \  Noodle
 
 Rotina para que se examine uma variável global usando um percorredor (literal termo):
   Se existir algum problema de compilação, retorne.
@@ -1749,21 +1736,43 @@ Rotina para que se examine uma variável global usando um percorredor (literal te
     Apresente uma mensagem de erro contendo "Erro #157. Erro de sintaxe. Esperado '.' no final de declarações de valores." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
-  Catalogue a variável global.
+  Catalogue a variável global. \ <-----------------------
 
 Rotina para que se examine uma variável global usando um percorredor (dados complementares):
   Se existir algum problema de compilação, retorne.
   Atribua "~inline " junto com o nome desta variável global seguido de " tipo" para um nome.
   Atribua o nome seguido de "s" para um nome plural. \ aqui pode estar o erro na formação do plural
-  Adicione um tipo para os tipos usando o nome e o nome plural e o nome do tipo desta variável global e o endereço local desta variável global.
-  Catalogue o tipo.
+  Adicione um tipo para os tipos usando 
+    o nome e 
+    o nome plural e 
+    o nome do tipo desta variável global e 
+    o endereço local desta variável global.\  <-----------------------
+  Catalogue o tipo. \ <-----------------------
   Atribua o nome deste tipo ao nome do tipo desta variável global.
-  Examine algum dado complementar para o tipo usando o percorredor.
+  Examine algum dado complementar para o tipo usando o percorredor. \ <-----------------------
   Se o segmento inicial deste percorredor não for o ponto final,
-    Apresente uma mensagem de erro contendo "Erro #158. Erro de sintaxe. Esperado '.' após informações complementares." e o percorredor;
+    Apresente uma mensagem de erro contendo "Erro #158. Erro de sintaxe. O compilador esperava encontrar um '.' após a declaração de informações complementares." e o percorredor;
+    Retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Catalogue a variável global. \ <-----------------------
+
+
+Rotina para que se examine uma variável global usando um percorredor (data part):
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor não for algum to, \ <-----------------------
+    Apresente uma mensagem de erro contendo 
+    "Erro #154. Erro de sintaxe na declaração da variável global. O compilador esperava encontrar a expressão: 'igual a'. Expressão encontrada: '"
+    junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine o corpo de variável global desta variável global usando o percorredor.
+  Se o segmento inicial deste percorredor não for o ponto final,
+    Apresente a mensagem de erro contendo "Erro #155. Erro de sintaxe. O compilador esperava encontrar um '.' ao final de uma declaração da variável global" e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Catalogue a variável global.
+
 
 Rotina para que se examine uma rotina usando um percorredor:
     \ Define o cabeçalho de rotina.
