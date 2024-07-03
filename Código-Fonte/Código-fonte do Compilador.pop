@@ -5588,6 +5588,7 @@ Rotina para que se liste umas variáveis depois de uma string em um trecho:
   Insira quebra de linha no trecho.
 
 Rotina para que se mova um percorredor (ignorando os comentários):
+  [Itere.]
   Avance o percorredor.
   Se o segmento final deste percorredor estiver em branco, retorne.
   Se o conteúdo deste caractere inicial deste segmento final deste percorredor não for o retorno de carro, reitere.
@@ -5647,6 +5648,11 @@ Rotina para que se mova um percorredor (símbolos):
 Rotina para que se mova um percorredor (englobando tudo):
   Posicione o segmento inicial deste percorredor sobre o segmento final deste percorredor.
   Se o segmento final deste percorredor estiver em branco, retorne.
+  \Se o conteúdo deste caractere inicial deste segmento final deste percorredor for "a",
+  \ Avance o percorredor.
+  \ Se o conteúdo deste caractere inicial deste segmento final deste percorredor for algum artigo indefinido,
+  \ Recue o percorredor; atribua "para" para o percorredor.
+  
   Se o conteúdo deste caractere inicial deste segmento final deste percorredor for irrelevante,
     Mova o percorredor (ignorando os caracteres irrelevantes);
     Retorne.
@@ -6520,8 +6526,8 @@ Rotina para que se destrinche um tipo (dados opcionais - conjunto):
     Destrinche o tipo deste campo (dados complementares). \ de novo
     Se o sinalizador de referência deste campo não estiver ativo, reitere.
     Se o tipo deste campo não puder ser reduzido para "ponteiro",
-    Apresente a mensagem de erro contendo "Erro #144. Não entendi o parâmetro '(referência)' nesse campo: " junto com o nome deste campo seguido de "'..." e o endereço local deste campo;
-    Retorne.
+      Apresente a mensagem de erro contendo "Erro #144. Não entendi o parâmetro '(referência)' nesse campo: " junto com o nome deste campo seguido de "'..." e o endereço local deste campo;
+      Retorne.
   Reitere.
   Elimine apelidos duplicados desde os campos deste tipo.
   Se o tipo não puder ser reduzido para "lista estruturada", retorne.

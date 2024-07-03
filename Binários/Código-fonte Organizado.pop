@@ -1476,7 +1476,7 @@ Rotina para que se crie um tipo:
   Atribua 0/1 à razão de escala deste tipo.
   Atribua -1 à quantidade de caracteres deste tipo.
 
-Rotina para que se crie uma variável usando um categoria:
+Rotina para que se crie uma variável usando uma categoria:
   Aloque memória para a variável.
   Atribua a categoria à categoria desta variável.
   Atribua 1 à contagem desta variável.
@@ -2643,7 +2643,7 @@ Rotina para que se adicione uma função para umas DLLs usando um nome da DLL e um
   Atribua o nome da função ao nome desta função.
 
 Rotina para que se adicione um campo para uns campos usando um nome e um apelido e um nome do tipo e um sinalizador:
-  Adicione o campo para o campos usando "campo" e nil.
+  Adicione o campo para os campos usando "campo" e nil. \ Um campo é uma variável.
   Atribua o nome ao nome deste campo.
   Atribua o apelido ao apelido deste campo.
   Atribua o nome do tipo ao nome do tipo deste campo.

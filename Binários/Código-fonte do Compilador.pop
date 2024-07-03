@@ -35,6 +35,43 @@ Rotina para que se faça tudo:
     Retorne.
   Escreva "Tempo de compilação: " junto com a string deste temporizador deste compilador seguido de " ms" junto com o texto CRLF para StdOut.
 
+Função para que se determine se há algum problema de compilação;
+Função para que se determine se existe algum problema de compilação:
+  Se o sinalizador de erros deste compilador estiver ativado, diga sim.
+
+Rotina para que se apresente uma mensagem de erro contendo uma string:
+  Se existir algum problema de compilação,
+    Retorne.
+  Ative o sinalizador de erros deste compilador.
+  Atribua esta string à mensagem de erro deste compilador.
+
+Rotina para que se apresente uma mensagem de erro contendo uma string e um endereço de byte:
+  Se existir algum problema de compilação,
+    Retorne.
+  Ative o sinalizador de erros deste compilador.
+  Atribua a string à mensagem de erro deste compilador.
+  Encontre o endereço do arquivo atual deste compilador e o número da linha de erro deste compilador usando o endereço de byte .
+  Se o endereço do arquivo atual deste compilador estiver em branco,
+    Retorne.
+  Extraia um nome do arquivo desde o endereço do arquivo atual deste compilador.
+  Anteponha "Erro no arquivo '" junto com o nome do arquivo seguido de "'. " para a mensagem de erro deste compilador.
+
+Rotina para que se apresente uma mensagem de erro contendo uma string e um percorredor:
+  Se o segmento inicial deste percorredor não estiver em branco,
+    Apresente a mensagem de erro contendo a string e o caractere inicial deste segmento inicial deste percorredor;
+    Retorne.
+  Apresente a mensagem de erro contendo a string e o caractere final deste segmento final deste percorredor.
+
+Rotina para que se mostre no painel de informações uma string:
+  Escreva a string para StdOut.
+
+Rotina para que se compile um endereço da pasta (arquivos de código fonte): \#002
+  Se existir algum problema de compilação, retorne.
+  Escreva "Carregando arquivos..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de operacionalização.
+  Carregue os arquivos fontes. \ < -------------------------------------------------------------
+  Suspenda o temporizador de operacionalização.
+
 Rotina para que se obtenha uma string desde os argumentos da linha de comando:
   Processe "kernel32.dll" "GetCommandLineA" 
     Retornando um endereço do caractere.
@@ -137,10 +174,6 @@ Rotina para que se catalogue um tipo:
   Se existir algum problema de compilação, retorne.
   Catalogue o tipo usando o nome deste tipo. \ < -------------------------------------------------------------
 
-Função para que se determine se há algum problema de compilação;
-Função para que se determine se existe algum problema de compilação:
-  Se o sinalizador de erros deste compilador estiver ativado, diga sim.
-
 Rotina para que se catalogue um tipo usando um nome:
   Se o tipo for inexistente, retorne.
   Se existir algum problema de compilação, retorne.
@@ -156,38 +189,7 @@ Rotina para que se catalogue um tipo usando um nome:
     Apresente uma mensagem de erro contendo "Erro #125. Tipo: " junto com o nome seguido de "' duplicado." e o endereço local.
 
 
-Rotina para que se apresente uma mensagem de erro contendo uma string:
-  Se existir algum problema de compilação,
-    Retorne.
-  Ative o sinalizador de erros deste compilador.
-  Atribua esta string à mensagem de erro deste compilador.
 
-Rotina para que se apresente uma mensagem de erro contendo uma string e um endereço de byte:
-  Se existir algum problema de compilação,
-    Retorne.
-  Ative o sinalizador de erros deste compilador.
-  Atribua a string à mensagem de erro deste compilador.
-  Encontre o endereço do arquivo atual deste compilador e o número da linha de erro deste compilador usando o endereço de byte .
-  Se o endereço do arquivo atual deste compilador estiver em branco,
-    Retorne.
-  Extraia um nome do arquivo desde o endereço do arquivo atual deste compilador.
-  Anteponha "Erro no arquivo '" junto com o nome do arquivo seguido de "'. " para a mensagem de erro deste compilador.
-
-Rotina para que se apresente uma mensagem de erro contendo uma string e um percorredor:
-  Se o segmento inicial deste percorredor não estiver em branco,
-    Apresente a mensagem de erro contendo a string e o caractere inicial deste segmento inicial deste percorredor;
-    Retorne.
-  Apresente a mensagem de erro contendo a string e o caractere final deste segmento final deste percorredor.
-
-Rotina para que se mostre no painel de informações uma string:
-  Escreva a string para StdOut.
-
-Rotina para que se compile um endereço da pasta (arquivos de código fonte): \#002
-  Se existir algum problema de compilação, retorne.
-  Escreva "Carregando arquivos..." junto com o texto CRLF para StdOut.
-  Comece o temporizador de operacionalização.
-  Carregue os arquivos fontes. \ < -------------------------------------------------------------
-  Suspenda o temporizador de operacionalização.
 
 Rotina para que se carregue uns arquivos fontes: \ Lê os arquivos fonte do diretório especificado, armazenando-os em uma lista de arquivos
   Atribua ".pop" a uma nova extensão.
@@ -647,21 +649,23 @@ Rotina para que se examine um tipo usando um percorredor:
     Apresente uma mensagem de erro contendo "Erro #165. não foi possível detectar o idioma desta variável" e o endereço local deste tipo;
     Retorne.
   Se o segmento inicial deste percorredor for algum operador de atribuição de estruturas compostas,
-    Examine o tipo usando o percorredor(cláusula 'tem');
+    Examine o tipo usando o percorredor(cláusula 'tem'); \ <---------------------------------------------------
     Retorne.
   Se o segmento inicial deste percorredor não for algum operador de atribuição simples,
-    Apresente a mensagem de erro contendo "Erro #166. Esperado 'é/está'. Encontrado '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Apresente a mensagem de erro contendo "Erro #166. Esperado 'é/está'. Encontrado '" 
+    junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor for algum valor numérico literal,
-    Examine o tipo usando o percorredor (unidade de medida);
+  Se o segmento inicial deste percorredor for algum valor numérico literal, \ noodle
+    Examine o tipo usando o percorredor (unidade de medida); \ <------------------------------------------------
     Retorne.
   Se o segmento inicial deste percorredor não for algum artigo indefinido,
-    Apresente a mensagem de erro contendo "Erro #167. Esperado 'um/uma'. Encontrado '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Apresente a mensagem de erro contendo "Erro #167. Esperado 'um/uma'. Encontrado '" 
+    junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Examine o nome do tipo primitivo deste tipo usando o percorredor.
-  Examine algum dado complementar para o tipo usando o percorredor.
+  Examine algum dado complementar para o tipo usando o percorredor. \ <-----------------------------------------
   Se o segmento inicial deste percorredor não for o ponto final,
     Apresente a mensagem de erro contendo "Erro #168. Insira um '.' após a declaração do tipo."
     Junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
@@ -1478,10 +1482,197 @@ Rotina para que se pluralize uma string (terminada com "z"):
   \# regra padrão
   Acrescente "es" para a string. \ Retorne.
 
+Função para que se determine se uma string é algum operador de atribuição de estruturas compostas:
+  Se a string for "tem", diga sim.
+  Se a string for "têm", diga sim.
+  Se a string for "contém", diga sim.
+  Se a string for "contêm", diga sim.
+  \Se a string for "possui", diga sim.
+  Diga não.
 
+Rotina para que se examine um tipo usando um percorredor(cláusula 'tem'):
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Atribua "estrutura" ao nome do tipo primitivo deste tipo.
+  Examine os campos deste tipo usando o percorredor. \ < --------------------------------------------------
+  Se o segmento inicial deste percorredor não for o ponto final,
+    Apresente uma mensagem de erro contendo "Erro #169. Esperado '.' no final da estrutura. Encontrado '" 
+    junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Catalogue o tipo. \ <------------------------------
 
+Rotina para que se examine uns campos usando um percorredor:
+    Se existir algum problema de compilação, retorne.
+    Adicione um campo para a [lista de] campos usando "campo" [categoria] e o caractere inicial deste segmento inicial deste percorredor [endereço local] . \ Um campo é uma variável.
+    \ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Examine o campo usando o percorredor. \ <-----------------------------------------------------------------------------------
+    Se o segmento inicial deste percorredor não for alguma pausa, retorne.
+    Examine algum pauses usando o percorredor.
+  Reitere.
 
+Rotina para que se adicione uma variável para umas variáveis usando um categoria e um endereço local:
+  Crie a variável usando a categoria. \ <-----------------------------------------------------------------------------------
+  Acrescente a variável para as variáveis.
+  Atribua o endereço local ao endereço local desta variável.
 
+Rotina para que se crie uma variável usando uma categoria:
+  Aloque memória para a variável.
+  Atribua a categoria à categoria desta variável.
+  Atribua 1 à contagem desta variável.
 
+Rotina para que se examine um campo usando um percorredor:
+  Se existir algum problema de compilação, retorne.
+  Examine o campo usando o percorredor (tipo geral). \ <---------------------------------------------
+  Itere.
+    Se existir algum problema de compilação, retorne.
+    Se o segmento inicial deste percorredor for uma palavra-chave de designação,
+      Examine o campo usando o percorredor (cláusula designadora); \ <---------------------------------------------
+      Reitere.
+    Se o segmento inicial deste percorredor for "sob",
+      Examine o campo usando o percorredor (cláusula de redefinição); \ <---------------------------------------------
+      Reitere.
+    \Se o segmento inicial deste percorredor for "equivalente a", examine o campo usando o percorredor (cláusula de redefinição); Reitere.
+    \Se o segmento inicial deste percorredor for "análogo a", examine o campo usando o percorredor (cláusula de redefinição); Reitere.
+    \Se o segmento inicial deste percorredor for "análoga a", examine o campo usando o percorredor (cláusula de redefinição); Reitere.
+    Se o segmento inicial deste percorredor for "em",
+      Examine o campo usando o percorredor (cláusula de redefinição); \ <---------------------------------------------
+      Reitere.
+    Se o segmento inicial deste percorredor for "sob",
+      Examine o campo usando o percorredor (cláusula de redefinição); \ <---------------------------------------------
+      Reitere.
+    Se o segmento inicial deste percorredor for "sobre",
+      Examine o campo usando o percorredor (cláusula de redefinição); \ <---------------------------------------------
+      Reitere.
+    Se o segmento inicial deste percorredor for uma palavra-chave de referenciamento,
+      Examine o campo usando o percorredor (cláusula de referência); \ <---------------------------------------------
+      Reitere.
+
+Rotina para que se examine um campo usando um percorredor (tipo geral):
+  Se existir algum problema de compilação, retorne.
+  Se o segmento inicial deste percorredor for algum valor numérico literal,
+    Examine o campo usando o percorredor (tipo: array de bytes); \ <---------------------------------------------
+    Retorne.
+  Examine o campo usando o percorredor (tipo normal). \ <---------------------------------------------
+
+Rotina para que se examine um campo usando um percorredor (tipo: array de bytes):
+  Se existir algum problema de compilação, retorne.
+  Converta o segmento inicial deste percorredor para uma proporção. \ <---  Noodle
+  Reduza a proporção.
+  Se o denominador desta proporção não for 1,
+    Apresente uma mensagem de erro contendo "Erro #149. Erro de sintaxe. Arrays exigem tamanhos não fracionários" e o percorredor;
+    Retorne.
+  Atribua o numerador desta proporção à contagem deste campo.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor não for "byte" ou "bytes",
+    Apresente a mensagem de erro contendo "Erro #150. Erro de sintaxe. Esperado 'bytes' após um número designador." e o percorredor;
+    Retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Atribua "byte" ao nome do tipo deste campo.
+
+Rotina para que se examine um campo usando um percorredor (tipo normal):
+  Se existir algum problema de compilação, retorne.
+  Se o segmento inicial deste percorredor não for algum artigo indefinido,
+    Apresente uma mensagem de erro contendo "Erro #151. Erro de sintaxe. Esperado 'um/uma'. Encontrado: '" 
+    junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Retorne.
+  Se o segmento inicial deste percorredor for "outra", atribua "outra" ao nome deste campo.
+  Se o segmento inicial deste percorredor for "outras", atribua "outras" ao nome deste campo.
+  Se o segmento inicial deste percorredor for "outro", atribua "outro" ao nome deste campo.
+  Se o segmento inicial deste percorredor for "outros", atribua "outros" ao nome deste campo.
+  Se o segmento inicial deste percorredor for "segundo", atribua "segundo" ao nome deste campo.
+  Se o segmento inicial deste percorredor for "segundos", atribua "segundos" ao nome deste campo.
+  Se o segmento inicial deste percorredor for "segunda", atribua "segunda" ao nome deste campo.
+  Se o segmento inicial deste percorredor for "segundas", atribua "segundas" ao nome deste campo.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine um nome usando o percorredor. \ < -------------------------------------- LÁ EM CIMA 
+  Expanda o nome deste campo com o nome. \ < --------------------------------------  LÁ EM CIMA
+
+Rotina para que se examine um campo usando um percorredor (cláusula designadora):
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o nome do tipo deste campo estiver em branco, 
+    Atribua o nome deste campo ao nome do tipo deste campo. \ byte array nome do tipo already filled in
+  Examine o nome deste campo usando o percorredor.
+
+Rotina para que se examine um campo usando um percorredor (cláusula de redefinição):
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor não for algum artigo definido,
+    Apresente uma mensagem de erro contendo "Erro #148. Sintaxe incorreta. Esperado 'o/a'. Encontrado: '" 
+    junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine o novo nome deste campo usando o percorredor.
+
+Função para que se determine se uma string é uma palavra-chave de referenciamento:
+  Se a string for "(referência)", diga sim.
+  Diga não.
+
+Rotina para que se examine um campo usando um percorredor (cláusula de referência):
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Ative o sinalizador de referência deste campo.
+
+Rotina para que se examine algum pauses usando um percorredor:
+  [Itere.]
+    Se existir algum problema de compilação, retorne.
+    Se o segmento inicial deste percorredor não for alguma pausa, retorne.
+    Mova o percorredor (usando diretrizes de compilação).
+  Reitere.
+
+Função para que se determine se uma string é algum operador de atribuição simples:
+  Se a string for "é", diga sim.
+  Se a string for "está", diga sim.
+  Se a string for "são", diga sim.
+  Se a string for "estão", diga sim.
+  Se a string for "estamos", diga sim.
+  Se a string for "for", diga sim.
+  Se a string for "forem", diga sim.
+  Se a string for "estiverem", diga sim.
+  Se a string for "estarem", diga sim.
+  Se a string for "possui", diga sim.
+  \Se a string for "tem", diga sim.
+  Diga não.
+
+Rotina para que se examine um tipo usando um percorredor (unidade de medida):
+  Se existir algum problema de compilação, retorne.
+  Converta o segmento inicial deste percorredor para a razão de escala deste tipo.
+  Se a razão de escala deste tipo for 0,
+    Apresente uma mensagem de erro contendo "Erro #170. Impossível utilizar 0 em tipos escalares." e o endereço local deste tipo;
+    Retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine o nome do tipo primitivo deste tipo usando o percorredor. \ <------------------------------------
+  Se o segmento inicial deste percorredor não for o ponto final,
+    Apresente a mensagem de erro contendo "Erro #171. Necessário um '.' no fim desta fração. Encontrado. '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Catalogue o tipo. \ <-----------------------
+
+\Rotina para que se examine algum dado complementar de um tipo usando um percorredor:
+Rotina para que se examine algum dado complementar para um tipo usando um percorredor:
+  Se existir algum problema de compilação, retorne.
+  Se o segmento inicial deste percorredor for "to",
+    Examine algum dado complementar para o tipo usando o percorredor (ponteiros); \ <-----------------------
+    Retorne.
+  Se o segmento inicial deste percorredor for "para",
+    Examine algum dado complementar para o tipo usando o percorredor (ponteiros); \ <-----------------------
+    Retorne.
+  Se o segmento inicial deste percorredor for alguma palavra-chave de complementação,
+    Examine algum dado complementar para o tipo usando o percorredor (estrutura); \ <-----------------------
+    Retorne.
+
+Rotina para que se examine algum dado complementar para um tipo usando um percorredor (ponteiros):
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor não for algum artigo indefinido,
+    Apresente uma mensagem de erro contendo "Erro #147. Sintaxe incorreta no comando 'Aponte para um'. Encontrado: '" 
+    junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine o nome do conteúdo deste tipo usando o percorredor. \ <-----------------------
+
+Rotina para que se examine algum dado complementar para um tipo usando um percorredor (estrutura):
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine o campos deste tipo usando o percorredor. \ <-----------------------
 
 
