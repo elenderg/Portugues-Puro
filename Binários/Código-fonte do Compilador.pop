@@ -1689,21 +1689,21 @@ Rotina para que se examine uma variável global usando um percorredor:
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum artigo indefinido,
-    Examine a variável global usando o percorredor (literal termo);
+    Examine a variável global usando o percorredor (literal termo); \ <-----------------------
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Examine o nome do tipo desta variável global usando o percorredor.
   Se o segmento inicial deste percorredor for o início de algum dado complementar,
-    Examine a variável global usando o percorredor (dados complementares);
+    Examine a variável global usando o percorredor (dados complementares); \ <-----------------------
     Retorne.
   Se o segmento inicial deste percorredor for algum operador de atribuição composto,
-    Examine a variável global usando o percorredor (data part);
+    Examine a variável global usando o percorredor (data part); \ <-----------------------
     Retorne.
   Se o segmento inicial deste percorredor não for o ponto final,
     Apresente a mensagem de erro contendo "Erro #153. Erro de sintaxe. Declaração de variáveis globais devem terminar com um '.'" e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
-  Catalogue a variável global.
+  Catalogue a variável global. \ <-----------------------
 
 Rotina para que se examine uma variável global usando um percorredor (cláusula 'tem'):
   Se existir algum problema de compilação, retorne.
@@ -1766,21 +1766,36 @@ Rotina para que se examine uma variável global usando um percorredor (data part)
     junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
-  Examine o corpo de variável global desta variável global usando o percorredor.
+  Examine o corpo de variável global desta variável global usando o percorredor.  \ <-----------------------
   Se o segmento inicial deste percorredor não for o ponto final,
     Apresente a mensagem de erro contendo "Erro #155. Erro de sintaxe. O compilador esperava encontrar um '.' ao final de uma declaração da variável global" e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
-  Catalogue a variável global.
+  Catalogue a variável global.  \ <-----------------------
 
+Rotina para que se examine um corpo de variável global usando um percorredor:
+  Se existir algum problema de compilação, retorne.
+  Se o segmento inicial deste percorredor estiver em branco, retorne.
+  Atribua o caractere inicial deste segmento inicial deste percorredor ao caractere inicial deste corpo de variável global.
+  Atribua -1 ao caractere final deste corpo de variável global.
+  Itere.
+    Se existir algum problema de compilação, retorne. 
+    Se o segmento inicial deste percorredor estiver em branco, retorne. 
+    Se o segmento inicial deste percorredor for o sinal de dois pontos, retorne. 
+    Se o segmento inicial deste percorredor for o ponto final, retorne.
+    Atribua o caractere final deste segmento inicial deste percorredor ao caractere final deste corpo de variável global.
+    Mova o percorredor (usando diretrizes de compilação).
+  Reitere.
 
 Rotina para que se examine uma rotina usando um percorredor:
     \ Define o cabeçalho de rotina.
   Se existir algum problema de compilação, retorne.
   Adicione a rotina para as rotinas usando o caractere inicial deste segmento inicial deste percorredor.
-  Se o segmento inicial deste percorredor for syntatic sugar, mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor for syntatic sugar, 
+    Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for "para",
-    Apresente uma mensagem de erro contendo "Erro #161. Erro de sintaxe. Insira a palavra-chave 'para' '" junto com o segmento inicial deste percorredor seguido de "' neste cabeçalho de rotina." e o percorredor;
+    Apresente uma mensagem de erro contendo "Erro #161. Erro de sintaxe. O compilador esperava encontrar  'para '" 
+    junto com o segmento inicial deste percorredor seguido de "' neste cabeçalho de rotina." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação). \ ignora o "para" e obtém o próximo segmento inicial
   Se o segmento inicial deste percorredor for "que", mova o percorredor (usando diretrizes de compilação).
@@ -1793,7 +1808,7 @@ Rotina para que se examine uma rotina usando um percorredor:
     \apresente uma mensagem de erro contendo "Você precisa colocar um 'se' antes da palavra: " junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
     \Retorne.
   \Mova o percorredor (usando diretrizes de compilação). \ ignora o "se" e obtém o próximo segmento inicial
-  Examine a cabeçalho de rotina desta rotina usando o percorredor.
+  Examine a cabeçalho de rotina desta rotina usando o percorredor. \ <--------------------------------------------------- CONTINUAR DAQUI
   Se o segmento inicial deste percorredor for o ponto&vírgula,
     Examine a rotina usando o percorredor (sobrecarga de métodos);
     Retorne. \ *** usado para nomes alternativos de rotinas
