@@ -1808,23 +1808,83 @@ Rotina para que se examine uma rotina usando um percorredor:
     \apresente uma mensagem de erro contendo "Você precisa colocar um 'se' antes da palavra: " junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
     \Retorne.
   \Mova o percorredor (usando diretrizes de compilação). \ ignora o "se" e obtém o próximo segmento inicial
-  Examine a cabeçalho de rotina desta rotina usando o percorredor. \ <--------------------------------------------------- CONTINUAR DAQUI
+  Examine o cabeçalho de rotina desta rotina usando o percorredor. \ <--------------------------------------------------- 
   Se o segmento inicial deste percorredor for o ponto&vírgula,
-    Examine a rotina usando o percorredor (sobrecarga de métodos);
+    Examine a rotina usando o percorredor (sobrecarga de métodos); \ <--------------------------------------------------- 
     Retorne. \ *** usado para nomes alternativos de rotinas
   Se o segmento inicial deste percorredor não for o sinal de dois pontos,
     Apresente a mensagem de erro contendo "Erro #162. Erro de sintaxe. ':' ausente ou mal posicionado" e o endereço local desta rotina;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
-  Examine as instruções desta rotina usando o percorredor.
+  Examine as instruções desta rotina usando o percorredor. \ <--------------------------------------------------- CONTINUAR DAQUI
 
 Rotina para que se examine uma rotina usando um percorredor (sobrecarga de métodos):
   \ *** para nomes alternativos de rotinas
   Preserve o percorredor.
   Mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor não for o início de alguma rotina,
-    Apresente uma mensagem de erro contendo "Erro #163. Erro de sintaxe. ';' ausente ou mal posicionado" e o percorredor original;
+  Se o segmento inicial deste percorredor não for o início de alguma rotina, \ <------------------------------
+    Apresente uma mensagem de erro contendo "Erro #163. Erro de sintaxe. O compilador esperava encontrar um ';' " e o percorredor original;
     Retorne.
   Atribua o caractere inicial deste segmento inicial deste percorredor original ao caractere inicial destas instruções desta rotina.
   Atribua o caractere final deste segmento inicial deste percorredor original ao caractere final destas instruções desta rotina.
   Mova o percorredor original (usando diretrizes de compilação).
+
+Função para que se determine se uma string é o início de alguma rotina:
+  \PAL
+  Se a string for "Passos", diga sim.
+  Se a string for "Etapas", diga sim.
+  Se a string for "Procedimento", diga sim.
+  Se a string for "Rotina", diga sim.
+  Se a string for "Para", diga sim.
+  Se a string for "Função", diga sim.
+  Diga não.
+
+Rotina para que se examine uma instruções usando um percorredor:
+  Se existir algum problema de compilação, retorne.
+  Se o segmento inicial deste percorredor estiver em branco, retorne.
+  Se o segmento inicial deste percorredor for o enunciado de alguma rotina ou variável, retorne. \ <------------------------------
+  Atribua o caractere inicial deste segmento inicial deste percorredor ao caractere inicial destas instruções.
+  Itere.
+    Se existir algum problema de compilação, retorne.
+    Se o segmento inicial deste percorredor estiver em branco, retorne.
+    Atribua o caractere final deste segmento inicial deste percorredor ao caractere final destas instruções.
+    Se o segmento inicial deste percorredor for o sinal de dois pontos,
+      Apresente uma mensagem de erro contendo "Erro #160. Insira ':' ao final do cabeçalho desta rotina." e o percorredor;
+      Retorne.
+    Se o segmento inicial deste percorredor não for o ponto final,
+      Mova o percorredor (usando diretrizes de compilação);
+      Reitere.
+    Mova o percorredor (usando diretrizes de compilação).
+    Se o segmento inicial deste percorredor for o enunciado de alguma rotina ou variável, retorne. \ <------------------------------
+  Reitere.
+
+Função para que se determine se uma string é o enunciado de alguma rotina ou variável:
+  Se a string for syntatic sugar, diga sim.
+  \default
+  Se a string for algum artigo indefinido, diga sim.
+  Se a string for algum artigo definido, diga sim.
+  Diga não.
+
+Função para que se determine se uma string é syntatic sugar:
+  \PAL
+  Se a string for "Passos", diga sim.
+  Se a string for "Etapas", diga sim.
+  Se a string for "Procedimento", diga sim.
+  Se a string for "Rotina", diga sim.
+  Se a string for "Função", diga sim.
+  Diga não.
+
+Rotina para que se examine um cabeçalho de rotina usando um percorredor:
+  Se existir algum problema de compilação, retorne.
+  Se o segmento inicial deste percorredor estiver em branco, retorne.
+  Atribua o caractere inicial deste segmento inicial deste percorredor ao caractere inicial deste cabeçalho de rotina.
+  Atribua -1 ao caractere final deste cabeçalho de rotina.
+  Itere.
+    Se existir algum problema de compilação, retorne.
+    Se o segmento inicial deste percorredor estiver em branco, retorne.
+    Se o segmento inicial deste percorredor for o ponto&vírgula, retorne. \ *** alternate wording
+    Se o segmento inicial deste percorredor for o sinal de dois pontos, retorne.
+    Se o segmento inicial deste percorredor for o ponto final, retorne.
+    Atribua o caractere final deste segmento inicial deste percorredor ao caractere final deste cabeçalho de rotina.
+    Mova o percorredor (usando diretrizes de compilação).
+  Reitere.
