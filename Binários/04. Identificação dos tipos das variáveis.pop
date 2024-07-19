@@ -1,0 +1,177 @@
+Rotina para que se compile um endereço da pasta (identificação dos tipos das variáveis): \ #004
+  Se existir algum problema de compilação, retorne.
+  Escreva "Identificando os tipos das variáveis..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de resolução de tipos.
+  \ As rotinas abaixo são recursivas
+  Destrinche os tipos (expansão de listas). \ <----------------- 
+  Destrinche os tipos (registro de plurais). \ <-----------------
+  Destrinche os tipos (tipos de dados primitivos). \ <-----------------
+  Destrinche os tipos (dados complementares). \ <-----------------
+  Suspenda o temporizador de resolução de tipos.
+
+Rotina para que se destrinche uns tipos (expansão de listas):
+  Se existir algum problema de compilação, retorne.
+  Obtenha um tipo desde o tipos. \ <----------------- Um tipo é uma lista. Rotina presente no Noodle.
+  Se o tipo for inexistente, retorne.
+  Destrinche o tipo (expand lista). \ <--------------------------
+  Reitere.
+
+Rotina para que se destrinche um tipo (expand lista): \ Esta rotina é invocada quando tipo base do tipo atual ainda não foi determinado pelo compilador
+  Se existir algum problema de compilação, retorne.
+  Se o tipo for inexistente, retorne.
+  Se o tipo base deste tipo não for inexistente, retorne.
+  Se o nome deste tipo for "lista", retorne.
+  Se o tipo não puder ser reduzido para "lista" usando o nome do tipo primitivo, retorne.
+  Encontre um tipo base usando o nome do tipo primitivo deste tipo e o catálogo de tipos.
+  \ adiciona a lista estruturada - o número de campos "secretos" está "hard coded" em dois lugares: pesquise por "do que 4" \ era 6
+  Atribua o nome deste tipo seguido de " estruturada" para um nome.
+  Atribua o nome deste tipo seguido de " estruturadas" para um nome plural.
+  Atribua o nome deste tipo base seguido de " estruturada" para um nome do tipo primitivo.
+  Adicione um tipo estruturado para os tipos usando 
+    O nome [do tipo atual] e o nome plural e o nome do tipo primitivo. \ < -------------- Noodle
+  Adicione um campo para os campos deste tipo estruturado usando 
+    "próximo " junto com o nome deste tipo e "próximo" e o nome deste tipo e o sinalizador de ignição.
+  Adicione um campo português para os campos deste tipo estruturado usando 
+    "próxima " junto com o nome deste tipo e "próxima" e o nome deste tipo e o sinalizador de ignição.
+  Atribua "próximo " junto com o nome deste tipo ao novo nome deste campo português.
+  Adicione um segundo campo para os campos deste tipo estruturado usando 
+    "precedente " junto com 
+    O nome deste tipo e 
+    "precedente" e 
+    O nome deste tipo 
+    e o sinalizador de ignição.
+  Adicione um segundo campo português para os campos deste tipo estruturado usando 
+    O nome deste tipo seguido de 
+    " anterior" e 
+    "anterior" e \ vem antes do nome do tipo
+    O nome deste tipo e 
+    O sinalizador de ignição.
+  Atribua "precedente " junto com o nome deste tipo ao novo nome deste segundo campo português.
+  Se os campos deste tipo não estiverem vazios, acrescente os campos deste tipo para os campos deste tipo estruturado.
+  Catalogue o tipo estruturado.
+  \ fix up original tipo para look like um ponteiro
+  Atribua o nome deste tipo estruturado ao nome do conteúdo deste tipo.
+  \ LISTAS
+  Adicione um tipo encadeado para os tipos usando o nome plural deste tipo e "" e o nome plural deste tipo base.
+  Adicione um terceiro campo para os campos deste tipo encadeado usando "primeiro " junto com o nome deste tipo e "primeiro" e o nome deste tipo e o sinalizador de ignição.
+  Adicione um terceiro campo português para os campos deste tipo encadeado usando "primeira " junto com o nome deste tipo e "primeira" e o nome deste tipo e o sinalizador de ignição.
+  Atribua "primeiro " junto com o nome deste tipo ao novo nome deste terceiro campo português.
+  \Adicione um terceiro campo português feminino para os campos deste tipo encadeado usando "primeira " junto com o nome deste tipo e "primeira" e o nome deste tipo e o sinalizador de ignição.
+  \Atribua "primeiro " junto com o nome deste tipo ao novo nome deste terceiro campo português feminino.
+  Adicione um quarto campo para os campos deste tipo encadeado usando "último " junto com o nome deste tipo e "último" e o nome deste tipo e o sinalizador de ignição.
+  Adicione um quarto campo português para os campos deste tipo encadeado usando "última " junto com o nome deste tipo e "última" e o nome deste tipo e o sinalizador de ignição.
+  Atribua "último " junto com o nome deste tipo ao novo nome deste quarto campo português.
+  \Adicione um quarto campo português feminino para os campos deste tipo encadeado usando "última " junto com o nome deste tipo e "última" e o nome deste tipo e o sinalizador de ignição.
+  \Atribua "último " junto com o nome deste tipo ao novo nome deste quarto campo português feminino.
+  Catalogue o tipo encadeado.
+
+Rotina para que se destrinche uns tipos (registro de plurais):
+  Se existir algum problema de compilação, retorne.
+  Obtenha um tipo desde o tipos.
+  Se o tipo for inexistente, retorne.
+  Destrinche o tipo (registro de plurais).
+  Reitere.
+
+
+Rotina para que se destrinche uns tipos (tipos de dados primitivos): 
+  Se existir algum problema de compilação, retorne.
+  Obtenha um tipo desde o tipos.
+  Se o tipo for inexistente, retorne.
+  Destrinche o tipo (tipos de dados primitivos).
+  Reitere.
+
+
+Rotina para que se destrinche uns tipos (dados complementares):
+  Se existir algum problema de compilação, retorne.
+  Obtenha um tipo desde o tipos.
+  Se o tipo for inexistente, retorne.
+  Destrinche o tipo (dados complementares).
+  Reitere.
+
+Rotina para que se destrinche um tipo (tipos de dados primitivos):
+  Se existir algum problema de compilação, retorne.
+  Se o tipo for inexistente, retorne.
+  Se o tipo base deste tipo não for inexistente, retorne.
+  Encontre o tipo base deste tipo usando o nome do tipo primitivo deste tipo e o catálogo de tipos.
+  Se o tipo base deste tipo for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #139. Tipo base '" junto com o nome do tipo primitivo deste tipo seguido de "' inválido." e o endereço local deste tipo;
+    Retorne.
+  Ative o sinalizador de recursividade deste tipo.
+  Se o sinalizador de recursividade deste tipo base deste tipo estiver ativo,
+    Apresente a mensagem de erro contendo "Erro #140. Definição recursiva com: " junto com o nome do tipo primitivo deste tipo seguido de "." e o endereço local deste tipo;
+    Retorne.
+  Destrinche o tipo base deste tipo (tipos de dados primitivos).
+  Desative o sinalizador de recursividade deste tipo.
+
+
+
+Rotina para que se destrinche um tipo (registro de plurais):
+  Se existir algum problema de compilação, retorne.
+  Se o tipo for inexistente, retorne.
+  Se o nome plural deste tipo estiver em branco, retorne.
+  Se o tipo puder ser reduzido para "lista" usando o nome do tipo primitivo, retorne.
+  Catalogue o tipo usando o nome plural deste tipo.
+
+Rotina para que se destrinche um tipo (dados opcionais - ponteiro):
+  Se existir algum problema de compilação, retorne.
+  Se o tipo do conteúdo deste tipo não for inexistente, retorne.
+  Se o nome do conteúdo deste tipo estiver em branco,
+    Atribua o tipo do conteúdo deste tipo base deste tipo ao tipo do conteúdo deste tipo;
+    Retorne.
+  Encontre o tipo do conteúdo deste tipo usando o nome do conteúdo deste tipo e o catálogo de tipos.
+  Se o tipo do conteúdo deste tipo for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #141. Não sei bem pra que lista você está se referindo." e o endereço local deste tipo;
+    Retorne.
+
+Rotina para que se destrinche um tipo (dados opcionais - conjunto):
+  Se existir algum problema de compilação, retorne.
+  Se os campos deste tipo estiverem vazios,
+    Copie os campos deste tipo base deste tipo aos campos deste tipo;
+    Retorne.
+  Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha um campo desde os campos deste tipo (regressivamente).
+    Se o campo for inexistente, pare.
+    Se o campo estiver duplicada em os campos deste tipo,
+    Apresente uma mensagem de erro contendo "Erro #142. O campo '" junto com o nome deste campo seguido de "' está definido mais de uma vez." e o endereço local deste campo;
+    Retorne.
+    Destrinche o campo.
+    Se existir algum problema de compilação, retorne.
+    Se o sinalizador de recursividade deste tipo deste campo estiver ativo,
+    Apresente a mensagem de erro contendo "Erro #143. Definição recursiva encontrada no '" junto com o nome deste tipo deste campo seguido de "'." e o endereço local deste campo;
+    Retorne.
+    Destrinche o tipo deste campo (dados complementares). \ de novo
+    Se o sinalizador de referência deste campo não estiver ativo, reitere.
+    Se o tipo deste campo não puder ser reduzido para "ponteiro",
+    Apresente a mensagem de erro contendo "Erro #144. Não entendi o parâmetro '(referência)' nesse campo: " junto com o nome deste campo seguido de "'..." e o endereço local deste campo;
+    Retorne.
+  Reitere.
+  Elimine apelidos duplicados desde os campos deste tipo.
+  Se o tipo não puder ser reduzido para "lista estruturada", retorne.
+  Se a contagem destes campos deste tipo for maior do que 4, retorne. \ already copied? was 2 por próximo e prev, now 6 para included Spanish redefiniions
+  Copie os campos deste tipo base deste tipo aos campos deste tipo (apenas campos de dados).
+
+Rotina para que se destrinche um tipo (dados opcionais - scale):
+  Se existir algum problema de compilação, retorne.
+  Atribua o tipo base deste tipo para um tipo base.
+  Se a razão de escala deste tipo for 0,
+    Atribua a razão de escala deste tipo base deste tipo à razão de escala deste tipo;
+    Retorne.
+  Se a razão de escala deste tipo base for 0, retorne.
+  Multiplique a razão de escala deste tipo pela razão de escala deste tipo base.
+  Atribua o tipo base deste tipo base ao tipo base deste tipo.
+
+Rotina para que se destrinche um tipo (dados complementares):
+  Se existir algum problema de compilação, retorne.
+  Se o tipo for inexistente, retorne.
+  Se o sinalizador de informações complementares deste tipo estiver ativo, retorne.
+  Se o tipo base deste tipo for o tipo, retorne. \ para os tipos pré-definidos
+  Verifique por informações opcionais inválidas no tipo.
+  Ative o sinalizador de recursividade deste tipo.
+  Destrinche o tipo base deste tipo (dados complementares).
+  Se o tipo puder ser reduzido para "ponteiro", destrinche o tipo (dados opcionais - ponteiro).
+  Se o tipo puder ser reduzido para "estrutura", destrinche o tipo (dados opcionais - conjunto). \ mudar aqui
+  Se o tipo puder ser reduzido para "número", destrinche o tipo (dados opcionais - scale).
+  Desative o sinalizador de recursividade deste tipo.
+  Ative o sinalizador de informações complementares deste tipo.
+
