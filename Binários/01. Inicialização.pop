@@ -552,7 +552,7 @@ Rotina para que se examine um tipo usando um percorredor:
     junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor for algum valor numérico literal, \ noodle
+  Se o segmento inicial deste percorredor for algum valor numérico literal, \ *************************
     Examine o tipo usando o percorredor (unidade de medida); \ <------------------------------------------------
     Retorne.
   Se o segmento inicial deste percorredor não for algum artigo indefinido,
@@ -1453,7 +1453,7 @@ Rotina para que se examine um campo usando um percorredor (tipo geral):
 
 Rotina para que se examine um campo usando um percorredor (tipo: array de bytes):
   Se existir algum problema de compilação, retorne.
-  Converta o segmento inicial deste percorredor para uma proporção. \ <---  Noodle
+  Converta o segmento inicial deste percorredor para uma proporção. \ <---  *************************
   Reduza a proporção.
   Se o denominador desta proporção não for 1,
     Apresente uma mensagem de erro contendo "Erro #149. Erro de sintaxe. Arrays exigem tamanhos não fracionários" e o percorredor;
@@ -1623,7 +1623,7 @@ Rotina para que se catalogue uma variável global:
     Apresente uma mensagem de erro contendo "Erro #123. '" 
     junto com o nome desta variável global seguido de "' é uma variável variável global duplicada." e o endereço local desta variável global;
     Retorne.
-  Catalogue a variável global usando o nome desta variável global e o catálogo de variáveis globais. \  Noodle
+  Catalogue a variável global usando o nome desta variável global e o catálogo de variáveis globais. \  *************************
 
 Rotina para que se examine uma variável global usando um percorredor (literal termo):
   Se existir algum problema de compilação, retorne.
