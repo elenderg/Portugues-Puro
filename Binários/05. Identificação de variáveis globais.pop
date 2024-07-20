@@ -1,0 +1,147 @@
+Rotina para que se compile um endereço da pasta (identificação de variáveis globais): \ #005
+  Se existir algum problema de compilação, retorne.
+  Escreva "Identificando variáveis globais..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de resolução de variáveis globais.
+  Destrinche as variáveis globais. \ <-------------
+  Suspenda o temporizador de resolução de variáveis globais.
+
+Rotina para que se destrinche umas variáveis globais:
+  [Itere.]
+  Se existir algum problema de compilação, retorne.
+    Obtenha uma variável global desde as variáveis globais.
+    Se a variável global for inexistente, retorne.
+    Destrinche a variável global. \ < -----------------
+  Reitere.
+
+Rotina para que se destrinche uma variável global:
+  Se a variável global for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Se o corpo de variável global desta variável global não estiver em branco, 
+    Destrinche a variável global (compile corpo). \ <--------------------
+  Se o nome do tipo desta variável global estiver em branco,
+    Apresente uma mensagem de erro contendo 
+    "Erro #136. Tipo inválido: '" junto com o nome desta variável global seguido de "' . O tipo da variável variável global não foi identificado." e o endereço local desta variável global;
+    Retorne.
+  Destrinche a variável global como uma variável. \ <--------------------
+
+Rotina para que se destrinche uma variável global (compile corpo):
+  Se a variável global for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Lance um percorredor sobre o corpo de variável global desta variável global.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor não for algum valor literal,
+    Apresente uma mensagem de erro contendo 
+    "Erro #137. Erro de tipo. A variável '" junto com o segmento inicial deste percorredor seguido de "' deve ser inicializada com um valor literal válido." e o percorredor;
+    Retorne.
+  Compile um valor literal usando o percorredor. \ <------------------
+  Se existir algum problema de compilação, retorne.
+  Se o segmento inicial deste percorredor não estiver em branco,
+    Apresente a mensagem de erro contendo "Erro #138. Esperado '.' " e o percorredor;
+    Retorne.
+  Se o nome do tipo desta variável global estiver em branco, atribua o nome deste tipo deste valor literal ao nome do tipo desta variável global.
+  Atribua o valor literal ao valor literal desta variável global.
+  Catalogue o valor literal.
+
+Rotina para que se compile um valor literal usando um percorredor:
+  Se existir algum problema de compilação, retorne.
+  Adicione o valor literal para os valores literais usando o caractere inicial deste segmento inicial deste percorredor . \ < ----------------
+  \Se o segmento inicial deste percorredor for algum sinalizador literal, 
+    \Compile o valor literal usando o percorredor (valores booleanos); 
+    \Retorne.
+  \Se o segmento inicial deste percorredor for algum número ordinal,
+    \Compile o valor literal usando o percorredor (números ordinais);
+    \Retorne.
+  Se o segmento inicial deste percorredor for algum valor hexadecimal literal,
+    Compile o valor literal usando o percorredor (valores hexadecimais); \ <-------------------------
+    Retorne.
+  Se o segmento inicial deste percorredor for algum valor numérico literal,
+    Compile o valor literal usando o percorredor (valor numérico - análise preliminar);
+    Retorne.
+  Se o segmento inicial deste percorredor for algum ponteiro literal,
+    Compile o valor literal usando o percorredor (ponteiros);
+    Retorne.
+  Se o segmento inicial deste percorredor for algum string literal,
+    Compile o valor literal usando o percorredor (cadeia de caracteres);
+    Retorne.
+  Apresente uma mensagem de erro contendo "Erro interno #44. O valor '" 
+  junto com o segmento inicial deste percorredor  seguido de "' não pode ser compilado." e o percorredor.
+
+Rotina para que se adicione um valor literal para umas variáveis usando um endereço local:
+  Adicione o valor literal como [se fosse] uma variável para as variáveis usando "literal" e o endereço local. \ <---------------
+  Gere o nome deste valor literal usando "~L". \ <-----------------
+
+Rotina para que se gere um nome usando uma string:
+  Atribua a string ao nome.
+  Adicione 1 para a contagem de nomes deste compilador.
+  Converta a contagem de nomes deste compilador para uma segunda string.
+  Acrescente a segunda string para o nome.
+
+Rotina para que se compile um valor literal usando um percorredor (valores hexadecimais):
+  Se existir algum problema de compilação, retorne.
+  Atribua o segmento inicial deste percorredor para uma parte da cifra binária.
+  Adicione 1 para o caractere inicial desta parte da cifra binária.
+  Converta a parte da cifra binária para o data deste valor literal. \ **********************************
+  Mova o percorredor (usando diretrizes de compilação).
+  Atribua "texto hexadecimal" ao nome do tipo deste valor literal. 
+  Destrinche o valor literal. \ <-------------------------
+
+\Rotina para que se converta uma parte da cifra binária para uma string:
+  \Invoque a rotina converta uma cifra hexadecimal para um texto hexadecimal.
+
+Rotina para que se compile um valor literal usando um percorredor (valor numérico - análise preliminar):
+  Se existir algum problema de compilação, retorne.
+  Se o percorredor estiver acompanhado por algum unidade de medida,
+    Compile o valor literal usando o percorredor (valor numérico - unidade de medida); \ <--------------------
+    Retorne.
+  Se o segmento inicial deste percorredor for algum número inteiro,
+    Compile o valor literal usando o percorredor (valor numérico - números inteiros); \ <-----------------
+    Retorne.
+  Se o segmento inicial deste percorredor for algum proporção literal,
+    Compile o valor literal usando o percorredor (valor numérico - números fracionários); \ <-----------------
+    Retorne.
+  Se o segmento inicial deste percorredor for algum numeral misto literal,
+    Compile o valor literal usando o percorredor (valor numérico - números fracionários); \ <-----------------
+    Retorne.
+
+Rotina para que se compile um valor literal usando um percorredor (valor numérico - unidade de medida):
+  Se existir algum problema de compilação, retorne.
+  Converta o segmento inicial deste percorredor para uma proporção. \ ********************
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine um nome usando o percorredor. \ <--------------------
+  Encontre um tipo usando o nome e o catálogo de tipos. \ ******************
+  Se o tipo for inexistente,
+    Apresente uma mensagem de erro contendo 
+    "Erro #45. O tipo '" junto com o nome seguido de "' faz referência a uma unidade de medida inválida." e o endereço local deste valor literal;
+    Retorne.
+  Se o tipo não puder ser reduzido para "número",
+    Apresente a mensagem de erro contendo 
+    "Erro #46. O tipo '" junto com o nome seguido de "' não é um tipo numérico válido." e o endereço local deste valor literal;
+    Retorne.
+  Atribua a razão de escala deste tipo para uma final proporção. \ TRADUZIR
+  Se a razão de escala deste tipo for 0, 
+    Atribua 1/1 para a final proporção.
+  Multiplique a final proporção pelo proporção.
+  Reduza a final proporção. \ simplifique?
+  Se o denominador deste final proporção for 0,
+    Apresente a mensagem de erro contendo 
+    "Erro #47. O denominador de um valor fracionário não pode ser igual a 0. Unidade de medida inválida." e o endereço local deste valor literal.
+  Atribua o numerador deste final proporção dividido pelo denominador deste final proporção para um número.
+  Atribua o nome deste tipo ao nome do tipo deste valor literal.
+  Converta o número para o data deste valor literal.
+  Destrinche o valor literal. \ <-------------------
+
+Rotina para que se compile um valor literal usando um percorredor (valor numérico - números inteiros):
+  Se existir algum problema de compilação, retorne.
+  Converta o segmento inicial deste percorredor para um número.
+  Converta o número para os data deste valor literal.
+  Mova o percorredor (usando diretrizes de compilação).
+  Atribua "número" ao nome do tipo deste valor literal.
+  Destrinche o valor literal. \ <-------------------
+
+Rotina para que se compile um valor literal usando um percorredor (valor numérico - números fracionários):
+  Se existir algum problema de compilação, retorne.
+  Converta o segmento inicial deste percorredor para uma proporção.
+  Converta a proporção para o data deste valor literal.
+  Mova o percorredor (usando diretrizes de compilação).
+  Atribua "proporção" ao nome do tipo deste valor literal.
+  Destrinche o valor literal. \ <-------------------
