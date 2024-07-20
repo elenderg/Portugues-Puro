@@ -36,7 +36,7 @@ Rotina para que se destrinche uma variável global (compile corpo):
   Compile um valor literal usando o percorredor. \ <------------------
   Se existir algum problema de compilação, retorne.
   Se o segmento inicial deste percorredor não estiver em branco,
-    Apresente a mensagem de erro contendo "Erro #138. Esperado '.' " e o percorredor;
+    Apresente a mensagem de erro contendo "Erro #138. Declarações de variáveis globais devem terminar com um '.' " e o percorredor;
     Retorne.
   Se o nome do tipo desta variável global estiver em branco, atribua o nome deste tipo deste valor literal ao nome do tipo desta variável global.
   Atribua o valor literal ao valor literal desta variável global.
@@ -55,13 +55,13 @@ Rotina para que se compile um valor literal usando um percorredor:
     Compile o valor literal usando o percorredor (valores hexadecimais); \ <-------------------------
     Retorne.
   Se o segmento inicial deste percorredor for algum valor numérico literal,
-    Compile o valor literal usando o percorredor (valor numérico - análise preliminar);
+    Compile o valor literal usando o percorredor (valor numérico - análise preliminar); \ <-------------------------------
     Retorne.
   Se o segmento inicial deste percorredor for algum ponteiro literal,
-    Compile o valor literal usando o percorredor (ponteiros);
+    Compile o valor literal usando o percorredor (ponteiros); \ <-------------------------------
     Retorne.
   Se o segmento inicial deste percorredor for algum string literal,
-    Compile o valor literal usando o percorredor (cadeia de caracteres);
+    Compile o valor literal usando o percorredor (cadeia de caracteres); \ <-------------------------------
     Retorne.
   Apresente uma mensagem de erro contendo "Erro interno #44. O valor '" 
   junto com o segmento inicial deste percorredor  seguido de "' não pode ser compilado." e o percorredor.
@@ -144,4 +144,20 @@ Rotina para que se compile um valor literal usando um percorredor (valor numéric
   Converta a proporção para o data deste valor literal.
   Mova o percorredor (usando diretrizes de compilação).
   Atribua "proporção" ao nome do tipo deste valor literal.
+  Destrinche o valor literal. \ <-------------------
+
+Rotina para que se compile um valor literal usando um percorredor (ponteiros):
+  Se existir algum problema de compilação, retorne.
+  Converta 0 para os data deste valor literal. \ era nulo ao invés de 0
+  Mova o percorredor (usando diretrizes de compilação).
+  Atribua "ponteiro" ao nome do tipo deste valor literal.
+  Destrinche o valor literal. \ <-------------------
+
+Rotina para que se compile um valor literal usando um percorredor (cadeia de caracteres):
+  Se existir algum problema de compilação, retorne.
+  Atribua o segmento inicial deste percorredor aos data deste valor literal.
+  Remova as aspas de os data deste valor literal.
+  Mova o percorredor (usando diretrizes de compilação).
+  Atribua "string" ao nome do tipo deste valor literal.
+  \Atribua "texto" ao nome do tipo deste valor literal.
   Destrinche o valor literal. \ <-------------------
