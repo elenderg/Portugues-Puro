@@ -6,7 +6,7 @@ Rotina para que se compile um endereço da pasta (identificação dos tipos das var
   Destrinche os tipos (expansão de listas). \ <----------------- 
   Destrinche os tipos (registro de plurais). \ <-----------------
   Destrinche os tipos (tipos de dados primitivos). \ <-----------------
-  Destrinche os tipos (dados complementares).  \ <--------------------
+  Destrinche os tipos (dados complementares). \ <--------------------
   Suspenda o temporizador de resolução de tipos.
 
 Rotina para que se destrinche uns tipos (expansão de listas):
@@ -190,21 +190,24 @@ Rotina para que se verifique por informações opcionais inválidas em um tipo (con
   Se existir algum problema de compilação, retorne.
   Se o tipo não puder ser reduzido para "ponteiro",
     Apresente uma mensagem de erro contendo 
-    "Erro #15. Em declarações de tipos, a palavra-chave 'para' deve ser utilizada ao em variáveis do tipo 'ponteiro'. Exemplo: Um pchar é um 'ponteiro para' um caractere." e o endereço local deste tipo;
+    "Erro #15. Em declarações de tipos, a palavra-chave 'para' deve ser utilizada ao em variáveis do tipo 'ponteiro'." 
+    junto com o texto CRLF junto com " Exemplo: Um pchar é um 'ponteiro para' um caractere." e o endereço local deste tipo;
     Retorne.
 
 Rotina para que se verifique por informações opcionais inválidas em um tipo (campos):
   Se existir algum problema de compilação, retorne.
   Se o tipo não puder ser reduzido para "estrutura",
     Apresente uma mensagem de erro contendo 
-    "Erro #13. Em declarações de tipos, a palavra-chave 'com' deve ser utilizada em tipos do derivados do tipo 'estrutura'. Exemplo: Uma pessoa é uma 'estrutura com' um nome." e o endereço local deste tipo; \ ABCDE
+    "Erro #13. Em declarações de tipos, a palavra-chave 'com' deve ser utilizada em tipos do derivados do tipo 'estrutura'." 
+    junto com o texto CRLF junto com "Exemplo: Uma pessoa é uma 'estrutura com' um nome." e o endereço local deste tipo; \ ABCDE
     Retorne. 
 
 Rotina para que se verifique por informações opcionais inválidas em um tipo (tipos fracionários):
   Se existir algum problema de compilação, retorne.
   Se o tipo não puder ser reduzido para "número",
     Apresente uma mensagem de erro contendo 
-    "Erro #14.  Em declarações de tipos, Proporções e/ou escalas de medida em tipos do derivados do tipo 'número'. Exemplo: Uma dezena são 10 unidades." e o endereço local deste tipo;
+    "Erro #14.  Em declarações de tipos, os designadores de proporção ou escalas de medida só podem ser utilizados em tipos do derivados do tipo 'número'." 
+    junto com o texto CRLF junto com "Exemplo: Uma dezena são 10 unidades." e o endereço local deste tipo;
     Retorne.
 
 Rotina para que se destrinche um tipo (dados opcionais - ponteiro):
@@ -215,7 +218,8 @@ Rotina para que se destrinche um tipo (dados opcionais - ponteiro):
     Retorne.
   Encontre o tipo do conteúdo deste tipo usando o nome do conteúdo deste tipo e o catálogo de tipos. \ < --------------------
   Se o tipo do conteúdo deste tipo for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #141. Não foi possível identificar o endereço ao qual este ponteiro está se referindo." e o endereço local deste tipo;
+    Apresente uma mensagem de erro contendo 
+    "Erro #141. Não foi possível identificar o endereço ao qual este ponteiro está se referindo." e o endereço local deste tipo;
     Retorne.
 
 Rotina para que se destrinche um tipo (dados opcionais - conjunto):
@@ -229,29 +233,32 @@ Rotina para que se destrinche um tipo (dados opcionais - conjunto):
     Se o campo for inexistente, pare.
     Se o campo estiver duplicada em os campos deste tipo,
       Apresente uma mensagem de erro contendo 
-        "Erro #142. O campo '" junto com o nome deste campo seguido de "' já foi definido anteriormente nesta estrutura." e o endereço local deste campo;
+        "Erro #142. O campo '" junto com o nome deste campo seguido de 
+        "' já foi definido anteriormente nesta estrutura." e o endereço local deste campo;
     Retorne.
     Destrinche o campo. \ <---------------------------------------------------------
     Se existir algum problema de compilação, retorne.
     Se o sinalizador de recursividade deste tipo deste campo estiver ativo,
-      Apresente a mensagem de erro contendo "Erro #143. Uma definição recursiva foi detectada no campo '" junto com o nome deste tipo deste campo seguido de "'." e o endereço local deste campo;
+      Apresente a mensagem de erro contendo "Erro #143. Uma definição recursiva foi detectada no campo '" 
+      junto com o nome deste tipo deste campo seguido de "'." e o endereço local deste campo;
     Retorne.
     Destrinche o tipo deste campo (dados complementares). \ <---------------------
     Se o sinalizador de referência deste campo não estiver ativo, reitere.
     Se o tipo deste campo não puder ser reduzido para "ponteiro",
-      Apresente a mensagem de erro contendo "Erro #144. O qualificador '(referência)' informado no campo '" junto com o nome deste campo seguido de "' deve ser usado apenas em ponteiros." e o endereço local deste campo;
+      Apresente a mensagem de erro contendo "Erro #144. O qualificador '(referência)' informado no campo '" 
+      junto com o nome deste campo seguido de "' deve ser usado apenas em ponteiros." e o endereço local deste campo;
     Retorne.
   Reitere.
-  Elimine apelidos duplicados desde os campos deste tipo.
+  Elimine apelidos duplicados desde os campos deste tipo. \ <----------------------------------
   Se o tipo não puder ser reduzido para "lista estruturada", retorne.
-  Se a contagem destes campos deste tipo for maior do que 4, retorne. \ already copied? was 2 por próximo e prev, now 6 para included Spanish redefiniions
+  Se a contagem destes campos deste tipo for maior do que 4, retorne. \ Já copiado? No CAL eram 2 para o 'next' e o 'previous', viraram 6 com a inclusão de 'proximo', 'próxima', 'anterior' e 'prévia'
   Copie os campos deste tipo base deste tipo aos campos deste tipo (apenas campos de dados).
 
 Rotina para que se copie uns campos para uns segundo campos:
   [Itere.]
     Obtenha um campo desde o campos.
     Se o campo for inexistente, retorne.
-    Copie o campo para um segundo campo.
+    Copie o campo para um segundo campo. \ <----------------------
     Acrescente o segundo campo para o segundo campos.
   Reitere.
 
@@ -301,6 +308,32 @@ Rotina para que se destrinche uma variável (usando o nome do tipo declarado):
     Apresente uma mensagem de erro contendo 
     "Erro #146. Não foi possível determinar o tipo da variável '" junto com o nome do tipo desta variável seguido de "' no catálogo de tipos." e o endereço local desta variável;
     Retorne.
+
+Rotina para que se elimine apelidos duplicados desde umas variáveis:
+  Crie um catálogo usando 101. \ ******************
+  Elimine apelidos duplicados desde as variáveis usando o catálogo. \ <-------------------
+  Destrua o catálogo.
+
+Rotina para que se elimine apelidos duplicados desde umas variáveis usando um catálogo:
+  Se o catálogo for inexistente, retorne.
+  Itere.
+    Obtenha uma variável desde as variáveis. \ ******************
+    Se a variável for inexistente, retorne.
+    Elimine apelidos duplicados usando a variável e o catálogo. \ <-----------------------
+  Reitere.
+
+Rotina para que se elimine apelidos duplicados usando uma variável e um catálogo:
+  Se a variável for inexistente, retorne.
+  Se o catálogo for inexistente, retorne.
+  Encontre uma segunda variável usando o apelido desta variável e o catálogo.
+  Se a segunda variável for inexistente, encontre a segunda variável usando o nome desta variável e o catálogo.
+  Se a segunda variável for inexistente,
+    Catalogue a variável usando o apelido desta variável e o catálogo;
+    Retorne.
+  Limpe o apelido desta segunda variável.
+  Limpe o apelido desta variável.
+
+
 
 Rotina para que se destrinche um tipo (dados opcionais - scale):
   Se existir algum problema de compilação, retorne.
