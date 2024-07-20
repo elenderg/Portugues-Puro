@@ -22,7 +22,7 @@ Rotina para que se destrinche uma variável global:
     Apresente uma mensagem de erro contendo 
     "Erro #136. Tipo inválido: '" junto com o nome desta variável global seguido de "' . O tipo da variável variável global não foi identificado." e o endereço local desta variável global;
     Retorne.
-  Destrinche a variável global como uma variável. \ <--------------------
+  Destrinche a variável global como [se ela fosse] uma variável. \ <--------------------
 
 Rotina para que se destrinche uma variável global (compile corpo):
   Se a variável global for inexistente, retorne.
@@ -38,7 +38,8 @@ Rotina para que se destrinche uma variável global (compile corpo):
   Se o segmento inicial deste percorredor não estiver em branco,
     Apresente a mensagem de erro contendo "Erro #138. Declarações de variáveis globais devem terminar com um '.' " e o percorredor;
     Retorne.
-  Se o nome do tipo desta variável global estiver em branco, atribua o nome deste tipo deste valor literal ao nome do tipo desta variável global.
+  Se o nome do tipo desta variável global estiver em branco, 
+    Atribua o nome deste tipo deste valor literal ao nome do tipo desta variável global.
   Atribua o valor literal ao valor literal desta variável global.
   Catalogue o valor literal.
 

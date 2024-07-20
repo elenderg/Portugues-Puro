@@ -1,0 +1,52 @@
+Rotina para que se compile um endereço da pasta (cabeçalhos de rotinas): \ #006
+  Se existir algum problema de compilação, retorne.
+  Escreva "Agrupando os nomes das rotinas..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de compilação de cabeçalhos de rotina.
+  Compile os cabeçalhos referente às rotinas. \ <------------------------------------------
+  Suspenda o temporizador de compilação de cabeçalhos de rotina.
+
+Rotina para que se compile os cabeçalhos referente para umas rotinas:
+  [Itere.]
+  Se existir algum problema de compilação, retorne.
+    Obtenha uma rotina desde as rotinas.
+    Se a rotina for inexistente, retorne.
+    Compile o cabeçalho referente à rotina.
+  Reitere.
+
+Rotina para que se compile o cabeçalho referente para uma rotina:
+  Se a rotina for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Lance um percorredor sobre a cabeçalho de rotina desta rotina.
+  Mova o percorredor (usando diretrizes de compilação). \ < ---------------------
+  Se o segmento inicial deste percorredor for algum comando de deliberação,
+    Compile o cabeçalho referente à rotina usando o percorredor (rotina deliberativa);  \ < ---------------------
+    Retorne.
+  Se o percorredor for o início de alguma função possessiva reversa,
+    Compile o cabeçalho referente à rotina usando o percorredor (função do possessivo reverso);
+    Retorne.
+  Se o percorredor for o início de alguma função,
+    Compile o cabeçalho referente à rotina usando o percorredor (função);
+    Retorne.
+  Se o segmento inicial deste percorredor for "compativelmente",
+    Compile o cabeçalho referente à rotina usando o percorredor (modo de compatibilidade);
+    Retorne.
+  Compile o cabeçalho referente à rotina usando o percorredor (procedimento).
+
+Rotina para que se compile o cabeçalho referente para uma rotina usando um percorredor (rotina deliberativa):
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor não for algum comando condicional,
+    Apresente uma mensagem de erro contendo "Erro #35. Rotina 'Para que se determine se' com sintaxe inválida" e o percorredor;
+    Retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Ative o sinalizador de deliberação desta rotina.
+  Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor. \ <--------------------
+  Se algumas dentre as unidades semânticas desta rotina forem advérbios de negação,
+    Apresente a mensagem de erro contendo "Erro #36. A palavra-chave 'não' não é permitida em cabeçalhos de funções booleanas." e o percorredor;
+    Retorne.
+  Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
+  Se a representação interna da rotina desta rotina estiver no catálogo geral de rotinas,
+    Apresente a mensagem de erro contendo "Erro #37. A rotina para que se ''" 
+    junto com a representação interna da rotina desta rotina seguido de "' já havia sido definida anteriormente." e o endereço local desta rotina;
+    Retorne.
+  Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
