@@ -172,7 +172,7 @@ Rotina para que se destrinche um tipo (dados complementares):
   Se o tipo puder ser reduzido para "estrutura", 
     Destrinche o tipo (dados opcionais - conjunto). \ < ---------------------
   Se o tipo puder ser reduzido para "número", 
-    Destrinche o tipo (dados opcionais - scale).
+    Destrinche o tipo (dados opcionais - scale). \ <--------------------
   Desative o sinalizador de recursividade deste tipo.
   Ative o sinalizador de informações complementares deste tipo.
 
@@ -252,7 +252,7 @@ Rotina para que se destrinche um tipo (dados opcionais - conjunto):
   Elimine apelidos duplicados desde os campos deste tipo. \ <----------------------------------
   Se o tipo não puder ser reduzido para "lista estruturada", retorne.
   Se a contagem destes campos deste tipo for maior do que 4, retorne. \ Já copiado? No CAL eram 2 para o 'next' e o 'previous', viraram 6 com a inclusão de 'proximo', 'próxima', 'anterior' e 'prévia'
-  Copie os campos deste tipo base deste tipo aos campos deste tipo (apenas campos de dados).
+  Copie os campos deste tipo base deste tipo aos campos deste tipo (apenas campos de dados). \ <-----------------------
 
 Rotina para que se copie uns campos para uns segundo campos:
   [Itere.]
@@ -325,15 +325,44 @@ Rotina para que se elimine apelidos duplicados desde umas variáveis usando um ca
 Rotina para que se elimine apelidos duplicados usando uma variável e um catálogo:
   Se a variável for inexistente, retorne.
   Se o catálogo for inexistente, retorne.
-  Encontre uma segunda variável usando o apelido desta variável e o catálogo.
-  Se a segunda variável for inexistente, encontre a segunda variável usando o nome desta variável e o catálogo.
+  Encontre uma segunda variável usando o apelido desta variável e o catálogo. \ <--------------------  verificar ************
+  Se a segunda variável for inexistente, 
+    Encontre a segunda variável usando o nome desta variável e o catálogo. \ <--------------------
   Se a segunda variável for inexistente,
-    Catalogue a variável usando o apelido desta variável e o catálogo;
+    Catalogue a variável usando o apelido desta variável e o catálogo; \  ***************
     Retorne.
   Limpe o apelido desta segunda variável.
   Limpe o apelido desta variável.
 
+Rotina para que se encontre uma variável usando um nome e umas variáveis: 
+  Esvazie a variável.
+  Itere.
+    Obtenha a variável desde as variáveis. \ ****************
+    Se a variável for inexistente, retorne.
+    Se o nome desta variável for o nome, retorne.
+    Se o apelido desta variável for o nome, retorne.
+  Reitere.
 
+Rotina para que se copie uns campos para uns segundo campos (apenas campos de dados):
+  Se a contagem destes campos for menor do que 4, retorne. \ for english próximo e prev e spanish next e prev redefinitions
+  \Se o primeiro campo destes campos for inexistente, retorne.
+  \Se o próximo campo deste primeiro campo destes campos for inexistente, retorne.
+  \Se o próximo campo deste próximo campo deste primeiro campo destes campos for inexistente, retorne.
+  \Atribua o próximo campo deste próximo campo deste primeiro campo destes campos para um campo. \ skip próximo e prev
+  \Se o próximo campo deste próximo campo deste próximo campo deste primeiro campo destes campos for inexistente, retorne.
+  \Se o próximo campo deste próximo campo deste próximo campo deste próximo campo deste primeiro campo destes campos for inexistente, retorne.
+  \Se o próximo campo deste próximo campo deste próximo campo deste próximo campo deste próximo campo deste primeiro campo destes campos for inexistente, retorne.
+  \Atribua o próximo campo deste próximo campo deste próximo campo deste próximo campo deste primeiro campo destes campos para um campo.
+  Atribua o próximo campo deste próximo campo
+    deste próximo campo deste próximo campo
+    deste primeiro campo destes campos
+    para um campo.\ next & prev / proximo e anterior
+  Itere.
+    Se o campo for inexistente, retorne.
+    Copie o campo para um segundo campo. \ < --------------------
+    Acrescente o segundo campo para o segundo campos.
+    Obtenha o campo desde o campos.
+  Reitere.
 
 Rotina para que se destrinche um tipo (dados opcionais - scale):
   Se existir algum problema de compilação, retorne.
