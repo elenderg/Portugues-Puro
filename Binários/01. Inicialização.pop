@@ -1786,29 +1786,6 @@ Rotina para que se examine um cabeçalho de rotina usando um percorredor:
   Reitere.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Função para que se determine se há algum problema de compilação;
 Função para que se determine se existe algum problema de compilação:
   Se o sinalizador de erros deste compilador estiver ativado, diga sim.

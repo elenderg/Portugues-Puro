@@ -50,3 +50,218 @@ Rotina para que se compile o cabeçalho referente para uma rotina usando um perco
     junto com a representação interna da rotina desta rotina seguido de "' já havia sido definida anteriormente." e o endereço local desta rotina;
     Retorne.
   Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
+
+Rotina para que se compile umas unidades semânticas e uns parâmetros usando um percorredor:
+  Se existir algum problema de compilação, retorne.
+  Se o segmento inicial deste percorredor estiver em branco, retorne.
+  Se o segmento inicial deste percorredor for algum artigo definido,
+    Compile as unidades semânticas e o parâmetros usando o percorredor (artigo definido); \ <-------------------------
+    Reitere.
+  Se o percorredor estiver sobre algum artigo indefinido,
+    Compile as unidades semânticas e o parâmetros usando o percorredor (artigo indefinido); \ <------------------------
+    Reitere.
+  Se o percorredor estiver sobre algum unidade semântica string,
+    Compile as unidades semânticas e o parâmetros usando o percorredor (string de unidade semântica);
+    Reitere.
+  Apresente uma mensagem de erro contendo "Erro #48. Rotina para que se '" 
+  junto com o segmento inicial deste percorredor seguido de "' não localizada." e o percorredor.
+
+Rotina para que se compile umas unidades semânticas e uns parâmetros usando um percorredor (artigo definido):
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine um nome usando o percorredor. \ <------------------
+  Se existir algum problema de compilação, retorne.
+  Anteponha "o " para o nome.
+  Adicione uma unidade semântica para as unidades semânticas usando o nome. \ <------------------
+
+ \ Unifica o sentido de diferentes termos usados em proposições, verbos e conjunções.
+Rotina para que se adicione uma unidade semântica para umas unidades semânticas usando uma string: \ creio que isso aqui ajude nas funções
+  Crie a unidade semântica.
+  Acrescente a unidade semântica para as unidades semânticas. \ ****************************
+  \\ conjunções
+  Se a string for "e",
+    Atribua "e" à string desta unidade semântica;
+    Retorne. \ and
+  Se a string for "ou",
+    Atribua "ou" à string desta unidade semântica;
+    Retorne. \ or
+  \ usando
+  Se a string for "desde",
+    Atribua "usando" à string desta unidade semântica;
+    Retorne.
+  \Se a string for "de", atribua "usando" à string desta unidade semântica; Retorne.
+  Se a string for "dada",
+    Atribua "usando" à string desta unidade semântica;
+    Retorne.
+  Se a string for "dado",
+    Atribua "usando" à string desta unidade semântica;
+    Retorne.
+  Se a string for "dadas",
+    Atribua "usando" à string desta unidade semântica;
+    Retorne.
+  Se a string for "dados",
+    Atribua "usando" à string desta unidade semântica;
+    Retorne.
+  Se a string for "com",
+    Atribua "usando" à string desta unidade semântica;
+    Retorne.
+  Se a string for "usando",
+    Atribua "usando" à string desta unidade semântica;
+    Retorne.
+  Se a string for "contendo",
+    Atribua "usando" à string desta unidade semântica;
+    Retorne.
+  \\ para
+  Se a string for "em", atribua "para" à string desta unidade semântica; Retorne.
+  Se a string for "a",
+    Atribua "para" à string desta unidade semântica;
+    Retorne. \  ver isso aqui com calma
+  Se a string for "para",
+    Atribua "para" à string desta unidade semântica;
+    Retorne.
+  \\ VERBO SER/ESTAR
+  Se a string for "é",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "está",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "for",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "foi",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "foram",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "forem",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "estiver",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "estiverem",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "estamos",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "há",
+    Atribua "há" à string desta unidade semântica;
+    Retorne.
+  Se a string for "houver",
+    Atribua "há" à string desta unidade semântica;
+    Retorne.
+  Se a string for "seja",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "sejam",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  \Se a string for "tem", atribua "tem" à string desta unidade semântica; Retorne.
+  \Se a string for "tiver", atribua "tem" à string desta unidade semântica; Retorne.
+  Se a string for "são",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "estão",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "forem",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "estiverem",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "puder",
+    Atribua "pode" à string desta unidade semântica;
+    Retorne.
+  Se a string for "puderem",
+    Atribua "pode" à string desta unidade semântica;
+    Retorne.
+  Se a string for "existe",
+    Atribua "existe" à string desta unidade semântica;
+    Retorne.
+  Se a string for "existir",
+    Atribua "existe" à string desta unidade semântica;
+    Retorne.
+  Se a string for "há",
+    Atribua "há" à string desta unidade semântica;
+    Retorne.
+  Se a string for "houver",
+    Atribua "há" à string desta unidade semântica;
+    Retorne.
+  Se a string for "possuir",
+    Atribua "possui" à string desta unidade semântica;
+    Retorne.
+  \\ allocates e destroys
+  \Se a string for "aloque", atribua "allocate" à string desta unidade semântica; Retorne.
+  Se a string for "pelo",
+    Atribua "por o" à string desta unidade semântica;
+    Retorne.
+  Se a string for "pela",
+    Atribua "por o" à string desta unidade semântica;
+    Retorne.
+  \Se a string for "desaloque", atribua "desaloque" à string desta unidade semântica; Retorne.
+  \Se a string for "esvazie", atribua "deallocate" à string desta unidade semântica; Retorne.
+  \Se a string for "destrua", atribua "destrua" à string desta unidade semântica; Retorne.
+  \ é
+  Se a string for "is",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  \ sobre
+  Se a string for "sob",
+    Atribua "sobre" à string desta unidade semântica;
+    Retorne.
+  Se a string for "sobre",
+    Atribua "sobre" à string desta unidade semântica;
+    Retorne.
+  Se a string for "começa",
+    Atribua "começa" à string desta unidade semântica;
+    Retorne.
+  Se a string for "começar",
+    Atribua "começa" à string desta unidade semântica;
+    Retorne.
+  Se a string for "termina",
+    Atribua "termina" à string desta unidade semântica;
+    Retorne.
+  Se a string for "terminar",
+    Atribua "termina" à string desta unidade semântica;
+    Retorne.
+  Se a string for "cabe",
+    Atribua "cabe" à string desta unidade semântica;
+    Retorne.
+  Se a string for "couber",
+    Atribua "cabe" à string desta unidade semântica;
+    Retorne.
+  Se a string for "sobre",
+    Atribua "sobre" à string desta unidade semântica;
+    Retorne.
+  \ other
+  Atribua a string à string desta unidade semântica.
+
+Rotina para que se compile umas unidades semânticas e uns parâmetros usando um percorredor (artigo indefinido):
+  Se existir algum problema de compilação, retorne.
+  Adicione um parâmetro para o parâmetros usando "parâmetro" e o caractere inicial deste segmento inicial deste percorredor.
+  \PAL
+  Se o segmento inicial deste percorredor for "outra", atribua "outra" ao nome deste parâmetro.
+  Se o segmento inicial deste percorredor for "outras", atribua "outras" ao nome deste parâmetro.
+  Se o segmento inicial deste percorredor for "outro", atribua "outro" ao nome deste parâmetro.
+  Se o segmento inicial deste percorredor for "outros", atribua "outros" ao nome deste parâmetro.
+  Se o segmento inicial deste percorredor for "segundo", atribua "segundo" ao nome deste parâmetro.
+  Se o segmento inicial deste percorredor for "segunda", atribua "segunda" ao nome deste parâmetro.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine um nome usando o percorredor.
+  Expanda o nome deste parâmetro com o nome.
+  Se o segmento inicial deste percorredor for uma palavra-chave de designação, compile a parte designadora usando o percorredor e o parâmetro.
+  Destrinche o parâmetro.
+  Se o parâmetro estiver duplicada no parâmetros,
+    Apresente uma mensagem de erro contendo "Erro #49. O parâmetro '" 
+    junto com o nome deste parâmetro seguido de "' já foi declarado anteriormente." e o endereço local deste parâmetro;
+    Retorne.
+  Adicione uma unidade semântica para as unidades semânticas usando o tipo deste parâmetro.
+
+Rotina para que se compile umas unidades semânticas e uns parâmetros usando um percorredor (string de unidade semântica):
+  Se existir algum problema de compilação, retorne.
+  Adicione uma unidade semântica para as unidades semânticas usando o segmento inicial deste percorredor.
+  Mova o percorredor (usando diretrizes de compilação).
