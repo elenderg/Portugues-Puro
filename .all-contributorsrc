@@ -45,6 +45,19 @@
         "example",
         "mentoring"
       ]
+    },
+    {
+      "login": "Folds",
+      "name": "Folds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6874247?v=4",
+      "profile": "https://github.com/Folds",
+      "contributions": [
+        "ideas",
+        "code",
+        "doc",
+        "example",
+        "mentoring"
+      ]
     }
   ],
   "contributorsPerLine": 7,
