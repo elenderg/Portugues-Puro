@@ -71,6 +71,19 @@
         "example",
         "mentoring"
       ]
+    },
+    {
+      "login": "pcayuela",
+      "name": "pcayuela",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17735677?v=4",
+      "profile": "https://github.com/pcayuela",
+      "contributions": [
+        "ideas",
+        "code",
+        "doc",
+        "example",
+        "mentoring"
+      ]
     }
   ],
   "contributorsPerLine": 7,
