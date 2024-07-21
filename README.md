@@ -47,7 +47,8 @@ Este projeto está licenciado sob a Unlicense - consulte o arquivo [LICENSE](LIC
 
 ## Contribuidores ✨
 
-Agradecemos às seguintes pessoas pela colaboração direta e indireta neste projeto ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Agradecemos às seguintes pessoas pela colaboração direta e indireta neste projeto:  
+
 [Gerry Rzeppa](https://www.linkedin.com/in/gerry-rzeppa-17b8051b/)  
 Dan Rzeppa  
 [Pablo Cayuella](https://www.linkedin.com/in/pablo-cayuela-a42b019/)  
