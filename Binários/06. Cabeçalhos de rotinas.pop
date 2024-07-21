@@ -44,7 +44,7 @@ Rotina para que se compile o cabeçalho referente para uma rotina usando um perco
   Se algumas dentre as unidades semânticas desta rotina forem advérbios de negação,
     Apresente a mensagem de erro contendo "Erro #36. A palavra-chave 'não' não é permitida em cabeçalhos de funções booleanas." e o percorredor;
     Retorne.
-  Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
+  Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina. \ <------------------
   Se a representação interna da rotina desta rotina estiver no catálogo geral de rotinas,
     Apresente a mensagem de erro contendo "Erro #37. A rotina para que se ''" 
     junto com a representação interna da rotina desta rotina seguido de "' já havia sido definida anteriormente." e o endereço local desta rotina;
@@ -61,7 +61,7 @@ Rotina para que se compile umas unidades semânticas e uns parâmetros usando um p
     Compile as unidades semânticas e o parâmetros usando o percorredor (artigo indefinido); \ <------------------------
     Reitere.
   Se o percorredor estiver sobre algum unidade semântica string,
-    Compile as unidades semânticas e o parâmetros usando o percorredor (string de unidade semântica);
+    Compile as unidades semânticas e o parâmetros usando o percorredor (string de unidade semântica); \ <-----------------
     Reitere.
   Apresente uma mensagem de erro contendo "Erro #48. Rotina para que se '" 
   junto com o segmento inicial deste percorredor seguido de "' não localizada." e o percorredor.
@@ -242,18 +242,25 @@ Rotina para que se adicione uma unidade semântica para umas unidades semânticas 
 
 Rotina para que se compile umas unidades semânticas e uns parâmetros usando um percorredor (artigo indefinido):
   Se existir algum problema de compilação, retorne.
-  Adicione um parâmetro para o parâmetros usando "parâmetro" e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione um parâmetro para o parâmetros usando "parâmetro" e o caractere inicial deste segmento inicial deste percorredor. \ <---
   \PAL
-  Se o segmento inicial deste percorredor for "outra", atribua "outra" ao nome deste parâmetro.
-  Se o segmento inicial deste percorredor for "outras", atribua "outras" ao nome deste parâmetro.
-  Se o segmento inicial deste percorredor for "outro", atribua "outro" ao nome deste parâmetro.
-  Se o segmento inicial deste percorredor for "outros", atribua "outros" ao nome deste parâmetro.
-  Se o segmento inicial deste percorredor for "segundo", atribua "segundo" ao nome deste parâmetro.
-  Se o segmento inicial deste percorredor for "segunda", atribua "segunda" ao nome deste parâmetro.
+  Se o segmento inicial deste percorredor for "outra", 
+    Atribua "outra" ao nome deste parâmetro.
+  Se o segmento inicial deste percorredor for "outras", 
+    Atribua "outras" ao nome deste parâmetro.
+  Se o segmento inicial deste percorredor for "outro", 
+    Atribua "outro" ao nome deste parâmetro.
+  Se o segmento inicial deste percorredor for "outros", 
+    Atribua "outros" ao nome deste parâmetro.
+  Se o segmento inicial deste percorredor for "segundo", 
+    Atribua "segundo" ao nome deste parâmetro.
+  Se o segmento inicial deste percorredor for "segunda", 
+    Atribua "segunda" ao nome deste parâmetro.
   Mova o percorredor (usando diretrizes de compilação).
-  Examine um nome usando o percorredor.
-  Expanda o nome deste parâmetro com o nome.
-  Se o segmento inicial deste percorredor for uma palavra-chave de designação, compile a parte designadora usando o percorredor e o parâmetro.
+  Examine um nome usando o percorredor. \ <---------------- 
+  Expanda o nome deste parâmetro com o nome. \ <------------
+  Se o segmento inicial deste percorredor for uma palavra-chave de designação, 
+    Compile a parte designadora usando o percorredor e o parâmetro. \ <-----------------
   Destrinche o parâmetro.
   Se o parâmetro estiver duplicada no parâmetros,
     Apresente uma mensagem de erro contendo "Erro #49. O parâmetro '" 
@@ -261,7 +268,56 @@ Rotina para que se compile umas unidades semânticas e uns parâmetros usando um p
     Retorne.
   Adicione uma unidade semântica para as unidades semânticas usando o tipo deste parâmetro.
 
+Rotina para que se compile a parte designadora usando um percorredor e uma variável:
+  Se existir algum problema de compilação, retorne.
+  Se a variável for inexistente, retorne.
+  Atribua o nome desta variável ao nome do tipo desta variável.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine o nome desta variável usando o percorredor. \ <--------------------
+
 Rotina para que se compile umas unidades semânticas e uns parâmetros usando um percorredor (string de unidade semântica):
   Se existir algum problema de compilação, retorne.
-  Adicione uma unidade semântica para as unidades semânticas usando o segmento inicial deste percorredor.
+  Adicione uma unidade semântica para as unidades semânticas usando o segmento inicial deste percorredor. \ <------------
   Mova o percorredor (usando diretrizes de compilação).
+
+Rotina para que se converta umas unidades semânticas para uma representação interna da rotina :
+  Converta as unidades semânticas para a representação interna da rotina usando a última unidade semântica destas unidades semânticas. \ <-----
+
+Rotina para que se converta umas unidades semânticas para uma representação interna da rotina usando uma unidade semântica:
+  Limpe a representação interna da rotina.
+  Itere.
+    Obtenha uma current unidade semântica desde as unidades semânticas. \ TRADUZIR <-----
+    Se a current unidade semântica for inexistente, retorne.
+    Acrescente o current unidade semântica para a representação interna da rotina. \ < ---------------------
+    Se o current unidade semântica for a unidade semântica, retorne.
+  Reitere.
+
+Rotina para que se acrescente uma unidade semântica para uma representação interna da rotina :
+  Se a unidade semântica for inexistente, retorne.
+  Se a representação interna da rotina não estiver em branco, 
+    Acrescente o caractere de espaço para a representação interna da rotina.
+  Se o tipo desta unidade semântica não for inexistente,
+    Acrescente "[" e o nome deste tipo desta unidade semântica e "]" para a representação interna da rotina (rapidamente); \ <------------------
+    Retorne. \ moniker
+  Se a string desta unidade semântica não estiver em branco,
+    Acrescente a string desta unidade semântica para a representação interna da rotina; \ <-------------------
+    Retorne.
+
+\ Rotina para que se acrescente 3 strings distintas para uma string.
+Rotina para que se acrescente uma string e uma segunda string e uma terceira string para uma quarta string (rapidamente):
+  Atribua a quantidade de caracteres desta quarta string para uma quantidade de caracteres. 
+  Adicione a quantidade de caracteres desta string para a quantidade de caracteres.
+  Adicione a quantidade de caracteres desta segunda string para a quantidade de caracteres.
+  Adicione a quantidade de caracteres desta terceira string para a quantidade de caracteres.
+  Reaponte um ponteiro usando a quantidade de caracteres. \ ***************
+  Atribua o ponteiro para um endereço de byte .
+  Copie bytes desde o caractere inicial desta quarta string para o endereço de byte pelo quantidade de caracteres desta quarta string.
+  Adicione a quantidade de caracteres desta quarta string para o endereço de byte .
+  Copie bytes desde o caractere inicial desta string para o endereço de byte pelo quantidade de caracteres desta string.
+  Adicione a quantidade de caracteres desta string para o endereço de byte .
+  Copie bytes desde o caractere inicial desta segunda string para o endereço de byte pelo quantidade de caracteres desta segunda string.
+  Adicione a quantidade de caracteres desta segunda string para o endereço de byte .
+  Copie bytes desde o caractere inicial desta terceira string para o endereço de byte pelo quantidade de caracteres desta terceira string.
+  Desassocie o caractere inicial desta quarta string.
+  Atribua o ponteiro ao caractere inicial desta quarta string.
+  Atribua o ponteiro mais a quantidade de caracteres menos 1 ao caractere final desta quarta string.

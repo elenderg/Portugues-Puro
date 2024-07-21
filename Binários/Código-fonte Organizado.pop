@@ -2277,8 +2277,6 @@ Rotina para que se examine um corpo de variável global usando um percorredor:
     Mova o percorredor (usando diretrizes de compilação).
   Reitere.
 
-
-
 Rotina para que se examine um nome usando um percorredor:
   Limpe o nome.
   Se existir algum problema de compilação, retorne.
