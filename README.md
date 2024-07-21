@@ -1,6 +1,6 @@
 # Portugues-Puro
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![Contribuidores](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contribuidores-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 Repositório Oficial do Compilador da Linguagem de Programação Português Puro.
 
