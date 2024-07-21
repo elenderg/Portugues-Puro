@@ -1,0 +1,108 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "elenderg",
+      "name": "Elender",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1089556?v=4",
+      "profile": "https://github.com/elenderg",
+      "contributions": [
+        "ideas",
+        "code",
+        "doc",
+        "example",
+        "mentoring"
+      ]
+    },
+    {
+      "login": "elisson-zlq3x",
+      "name": "Élisson Góis Gallas",
+      "avatar_url": "https://avatars.githubusercontent.com/u/132157891?v=4",
+      "profile": "https://github.com/elisson-zlq3x",
+      "contributions": [
+        "ideas",
+        "code",
+        "doc",
+        "example",
+        "mentoring"
+      ]
+    },
+    {
+      "login": "waltermourajr",
+      "name": "Walter Jr",
+      "avatar_url": "https://avatars.githubusercontent.com/u/53488670?v=4",
+      "profile": "https://github.com/waltermourajr",
+      "contributions": [
+        "ideas",
+        "code",
+        "doc",
+        "example",
+        "mentoring"
+      ]
+    },
+    {
+      "login": "Folds",
+      "name": "Folds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6874247?v=4",
+      "profile": "https://github.com/Folds",
+      "contributions": [
+        "ideas",
+        "code",
+        "doc",
+        "example",
+        "mentoring"
+      ]
+    },
+    {
+      "login": "mikegonta",
+      "name": "Mike Gonta",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11521753?v=4",
+      "profile": "https://github.com/mikegonta",
+      "contributions": [
+        "ideas",
+        "code",
+        "doc",
+        "example",
+        "mentoring"
+      ]
+    },
+    {
+      "login": "pcayuela",
+      "name": "pcayuela",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17735677?v=4",
+      "profile": "https://github.com/pcayuela",
+      "contributions": [
+        "ideas",
+        "code",
+        "doc",
+        "example",
+        "mentoring"
+      ]
+    },
+    {
+      "login": "GerryRzeppa",
+      "name": "Gerry Rzeppa",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7067092?v=4",
+      "profile": "http://www.osmosian.com",
+      "contributions": [
+        "ideas",
+        "code",
+        "doc",
+        "example",
+        "mentoring"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "Portugues-Puro",
+  "projectOwner": "elenderg"
+}
