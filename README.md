@@ -1,6 +1,6 @@
 # Portugues-Puro
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 Repositório Oficial do Compilador da Linguagem de Programação Português Puro.
 
@@ -70,6 +70,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/elenderg"><img src="https://avatars.githubusercontent.com/u/1089556?v=4?s=100" width="100px;" alt="Elender"/><br /><sub><b>Elender</b></sub></a><br /><a href="#ideas-elenderg" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/elenderg/Portugues-Puro/commits?author=elenderg" title="Code">💻</a> <a href="https://github.com/elenderg/Portugues-Puro/commits?author=elenderg" title="Documentation">📖</a> <a href="#example-elenderg" title="Examples">💡</a> <a href="#mentoring-elenderg" title="Mentoring">🧑‍🏫</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/elisson-zlq3x"><img src="https://avatars.githubusercontent.com/u/132157891?v=4?s=100" width="100px;" alt="Élisson Góis Gallas"/><br /><sub><b>Élisson Góis Gallas</b></sub></a><br /><a href="#ideas-elisson-zlq3x" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/elenderg/Portugues-Puro/commits?author=elisson-zlq3x" title="Code">💻</a> <a href="https://github.com/elenderg/Portugues-Puro/commits?author=elisson-zlq3x" title="Documentation">📖</a> <a href="#example-elisson-zlq3x" title="Examples">💡</a> <a href="#mentoring-elisson-zlq3x" title="Mentoring">🧑‍🏫</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/waltermourajr"><img src="https://avatars.githubusercontent.com/u/53488670?v=4?s=100" width="100px;" alt="Walter Jr"/><br /><sub><b>Walter Jr</b></sub></a><br /><a href="#ideas-waltermourajr" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/elenderg/Portugues-Puro/commits?author=waltermourajr" title="Code">💻</a> <a href="https://github.com/elenderg/Portugues-Puro/commits?author=waltermourajr" title="Documentation">📖</a> <a href="#example-waltermourajr" title="Examples">💡</a> <a href="#mentoring-waltermourajr" title="Mentoring">🧑‍🏫</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Folds"><img src="https://avatars.githubusercontent.com/u/6874247?v=4?s=100" width="100px;" alt="Folds"/><br /><sub><b>Folds</b></sub></a><br /><a href="#ideas-Folds" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/elenderg/Portugues-Puro/commits?author=Folds" title="Code">💻</a> <a href="https://github.com/elenderg/Portugues-Puro/commits?author=Folds" title="Documentation">📖</a> <a href="#example-Folds" title="Examples">💡</a> <a href="#mentoring-Folds" title="Mentoring">🧑‍🏫</a></td>
     </tr>
   </tbody>
 </table>
