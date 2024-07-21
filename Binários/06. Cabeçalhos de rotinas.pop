@@ -10,7 +10,7 @@ Rotina para que se compile os cabeçalhos referente para umas rotinas:
   Se existir algum problema de compilação, retorne.
     Obtenha uma rotina desde as rotinas.
     Se a rotina for inexistente, retorne.
-    Compile o cabeçalho referente à rotina.
+    Compile o cabeçalho referente à rotina. \ <----------------------
   Reitere.
 
 Rotina para que se compile o cabeçalho referente para uma rotina:
@@ -25,7 +25,7 @@ Rotina para que se compile o cabeçalho referente para uma rotina:
     Compile o cabeçalho referente à rotina usando o percorredor (função do possessivo reverso); \ <-------------------
     Retorne.
   Se o percorredor for o início de alguma função,
-    Compile o cabeçalho referente à rotina usando o percorredor (função);
+    Compile o cabeçalho referente à rotina usando o percorredor (função); \ <---------------------------
     Retorne.
   Se o segmento inicial deste percorredor for "compativelmente",
     Compile o cabeçalho referente à rotina usando o percorredor (modo de compatibilidade);
@@ -370,7 +370,7 @@ Rotina para que se compile o cabeçalho referente para uma rotina usando um perco
     Retorne.
   Adicione uma terceira unidade semântica para as unidades semânticas desta rotina usando "para". \ <--------------------
   Converta as unidades semânticas desta rotina para uma representação interna da rotina. \ <--------------
-  Se a representação interna da rotina estiver no catálogo geral de rotinas,
+  Se a representação interna da rotina estiver no catálogo geral de rotinas, \ <--------------
     Apresente a mensagem de erro contendo 
     "Erro #188. Erro. A rotina para que se " junto com a representação interna da rotina seguido de ": já havia sido definida." e o endereço local desta rotina;
     Retorne.
@@ -390,3 +390,58 @@ Função para que se determine se uma string é alguma função possessiva reversa in
   Se a string for "em", diga sim.
   Se a string for "para", diga sim.
   Diga não.
+
+Função para que se determine se uma representação interna da rotina está em um catálogo:
+  Encontre uma referência usando a representação interna da rotina e o catálogo. \ ************
+  Se o referência for inexistente, diga não.
+  Se o ponteiro deste referência for inexistente, diga não.
+  Diga sim.
+
+Rotina para que se catalogue uma rotina usando umas unidades semânticas e um catálogo:
+  Se a rotina for inexistente, retorne.
+  Limpe um cabeçalho compactado. \ ************
+  Itere.
+    Obtenha uma unidade semântica desde as unidades semânticas. \ ************
+    Se a unidade semântica for inexistente, retorne.
+    Acrescente a unidade semântica para o cabeçalho compactado. \ *********
+    Se a unidade semântica for a última unidade semântica destas unidades semânticas, pare. 
+    Catalogue o cabeçalho compactado usando o catálogo (especial). \ <-----------------
+  Reitere.
+  Catalogue a rotina usando o cabeçalho compactado como uma representação interna da rotina e o catálogo (especial). \ <---------------------
+
+Rotina para que se compile o cabeçalho referente para uma rotina usando um percorredor (função):
+  Se existir algum problema de compilação, retorne.
+  Ative o sinalizador de função desta rotina.
+  Adicione uma unidade semântica para as unidades semânticas desta rotina usando "atribua".
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor for algum artigo indefinido, ative um sinalizador.
+  Se o sinalizador estiver ativo, compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo indefinido).
+  Se o sinalizador não estiver ativo, compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo definido).
+  Se o segmento inicial deste percorredor não for algum possessivo inglês,
+    Apresente uma mensagem de erro contendo "Erro #38. Necessário inserir um 's no código." e o percorredor;
+    Retorne. \ not translated - no possessives em Spanish
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine um nome usando o percorredor.
+  Adicione uma segunda unidade semântica para as unidades semânticas desta rotina usando "'s " junto com o nome.
+  Se o segmento inicial deste percorredor não for "para",
+    Apresente a mensagem de erro contendo "Erro #39. palavra-chave 'para' ausente. Encontrado a palavra: " 
+    junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
+    Retorne. \ not translated - no possessives em Spanish
+  Adicione uma terceira unidade semântica para as unidades semânticas desta rotina usando "para".
+  Converta as unidades semânticas desta rotina para uma representação interna da rotina.
+  Se a representação interna da rotina estiver no catálogo geral de rotinas,
+    Apresente a mensagem de erro contendo "Erro #40. Rotina para que se '" 
+    junto com a representação interna da rotina seguido de "' já definida." e o endereço local desta rotina;
+    Retorne. \ not translated - no possessives em Spanish
+  Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor não for algum artigo indefinido,
+    Apresente a mensagem de erro contendo "Erro #41. Necessário artigo indefinido. Encontrado '" 
+    junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Retorne. \ not translated - no possessives em Spanish
+  Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo indefinido).
+  Se o segmento inicial deste percorredor não estiver em branco,
+    Apresente a mensagem de erro contendo "Erro #42. Encontrado comandos extras no fim desta rotina." e o percorredor;
+    Retorne. \ not translated - no possessives em Spanish
+  Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
+  Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas. \ para employs
