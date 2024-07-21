@@ -19,6 +19,19 @@
         "example",
         "mentoring"
       ]
+    },
+    {
+      "login": "elisson-zlq3x",
+      "name": "Élisson Góis Gallas",
+      "avatar_url": "https://avatars.githubusercontent.com/u/132157891?v=4",
+      "profile": "https://github.com/elisson-zlq3x",
+      "contributions": [
+        "ideas",
+        "code",
+        "doc",
+        "example",
+        "mentoring"
+      ]
     }
   ],
   "contributorsPerLine": 7,
