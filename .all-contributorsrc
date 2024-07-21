@@ -84,6 +84,19 @@
         "example",
         "mentoring"
       ]
+    },
+    {
+      "login": "GerryRzeppa",
+      "name": "Gerry Rzeppa",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7067092?v=4",
+      "profile": "http://www.osmosian.com",
+      "contributions": [
+        "ideas",
+        "code",
+        "doc",
+        "example",
+        "mentoring"
+      ]
     }
   ],
   "contributorsPerLine": 7,
