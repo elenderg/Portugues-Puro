@@ -38,18 +38,6 @@ Disponível [aqui](https://github.com/elenderg/Portugues-Puro/blob/main/CODE_OF_
 ## Autor
 [Elender Góis Gallas](https://www.linkedin.com/in/elender/)
 
-## Contribuidores
-[Gerry Rzeppa](https://www.linkedin.com/in/gerry-rzeppa-17b8051b/)  
-Dan Rzeppa  
-[Pablo Cayuella](https://www.linkedin.com/in/pablo-cayuela-a42b019/)  
-Jasper Paulsen  
-[Walter Moura Júnior](https://github.com/waltermourajr)  
-
----
-
-
-
-
 
 ## Licença
 
@@ -59,7 +47,14 @@ Este projeto está licenciado sob a Unlicense - consulte o arquivo [LICENSE](LIC
 
 ## Contribuidores ✨
 
-Agradecemos às seguintes pessoas pela colaboração direta e indireta enste projeto ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Agradecemos às seguintes pessoas pela colaboração direta e indireta neste projeto ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+[Gerry Rzeppa](https://www.linkedin.com/in/gerry-rzeppa-17b8051b/)  
+Dan Rzeppa  
+[Pablo Cayuella](https://www.linkedin.com/in/pablo-cayuela-a42b019/)  
+Jasper Paulsen  
+[Walter Moura Júnior](https://github.com/waltermourajr)  
+
+---
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
