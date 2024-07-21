@@ -58,6 +58,19 @@
         "example",
         "mentoring"
       ]
+    },
+    {
+      "login": "mikegonta",
+      "name": "Mike Gonta",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11521753?v=4",
+      "profile": "https://github.com/mikegonta",
+      "contributions": [
+        "ideas",
+        "code",
+        "doc",
+        "example",
+        "mentoring"
+      ]
     }
   ],
   "contributorsPerLine": 7,
