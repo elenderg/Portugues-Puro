@@ -1,4 +1,7 @@
 # Portugues-Puro
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 Repositório Oficial do Compilador da Linguagem de Programação Português Puro.
 
 [Documentação Oficial da Linguagem](https://portugues-puro.gitbook.io/documentacao/)
@@ -53,3 +56,25 @@ Jasper Paulsen
 Este projeto está licenciado sob a Unlicense - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
 
 <hr>
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/elenderg"><img src="https://avatars.githubusercontent.com/u/1089556?v=4?s=100" width="100px;" alt="Elender"/><br /><sub><b>Elender</b></sub></a><br /><a href="#ideas-elenderg" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/elenderg/Portugues-Puro/commits?author=elenderg" title="Code">💻</a> <a href="https://github.com/elenderg/Portugues-Puro/commits?author=elenderg" title="Documentation">📖</a> <a href="#example-elenderg" title="Examples">💡</a> <a href="#mentoring-elenderg" title="Mentoring">🧑‍🏫</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
