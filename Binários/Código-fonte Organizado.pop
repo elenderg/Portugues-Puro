@@ -1761,12 +1761,13 @@ Rotina para que se encontre um campo de estrutura usando um frase e um tipo e um
   Limpe o campo de estrutura.
   Encontre o campo de estrutura usando o tipo e o nome.
   Se o campo deste campo de estrutura não for inexistente, retorne.
-  Se a frase não estiver em branco, encontre uma rotina usando "atribua" e a frase e "'s " junto com o nome e "para". \ traduzir
+  Se a frase não estiver em branco, 
+    Encontre uma rotina usando "Atribua" e a frase e "'s " junto com o nome e "para". \ traduzir
   Se a rotina não for inexistente,
     Atribua a rotina à rotina de função deste campo de estrutura;
     Retorne.
   Se o tipo for inexistente, retorne.
-  Encontre a rotina usando "atribua" e o tipo e "'s " junto com o nome e "para".  \traduzir
+  Encontre a rotina usando "Atribua" e o tipo e "'s " junto com o nome e "para".  \traduzir
   Se a rotina não for inexistente,
     Ative o sinalizador de empilhamento deste campo de estrutura;
     Atribua a rotina à rotina de função deste campo de estrutura;

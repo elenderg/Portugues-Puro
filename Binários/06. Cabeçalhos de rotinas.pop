@@ -412,14 +412,17 @@ Rotina para que se catalogue uma rotina usando umas unidades semânticas e um cat
 Rotina para que se compile o cabeçalho referente para uma rotina usando um percorredor (função):
   Se existir algum problema de compilação, retorne.
   Ative o sinalizador de função desta rotina.
-  Adicione uma unidade semântica para as unidades semânticas desta rotina usando "atribua".
+  Adicione uma unidade semântica para as unidades semânticas desta rotina usando "atribua". \ <---------------
   Mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor for algum artigo indefinido, ative um sinalizador.
-  Se o sinalizador estiver ativo, compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo indefinido).
-  Se o sinalizador não estiver ativo, compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo definido).
+  Se o segmento inicial deste percorredor for algum artigo indefinido, 
+    Ative um sinalizador.
+  Se o sinalizador estiver ativo, 
+    Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo indefinido). \ <----------------
+  Se o sinalizador não estiver ativo, \ deveria ser: Se o segmento inicial deste percorredor for algum artigo definido
+    Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo definido). \ <---------------
   Se o segmento inicial deste percorredor não for algum possessivo inglês,
     Apresente uma mensagem de erro contendo "Erro #38. Necessário inserir um 's no código." e o percorredor;
-    Retorne. \ not translated - no possessives em Spanish
+    Retorne. \ Para os possessivos em inglês
   Mova o percorredor (usando diretrizes de compilação).
   Examine um nome usando o percorredor.
   Adicione uma segunda unidade semântica para as unidades semânticas desta rotina usando "'s " junto com o nome.
