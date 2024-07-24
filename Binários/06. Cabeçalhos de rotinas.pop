@@ -75,7 +75,7 @@ Rotina para que se compile umas unidades semânticas e uns parâmetros usando um p
   Adicione uma unidade semântica para as unidades semânticas usando o nome. \ <------------------
 
  \ Unifica o sentido de diferentes termos usados em proposições, verbos e conjunções.
-Rotina para que se adicione uma unidade semântica para umas unidades semânticas usando uma string: \ creio que isso aqui ajude nas funções
+Rotina para que se adicione uma unidade semântica para umas unidades semânticas usando uma string:
   Crie a unidade semântica.
   Acrescente a unidade semântica para as unidades semânticas. \ ****************************
   \\ conjunções
@@ -395,7 +395,7 @@ Função para que se determine se uma representação interna da rotina está em um c
   Encontre uma referência usando a representação interna da rotina e o catálogo. \ ************
   Se o referência for inexistente, diga não.
   Se o ponteiro deste referência for inexistente, diga não.
-  Diga sim.
+  Diga sim. 
 
 Rotina para que se catalogue uma rotina usando umas unidades semânticas e um catálogo:
   Se a rotina for inexistente, retorne.
@@ -423,28 +423,28 @@ Rotina para que se compile o cabeçalho referente para uma rotina usando um perco
   Se o segmento inicial deste percorredor não for algum possessivo inglês,
     Apresente uma mensagem de erro contendo "Erro #38. Necessário inserir um 's no código." e o percorredor;
     Retorne. \ Para os possessivos em inglês
-  Mova o percorredor (usando diretrizes de compilação).
-  Examine um nome usando o percorredor.
-  Adicione uma segunda unidade semântica para as unidades semânticas desta rotina usando "'s " junto com o nome.
+  Mova o percorredor (usando diretrizes de compilação). \ -----------
+  Examine um nome usando o percorredor. \ -------------
+  Adicione uma segunda unidade semântica para as unidades semânticas desta rotina usando "'s " junto com o nome. \ <--------------
   Se o segmento inicial deste percorredor não for "para",
     Apresente a mensagem de erro contendo "Erro #39. palavra-chave 'para' ausente. Encontrado a palavra: " 
     junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
     Retorne. \ not translated - no possessives em Spanish
-  Adicione uma terceira unidade semântica para as unidades semânticas desta rotina usando "para".
-  Converta as unidades semânticas desta rotina para uma representação interna da rotina.
+  Adicione uma terceira unidade semântica para as unidades semânticas desta rotina usando "para". \ <-------------------
+  Converta as unidades semânticas desta rotina para uma representação interna da rotina. \ <---------------------
   Se a representação interna da rotina estiver no catálogo geral de rotinas,
-    Apresente a mensagem de erro contendo "Erro #40. Rotina para que se '" 
-    junto com a representação interna da rotina seguido de "' já definida." e o endereço local desta rotina;
-    Retorne. \ not translated - no possessives em Spanish
-  Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
-  Mova o percorredor (usando diretrizes de compilação).
+    Apresente a mensagem de erro contendo "Erro #40. A Rotina para que se '" 
+    junto com a representação interna da rotina seguido de "' já foi definida anteriormente neste projeto." e o endereço local desta rotina;
+    Retorne. \ 
+  Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas. \ <---------------
+  Mova o percorredor (usando diretrizes de compilação). \ <-------------
   Se o segmento inicial deste percorredor não for algum artigo indefinido,
     Apresente a mensagem de erro contendo "Erro #41. Necessário artigo indefinido. Encontrado '" 
     junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
     Retorne. \ not translated - no possessives em Spanish
-  Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo indefinido).
+  Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo indefinido). \ <----------
   Se o segmento inicial deste percorredor não estiver em branco,
     Apresente a mensagem de erro contendo "Erro #42. Encontrado comandos extras no fim desta rotina." e o percorredor;
     Retorne. \ not translated - no possessives em Spanish
-  Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
+  Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina. \ <--------------
   Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas. \ para employs

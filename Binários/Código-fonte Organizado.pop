@@ -3080,7 +3080,7 @@ Rotina para que se adicione uma unidade semântica para umas unidades semânticas 
   Se a variável desta expressão matemática não for inexistente, atribua o tipo desta expressão matemática ao tipo desta unidade semântica.
 
   \ Unifica o sentido de diferentes termos usados em proposições, verbos e conjunções.
-Rotina para que se adicione uma unidade semântica para umas unidades semânticas usando uma string: \ creio que isso aqui ajude nas funções
+Rotina para que se adicione uma unidade semântica para umas unidades semânticas usando uma string: 
   Crie a unidade semântica.
   Acrescente a unidade semântica para as unidades semânticas.
   \\ conjunções
