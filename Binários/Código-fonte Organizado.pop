@@ -1757,7 +1757,7 @@ Rotina para que se encontre uma função usando uma string e uns funções:
     Se o nome desta função for a string, retorne.
   Reitere.
 
-Rotina para que se encontre um campo de estrutura usando um frase e um tipo e um nome:
+Rotina para que se encontre um campo de estrutura usando uma frase e um tipo e um nome:
   Limpe o campo de estrutura.
   Encontre o campo de estrutura usando o tipo e o nome.
   Se o campo deste campo de estrutura não for inexistente, retorne.
