@@ -63,6 +63,21 @@ Rotina para que se destrinche um tipo (expand lista): \ Esta rotina é invocada q
   \Atribua "último " junto com o nome deste tipo ao novo nome deste quarto campo português feminino.
   Catalogue o tipo encadeado. \ <-------------------
 
+Função para que se determine se um tipo pode ser reduzido para uma string usando o nome do tipo primitivo:
+  Se o tipo for inexistente, diga não.
+  Se o nome deste tipo for a string, diga sim.
+  Se o sinalizador de recursividade deste tipo estiver ativo, diga não.
+  Ative o sinalizador de recursividade deste tipo.
+  Encontre um tipo base usando o nome do tipo primitivo deste tipo e o catálogo de tipos.
+  Se o tipo base for inexistente,
+    Desative o sinalizador de recursividade deste tipo;
+    Diga não.
+  Se o tipo base puder ser reduzido para a string usando o nome do tipo primitivo,
+    Desative o sinalizador de recursividade deste tipo;
+    Diga sim.
+  Desative o sinalizador de recursividade deste tipo.
+  Diga não.
+
 Rotina para que se adicione um campo para uns campos usando um nome e um apelido e um nome do tipo e um sinalizador:
   Adicione o campo para os campos usando "campo" e nil. \ <----------- *************************
   \ Um campo é uma variável. Uma variável é uma lista.
@@ -175,6 +190,16 @@ Rotina para que se destrinche um tipo (dados complementares):
     Destrinche o tipo (dados opcionais - scale). \ <--------------------
   Desative o sinalizador de recursividade deste tipo.
   Ative o sinalizador de informações complementares deste tipo.
+
+Função para que se determine se um tipo pode ser reduzido para um nome do tipo:
+  Se o tipo for inexistente, diga não.
+  Preserve o tipo.
+  Itere.
+    Se o tipo for inexistente, diga não.
+    Se o nome deste tipo for o nome do tipo, diga sim.
+    Se o tipo base deste tipo for o tipo, diga não.
+    Atribua o tipo base deste tipo ao tipo.
+  Reitere.
 
 Rotina para que se verifique por informações opcionais inválidas em um tipo:
   Se existir algum problema de compilação, retorne.

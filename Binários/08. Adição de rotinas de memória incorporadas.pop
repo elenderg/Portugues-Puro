@@ -18,7 +18,7 @@ Rotina para que se adicione as rotinas de alocação e desalocação e finalização e
 Rotina para que se adicione a rotina de finalização para um tipo:
   Se o tipo for inexistente, retorne.
   Se existir algum problema de compilação, retorne.
-  Se o tipo não deveria ser finalizado, retorne.
+  Se o tipo não deveria ser finalizado, retorne. \  <--------------
   Se o nome deste tipo for "string",
     Adicione a rotina de finalização para o tipo (cadeia de caracteres); \ <----------------
     Retorne.
@@ -33,7 +33,24 @@ Rotina para que se adicione a rotina de finalização para um tipo:
   \Se o tipo puder ser reduzido para "cadeia de caracteres", retorne.
   Adicione a rotina de finalização para o tipo (estrutura). \ <------------
 
-cgnb 
+Função para que se determine se um tipo deveria ser finalizado: [determina se o compilador deveria liberar a memória alocada para algum tipo]
+  \The frase "should be finalized" means "ought to be/needs to be automatically deallocated".
+  Se o tipo for inexistente, diga não.
+  Se o tipo puder ser reduzido para "subtexto", diga não.\ substrings point to (parts of) real strings that get deallocated elsewhere
+  Se o tipo puder ser reduzido para "string", diga sim.\ the normal case for strings
+  Se o tipo puder ser reduzido para "texto", diga sim.\ the normal case for strings
+  Se os campos deste tipo deveriam ser finalizados, diga sim.\ this is for strings dentro de records
+  Diga não.
+
+Função para que se determine se uns campos deveriam ser finalizados;
+Função para que se determine se uns campos deveria ser finalizado:
+  [Itere.]
+    Obtenha um campo desde o campos.
+    Se o campo for inexistente, diga não.
+    Se o tipo deste campo deveria ser finalizado, diga sim. \ <--------------
+  Reitere.
+
+
 Rotina para que se adicione a rotina de finalização para um tipo (cadeia de caracteres):
   Se o tipo for inexistente, retorne.
   Se existir algum problema de compilação, retorne.
@@ -87,7 +104,7 @@ Rotina para que se adicione a rotina de alocação para um tipo:
   Se existir algum problema de compilação, retorne.
   Se o tipo não puder ser reduzido para "ponteiro", retorne.
   Se o tipo do conteúdo deste tipo for inexistente, retorne.
-  Adicione uma rotina para as rotinas usando nil.
+  Adicione uma rotina para as rotinas usando nil. \  <--------
   Acrescente "Aloque memória para um " junto com o nome deste tipo para a string do cabeçalho desta rotina. \ traduzir aqui
   Acrescente "Associe o " junto com o nome deste tipo seguido de " usando " para a string do corpo desta rotina. \Nomeie
   Acrescente a quantidade de caracteres deste tipo do conteúdo deste tipo seguido de "." para a string do corpo desta rotina.
