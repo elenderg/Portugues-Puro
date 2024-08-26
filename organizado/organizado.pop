@@ -264,8 +264,7 @@ Rotina para que se mova um percorredor (englobando tudo):
   \Se o conteúdo deste caractere inicial deste segmento final deste percorredor for "a",
   \ Avance o percorredor.
   \ Se o conteúdo deste caractere inicial deste segmento final deste percorredor for algum artigo indefinido,
-  \ Recue o percorredor; atribua "para" para o percorredor.
-  
+  \ Recue o percorredor; atribua "para" para o percorredor.  
   Se o conteúdo deste caractere inicial deste segmento final deste percorredor for irrelevante,
     Mova o percorredor (ignorando os caracteres irrelevantes);
     Retorne.
@@ -288,6 +287,28 @@ Rotina para que se mova um percorredor (englobando tudo):
     Mova o percorredor (possessivo inglês);
     Retorne.
   Mova o percorredor (símbolos conectivos).
+
+Rotina para que se mova um percorredor (ignorando os caracteres irrelevantes):
+  [Itere.]
+    Avance o percorredor.
+    Se o segmento final deste percorredor estiver em branco, retorne.
+    Se o conteúdo deste caractere inicial deste segmento final deste percorredor for irrelevante, reitere.
+
+Rotina para que se mova um percorredor (ignorando os comentários):
+  [Itere.]
+    Avance o percorredor.
+    Se o segmento final deste percorredor estiver em branco, retorne.
+    Se o conteúdo deste caractere inicial deste segmento final deste percorredor não for o retorno de carro, reitere.
+
+Rotina para que se mova um percorredor (ignorando as observações):
+  [Itere.]
+    Se o segmento final deste percorredor estiver em branco, retorne.
+    Se o conteúdo deste caractere inicial deste segmento final deste percorredor for o retorno de carro, pare.
+    Se o conteúdo deste caractere inicial deste segmento final deste percorredor for o colchete esquerdo, adicione 1 para uma contagem.
+    Se o conteúdo deste caractere inicial deste segmento final deste percorredor for o colchete direito, subtraia 1 desde a contagem.
+    Avance o percorredor.
+    Se a contagem for 0, pare.
+  Reitere.
 
 Rotina para que se compile um endereço da pasta (análise dos arquivos fornecidos): \#003
   Se existir algum problema de compilação, retorne.
