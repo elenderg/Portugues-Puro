@@ -310,6 +310,29 @@ Rotina para que se mova um percorredor (ignorando as observações):
     Se a contagem for 0, pare.
   Reitere.
 
+Rotina para que se mova um percorredor (conteúdo de texto):
+  [Itere.]
+    Avance o percorredor.
+    Se o segmento final deste percorredor estiver em branco, retorne.
+    Se o conteúdo deste caractere inicial deste segmento final deste percorredor for o retorno de carro, retorne.
+    Se o percorredor estiver sobre algum nested double-quote,
+      Avance o percorredor;
+      Reitere.
+    Se o conteúdo deste caractere inicial deste segmento final deste percorredor for as aspas duplas,
+      Avance o percorredor;
+      Retorne.
+  Reitere.
+
+Rotina para que se mova um percorredor (qualificadores):
+  [Itere.]
+    Se o segmento final deste percorredor estiver em branco, retorne.
+    Se o conteúdo deste caractere inicial deste segmento final deste percorredor for o retorno de carro, pare.
+    Se o conteúdo deste caractere inicial deste segmento final deste percorredor for o parênteses esquerdo, adicione 1 para uma contagem.
+    Se o conteúdo deste caractere inicial deste segmento final deste percorredor for o parênteses direito, subtraia 1 desde a contagem.
+    Avance o percorredor.
+    Se a contagem for 0, pare.
+  Reitere.
+
 Rotina para que se compile um endereço da pasta (análise dos arquivos fornecidos): \#003
   Se existir algum problema de compilação, retorne.
   Escreva "Analisando código fonte dos arquivos..." junto com o texto CRLF para StdOut.
