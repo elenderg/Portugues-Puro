@@ -78,7 +78,57 @@ Rotina para que se compile um endereço da pasta (inicialização): \#001
   Finalize o compilador.
   Comece o temporizador deste compilador.
   Inicialize o compilador usando o endereço da pasta.
-  Adicione o tipos primitivos.
+  Adicione os tipos primitivos.
+
+Rotina para que se finalize o compilador:
+  Destrua o catálogo de rotinas úteis.
+  Destrua o catálogo geral de rotinas.
+  Destrua o catálogo de variáveis hexadecimais.
+  Destrua o catálogo de variáveis globais.
+  Destrua o catálogo de tipos.
+  \Destrua o catálogo de apelidos.
+  Destrua as DLLs.
+  Destrua as rotinas.
+  Destrua os valores literais.
+  Destrua as variáveis globais.
+  Destrua as variáveis globais predefinidas.
+  Destrua os tipos.
+  Destrua os arquivos fontes.
+
+Rotina para que se inicialize o compilador usando um endereço da pasta:
+  Atribua o endereço da pasta ao endereço da pasta deste compilador.
+  Atribua 0 à contagem de nomes deste compilador.
+  Desative o sinalizador de erros deste compilador.
+  Limpe a mensagem de erro deste compilador.
+  Limpe o endereço do arquivo atual deste compilador.
+  Atribua 0 ao número da linha de erro deste compilador.
+  Esvazie a rotina utilizada atualmente.
+  Crie o catálogo de tipos com 13001 [recipientes]. \ era 4027
+  Crie o catálogo de variáveis globais com 13001 [recipientes]. \ era 4027
+  Crie o catálogo de variáveis hexadecimais com 13001 [recipientes]. \ era 4027
+  Crie o catálogo geral de rotinas com 13001 [recipientes]. \ era 7919
+  Crie o catálogo de rotinas úteis com 13001 [recipientes]. \ era 4027
+
+Rotina para que se adicione os tipos primitivos:
+  Adicione um tipo primitivo usando "byte" e "bytes" e 1.
+  Adicione um outro tipo primitivo usando "estrutura" e "estruturas" e 0.
+
+Rotina para que se adicione um tipo primitivo usando um nome e um nome plural e uma quantidade de caracteres:
+  Adicione o tipo primitivo para os tipos usando o nome e o nome plural e o nome. \ o nome do tipo
+  Atribua a quantidade de caracteres à quantidade de caracteres deste tipo primitivo.
+  Atribua o tipo primitivo ao tipo base deste tipo primitivo.
+  Catalogue o tipo primitivo.
+
+Rotina para que se adicione um tipo para uns tipos usando um nome e um nome plural e um nome do tipo primitivo:
+  Adicione o tipo para os tipos usando o nome e o nome plural e o nome do tipo primitivo e nil.
+
+Rotina para que se adicione um tipo para uns tipos usando um nome e um nome plural e um nome do tipo primitivo e um endereço local:
+  Crie o tipo.
+  Acrescente o tipo para o tipos. \ Um tipo é uma lista duplamente encadeada
+  Atribua o endereço local ao endereço local deste tipo.
+  Atribua o nome ao nome deste tipo.
+  Atribua o nome plural ao nome plural deste tipo.
+  Atribua o nome do tipo primitivo ao nome do tipo primitivo deste tipo.
 
 Rotina para que se compile um endereço da pasta usando um nível de profundidade (arquivos de código fonte): \#002
   Se existir algum problema de compilação, retorne.
