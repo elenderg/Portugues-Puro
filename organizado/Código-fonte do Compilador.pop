@@ -4643,43 +4643,9 @@ Rotina para que se mova um percorredor (símbolos):
 
 
 
-Rotina para que se mova um percorredor retornando uma string de erro (diretrizes de validação de qualificadores):
-  Se a quantidade de caracteres deste segmento inicial deste percorredor for menor do que 2,
-    Atribua "Erro #127. Qualificadores devem terminar com parêntese ')'." para a string de erro;
-    Retorne.
-  Se o conteúdo deste caractere final deste segmento inicial deste percorredor não for o parênteses direito,
-    Atribua "Erro #128. Qualificadores precisam terminar com um parêntese ')'." para a string de erro;
-    Retorne.
 
-Rotina para que se mova um percorredor retornando uma string de erro (diretrizes de validação de observações):
-  Se a quantidade de caracteres deste segmento inicial deste percorredor for menor do que 2,
-    Atribua "Erro #129. Observações devem terminar com um colchete ']'." para a string de erro;
-    Retorne.
-  Se o conteúdo deste caractere final deste segmento inicial deste percorredor não for o colchete direito,
-    Atribua "Erro #130. Observações precisam terminar com um colchete ']'." para a string de erro;
-    Retorne.
 
-Rotina para que se mova um percorredor retornando uma string de erro (diretrizes de validação de conteúdos de texto):
-  Se a quantidade de caracteres deste segmento inicial deste percorredor for menor do que 2,
-    Atribua "Erro #131. Textos precisam terminar com aspas: ""." para a string de erro;
-    Retorne.
-  Se o conteúdo deste caractere final deste segmento inicial deste percorredor não for as aspas duplas,
-    Atribua "Erro #132. Textos devem terminar com aspas: ""." para a string de erro;
-    Retorne.
 
-Rotina para que se mova um percorredor retornando uma string de erro (englobando tudo):
-  Limpe a string de erro.
-  Mova o percorredor (englobando tudo).
-  Se o segmento inicial deste percorredor estiver em branco, retorne.
-  Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor for o colchete esquerdo,
-    Mova o percorredor retornando a string de erro (diretrizes de validação de observações);
-    Retorne.
-  Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor for as aspas duplas,
-    Mova o percorredor retornando a string de erro (diretrizes de validação de conteúdos de texto);
-    Retorne.
-  Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor for o parênteses esquerdo,
-    Mova o percorredor retornando a string de erro (diretrizes de validação de qualificadores);
-    Retorne.
 
 Rotina para que se alinhe as variáveis locais em uma rotina:
   Se a rotina for inexistente, retorne.
@@ -5666,87 +5632,6 @@ Rotina para que se examine um corpo de variável global usando um percorredor:
     Mova o percorredor (usando diretrizes de compilação).
   Reitere.
 
-Rotina para que se examine uma variável global usando um percorredor:
-  Se existir algum problema de compilação, retorne.
-  Adicione a variável global para as variáveis globais usando "global" e o caractere inicial deste segmento inicial deste percorredor.
-  Mova o percorredor (usando diretrizes de compilação).
-  Examine o nome desta variável global usando o percorredor.
-  Se o segmento inicial deste percorredor for algum operador de atribuição de estruturas compostas,
-    Examine a variável global usando o percorredor(cláusula 'tem');
-    Retorne.
-  Se o segmento inicial deste percorredor não for algum operador de atribuição simples,
-    Apresente uma mensagem de erro contendo "Erro #152. Erro de sintaxe. Esperado: 'é/está'. Encontrado: '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor não for algum artigo indefinido,
-    Examine a variável global usando o percorredor (literal termo);
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Examine o nome do tipo desta variável global usando o percorredor.
-  Se o segmento inicial deste percorredor for o início de algum dado complementar,
-    Examine a variável global usando o percorredor (dados complementares);
-    Retorne.
-  Se o segmento inicial deste percorredor for algum operador de atribuição composto,
-    Examine a variável global usando o percorredor (data part);
-    Retorne.
-  Se o segmento inicial deste percorredor não for o ponto final,
-    Apresente a mensagem de erro contendo "Erro #153. Erro de sintaxe. Declaração de variáveis globais devem terminar com um '.'" e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Catalogue a variável global.
-
-Rotina para que se examine uma variável global usando um percorredor (data part):
-  Se existir algum problema de compilação, retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor não for algum to,
-    Apresente uma mensagem de erro contendo "Erro #154. Erro de sintaxe na declaração da variável global. Esperava encontrar a expressão: 'igual a'. Encontrou: '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Examine o corpo de variável global desta variável global usando o percorredor.
-  Se o segmento inicial deste percorredor não for o ponto final,
-    Apresente a mensagem de erro contendo "Erro #155. Erro de sintaxe. Esperado '.' ao final de uma declaração variável variável global" e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Catalogue a variável global.
-
-Rotina para que se examine uma variável global usando um percorredor(cláusula 'tem'):
-  Se existir algum problema de compilação, retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Atribua "~inline " junto com o nome desta variável global seguido de " tipo" para um nome.
-  Atribua o nome seguido de "s" para um nome plural. \ mudar aqui
-  Adicione um tipo para os tipos usando o nome e o nome plural e "estrutura" e o endereço local desta variável global. \mudar aqui
-  Catalogue o tipo.
-  Atribua o nome deste tipo ao nome do tipo desta variável global.
-  Examine os campos deste tipo usando o percorredor.
-  Se o segmento inicial deste percorredor não for o ponto final,
-    Apresente uma mensagem de erro contendo "Erro #156. Erro de sintaxe na estrutura. Esprado '.' no final de declarações de variáveis globais" e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Catalogue a variável global.
-
-Rotina para que se examine uma variável global usando um percorredor (literal termo):
-  Se existir algum problema de compilação, retorne.
-  Examine o corpo de variável global desta variável global usando o percorredor.
-  Se o segmento inicial deste percorredor não for o ponto final,
-    Apresente uma mensagem de erro contendo "Erro #157. Erro de sintaxe. Esperado '.' no final de declarações de valores." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Catalogue a variável global.
-
-Rotina para que se examine uma variável global usando um percorredor (dados complementares):
-  Se existir algum problema de compilação, retorne.
-  Atribua "~inline " junto com o nome desta variável global seguido de " tipo" para um nome.
-  Atribua o nome seguido de "s" para um nome plural. \ aqui pode estar o erro na formação do plural
-  Adicione um tipo para os tipos usando o nome e o nome plural e o nome do tipo desta variável global e o endereço local desta variável global.
-  Catalogue o tipo.
-  Atribua o nome deste tipo ao nome do tipo desta variável global.
-  Examine algum dado complementar para o tipo usando o percorredor.
-  Se o segmento inicial deste percorredor não for o ponto final,
-    Apresente uma mensagem de erro contendo "Erro #158. Erro de sintaxe. Esperado '.' após informações complementares." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Catalogue a variável global.
-
 Rotina para que se examine um nome usando um percorredor:
   Limpe o nome.
   Se existir algum problema de compilação, retorne.
@@ -5783,46 +5668,6 @@ Rotina para que se examine uma instruções usando um percorredor:
     Se o segmento inicial deste percorredor for o enunciado de alguma rotina ou variável, retorne.
   Reitere.
 
-Rotina para que se examine uma rotina usando um percorredor:
-    \ Define o cabeçalho de rotina.
-  Se existir algum problema de compilação, retorne.
-  Adicione a rotina para as rotinas usando o caractere inicial deste segmento inicial deste percorredor.
-  Se o segmento inicial deste percorredor for syntatic sugar, mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor não for "para",
-    Apresente uma mensagem de erro contendo "Erro #161. Erro de sintaxe. Insira a palavra-chave 'para' '" junto com o segmento inicial deste percorredor seguido de "' neste cabeçalho de rotina." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação). \ ignora o "para" e obtém o próximo segmento inicial
-  Se o segmento inicial deste percorredor for "que", mova o percorredor (usando diretrizes de compilação).
-  \Se o segmento inicial deste percorredor não for "que",
-    \apresente uma mensagem de erro contendo "Você precisa colocar um 'que' antes da palavra: " junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
-    \Retorne.
-  \Mova o percorredor (usando diretrizes de compilação). \ ignora o "que" e obtém o próximo segmento inicial
-  Se o segmento inicial deste percorredor for "se", mova o percorredor (usando diretrizes de compilação).
-  \Se o segmento inicial deste percorredor não for "se",
-    \apresente uma mensagem de erro contendo "Você precisa colocar um 'se' antes da palavra: " junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
-    \Retorne.
-  \Mova o percorredor (usando diretrizes de compilação). \ ignora o "se" e obtém o próximo segmento inicial
-  Examine a cabeçalho de rotina desta rotina usando o percorredor.
-  Se o segmento inicial deste percorredor for o ponto&vírgula,
-    Examine a rotina usando o percorredor (sobrecarga de métodos);
-    Retorne. \ *** usado para nomes alternativos de rotinas
-  Se o segmento inicial deste percorredor não for o sinal de dois pontos,
-    Apresente a mensagem de erro contendo "Erro #162. Erro de sintaxe. ':' ausente ou mal posicionado" e o endereço local desta rotina;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Examine as instruções desta rotina usando o percorredor.
-
-Rotina para que se examine uma rotina usando um percorredor (sobrecarga de métodos):
-  \ *** para nomes alternativos de rotinas
-  Preserve o percorredor.
-  Mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor não for o início de alguma rotina,
-    Apresente uma mensagem de erro contendo "Erro #163. Erro de sintaxe. ';' ausente ou mal posicionado" e o percorredor original;
-    Retorne.
-  Atribua o caractere inicial deste segmento inicial deste percorredor original ao caractere inicial destas instruções desta rotina.
-  Atribua o caractere final deste segmento inicial deste percorredor original ao caractere final destas instruções desta rotina.
-  Mova o percorredor original (usando diretrizes de compilação).
-
 Rotina para que se examine uma cabeçalho de rotina usando um percorredor:
   Se existir algum problema de compilação, retorne.
   Se o segmento inicial deste percorredor estiver em branco, retorne.
@@ -5837,72 +5682,6 @@ Rotina para que se examine uma cabeçalho de rotina usando um percorredor:
     Atribua o caractere final deste segmento inicial deste percorredor ao caractere final deste cabeçalho de rotina.
     Mova o percorredor (usando diretrizes de compilação).
   Reitere.
-
-
-
-
-
-Rotina para que se examine um tipo usando um percorredor:
-  Se existir algum problema de compilação, retorne.
-  Se o segmento inicial deste percorredor for algum artigo indefinido português, ative um português sinalizador.
-  Adicione o tipo para os tipos usando o caractere inicial deste segmento inicial deste percorredor.
-  Mova o percorredor (usando diretrizes de compilação).
-  Examine o nome deste tipo usando o percorredor.
-  Atribua o nome deste tipo ao nome plural deste tipo.
-  Atribua 0 para uma contagem.
-  Se o português sinalizador estiver ativo,
-    Pluralize o nome plural deste tipo (strings em português);
-    Adicione 1 à contagem.
-  Se a contagem for igual ou maior do que 2,
-    Apresente uma mensagem de erro contendo "Erro #165. não foi possível detectar o idioma desta variável" e o endereço local deste tipo;
-    Retorne.
-  Se o segmento inicial deste percorredor for algum operador de atribuição de estruturas compostas,
-    Examine o tipo usando o percorredor(cláusula 'tem');
-    Retorne.
-  Se o segmento inicial deste percorredor não for algum operador de atribuição simples,
-    Apresente a mensagem de erro contendo "Erro #166. Esperado 'é/está'. Encontrado '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor for algum valor numérico literal,
-    Examine o tipo usando o percorredor (unidade de medida);
-    Retorne.
-  Se o segmento inicial deste percorredor não for algum artigo indefinido,
-    Apresente a mensagem de erro contendo "Erro #167. Esperado 'um/uma'. Encontrado '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Examine o nome do tipo primitivo deste tipo usando o percorredor.
-  Examine algum dado complementar para o tipo usando o percorredor.
-  Se o segmento inicial deste percorredor não for o ponto final,
-    Apresente a mensagem de erro contendo "Erro #168. Insira um '.' após a declaração do tipo."
-    Junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Catalogue o tipo.
-
-Rotina para que se examine um tipo usando um percorredor(cláusula 'tem'):
-  Se existir algum problema de compilação, retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Atribua "estrutura" ao nome do tipo primitivo deste tipo.
-  Examine o campos deste tipo usando o percorredor.
-  Se o segmento inicial deste percorredor não for o ponto final,
-    Apresente uma mensagem de erro contendo "Erro #169. Esperado '.' no final da estrutura. Encontrado '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Catalogue o tipo.
-
-Rotina para que se examine um tipo usando um percorredor (unidade de medida):
-  Se existir algum problema de compilação, retorne.
-  Converta o segmento inicial deste percorredor para a razão de escala deste tipo.
-  Se a razão de escala deste tipo for 0,
-    Apresente uma mensagem de erro contendo "Erro #170. Impossível utilizar 0 em tipos escalares." e o endereço local deste tipo;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Examine o nome do tipo primitivo deste tipo usando o percorredor.
-  Se o segmento inicial deste percorredor não for o ponto final,
-    Apresente a mensagem de erro contendo "Erro #171. Necessário um '.' no fim desta fração. Encontrado. '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Catalogue o tipo.
 
 Rotina para que se scrub um catálogo:
   Itere.
