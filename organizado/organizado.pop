@@ -1,0 +1,38 @@
+ \ Este arquivo contém o código fonte do compilador da linguagem de programação "Português Puro"
+ 
+Um tipo é uma lista com
+  Um endereço local (referência),
+  Um nome, um nome plural,
+  Um cabeçalho compactado,
+  Uma quantidade de caracteres,
+  Um nome do tipo primitivo,
+  Um tipo base (referência),
+  Um nome do conteúdo,
+  Um tipo do conteúdo (referência) [aplicável somente a ponteiros],
+  Uma razão de escala,
+  Uns campos [aplicável somente a estruturas],
+  Um sinalizador de recursividade,
+  Um sinalizador de informações complementares.
+
+
+
+Uma variável é uma lista com
+  Um endereço local (referência),
+  Um categoria [lvalor iteral, variável global, variável local, parâmetro, scratch],
+  Um sinalizador de compilação,
+  Um nome,
+  Um apelido,
+  Um nome do tipo,
+  Um tipo (referência), \ tipo real em literal, variável global e local; tipos revogados em parâmetros e scratches
+  Um endereço [variáveis globais e valores literais somente] ou
+  Um deslocamento sob o endereço [variáveis locais, parâmetros, e campos somente],
+  Uma contagem [campos somente],
+  Um sinalizador de referência [campos somente],
+  Um novo nome [campos somente],
+  Um sinalizador de passagem por-valor [parâmetros somente],
+  Um corpo de variável global [variáveis globais somente],
+  Um texto inicializador [variáveis globais somente],
+  Um valor literal (referência) [variáveis globais somente - constante com a qual se inicializa a variável global],
+  Um texto hexadecimal denominado data [literais somente].
+
+
