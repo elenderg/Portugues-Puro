@@ -4638,32 +4638,10 @@ Rotina para que se liste umas variáveis depois de uma string em um trecho:
 
 
 
-
-
-
 Rotina para que se mova um percorredor (símbolos):
   Avance o percorredor.
 
 
-
-Rotina para que se mova um percorredor (usando diretrizes de compilação): \ talvez aqui conserte o comando "subtraia"
-  [Itere.]
-    Se o sinalizador de erros deste compilador estiver ativo,
-       Limpe o segmento inicial deste percorredor;
-       Retorne.
-    Mova o percorredor retornando uma string de erro (englobando tudo).
-    Se a string de erro não estiver em branco,
-       Apresente uma mensagem de erro contendo a string de erro e o caractere inicial deste segmento inicial deste percorredor; \#191
-       Retorne.
-    \Se o segmento inicial deste percorredor for "del", recue o percorredor; Retorne. \ Spanish contraction "del"; fudged para "de l", short por "de el"
-    Se o segmento inicial deste percorredor estiver em branco, retorne.
-    Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor for irrelevante, 
-      Reitere.
-    Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor for a barra invertida, 
-      Reitere.
-    Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor for o colchete esquerdo, 
-      Reitere.
-  \Reitere.
 
 Rotina para que se mova um percorredor retornando uma string de erro (diretrizes de validação de qualificadores):
   Se a quantidade de caracteres deste segmento inicial deste percorredor for menor do que 2,
@@ -5860,32 +5838,9 @@ Rotina para que se examine uma cabeçalho de rotina usando um percorredor:
     Mova o percorredor (usando diretrizes de compilação).
   Reitere.
 
-Rotina para que se examine um arquivo fonte:
-  Se o arquivo fonte for inexistente, retorne.
-  Se existir algum problema de compilação, retorne.
-  Lance um percorredor sobre o trecho deste arquivo fonte.
-  Mova o percorredor (usando diretrizes de compilação).
-  Itere.
-    Se existir algum problema de compilação, retorne.
-    Se o segmento inicial deste percorredor estiver em branco, retorne.
-    Se o segmento inicial deste percorredor for o início de algum tipo,
-    Examine um tipo usando o percorredor;
-    Reitere.
-    Se o segmento inicial deste percorredor for o início de alguma variável global,
-    Examine uma variável global usando o percorredor;
-    Reitere.
-    Se o segmento inicial deste percorredor for o início de alguma rotina,
-    Examine uma rotina usando o percorredor;
-    Reitere.
-    Apresente uma mensagem de erro contendo "Erro #164. O compilador não reconhece a sintaxe '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor.
-  Reitere.
 
-Rotina para que se examine uns arquivos fontes:
-  Se existir algum problema de compilação, retorne.
-  Obtenha um arquivo fonte desde os arquivos fontes.
-  Se o arquivo fonte for inexistente, retorne.
-  Examine o arquivo fonte.
-  Reitere.
+
+
 
 Rotina para que se examine um tipo usando um percorredor:
   Se existir algum problema de compilação, retorne.
