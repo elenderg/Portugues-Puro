@@ -617,10 +617,7 @@ Rotina para que se adicione two fragmentos usando uma string e uma variável e um
     Retorne.
   Adicione um segundo fragmento usando a etiqueta de demanda interna e a rotina.
 
-Rotina para que se adicione um tipo para uns tipos usando um endereço local:
-  Crie o tipo.
-  Acrescente o tipo para o tipos.
-  Atribua o endereço local ao endereço local deste tipo.
+
 
 
 
@@ -3244,20 +3241,7 @@ Função para que se determine se uma string é algum artigo indefinido:
   Se a string for algum pronome demonstrativo abrangente, diga sim.
   Diga não.
 
-Função para que se determine se uma string é algum artigo indefinido português: 
-  \PAL
-  Se a string for "um", diga sim.
-  Se a string for "uma", diga sim.
-  Se a string for "uns", diga sim.
-  Se a string for "umas", diga sim.
-  \Se a string for "outro", diga sim.
-  \Se a string for "outra", diga sim.
-  \Se a string for "algum", diga sim.
-  \Se a string for "alguma", diga sim.
-  \Se a string for "alguns", diga sim.
-  \Se a string for "algumas", diga sim.
-  Se a string for algum pronome demonstrativo abrangente, diga sim. \ para funcionamento dos possessivos - local correto
-  Diga não.
+
 
 Função para que se determine se uma string é algum valor literal:
   Se a string for algum ponteiro literal, diga sim.

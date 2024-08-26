@@ -714,7 +714,8 @@ Rotina para que se mova um percorredor retornando uma string de erro (diretrizes
 
 Rotina para que se examine um tipo usando um percorredor:
   Se existir algum problema de compilação, retorne.
-  Se o segmento inicial deste percorredor for algum artigo indefinido português, ative um português sinalizador.
+  Se o segmento inicial deste percorredor for algum artigo indefinido português, 
+    Ative um sinalizador denominado português sinalizador.
   Adicione o tipo para os tipos usando o caractere inicial deste segmento inicial deste percorredor.
   Mova o percorredor (usando diretrizes de compilação).
   Examine o nome deste tipo usando o percorredor.
@@ -748,6 +749,26 @@ Rotina para que se examine um tipo usando um percorredor:
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Catalogue o tipo.
+
+Função para que se determine se uma string é algum artigo indefinido português: 
+  \PAL
+  Se a string for "um", diga sim.
+  Se a string for "uma", diga sim.
+  Se a string for "uns", diga sim.
+  Se a string for "umas", diga sim.
+  \Se a string for "outro", diga sim.
+  \Se a string for "outra", diga sim.
+  \Se a string for "algum", diga sim.
+  \Se a string for "alguma", diga sim.
+  \Se a string for "alguns", diga sim.
+  \Se a string for "algumas", diga sim.
+  Se a string for algum pronome demonstrativo abrangente, diga sim. \ para funcionamento dos possessivos - local correto
+  Diga não.
+
+Rotina para que se adicione um tipo para uns tipos usando um endereço local:
+  Crie o tipo.
+  Acrescente o tipo para os tipos.
+  Atribua o endereço local ao endereço local deste tipo.
 
 Rotina para que se examine um tipo usando um percorredor(cláusula 'tem'):
   Se existir algum problema de compilação, retorne.
