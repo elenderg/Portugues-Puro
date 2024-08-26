@@ -64,9 +64,7 @@ Rotina para que se execute um evento:
 \ Para colocar e retirar coisas maiores da pilha, precisamos lidar diretamente com o registro ESP.
 \ Subtrair 16 do endereço no ESP, por exemplo, abre espaço para 16 bytes de dados locais no “topo” da pilha; adicionar 16 tira esses bytes da pilha.
 
-Função para que se determine se há algum problema de compilação;
-Função para que se determine se existe algum problema de compilação:
-  Se o sinalizador de erros deste compilador estiver ativado, diga sim.
+
 
 Rotina para que se apresente uma mensagem de erro contendo uma string:
   Se existir algum problema de compilação,
@@ -3033,10 +3031,7 @@ Rotina para que se crie uma rotina:
 Rotina para que se crie um arquivo fonte:
   Aloque memória para o arquivo fonte.
 
-Rotina para que se crie um tipo:
-  Aloque memória para o tipo.
-  Atribua 0/1 à razão de escala deste tipo.
-  Atribua -1 à quantidade de caracteres deste tipo.
+
 
 Rotina para que se crie uma variável usando um categoria:
   Aloque memória para a variável.
@@ -4525,23 +4520,9 @@ Rotina para que se catalogue umas rotinas por utilização:
   Catalogue a rotina por utilização.
   Reitere.
 
-Rotina para que se catalogue um tipo:
-  Se o tipo for inexistente, retorne.
-  Se existir algum problema de compilação, retorne.
-  Catalogue o tipo usando o nome deste tipo.
 
-Rotina para que se catalogue um tipo usando um nome:
-  Se o tipo for inexistente, retorne.
-  Se existir algum problema de compilação, retorne.
-  Encontre um existing tipo usando o nome e o catálogo de tipos.
-  Se o existing tipo for inexistente,
-    Catalogue o tipo usando o nome e o catálogo de tipos;
-    Retorne.
-  [Se o existing tipo já existir, então:]
-  Atribua o endereço local deste tipo para um endereço local.
-  Se o endereço local for inexistente, atribua o endereço local deste existing tipo ao endereço local. \ point the error to a type in the source code, not a generated type
-  Se o endereço local não for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #125. Tipo: " junto com o nome seguido de "' duplicado." e o endereço local.
+
+
 
 \Rotina para que se inicialize o compilador:
 \Rotina em branco. Serve apenas para fazer com que o código fique "simétrico"

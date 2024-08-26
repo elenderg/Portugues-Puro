@@ -114,7 +114,7 @@ Rotina para que se adicione os tipos primitivos:
   Adicione um outro tipo primitivo usando "estrutura" e "estruturas" e 0.
 
 Rotina para que se adicione um tipo primitivo usando um nome e um nome plural e uma quantidade de caracteres:
-  Adicione o tipo primitivo para os tipos usando o nome e o nome plural e o nome. \ o nome do tipo
+  Adicione o tipo primitivo para os tipos usando o nome e o nome plural e o nome. [do tipo primitivo]
   Atribua a quantidade de caracteres à quantidade de caracteres deste tipo primitivo.
   Atribua o tipo primitivo ao tipo base deste tipo primitivo.
   Catalogue o tipo primitivo.
@@ -124,11 +124,38 @@ Rotina para que se adicione um tipo para uns tipos usando um nome e um nome plur
 
 Rotina para que se adicione um tipo para uns tipos usando um nome e um nome plural e um nome do tipo primitivo e um endereço local:
   Crie o tipo.
-  Acrescente o tipo para o tipos. \ Um tipo é uma lista duplamente encadeada
+  Acrescente o tipo para os tipos. \ Um tipo é uma lista duplamente encadeada
   Atribua o endereço local ao endereço local deste tipo.
   Atribua o nome ao nome deste tipo.
   Atribua o nome plural ao nome plural deste tipo.
   Atribua o nome do tipo primitivo ao nome do tipo primitivo deste tipo.
+
+Rotina para que se crie um tipo:
+  Aloque memória para o tipo.
+  Atribua 0/1 à razão de escala deste tipo.
+  Atribua -1 à quantidade de caracteres deste tipo.
+
+Rotina para que se catalogue um tipo:
+  Se o tipo for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Catalogue o tipo usando o nome deste tipo.
+
+Função para que se determine se há algum problema de compilação;
+Função para que se determine se existe algum problema de compilação:
+  Se o sinalizador de erros deste compilador estiver ativado, diga sim.
+
+Rotina para que se catalogue um tipo usando um nome:
+  Se o tipo for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Encontre um existing tipo usando o nome e o catálogo de tipos.
+  Se o existing tipo for inexistente,
+    Catalogue o tipo usando o nome e o catálogo de tipos;
+    Retorne.
+  [Se o existing tipo já existir, então:]
+  Atribua o endereço local deste tipo para um endereço local.
+  Se o endereço local for inexistente, atribua o endereço local deste existing tipo ao endereço local. \ point the error to a type in the source code, not a generated type
+  Se o endereço local não for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #125. Tipo: " junto com o nome seguido de "' duplicado." e o endereço local.
 
 Rotina para que se compile um endereço da pasta usando um nível de profundidade (arquivos de código fonte): \#002
   Se existir algum problema de compilação, retorne.
