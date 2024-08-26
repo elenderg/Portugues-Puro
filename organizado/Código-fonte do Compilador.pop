@@ -72,16 +72,7 @@ Rotina para que se apresente uma mensagem de erro contendo uma string:
   Ative o sinalizador de erros deste compilador.
   Atribua esta string à mensagem de erro deste compilador.
 
-Rotina para que se apresente uma mensagem de erro contendo uma string e um endereço de byte:
-  Se existir algum problema de compilação,
-    Retorne.
-  Ative o sinalizador de erros deste compilador.
-  Atribua a string à mensagem de erro deste compilador.
-  Encontre o endereço do arquivo atual deste compilador e o número da linha de erro deste compilador usando o endereço de byte .
-  Se o endereço do arquivo atual deste compilador estiver em branco,
-    Retorne.
-  Extraia um nome do arquivo desde o endereço do arquivo atual deste compilador.
-  Anteponha "Erro no arquivo '" junto com o nome do arquivo seguido de "'. " para a mensagem de erro deste compilador.
+
 
 Rotina para que se apresente uma mensagem de erro contendo uma string e um percorredor:
   Se o segmento inicial deste percorredor não estiver em branco,
@@ -398,6 +389,9 @@ Rotina para que se adicione uma unidade semântica para umas unidades semânticas 
     Atribua "usando" à string desta unidade semântica;
     Retorne.
   Se a string for "contendo",
+    Atribua "usando" à string desta unidade semântica;
+    Retorne.
+  Se a string for "dizendo",
     Atribua "usando" à string desta unidade semântica;
     Retorne.
   \\ para
@@ -4256,13 +4250,7 @@ Rotina para que se encontre uma DLL usando uma string:
     Se o nome desta DLL for a string, retorne.
   Reitere.
 
-Rotina para que se encontre um endereço completo e um número da linha usando um endereço de byte:
-  Limpe o endereço completo.
-  Atribua 0 ao número da linha.
-  Encontre um arquivo fonte usando o endereço de byte .
-  Se o arquivo fonte for inexistente, retorne.
-  Atribua o endereço completo deste arquivo fonte ao endereço completo.
-  Encontre o número da linha usando o arquivo fonte e o endereço de byte .
+
 
 Rotina para que se encontre uma rotina usando uma representação interna da rotina e uma unidade semântica e um catálogo:
   Se a unidade semântica for inexistente, retorne.

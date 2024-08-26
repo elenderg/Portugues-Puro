@@ -153,9 +153,56 @@ Rotina para que se catalogue um tipo usando um nome:
     Retorne.
   [Se o existing tipo já existir, então:]
   Atribua o endereço local deste tipo para um endereço local.
-  Se o endereço local for inexistente, atribua o endereço local deste existing tipo ao endereço local. \ point the error to a type in the source code, not a generated type
+  Se o endereço local for inexistente, 
+    Atribua o endereço local deste existing tipo ao endereço local. \ Aponta o erro para o tipo encontrado no código fonte, ao invés de um tipo gerado
   Se o endereço local não for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #125. Tipo: " junto com o nome seguido de "' duplicado." e o endereço local.
+    Apresente uma mensagem de erro contendo "Erro #001. Tipo: " junto com o nome seguido de "' duplicado." e o endereço local.
+
+Rotina para que se apresente uma mensagem de erro contendo uma string e um endereço de byte:
+  Se existir algum problema de compilação,
+    Retorne.
+  Ative o sinalizador de erros deste compilador.
+  Atribua a string à mensagem de erro deste compilador.
+  Encontre o endereço do arquivo atual deste compilador e o número da linha de erro deste compilador usando o endereço de byte .
+  Se o endereço do arquivo atual deste compilador estiver em branco,
+    Retorne.
+  Extraia um nome do arquivo desde o endereço do arquivo atual deste compilador.
+  Anteponha "Erro no arquivo '" junto com o nome do arquivo seguido de "'. " para a mensagem de erro deste compilador.
+
+Rotina para que se encontre um endereço completo e um número da linha usando um endereço de byte:
+  Limpe o endereço completo.
+  Atribua 0 ao número da linha.
+  Encontre um arquivo fonte usando o endereço de byte .
+  Se o arquivo fonte for inexistente, retorne.
+  Atribua o endereço completo deste arquivo fonte ao endereço completo.
+  Encontre o número da linha usando o arquivo fonte e o endereço de byte .
+
+Rotina para que se encontre um arquivo fonte usando um endereço de byte :
+  Se o endereço de byte for inexistente,
+    Esvazie o arquivo fonte;
+    Retorne.
+  Itere.
+    Obtenha o arquivo fonte desde os arquivos fontes.
+    Se o arquivo fonte for inexistente,
+      Retorne.
+    Se o endereço de byte for menor do que o caractere inicial deste trecho deste arquivo fonte,
+      Reitere.
+    Se o endereço de byte for maior do que o caractere final deste trecho deste arquivo fonte,
+      Reitere.
+
+Rotina para que se encontre um número da linha usando um arquivo fonte e um endereço de byte :
+  Se o endereço de byte for inexistente,
+    Atribua 0 ao número da linha;
+    Retorne.
+  Lance um subtexto sobre o trecho deste arquivo fonte.
+  Atribua 1 ao número da linha.
+  Itere.
+    Se o subtexto estiver em branco, retorne.
+    Se o caractere inicial deste subtexto for o endereço de byte , retorne.
+    Se o conteúdo deste caractere inicial deste subtexto for o retorno de carro, 
+      Adicione 1 para o número da linha.
+    Adicione 1 para o caractere inicial deste subtexto.
+  Reitere.
 
 Rotina para que se compile um endereço da pasta usando um nível de profundidade (arquivos de código fonte): \#002
   Se existir algum problema de compilação, retorne.
