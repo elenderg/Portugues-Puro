@@ -1665,6 +1665,12 @@ Rotina para que se compile um endereço da pasta usando um nível de profundidade:
   Compile o endereço da pasta (etapa final). \ #016
   Compile o endereço da pasta (interrupção). \ #017
 
+Rotina para que se compile um endereço da pasta usando um nível de profundidade (arquivos de código fonte): \#002
+  Se existir algum problema de compilação, retorne.
+  Escreva "Carregando arquivos..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de operacionalização.
+  Carregue os arquivos fontes usando o nível de profundidade.
+  Suspenda o temporizador de operacionalização.
 
 Rotina para que se compile uma expressão matematica usando um percorredor:
   Se existir algum problema de compilação, retorne.
@@ -4313,31 +4319,9 @@ Rotina para que se encontre uma rotina usando uma string e um tipo e uma segunda
   Encontre a rotina usando as unidades semânticas.
   Destrua as unidades semânticas.
 
-Rotina para que se encontre um número da linha usando um arquivo fonte e um endereço de byte :
-  Se o endereço de byte for inexistente,
-    Atribua 0 ao número da linha;
-    Retorne.
-  Lance um subtexto sobre o trecho deste arquivo fonte.
-  Atribua 1 ao número da linha.
-  Itere.
-    Se o subtexto estiver em branco, retorne.
-    Se o caractere inicial deste subtexto for o endereço de byte , retorne.
-    Se o conteúdo deste caractere inicial deste subtexto for o retorno de carro, adicione 1 para o número da linha.
-  Adicione 1 para o caractere inicial deste subtexto.
-  Reitere.
 
-Rotina para que se encontre um arquivo fonte usando um endereço de byte :
-  Se o endereço de byte for inexistente,
-    Esvazie o arquivo fonte;
-    Retorne.
-  Itere.
-    Obtenha o arquivo fonte desde os arquivos fontes.
-    Se o arquivo fonte for inexistente,
-      Retorne.
-    Se o endereço de byte for menor do que o caractere inicial deste trecho deste arquivo fonte,
-      Reitere.
-    Se o endereço de byte for maior do que o caractere final deste trecho deste arquivo fonte,
-      Reitere.
+
+
 
 Rotina para que se encontre um tipo e um apelido usando um nome:
   Esvazie o tipo.
