@@ -1,38 +1,220 @@
  \ Este arquivo contém o código fonte do compilador da linguagem de programação "Português Puro"
  
-Um tipo é uma lista com
-  Um endereço local (referência),
-  Um nome, um nome plural,
-  Um cabeçalho compactado,
-  Uma quantidade de caracteres,
-  Um nome do tipo primitivo,
-  Um tipo base (referência),
-  Um nome do conteúdo,
-  Um tipo do conteúdo (referência) [aplicável somente a ponteiros],
-  Uma razão de escala,
-  Uns campos [aplicável somente a estruturas],
-  Um sinalizador de recursividade,
-  Um sinalizador de informações complementares.
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  \Inicialize o compilador.
+  Faça tudo.
+  Finalize o compilador.
+  Escreva na próxima linha em StdOut.
+  Escreva "Operação finalizada." junto com o texto CRLF para StdOut.
+  \Execute os eventos.\
+  Feche o programa.
+
+Rotina para que se faça tudo:
+  Atribua 1252 a um número denominado codepage.
+  Processe "kernel32.dll" "SetConsoleOutputCP" com o codepage retornando um número denominado status de erro.
+  Se o status de erro for 0 [NULL], escreva "Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT.
+  Obtenha uma string desde os argumentos da linha de comando.
+  Se a string estiver em branco, 
+    Escreva "|-----------------------------------------------------------------------------------------------------------------------|" junto com o texto CRLF para StdOut;
+    Escreva "| Aviso. Para utilizar este compilador, você deve invocá-lo através da linha de comando.                 |" junto com o texto CRLF para StdOut;
+    Escreva "| Para fazer isso, abra compilador no Prompt de Comando (cmd.exe) usando a sintaxe abaixo       |" junto com o texto CRLF para StdOut;
+    Escreva " " junto com o texto CRLF para StdOut;
+    Escreva "| c:\endereço_do_compilador.exe\  c:\pasta_do_projeto_atual\                                                        |" junto com o texto CRLF para StdOut;
+    Escreva " " junto com o texto CRLF para StdOut;
+    Escreva "|-----------------------------------------------------------------------------------------------------------------------|" junto com o texto CRLF para StdOut;
+  Retorne.
+  Se o conteúdo deste caractere final desta string não for a barra invertida, 
+    Acrescente a barra invertida para a string.
+  Se a string não estiver no sistema de arquivos, 
+    Escreva "Erro. O diretório '" junto com a string seguido de "' não foi encontrado." junto com o texto CRLF para StdOut;
+    Retorne.
+  Escreva "Compilando o diretório '" junto com a string seguido de "' ..." junto com o texto CRLF para StdOut. \ #0
+  Escreva o texto CRLF para StdOut.
+  Compile a string.
+  Se existir algum problema de compilação, 
+    Exiba o erro de compilação; 
+    Retorne.
+  Escreva "Tempo de compilação: " junto com a string deste temporizador deste compilador seguido de " ms" junto com o texto CRLF para StdOut.
+
+Rotina para que se obtenha uma string desde os argumentos da linha de comando:
+  Processe "kernel32.dll" "GetCommandLineA" 
+    Retornando um endereço do caractere.
+  Converta o endereço do caractere para uma string denominada argumentos.
+  Lance um subtexto sobre os argumentos.
+  Itere.
+    Se o subtexto estiver em branco, 
+      Limpe a string; 
+      Retorne. 
+    Se o conteúdo deste caractere inicial deste subtexto não for o caractere de espaço, 
+      Adicione 1 para o caractere inicial deste subtexto; 
+      Reitere.
+    Atribua o subtexto para a string.
+    Elimine os resíduos na string.
+  \Reitere.
+
+Rotina para que se compile um endereço da pasta:
+  Compile o endereço da pasta (inicialização). \ #001
+  Compile o endereço da pasta (arquivos de código fonte). \ #002
+  Compile o endereço da pasta (análise dos arquivos fornecidos). \ #003
+  Compile o endereço da pasta (identificação dos tipos das variáveis). \ #004
+  Compile o endereço da pasta (identificação de variáveis globais). \ #005
+  Compile o endereço da pasta (cabeçalhos de rotinas). \ #006
+  Compile o endereço da pasta (cálculo de tamanhos e deslocamentos). \ #007
+  Compile o endereço da pasta (adição de rotinas de memória incorporadas). \ #008
+  Compile o endereço da pasta (catalogue as rotinas por utilização). \ #009
+  Compile o endereço da pasta (conteúdo das rotinas). \ #010
+  Compile o endereço da pasta (adição e compilação da rotina de inicialização). \ #011
+  Compile o endereço da pasta (deslocamento de parâmetros e variáveis). \ #012
+  Compile o endereço da pasta (endereço). \ #013
+  Compile o endereço da pasta (transmutação). \ #014
+  Compile o endereço da pasta (vinculação). \ #015
+  Compile o endereço da pasta (etapa final). \ #016
+  Compile o endereço da pasta (interrupção). \ #017
 
 
+Rotina para que se compile um endereço da pasta (inicialização): \#001
+  Escreva "Iniciando..." junto com o texto CRLF para StdOut.
+  Finalize o compilador.
+  Comece o temporizador deste compilador.
+  Inicialize o compilador usando o endereço da pasta.
+  Adicione o tipos primitivos.
 
-Uma variável é uma lista com
-  Um endereço local (referência),
-  Um categoria [lvalor iteral, variável global, variável local, parâmetro, scratch],
-  Um sinalizador de compilação,
-  Um nome,
-  Um apelido,
-  Um nome do tipo,
-  Um tipo (referência), \ tipo real em literal, variável global e local; tipos revogados em parâmetros e scratches
-  Um endereço [variáveis globais e valores literais somente] ou
-  Um deslocamento sob o endereço [variáveis locais, parâmetros, e campos somente],
-  Uma contagem [campos somente],
-  Um sinalizador de referência [campos somente],
-  Um novo nome [campos somente],
-  Um sinalizador de passagem por-valor [parâmetros somente],
-  Um corpo de variável global [variáveis globais somente],
-  Um texto inicializador [variáveis globais somente],
-  Um valor literal (referência) [variáveis globais somente - constante com a qual se inicializa a variável global],
-  Um texto hexadecimal denominado data [literais somente].
+Rotina para que se compile um endereço da pasta usando um nível de profundidade (arquivos de código fonte): \#002
+  Se existir algum problema de compilação, retorne.
+  Escreva "Carregando arquivos..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de operacionalização.
+  Carregue os arquivos fontes usando o nível de profundidade.
+  Suspenda o temporizador de operacionalização.
 
+Rotina para que se compile um endereço da pasta (arquivos de código fonte): \#002
+  Se existir algum problema de compilação, retorne.
+  Escreva "Carregando arquivos..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de operacionalização.
+  Carregue os arquivos fontes.
+  Suspenda o temporizador de operacionalização.
 
+Rotina para que se compile um endereço da pasta (análise dos arquivos fornecidos): \#003
+  Se existir algum problema de compilação, retorne.
+  Escreva "Analisando código fonte dos arquivos..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de análise/verificação.
+  Examine os arquivos fontes.
+  Suspenda o temporizador de análise/verificação.
+
+Rotina para que se compile um endereço da pasta (identificação dos tipos das variáveis): \ #004
+  Se existir algum problema de compilação, retorne.
+  Escreva "Identificando os tipos das variáveis..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de resolução de tipos.
+  Destrinche os tipos (expansão de listas).
+  Destrinche os tipos (registro de plurais).
+  Destrinche os tipos (tipos de dados primitivos).
+  Destrinche os tipos (dados complementares).
+  Suspenda o temporizador de resolução de tipos.
+
+Rotina para que se compile um endereço da pasta (identificação de variáveis globais): \ #005
+  Se existir algum problema de compilação, retorne.
+  Escreva "Identificando variáveis globais..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de resolução de variáveis globais.
+  Destrinche as variáveis globais.
+  Suspenda o temporizador de resolução de variáveis globais.
+
+Rotina para que se compile um endereço da pasta (cabeçalhos de rotinas): \ #006
+  Se existir algum problema de compilação, retorne.
+  Escreva "Agrupando os nomes das rotinas..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de compilação de cabeçalhos de rotina.
+  Compile os cabelalhos referente às rotinas.
+  Suspenda o temporizador de compilação de cabeçalhos de rotina.
+
+Rotina para que se compile um endereço da pasta (cálculo de tamanhos e deslocamentos): \ #007
+  Se existir algum problema de compilação, retorne.
+  Escreva "Calculando tamanhos de variáveis e deslocamentos de memória..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de etapas de cálculo.
+  Calcule os comprimentos referente aos tipos.
+  Calcule os deslocamentos no tipos.
+  Calcule os deslocamentos das redefinições no tipos.
+  Suspenda o temporizador de etapas de cálculo.
+
+Rotina para que se compile um endereço da pasta (adição de rotinas de memória incorporadas): \ #008
+  Se existir algum problema de compilação, retorne.
+  Escreva "Adicionando tarefas predefinidas na memória..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de adição de rotinas pré-definidas de mémoria .
+  Adicione as rotinas de alocação e desalocação e finalização e destruição.
+  Suspenda o temporizador de adição de rotinas pré-definidas de mémoria .
+
+Rotina para que se compile um endereço da pasta (catalogue as rotinas por utilização): \ #009
+  Se existir algum problema de compilação, retorne.
+  Escreva "Catalogando tarefas..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de ferramentas de catalogação.
+  Catalogue as rotinas por utilização.
+  Scrub o catálogo de rotinas úteis.
+  Organize o catálogo de rotinas úteis.
+  Suspenda o temporizador de ferramentas de catalogação.
+
+Rotina para que se compile um endereço da pasta (conteúdo das rotinas): \ #010
+  Se existir algum problema de compilação, retorne.
+  Escreva "Agrupando o conteúdo das rotinas..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de compilação do conteúdo das rotinas.
+  Compile os corpos referentes às rotinas.
+  Suspenda o temporizador de compilação do conteúdo das rotinas.
+
+Rotina para que se compile um endereço da pasta (adição e compilação da rotina de inicialização): \ #011
+  Se existir algum problema de compilação, retorne.
+  Escreva "Adicionando e agrupando as tarefas padrão de inicialização.." junto com o texto CRLF para StdOut.
+  Comece o temporizador de adição de rotinas pré-definidas de inicialização.
+  Adicione e compile as rotinas de inicialização pré-execução e finalização pós-execução.
+  Suspenda o temporizador de adição de rotinas pré-definidas de inicialização.
+
+Rotina para que se compile um endereço da pasta (deslocamento de parâmetros e variáveis): \ #012
+  Se existir algum problema de compilação, retorne.
+  Escreva "Deslocando parâmetros e variáveis..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de deslocamentos.
+  Alinhe o parâmetros na rotinas.
+  Alinhe as variáveis locais na rotinas.
+  Suspenda o temporizador de deslocamentos.
+
+Rotina para que se compile um endereço da pasta (endereço): \ #013
+  Se existir algum problema de compilação, retorne.
+  Escreva "Obtendo endereço dos itens..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de endereçamento.
+  Atribua 4096 para um endereço.
+  Atribua o endereço à endereço base desta Seção de DLLs.
+  Enderece as DLLs usando o endereço.
+  Atribua o endereço menos a endereço base desta Seção de DLLs à quantidade de caracteres desta Seção de DLLs.
+  Arredonde o endereço para cima usando o múltiplo imediato de 4096.
+  Atribua o endereço à endereço base desta Região de Dados.
+  Enderece as variáveis globais usando o endereço.
+  Enderece os valores literais usando o endereço.
+  Atribua o endereço menos a endereço base desta Região de Dados à quantidade de caracteres desta Região de Dados.
+  Arredonde o endereço para cima usando o múltiplo imediato de 4096.
+  Atribua o endereço à endereço base desta Região de Código. \ Uma zona é uma estrutura que contém um endereço base, uma quantidade de caracteres e um tamanho.
+  Enderece as rotinas usando o endereço.
+  Atribua o endereço menos a endereço base desta Região de Código à quantidade de caracteres desta Região de Código.
+  Suspenda o temporizador de endereçamento.
+
+Rotina para que se compile um endereço da pasta (transmutação): \ #014
+  Se existir algum problema de compilação, retorne.
+  Escreva "Convertendo código em instruções de máquina..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de transmutação.
+  Transforme as rotinas em código hexadecimal.
+  Suspenda o temporizador de transmutação.
+
+Rotina para que se compile um endereço da pasta (vinculação): \ #015
+  Se existir algum problema de compilação, retorne.
+  Escreva "Elencando arquivos.." junto com o texto CRLF para StdOut.
+  Comece o temporizador de vinculação.
+  Vincule.
+  Suspenda o temporizador de vinculação.
+
+Rotina para que se compile um endereço da pasta (etapa final): \ #016
+  Se existir algum problema de compilação, retorne.
+  Escreva "Gerando arquivo executável..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de escrita.
+  Escreva o trecho EXE deste compilador para o endereço EXE completo deste compilador.
+  \Se o erro do fluxo de entrada/saída não estiver em branco, apresente uma mensagem de erro contendo o erro do fluxo de entrada/saída.
+  Se o erro do fluxo de entrada/saída não estiver em branco,
+    Escreva o erro do fluxo de entrada/saída para StdOut.
+  Suspenda o temporizador de escrita.
+
+Rotina para que se compile um endereço da pasta (interrupção): \ #017
+  Suspenda o temporizador deste compilador.
+  Escreva "---------------------------------------" junto com o texto CRLF para StdOut.
