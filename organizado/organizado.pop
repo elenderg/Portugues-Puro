@@ -833,6 +833,11 @@ Função para que se determine se um percorredor está sobre algum indicador de iní
   Se o segmento inicial deste percorredor estiver em branco, diga não.
   Diga sim.
 
+Função para que se determine se uma string é algum símbolo:
+  Se a quantidade de caracteres desta string não for 1, diga não.
+  Se o conteúdo deste caractere inicial desta string for algum símbolo, diga sim.
+  Diga não.
+
 Função para que se determine se um byte é algum símbolo: \ deveria estar no cérebro
   Se o byte for o acento circumflexo, diga sim.
   Se o byte for o barra vertical, diga sim.
@@ -887,9 +892,237 @@ Função para que se determine se uma string é alguma conjunção:
   Se a string for "nor", diga sim.
   Diga não.
 
+Função para que se determine se uma string é algum possessivo inglês:
+  Se a string for "'s", diga sim.
+  Se a string for "'", diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum verbo:
+  \PAL
+  Se a string for "deve", diga sim.
+  Se a string for "deveria", diga sim.
+  Se a string for "deveriam", diga sim.
+  Se a string for "devem", diga sim.
+  Se a string for "estar", diga sim.
+  Se a string for "ser", diga sim.
+  Se a string for "for", diga sim.
+  Se a string for "forem", diga sim.
+  Se a string for "estiver", diga sim.
+  Se a string for "estiverem", diga sim.
+  Se a string for "estamos", diga sim.
+  Se a string for "há", diga sim.
+  Se a string for "houver", diga sim.
+  Se a string for "é", diga sim.
+  Se a string for "está", diga sim.
+  Se a string for "são", diga sim.
+  Se a string for "estão", diga sim.
+  Se a string for "foi", diga sim.
+  Se a string for "estava", diga sim.
+  Se a string for "foram", diga sim.
+  Se a string for "estavam", diga sim.
+  Se a string for "será", diga sim.
+  Se a string for "estará", diga sim.
+  Se a string for "serão", diga sim.
+  Se a string for "estarão", diga sim.
+  Se a string for "existir", diga sim.
+  Se a string for "existe", diga sim.
+  \Se a string for "seja", diga sim.
+  Se a string for "supera", diga sim.
+  Se a string for "superam", diga sim.
+  Se a string for "excede", diga sim.
+  Se a string for "excedem", diga sim.
+  Se a string for "pode", diga sim.
+  Se a string for "puder", diga sim.
+  Se a string for "puderem", diga sim.
+  Se a string for "podem", diga sim.
+  Se a string for "poderia", diga sim.
+  Se a string for "poderia", diga sim.
+  Se a string for "podemos", diga sim.
+  Se a string for "tem", diga sim.
+  Se a string for "têm", diga sim.
+  Se a string for "ter", diga sim.
+  Se a string for "possui", diga sim.
+  Se a string for "possuem", diga sim.
+  Se a string for "possuir", diga sim.
+  \\ trouble makers
+  Se a string for "inicia", diga sim.
+  Se a string for "iniciar", diga sim.
+  Se a string for "começa", diga sim.
+  Se a string for "começar", diga sim.
+  Se a string for "termina", diga sim.
+  Se a string for "terminar", diga sim.
+  Se a string for "finaliza", diga sim.
+  Se a string for "finalizar", diga sim.
+  Se a string for "parece", diga sim.
+  Se a string for "necessita", diga sim.
+  Se a string for "necessitar", diga sim.
+  Se a string for "requer", diga sim.
+  \\ trouble makers
+  Diga não.
+
+Função para que se determine se uma string é algum operador aritmético:
+  Se a string for "mais", diga sim.
+  Se a string for "menos", diga sim.
+  Se a string for "vezes", diga sim.
+  Se a string for "dividido", diga sim.
+  Se a string for "depois", diga sim.
+  Se a string for "seguido", diga sim.
+  Se a string for "juntamente", diga sim.
+  Se a string for "junto", diga sim.
+  Se a string for "acompanhado", diga sim.
+  Diga não.
+
+Função para que se determine se um percorredor está sobre alguma preposição:
+  Atribua o segmento inicial deste percorredor para um subtexto.
+  Se o percorredor estiver sobre algum preposição conectiva, diga sim. \ "a" no sentido de "para"
+  Se o subtexto for "a_partir_de", diga sim.
+  Se o subtexto for "abaixo", diga sim.
+  \Se o subtexto for "baixo", diga sim.
+  Se o subtexto for "acima", diga sim.
+  \Se o subtexto for "cima", diga sim.
+  Se o subtexto for "ante", diga sim.
+  Se o subtexto for "perante", diga sim.
+  Se o subtexto for "antes", diga sim.
+  Se o subtexto for "debaixo", diga sim.
+  Se o subtexto for "sob", diga sim.
+  Se o subtexto for "acerca", diga sim.
+  Se o subtexto for "cerca", diga sim.
+  Se o subtexto for "cuja", diga sim.
+  Se o subtexto for "cujo", diga sim.
+  Se o subtexto for "cujas", diga sim.
+  Se o subtexto for "cujos", diga sim.
+  \Se o subtexto for "próximo", diga sim.
+  Se o subtexto for "perto", diga sim.
+  Se o subtexto for "com", diga sim.
+  \Se o subtexto for "contendo", diga sim.
+  Se o subtexto for "como", diga sim.
+  Se o subtexto for "contra", diga sim.
+  Se o subtexto for "dada", diga sim.
+  Se o subtexto for "dado", diga sim.
+  Se o subtexto for "dando", diga sim.
+  Se o subtexto for "gerando", diga sim.
+  Se o subtexto for "resultando", diga sim.
+  Se o subtexto for "retornando", diga sim.
+  Se o subtexto for "desde", diga sim.
+  Se o subtexto for "depois", diga sim.
+  Se o subtexto for "após", diga sim.
+  Se o subtexto for "durante", diga sim.
+  Se o subtexto for "em", diga sim.
+  Se o subtexto for "entre", diga sim.
+  Se o subtexto for "dentre", diga sim.
+  Se o subtexto for "até", diga sim.
+  \Se o subtexto for "que", diga sim.
+  \Se o subtexto for "esquerda", diga sim.
+  Se o subtexto for "mediante", diga sim.
+  Se o subtexto for "para", diga sim.
+  Se o subtexto for "via", diga sim.
+  Se o subtexto for "segundo", diga sim.
+  Se o subtexto for "acordo", diga sim.
+  Se o subtexto for "sem", diga sim.
+  Se o subtexto for "então", diga sim.
+  Se o subtexto for "sobre", diga sim.
+  Se o subtexto for "usando", diga sim.
+  Se o subtexto for "versus", diga sim.
+  Se o subtexto for "enquanto", diga sim.
+  Se o subtexto for "aproximadamente", diga sim.
+  Se o subtexto for "através", diga sim.
+  Se o subtexto for "algum", diga sim.
+  Se o subtexto for "sob", diga sim.
+  Se o subtexto for "debaixo", diga sim.
+  Se o subtexto for "entre", diga sim.
+  \Se o subtexto for "baixo", diga sim. -> erro
+  Se o subtexto for "por", diga sim.
+  Se o subtexto for "usando", diga sim.
+  Se o subtexto for "referente", diga sim.
+  Se o subtexto for "pertencente", diga sim.
+  Se o subtexto for "pertinente", diga sim.
+  Se o subtexto for "relativo", diga sim.
+  Se o subtexto for "relativa", diga sim.
+  Se o subtexto for "concernente", diga sim.
+  Se o subtexto for "atinente", diga sim.
+  Se o subtexto for "pertinente", diga sim.
+  Se o subtexto for "retornando", diga sim.
+  Se o subtexto for "começando", diga sim.
+  Se o subtexto for "começando", diga sim.
+  Se o subtexto for "iniciando", diga sim.
+  Se o subtexto for "usando", diga sim.
+  Se o subtexto for "via", diga sim.
+  Se o subtexto for "com", diga sim.
+  Se o subtexto for "aproada", diga sim.
+  Se o subtexto for "aproado", diga sim.
+  Se o subtexto for "aproando", diga sim.
+  Se o subtexto for "orientada", diga sim.
+  Se o subtexto for "orientado", diga sim.
+  Se o subtexto for "orientando", diga sim.
+  Se o subtexto for "orientando-se", diga sim.
+  Se o subtexto for "voltada", diga sim.
+  Se o subtexto for "voltado", diga sim.
+  Se o subtexto for "virada", diga sim.
+  Se o subtexto for "virado", diga sim.
+  Se o subtexto for "virando", diga sim.
+  Se o subtexto for "virando-se", diga sim.
+  Se o subtexto for "tão", diga sim.
+  Se o subtexto for "tanto", diga sim.
+  Se o subtexto for "quanto", diga sim.
+  Se o subtexto for "quão", diga sim.
+  Se o subtexto for "after", diga sim.
+  Se o subtexto for "regressivamente", diga sim.
+  Se o subtexto for "dentro de", diga sim.
+  Se o subtexto for "dentro", diga sim.
+  Se o subtexto for "parecida", diga sim.
+  Se o subtexto for "parecido", diga sim.
+  Se o subtexto for "semelhante", diga sim.
+  Se o subtexto for "similar", diga sim.
+  Se o subtexto for "em comprimento", diga sim.
+  Se o subtexto for "d'", diga sim.
+  Se o subtexto for "d'", diga sim.
+  Se o subtexto for "só", diga sim.
+  Se o subtexto for "somente", diga sim.
+  Se o subtexto for "unicamente", diga sim.
+  Se o subtexto for "exclusivamente", diga sim.
+  Se o subtexto for "apenas", diga sim.
+  Se o subtexto for "fora", diga sim.
+  Se o subtexto for "menores", diga sim.
+  Se o subtexto for "alta", diga sim.
+  Se o subtexto for "alto", diga sim.
+  Se o subtexto for "comprido", diga sim.
+  Se o subtexto for "comprida", diga sim.
+  Se o subtexto for "largo", diga sim.
+  Se o subtexto for "larga", diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum qualificador:
+  Se a string estiver em branco, diga não.
+  Se o conteúdo deste caractere inicial desta string for o parênteses esquerdo, diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum valor literal:
+  Se a string for algum ponteiro literal, diga sim.
+  Se a string for algum valor numérico literal, diga sim.
+  Se a string for algum string literal, diga sim.
+  \Se a string for algum sinalizador literal, diga sim. ***
+  Se a string for algum valor hexadecimal literal, diga sim.
+  Diga não.
+
+Função para que se determine se uma string é uma palavra-chave de designação:
+  Se a string for "chamado", diga sim.
+  Se a string for "chamados", diga sim.
+  Se a string for "chamada", diga sim.
+  Se a string for "chamadas", diga sim.
+  Se a string for "denominado", diga sim.
+  Se a string for "denominados", diga sim.
+  Se a string for "denominada", diga sim.
+  Se a string for "denominadas", diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum operador de atribuição composto:
+  Se a string for "igual", diga sim.
+  Diga não.
+
 Rotina para que se expanda uma string com uma segunda string:
   Se a segunda string estiver em branco, retorne.
-  Se a string não estiver em branco, acrescente o caractere de espaço para a string.
+  Se a string não estiver em branco, 
+    Acrescente o caractere de espaço para a string.
   Acrescente a segunda string para a string.
 
 Função para que se determine se um percorredor está sobre algum indicador de fim de variável:
@@ -910,6 +1143,18 @@ Função para que se determine se um percorredor está sobre algum indicador de fim
   Se o segmento inicial deste percorredor for algum operador de atribuição composto, diga sim.
   Se o segmento inicial deste percorredor estiver em branco, diga sim.
   Se o segmento inicial deste percorredor for algum advérbio de negação, diga sim.
+  Diga não.
+
+Função para que se determine se um percorredor está sobre algum possessivo reverso:
+  Preserve o percorredor.
+  Se o segmento inicial deste percorredor não for "de", diga não.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor for algum pronome demonstrativo, diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum pronome demonstrativo:
+  Se a string for algum pronome demonstrativo adjacente, diga sim.
+  Se a string for algum pronome demonstrativo abrangente, diga sim.
   Diga não.
 
 Rotina para que se examine um tipo usando um percorredor(cláusula 'tem'):
