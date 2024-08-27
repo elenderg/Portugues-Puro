@@ -2831,29 +2831,7 @@ Função para que se determine se um byte é alguma vogal acentuada:
   Se o byte estiver em "áãâàéèêëíîìïóõôöúùüûý", diga sim. \ na verdade a rotina apenas identifica caracteres acentuados
   Diga não.
 
-Função para que se determine se um byte é algum símbolo: \ deveria estar no cérebro
-  Se o byte for o acento circumflexo, diga sim.
-  Se o byte for o barra vertical, diga sim.
-  Se o byte for o asterisco, diga sim.
-  Se o byte for o sinal de adição, diga sim.
-  Se o byte for o hífem, diga sim.
-  Se o byte for o barra inclinada, diga sim.
-  Se o byte for o símbolo menor do que, diga sim.
-  Se o byte for o símbolo maior do que, diga sim.
-  Se o byte for a chave esquerda, diga sim.
-  Se o byte for a chave direita, diga sim.
-  Se o byte for o sinal de igualdade, diga sim.
-  Se o byte for 128, diga sim.
-  Se o byte for 130, diga sim.
-  Se o byte estiver entre 132 e 137, diga sim.
-  Se o byte for 139, diga sim.
-  Se o byte estiver entre 145 e 153, diga sim.
-  Se o byte for 155, diga sim.
-  Se o byte estiver entre 161 e 180, diga sim.
-  Se o byte estiver entre 183 e 191, diga sim.
-  Se o byte for 215, diga sim.
-  Se o byte for 247, diga sim.
-  Diga não.
+
 
 Função para que se determine se uma campo de estrutura está vazia;
 Função para que se determine se umas campo de estrutura estão vazias;
@@ -3116,20 +3094,9 @@ Função para que se determine se uma string é alguma palavra-chave de complementa
   Se a string for "contendo", diga sim.
   Diga não.
 
-Função para que se determine se uma string é algum artigo:
-  Se a string for algum artigo indefinido, diga sim.
-  Se a string for algum artigo definido, diga sim.
-  Diga não.
 
-Função para que se determine se uma string é alguma conjunção:
-  \# verificar depois o uso dos termos: "ambos", "mas" e "nenhum"
-  Se a string for "e", diga sim.
-  Se a string for "ou", diga sim.
-  Se a string for "nem", diga sim.
-  \CAL
-  Se a string for "neither", diga sim.
-  Se a string for "nor", diga sim.
-  Diga não.
+
+
 
 Função para que se determine se uma string é algum to: \ igual a 
   Se a string for "a", diga sim. 
@@ -3180,25 +3147,14 @@ Função para que se determine se uma string é algum número órdinal:
   Se o conteúdo deste caractere final desta string for o indicador ordinal feminino, diga sim.
   Diga não.
 
-Função para que se determine se uma string é algum artigo definido:
-  Se a string for "o", diga sim.
-  Se a string for "a", diga sim.
-  Se a string for "os", diga sim.
-  Se a string for "as", diga sim.
-  Se a string for algum pronome demonstrativo adjacente, diga sim.
-  Diga não.
+
 
 Função para que se determine se uma string é algum pronome demonstrativo:
   Se a string for algum pronome demonstrativo adjacente, diga sim.
   Se a string for algum pronome demonstrativo abrangente, diga sim.
   Diga não.
 
-Função para que se determine se uma string é algum pronome demonstrativo adjacente:
-  Se a string for "este", diga sim.
-  Se a string for "esta", diga sim.
-  Se a string for "estes", diga sim.
-  Se a string for "estas", diga sim.
-  Diga não.
+
 
 
 
@@ -3272,43 +3228,7 @@ Função para que se determine se uma string é uma palavra-chave de referenciament
   Se a string for "(referência)", diga sim.
   Diga não.
 
-Função para que se determine se um percorredor está sobre algum indicador de fim de variável:
-  \ compare com indicador de início de variável
-  Se o segmento inicial deste percorredor for algum sinal de pontuação, diga sim.
-  Se o segmento inicial deste percorredor for algum símbolo, diga sim.
-  Se o segmento inicial deste percorredor for algum artigo, diga sim.
-  Se o segmento inicial deste percorredor for alguma conjunção, diga sim.
-  Se o segmento inicial deste percorredor for algum possessivo inglês, diga sim.
-  Se o percorredor estiver sobre algum possessivo reverso, diga sim. \ 
-  Se o segmento inicial deste percorredor for algum verbo, diga sim.
-  Se o segmento inicial deste percorredor for algum operador aritmético, diga sim.
-  Se o percorredor estiver sobre alguma preposição, diga sim.
-  Se o segmento inicial deste percorredor for algum qualificador, diga sim.
-  Se o segmento inicial deste percorredor for algum valor literal, diga sim.
-  Se o segmento inicial deste percorredor for uma palavra-chave de designação, diga sim.
-  Se o segmento inicial deste percorredor for "então", diga sim.
-  Se o segmento inicial deste percorredor for algum operador de atribuição composto, diga sim.
-  Se o segmento inicial deste percorredor estiver em branco, diga sim.
-  Se o segmento inicial deste percorredor for algum advérbio de negação, diga sim.
-  Diga não.
 
-Função para que se determine se um percorredor está sobre algum indicador de início de variável:
-  \ compare com indicador de fim de variável
-  Se o segmento inicial deste percorredor for algum sinal de pontuação, diga não.
-  Se o segmento inicial deste percorredor for algum símbolo, diga não.
-  Se o segmento inicial deste percorredor for algum artigo, diga não.
-  Se o segmento inicial deste percorredor for alguma conjunção, diga sim.
-  Se o segmento inicial deste percorredor for algum possessivo inglês, diga não.
-  Se o segmento inicial deste percorredor for algum verbo, diga sim.
-  Se o segmento inicial deste percorredor for algum operador aritmético, diga sim.
-  Se o percorredor estiver sobre alguma preposição, diga sim.
-  Se o segmento inicial deste percorredor for algum qualificador, diga não.
-  Se o segmento inicial deste percorredor for algum valor literal, diga não.
-  Se o segmento inicial deste percorredor for uma palavra-chave de designação, diga sim.
-  Se o segmento inicial deste percorredor for "então", diga sim.
-  Se o segmento inicial deste percorredor for algum operador de atribuição composto, diga sim.
-  Se o segmento inicial deste percorredor estiver em branco, diga não.
-  Diga sim.
 
 Função para que se determine se uma string é algum advérbio de negação:
   Se a string for "não", diga sim.
@@ -3886,10 +3806,7 @@ Rotina para que se elimine apelidos duplicados usando uma variável e um catálogo
   Limpe o apelido desta segunda variável.
   Limpe o apelido desta variável.
 
-Rotina para que se expanda uma string com uma segunda string:
-  Se a segunda string estiver em branco, retorne.
-  Se a string não estiver em branco, acrescente o caractere de espaço para a string.
-  Acrescente a segunda string para a string.
+
 
 
 
