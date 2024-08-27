@@ -3200,24 +3200,7 @@ Função para que se determine se uma string é algum pronome demonstrativo adjacen
   Se a string for "estas", diga sim.
   Diga não.
 
-Função para que se determine se uma string é algum pronome demonstrativo abrangente:
-  Se a string for "esse", diga sim.
-  Se a string for "essa", diga sim.
-  Se a string for "aquele", diga sim.
-  Se a string for "aquela", diga sim.
-  Se a string for "esses", diga sim.
-  Se a string for "essas", diga sim.
-  Se a string for "aqueles", diga sim.
-  Se a string for "aquelas", diga sim.
-  Se a string for "certo", diga sim.
-  Se a string for "certa", diga sim.
-  Se a string for "certos", diga sim.
-  Se a string for "certas", diga sim.
-  Se a string for "determinado", diga sim.
-  Se a string for "determinada", diga sim.
-  Se a string for "determinados", diga sim.
-  Se a string for "determinadas", diga sim.
-  Diga não.
+
 
 Função para que se determine se um percorredor está sobre algum artigo definido:
   Se o percorredor estiver sobre algum preposição conectiva, diga não.
@@ -5611,22 +5594,7 @@ Rotina para que se examine um corpo de variável global usando um percorredor:
     Mova o percorredor (usando diretrizes de compilação).
   Reitere.
 
-Rotina para que se examine um nome usando um percorredor:
-  Limpe o nome.
-  Se existir algum problema de compilação, retorne.
-  Se o percorredor estiver sobre algum indicador de início de variável,
-    Expanda o nome com o segmento inicial deste percorredor;
-    Mova o percorredor (usando diretrizes de compilação).
-  Itere.
-    Se existir algum problema de compilação, retorne.
-    Se o percorredor estiver sobre algum indicador de fim de variável, pare.
-    Expanda o nome com o segmento inicial deste percorredor.
-    Mova o percorredor (usando diretrizes de compilação).
-  Reitere.
-  Se o nome estiver em branco,
-    Apresente uma mensagem de erro contendo "Erro #159. A variável '" 
-    junto com o segmento inicial deste percorredor seguido de "' não foi definida ainda." e o percorredor;
-    Retorne.
+
 
 Rotina para que se examine uma instruções usando um percorredor:
   Se existir algum problema de compilação, retorne.

@@ -798,6 +798,23 @@ Rotina para que se adicione um tipo para uns tipos usando um endereço local:
   Acrescente o tipo para os tipos.
   Atribua o endereço local ao endereço local deste tipo.
 
+Rotina para que se examine um nome usando um percorredor:
+  Limpe o nome.
+  Se existir algum problema de compilação, retorne.
+  Se o percorredor estiver sobre algum indicador de início de variável,
+    Expanda o nome com o segmento inicial deste percorredor;
+    Mova o percorredor (usando diretrizes de compilação).
+  Itere.
+    Se existir algum problema de compilação, retorne.
+    Se o percorredor estiver sobre algum indicador de fim de variável, pare.
+    Expanda o nome com o segmento inicial deste percorredor.
+    Mova o percorredor (usando diretrizes de compilação).
+  Reitere.
+  Se o nome estiver em branco,
+    Apresente uma mensagem de erro contendo "Erro #159. A variável '" 
+    junto com o segmento inicial deste percorredor seguido de "' não foi definida ainda." e o percorredor;
+    Retorne.
+
 Rotina para que se examine um tipo usando um percorredor(cláusula 'tem'):
   Se existir algum problema de compilação, retorne.
   Mova o percorredor (usando diretrizes de compilação).
