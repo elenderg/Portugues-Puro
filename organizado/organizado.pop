@@ -712,6 +712,34 @@ Rotina para que se mova um percorredor retornando uma string de erro (diretrizes
     Atribua "Erro #010. Qualificadores precisam terminar com um parêntese ')'." para a string de erro;
     Retorne.
 
+Função para que se determine se uma string é o início de algum tipo:
+  Se a string for algum artigo indefinido, diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum artigo indefinido:
+  Se a string for algum artigo indefinido português, diga sim.
+  Se a string for algum pronome demonstrativo abrangente, diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum pronome demonstrativo abrangente:
+  Se a string for "esse", diga sim.
+  Se a string for "essa", diga sim.
+  Se a string for "aquele", diga sim.
+  Se a string for "aquela", diga sim.
+  Se a string for "esses", diga sim.
+  Se a string for "essas", diga sim.
+  Se a string for "aqueles", diga sim.
+  Se a string for "aquelas", diga sim.
+  Se a string for "certo", diga sim.
+  Se a string for "certa", diga sim.
+  Se a string for "certos", diga sim.
+  Se a string for "certas", diga sim.
+  Se a string for "determinado", diga sim.
+  Se a string for "determinada", diga sim.
+  Se a string for "determinados", diga sim.
+  Se a string for "determinadas", diga sim.
+  Diga não.
+
 Rotina para que se examine um tipo usando um percorredor:
   Se existir algum problema de compilação, retorne.
   Se o segmento inicial deste percorredor for algum artigo indefinido português, 
@@ -722,11 +750,11 @@ Rotina para que se examine um tipo usando um percorredor:
   Atribua o nome deste tipo ao nome plural deste tipo.
   Atribua 0 para uma contagem.
   Se o português sinalizador estiver ativo,
-    Pluralize o nome plural deste tipo (strings em português);
-    Adicione 1 à contagem.
-  Se a contagem for igual ou maior do que 2,
-    Apresente uma mensagem de erro contendo "Erro #165. não foi possível detectar o idioma desta variável" e o endereço local deste tipo;
-    Retorne.
+    Pluralize o nome plural deste tipo (strings em português).\;
+    \Adicione 1 à contagem.
+  \Se a contagem for igual ou maior do que 2,
+    \Apresente uma mensagem de erro contendo "Erro #165. não foi possível detectar o idioma desta variável" e o endereço local deste tipo;
+    \Retorne.
   Se o segmento inicial deste percorredor for algum operador de atribuição de estruturas compostas,
     Examine o tipo usando o percorredor(cláusula 'tem');
     Retorne.

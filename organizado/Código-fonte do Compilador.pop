@@ -3236,10 +3236,7 @@ Função para que se determine se um percorredor está sobre algum preposição conec
   Se o segmento inicial deste percorredor for algum artigo, diga sim.
   Diga não.
 
-Função para que se determine se uma string é algum artigo indefinido:
-  Se a string for algum artigo indefinido português, diga sim.
-  Se a string for algum pronome demonstrativo abrangente, diga sim.
-  Diga não.
+
 
 
 
@@ -3787,9 +3784,7 @@ Função para que se determine se uma string é o início de alguma declaração:
   Se a string estiver em branco, diga não.
   Diga sim.
 
-Função para que se determine se uma string é o início de algum tipo:
-  Se a string for algum artigo indefinido, diga sim.
-  Diga não.
+
 
 Função para que se determine se uma string é o início de alguma variável:
   Se a string for algum artigo definido, diga sim.
