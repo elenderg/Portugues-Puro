@@ -1872,6 +1872,10 @@ Rotina para que se examine uma rotina usando um percorredor (sobrecarga de métod
   Atribua o caractere final deste segmento inicial deste percorredor original ao caractere final destas instruções desta rotina.
   Mova o percorredor original (usando diretrizes de compilação).
 
+Função para que se determine se uma string é o início de alguma variável global:
+  Se a string for algum artigo definido, diga sim.
+  Diga não.
+
 Rotina para que se compile um endereço da pasta (identificação dos tipos das variáveis): \ #004
   Se existir algum problema de compilação, retorne.
   Escreva "Identificando os tipos das variáveis..." junto com o texto CRLF para StdOut.
