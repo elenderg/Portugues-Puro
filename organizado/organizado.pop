@@ -774,14 +774,16 @@ Rotina para que se examine um tipo usando um percorredor:
     Examine o tipo usando o percorredor (cláusula 'tem');
     Retorne.
   Se o segmento inicial deste percorredor não for algum operador de atribuição simples,
-    Apresente a mensagem de erro contendo "Erro #011. Esperado 'é/está'. Encontrado '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Apresente a mensagem de erro contendo "Erro #011. Esperado 'é/está'. Encontrado '" 
+    junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor for algum valor numérico literal,
     Examine o tipo usando o percorredor (unidade de medida);
     Retorne.
   Se o segmento inicial deste percorredor não for algum artigo indefinido,
-    Apresente a mensagem de erro contendo "Erro #012. Esperado 'um/uma'. Encontrado '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Apresente a mensagem de erro contendo "Erro #012. Esperado 'um/uma'. Encontrado '" 
+    junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Examine o nome do tipo primitivo deste tipo usando o percorredor.
@@ -1597,7 +1599,7 @@ Rotina para que se examine uns campos usando um percorredor:
     Se existir algum problema de compilação, retorne.
     Adicione um campo para os campos usando "campo" e o caractere inicial deste segmento inicial deste percorredor.
     Examine o campo usando o percorredor.
-    Se o segmento inicial deste percorredor não for alguma pausa, retorne. \ NÃO ESQUECER
+    Se o segmento inicial deste percorredor não for alguma pausa, retorne.
     Examine algum pauses usando o percorredor.
   Reitere.
 
@@ -1622,21 +1624,28 @@ Rotina para que se examine um campo usando um percorredor:
     Se o segmento inicial deste percorredor for "sob",
       Examine o campo usando o percorredor (cláusula de redefinição);
       Reitere.
-    \Se o segmento inicial deste percorredor for "equivalente a", examine o campo usando o percorredor (cláusula de redefinição); Reitere.
-    \Se o segmento inicial deste percorredor for "análogo a", examine o campo usando o percorredor (cláusula de redefinição); Reitere.
-    \Se o segmento inicial deste percorredor for "análoga a", examine o campo usando o percorredor (cláusula de redefinição); Reitere.
+    \Se o segmento inicial deste percorredor for "equivalente a", 
+      \ Examine o campo usando o percorredor (cláusula de redefinição); 
+      \ Reitere.
+    \Se o segmento inicial deste percorredor for "análogo a", 
+      \ Examine o campo usando o percorredor (cláusula de redefinição); 
+      \ Reitere.
+    \Se o segmento inicial deste percorredor for "análoga a",
+      \Examine o campo usando o percorredor (cláusula de redefinição); 
+      \ Reitere.
     Se o segmento inicial deste percorredor for "em",
       Examine o campo usando o percorredor (cláusula de redefinição);
       Reitere.
-    Se o segmento inicial deste percorredor for "sob",
-      Examine o campo usando o percorredor (cláusula de redefinição);
-      Reitere.
+    \Se o segmento inicial deste percorredor for "sob",
+      \Examine o campo usando o percorredor (cláusula de redefinição);
+      \Reitere.
     Se o segmento inicial deste percorredor for "sobre",
       Examine o campo usando o percorredor (cláusula de redefinição);
       Reitere.
     Se o segmento inicial deste percorredor for uma palavra-chave de referenciamento,
       Examine o campo usando o percorredor (cláusula de referência);
       Reitere.
+  [Caso nenhuma condição acima seja satisfeita, pare (sai do loop)]
 
 Rotina para que se examine um campo usando um percorredor (tipo geral):
   Se existir algum problema de compilação, retorne.
@@ -1645,37 +1654,17 @@ Rotina para que se examine um campo usando um percorredor (tipo geral):
     Retorne.
   Examine o campo usando o percorredor (tipo normal).
 
-Rotina para que se examine um campo usando um percorredor (cláusula designadora):
-  Se existir algum problema de compilação, retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Se o nome do tipo deste campo estiver em branco, atribua o nome deste campo ao nome do tipo deste campo. \ byte array nome do tipo already filled in
-  Examine o nome deste campo usando o percorredor.
-
-Rotina para que se examine um campo usando um percorredor (cláusula de redefinição):
-  Se existir algum problema de compilação, retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor não for algum artigo definido,
-    Apresente uma mensagem de erro contendo "Erro #148. Sintaxe incorreta. Esperado 'o/a'. Encontrado: '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Examine o novo nome deste campo usando o percorredor.
-
-Rotina para que se examine um campo usando um percorredor (cláusula de referência):
-  Se existir algum problema de compilação, retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Ative o sinalizador de referência deste campo.
-
 Rotina para que se examine um campo usando um percorredor (tipo: array de bytes):
   Se existir algum problema de compilação, retorne.
   Converta o segmento inicial deste percorredor para uma proporção.
   Reduza a proporção.
   Se o denominador desta proporção não for 1,
-    Apresente uma mensagem de erro contendo "Erro #149. Erro de sintaxe. Arrays exigem tamanhos não fracionários" e o percorredor;
+    Apresente uma mensagem de erro contendo "Erro #016. Erro de sintaxe. Arrays devem possuir tamanhos não fracionários." e o percorredor;
     Retorne.
   Atribua o numerador desta proporção à contagem deste campo.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for "byte" ou "bytes",
-    Apresente a mensagem de erro contendo "Erro #150. Erro de sintaxe. Esperado 'bytes' após um número designador." e o percorredor;
+    Apresente a mensagem de erro contendo "Erro #017. Erro de sintaxe. É necessário escrever a palavra 'bytes' após informar a quantidade correspondente." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Atribua "byte" ao nome do tipo deste campo.
@@ -1683,22 +1672,69 @@ Rotina para que se examine um campo usando um percorredor (tipo: array de bytes)
 Rotina para que se examine um campo usando um percorredor (tipo normal):
   Se existir algum problema de compilação, retorne.
   Se o segmento inicial deste percorredor não for algum artigo indefinido,
-    Apresente uma mensagem de erro contendo "Erro #151. Erro de sintaxe. Esperado 'um/uma'. Encontrado: '" 
+    Apresente uma mensagem de erro contendo "Erro #018. Erro de sintaxe. Esperado 'um/uma'. Encontrado: '" 
     junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
     Retorne.
-  Se o segmento inicial deste percorredor for "outra", atribua "outra" ao nome deste campo.
-  Se o segmento inicial deste percorredor for "outras", atribua "outras" ao nome deste campo.
-  Se o segmento inicial deste percorredor for "outro", atribua "outro" ao nome deste campo.
-  Se o segmento inicial deste percorredor for "outros", atribua "outros" ao nome deste campo.
-  Se o segmento inicial deste percorredor for "segundo", atribua "segundo" ao nome deste campo.
-  Se o segmento inicial deste percorredor for "segundos", atribua "segundos" ao nome deste campo.
-  Se o segmento inicial deste percorredor for "segunda", atribua "segunda" ao nome deste campo.
-  Se o segmento inicial deste percorredor for "segundas", atribua "segundas" ao nome deste campo.
+  \Se o segmento inicial deste percorredor for "outra", 
+    \Atribua "outra" ao nome deste campo.
+  \Se o segmento inicial deste percorredor for "outras", 
+    \Atribua "outras" ao nome deste campo.
+  \Se o segmento inicial deste percorredor for "outro", 
+    \Atribua "outro" ao nome deste campo.
+  \Se o segmento inicial deste percorredor for "outros", 
+    \Atribua "outros" ao nome deste campo.
+  Se o segmento inicial deste percorredor for "segundo", 
+    Atribua "segundo" ao nome deste campo.
+  Se o segmento inicial deste percorredor for "segundos", 
+    Atribua "segundos" ao nome deste campo.
+  Se o segmento inicial deste percorredor for "segunda", 
+    Atribua "segunda" ao nome deste campo.
+  Se o segmento inicial deste percorredor for "segundas", 
+    Atribua "segundas" ao nome deste campo.
   Mova o percorredor (usando diretrizes de compilação).
   Examine um nome usando o percorredor.
   Expanda o nome deste campo com o nome.
 
+Rotina para que se examine um campo usando um percorredor (cláusula designadora):
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o nome do tipo deste campo estiver em branco, 
+    Atribua o nome deste campo ao nome do tipo deste campo. \ byte array type name already filled in
+  Examine o nome deste campo usando o percorredor.
 
+Rotina para que se examine um campo usando um percorredor (cláusula de redefinição):
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor não for algum artigo definido,
+    Apresente uma mensagem de erro contendo "Erro #148. Sintaxe incorreta. Esperado 'o/a'. Encontrado: '" 
+    junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine o novo nome deste campo usando o percorredor.
+
+Função para que se determine se uma string é uma palavra-chave de referenciamento:
+  Se a string for "(referência)", diga sim.
+  Diga não.
+
+Rotina para que se examine um campo usando um percorredor (cláusula de referência):
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Ative o sinalizador de referência deste campo.
+
+Função para que se determine se uma string é alguma pausa:
+  Se a string for "e", diga sim.
+  Se a string for "ou", diga sim.
+  \default
+  Se a string for ",", diga sim.
+  Se a string for ";", diga sim.
+  Diga não.
+
+Rotina para que se examine algum pauses usando um percorredor:
+  [Itere.]
+    Se existir algum problema de compilação, retorne.
+    Se o segmento inicial deste percorredor não for alguma pausa, retorne.
+    Mova o percorredor (usando diretrizes de compilação).
+  Reitere.
 
 Rotina para que se examine um tipo usando um percorredor (unidade de medida):
   Se existir algum problema de compilação, retorne.
