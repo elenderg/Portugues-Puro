@@ -3399,9 +3399,7 @@ Função para que se determine se uma string é o início de alguma expressão matema
   Se a string for algum valor literal, diga sim.
   Diga não.
 
-Função para que se determine se uma string é o início de alguma variável global:
-  Se a string for algum artigo definido, diga sim.
-  Diga não.
+
 
 Função para que se determine se uma string é o início de alguma variável local:
   Se a string for algum artigo indefinido, diga sim.
