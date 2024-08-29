@@ -3788,15 +3788,6 @@ Rotina para que se obtenha uma contagem usando umas DLLs (todas as funções mais 
     Adicione 1 para a contagem.
   Reitere.
 
-Rotina para que se catalogue uma variável global:
-  Se existir algum problema de compilação, retorne.
-  Se a variável global for inexistente, retorne.
-  Se o nome desta variável global estiver no catálogo de variáveis globais,
-    Apresente uma mensagem de erro contendo "Erro #123. '" 
-    junto com o nome desta variável global seguido de "' é uma variável variável global duplicada." e o endereço local desta variável global;
-    Retorne.
-  Catalogue a variável global usando o nome desta variável global e o catálogo de variáveis globais.
-
 Rotina para que se catalogue um valor literal:
   Se existir algum problema de compilação, retorne.
   Se o valor literal for inexistente, retorne.
