@@ -3059,19 +3059,7 @@ Função para que se determine se uma string é algum operador de concatenação:
 
 
 
-Função para que se determine se uma string é algum operador de atribuição simples:
-  Se a string for "é", diga sim.
-  Se a string for "está", diga sim.
-  Se a string for "são", diga sim.
-  Se a string for "estão", diga sim.
-  Se a string for "estamos", diga sim.
-  Se a string for "for", diga sim.
-  Se a string for "forem", diga sim.
-  Se a string for "estiverem", diga sim.
-  Se a string for "estarem", diga sim.
-  Se a string for "possui", diga sim.
-  \Se a string for "tem", diga sim.
-  Diga não.
+
 
 
 
