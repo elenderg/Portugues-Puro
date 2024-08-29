@@ -782,20 +782,18 @@ Rotina para que se examine um tipo usando um percorredor:
     Examine o tipo usando o percorredor (unidade de medida);
     Retorne.
   Se o segmento inicial deste percorredor não for algum artigo indefinido,
-    Apresente a mensagem de erro contendo "Erro #012. Esperado 'um/uma'. Encontrado '" 
+    Apresente a mensagem de erro contendo "Erro #012. O compilador esperava encontrar um artigo indefinido. Termo encontrado: '" 
     junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Examine o nome do tipo primitivo deste tipo usando o percorredor.
   Examine algum dado complementar para o tipo usando o percorredor.
   Se o segmento inicial deste percorredor não for o ponto final,
-    Apresente a mensagem de erro contendo "Erro #013. Insira um '.' após a declaração do tipo."
-    Junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
+    Apresente a mensagem de erro contendo "Erro #013. O compilador esperava encontrar '.' após a declaração do tipo."
+    junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Catalogue o tipo.
-
-
 
 Rotina para que se adicione um tipo para uns tipos usando um endereço local:
   Crie o tipo.
@@ -1740,12 +1738,12 @@ Rotina para que se examine um tipo usando um percorredor (unidade de medida):
   Se existir algum problema de compilação, retorne.
   Converta o segmento inicial deste percorredor para a razão de escala deste tipo.
   Se a razão de escala deste tipo for 0,
-    Apresente uma mensagem de erro contendo "Erro #016. Impossível utilizar 0 em tipos escalares." e o endereço local deste tipo;
+    Apresente uma mensagem de erro contendo "Erro #016. O valor 0 não é permitido como razão de escala." e o endereço local deste tipo;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Examine o nome do tipo primitivo deste tipo usando o percorredor.
   Se o segmento inicial deste percorredor não for o ponto final,
-    Apresente a mensagem de erro contendo "Erro #017. Necessário um '.' no fim desta fração. Encontrado. '" 
+    Apresente a mensagem de erro contendo "Erro #017. Necessário um '.' no fim desta fração. Encontrado: '" 
     junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
