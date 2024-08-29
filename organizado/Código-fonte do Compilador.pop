@@ -3057,13 +3057,7 @@ Função para que se determine se uma string é algum operador de concatenação:
   \Se a string for "&", diga sim.
   Diga não.
 
-Função para que se determine se uma string é algum operador de atribuição de estruturas compostas:
-  Se a string for "tem", diga sim.
-  Se a string for "têm", diga sim.
-  Se a string for "contém", diga sim.
-  Se a string for "contêm", diga sim.
-  \Se a string for "possui", diga sim.
-  Diga não.
+
 
 Função para que se determine se uma string é algum operador de atribuição simples:
   Se a string for "é", diga sim.

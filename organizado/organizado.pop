@@ -1783,19 +1783,13 @@ Rotina para que se examine uma variável global usando um percorredor:
   Mova o percorredor (usando diretrizes de compilação).
   Catalogue a variável global.
 
-Rotina para que se examine uma variável global usando um percorredor (data part):
-  Se existir algum problema de compilação, retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor não for algum to,
-    Apresente uma mensagem de erro contendo "Erro #020. Erro de sintaxe na declaração da variável global. Esperava encontrar a expressão: 'igual a'. Encontrou: '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Examine o corpo de variável global desta variável global usando o percorredor.
-  Se o segmento inicial deste percorredor não for o ponto final,
-    Apresente a mensagem de erro contendo "Erro #021. Erro de sintaxe. Esperado '.' ao final de uma declaração variável variável global" e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Catalogue a variável global.
+Função para que se determine se uma string é algum operador de atribuição de estruturas compostas:
+  Se a string for "tem", diga sim.
+  Se a string for "têm", diga sim.
+  Se a string for "contém", diga sim.
+  Se a string for "contêm", diga sim.
+  \Se a string for "possui", diga sim.
+  Diga não.
 
 Rotina para que se examine uma variável global usando um percorredor (cláusula 'tem'):
   Se existir algum problema de compilação, retorne.
@@ -1808,6 +1802,20 @@ Rotina para que se examine uma variável global usando um percorredor (cláusula '
   Examine os campos deste tipo usando o percorredor.
   Se o segmento inicial deste percorredor não for o ponto final,
     Apresente uma mensagem de erro contendo "Erro #022. Erro de sintaxe na estrutura. Esprado '.' no final de declarações de variáveis globais" e o percorredor;
+    Retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Catalogue a variável global.
+
+Rotina para que se examine uma variável global usando um percorredor (data part):
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor não for algum to,
+    Apresente uma mensagem de erro contendo "Erro #020. Erro de sintaxe na declaração da variável global. Esperava encontrar a expressão: 'igual a'. Encontrou: '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine o corpo de variável global desta variável global usando o percorredor.
+  Se o segmento inicial deste percorredor não for o ponto final,
+    Apresente a mensagem de erro contendo "Erro #021. Erro de sintaxe. Esperado '.' ao final de uma declaração variável variável global" e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Catalogue a variável global.
