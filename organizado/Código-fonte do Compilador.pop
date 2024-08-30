@@ -2418,7 +2418,7 @@ Rotina para que se compile um termo usando um percorredor (nova variável local):
   Se o segmento inicial deste percorredor for uma palavra-chave de designação, compile a parte designadora usando o percorredor e a variável local.
   Destrinche a variável local.
   Se a variável local estiver duplicada em os parâmetros desta rotina utilizada atualmente,
-    Apresente a mensagem de erro contendo "Erro #101. O parâmetro: "
+    Apresente a mensagem de erro contendo "Erro #101. O identificador: "
     junto com o nome desta variável local seguido de "' já está sendo usado como parâmetro." e o endereço local desta variável local;
     Retorne.
   Se a variável local estiver duplicada em as variáveis locais desta rotina utilizada atualmente,
@@ -2582,11 +2582,11 @@ Rotina para que se compile um termo usando um percorredor e uma variável nome (d
   Se o segmento inicial deste percorredor for uma palavra-chave de designação, compile a parte designadora usando o percorredor e a variável local.
   Destrinche a variável local.
   Se a variável local estiver duplicada em os parâmetros desta rotina utilizada atualmente,
-    Apresente uma mensagem de erro contendo "Erro #113. O termo: "
+    Apresente uma mensagem de erro contendo "Erro #113. O identificador: "
     junto com o nome desta variável local seguido de "' já está sendo usado como parâmetro." e o endereço local desta variável local;
     Retorne.
   Se a variável local estiver duplicada em as variáveis locais desta rotina utilizada atualmente,
-    Apresente a mensagem de erro contendo "Erro #114. O termo: " 
+    Apresente a mensagem de erro contendo "Erro #114. O identificador: " 
     junto com o nome desta variável local seguido de "' já está sendo usado coma variável local." e o endereço local desta variável local;
     Retorne.
   Elimine apelidos duplicados usando a variável local e o catálogo de apelidos desta rotina utilizada atualmente.
@@ -3063,19 +3063,12 @@ Função para que se determine se uma string é algum operador de concatenação:
 
 
 
-Função para que se determine se uma string é alguma palavra-chave de complementação:
-  Se a string for "com", diga sim.
-  Se a string for "contendo", diga sim.
-  Diga não.
 
 
 
 
 
-Função para que se determine se uma string é algum to: \ igual a 
-  Se a string for "a", diga sim. 
-  \Se a string for "para", diga sim.
-  Diga não.
+
 
 Função para que se determine se uma string é algum operador de continuidade:
   Se a string for "e", diga sim.
@@ -4677,44 +4670,9 @@ Rotina para que se arredonde para cima tamanhos de zona:
   Atribua a quantidade de caracteres desta região de código ao tamanho desta região de código.
   Arredonde para cima o tamanho desta região de código  usando o múltiplo imediato de 4096.
 
-\Rotina para que se examine algum dado complementar de um tipo usando um percorredor:
-Rotina para que se examine algum dado complementar para um tipo usando um percorredor:
-  Se existir algum problema de compilação, retorne.
-  Se o segmento inicial deste percorredor for "to",
-    Examine algum dado complementar para o tipo usando o percorredor (ponteiros);
-    Retorne.
-  Se o segmento inicial deste percorredor for "para",
-    Examine algum dado complementar para o tipo usando o percorredor (ponteiros);
-    Retorne.
-  Se o segmento inicial deste percorredor for alguma palavra-chave de complementação,
-    Examine algum dado complementar para o tipo usando o percorredor (estrutura);
-    Retorne.
 
-Rotina para que se examine algum dado complementar para um tipo usando um percorredor (ponteiros):
-  Mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor não for algum artigo indefinido,
-    Apresente uma mensagem de erro contendo "Erro #147. Sintaxe incorreta no comando 'Aponte para um'. Encontrado: '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Examine o nome do conteúdo deste tipo usando o percorredor.
 
-Rotina para que se examine algum dado complementar para um tipo usando um percorredor (estrutura):
-  Mova o percorredor (usando diretrizes de compilação).
-  Examine o campos deste tipo usando o percorredor.
 
-Rotina para que se examine um corpo de variável global usando um percorredor:
-  Se existir algum problema de compilação, retorne.
-  Se o segmento inicial deste percorredor estiver em branco, retorne.
-  Atribua o caractere inicial deste segmento inicial deste percorredor ao caractere inicial deste corpo de variável global.
-  Atribua -1 ao caractere final deste corpo de variável global.
-  Itere.
-    Se existir algum problema de compilação, retorne. \ o Retorne sai da rotina
-    Se o segmento inicial deste percorredor estiver em branco, retorne. \ o comando recomece volta pro começo do loop
-    Se o segmento inicial deste percorredor for o sinal de dois pontos, retorne. \ o comando pare sai do loop, mas não sai da rotina, apenas do loop
-    Se o segmento inicial deste percorredor for o ponto final, retorne.
-    Atribua o caractere final deste segmento inicial deste percorredor ao caractere final deste corpo de variável global.
-    Mova o percorredor (usando diretrizes de compilação).
-  Reitere.
 
 Rotina para que se examine uma instruções usando um percorredor:
   Se existir algum problema de compilação, retorne.
