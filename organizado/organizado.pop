@@ -1931,20 +1931,25 @@ Rotina para que se examine uma rotina usando um percorredor:
     \ Define o cabeçalho de rotina.
   Se existir algum problema de compilação, retorne.
   Adicione a rotina para as rotinas usando o caractere inicial deste segmento inicial deste percorredor.
-  Se o segmento inicial deste percorredor for syntatic sugar, mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor for syntatic sugar, 
+    Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for "para",
     Apresente uma mensagem de erro contendo "Erro #030. Erro de sintaxe. Insira a palavra-chave 'para' '" 
     junto com o segmento inicial deste percorredor seguido de "' neste cabeçalho de rotina." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação). \ ignora o "para" e obtém o próximo segmento inicial
-  Se o segmento inicial deste percorredor for "que", mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor for "que", 
+    Mova o percorredor (usando diretrizes de compilação).
   \Se o segmento inicial deste percorredor não for "que",
-    \apresente uma mensagem de erro contendo "Você precisa colocar um 'que' antes da palavra: " junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
+    \apresente uma mensagem de erro contendo "Você precisa colocar um 'que' antes da palavra: " 
+    \junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
     \Retorne.
   \Mova o percorredor (usando diretrizes de compilação). \ ignora o "que" e obtém o próximo segmento inicial
-  Se o segmento inicial deste percorredor for "se", mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor for "se", 
+    Mova o percorredor (usando diretrizes de compilação).
   \Se o segmento inicial deste percorredor não for "se",
-    \apresente uma mensagem de erro contendo "Você precisa colocar um 'se' antes da palavra: " junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
+    \apresente uma mensagem de erro contendo "Você precisa colocar um 'se' antes da palavra: " 
+    \junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
     \Retorne.
   \Mova o percorredor (usando diretrizes de compilação). \ ignora o "se" e obtém o próximo segmento inicial
   Examine a cabeçalho de rotina desta rotina usando o percorredor.
@@ -1956,6 +1961,20 @@ Rotina para que se examine uma rotina usando um percorredor:
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Examine as instruções desta rotina usando o percorredor.
+
+Rotina para que se adicione uma rotina para umas rotinas usando um endereço local:
+  Crie a rotina.
+  Acrescente a rotina para as rotinas.
+  Atribua o endereço local ao endereço local desta rotina.
+
+Função para que se determine se uma string é syntatic sugar:
+  \PAL
+  Se a string for "Passos", diga sim.
+  Se a string for "Etapas", diga sim.
+  Se a string for "Procedimento", diga sim.
+  Se a string for "Rotina", diga sim.
+  Se a string for "Função", diga sim.
+  Diga não.
 
 Rotina para que se examine uma rotina usando um percorredor (sobrecarga de métodos):
   \ *** para nomes alternativos de rotinas

@@ -556,10 +556,7 @@ Rotina para que se adicione o atribua ou converta fragmentos usando uma variável
   Destrua as unidades semânticas.
   Apresente uma mensagem de erro contendo "Erro. A rotina para que se " junto com a representação interna da rotina seguido de " ainda não foi definida." e o endereço local.
 
-Rotina para que se adicione uma rotina para umas rotinas usando um endereço local:
-  Crie a rotina.
-  Acrescente a rotina para as rotinas.
-  Atribua o endereço local ao endereço local desta rotina.
+
 
 Rotina para que se adicione um scratch usando um nome do tipo e um endereço local:
   Se a rotina utilizada atualmente for inexistente,
@@ -3388,14 +3385,7 @@ Função para que se determine se uma string é o início de algum dado complementar
 
 
 
-Função para que se determine se uma string é syntatic sugar:
-  \PAL
-  Se a string for "Passos", diga sim.
-  Se a string for "Etapas", diga sim.
-  Se a string for "Procedimento", diga sim.
-  Se a string for "Rotina", diga sim.
-  Se a string for "Função", diga sim.
-  Diga não.
+
 
 Função para que se determine se uma string é o início de alguma declaração:
   Se a string for o enunciado de alguma rotina ou variável, diga não.
