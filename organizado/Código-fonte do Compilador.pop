@@ -3386,15 +3386,7 @@ Função para que se determine se uma string é o início de algum dado complementar
   Se a string for "contendo", diga sim.
   Diga não.
 
-Função para que se determine se uma string é o início de alguma rotina:
-  \PAL
-  Se a string for "Passos", diga sim.
-  Se a string for "Etapas", diga sim.
-  Se a string for "Procedimento", diga sim.
-  Se a string for "Rotina", diga sim.
-  Se a string for "Para", diga sim.
-  Se a string for "Função", diga sim.
-  Diga não.
+
 
 Função para que se determine se uma string é syntatic sugar:
   \PAL
