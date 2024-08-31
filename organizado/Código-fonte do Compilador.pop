@@ -4599,10 +4599,10 @@ Rotina para que se destrinche uns tipos (tipos de dados primitivos): \ Esta roti
   Reitere.
 
 Rotina para que se destrinche uns tipos (expansão de listas):
-  Se existir algum problema de compilação, retorne.
-  Obtenha um tipo desde o tipos.
-  Se o tipo for inexistente, retorne.
-  Destrinche o tipo (expand lista).
+    Se existir algum problema de compilação, retorne.
+    Obtenha um tipo desde o tipos.
+    Se o tipo for inexistente, retorne.
+    Destrinche o tipo (expand lista).
   Reitere.
 
 Rotina para que se destrinche uns tipos (registro de plurais):

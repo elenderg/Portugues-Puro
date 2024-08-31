@@ -629,7 +629,7 @@ Rotina para que se compile um endereço da pasta (análise dos arquivos fornecidos
   Suspenda o temporizador de análise/verificação.
 
 Rotina para que se examine uns arquivos fontes:
-  [Itere.]
+  [Itere.] \ LOOP PRINCIPAL QUE FAZ O PARSING DOS ARQUIVOS
     Se existir algum problema de compilação, retorne.
     Obtenha um arquivo fonte desde os arquivos fontes.
     Se o arquivo fonte for inexistente, retorne.
@@ -641,19 +641,20 @@ Rotina para que se examine um arquivo fonte:
   Se existir algum problema de compilação, retorne.
   Lance um percorredor sobre o trecho deste arquivo fonte.
   Mova o percorredor (usando diretrizes de compilação).
-  Itere.
+  Itere. \ LOOP PRINCIPAL QUE EFETUA A ANÁLISE DO CONTEÚDO DOS ARQUIVOS
     Se existir algum problema de compilação, retorne.
     Se o segmento inicial deste percorredor estiver em branco, retorne.
-    Se o segmento inicial deste percorredor for o início de algum tipo,
+    Se o segmento inicial deste percorredor for o início de algum tipo, \ ou seja, um artigo indefinido
       Examine um tipo usando o percorredor;
       Reitere.
-    Se o segmento inicial deste percorredor for o início de alguma variável global,
+    Se o segmento inicial deste percorredor for o início de alguma variável global, \ ou seja, um artigo definido
       Examine uma variável global usando o percorredor;
       Reitere.
-    Se o segmento inicial deste percorredor for o início de alguma rotina,
+    Se o segmento inicial deste percorredor for o início de alguma rotina, \ "Rotina" / "Função" / "Para"
       Examine uma rotina usando o percorredor;
       Reitere.
-    Apresente uma mensagem de erro contendo "Erro #003. O compilador não reconhece a sintaxe '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor.
+    Apresente uma mensagem de erro contendo "Erro #003. A expressão '" 
+    junto com o segmento inicial deste percorredor seguido de "' não pode ser identificada corretamente. Verifique a sintaxe." e o percorredor.
   Reitere.
 
 Rotina para que se mova um percorredor (usando diretrizes de compilação): \ talvez aqui conserte o comando "subtraia"
@@ -757,14 +758,14 @@ Função para que se determine se uma string é algum pronome demonstrativo abrange
 
 Rotina para que se examine um tipo usando um percorredor:
   Se existir algum problema de compilação, retorne.
-  Se o segmento inicial deste percorredor for algum artigo indefinido português, 
-    Ative um sinalizador denominado sinalizador de artigo indefinido.
+  \Se o segmento inicial deste percorredor for algum artigo indefinido português, 
+    \Ative um sinalizador denominado sinalizador de artigo indefinido.
   Adicione o tipo para os tipos usando o caractere inicial deste segmento inicial deste percorredor.
   Mova o percorredor (usando diretrizes de compilação).
   Examine o nome deste tipo usando o percorredor.
   Atribua o nome deste tipo ao nome plural deste tipo.
   Atribua 0 para uma contagem.
-  Se o sinalizador de artigo indefinido estiver ativo,
+  \Se o sinalizador de artigo indefinido estiver ativo,
     Pluralize o nome plural deste tipo (strings em português).\;
     \Adicione 1 à contagem.
   \Se a contagem for igual ou maior do que 2,
@@ -1919,12 +1920,12 @@ Função para que se determine se uma string é algum to: \ igual a
 
 Função para que se determine se uma string é o início de alguma rotina:
   \PAL
+  Se a string for "Rotina", diga sim.
+  Se a string for "Função", diga sim.
+  Se a string for "Para", diga sim.
   Se a string for "Passos", diga sim.
   Se a string for "Etapas", diga sim.
   Se a string for "Procedimento", diga sim.
-  Se a string for "Rotina", diga sim.
-  Se a string for "Para", diga sim.
-  Se a string for "Função", diga sim.
   Diga não.
 
 Rotina para que se examine uma rotina usando um percorredor:
@@ -2022,6 +2023,59 @@ Rotina para que se compile um endereço da pasta (identificação dos tipos das var
   Destrinche os tipos (tipos de dados primitivos).
   Destrinche os tipos (dados complementares).
   Suspenda o temporizador de resolução de tipos.
+
+Rotina para que se destrinche uns tipos (expansão de listas):
+  [Itere.]
+    Se existir algum problema de compilação, retorne.
+    Obtenha um tipo desde o tipos.
+    Se o tipo for inexistente, retorne. \ Após o último tipo da lista, não haverão mais tipos a serem analisados.
+    Destrinche o tipo (expand lista).
+  Reitere.
+
+Rotina para que se destrinche um tipo (expand lista): \ tipo base deste tipo não está resolved yet
+  Se existir algum problema de compilação, retorne.
+  Se o tipo for inexistente, retorne.
+  Se o tipo base deste tipo NÃO for inexistente, retorne.
+  Se o nome deste tipo for "lista", retorne.
+  \Se o nome deste tipo for "elemento", retorne.
+  Se o tipo não puder ser reduzido para "lista" usando o nome do tipo primitivo, retorne.
+  Encontre um tipo base usando o nome do tipo primitivo deste tipo e o catálogo de tipos.
+  \ adiciona a lista estruturada - o número of secret campos é hard coded em two places: search por "do que 4" \ was 6
+  Atribua o nome deste tipo seguido de " estruturada" para um nome.
+  Atribua o nome deste tipo seguido de " estruturadas" para um nome plural.
+  Atribua o nome deste tipo base seguido de " estruturada" para um nome do tipo primitivo.
+  Adicione um tipo estruturado para os tipos usando 
+    O nome e 
+    O nome plural e 
+    O nome do tipo primitivo.
+  Adicione um campo para os campos deste tipo estruturado usando 
+    "próximo " junto com o nome deste tipo e "próximo" e o nome deste tipo e o sinalizador de ignição.
+  Adicione um campo português para os campos deste tipo estruturado usando 
+    "próxima " junto com o nome deste tipo e "próxima" e o nome deste tipo e o sinalizador de ignição.
+  Atribua "próximo " junto com o nome deste tipo ao novo nome deste campo português.
+  Adicione um segundo campo para os campos deste tipo estruturado usando 
+    "precedente " junto com 
+    O nome deste tipo e 
+    "precedente" e 
+    O nome deste tipo 
+    e o sinalizador de ignição.
+  Adicione um segundo campo português para os campos deste tipo estruturado usando 
+    O nome deste tipo seguido de 
+    " anterior" e 
+    "anterior" e \ vem antes do nome do tipo
+    O nome deste tipo e 
+    O sinalizador de ignição.
+  Atribua "precedente " junto com o nome deste tipo ao novo nome deste segundo campo português.
+  Se os campos deste tipo não estiverem vazios, acrescente os campos deste tipo para os campos deste tipo estruturado.
+  Catalogue o tipo estruturado.
+  \ fix up original tipo para look like um ponteiro
+  Atribua o nome deste tipo estruturado ao nome do conteúdo deste tipo.
+  \ LISTAS
+  Adicione um tipo encadeado para os tipos usando o nome plural deste tipo e "" e o nome plural deste tipo base.
+  Adicione um terceiro campo para os campos deste tipo encadeado usando "primeiro " 
+    junto com o nome deste tipo e "primeiro" e o nome deste tipo e o sinalizador de ignição.
+  Adicione um terceiro campo português para os campos deste tipo encadeado usando "primeira " 
+    junto com o nome deste tipo e "primeira" e o nome deste tipo e o sinalizador de ignição.
 
 Rotina para que se compile um endereço da pasta (identificação de variáveis globais): \ #005
   Se existir algum problema de compilação, retorne.
