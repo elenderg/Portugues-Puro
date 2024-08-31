@@ -202,12 +202,7 @@ Rotina para que se adicione uma função para umas DLLs usando um nome da DLL e um
   Acrescente a função para as funções desta DLL.
   Atribua o nome da função ao nome desta função.
 
-Rotina para que se adicione um campo para uns campos usando um nome e um apelido e um nome do tipo e um sinalizador:
-  Adicione o campo para o campos usando "campo" e nil.
-  Atribua o nome ao nome deste campo.
-  Atribua o apelido ao apelido deste campo.
-  Atribua o nome do tipo ao nome do tipo deste campo.
-  Atribua um sinalizador de referência ao sinalizador de referência deste campo.
+
 
 Rotina para que se adicione a rotina de finalização para um tipo:
   Se o tipo for inexistente, retorne.
@@ -1405,25 +1400,25 @@ Rotina para que se duplique uma variável global retornando uma segunda variável 
 
 Rotina para que se compile um endereço da pasta usando um nível de profundidade:
   Atribua 1 ao nível de profundidade.
-  Compile o endereço da pasta (inicialização). \ #001
-  Compile o endereço da pasta (arquivos de código fonte). \ #002
-  \Compile o endereço da pasta usando o nível de profundidade (arquivos de código fonte). \ #002
+  Compile o endereço da pasta (inicialização). \ Etapa #001
+  Compile o endereço da pasta (arquivos de código fonte). \ Etapa #002
+  \Compile o endereço da pasta usando o nível de profundidade (arquivos de código fonte). \ Etapa #002
   Defina uma variável global usando "O código de retorno é um número.".
-  Compile o endereço da pasta (análise dos arquivos fornecidos). \ #003
-  Compile o endereço da pasta (identificação dos tipos das variáveis). \ #004
-  Compile o endereço da pasta (identificação de variáveis globais). \ #005
-  Compile o endereço da pasta (cabeçalhos de rotinas). \ #006
-  Compile o endereço da pasta (cálculo de tamanhos e deslocamentos). \ #007
-  Compile o endereço da pasta (adição de rotinas de memória incorporadas). \ #008
-  Compile o endereço da pasta (catalogue as rotinas por utilização). \ #009
-  Compile o endereço da pasta (conteúdo das rotinas). \ #010
-  Compile o endereço da pasta (adição e compilação da rotina de inicialização). \ #011
-  Compile o endereço da pasta (deslocamento de parâmetros e variáveis). \ #012
-  Compile o endereço da pasta (endereço). \ #013
-  Compile o endereço da pasta (transmutação). \ #014
-  Compile o endereço da pasta (vinculação). \ #015
-  Compile o endereço da pasta (etapa final). \ #016
-  Compile o endereço da pasta (interrupção). \ #017
+  Compile o endereço da pasta (análise dos arquivos fornecidos). \ Etapa #003
+  Compile o endereço da pasta (identificação dos tipos das variáveis). \ Etapa #004
+  Compile o endereço da pasta (identificação de variáveis globais). \ Etapa #005
+  Compile o endereço da pasta (cabeçalhos de rotinas). \ Etapa #006
+  Compile o endereço da pasta (cálculo de tamanhos e deslocamentos). \ Etapa #007
+  Compile o endereço da pasta (adição de rotinas de memória incorporadas). \ Etapa #008
+  Compile o endereço da pasta (catalogue as rotinas por utilização). \ Etapa #009
+  Compile o endereço da pasta (conteúdo das rotinas). \ Etapa #010
+  Compile o endereço da pasta (adição e compilação da rotina de inicialização). \ Etapa #011
+  Compile o endereço da pasta (deslocamento de parâmetros e variáveis). \ Etapa #012
+  Compile o endereço da pasta (endereço). \ Etapa #013
+  Compile o endereço da pasta (transmutação). \ Etapa #014
+  Compile o endereço da pasta (vinculação). \ Etapa #015
+  Compile o endereço da pasta (etapa final). \ Etapa #016
+  Compile o endereço da pasta (interrupção). \ Etapa #017
 
 Rotina para que se compile um endereço da pasta usando um nível de profundidade (arquivos de código fonte): \#002
   Se existir algum problema de compilação, retorne.
@@ -4457,12 +4452,7 @@ Rotina para que se destrinche um tipo (tipos de dados primitivos):
   \Atribua "último " junto com o nome deste tipo ao novo nome deste quarto campo português feminino.
   Catalogue o tipo encadeado.
 
-Rotina para que se destrinche um tipo (registro de plurais):
-  Se existir algum problema de compilação, retorne.
-  Se o tipo for inexistente, retorne.
-  Se o nome plural deste tipo estiver em branco, retorne.
-  Se o tipo puder ser reduzido para "lista" usando o nome do tipo primitivo, retorne.
-  Catalogue o tipo usando o nome plural deste tipo.
+
 
 Rotina para que se destrinche um tipo (dados opcionais - ponteiro):
   Se existir algum problema de compilação, retorne.
@@ -4527,27 +4517,17 @@ Rotina para que se destrinche um tipo (dados complementares):
   Desative o sinalizador de recursividade deste tipo.
   Ative o sinalizador de informações complementares deste tipo.
 
-Rotina para que se destrinche uns tipos (tipos de dados primitivos): \ Esta rotina é recursiva.
-  Se existir algum problema de compilação, retorne.
-  Obtenha um tipo desde o tipos.
-  Se o tipo for inexistente, retorne.
-  Destrinche o tipo (tipos de dados primitivos).
-  Reitere.
 
 
 
-Rotina para que se destrinche uns tipos (registro de plurais):
-  Se existir algum problema de compilação, retorne.
-  Obtenha um tipo desde o tipos.
-  Se o tipo for inexistente, retorne.
-  Destrinche o tipo (registro de plurais).
-  Reitere.
+
+
 
 Rotina para que se destrinche uns tipos (dados complementares):
-  Se existir algum problema de compilação, retorne.
-  Obtenha um tipo desde o tipos.
-  Se o tipo for inexistente, retorne.
-  Destrinche o tipo (dados complementares).
+    Se existir algum problema de compilação, retorne.
+    Obtenha um tipo desde o tipos.
+    Se o tipo for inexistente, retorne.
+    Destrinche o tipo (dados complementares).
   Reitere.
 
 Rotina para que se destrinche uma variável:

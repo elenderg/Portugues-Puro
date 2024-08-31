@@ -29,7 +29,7 @@ Rotina para que se faça tudo:
   Se a string não estiver no sistema de arquivos, 
     Escreva "Erro. O diretório '" junto com a string seguido de "' não foi encontrado." junto com o texto CRLF para StdOut;
     Retorne.
-  Escreva "Compilando o diretório '" junto com a string seguido de "' ..." junto com o texto CRLF para StdOut. \ #0
+  Escreva "Compilando o diretório '" junto com a string seguido de "' ..." junto com o texto CRLF para StdOut. \ Etapa #0
   Escreva o texto CRLF para StdOut.
   Compile a string.
   Se existir algum problema de compilação, 
@@ -54,23 +54,23 @@ Rotina para que se obtenha uma string desde os argumentos da linha de comando:
   \Reitere.
 
 Rotina para que se compile um endereço da pasta:
-  Compile o endereço da pasta (inicialização). \ #001
-  Compile o endereço da pasta (arquivos de código fonte). \ #002
-  Compile o endereço da pasta (análise dos arquivos fornecidos). \ #003
-  Compile o endereço da pasta (identificação dos tipos das variáveis). \ #004
-  Compile o endereço da pasta (identificação de variáveis globais). \ #005
-  Compile o endereço da pasta (cabeçalhos de rotinas). \ #006
-  Compile o endereço da pasta (cálculo de tamanhos e deslocamentos). \ #007
-  Compile o endereço da pasta (adição de rotinas de memória incorporadas). \ #008
-  Compile o endereço da pasta (catalogue as rotinas por utilização). \ #009
-  Compile o endereço da pasta (conteúdo das rotinas). \ #010
-  Compile o endereço da pasta (adição e compilação da rotina de inicialização). \ #011
-  Compile o endereço da pasta (deslocamento de parâmetros e variáveis). \ #012
-  Compile o endereço da pasta (endereço). \ #013
-  Compile o endereço da pasta (transmutação). \ #014
-  Compile o endereço da pasta (vinculação). \ #015
-  Compile o endereço da pasta (etapa final). \ #016
-  Compile o endereço da pasta (interrupção). \ #017
+  Compile o endereço da pasta (inicialização). \ Etapa #001
+  Compile o endereço da pasta (arquivos de código fonte). \ Etapa #002
+  Compile o endereço da pasta (análise dos arquivos fornecidos). \ Etapa #003
+  Compile o endereço da pasta (identificação dos tipos das variáveis). \ Etapa #004
+  Compile o endereço da pasta (identificação de variáveis globais). \ Etapa #005
+  Compile o endereço da pasta (cabeçalhos de rotinas). \ Etapa #006
+  Compile o endereço da pasta (cálculo de tamanhos e deslocamentos). \ Etapa #007
+  Compile o endereço da pasta (adição de rotinas de memória incorporadas). \ Etapa #008
+  Compile o endereço da pasta (catalogue as rotinas por utilização). \ Etapa #009
+  Compile o endereço da pasta (conteúdo das rotinas). \ Etapa #010
+  Compile o endereço da pasta (adição e compilação da rotina de inicialização). \ Etapa #011
+  Compile o endereço da pasta (deslocamento de parâmetros e variáveis). \ Etapa #012
+  Compile o endereço da pasta (endereço). \ Etapa #013
+  Compile o endereço da pasta (transmutação). \ Etapa #014
+  Compile o endereço da pasta (vinculação). \ Etapa #015
+  Compile o endereço da pasta (etapa final). \ Etapa #016
+  Compile o endereço da pasta (interrupção). \ Etapa #017
 
 
 Rotina para que se compile um endereço da pasta (inicialização): \#001
@@ -2014,7 +2014,7 @@ Função para que se determine se uma string é o enunciado de alguma rotina ou var
   Se a string for algum artigo definido, diga sim.
   Diga não.
 
-Rotina para que se compile um endereço da pasta (identificação dos tipos das variáveis): \ #004
+Rotina para que se compile um endereço da pasta (identificação dos tipos das variáveis): \ Etapa #004
   Se existir algum problema de compilação, retorne.
   Escreva "Identificando os tipos das variáveis..." junto com o texto CRLF para StdOut.
   Comece o temporizador de resolução de tipos.
@@ -2041,7 +2041,7 @@ Rotina para que se destrinche um tipo (expand lista):
   \Se o nome deste tipo for "elemento", retorne.
   Se o tipo não puder ser reduzido para "lista" usando o nome do tipo primitivo, retorne.
   Encontre um tipo base usando o nome do tipo primitivo deste tipo e o catálogo de tipos.
-  \ adiciona a lista estruturada - o número of secret campos é hard coded em two places: search por "do que 4" \ was 6
+  \ adiciona a lista estruturada - o número campos "secretos" está codificado rigidamente em 2 lugares. Pesquise por "do que 4" (era "do que 6")
   Atribua o nome deste tipo seguido de " estruturada" para um nome.
   Atribua o nome deste tipo seguido de " estruturadas" para um nome plural.
   Atribua o nome deste tipo base seguido de " estruturada" para um nome do tipo primitivo.
@@ -2086,7 +2086,7 @@ Rotina para que se destrinche um tipo (expand lista):
 
 Função para que se determine se um tipo pode ser reduzido para uma string usando o nome do tipo primitivo:
   Se o tipo for inexistente, diga não.
-  Se o nome deste tipo for a string, diga sim.
+  Se o nome deste tipo for[igual] a string, diga sim.
   Se o sinalizador de recursividade deste tipo estiver ativo, diga não.
   Ative o sinalizador de recursividade deste tipo.
   Encontre um tipo base usando o nome do tipo primitivo deste tipo e o catálogo de tipos.
@@ -2109,21 +2109,52 @@ Função para que se determine se um tipo pode ser reduzido para um nome do tipo:
     Atribua o tipo base deste tipo ao tipo.
   Reitere.
 
-Rotina para que se compile um endereço da pasta (identificação de variáveis globais): \ #005
+Rotina para que se adicione um campo para uns campos usando um nome e um apelido e um nome do tipo e um sinalizador:
+  Adicione o campo para os campos usando "campo" e nil.
+  Atribua o nome ao nome deste campo.
+  Atribua o apelido ao apelido deste campo.
+  Atribua o nome do tipo ao nome do tipo deste campo.
+  Atribua um sinalizador de referência ao sinalizador de referência deste campo.
+
+Rotina para que se destrinche uns tipos (registro de plurais):
+  [Itere.]
+    Se existir algum problema de compilação, retorne.
+    Obtenha um tipo desde o tipos.
+    Se o tipo for inexistente, retorne.
+    Destrinche o tipo (registro de plurais).
+  Reitere.
+
+Rotina para que se destrinche um tipo (registro de plurais):
+  Se existir algum problema de compilação, retorne.
+  Se o tipo for inexistente, retorne.
+  Se o nome plural deste tipo estiver em branco, retorne.
+  Se o tipo puder ser reduzido para "lista" usando o nome do tipo primitivo, retorne.
+  Catalogue o tipo usando o nome plural deste tipo.
+
+Rotina para que se destrinche uns tipos (tipos de dados primitivos): 
+  \ Rotina recursiva.
+  [Itere.]
+    Se existir algum problema de compilação, retorne.
+    Obtenha um tipo desde o tipos.
+    Se o tipo for inexistente, retorne.
+    Destrinche o tipo (tipos de dados primitivos).
+  Reitere.
+
+Rotina para que se compile um endereço da pasta (identificação de variáveis globais): \ Etapa #005
   Se existir algum problema de compilação, retorne.
   Escreva "Identificando variáveis globais..." junto com o texto CRLF para StdOut.
   Comece o temporizador de resolução de variáveis globais.
   Destrinche as variáveis globais.
   Suspenda o temporizador de resolução de variáveis globais.
 
-Rotina para que se compile um endereço da pasta (cabeçalhos de rotinas): \ #006
+Rotina para que se compile um endereço da pasta (cabeçalhos de rotinas): \ Etapa #006
   Se existir algum problema de compilação, retorne.
   Escreva "Agrupando os nomes das rotinas..." junto com o texto CRLF para StdOut.
   Comece o temporizador de compilação de cabeçalhos de rotina.
   Compile os cabelalhos referente às rotinas.
   Suspenda o temporizador de compilação de cabeçalhos de rotina.
 
-Rotina para que se compile um endereço da pasta (cálculo de tamanhos e deslocamentos): \ #007
+Rotina para que se compile um endereço da pasta (cálculo de tamanhos e deslocamentos): \ Etapa #007
   Se existir algum problema de compilação, retorne.
   Escreva "Calculando tamanhos de variáveis e deslocamentos de memória..." junto com o texto CRLF para StdOut.
   Comece o temporizador de etapas de cálculo.
@@ -2132,14 +2163,14 @@ Rotina para que se compile um endereço da pasta (cálculo de tamanhos e deslocame
   Calcule os deslocamentos das redefinições no tipos.
   Suspenda o temporizador de etapas de cálculo.
 
-Rotina para que se compile um endereço da pasta (adição de rotinas de memória incorporadas): \ #008
+Rotina para que se compile um endereço da pasta (adição de rotinas de memória incorporadas): \ Etapa #008
   Se existir algum problema de compilação, retorne.
   Escreva "Adicionando tarefas predefinidas na memória..." junto com o texto CRLF para StdOut.
   Comece o temporizador de adição de rotinas pré-definidas de mémoria .
   Adicione as rotinas de alocação e desalocação e finalização e destruição.
   Suspenda o temporizador de adição de rotinas pré-definidas de mémoria .
 
-Rotina para que se compile um endereço da pasta (catalogue as rotinas por utilização): \ #009
+Rotina para que se compile um endereço da pasta (catalogue as rotinas por utilização): \ Etapa #009
   Se existir algum problema de compilação, retorne.
   Escreva "Catalogando tarefas..." junto com o texto CRLF para StdOut.
   Comece o temporizador de ferramentas de catalogação.
@@ -2148,21 +2179,21 @@ Rotina para que se compile um endereço da pasta (catalogue as rotinas por utiliz
   Organize o catálogo de rotinas úteis.
   Suspenda o temporizador de ferramentas de catalogação.
 
-Rotina para que se compile um endereço da pasta (conteúdo das rotinas): \ #010
+Rotina para que se compile um endereço da pasta (conteúdo das rotinas): \ Etapa #010
   Se existir algum problema de compilação, retorne.
   Escreva "Agrupando o conteúdo das rotinas..." junto com o texto CRLF para StdOut.
   Comece o temporizador de compilação do conteúdo das rotinas.
   Compile os corpos referentes às rotinas.
   Suspenda o temporizador de compilação do conteúdo das rotinas.
 
-Rotina para que se compile um endereço da pasta (adição e compilação da rotina de inicialização): \ #011
+Rotina para que se compile um endereço da pasta (adição e compilação da rotina de inicialização): \ Etapa #011
   Se existir algum problema de compilação, retorne.
   Escreva "Adicionando e agrupando as tarefas padrão de inicialização.." junto com o texto CRLF para StdOut.
   Comece o temporizador de adição de rotinas pré-definidas de inicialização.
   Adicione e compile as rotinas de inicialização pré-execução e finalização pós-execução.
   Suspenda o temporizador de adição de rotinas pré-definidas de inicialização.
 
-Rotina para que se compile um endereço da pasta (deslocamento de parâmetros e variáveis): \ #012
+Rotina para que se compile um endereço da pasta (deslocamento de parâmetros e variáveis): \ Etapa #012
   Se existir algum problema de compilação, retorne.
   Escreva "Deslocando parâmetros e variáveis..." junto com o texto CRLF para StdOut.
   Comece o temporizador de deslocamentos.
@@ -2170,7 +2201,7 @@ Rotina para que se compile um endereço da pasta (deslocamento de parâmetros e va
   Alinhe as variáveis locais na rotinas.
   Suspenda o temporizador de deslocamentos.
 
-Rotina para que se compile um endereço da pasta (endereço): \ #013
+Rotina para que se compile um endereço da pasta (endereço): \ Etapa #013
   Se existir algum problema de compilação, retorne.
   Escreva "Obtendo endereço dos itens..." junto com o texto CRLF para StdOut.
   Comece o temporizador de endereçamento.
@@ -2189,21 +2220,21 @@ Rotina para que se compile um endereço da pasta (endereço): \ #013
   Atribua o endereço menos a endereço base desta Região de Código à quantidade de caracteres desta Região de Código.
   Suspenda o temporizador de endereçamento.
 
-Rotina para que se compile um endereço da pasta (transmutação): \ #014
+Rotina para que se compile um endereço da pasta (transmutação): \ Etapa #014
   Se existir algum problema de compilação, retorne.
   Escreva "Convertendo código em instruções de máquina..." junto com o texto CRLF para StdOut.
   Comece o temporizador de transmutação.
   Transforme as rotinas em código hexadecimal.
   Suspenda o temporizador de transmutação.
 
-Rotina para que se compile um endereço da pasta (vinculação): \ #015
+Rotina para que se compile um endereço da pasta (vinculação): \ Etapa #015
   Se existir algum problema de compilação, retorne.
   Escreva "Elencando arquivos.." junto com o texto CRLF para StdOut.
   Comece o temporizador de vinculação.
   Vincule.
   Suspenda o temporizador de vinculação.
 
-Rotina para que se compile um endereço da pasta (etapa final): \ #016
+Rotina para que se compile um endereço da pasta (etapa final): \ Etapa #016
   Se existir algum problema de compilação, retorne.
   Escreva "Gerando arquivo executável..." junto com o texto CRLF para StdOut.
   Comece o temporizador de escrita.
@@ -2213,6 +2244,6 @@ Rotina para que se compile um endereço da pasta (etapa final): \ #016
     Escreva o erro do fluxo de entrada/saída para StdOut.
   Suspenda o temporizador de escrita.
 
-Rotina para que se compile um endereço da pasta (interrupção): \ #017
+Rotina para que se compile um endereço da pasta (interrupção): \ Etapa #017
   Suspenda o temporizador deste compilador.
   Escreva "---------------------------------------" junto com o texto CRLF para StdOut.
