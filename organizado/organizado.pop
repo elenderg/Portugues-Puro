@@ -2032,11 +2032,12 @@ Rotina para que se destrinche uns tipos (expansão de listas):
     Destrinche o tipo (expand lista).
   Reitere.
 
-Rotina para que se destrinche um tipo (expand lista): \ tipo base deste tipo não está resolved yet
+Rotina para que se destrinche um tipo (expand lista): 
+  \ Para quando o tipo base do tipo ainda não pode ser determinado
   Se existir algum problema de compilação, retorne.
-  Se o tipo for inexistente, retorne.
-  Se o tipo base deste tipo NÃO for inexistente, retorne.
-  Se o nome deste tipo for "lista", retorne.
+  Se o tipo for inexistente, retorne. \ se o tipo não existir é porque chegamos ao fim dos tipos da lista
+  Se o tipo base deste tipo NÃO for inexistente, retorne. \ se existir é porque já se definiu o tipo base
+  Se o nome deste tipo for "lista", retorne. \ 
   \Se o nome deste tipo for "elemento", retorne.
   Se o tipo não puder ser reduzido para "lista" usando o nome do tipo primitivo, retorne.
   Encontre um tipo base usando o nome do tipo primitivo deste tipo e o catálogo de tipos.
@@ -2082,6 +2083,31 @@ Rotina para que se destrinche um tipo (expand lista): \ tipo base deste tipo não
     junto com o nome deste tipo e "primeiro" e o nome deste tipo e o sinalizador de ignição.
   Adicione um terceiro campo português para os campos deste tipo encadeado usando "primeira " 
     junto com o nome deste tipo e "primeira" e o nome deste tipo e o sinalizador de ignição.
+
+Função para que se determine se um tipo pode ser reduzido para uma string usando o nome do tipo primitivo:
+  Se o tipo for inexistente, diga não.
+  Se o nome deste tipo for a string, diga sim.
+  Se o sinalizador de recursividade deste tipo estiver ativo, diga não.
+  Ative o sinalizador de recursividade deste tipo.
+  Encontre um tipo base usando o nome do tipo primitivo deste tipo e o catálogo de tipos.
+  Se o tipo base for inexistente,
+    Desative o sinalizador de recursividade deste tipo;
+    Diga não.
+  Se o tipo base puder ser reduzido para a string usando o nome do tipo primitivo,
+    Desative o sinalizador de recursividade deste tipo;
+    Diga sim.
+  Desative o sinalizador de recursividade deste tipo.
+  Diga não.
+
+Função para que se determine se um tipo pode ser reduzido para um nome do tipo:
+  Se o tipo for inexistente, diga não.
+  Preserve o tipo.
+  Itere.
+    Se o tipo for inexistente, diga não.
+    Se o nome deste tipo for o nome do tipo, diga sim.
+    Se o tipo base deste tipo for o tipo, diga não.
+    Atribua o tipo base deste tipo ao tipo.
+  Reitere.
 
 Rotina para que se compile um endereço da pasta (identificação de variáveis globais): \ #005
   Se existir algum problema de compilação, retorne.
