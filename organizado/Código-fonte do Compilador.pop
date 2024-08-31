@@ -4426,20 +4426,7 @@ Rotina para que se destrinche umas variáveis globais:
   Destrinche a variável global.
   Reitere.
 
-Rotina para que se destrinche um tipo (tipos de dados primitivos):
-  Se existir algum problema de compilação, retorne.
-  Se o tipo for inexistente, retorne.
-  Se o tipo base deste tipo não for inexistente, retorne.
-  Encontre o tipo base deste tipo usando o nome do tipo primitivo deste tipo e o catálogo de tipos.
-  Se o tipo base deste tipo for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #139. Tipo base '" junto com o nome do tipo primitivo deste tipo seguido de "' inválido." e o endereço local deste tipo;
-    Retorne.
-  Ative o sinalizador de recursividade deste tipo.
-  Se o sinalizador de recursividade deste tipo base deste tipo estiver ativo,
-    Apresente a mensagem de erro contendo "Erro #140. Definição recursiva com: " junto com o nome do tipo primitivo deste tipo seguido de "." e o endereço local deste tipo;
-    Retorne.
-  Destrinche o tipo base deste tipo (tipos de dados primitivos).
-  Desative o sinalizador de recursividade deste tipo.
+
 
 
   Atribua "primeiro " junto com o nome deste tipo ao novo nome deste terceiro campo português.
@@ -4516,11 +4503,6 @@ Rotina para que se destrinche um tipo (dados complementares):
   Se o tipo puder ser reduzido para "número", destrinche o tipo (dados opcionais - scale).
   Desative o sinalizador de recursividade deste tipo.
   Ative o sinalizador de informações complementares deste tipo.
-
-
-
-
-
 
 
 Rotina para que se destrinche uns tipos (dados complementares):
