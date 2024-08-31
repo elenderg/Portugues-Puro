@@ -2044,21 +2044,26 @@ Rotina para que se destrinche um tipo (expand lista): \ tipo base deste tipo não
   Atribua o nome deste tipo seguido de " estruturada" para um nome.
   Atribua o nome deste tipo seguido de " estruturadas" para um nome plural.
   Atribua o nome deste tipo base seguido de " estruturada" para um nome do tipo primitivo.
-  Adicione um tipo estruturado para os tipos usando 
-    O nome e 
-    O nome plural e 
-    O nome do tipo primitivo.
+  Adicione um tipo estruturado para os tipos usando o nome e o nome plural e o nome do tipo primitivo.
   Adicione um campo para os campos deste tipo estruturado usando 
-    "próximo " junto com o nome deste tipo e "próximo" e o nome deste tipo e o sinalizador de ignição.
+    "próximo " junto com 
+    O nome deste tipo e 
+    "próximo" e 
+    O nome deste tipo e
+    O sinalizador de ignição.
   Adicione um campo português para os campos deste tipo estruturado usando 
-    "próxima " junto com o nome deste tipo e "próxima" e o nome deste tipo e o sinalizador de ignição.
+    "próxima " junto com 
+    O nome deste tipo e 
+    "próxima" e 
+    O nome deste tipo e 
+    O sinalizador de ignição.
   Atribua "próximo " junto com o nome deste tipo ao novo nome deste campo português.
   Adicione um segundo campo para os campos deste tipo estruturado usando 
     "precedente " junto com 
     O nome deste tipo e 
     "precedente" e 
-    O nome deste tipo 
-    e o sinalizador de ignição.
+    O nome deste tipo e 
+    O sinalizador de ignição.
   Adicione um segundo campo português para os campos deste tipo estruturado usando 
     O nome deste tipo seguido de 
     " anterior" e 
@@ -2066,7 +2071,8 @@ Rotina para que se destrinche um tipo (expand lista): \ tipo base deste tipo não
     O nome deste tipo e 
     O sinalizador de ignição.
   Atribua "precedente " junto com o nome deste tipo ao novo nome deste segundo campo português.
-  Se os campos deste tipo não estiverem vazios, acrescente os campos deste tipo para os campos deste tipo estruturado.
+  Se os campos deste tipo não estiverem vazios, 
+    Acrescente os campos deste tipo para os campos deste tipo estruturado.
   Catalogue o tipo estruturado.
   \ fix up original tipo para look like um ponteiro
   Atribua o nome deste tipo estruturado ao nome do conteúdo deste tipo.
