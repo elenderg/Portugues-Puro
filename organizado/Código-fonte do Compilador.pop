@@ -3287,12 +3287,7 @@ Função para que se determine se uma string é algum string literal:
   Se o conteúdo deste caractere inicial desta string for as aspas duplas, diga sim.
   Diga não.
 
-Função para que se determine se uma string é o enunciado de alguma rotina ou variável:
-  Se a string for syntatic sugar, diga sim.
-  \default
-  Se a string for algum artigo indefinido, diga sim.
-  Se a string for algum artigo definido, diga sim.
-  Diga não.
+
 
 Função para que se determine se uma string é algum comando condicional:
   Se a string for "se", diga sim.
@@ -4656,24 +4651,7 @@ Rotina para que se arredonde para cima tamanhos de zona:
 
 
 
-Rotina para que se examine uma instruções usando um percorredor:
-  Se existir algum problema de compilação, retorne.
-  Se o segmento inicial deste percorredor estiver em branco, retorne.
-  Se o segmento inicial deste percorredor for o enunciado de alguma rotina ou variável, retorne.
-  Atribua o caractere inicial deste segmento inicial deste percorredor ao caractere inicial destas instruções.
-  Itere.
-    Se existir algum problema de compilação, retorne.
-    Se o segmento inicial deste percorredor estiver em branco, retorne.
-    Atribua o caractere final deste segmento inicial deste percorredor ao caractere final destas instruções.
-    Se o segmento inicial deste percorredor for o sinal de dois pontos,
-    Apresente uma mensagem de erro contendo "Erro #160. Insira ':' ao final do cabeçalho desta rotina." e o percorredor;
-    Retorne.
-    Se o segmento inicial deste percorredor não for o ponto final,
-    Mova o percorredor (usando diretrizes de compilação);
-    Reitere.
-    Mova o percorredor (usando diretrizes de compilação).
-    Se o segmento inicial deste percorredor for o enunciado de alguma rotina ou variável, retorne.
-  Reitere.
+
 
 Rotina para que se examine uma cabeçalho de rotina usando um percorredor:
   Se existir algum problema de compilação, retorne.
