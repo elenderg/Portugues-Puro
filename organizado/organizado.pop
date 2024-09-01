@@ -2147,15 +2147,186 @@ Rotina para que se destrinche um tipo (tipos de dados primitivos):
   Encontre o tipo base deste tipo usando o nome do tipo primitivo deste tipo e o catálogo de tipos.
   Se o tipo base deste tipo for inexistente,
     Apresente uma mensagem de erro contendo "Erro #139. O identificador '" 
-    junto com o nome do tipo primitivo deste tipo seguido de "' corresponde a um tipo base indefinido." e o endereço local deste tipo;
+    junto com o nome do tipo primitivo deste tipo seguido de "' não possui um tipo base pré-definido." e o endereço local deste tipo;
     Retorne.
   Ative o sinalizador de recursividade deste tipo.
   Se o sinalizador de recursividade deste tipo base deste tipo estiver ativo,
-    Apresente a mensagem de erro contendo "Erro #140. Definição recursiva encontrada no tipo '" 
+    Apresente a mensagem de erro contendo "Erro #140. Detectado uma efinição recursiva no tipo '" 
     junto com o nome do tipo primitivo deste tipo seguido de "'." e o endereço local deste tipo;
     Retorne.
-  Destrinche o tipo base deste tipo (tipos de dados primitivos).
+  Destrinche o tipo base deste tipo (tipos de dados primitivos). \ RECURSÃO
   Desative o sinalizador de recursividade deste tipo.
+
+Rotina para que se destrinche uns tipos (dados complementares):
+  [Itere.]
+    Se existir algum problema de compilação, retorne.
+    Obtenha um tipo desde o tipos.
+    Se o tipo for inexistente, retorne.
+    Destrinche o tipo (dados complementares).
+  Reitere.
+
+Rotina para que se destrinche um tipo (dados complementares):
+  Se existir algum problema de compilação, retorne.
+  Se o tipo for inexistente, retorne.
+  Se o sinalizador de informações complementares deste tipo estiver ativo, retorne.
+  Se o tipo base deste tipo for o [próprio] tipo, retorne. \ para os tipos pré-definidos. Ver nota explicativa abaixo.
+  Verifique por informações opcionais inválidas no tipo.
+  Ative o sinalizador de recursividade deste tipo.
+  Destrinche o tipo base deste tipo (dados complementares).
+  \ A seção abaixo somente é executada após encontrar o tipo base pré-definido, onde a rotina retorna para a versão anterior de si mesma devido a recursividade
+  Se o tipo puder ser reduzido para "ponteiro", 
+    Destrinche o tipo (dados opcionais - ponteiro).
+  Se o tipo puder ser reduzido para "estrutura", 
+    Destrinche o tipo (dados opcionais - conjunto). \ mudar aqui
+  Se o tipo puder ser reduzido para "número", 
+    Destrinche o tipo (dados opcionais - scale).
+  Desative o sinalizador de recursividade deste tipo.
+  Ative o sinalizador de informações complementares deste tipo.
+
+Rotina para que se verifique por informações opcionais inválidas em um tipo:
+  Se existir algum problema de compilação, retorne.
+  Se o tipo for inexistente, retorne.
+  Se o nome do conteúdo deste tipo não estiver em branco, 
+    Verifique por informações opcionais inválidas no tipo (conteúdo).
+  Se o campos deste tipo não estiverem vazios, 
+    Verifique por informações opcionais inválidas no tipo (campos).
+  Se a razão de escala deste tipo não for 0, 
+    Verifique por informações opcionais inválidas no tipo (tipos fracionários).
+
+Rotina para que se verifique por informações opcionais inválidas em um tipo (conteúdo):
+  Se existir algum problema de compilação, retorne.
+  Se o tipo não puder ser reduzido para "ponteiro",
+    Apresente uma mensagem de erro contendo "Erro #15. Só é possível apontar para variáveis do tipo ponteiro." e o endereço local deste tipo;
+    Retorne.
+
+Rotina para que se verifique por informações opcionais inválidas em um tipo (campos):
+  Se existir algum problema de compilação, retorne.
+  Se o tipo não puder ser reduzido para "estrutura",
+    Apresente uma mensagem de erro contendo "Erro #13. Campos só podem ser adicionados nos tipos derivados de 'estrutura' ou 'lista'." e o endereço local deste tipo; \ ABCDE
+    Retorne. 
+
+Rotina para que se verifique por informações opcionais inválidas em um tipo (tipos fracionários):
+  Se existir algum problema de compilação, retorne.
+  Se o tipo não puder ser reduzido para "número",
+    Apresente uma mensagem de erro contendo "Erro #14. Proporções e escalas de medida só podem ser utilizadas em tipos numéricos." e o endereço local deste tipo;
+    Retorne.
+
+Rotina para que se destrinche um tipo (dados opcionais - ponteiro):
+  Se existir algum problema de compilação, retorne.
+  Se o tipo do conteúdo deste tipo não for inexistente, retorne.
+  Se o nome do conteúdo deste tipo estiver em branco,
+    Atribua o tipo do conteúdo deste tipo base deste tipo ao tipo do conteúdo deste tipo;
+    Retorne.
+  Encontre o tipo do conteúdo deste tipo usando o nome do conteúdo deste tipo e o catálogo de tipos.
+  Se o tipo do conteúdo deste tipo for nulo,
+    Apresente uma mensagem de erro contendo "Erro #141. Ponteiro com referência nula no tipo '" 
+    junto com o nome deste tipo seguido de "'." e o endereço local deste tipo;
+    Retorne.
+
+Rotina para que se destrinche um tipo (dados opcionais - conjunto):
+  Se existir algum problema de compilação, retorne.
+  Se os campos deste tipo estiverem vazios,
+    Copie os campos deste tipo base deste tipo aos campos deste tipo;
+    Retorne.
+  Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha um campo desde os campos deste tipo (regressivamente).
+    Se o campo for inexistente, pare.
+    Se o campo estiver duplicado nos campos deste tipo,
+      Apresente uma mensagem de erro contendo "Erro #142. O campo '" 
+      junto com o nome deste campo seguido de "' está definido mais de uma vez." e o endereço local deste campo;
+      Retorne.
+    Destrinche o campo.
+    Se existir algum problema de compilação, retorne.
+    Se o sinalizador de recursividade deste tipo deste campo estiver ativo,
+      Apresente a mensagem de erro contendo "Erro #143. Definição recursiva encontrada no '" 
+      junto com o nome deste tipo deste campo seguido de "'." e o endereço local deste campo;
+      Retorne.
+    Destrinche o tipo deste campo (dados complementares). \ de novo
+    Se o sinalizador de referência deste campo não estiver ativo, 
+      Reitere.
+    Se o tipo deste campo não puder ser reduzido para "ponteiro",
+      Apresente a mensagem de erro contendo "Erro #144. Não é possível colocar '(referência)' no campo '"
+      junto com o nome deste campo seguido de "' pois referências somente são aplicáveis a ponteiros." e o endereço local deste campo;
+      Retorne.
+  Reitere.
+  Elimine apelidos duplicados desde os campos deste tipo.
+  Se o tipo não puder ser reduzido para "lista estruturada", retorne.
+  Se a contagem destes campos deste tipo for maior do que 4, retorne. \ already copied? was 2 por próximo e prev, now 6 para included Spanish redefiniions
+  Copie os campos deste tipo base deste tipo aos campos deste tipo (apenas campos de dados).
+
+Rotina para que se copie uns campos para uns segundo campos:
+  [Itere]
+    Obtenha um campo desde o campos.
+    Se o campo for inexistente, retorne.
+    Copie o campo para um segundo campo.
+    Acrescente o segundo campo para o segundo campos.
+  Reitere.
+
+Rotina para que se copie um campo para um segundo campo:
+  Se o campo for inexistente,
+    Esvazie o segundo campo;
+    Retorne.
+  Aloque memória para o segundo campo.
+  Atribua o endereço local deste campo ao endereço local deste segundo campo.
+  Atribua o nome deste campo ao nome deste segundo campo.
+  Atribua o apelido deste campo ao apelido deste segundo campo.
+  Atribua o nome do tipo deste campo ao nome do tipo deste segundo campo.
+  Atribua o tipo deste campo ao tipo deste segundo campo.
+  Atribua a contagem deste campo à contagem deste segundo campo.
+  Atribua o novo nome deste campo ao novo nome deste segundo campo.
+  Atribua o sinalizador de referência deste campo ao sinalizador de referência deste segundo campo.
+  Atribua o deslocamento deste campo ao deslocamento deste segundo campo.
+
+Função para que se determine se uma variável está duplicado em umas variáveis;
+Função para que se determine se uma variável está duplicada em umas variáveis:
+  [Itere.]
+    Obtenha uma segunda variável desde as variáveis.
+    Se a segunda variável for inexistente, diga não.
+    Se o nome desta segunda variável estiver em branco, reitere.
+    Se a segunda variável for a variável, reitere.
+    Se o nome desta segunda variável for o nome desta variável, diga sim.
+  Reitere.
+
+Rotina para que se destrinche um campo:
+  Se existir algum problema de compilação, retorne.
+  Se o campo for inexistente, retorne.
+  Destrinche o campo como uma variável.
+  Se o apelido deste campo não for algum nome de campo válido, 
+    Limpe o apelido deste campo. \it
+  Se o nome deste campo não for algum nome de campo válido,
+    Apresente uma mensagem de erro contendo "Erro #135. '" junto com o nome deste campo seguido de "' é um campo nome inválido." e o endereço local deste campo;
+    Retorne.
+
+Rotina para que se destrinche uma variável:
+  Se existir algum problema de compilação, retorne.
+  Se a variável for inexistente, retorne.
+  Se o tipo desta variável não for inexistente, retorne.
+  Se o nome do tipo desta variável não estiver em branco,
+    Destrinche a variável (usando o nome do tipo declarado);
+    Retorne.
+  Encontre o tipo desta variável e o apelido desta variável usando o nome desta variável.
+  Se o tipo desta variável não for inexistente,
+    Atribua o nome deste tipo desta variável ao nome do tipo desta variável;
+    Retorne.
+  Apresente uma mensagem de erro contendo "Erro #145. Não foi possível determinar o tipo da variável '" 
+  junto com o nome desta variável seguido de "'." e o endereço local desta variável.
+
+Função para que se determine se um nome é algum nome de campo válido:
+  Se o nome for alguma palavra-chave de obtenção de tamanho de variável, diga não.
+  Se o nome for algum conteúdo, diga não.
+  Se o nome for algum endereçamento, diga não.
+  Diga sim.
+
+Rotina para que se destrinche um tipo (dados opcionais - scale):
+  Se existir algum problema de compilação, retorne.
+  Atribua o tipo base deste tipo para um tipo base.
+  Se a razão de escala deste tipo for 0,
+    Atribua a razão de escala deste tipo base deste tipo à razão de escala deste tipo;
+    Retorne.
+  Se a razão de escala deste tipo base for 0, retorne.
+  Multiplique a razão de escala deste tipo pela razão de escala deste tipo base.
+  Atribua o tipo base deste tipo base ao tipo base deste tipo.
 
 Rotina para que se compile um endereço da pasta (identificação de variáveis globais): \ Etapa #005
   Se existir algum problema de compilação, retorne.
