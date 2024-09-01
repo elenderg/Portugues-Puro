@@ -2296,7 +2296,7 @@ Rotina para que se destrinche um campo:
     Limpe o apelido deste campo. \it
   Se o nome deste campo não for algum nome de campo válido,
     Apresente uma mensagem de erro contendo "Erro #135. '" 
-    junto com o nome deste campo seguido de "' é um campo nome inválido." e o endereço local deste campo;
+    junto com o nome deste campo seguido de "' não é um nome de campo válido." e o endereço local deste campo;
     Retorne.
 
 Rotina para que se destrinche uma variável:
@@ -2310,6 +2310,7 @@ Rotina para que se destrinche uma variável:
   Se o tipo desta variável não for inexistente,
     Atribua o nome deste tipo desta variável ao nome do tipo desta variável;
     Retorne.
+  [Se o tipo desta variável for inexistente,]
   Apresente uma mensagem de erro contendo "Erro #145. Não foi possível determinar o tipo da variável '" 
   junto com o nome desta variável seguido de "'." e o endereço local desta variável.
 
@@ -2402,6 +2403,26 @@ Função para que se determine se um nome é algum nome de campo válido:
   Se o nome for algum conteúdo, diga não.
   Se o nome for algum endereçamento, diga não.
   Diga sim.
+
+Função para que se determine se um nome é alguma palavra-chave de obtenção de tamanho de variável:
+  Se o nome for "magnitude", diga sim.  \ A "magnitude" retorna o tamanho em bytes de algo
+  \Se o nome for "grandeza", diga sim.
+  \Se o nome for " grandiosidade", diga sim.
+  \Se o nome for " envergadura", diga sim.
+  \ Exemplo: a magnitude duma string
+  Diga não.
+
+Função para que se determine se um nome é algum conteúdo:
+  Se o nome for "conteúdo", diga sim.
+  \Este comando é usado apenas com ponteiros (endereços de memória).
+  \ Serve pra saber para quais valores o ponteiro está apontando, ou seja, o conteúdo do ponteiro .
+  \"Um endereço de byte" ou "O ponteiro do byte", por exemplo, refere-se ao endereço de um byte.
+  \"O conteúdo deste endereço de byte" refere-se, portanto aos dados no contidos no byte
+  Diga não.
+
+Função para que se determine se um nome é algum endereçamento:
+  Se o nome for "endereçamento", diga sim.  \ retorna o endereço do dado
+  Diga não.
 
 Rotina para que se destrinche um tipo (dados opcionais - scale):
   Se existir algum problema de compilação, retorne.
