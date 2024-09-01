@@ -3561,60 +3561,6 @@ Rotina para que se encontre uma rotina usando uma string e um tipo e uma segunda
   Encontre a rotina usando as unidades semânticas.
   Destrua as unidades semânticas.
 
-
-
-
-
-Rotina para que se encontre um tipo e um apelido usando um nome:
-  Esvazie o tipo.
-  Limpe o apelido.
-  Encontre o tipo e o apelido usando o nome (progressivamente).
-  Se o tipo não for inexistente, retorne.
-  Encontre o tipo e o apelido usando o nome (regressivamente).
-  \ TRECHO DA VERSÃO ANTIGA
-  \ Lance um subtexto sobre o nome.
-  \ Itere.
-    \ Se o subtexto estiver em branco, retorne.
-    \ Encontre o tipo usando o subtexto e o catálogo de tipos.
-    \ Se o tipo não for inexistente, pare.
-    \ Passe para a próxima palavra  no subtexto.
-  \ Reitere.
-  \ Atribua o caractere inicial deste nome para caractere inicial deste segundo subtexto. \ está errado
-  \ Atribua o caractere inicial deste subtexto menos 2 ao caractere final deste segundo subtexto.
-  \ Se o segundo subtexto não estiver em branco, atribua o segundo subtexto ao apelido.
-  \ Se o segundo subtexto estiver em branco, atribua o subtexto ao apelido.
-
-Rotina para que se encontre um tipo e um apelido usando um nome (regressivamente):
-  Esvazie o tipo.
-  Limpe o apelido.
-  Lance um subtexto sobre o nome.
-  Itere.
-    Se o subtexto estiver em branco, retorne.
-    Encontre o tipo usando o subtexto e o catálogo de tipos.
-    Se o tipo não for inexistente, pare.
-    Passe para a palavra anterior no subtexto.
-  Reitere.
-  Atribua o caractere final deste nome para o caractere final dum segundo subtexto.
-  Atribua o caractere final deste subtexto mais 2 ao caractere inicial deste segundo subtexto.
-  Se o segundo subtexto não estiver em branco, atribua o segundo subtexto ao apelido.
-  Se o segundo subtexto estiver em branco, atribua o subtexto ao apelido.
-
-Rotina para que se encontre um tipo e um apelido usando um nome (progressivamente):
-  \ original - sem alterações
-  Esvazie o tipo.
-  Limpe o apelido.
-  Lance um subtexto sobre o nome.
-  Itere.
-    Se o subtexto estiver em branco, retorne.
-    Encontre o tipo usando o subtexto e o catálogo de tipos.
-    Se o tipo não for inexistente, pare.
-    Passe para a próxima palavra  no subtexto. \próximo
-  Reitere.
-  Atribua o caractere inicial deste nome para o caractere inicial dum segundo subtexto.
-  Atribua o caractere inicial deste subtexto menos 2 ao caractere final deste segundo subtexto.
-  Se o segundo subtexto não estiver em branco, atribua o segundo subtexto ao apelido.
-  Se o segundo subtexto estiver em branco, atribua o subtexto ao apelido.
-
 Rotina para que se encontre uma variável usando um nome:
   Se a rotina utilizada atualmente for inexistente,
     Esvazie a variável;
@@ -4386,11 +4332,7 @@ Rotina para que se destrinche umas variáveis globais:
 
 
 
-Rotina para que se destrinche uma variável (usando o nome do tipo declarado):
-  Encontre o tipo desta variável usando o nome do tipo desta variável e o catálogo de tipos.
-  Se o tipo desta variável for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #146. Não foi possível determinar o tipo da variável '" junto com o nome do tipo desta variável seguido de "' no catálogo de tipos." e o endereço local desta variável;
-    Retorne.
+
 
 Rotina para que se arredonde tamanhos de zona para cima;
 Rotina para que se arredonde para cima tamanhos de zona:
@@ -4463,19 +4405,9 @@ Rotina para que se ligue o sinalizador de compilação em uma variável:
   Se o sinalizador estiver ativo, atribua "converta o " junto com o nome deste valor literal desta variável seguido de " para o " junto com o nome desta variável seguido de ". " ao texto inicializador desta variável.
   Se o sinalizador não estiver ativo, atribua "atribua o " junto com o nome deste valor literal desta variável seguido de " para o " junto com o nome desta variável seguido de ". " ao texto inicializador desta variável. \ Era " ao ". NÃO PODIA MUDAR O " ao " não sei o porquê
 
-Rotina para que se passe para a próxima palavra  em um subtexto:
-  Se o subtexto estiver em branco, retorne.
-  Se o conteúdo deste caractere inicial deste subtexto for irrelevante, pare.
-  Adicione 1 para o caractere inicial deste subtexto.
-  Reitere.
-  Ignore os caracteres ignoráveis no início no subtexto.
 
-Rotina para que se passe para a palavra anterior em um subtexto:
-  Se o subtexto estiver em branco, retorne.
-  Se o conteúdo deste caractere final deste subtexto for irrelevante, pare.
-  Subtraia 1 desde o caractere final deste subtexto.
-  Reitere.
-  Ignore algum caractere ignorável final no subtexto.
+
+
 
 Rotina para que se transforme um fragmento em código hexadecimal:
   Se existir algum problema de compilação, retorne.
@@ -4735,13 +4667,6 @@ Rotina para que se transforme umas rotinas em código hexadecimal:
     Obtenha uma rotina desde as rotinas.
     Se a rotina for inexistente, pare.
     Transforme a rotina em código hexadecimal.
-  Reitere.
-
-Rotina para que se ignore algum caractere ignorável final em um subtexto:
-  Itere.
-    Se o subtexto estiver em branco, retorne.
-    Se o conteúdo deste caractere final deste subtexto não for irrelevante, retorne.
-    Subtraia 1 desde o caractere final deste subtexto.
   Reitere.
 
 \ Rotina nova criada pelo Dahn para - reverse functions

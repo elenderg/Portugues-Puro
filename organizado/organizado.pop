@@ -2295,13 +2295,14 @@ Rotina para que se destrinche um campo:
   Se o apelido deste campo não for algum nome de campo válido, 
     Limpe o apelido deste campo. \it
   Se o nome deste campo não for algum nome de campo válido,
-    Apresente uma mensagem de erro contendo "Erro #135. '" junto com o nome deste campo seguido de "' é um campo nome inválido." e o endereço local deste campo;
+    Apresente uma mensagem de erro contendo "Erro #135. '" 
+    junto com o nome deste campo seguido de "' é um campo nome inválido." e o endereço local deste campo;
     Retorne.
 
 Rotina para que se destrinche uma variável:
   Se existir algum problema de compilação, retorne.
   Se a variável for inexistente, retorne.
-  Se o tipo desta variável não for inexistente, retorne.
+  Se o tipo desta variável não for inexistente, retorne. \ tipo já foi definido
   Se o nome do tipo desta variável não estiver em branco,
     Destrinche a variável (usando o nome do tipo declarado);
     Retorne.
@@ -2311,6 +2312,90 @@ Rotina para que se destrinche uma variável:
     Retorne.
   Apresente uma mensagem de erro contendo "Erro #145. Não foi possível determinar o tipo da variável '" 
   junto com o nome desta variável seguido de "'." e o endereço local desta variável.
+
+Rotina para que se destrinche uma variável (usando o nome do tipo declarado):
+  Encontre o tipo desta variável usando o nome do tipo desta variável e o catálogo de tipos.
+  Se o tipo desta variável for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #146. Não foi possível encontrar o tipo da variável '" 
+    junto com o nome do tipo desta variável seguido de "' no catálogo de tipos." e o endereço local desta variável;
+    Retorne.
+
+Rotina para que se encontre um tipo e um apelido usando um nome:
+  Esvazie o tipo.
+  Limpe o apelido.
+  Encontre o tipo e o apelido usando o nome (progressivamente).
+  Se o tipo não for inexistente, retorne.
+  Encontre o tipo e o apelido usando o nome (regressivamente).
+  \ TRECHO DA VERSÃO ANTIGA
+  \ Lance um subtexto sobre o nome.
+  \ Itere.
+    \ Se o subtexto estiver em branco, retorne.
+    \ Encontre o tipo usando o subtexto e o catálogo de tipos.
+    \ Se o tipo não for inexistente, pare.
+    \ Passe para a próxima palavra  no subtexto.
+  \ Reitere.
+  \ Atribua o caractere inicial deste nome para caractere inicial deste segundo subtexto. \ está errado
+  \ Atribua o caractere inicial deste subtexto menos 2 ao caractere final deste segundo subtexto.
+  \ Se o segundo subtexto não estiver em branco, atribua o segundo subtexto ao apelido.
+  \ Se o segundo subtexto estiver em branco, atribua o subtexto ao apelido.
+
+Rotina para que se encontre um tipo e um apelido usando um nome (progressivamente):
+  \ original - sem alterações
+  Esvazie o tipo.
+  Limpe o apelido.
+  Lance um subtexto sobre o nome.
+  Itere.
+    Se o subtexto estiver em branco, retorne.
+    Encontre o tipo usando o subtexto e o catálogo de tipos.
+    Se o tipo não for inexistente, pare. \ Se encontrar o tipo, pare.
+    Passe para a próxima palavra  no subtexto. \próximo tipo
+  Reitere.
+  Atribua o caractere inicial deste nome para o caractere inicial dum segundo subtexto.
+  Atribua o caractere inicial deste subtexto menos 2 ao caractere final deste segundo subtexto.
+  Se o segundo subtexto não estiver em branco, 
+    Atribua o segundo subtexto ao apelido.
+  Se o segundo subtexto estiver em branco, 
+    Atribua o subtexto ao apelido.
+
+Rotina para que se passe para a próxima palavra  em um subtexto:
+  [Itere.]
+    Se o subtexto estiver em branco, retorne.
+    Se o conteúdo deste caractere inicial deste subtexto for irrelevante, pare.
+    Adicione 1 para o caractere inicial deste subtexto.
+  Reitere.
+  Ignore os caracteres ignoráveis no início no subtexto.
+
+Rotina para que se encontre um tipo e um apelido usando um nome (regressivamente):
+  Esvazie o tipo.
+  Limpe o apelido.
+  Lance um subtexto sobre o nome.
+  Itere.
+    Se o subtexto estiver em branco, retorne.
+    Encontre o tipo usando o subtexto e o catálogo de tipos.
+    Se o tipo não for inexistente, pare.
+    Passe para a palavra anterior no subtexto.
+  Reitere.
+  Atribua o caractere final deste nome para o caractere final dum segundo subtexto.
+  Atribua o caractere final deste subtexto mais 2 ao caractere inicial deste segundo subtexto.
+  Se o segundo subtexto não estiver em branco, 
+    Atribua o segundo subtexto ao apelido.
+  Se o segundo subtexto estiver em branco, 
+    Atribua o subtexto ao apelido.
+
+Rotina para que se passe para a palavra anterior em um subtexto:
+  [Itere.]
+    Se o subtexto estiver em branco, retorne.
+    Se o conteúdo deste caractere final deste subtexto for irrelevante, pare.
+    Subtraia 1 desde o caractere final deste subtexto.
+  Reitere.
+  Ignore algum caractere ignorável final no subtexto.
+
+Rotina para que se ignore algum caractere ignorável final em um subtexto:
+  Itere.
+    Se o subtexto estiver em branco, retorne.
+    Se o conteúdo deste caractere final deste subtexto não for irrelevante, retorne.
+    Subtraia 1 desde o caractere final deste subtexto.
+  Reitere.
 
 Função para que se determine se um nome é algum nome de campo válido:
   Se o nome for alguma palavra-chave de obtenção de tamanho de variável, diga não.
