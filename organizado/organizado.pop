@@ -2234,12 +2234,13 @@ Rotina para que se destrinche um tipo (dados opcionais - conjunto):
     Se o campo for inexistente, pare.
     Se o campo estiver duplicado nos campos deste tipo,
       Apresente uma mensagem de erro contendo "Erro #142. O campo '" 
-      junto com o nome deste campo seguido de "' está definido mais de uma vez." e o endereço local deste campo;
+      junto com o nome deste campo seguido de "' está definido mais de uma vez nesta estrutura." e o endereço local deste campo;
       Retorne.
     Destrinche o campo.
     Se existir algum problema de compilação, retorne.
     Se o sinalizador de recursividade deste tipo deste campo estiver ativo,
-      Apresente a mensagem de erro contendo "Erro #143. Definição recursiva encontrada no '" 
+      Apresente a mensagem de erro contendo "Erro #143. Definição recursiva encontrada no campo '" 
+      \junto com o nome deste campo seguido de "'. Tipo detectado: '" 
       junto com o nome deste tipo deste campo seguido de "'." e o endereço local deste campo;
       Retorne.
     Destrinche o tipo deste campo (dados complementares). \ de novo
