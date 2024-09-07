@@ -13,7 +13,8 @@ Rotina para que se execute o programa:
 Rotina para que se faça tudo:
   Atribua 1252 a um número denominado codepage.
   Processe "kernel32.dll" "SetConsoleOutputCP" com o codepage retornando um número denominado status de erro.
-  Se o status de erro for 0 [NULL], escreva "Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT.
+  Se o status de erro for 0 [NULL], 
+    Escreva "Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT.
   Obtenha uma string desde os argumentos da linha de comando.
   Se a string estiver em branco, 
     Escreva "|-----------------------------------------------------------------------------------------------------------------------|" junto com o texto CRLF para StdOut;
@@ -1802,7 +1803,7 @@ Rotina para que se examine uma variável global usando um percorredor (cláusula '
   Atribua o nome deste tipo ao nome do tipo desta variável global.
   Examine os campos deste tipo usando o percorredor.
   Se o segmento inicial deste percorredor não for o ponto final,
-    Apresente uma mensagem de erro contendo "Erro #024. Erro de sintaxe. Necessário inserir um '.' ao final de declarações de estruturas" e o percorredor;
+    Apresente uma mensagem de erro contendo "Erro #023. Erro de sintaxe. Necessário inserir um '.' ao final de declarações de estruturas" e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Catalogue a variável global.
@@ -1811,8 +1812,8 @@ Rotina para que se catalogue uma variável global:
   Se existir algum problema de compilação, retorne.
   Se a variável global for inexistente, retorne.
   Se o nome desta variável global estiver no catálogo de variáveis globais,
-    Apresente uma mensagem de erro contendo "Erro #025. '" 
-    junto com o nome desta variável global seguido de "' é uma variável variável global duplicada." e o endereço local desta variável global;
+    Apresente uma mensagem de erro contendo "Erro #024. O identificador '" 
+    junto com o nome desta variável global seguido de "' já foi definido anteriormente como variável global." e o endereço local desta variável global;
     Retorne.
   Catalogue a variável global usando o nome desta variável global e o catálogo de variáveis globais.
 
@@ -1835,7 +1836,7 @@ Rotina para que se examine uma variável global usando um percorredor (literal te
   Se existir algum problema de compilação, retorne.
   Examine o corpo de variável global desta variável global usando o percorredor.
   Se o segmento inicial deste percorredor não for o ponto final,
-    Apresente uma mensagem de erro contendo "Erro #026. Erro de sintaxe. Necessário inserir um '.' após a atribuição de um valor numérico ou textual." e o percorredor;
+    Apresente uma mensagem de erro contendo "Erro #025. Erro de sintaxe. Necessário inserir um '.' após a atribuição de um valor numérico ou textual." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Catalogue a variável global.
@@ -1863,7 +1864,7 @@ Rotina para que se examine uma variável global usando um percorredor (dados comp
   Atribua o nome deste tipo ao nome do tipo desta variável global.
   Examine algum dado complementar para o tipo usando o percorredor.
   Se o segmento inicial deste percorredor não for o ponto final,
-    Apresente uma mensagem de erro contendo "Erro #029. Erro de sintaxe. Necessário incluir um '.' após a declaração de informações complementares." e o percorredor;
+    Apresente uma mensagem de erro contendo "Erro #026. Erro de sintaxe. Necessário incluir um '.' após a declaração de informações complementares." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Catalogue a variável global.
@@ -1884,7 +1885,7 @@ Rotina para que se examine algum dado complementar para um tipo usando um percor
 Rotina para que se examine algum dado complementar para um tipo usando um percorredor (ponteiros):
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum artigo indefinido,
-    Apresente uma mensagem de erro contendo "Erro #030. Sintaxe incorreta no comando 'Aponte para um(a)'. Expressão encontrada: '" 
+    Apresente uma mensagem de erro contendo "Erro #027. Sintaxe incorreta no comando 'Aponte para um(a)'. Expressão encontrada: '" 
     junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
@@ -1903,12 +1904,14 @@ Rotina para que se examine uma variável global usando um percorredor (data part)
   Se existir algum problema de compilação, retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum to,
-    Apresente uma mensagem de erro contendo "Erro #026. Erro de sintaxe na declaração da variável global. O compilador esperava encontrar a expressão: 'igual a'. Expressão encontrada: '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Apresente uma mensagem de erro contendo "Erro #028. Erro de sintaxe na declaração da variável global." 
+    junto com " O compilador esperava encontrar a expressão: 'igual a'. Expressão encontrada: '" 
+    junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Examine o corpo de variável global desta variável global usando o percorredor.
   Se o segmento inicial deste percorredor não for o ponto final,
-    Apresente a mensagem de erro contendo "Erro #027. Erro de sintaxe. Esperado '.' ao final de uma declaração variável variável global." e o percorredor;
+    Apresente a mensagem de erro contendo "Erro #029. Erro de sintaxe. Esperado '.' ao final de uma declaração variável variável global." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Catalogue a variável global.
@@ -1998,7 +2001,7 @@ Rotina para que se examine umas instruções usando um percorredor:
     Se o segmento inicial deste percorredor estiver em branco, retorne.
     Atribua o caractere final deste segmento inicial deste percorredor ao caractere final destas instruções.
     Se o segmento inicial deste percorredor for o sinal de dois pontos,
-      Apresente uma mensagem de erro contendo "Erro #160. Insira ':' ao final do cabeçalho desta rotina." e o percorredor;
+      Apresente uma mensagem de erro contendo "033. Insira ':' ao final do cabeçalho desta rotina." e o percorredor;
       Retorne.
     Se o segmento inicial deste percorredor não for o ponto final,
       Mova o percorredor (usando diretrizes de compilação);
@@ -2033,15 +2036,16 @@ Rotina para que se destrinche uns tipos (expansão de listas):
   Reitere.
 
 Rotina para que se destrinche um tipo (expand lista): 
-  \ Para quando o tipo base do tipo ainda não pode ser determinado
+  \ Usado quando o tipo base do tipo ainda não pode ser determinado
   Se existir algum problema de compilação, retorne.
   Se o tipo for inexistente, retorne. \ se o tipo não existir é porque chegamos ao fim dos tipos da lista
-  Se o tipo base deste tipo NÃO for inexistente, retorne. \ se existir é porque já se definiu o tipo base
+  Se o tipo base deste tipo NÃO for inexistente, retorne. \ se o tipo BASE existir é porque o compilador já o determinou anteriormente
   Se o nome deste tipo for "lista", retorne. \ 
   \Se o nome deste tipo for "elemento", retorne.
-  Se o tipo não puder ser reduzido para "lista" usando o nome do tipo primitivo, retorne.
+  Se o tipo não puder ser reduzido para "lista" usando o nome do tipo primitivo, retorne. \ 
   Encontre um tipo base usando o nome do tipo primitivo deste tipo e o catálogo de tipos.
-  \ adiciona a lista estruturada - o número campos "secretos" está codificado rigidamente em 2 lugares. Pesquise por "do que 4" (era "do que 6")
+  \ O trecho abaixo cria uma estrutura denominada lista estruturada 
+  \ O número campos "secretos" está codificado rigidamente em 2 lugares. Pesquise por "do que 4" (era "do que 6")
   Atribua o nome deste tipo seguido de " estruturada" para um nome.
   Atribua o nome deste tipo seguido de " estruturadas" para um nome plural.
   Atribua o nome deste tipo base seguido de " estruturada" para um nome do tipo primitivo.
@@ -2109,12 +2113,12 @@ Função para que se determine se um tipo pode ser reduzido para um nome do tipo:
     Atribua o tipo base deste tipo ao tipo.
   Reitere.
 
-Rotina para que se adicione um campo para uns campos usando um nome e um apelido e um nome do tipo e um sinalizador:
+Rotina para que se adicione um campo para uns campos usando um nome e um apelido e um nome do tipo e um sinalizador de referência:
   Adicione o campo para os campos usando "campo" e nil.
   Atribua o nome ao nome deste campo.
   Atribua o apelido ao apelido deste campo.
   Atribua o nome do tipo ao nome do tipo deste campo.
-  Atribua um sinalizador de referência ao sinalizador de referência deste campo.
+  Atribua o sinalizador de referência ao sinalizador de referência deste campo.
 
 Rotina para que se destrinche uns tipos (registro de plurais):
   [Itere.]
@@ -2146,12 +2150,12 @@ Rotina para que se destrinche um tipo (tipos de dados primitivos):
   Se o tipo base deste tipo não for inexistente, retorne.
   Encontre o tipo base deste tipo usando o nome do tipo primitivo deste tipo e o catálogo de tipos.
   Se o tipo base deste tipo for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #139. O identificador '" 
+    Apresente uma mensagem de erro contendo "Erro #034. O identificador '" 
     junto com o nome do tipo primitivo deste tipo seguido de "' não possui um tipo base pré-definido." e o endereço local deste tipo;
     Retorne.
   Ative o sinalizador de recursividade deste tipo.
   Se o sinalizador de recursividade deste tipo base deste tipo estiver ativo,
-    Apresente a mensagem de erro contendo "Erro #140. Detectado uma efinição recursiva no tipo '" 
+    Apresente a mensagem de erro contendo "Erro #035. Detectado uma efinição recursiva no tipo '" 
     junto com o nome do tipo primitivo deste tipo seguido de "'." e o endereço local deste tipo;
     Retorne.
   Destrinche o tipo base deste tipo (tipos de dados primitivos). \ RECURSÃO
@@ -2196,19 +2200,19 @@ Rotina para que se verifique por informações opcionais inválidas em um tipo:
 Rotina para que se verifique por informações opcionais inválidas em um tipo (conteúdo):
   Se existir algum problema de compilação, retorne.
   Se o tipo não puder ser reduzido para "ponteiro",
-    Apresente uma mensagem de erro contendo "Erro #15. Só é possível apontar para variáveis do tipo ponteiro." e o endereço local deste tipo;
+    Apresente uma mensagem de erro contendo "Erro #036. Só é possível apontar para variáveis do tipo ponteiro." e o endereço local deste tipo;
     Retorne.
 
 Rotina para que se verifique por informações opcionais inválidas em um tipo (campos):
   Se existir algum problema de compilação, retorne.
   Se o tipo não puder ser reduzido para "estrutura",
-    Apresente uma mensagem de erro contendo "Erro #13. Campos só podem ser adicionados nos tipos derivados de 'estrutura' ou 'lista'." e o endereço local deste tipo; \ ABCDE
+    Apresente uma mensagem de erro contendo "Erro #037. Campos só podem ser adicionados nos tipos derivados de 'estrutura' ou 'lista'." e o endereço local deste tipo; \ ABCDE
     Retorne. 
 
 Rotina para que se verifique por informações opcionais inválidas em um tipo (tipos fracionários):
   Se existir algum problema de compilação, retorne.
   Se o tipo não puder ser reduzido para "número",
-    Apresente uma mensagem de erro contendo "Erro #14. Proporções e escalas de medida só podem ser utilizadas em tipos numéricos." e o endereço local deste tipo;
+    Apresente uma mensagem de erro contendo "Erro #038. Proporções e escalas de medida só podem ser utilizadas em tipos numéricos." e o endereço local deste tipo;
     Retorne.
 
 Rotina para que se destrinche um tipo (dados opcionais - ponteiro):
@@ -2219,7 +2223,7 @@ Rotina para que se destrinche um tipo (dados opcionais - ponteiro):
     Retorne.
   Encontre o tipo do conteúdo deste tipo usando o nome do conteúdo deste tipo e o catálogo de tipos.
   Se o tipo do conteúdo deste tipo for nulo,
-    Apresente uma mensagem de erro contendo "Erro #141. Ponteiro com referência nula no tipo '" 
+    Apresente uma mensagem de erro contendo "Erro #039. Ponteiro com referência nula no tipo '" 
     junto com o nome deste tipo seguido de "'." e o endereço local deste tipo;
     Retorne.
 
@@ -2233,13 +2237,13 @@ Rotina para que se destrinche um tipo (dados opcionais - conjunto):
     Obtenha um campo desde os campos deste tipo (regressivamente).
     Se o campo for inexistente, pare.
     Se o campo estiver duplicado nos campos deste tipo,
-      Apresente uma mensagem de erro contendo "Erro #142. O campo '" 
+      Apresente uma mensagem de erro contendo "Erro #040. O campo '" 
       junto com o nome deste campo seguido de "' está definido mais de uma vez nesta estrutura." e o endereço local deste campo;
       Retorne.
     Destrinche o campo.
     Se existir algum problema de compilação, retorne.
     Se o sinalizador de recursividade deste tipo deste campo estiver ativo,
-      Apresente a mensagem de erro contendo "Erro #143. Definição recursiva encontrada no campo '" 
+      Apresente a mensagem de erro contendo "Erro #041. Definição recursiva encontrada no campo '" 
       \junto com o nome deste campo seguido de "'. Tipo detectado: '" 
       junto com o nome deste tipo deste campo seguido de "'." e o endereço local deste campo;
       Retorne.
@@ -2247,7 +2251,7 @@ Rotina para que se destrinche um tipo (dados opcionais - conjunto):
     Se o sinalizador de referência deste campo não estiver ativo, 
       Reitere.
     Se o tipo deste campo não puder ser reduzido para "ponteiro",
-      Apresente a mensagem de erro contendo "Erro #144. Não é possível colocar '(referência)' no campo '"
+      Apresente a mensagem de erro contendo "Erro #042. Não é possível colocar '(referência)' no campo '"
       junto com o nome deste campo seguido de "' pois referências somente são aplicáveis a ponteiros." e o endereço local deste campo;
       Retorne.
   Reitere.
@@ -2296,8 +2300,8 @@ Rotina para que se destrinche um campo:
   Se o apelido deste campo não for algum nome de campo válido, 
     Limpe o apelido deste campo. \it
   Se o nome deste campo não for algum nome de campo válido,
-    Apresente uma mensagem de erro contendo "Erro #135. '" 
-    junto com o nome deste campo seguido de "' não é um nome de campo válido." e o endereço local deste campo;
+    Apresente uma mensagem de erro contendo "Erro #043. O identificador '" 
+    junto com o nome deste campo seguido de "' não corresponde a um nome de campo válido." e o endereço local deste campo;
     Retorne.
 
 Rotina para que se destrinche uma variável:
@@ -2312,13 +2316,13 @@ Rotina para que se destrinche uma variável:
     Atribua o nome deste tipo desta variável ao nome do tipo desta variável;
     Retorne.
   [Se o tipo desta variável for inexistente,]
-  Apresente uma mensagem de erro contendo "Erro #145. Não foi possível determinar o tipo da variável '" 
+  Apresente uma mensagem de erro contendo "Erro #044. Não foi possível determinar o tipo da variável '" 
   junto com o nome desta variável seguido de "'." e o endereço local desta variável.
 
 Rotina para que se destrinche uma variável (usando o nome do tipo declarado):
   Encontre o tipo desta variável usando o nome do tipo desta variável e o catálogo de tipos.
   Se o tipo desta variável for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #146. Não foi possível encontrar o tipo da variável '" 
+    Apresente uma mensagem de erro contendo "Erro #045. Não foi possível encontrar o tipo da variável '" 
     junto com o nome do tipo desta variável seguido de "' no catálogo de tipos." e o endereço local desta variável;
     Retorne.
 
