@@ -2534,15 +2534,45 @@ Rotina para que se compile um valor literal usando um percorredor (valores hexad
 \Rotina para que se converta uma parte da cifra binária para uma string:
   \Empregue converta uma cifra hexadecimal para um texto hexadecimal.
 
-Rotina para que se compile um valor literal usando um percorredor (valores booleanos):
+Rotina para que se compile um valor literal usando um percorredor (valor numérico - análise preliminar):
   Se existir algum problema de compilação, retorne.
-  Converta o segmento inicial deste percorredor para um sinalizador.
-  Converta o sinalizador para os data deste valor literal.
+  Se o percorredor estiver acompanhado por algum unidade de medida,
+    Compile o valor literal usando o percorredor (valor numérico - unidade de medida);
+    Retorne.
+  Se o segmento inicial deste percorredor for algum número inteiro,
+    Compile o valor literal usando o percorredor (valor numérico - números inteiros);
+    Retorne.
+  Se o segmento inicial deste percorredor for algum proporção literal,
+    Compile o valor literal usando o percorredor (valor numérico - números fracionários);
+    Retorne.
+  Se o segmento inicial deste percorredor for algum numeral misto literal,
+    Compile o valor literal usando o percorredor (valor numérico - números fracionários);
+    Retorne.
+
+Rotina para que se compile um valor literal usando um percorredor (valor numérico - unidade de medida):
+  Se existir algum problema de compilação, retorne.
+  Converta o segmento inicial deste percorredor para uma proporção.
   Mova o percorredor (usando diretrizes de compilação).
-  Atribua "sinalizador" ao nome do tipo deste valor literal.
-  Destrinche o valor literal. \ 
-
-
+  Examine um nome usando o percorredor.
+  Encontre um tipo usando o nome e o catálogo de tipos.
+  Se o tipo for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #45. O tipo '" 
+    junto com o nome seguido de "' é uma unidade de medida inexistente." e o endereço local deste valor literal;
+    Retorne.
+  Se o tipo não puder ser reduzido para "número",
+    Apresente a mensagem de erro contendo "Erro #46. O tipo '" 
+    junto com o nome seguido de "' não é um valor numérico válido." e o endereço local deste valor literal;
+    Retorne.
+  Atribua a razão de escala deste tipo para uma final proporção. \ TRADUZIR
+  Se a razão de escala deste tipo for 0, atribua 1/1 para a final proporção.
+  Multiplique a final proporção pelo proporção.
+  Reduza a final proporção.
+  Se o denominador deste final proporção for 0,
+    Apresente a mensagem de erro contendo "Erro #47. Denominador igual a zero. Unidade de medida inválida." e o endereço local deste valor literal.
+  Atribua o numerador deste final proporção dividido pelo denominador deste final proporção para um número.
+  Atribua o nome deste tipo ao nome do tipo deste valor literal.
+  Converta o número para o data deste valor literal.
+  Destrinche o valor literal.
 
 Rotina para que se compile um valor literal usando um percorredor (valor numérico - números inteiros):
   Se existir algum problema de compilação, retorne.
@@ -2560,50 +2590,37 @@ Rotina para que se compile um valor literal usando um percorredor (valor numéric
   Atribua "proporção" ao nome do tipo deste valor literal.
   Destrinche o valor literal.
 
-Rotina para que se compile um valor literal usando um percorredor (valor numérico - unidade de medida):
-  Se existir algum problema de compilação, retorne.
-  Converta o segmento inicial deste percorredor para uma proporção.
-  Mova o percorredor (usando diretrizes de compilação).
-  Examine um nome usando o percorredor.
-  Encontre um tipo usando o nome e o catálogo de tipos.
-  Se o tipo for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #45. O tipo '" junto com o nome seguido de "' é uma unidade de medida inexistente." e o endereço local deste valor literal;
-    Retorne.
-  Se o tipo não puder ser reduzido para "número",
-    Apresente a mensagem de erro contendo "Erro #46. O tipo '" junto com o nome seguido de "' não é um valor numérico válido." e o endereço local deste valor literal;
-    Retorne.
-  Atribua a razão de escala deste tipo para uma final proporção. \ TRADUZIR
-  Se a razão de escala deste tipo for 0, atribua 1/1 para a final proporção.
-  Multiplique a final proporção pelo proporção.
-  Reduza a final proporção.
-  Se o denominador deste final proporção for 0,
-    Apresente a mensagem de erro contendo "Erro #47. Denominador igual a zero. Unidade de medida inválida." e o endereço local deste valor literal.
-  Atribua o numerador deste final proporção dividido pelo denominador deste final proporção para um número.
-  Atribua o nome deste tipo ao nome do tipo deste valor literal.
-  Converta o número para o data deste valor literal.
-  Destrinche o valor literal.
-
-Rotina para que se compile um valor literal usando um percorredor (valor numérico - análise preliminar):
-  Se existir algum problema de compilação, retorne.
-  Se o percorredor estiver acompanhado por algum unidade de medida,
-    Compile o valor literal usando o percorredor (valor numérico - unidade de medida);
-    Retorne.
-  Se o segmento inicial deste percorredor for algum número inteiro,
-    Compile o valor literal usando o percorredor (valor numérico - números inteiros);
-    Retorne.
-  Se o segmento inicial deste percorredor for algum proporção literal,
-    Compile o valor literal usando o percorredor (valor numérico - números fracionários);
-    Retorne.
-  Se o segmento inicial deste percorredor for algum numeral misto literal,
-    Compile o valor literal usando o percorredor (valor numérico - números fracionários);
-    Retorne.
-
 Rotina para que se compile um valor literal usando um percorredor (ponteiros):
   Se existir algum problema de compilação, retorne.
   Converta 0 para os data deste valor literal. \ era nulo ao invés de 0
   Mova o percorredor (usando diretrizes de compilação).
   Atribua "ponteiro" ao nome do tipo deste valor literal.
   Destrinche o valor literal.
+
+Rotina para que se compile um valor literal usando um percorredor (cadeia de caracteres):
+  Se existir algum problema de compilação, retorne.
+  Atribua o segmento inicial deste percorredor aos data deste valor literal.
+  Remova as aspas de os data deste valor literal.
+  Mova o percorredor (usando diretrizes de compilação).
+  Atribua "string" ao nome do tipo deste valor literal.
+  \Atribua "texto" ao nome do tipo deste valor literal.
+  Destrinche o valor literal.
+
+
+
+
+
+Rotina para que se compile um valor literal usando um percorredor (valores booleanos):
+  Se existir algum problema de compilação, retorne.
+  Converta o segmento inicial deste percorredor para um sinalizador.
+  Converta o sinalizador para os data deste valor literal.
+  Mova o percorredor (usando diretrizes de compilação).
+  Atribua "sinalizador" ao nome do tipo deste valor literal.
+  Destrinche o valor literal. \ 
+
+
+
+
 
 Rotina para que se compile um valor literal usando um percorredor (números ordinais):
   Se existir algum problema de compilação, retorne.
@@ -2616,14 +2633,7 @@ Rotina para que se compile um valor literal usando um percorredor (números ordin
   \Atribua "número" ao nome do tipo deste valor literal.
   Destrinche o valor literal. \ 
 
-Rotina para que se compile um valor literal usando um percorredor (cadeia de caracteres):
-  Se existir algum problema de compilação, retorne.
-  Atribua o segmento inicial deste percorredor aos data deste valor literal.
-  Remova as aspas de os data deste valor literal.
-  Mova o percorredor (usando diretrizes de compilação).
-  Atribua "string" ao nome do tipo deste valor literal.
-  \Atribua "texto" ao nome do tipo deste valor literal.
-  Destrinche o valor literal.
+
 
 Rotina para que se compile um endereço da pasta (cabeçalhos de rotinas): \ Etapa #006
   Se existir algum problema de compilação, retorne.
