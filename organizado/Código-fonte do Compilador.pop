@@ -2270,8 +2270,7 @@ Rotina para que se compile um termo usando um percorredor e um nome (possessivo 
   Compile o termo usando o percorredor e o primeiro campo de estrutura.
   Compile o termo usando o percorredor e o campo de estrutura-membro.
 
-Rotina para que se converta umas unidades semânticas para uma representação interna da rotina :
-  Converta as unidades semânticas para a representação interna da rotina usando a última unidade semântica destas unidades semânticas.
+
 
 Rotina para que se converta umas unidades semânticas para uma representação interna da rotina usando uma unidade semântica:
   Limpe a representação interna da rotina.
@@ -2463,11 +2462,7 @@ Função para que se determine se um item parece ser encadernável:
   Se o trecho começa com "Este documento foi produzido pelo Editor de Documentos - CEL", diga sim.
   Diga não.
 
-Função para que se determine se uma representação interna da rotina está em um catálogo:
-  Encontre um referência usando a representação interna da rotina e o catálogo.
-  Se o referência for inexistente, diga não.
-  Se o ponteiro deste referência for inexistente, diga não.
-  Diga sim.
+
 
 Função para que se determine se uma unidade semântica está indefinida:
   Se a unidade semântica for inexistente, diga sim.
@@ -3180,10 +3175,7 @@ Rotina para que se compile um valor literal usando um percorredor (números ordin
   \Atribua "número" ao nome do tipo deste valor literal.
   Destrinche o valor literal. \ 
 
-Rotina para que se catalogue um cabeçalho compactado usando um catálogo (especial):
-  Encontre uma referência usando o cabeçalho compactado e o catálogo.
-  Se a referência não for inexistente, retorne.
-  Catalogue o cabeçalho compactado no catálogo.
+
 
 Rotina para que se catalogue uma rotina por utilização:
   Se existir algum problema de compilação, retorne.
@@ -3208,17 +3200,7 @@ Rotina para que se catalogue uma rotina usando uma representação interna da roti
     Retorne.
   Catalogue a rotina usando a representação interna da rotina e o catálogo.
 
-Rotina para que se catalogue uma rotina usando umas unidades semânticas e um catálogo:
-  Se a rotina for inexistente, retorne.
-  Limpe um cabeçalho compactado.
-  Itere.
-    Obtenha uma unidade semântica desde as unidades semânticas.
-    Se a unidade semântica for inexistente, retorne.
-    Acrescente a unidade semântica para o cabeçalho compactado.
-    Se a unidade semântica for a última unidade semântica destas unidades semânticas, pare.
-    Catalogue o cabeçalho compactado usando o catálogo (especial).
-  Reitere.
-  Catalogue a rotina usando o cabeçalho compactado como uma representação interna da rotina e o catálogo (especial).
+
 
 Rotina para que se catalogue umas rotinas por utilização:
   Se existir algum problema de compilação, retorne.
