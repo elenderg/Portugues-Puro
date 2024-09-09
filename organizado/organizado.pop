@@ -2964,10 +2964,11 @@ Rotina para que se compile o cabeçalho referente para uma rotina usando um perco
   Examine um nome usando o percorredor. \ Analisa o nome do campo da estrutura
   Mova o percorredor (usando diretrizes de compilação). \ ignora o "deste" / "desta" / "destes" / "destas"
   Se o segmento inicial deste percorredor for algum artigo indefinido, 
-    Ative um sinalizador.
-  Se o sinalizador estiver ativo, 
+    \Ative um sinalizador.
+  \Se o sinalizador estiver ativo, 
     Compile as unidades semânticas desta rotina e o parâmetros desta rotina usando o percorredor (artigo indefinido).
-  Se o sinalizador não estiver ativo, 
+  \Se o sinalizador não estiver ativo, 
+  Se o segmento inicial deste percorredor for algum artigo definido, \ NOVO
     Compile as unidades semânticas desta rotina e o parâmetros desta rotina usando o percorredor (artigo definido).
   Adicione uma segunda unidade semântica para as unidades semânticas desta rotina usando "'s " junto com o nome.
   Se o segmento inicial deste percorredor não for alguma função possessiva reversa into,
