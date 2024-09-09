@@ -2601,10 +2601,7 @@ Função para que se determine se uma string é algum operador de continuidade:
   Se a string for "e", diga sim.
   Diga não. \repetido?
 
-Função para que se determine se uma string é alguma função possessiva reversa into:
-  Se a string for "em", diga sim.
-  Se a string for "para", diga sim.
-  Diga não.
+
 
 Função para que se determine se uma string é algum comando de deliberação literal:
   Se a string for "sim", diga sim.

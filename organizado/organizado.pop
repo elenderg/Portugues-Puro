@@ -2972,17 +2972,20 @@ Rotina para que se compile o cabeçalho referente para uma rotina usando um perco
     Compile as unidades semânticas desta rotina e o parâmetros desta rotina usando o percorredor (artigo definido).
   Adicione uma segunda unidade semântica para as unidades semânticas desta rotina usando "'s " junto com o nome.
   Se o segmento inicial deste percorredor não for alguma função possessiva reversa into,
-    Apresente uma mensagem de erro contendo "Erro #187. Erro de sintaxe. Esperado: 'para'. Encontrado: '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Apresente uma mensagem de erro contendo "Erro #187. Erro de sintaxe. Esperado: 'para'. Encontrado: '" 
+    junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
     Retorne.
   Adicione uma terceira unidade semântica para as unidades semânticas desta rotina usando "para".
   Converta as unidades semânticas desta rotina para uma representação interna da rotina.
   Se a representação interna da rotina estiver no catálogo geral de rotinas,
-    Apresente a mensagem de erro contendo "Erro #188. Erro. A rotina para que se " junto com a representação interna da rotina seguido de ": já havia sido definida." e o endereço local desta rotina;
+    Apresente a mensagem de erro contendo "Erro #188. Erro. A rotina para que se " 
+    junto com a representação interna da rotina seguido de ": já havia sido definida." e o endereço local desta rotina;
     Retorne.
   Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum artigo indefinido,
-    Apresente a mensagem de erro contendo "Erro #189. Erro. Esperado 'um/uma'. Encontrado: '" junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Apresente a mensagem de erro contendo "Erro #189. Erro. Esperado 'um/uma'. Encontrado: '" 
+    junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
     Retorne.
   Compile as unidades semânticas desta rotina e o parâmetros desta rotina usando o percorredor (artigo indefinido).
   Se o segmento inicial deste percorredor não estiver em branco,
@@ -2991,7 +2994,10 @@ Rotina para que se compile o cabeçalho referente para uma rotina usando um perco
   Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
   Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas. \ Para uso nos employs
 
-
+Função para que se determine se uma string é alguma função possessiva reversa into:
+  Se a string for "em", diga sim.
+  Se a string for "para", diga sim.
+  Diga não.
 
 
 
