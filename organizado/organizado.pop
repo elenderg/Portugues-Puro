@@ -2475,7 +2475,7 @@ Rotina para que se destrinche uma variável global (compile corpo):
     Apresente uma mensagem de erro contendo "Erro #047. É necessário que o identificador '" 
     junto com o segmento inicial deste percorredor seguido de "' seja algum valor literal." e o percorredor;
     Retorne.
-  Compile um valor literal usando o percorredor.
+  Compile um valor literal usando o percorredor. \ 
   Se existir algum problema de compilação, retorne.
   Se o segmento inicial deste percorredor não estiver em branco,
     Apresente a mensagem de erro contendo "Erro #048. Esperado '.' " e o percorredor;
@@ -2504,7 +2504,7 @@ Rotina para que se compile um valor literal usando um percorredor:
   Se o segmento inicial deste percorredor for algum string literal,
     Compile o valor literal usando o percorredor (cadeia de caracteres);
     Retorne.
-  Apresente uma mensagem de erro contendo "Erro interno #44. O valor '" 
+  Apresente uma mensagem de erro contendo "Erro interno #44. O identificador '" 
   junto com o segmento inicial deste percorredor  seguido de "' não pode ser compilado." e o percorredor.
 
 Rotina para que se adicione um valor literal para umas variáveis usando um endereço local:
@@ -2549,6 +2549,29 @@ Rotina para que se compile um valor literal usando um percorredor (valor numéric
     Compile o valor literal usando o percorredor (valor numérico - números fracionários);
     Retorne.
 
+Função para que se determine se um percorredor está acompanhado por algum unidade de medida:
+  Preserve o percorredor.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o percorredor não estiver sobre algum indicador de início de variável, diga não.
+  Examine um nome usando o percorredor.
+  Encontre um tipo usando o nome e o catálogo de tipos.
+  Se o tipo for inexistente, diga não.
+  Se o nome não for algum operador de multiplicação, diga sim.
+  \Se o nome não for "vezes", diga sim. \ necessário porque o termo 'vezes' é um operador de multiplicação e uma unidade de medida
+  Se o segmento inicial deste percorredor for o início de alguma expressão matematica, diga não.
+  Diga sim.
+
+Função para que se determine se uma string é algum operador de multiplicação:
+  Se a string for "vezes", diga sim.
+  Diga não.
+
+Função para que se determine se uma string é o início de alguma expressão matematica:
+  Se a string for algum sinal aritmético, diga sim.
+  Se a string for algum artigo indefinido, diga sim.
+  Se a string for algum artigo definido, diga sim.
+  Se a string for algum valor literal, diga sim.
+  Diga não.
+
 Rotina para que se compile um valor literal usando um percorredor (valor numérico - unidade de medida):
   Se existir algum problema de compilação, retorne.
   Converta o segmento inicial deste percorredor para uma proporção.
@@ -2556,19 +2579,20 @@ Rotina para que se compile um valor literal usando um percorredor (valor numéric
   Examine um nome usando o percorredor.
   Encontre um tipo usando o nome e o catálogo de tipos.
   Se o tipo for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #45. O tipo '" 
-    junto com o nome seguido de "' é uma unidade de medida inexistente." e o endereço local deste valor literal;
+    Apresente uma mensagem de erro contendo "Erro #45. O identificador '" 
+    junto com o nome seguido de "' corresponde a uma unidade de medida inexistente." e o endereço local deste valor literal;
     Retorne.
   Se o tipo não puder ser reduzido para "número",
-    Apresente a mensagem de erro contendo "Erro #46. O tipo '" 
-    junto com o nome seguido de "' não é um valor numérico válido." e o endereço local deste valor literal;
+    Apresente a mensagem de erro contendo "Erro #46. O identificador '" 
+    junto com o nome seguido de "'  corresponde a um tipo de dado não numérico." e o endereço local deste valor literal;
     Retorne.
-  Atribua a razão de escala deste tipo para uma final proporção. \ TRADUZIR
-  Se a razão de escala deste tipo for 0, atribua 1/1 para a final proporção.
+  Atribua a razão de escala deste tipo para uma proporção denominada final proporção. \ TRADUZIR
+  Se a razão de escala deste tipo for 0, 
+    Atribua 1/1 para a final proporção.
   Multiplique a final proporção pelo proporção.
   Reduza a final proporção.
   Se o denominador deste final proporção for 0,
-    Apresente a mensagem de erro contendo "Erro #47. Denominador igual a zero. Unidade de medida inválida." e o endereço local deste valor literal.
+    Apresente a mensagem de erro contendo "Erro #47. Proporção inválida. Denominador igual a zero." e o endereço local deste valor literal.
   Atribua o numerador deste final proporção dividido pelo denominador deste final proporção para um número.
   Atribua o nome deste tipo ao nome do tipo deste valor literal.
   Converta o número para o data deste valor literal.
@@ -2590,6 +2614,18 @@ Rotina para que se compile um valor literal usando um percorredor (valor numéric
   Atribua "proporção" ao nome do tipo deste valor literal.
   Destrinche o valor literal.
 
+Função para que se determine se uma string é algum ponteiro literal:
+  Se a string for "nulo", diga sim.
+  Se a string for "nula", diga sim.
+  Se a string for "nulos", diga sim.
+  Se a string for "nulas", diga sim.
+  Se a string for "inexistente", diga sim.
+  Se a string for "inexistentes", diga sim.
+  Se a string for "zerado", diga sim.
+  \CAL
+  Se a string for "nil", diga sim.
+  Diga não.
+
 Rotina para que se compile um valor literal usando um percorredor (ponteiros):
   Se existir algum problema de compilação, retorne.
   Converta 0 para os data deste valor literal. \ era nulo ao invés de 0
@@ -2606,32 +2642,19 @@ Rotina para que se compile um valor literal usando um percorredor (cadeia de car
   \Atribua "texto" ao nome do tipo deste valor literal.
   Destrinche o valor literal.
 
-
-
-
-
-Rotina para que se compile um valor literal usando um percorredor (valores booleanos):
+Rotina para que se catalogue um valor literal:
   Se existir algum problema de compilação, retorne.
-  Converta o segmento inicial deste percorredor para um sinalizador.
-  Converta o sinalizador para os data deste valor literal.
-  Mova o percorredor (usando diretrizes de compilação).
-  Atribua "sinalizador" ao nome do tipo deste valor literal.
-  Destrinche o valor literal. \ 
+  Se o valor literal for inexistente, retorne.
+  Se o nome deste valor literal estiver no catálogo de variáveis hexadecimais,
+    Apresente uma mensagem de erro contendo "Erro interno #124. O nome deste valor literal já foi catalogado anteriormente" 
+    e o endereço local deste valor literal;
+    Retorne.
+  Catalogue o valor literal usando o nome deste valor literal e o catálogo de variáveis hexadecimais.
 
 
 
 
 
-Rotina para que se compile um valor literal usando um percorredor (números ordinais):
-  Se existir algum problema de compilação, retorne.
-  Atribua o segmento inicial deste percorredor aos data deste valor literal.
-  Remova o último caractere de os data deste valor literal.
-  \Converta o segmento inicial deste percorredor para um número.
-  \Converta o número para os data deste valor literal.
-  \Converta 0 para os data deste valor literal. \ era nulo ao invés de 0
-  Mova o percorredor (usando diretrizes de compilação).
-  \Atribua "número" ao nome do tipo deste valor literal.
-  Destrinche o valor literal. \ 
 
 
 

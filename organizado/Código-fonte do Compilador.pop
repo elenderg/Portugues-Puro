@@ -2737,17 +2737,7 @@ Função para que se determine se uma unidade semântica está indefinida:
   \Se o subtexto atual desta unidade semântica estiver em branco, diga sim.
   Diga sim.
 
-Função para que se determine se um percorredor está acompanhado por algum unidade de medida:
-  Preserve o percorredor.
-  Mova o percorredor (usando diretrizes de compilação).
-  Se o percorredor não estiver sobre algum indicador de início de variável, diga não.
-  Examine um nome usando o percorredor.
-  Encontre um tipo usando o nome e o catálogo de tipos.
-  Se o tipo for inexistente, diga não.
-  Se o nome não for algum operador de multiplicação, diga sim.
-  \Se o nome não for "vezes", diga sim. \ necessário porque o termo 'vezes' é um operador de multiplicação e uma unidade de medida
-  Se o segmento inicial deste percorredor for o início de alguma expressão matematica, diga não.
-  Diga sim.
+
 
 Função para que se determine se um percorredor está sobre algum simile:
   \ adicionado para as rotinas de grágico de tartatuga ***
@@ -2826,9 +2816,7 @@ Função para que se determine se uma string é algum operador de subtração:
   Se a string for "menos", diga sim.
   Diga não.
 
-Função para que se determine se uma string é algum operador de multiplicação:
-  Se a string for "vezes", diga sim.
-  Diga não.
+
 
 Função para que se determine se uma string é algum operador de divisão:
   Se a string for "dividido", diga sim.
@@ -2974,17 +2962,7 @@ Função para que se determine se uma string é algum advérbio de negação:
 
 
 
-Função para que se determine se uma string é algum ponteiro literal:
-  Se a string for "nulo", diga sim.
-  Se a string for "nula", diga sim.
-  Se a string for "nulos", diga sim.
-  Se a string for "nulas", diga sim.
-  Se a string for "inexistente", diga sim.
-  Se a string for "inexistentes", diga sim.
-  Se a string for "zerado", diga sim.
-  \CAL
-  Se a string for "nil", diga sim.
-  Diga não.
+
 
 
 
@@ -3157,12 +3135,7 @@ Função para que se determine se uma string é alguma palavra ignorável:
   \Se a string for "se", diga sim.
   Diga não.
 
-Função para que se determine se uma string é o início de alguma expressão matematica:
-  Se a string for algum sinal aritmético, diga sim.
-  Se a string for algum artigo indefinido, diga sim.
-  Se a string for algum artigo definido, diga sim.
-  Se a string for algum valor literal, diga sim.
-  Diga não.
+
 
 
 
@@ -3457,14 +3430,24 @@ Rotina para que se obtenha uma contagem usando umas DLLs (todas as funções mais 
     Adicione 1 para a contagem.
   Reitere.
 
-Rotina para que se catalogue um valor literal:
+Rotina para que se compile um valor literal usando um percorredor (valores booleanos):
   Se existir algum problema de compilação, retorne.
-  Se o valor literal for inexistente, retorne.
-  Se o nome deste valor literal estiver no catálogo de variáveis hexadecimais,
-    Apresente uma mensagem de erro contendo "Erro interno #124. O nome deste valor literal já foi catalogado anteriormente" 
-    e o endereço local deste valor literal;
-    Retorne.
-  Catalogue o valor literal usando o nome deste valor literal e o catálogo de variáveis hexadecimais.
+  Converta o segmento inicial deste percorredor para um sinalizador.
+  Converta o sinalizador para os data deste valor literal.
+  Mova o percorredor (usando diretrizes de compilação).
+  Atribua "sinalizador" ao nome do tipo deste valor literal.
+  Destrinche o valor literal. \ 
+
+Rotina para que se compile um valor literal usando um percorredor (números ordinais):
+  Se existir algum problema de compilação, retorne.
+  Atribua o segmento inicial deste percorredor aos data deste valor literal.
+  Remova o último caractere de os data deste valor literal.
+  \Converta o segmento inicial deste percorredor para um número.
+  \Converta o número para os data deste valor literal.
+  \Converta 0 para os data deste valor literal. \ era nulo ao invés de 0
+  Mova o percorredor (usando diretrizes de compilação).
+  \Atribua "número" ao nome do tipo deste valor literal.
+  Destrinche o valor literal. \ 
 
 Rotina para que se catalogue um cabeçalho compactado usando um catálogo (especial):
   Encontre uma referência usando o cabeçalho compactado e o catálogo.
