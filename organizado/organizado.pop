@@ -3,36 +3,37 @@
 Rotina para que se execute o programa:
   Inicialize os componentes.
   \Inicialize o compilador.
-  Faça tudo.
+  Compile o diretório do projeto.
   Finalize o compilador.
   Escreva na próxima linha em StdOut.
   Escreva "Operação finalizada." junto com o texto CRLF para StdOut.
-  \Execute os eventos.\
+  \Execute os eventos. \
   Feche o programa.
 
-Rotina para que se faça tudo:
+Rotina para que se compile o diretório do projeto:
   Atribua 1252 a um número denominado codepage.
   Processe "kernel32.dll" "SetConsoleOutputCP" com o codepage retornando um número denominado status de erro.
   Se o status de erro for 0 [NULL], 
-    Escreva "Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT.
-  Obtenha uma string desde os argumentos da linha de comando.
-  Se a string estiver em branco, 
+    Escreva "Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT;
+    Escreva "Se você estiver utilizando o console do NppExec, ignore a mensagem acima." junto com o texto CRLF para STDOUT.
+  Obtenha uma string denominada diretório do projeto desde os argumentos da linha de comando.
+  Se o diretório do projeto estiver em branco, 
     Escreva "|-----------------------------------------------------------------------------------------------------------------------|" junto com o texto CRLF para StdOut;
     Escreva "| Aviso. Para utilizar este compilador, você deve invocá-lo através da linha de comando.                 |" junto com o texto CRLF para StdOut;
     Escreva "| Para fazer isso, abra compilador no Prompt de Comando (cmd.exe) usando a sintaxe abaixo       |" junto com o texto CRLF para StdOut;
-    Escreva " " junto com o texto CRLF para StdOut;
+    Escreva "|                                                                                                                                                                       |" junto com o texto CRLF para StdOut;
     Escreva "| c:\endereço_do_compilador.exe\  c:\pasta_do_projeto_atual\                                                        |" junto com o texto CRLF para StdOut;
-    Escreva " " junto com o texto CRLF para StdOut;
+    Escreva "|                                                                                                                                                                       |" junto com o texto CRLF para StdOut;
     Escreva "|-----------------------------------------------------------------------------------------------------------------------|" junto com o texto CRLF para StdOut;
   Retorne.
-  Se o conteúdo deste caractere final desta string não for a barra invertida, 
-    Acrescente a barra invertida para a string.
-  Se a string não estiver no sistema de arquivos, 
-    Escreva "Erro. O diretório '" junto com a string seguido de "' não foi encontrado." junto com o texto CRLF para StdOut;
+  Se o conteúdo deste caractere final deste diretório do projeto não for a barra invertida, 
+    Acrescente a barra invertida para o diretório do projeto
+  Se o diretório do projeto não estiver no sistema de arquivos, 
+    Escreva "Erro. O diretório '" junto com o diretório do projeto seguido de "' não foi encontrado." junto com o texto CRLF para StdOut;
     Retorne.
-  Escreva "Compilando o diretório '" junto com a string seguido de "' ..." junto com o texto CRLF para StdOut. \ Etapa #0
+  Escreva "Compilando o diretório '" junto com o diretório do projeto seguido de "' ..." junto com o texto CRLF para StdOut. \ Etapa #0
   Escreva o texto CRLF para StdOut.
-  Compile a string.
+  Compile o diretório do projeto.
   Se existir algum problema de compilação, 
     Exiba o erro de compilação; 
     Retorne.
@@ -3103,7 +3104,7 @@ Rotina para que se compile o cabeçalho referente para uma rotina usando um perco
   Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
   Se a representação interna da rotina desta rotina estiver no catálogo geral de rotinas,
     Apresente uma mensagem de erro contendo "Erro #067. A 'Rotina para que se " 
-    junto com a representação interna da rotina desta rotina seguido de "' já foi codificada." e o endereço local desta rotinas;
+    junto com a representação interna da rotina desta rotina seguido de "' já foi definida anteriormente." e o endereço local desta rotinas;
     Retorne.
   Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
 
