@@ -1379,42 +1379,7 @@ Rotina para que se compile o cabeçalho referente para uma rotina usando um perco
 
 
 
-Rotina para que se compile o cabeçalho referente para uma rotina usando um percorredor (função):
-  Se existir algum problema de compilação, retorne.
-  Ative o sinalizador de função desta rotina.
-  Adicione uma unidade semântica para as unidades semânticas desta rotina usando "atribua".
-  Mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor for algum artigo indefinido, ative um sinalizador.
-  Se o sinalizador estiver ativo, compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo indefinido).
-  Se o sinalizador não estiver ativo, compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo definido).
-  Se o segmento inicial deste percorredor não for algum possessivo inglês,
-    Apresente uma mensagem de erro contendo "Erro #38. Necessário inserir um 's no código." e o percorredor;
-    Retorne. \ not translated - no possessives em Spanish
-  Mova o percorredor (usando diretrizes de compilação).
-  Examine um nome usando o percorredor.
-  Adicione uma segunda unidade semântica para as unidades semânticas desta rotina usando "'s " junto com o nome.
-  Se o segmento inicial deste percorredor não for "para",
-    Apresente a mensagem de erro contendo "Erro #39. palavra-chave 'para' ausente. Encontrado a palavra: " 
-    junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
-    Retorne. \ not translated - no possessives em Spanish
-  Adicione uma terceira unidade semântica para as unidades semânticas desta rotina usando "para".
-  Converta as unidades semânticas desta rotina para uma representação interna da rotina.
-  Se a representação interna da rotina estiver no catálogo geral de rotinas,
-    Apresente a mensagem de erro contendo "Erro #40. Rotina para que se '" 
-    junto com a representação interna da rotina seguido de "' já definida." e o endereço local desta rotina;
-    Retorne. \ not translated - no possessives em Spanish
-  Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
-  Mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor não for algum artigo indefinido,
-    Apresente a mensagem de erro contendo "Erro #41. Necessário artigo indefinido. Encontrado '" 
-    junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
-    Retorne. \ not translated - no possessives em Spanish
-  Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo indefinido).
-  Se o segmento inicial deste percorredor não estiver em branco,
-    Apresente a mensagem de erro contendo "Erro #42. Encontrado comandos extras no fim desta rotina." e o percorredor;
-    Retorne. \ not translated - no possessives em Spanish
-  Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
-  Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas. \ para employs
+
 
 Rotina para que se compile o cabeçalho referente para uma rotina usando um percorredor (procedimento):
   Se existir algum problema de compilação, retorne.
@@ -2272,14 +2237,7 @@ Rotina para que se compile um termo usando um percorredor e um nome (possessivo 
 
 
 
-Rotina para que se converta umas unidades semânticas para uma representação interna da rotina usando uma unidade semântica:
-  Limpe a representação interna da rotina.
-  Itere.
-    Obtenha um current unidade semântica desde as unidades semânticas.
-    Se o current unidade semântica for inexistente, retorne.
-    Acrescente o current unidade semântica para a representação interna da rotina.
-    Se o current unidade semântica for a unidade semântica, retorne.
-  Reitere.
+
 
 
 
@@ -3193,12 +3151,7 @@ Rotina para que se catalogue uma rotina por utilização:
     Retorne.
   Catalogue a rotina usando a representação interna da rotina e o catálogo de rotinas úteis.
 
-Rotina para que se catalogue uma rotina usando uma representação interna da rotina e um catálogo (especial):
-  Encontre uma referência usando a representação interna da rotina e o catálogo.
-  Se a referência não for inexistente,
-    Atribua a rotina ao ponteiro deste referência;
-    Retorne.
-  Catalogue a rotina usando a representação interna da rotina e o catálogo.
+
 
 
 

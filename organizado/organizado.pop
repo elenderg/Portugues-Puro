@@ -2779,7 +2779,9 @@ Rotina para que se adicione uma unidade semântica para umas unidades semânticas 
     Atribua "usando" à string desta unidade semântica;
     Retorne.
   \\ para
-  Se a string for "em", atribua "para" à string desta unidade semântica; Retorne.
+  Se a string for "em", 
+    Atribua "para" à string desta unidade semântica; 
+    Retorne.
   Se a string for "a",
     Atribua "para" à string desta unidade semântica;
     Retorne. \  ver isso aqui com calma
@@ -3022,13 +3024,64 @@ Rotina para que se catalogue um cabeçalho compactado usando um catálogo (especia
   Se a referência não for inexistente, retorne.
   Catalogue o cabeçalho compactado no catálogo.
 
-Rotina para que se converta umas unidades semânticas para uma representação interna da rotina :
+Rotina para que se catalogue uma rotina usando uma representação interna da rotina e um catálogo (especial):
+  Encontre uma referência usando a representação interna da rotina e o catálogo.
+  Se a referência não for inexistente,
+    Atribua a rotina ao ponteiro desta referência;
+    Retorne.
+  Catalogue a rotina usando a representação interna da rotina e o catálogo.
+
+Rotina para que se converta umas unidades semânticas para uma representação interna da rotina:
   Converta as unidades semânticas para a representação interna da rotina usando a última unidade semântica destas unidades semânticas.
 
+Rotina para que se converta umas unidades semânticas para uma representação interna da rotina usando uma unidade semântica:
+  Limpe a representação interna da rotina.
+  Itere.
+    Obtenha uma unidade semântica denominada unidade semântica atual desde as unidades semânticas.
+    Se a unidade semântica atual for inexistente, retorne.
+    Acrescente a unidade semântica atual para a representação interna da rotina.
+    Se a unidade semântica atual for a unidade semântica, retorne.
+  Reitere.
 
-
-
-
+Rotina para que se compile o cabeçalho referente para uma rotina usando um percorredor (função): \ POSSESSIVO REVERSO
+  Se existir algum problema de compilação, retorne.
+  Ative o sinalizador de função desta rotina.
+  Adicione uma unidade semântica para as unidades semânticas desta rotina usando "Atribua".
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor for algum artigo indefinido, 
+    \Ative um sinalizador.
+  \Se o sinalizador estiver ativo, 
+    Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo indefinido).
+  Se o segmento inicial deste percorredor for algum artigo definido, 
+    Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo definido).
+  Se o segmento inicial deste percorredor não for algum possessivo inglês,
+    Apresente uma mensagem de erro contendo "Erro #38. Possessivos requerem um  's após o nome da estrutura." e o percorredor;
+    Retorne. \ 
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine um nome usando o percorredor.
+  Adicione uma segunda unidade semântica para as unidades semânticas desta rotina usando "'s " junto com o nome.
+  Se o segmento inicial deste percorredor não for "para",
+    Apresente a mensagem de erro contendo "Erro #39. Palavra-chave 'para' ausente. Encontrado o termo: " 
+    junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
+    Retorne. \ 
+  Adicione uma terceira unidade semântica para as unidades semânticas desta rotina usando "para".
+  Converta as unidades semânticas desta rotina para uma representação interna da rotina.
+  Se a representação interna da rotina estiver no catálogo geral de rotinas,
+    Apresente a mensagem de erro contendo "Erro #40. Rotina para que se '" 
+    junto com a representação interna da rotina seguido de "' já definida." e o endereço local desta rotina;
+    Retorne. \ 
+  Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor não for algum artigo indefinido,
+    Apresente a mensagem de erro contendo "Erro #41. Necessário artigo indefinido. Encontrado '" 
+    junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Retorne. \ not translated - no possessives em Spanish
+  Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo indefinido).
+  Se o segmento inicial deste percorredor não estiver em branco,
+    Apresente a mensagem de erro contendo "Erro #42. Encontrado comandos extras no fim desta rotina." e o percorredor;
+    Retorne. \ not translated - no possessives em Spanish
+  Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
+  Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas. \ para employs
 
 
 
