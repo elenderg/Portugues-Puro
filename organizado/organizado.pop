@@ -3067,21 +3067,49 @@ Rotina para que se compile o cabeçalho referente para uma rotina usando um perco
   Adicione uma terceira unidade semântica para as unidades semânticas desta rotina usando "para".
   Converta as unidades semânticas desta rotina para uma representação interna da rotina.
   Se a representação interna da rotina estiver no catálogo geral de rotinas,
-    Apresente a mensagem de erro contendo "Erro #40. Rotina para que se '" 
-    junto com a representação interna da rotina seguido de "' já definida." e o endereço local desta rotina;
+    Apresente a mensagem de erro contendo "Erro #40. A 'Rotina para que se '" 
+    junto com a representação interna da rotina seguido de "' já foi definida." e o endereço local desta rotina;
     Retorne. \ 
   Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum artigo indefinido,
-    Apresente a mensagem de erro contendo "Erro #41. Necessário artigo indefinido. Encontrado '" 
+    Apresente a mensagem de erro contendo "Erro #41. Sintaxe esperada: 'Atribua a estrutura's membro para UM/UMA identificador. Encontrado '" 
     junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
-    Retorne. \ not translated - no possessives em Spanish
+    Retorne. 
   Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo indefinido).
   Se o segmento inicial deste percorredor não estiver em branco,
-    Apresente a mensagem de erro contendo "Erro #42. Encontrado comandos extras no fim desta rotina." e o percorredor;
-    Retorne. \ not translated - no possessives em Spanish
+    Apresente a mensagem de erro contendo "Erro #42. Encontrado termo inválido após 'Atribua a estrutura's membro para UM/UMA identificador." e o percorredor;
+    Retorne. 
   Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
-  Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas. \ para employs
+  Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas. \ para uso nos employs
+
+Rotina para que se compile o cabeçalho referente para uma rotina usando um percorredor (modo de compatibilidade): \ callback
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Ative o sinalizador de compatibilidade desta rotina.
+  Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor.
+  Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
+  Se a representação interna da rotina desta rotina estiver no catálogo geral de rotinas,
+    Apresente uma mensagem de erro contendo "Erro #34. A rotina para que se '" 
+    junto com a representação interna da rotina desta rotina seguido de "' já foi definida anteriormente." 
+    e o endereço local desta rotina;
+    Retorne.
+  Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
