@@ -1369,15 +1369,7 @@ Rotina para que se compile uma expressão matematica usando um percorredor (opera
 
 
 
-Rotina para que se compile o cabeçalho referente para uma rotina usando um percorredor (procedimento):
-  Se existir algum problema de compilação, retorne.
-  Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor.
-  Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
-  Se a representação interna da rotina desta rotina estiver no catálogo geral de rotinas,
-    Apresente uma mensagem de erro contendo "Erro #43. Rotina para que se '" 
-    junto com a representação interna da rotina desta rotina seguido de "' já codificada." e o endereço local desta rotinas;
-    Retorne.
-  Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
+
 
 
 
