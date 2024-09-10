@@ -3162,22 +3162,38 @@ Rotina para que se calcule os deslocamentos em um tipo:
     Adicione a quantidade de caracteres deste tipo deste campo vezes a contagem deste campo para o deslocamento.
   Reitere.
 
+Rotina para que se calcule os deslocamentos das redefinições em uns tipos:
+  [Itere.]
+    Se existir algum problema de compilação, retorne.
+    Obtenha um tipo desde os tipos.
+    Se o tipo for inexistente, retorne.
+    Calcule os deslocamentos das redefinições no tipo.
+  Reitere.
 
+Rotina para que se calcule os deslocamentos das redefinições em um tipo:
+  Se o tipo for inexistente, retorne.
+  Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha um campo desde os campos deste tipo.
+    Se o campo for inexistente, retorne.
+    Se o novo nome deste campo estiver em branco, reitere.
+    Encontre um segundo campo usando o novo nome deste campo e os campos deste tipo.
+    Se o segundo campo for inexistente,
+      Apresente uma mensagem de erro contendo "Erro #12. O campo '" 
+      junto com o nome deste tipo seguido de "' não foi encontrado na estrutura '"
+      junto com o novo nome deste campo seguido de "'.' Verifique se há erros de digitação."  e o endereço local deste campo;
+      Retorne.
+    Atribua o deslocamento deste segundo campo ao deslocamento deste campo.
+  Reitere.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Rotina para que se encontre uma variável usando um nome e umas variáveis:
+  Esvazie a variável.
+  Itere.
+    Obtenha a variável desde as variáveis.
+    Se a variável for inexistente, retorne.
+    Se o nome desta variável for o nome, retorne.
+    Se o apelido desta variável for o nome, retorne.
+  Reitere.
 
 Rotina para que se compile um endereço da pasta (adição de rotinas de memória incorporadas): \ Etapa #008
   Se existir algum problema de compilação, retorne.
@@ -3185,6 +3201,23 @@ Rotina para que se compile um endereço da pasta (adição de rotinas de memória in
   Comece o temporizador de adição de rotinas pré-definidas de mémoria .
   Adicione as rotinas de alocação e desalocação e finalização e destruição.
   Suspenda o temporizador de adição de rotinas pré-definidas de mémoria .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Rotina para que se compile um endereço da pasta (catalogue as rotinas por utilização): \ Etapa #009
   Se existir algum problema de compilação, retorne.
