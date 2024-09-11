@@ -20,9 +20,9 @@ Rotina para que se compile o diretório do projeto:
   Se o diretório do projeto estiver em branco, 
     Escreva "|-----------------------------------------------------------------------------------------------------------------------|" junto com o texto CRLF para StdOut;
     Escreva "| Aviso. Para utilizar este compilador, você deve invocá-lo através da linha de comando.                 |" junto com o texto CRLF para StdOut;
-    Escreva "| Para fazer isso, abra compilador no Prompt de Comando (cmd.exe) usando a sintaxe abaixo       |" junto com o texto CRLF para StdOut;
+    Escreva "| Para fazer isso, abra compilador no Prompt de Comando (cmd.exe) usando a sintaxe abaixo:      |" junto com o texto CRLF para StdOut;
     Escreva "|                                                                                                                                                                       |" junto com o texto CRLF para StdOut;
-    Escreva "| c:\endereço_do_compilador.exe\  c:\pasta_do_projeto_atual\                                                        |" junto com o texto CRLF para StdOut;
+    Escreva "|       C:\endereço_do_compilador.exe\  C:\pasta_do_projeto_atual\                                                 |" junto com o texto CRLF para StdOut;
     Escreva "|                                                                                                                                                                       |" junto com o texto CRLF para StdOut;
     Escreva "|-----------------------------------------------------------------------------------------------------------------------|" junto com o texto CRLF para StdOut;
   Retorne.
@@ -3396,6 +3396,52 @@ Rotina para que se compile um endereço da pasta (catalogue as rotinas por utiliz
   Scrub o catálogo de rotinas úteis.
   Organize o catálogo de rotinas úteis.
   Suspenda o temporizador de ferramentas de catalogação.
+
+Rotina para que se scrub um catálogo: \ limpar, filtrar, refinar
+  Itere.
+    Obtenha um recipiente usando o catálogo.
+    Se o recipiente for inexistente,
+      Retorne.
+    Se as referências deste recipiente estiverem vazios,
+      Reitere.
+    Scrub as referências deste recipiente.
+  Reitere.
+
+Rotina para que se scrub umas referências:
+  Permute as referências com umas novas referências.
+  Itere.
+    Atribua a primeira referência destas novas referências para uma referência.
+    Se a referência for inexistente,
+      Retorne.
+    [Se a referência não for nula,]
+    Remova a referência desde as novas referências.
+    Se o ponteiro desta referência for inexistente,
+      Destrua a referência;
+      Reitere.
+    [Se o ponteiro desta referência não for nulo,]
+    Acrescente a referência para as referências.
+  Reitere.
+
+Rotina para que se organize o catálogo de rotinas úteis:
+    Se existir algum problema de compilação, retorne.
+    Obtenha um recipiente usando o catálogo de rotinas úteis.
+    Se o recipiente for inexistente, retorne.
+    Se as referências deste recipiente estiverem vazios, reitere.
+    Organize o catálogo de rotinas úteis usando as referências deste recipiente.
+  Reitere.
+
+Rotina para que se organize o catálogo de rotinas úteis usando umas referências:
+    Obtenha uma referência desde as referências.
+    Se a referência for inexistente, retorne.
+    Atribua o ponteiro desta referência para uma rotina.
+    Se a rotina for inexistente,
+      Apresente uma mensagem de erro contendo "Erro interno #134. A rotina não foi localizada";
+      Retorne.
+    Copie as unidades semânticas desta rotina para umas unidades semânticas.
+    Reduza as unidades semânticas por utilização.
+    Catalogue a rotina usando as unidades semânticas e o catálogo geral de rotinas.
+    Destrua as unidades semânticas.
+  Reitere.
 
 Rotina para que se compile um endereço da pasta (conteúdo das rotinas): \ Etapa #010
   Se existir algum problema de compilação, retorne.

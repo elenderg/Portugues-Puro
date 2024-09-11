@@ -3473,26 +3473,7 @@ Rotina para que se reduza um tipo para um segundo tipo por utilização:
     Atribua o tipo base deste segundo tipo ao segundo tipo.
   Reitere.
 
-Rotina para que se organize o catálogo de rotinas úteis:
-    Se existir algum problema de compilação, retorne.
-    Obtenha um recipiente usando o catálogo de rotinas úteis.
-    Se o recipiente for inexistente, retorne.
-    Se as referências deste recipiente estiverem vazios, reitere.
-    Organize o catálogo de rotinas úteis usando as referências deste recipiente.
-  Reitere.
 
-Rotina para que se organize o catálogo de rotinas úteis usando umas referências:
-    Obtenha uma referência desde as referências.
-    Se a referência for inexistente, retorne.
-    Atribua o ponteiro desta referência para uma rotina.
-    Se a rotina for inexistente,
-      Apresente uma mensagem de erro contendo "Erro interno #134. A rotina não foi localizada";
-      Retorne.
-    Copie as unidades semânticas desta rotina para umas unidades semânticas.
-    Reduza as unidades semânticas por utilização.
-    Catalogue a rotina usando as unidades semânticas e o catálogo geral de rotinas.
-    Destrua as unidades semânticas.
-  Reitere.
 
 Rotina para que se remova alguns termos negativos desde umas unidades semânticas retornando um sinalizador:
   Desative o sinalizador.
@@ -3570,28 +3551,7 @@ Rotina para que se examine uma cabeçalho de rotina usando um percorredor:
     Mova o percorredor (usando diretrizes de compilação).
   Reitere.
 
-Rotina para que se scrub um catálogo:
-  Itere.
-    Obtenha um recipiente usando o catálogo.
-    Se o recipiente for inexistente,
-      Retorne.
-    Se as referências deste recipiente estiverem vazios,
-      Reitere.
-    Scrub as referências deste recipiente.
-  Reitere.
 
-Rotina para que se scrub umas referências:
-  Permute as referências com uns segunda referências.
-  Itere.
-    Atribua a primeira referência destes segunda referências para uma referência.
-    Se a referência for inexistente,
-      Retorne.
-    Remova a referência desde a segunda referências.
-    Se o ponteiro deste referência for inexistente,
-      Destrua a referência;
-      Reitere.
-    Acrescente a referência para as referências.
-  Reitere.
 
 Rotina para que se ative o sinalizador de compilação em uma variável;
 Rotina para que se ligue o sinalizador de compilação em uma variável:
