@@ -1038,7 +1038,7 @@ Função para que se determine se um percorredor está sobre alguma preposição:
   \Se o subtexto for "baixo", diga sim. -> erro
   Se o subtexto for "por", diga sim.
   Se o subtexto for "usando", diga sim.
-  Se o subtexto for "referente", diga sim.
+  Se o subtexto for "pertencente", diga sim.
   Se o subtexto for "pertencente", diga sim.
   Se o subtexto for "pertinente", diga sim.
   Se o subtexto for "relativo", diga sim.
@@ -2656,36 +2656,36 @@ Rotina para que se compile um endereço da pasta (cabeçalhos de rotinas): \ Etapa
   Se existir algum problema de compilação, retorne.
   Escreva "Agrupando os nomes das rotinas..." junto com o texto CRLF para StdOut.
   Comece o temporizador de compilação de cabeçalhos de rotina.
-  Compile os cabeçalhos referentes às rotinas.
+  Compile os cabeçalhos pertencentes às rotinas.
   Suspenda o temporizador de compilação de cabeçalhos de rotina.
 
-Rotina para que se compile os cabeçalhos referentes para umas rotinas:
+Rotina para que se compile os cabeçalhos pertencentes para umas rotinas:
   [Itere.]
     Se existir algum problema de compilação, retorne.
     Obtenha uma rotina desde as rotinas.
     Se a rotina for inexistente, retorne.
-    Compile o cabeçalho referente à rotina.
+    Compile o cabeçalho pertencente à rotina.
   Reitere.
 
-Rotina para que se compile o cabeçalho referente para uma rotina:
+Rotina para que se compile o cabeçalho pertencente para uma rotina:
   Se a rotina for inexistente, retorne.
   Se existir algum problema de compilação, retorne.
   Lance um percorredor sobre a cabeçalho de rotina desta rotina.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor for algum comando de deliberação,
-    Compile o cabeçalho referente à rotina usando o percorredor (rotina deliberativa);
+    Compile o cabeçalho pertencente à rotina usando o percorredor (rotina deliberativa);
     Retorne.
   Se o percorredor for o início de alguma função possessiva reversa,
-    Compile o cabeçalho referente à rotina usando o percorredor (função do possessivo reverso);
+    Compile o cabeçalho pertencente à rotina usando o percorredor (função do possessivo reverso);
     Retorne.
   Se o percorredor for o início de alguma função,
-    Compile o cabeçalho referente à rotina usando o percorredor (função);
+    Compile o cabeçalho pertencente à rotina usando o percorredor (função);
     Retorne.
   Se o segmento inicial deste percorredor for "compativelmente",
-    Compile o cabeçalho referente à rotina usando o percorredor (modo de compatibilidade);
+    Compile o cabeçalho pertencente à rotina usando o percorredor (modo de compatibilidade);
     Retorne.
   [else]
-  Compile o cabeçalho referente à rotina usando o percorredor (procedimento).
+  Compile o cabeçalho pertencente à rotina usando o percorredor (procedimento).
 
 Função para que se determine se uma string é algum comando de deliberação:
   Se a string for "decida", diga sim.
@@ -2693,7 +2693,7 @@ Função para que se determine se uma string é algum comando de deliberação:
   Se a string for "esclareça", diga sim.
   Diga não.
 
-Rotina para que se compile o cabeçalho referente para uma rotina usando um percorredor (rotina deliberativa):
+Rotina para que se compile o cabeçalho pertencente para uma rotina usando um percorredor (rotina deliberativa):
   Se existir algum problema de compilação, retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum comando condicional,
@@ -2959,7 +2959,7 @@ Rotina para que se compile umas unidades semânticas e uns parâmetros usando um p
 \ Rotina nova criada pelo Dahn para - funções de atribuição do possessivo reverso
 \ Exemplo: Para que se atribua o X deste Y para o |
 \ O compilador converte isso para "Para que se atribua o Y's X para o Z"
-Rotina para que se compile o cabeçalho referente para uma rotina usando um percorredor (função do possessivo reverso):
+Rotina para que se compile o cabeçalho pertencente para uma rotina usando um percorredor (função do possessivo reverso):
   Se existir algum problema de compilação, retorne.
   Ative o sinalizador de função desta rotina.
   Adicione uma unidade semântica para as unidades semânticas desta rotina usando "Atribua".
@@ -3045,7 +3045,7 @@ Rotina para que se converta umas unidades semânticas para uma representação inte
     Se a unidade semântica atual for a unidade semântica, retorne.
   Reitere.
 
-Rotina para que se compile o cabeçalho referente para uma rotina usando um percorredor (função): \ POSSESSIVO REVERSO
+Rotina para que se compile o cabeçalho pertencente para uma rotina usando um percorredor (função): \ POSSESSIVO REVERSO
   Se existir algum problema de compilação, retorne.
   Ative o sinalizador de função desta rotina.
   Adicione uma unidade semântica para as unidades semânticas desta rotina usando "Atribua".
@@ -3085,7 +3085,7 @@ Rotina para que se compile o cabeçalho referente para uma rotina usando um perco
   Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
   Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas. \ para uso nos employs
 
-Rotina para que se compile o cabeçalho referente para uma rotina usando um percorredor (modo de compatibilidade): \ callback
+Rotina para que se compile o cabeçalho pertencente para uma rotina usando um percorredor (modo de compatibilidade): \ callback
   Se existir algum problema de compilação, retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Ative o sinalizador de compatibilidade desta rotina.
@@ -3098,7 +3098,7 @@ Rotina para que se compile o cabeçalho referente para uma rotina usando um perco
     Retorne.
   Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
 
-Rotina para que se compile o cabeçalho referente para uma rotina usando um percorredor (procedimento):
+Rotina para que se compile o cabeçalho pertencente para uma rotina usando um percorredor (procedimento):
   Se existir algum problema de compilação, retorne.
   Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor.
   Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
@@ -3261,7 +3261,7 @@ Rotina para que se adicione a rotina de finalização para um tipo (cadeia de cara
   \ Para isso ela move o valor da presente em [SP]  para o registrador e então adiciona 4 para [SP] .
   Lance a cabeçalho de rotina desta rotina sobre a string do cabeçalho desta rotina.
   Lance as instruções desta rotina sobre a string do corpo desta rotina.
-  Compile o cabeçalho referente à rotina.
+  Compile o cabeçalho pertencente à rotina.
 
 Rotina para que se adicione a rotina de finalização para um tipo (estrutura):
   Se o tipo for inexistente, retorne.
@@ -3279,7 +3279,7 @@ Rotina para que se adicione a rotina de finalização para um tipo (estrutura):
   Acrescente "Decodifique $58." para a string do corpo desta rotina. \ pop eax
   Lance a cabeçalho de rotina desta rotina sobre a string do cabeçalho desta rotina.
   Lance as instruções desta rotina sobre a string do corpo desta rotina.
-  Compile o cabeçalho referente à rotina.
+  Compile o cabeçalho pertencente à rotina.
 
 Rotina para que se adicione a rotina de alocação para um tipo:
   Se o tipo for inexistente, retorne.
@@ -3292,7 +3292,7 @@ Rotina para que se adicione a rotina de alocação para um tipo:
   Acrescente a quantidade de caracteres deste tipo do conteúdo deste tipo seguido de "." para a string do corpo desta rotina.
   Lance a cabeçalho de rotina desta rotina sobre a string do cabeçalho desta rotina.
   Lance as instruções desta rotina sobre a string do corpo desta rotina.
-  Compile o cabeçalho referente à rotina.
+  Compile o cabeçalho pertencente à rotina.
 
 Rotina para que se adicione a rotina de desalocação para um tipo:
   Se o tipo for inexistente, retorne.
@@ -3308,7 +3308,7 @@ Rotina para que se adicione a rotina de desalocação para um tipo:
   Acrescente "Desassocie o " junto com o nome deste tipo seguido de "." para a string do corpo desta rotina. \ Desaloque memória para o
   Lance a cabeçalho de rotina desta rotina sobre a string do cabeçalho desta rotina.
   Lance as instruções desta rotina sobre a string do corpo desta rotina.
-  Compile o cabeçalho referente à rotina.
+  Compile o cabeçalho pertencente à rotina.
 
 Rotina para que se adicione a rotina de destruição para um tipo:
   Se o tipo for inexistente, retorne.
@@ -3361,7 +3361,7 @@ Rotina para que se adicione a rotina de destruição para um tipo (listas):
   Acrescente "Reitere. " para a string do corpo desta rotina.
   Lance a cabeçalho de rotina desta rotina sobre a string do cabeçalho desta rotina.
   Lance as instruções desta rotina sobre a string do corpo desta rotina.
-  Compile o cabeçalho referente à rotina.
+  Compile o cabeçalho pertencente à rotina.
 
 Rotina para que se adicione a rotina de destruição para um tipo (ponteiros):
   Se o tipo for inexistente, retorne.
@@ -3386,7 +3386,7 @@ Rotina para que se adicione a rotina de destruição para um tipo (ponteiros):
   Acrescente "Desaloque o " junto com o nome deste tipo seguido de ". " para a string do corpo desta rotina. \ traduzir aqui
   Lance a cabeçalho de rotina desta rotina sobre a string do cabeçalho desta rotina.
   Lance as instruções desta rotina sobre a string do corpo desta rotina.
-  Compile o cabeçalho referente à rotina.
+  Compile o cabeçalho pertencente à rotina.
 
 Rotina para que se compile um endereço da pasta (catalogue as rotinas por utilização): \ Etapa #009
   Se existir algum problema de compilação, retorne.
@@ -3497,8 +3497,61 @@ Rotina para que se compile um endereço da pasta (conteúdo das rotinas): \ Etapa 
   Se existir algum problema de compilação, retorne.
   Escreva "Agrupando o conteúdo das rotinas..." junto com o texto CRLF para StdOut.
   Comece o temporizador de compilação do conteúdo das rotinas.
-  Compile os corpos referentes às rotinas.
+  Compile os corpos de todas as rotinas.
   Suspenda o temporizador de compilação do conteúdo das rotinas.
+
+Rotina para que se compile os corpos de todas as rotinas:
+  Compile o corpo pertencente à rotina denominada "Inicialize antes da execução".
+  Compile o corpo pertencente à rotina denominada "Execute o programa".
+  Compile o corpo pertencente à rotina denominada "Finalize após execução".
+
+Rotina para que se compile o corpo pertencente para uma rotina:
+  Se a rotina for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Se o sinalizador de compilação desta rotina estiver ativo, retorne.
+  Ative o sinalizador de compilação desta rotina.
+  Lance um percorredor sobre as instruções desta rotina.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor for o ponto&vírgula,
+    Compile o corpo pertencente à rotina usando o percorredor (sobrecarga de métodos);
+    Retorne. \ *** alternate wording
+  \Se o segmento inicial deste percorredor for uma palavra-chave de reutilização de rotina, compile o corpo pertencente à rotina usando o percorredor (cláusula de reutilização); Retorne.
+  Atribua a rotina utilizada atualmente para uma rotina denominada nova rotina.
+  Atribua a rotina à rotina utilizada atualmente.
+  Crie o catálogo de apelidos desta rotina usando 101.
+  Elimine apelidos duplicados desde os parâmetros desta rotina usando o catálogo de apelidos desta rotina.
+  Compile o corpo pertencente à rotina (etapa preliminar).
+  Itere.
+    Se existir algum problema de compilação, retorne.
+    Se o segmento inicial deste percorredor estiver em branco, pare.
+    Compile a próxima instrução usando o percorredor.
+  Reitere.
+  Compile o corpo pertencente à rotina (etapa conclusiva).
+  Atribua a nova rotina à rotina utilizada atualmente.
+  \Destrua o catálogo de apelidos desta rotina.
+
+Rotina para que se compile o corpo pertencente para uma rotina usando um percorredor (sobrecarga de métodos):
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação). \ TODO:  verificar se essa linha é necessária
+  Atribua a próxima rotina desta rotina para um rotina alvo.
+  Se a rotina alvo for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #17. Não foi possível encontrar o cabeçalho alternativo desta rotina." e o percorredor;
+    Retorne.
+  Atribua a representação interna da rotina deste rotina alvo para a representação de emprego desta rotina.
+  Compile o corpo pertencente à rotina alvo.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Rotina para que se compile um endereço da pasta (adição e compilação da rotina de inicialização): \ Etapa #011
   Se existir algum problema de compilação, retorne.
