@@ -3179,7 +3179,7 @@ Rotina para que se calcule os deslocamentos das redefinições em um tipo:
     Se o novo nome deste campo estiver em branco, reitere.
     Encontre um segundo campo usando o novo nome deste campo e os campos deste tipo.
     Se o segundo campo for inexistente,
-      Apresente uma mensagem de erro contendo "Erro #12. O campo '" 
+      Apresente uma mensagem de erro contendo "Erro #068. O campo '" 
       junto com o nome deste tipo seguido de "' não foi encontrado na estrutura '"
       junto com o novo nome deste campo seguido de "'.' Verifique se há erros de digitação."  e o endereço local deste campo;
       Retorne.
@@ -3340,11 +3340,11 @@ Rotina para que se adicione a rotina de destruição para um tipo (listas):
   Se o tipo for inexistente, retorne.
   Se existir algum problema de compilação, retorne.
   Se o primeiro campo destes campos deste tipo for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #1. O campo '" 
+    Apresente uma mensagem de erro contendo "Erro #069. O campo '" 
     junto com o nome deste primeiro campo destes campos deste tipo seguido de "' é inválido.'";
     Retorne. \
   Se o tipo deste primeiro campo destes campos deste tipo for inexistente,
-    Apresente a mensagem de erro contendo "Erro #2'. O tipo '" 
+    Apresente a mensagem de erro contendo "Erro #070'. O tipo '" 
     junto com o nome deste tipo deste primeiro campo destes campos deste tipo seguido de "' é inválido.'";
     Retorne.
   Atribua "Destrua [" junto com o nome deste tipo seguido de "]" para uma representação interna da rotina.
@@ -3435,13 +3435,63 @@ Rotina para que se organize o catálogo de rotinas úteis usando umas referências:
     Se a referência for inexistente, retorne.
     Atribua o ponteiro desta referência para uma rotina.
     Se a rotina for inexistente,
-      Apresente uma mensagem de erro contendo "Erro interno #134. A rotina não foi localizada";
+      Apresente uma mensagem de erro contendo "Erro #071 (interno). A rotina não foi localizada";
       Retorne.
     Copie as unidades semânticas desta rotina para umas unidades semânticas.
     Reduza as unidades semânticas por utilização.
     Catalogue a rotina usando as unidades semânticas e o catálogo geral de rotinas.
     Destrua as unidades semânticas.
   Reitere.
+
+Rotina para que se copie umas unidades semânticas para umas segunda unidades semânticas:
+  Destrua as segunda unidades semânticas.
+  Itere.
+    Obtenha uma unidade semântica desde as unidades semânticas.
+    Se a unidade semântica for inexistente, retorne.
+    Copie a unidade semântica para uma segunda unidade semântica.
+    Acrescente a segunda unidade semântica para as segunda unidades semânticas.
+  Reitere.
+
+Rotina para que se copie uma unidade semântica para uma segunda unidade semântica:
+  Se a unidade semântica for inexistente,
+    Esvazie a segunda unidade semântica;
+    Retorne.
+  Aloque memória para o segunda unidade semântica.
+  Atribua a string desta unidade semântica à string desta segunda unidade semântica.
+  Atribua o tipo desta unidade semântica ao tipo desta segunda unidade semântica.
+  Atribua a variável desta unidade semântica à variável desta segunda unidade semântica.
+  \ não copia subtexto
+  Atribua o tipo atual desta unidade semântica ao tipo atual desta segunda unidade semântica.
+
+Rotina para que se reduza umas unidades semânticas por utilização:
+  [Itere.]
+    Obtenha uma unidade semântica desde as unidades semânticas.
+    Se a unidade semântica for inexistente, retorne.
+    Se o tipo desta unidade semântica for inexistente, reitere.
+    Reduza o tipo desta unidade semântica para um tipo por utilização.
+    Se o tipo não for inexistente, 
+      Atribua o tipo ao tipo desta unidade semântica.
+  Reitere.
+
+Rotina para que se reduza um tipo para um segundo tipo por utilização:
+  Atribua o tipo ao segundo tipo.
+  Itere.
+    Se o segundo tipo for inexistente, retorne.
+    Se o nome deste segundo tipo for "texto hexadecimal", retorne.
+    Se o nome deste segundo tipo for "string", retorne.
+    Se o nome deste segundo tipo for "texto", retorne.
+    Se o nome deste segundo tipo for "número", retorne.
+    Se o nome deste segundo tipo for "ponteiro", retorne.
+    Se o nome deste segundo tipo for "lista",
+      Esvazie o segundo tipo;
+      Retorne.
+    \PAL
+    Se o tipo base deste segundo tipo for o segundo tipo,
+      Esvazie o segundo tipo;
+      Retorne.
+    Atribua o tipo base deste segundo tipo ao segundo tipo.
+  Reitere.
+
 
 Rotina para que se compile um endereço da pasta (conteúdo das rotinas): \ Etapa #010
   Se existir algum problema de compilação, retorne.

@@ -2062,25 +2062,8 @@ Rotina para que se copie uns campos para uns segundo campos (apenas campos de da
     Obtenha o campo desde o campos.
   Reitere.
 
-Rotina para que se copie uma unidade semântica para uma segunda unidade semântica:
-  Se a unidade semântica for inexistente,
-    Esvazie a segunda unidade semântica;
-    Retorne.
-  Aloque memória para o segunda unidade semântica.
-  Atribua a string desta unidade semântica à string desta segunda unidade semântica.
-  Atribua o tipo desta unidade semântica ao tipo desta segunda unidade semântica.
-  Atribua a variável desta unidade semântica à variável desta segunda unidade semântica.
-  \ não copia subtexto
-  Atribua o tipo atual desta unidade semântica ao tipo atual desta segunda unidade semântica.
 
-Rotina para que se copie umas unidades semânticas para uns segunda unidades semânticas:
-  Destrua a segunda unidades semânticas.
-  Itere.
-    Obtenha uma unidade semântica desde as unidades semânticas.
-    Se a unidade semântica for inexistente, retorne.
-    Copie a unidade semântica para uma segunda unidade semântica.
-    Acrescente a segunda unidade semântica para a segunda unidades semânticas.
-  Reitere.
+
 
 Rotina para que se crie uma função:
   Aloque memória para a função.
@@ -3446,32 +3429,7 @@ Rotina para que se carregue uns arquivos fonte usando um endereço da pasta e um 
 
 
 
-Rotina para que se reduza umas unidades semânticas por utilização:
-  Obtenha uma unidade semântica desde as unidades semânticas.
-  Se a unidade semântica for inexistente, retorne.
-  Se o tipo desta unidade semântica for inexistente, reitere.
-  Reduza o tipo desta unidade semântica para um tipo por utilização.
-  Se o tipo não for inexistente, atribua o tipo ao tipo desta unidade semântica.
-  Reitere.
 
-Rotina para que se reduza um tipo para um segundo tipo por utilização:
-  Atribua o tipo ao segundo tipo.
-  Itere.
-    Se o segundo tipo for inexistente, retorne.
-    Se o nome deste segundo tipo for "texto hexadecimal", retorne.
-    Se o nome deste segundo tipo for "string", retorne.
-    Se o nome deste segundo tipo for "texto", retorne.
-    Se o nome deste segundo tipo for "número", retorne.
-    Se o nome deste segundo tipo for "ponteiro", retorne.
-    Se o nome deste segundo tipo for "lista",
-    Esvazie o segundo tipo;
-    Retorne.
-    \PAL
-    Se o tipo base deste segundo tipo for o segundo tipo,
-    Esvazie o segundo tipo;
-    Retorne.
-    Atribua o tipo base deste segundo tipo ao segundo tipo.
-  Reitere.
 
 
 
