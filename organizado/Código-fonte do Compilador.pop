@@ -870,30 +870,7 @@ Rotina para que se limpe um termo:
 
 
 
-Rotina para que se compile o corpo pertencente para uma rotina:
-  Se a rotina for inexistente, retorne.
-  Se existir algum problema de compilação, retorne.
-  Se o sinalizador de compilação desta rotina estiver ativo, retorne.
-  Ative o sinalizador de compilação desta rotina.
-  Lance um percorredor sobre as instruções desta rotina.
-  Mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor for o ponto&vírgula,
-    Compile o corpo pertencente à rotina usando o percorredor (sobrecarga de métodos);
-    Retorne. \ *** alternate wording
-  \Se o segmento inicial deste percorredor for uma palavra-chave de reutilização de rotina, compile o corpo pertencente à rotina usando o percorredor (cláusula de reutilização); Retorne.
-  Atribua a rotina utilizada atualmente para um saved rotina.
-  Atribua a rotina à rotina utilizada atualmente.
-  Crie o catálogo de apelidos desta rotina usando 101.
-  Elimine apelidos duplicados desde os parâmetros desta rotina usando o catálogo de apelidos desta rotina.
-  Compile o corpo pertencente à rotina (etapa preliminar).
-  Itere.
-    Se existir algum problema de compilação, retorne.
-    Se o segmento inicial deste percorredor estiver em branco, pare.
-    Compile a próxima instrução usando o percorredor.
-  Reitere.
-  Compile o corpo pertencente à rotina (etapa conclusiva).
-  Atribua o saved rotina à rotina utilizada atualmente.
-  \Destrua o catálogo de apelidos desta rotina.
+
 
 Rotina para que se compile o corpo pertencente para uma rotina (etapa conclusiva):
   Se a rotina for inexistente, retorne.
@@ -913,21 +890,9 @@ Rotina para que se compile o corpo pertencente para uma rotina (etapa conclusiva
   Reitere.
   Adicione um quarto fragmento usando o etiqueta conclusiva.
 
-Rotina para que se compile o corpo pertencente para uma rotina usando um percorredor (sobrecarga de métodos):
-  Se existir algum problema de compilação, retorne.
-  Mova o percorredor (usando diretrizes de compilação). \ *** do we need this?
-  Atribua a próxima rotina desta rotina para um rotina alvo.
-  Se a rotina alvo for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #17. Não foi possível encontrar o cabeçalho alternativo desta rotina." e o percorredor;
-    Retorne.
-  Atribua a representação interna da rotina deste rotina alvo ao representação de emprego desta rotina.
-  Compile o corpo pertencente ao rotina alvo.
 
-Rotina para que se compile o corpo pertencente para uma rotina (etapa preliminar):
-  Se a rotina for inexistente, retorne.
-  Se existir algum problema de compilação, retorne.
-  Adicione um fragmento usando o etiqueta preliminar.
-  Adicione um segundo fragmento usando o etiqueta de laço.
+
+
 
 Rotina para que se compile o corpo pertencente para a rotina denominada uma string;
 Rotina para que se compile o corpo pertencente para a rotina denominado uma string:
@@ -2646,24 +2611,7 @@ Rotina para que se elimine apelidos duplicados desde umas variáveis:
   Elimine apelidos duplicados desde as variáveis usando o catálogo.
   Destrua o catálogo.
 
-Rotina para que se elimine apelidos duplicados desde umas variáveis usando um catálogo:
-  Se o catálogo for inexistente, retorne.
-  Itere.
-    Obtenha uma variável desde as variáveis.
-    Se a variável for inexistente, retorne.
-    Elimine apelidos duplicados usando a variável e o catálogo.
-  Reitere.
 
-Rotina para que se elimine apelidos duplicados usando uma variável e um catálogo:
-  Se a variável for inexistente, retorne.
-  Se o catálogo for inexistente, retorne.
-  Encontre uma segunda variável usando o apelido desta variável e o catálogo.
-  Se a segunda variável for inexistente, encontre a segunda variável usando o nome desta variável e o catálogo.
-  Se a segunda variável for inexistente,
-    Catalogue a variável usando o apelido desta variável e o catálogo;
-    Retorne.
-  Limpe o apelido desta segunda variável.
-  Limpe o apelido desta variável.
 
 
 
