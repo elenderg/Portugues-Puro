@@ -3515,7 +3515,9 @@ Rotina para que se compile o corpo pertencente para uma rotina:
   Se o segmento inicial deste percorredor for o ponto&vírgula,
     Compile o corpo pertencente à rotina usando o percorredor (sobrecarga de métodos);
     Retorne. \ *** alternate wording
-  \Se o segmento inicial deste percorredor for uma palavra-chave de reutilização de rotina, compile o corpo pertencente à rotina usando o percorredor (cláusula de reutilização); Retorne.
+  \Se o segmento inicial deste percorredor for uma palavra-chave de reutilização de rotina, \ EMPLOY
+    \Compile o corpo pertencente à rotina usando o percorredor (cláusula de reutilização); 
+    \Retorne.
   Atribua a rotina utilizada atualmente para uma rotina denominada nova rotina.
   Atribua a rotina à rotina utilizada atualmente.
   Crie o catálogo de apelidos desta rotina usando 101.
@@ -3540,9 +3542,31 @@ Rotina para que se compile o corpo pertencente para uma rotina usando um percorr
   Atribua a representação interna da rotina deste rotina alvo para a representação de emprego desta rotina.
   Compile o corpo pertencente à rotina alvo.
 
+Rotina para que se elimine apelidos duplicados desde umas variáveis usando um catálogo:
+  Se o catálogo for inexistente, retorne.
+  Itere.
+    Obtenha uma variável desde as variáveis.
+    Se a variável for inexistente, retorne.
+    Elimine apelidos duplicados usando a variável e o catálogo.
+  Reitere.
 
+Rotina para que se elimine apelidos duplicados usando uma variável e um catálogo:
+  Se a variável for inexistente, retorne.
+  Se o catálogo for inexistente, retorne.
+  Encontre uma segunda variável usando o apelido desta variável e o catálogo.
+  Se a segunda variável for inexistente, 
+    Encontre a segunda variável usando o nome desta variável e o catálogo.
+  Se a segunda variável for inexistente,
+    Catalogue a variável usando o apelido desta variável e o catálogo;
+    Retorne.
+  Limpe o apelido desta segunda variável.
+  Limpe o apelido desta variável.
 
-
+Rotina para que se compile o corpo pertencente para uma rotina (etapa preliminar):
+  Se a rotina for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Adicione um fragmento usando o etiqueta preliminar.
+  Adicione um segundo fragmento usando o etiqueta de laço.
 
 
 
