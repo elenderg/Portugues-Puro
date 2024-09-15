@@ -234,7 +234,8 @@ Rotina para que se adicione fragmentos diversos usando uma string e uma variável
   Adicione uma quinta unidade semântica para as unidades semânticas usando a terceira string.
   Adicione uma sexta unidade semântica para as unidades semânticas usando o tipo desta terceira variável.
   Encontre uma rotina usando as unidades semânticas.
-  Se a rotina for inexistente, converta as unidades semânticas para uma representação interna da rotina.
+  Se a rotina for inexistente, 
+    Converta as unidades semânticas para uma representação interna da rotina.
   Destrua as unidades semânticas.
   Se a rotina for inexistente,
     Apresente uma mensagem de erro contendo "Erro #4. A rotina para que se '" junto com a representação interna da rotina seguido de "' não pôde ser localizada." e o endereço de byte;

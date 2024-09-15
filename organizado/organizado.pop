@@ -3744,7 +3744,7 @@ Rotina para que se compile um termo usando um percorredor (subtração de termo):
     Retorne.
   Adicione uma variável intermediária usando o nome do tipo deste novo termo e o caractere inicial deste segmento inicial deste percorredor.
   Adicione fragmentos diversos usando "Atribua" e a variável deste novo termo e "para" e a variável intermediária e o endereço local deste novo termo.
-  Adicione two fragmentos usando "Inverta o sinal de" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione outros dois fragmentos usando "Inverta o sinal de" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
   Atribua a variável intermediária à variável deste termo.
   Limpe a frase deste termo.
 
@@ -3847,21 +3847,37 @@ Rotina para que se adicione um fragmento usando uma etiqueta e uma rotina:
   Atribua a rotina à rotina deste fragmento.
   Compile o corpo pertencente à rotina.
 
-
-
-
-
-Rotina para que se adicione two fragmentos usando uma string e uma variável e um endereço local:
+Rotina para que se adicione outros dois fragmentos usando uma string e uma variável e um endereço local:
   Adicione um fragmento usando o etiqueta de inserção de endereço [na stack] e a variável.
   Adicione uma unidade semântica para umas unidades semânticas usando a string.
   Adicione uma segunda unidade semântica para as unidades semânticas usando o tipo desta variável.
   Encontre uma rotina usando as unidades semânticas.
-  Se a rotina for inexistente, converta as unidades semânticas para uma representação interna da rotina.
+  Se a rotina for inexistente, 
+    Converta as unidades semânticas para uma representação interna da rotina.
   Destrua as unidades semânticas.
   Se a rotina for inexistente,
-    Apresente uma mensagem de erro contendo "Erro. A rotina para que se '" junto com a representação interna da rotina seguido de "' ainda não foi definida." e o endereço local;
+    Apresente uma mensagem de erro contendo "Erro. A 'Rotina para que se "
+    junto com a representação interna da rotina seguido de "' ainda não foi definida." e o endereço local;
     Retorne.
   Adicione um segundo fragmento usando a etiqueta de demanda interna e a rotina.
+
+Rotina para que se compile um termo usando um percorredor (adição de termo):
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Compile o termo usando o percorredor.
+  Se a variável deste termo for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #103. Comando 'Posigate' inválido. O termo da variável'" 
+    junto com a frase deste termo seguido de "' não foi localizado." e o percorredor;
+    Retorne.
+  Limpe a frase deste termo.
+
+
+
+
+
+
+
+
 
 
 
