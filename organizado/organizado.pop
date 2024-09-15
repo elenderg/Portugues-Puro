@@ -3765,10 +3765,12 @@ Rotina para que se adicione fragmentos diversos usando uma string e uma variável
   Adicione uma terceira unidade semântica para as unidades semânticas usando a segunda string.
   Adicione uma quarta unidade semântica para as unidades semânticas usando o tipo desta segunda variável.
   Encontre uma rotina usando as unidades semânticas.
-  Se a rotina for inexistente, converta as unidades semânticas para uma representação interna da rotina.
+  Se a rotina for inexistente, 
+    Converta as unidades semânticas para uma representação interna da rotina.
   Destrua as unidades semânticas.
   Se a rotina for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #3. A rotina para que se '" junto com a representação interna da rotina seguido de "' não foi encontrada." e o endereço local;
+    Apresente uma mensagem de erro contendo "Erro #003. A 'Rotina para que se " 
+    junto com a representação interna da rotina seguido de "' não foi encontrada." e o endereço local;
     Retorne.
   Adicione um terceiro fragmento usando a etiqueta de demanda interna e a rotina.
 
@@ -3780,6 +3782,74 @@ Rotina para que se adicione um fragmento usando uma etiqueta e uma variável:
   Acrescente o fragmento para os fragmentos desta rotina utilizada atualmente.
   Atribua a variável à variável deste fragmento.
   Ative o sinalizador de compilação na variável.
+
+Rotina para que se encontre uma rotina usando umas unidades semânticas:
+  Esvazie a rotina.
+  Encontre a rotina usando 
+    Uma representação interna da rotina e 
+    A primeira unidade semântica destas unidades semânticas e 
+    O catálogo geral de rotinas.
+
+Rotina para que se encontre uma rotina usando uma representação interna da rotina e uma unidade semântica e um catálogo:
+  Se a unidade semântica for inexistente, retorne.
+  Esvazie a rotina.
+  Preserve a representação interna da rotina.
+  Atribua o tipo desta unidade semântica ao tipo atual desta unidade semântica.
+  Lance o subtexto atual desta unidade semântica sobre a string desta unidade semântica.
+  Itere.
+    Acrescente a unidade semântica para a representação interna da rotina (inserção de colchetes).
+    Encontre uma referência usando a representação interna da rotina e o catálogo.
+    Se a referência não for inexistente, atribua o ponteiro deste referência à rotina.
+    Se a referência não for inexistente, encontre a rotina usando a representação interna da rotina e a próxima unidade semântica desta unidade semântica e o catálogo.
+    Se a rotina não for inexistente, pare.
+    Defina o tipo de a unidade semântica.
+    Se a unidade semântica estiver indefinida, pare.
+    Atribua a representação interna da rotina original para a representação interna da rotina.
+  Reitere.
+
+Rotina para que se acrescente uma unidade semântica para uma representação interna da rotina (inserção de colchetes):
+  Se a unidade semântica for inexistente, retorne.
+  Se a representação interna da rotina não estiver em branco, 
+    Acrescente o caractere de espaço para a representação interna da rotina.
+  Se o subtexto atual desta unidade semântica não estiver em branco,
+    Acrescente o subtexto atual desta unidade semântica para a representação interna da rotina ;
+    Retorne.
+  Se o tipo atual desta unidade semântica não for inexistente,
+    Acrescente "[" e o nome deste tipo atual desta unidade semântica e "]" para a representação interna da rotina (rapidamente);
+    \ colchetes monikettes
+    Retorne.
+
+\ Rotina para que se acrescente 3 strings distintas para uma string.
+Rotina para que se acrescente uma string e uma segunda string e uma terceira string para uma quarta string (rapidamente):
+  Atribua a quantidade de caracteres desta quarta string para uma quantidade de caracteres.
+  Adicione a quantidade de caracteres desta string para a quantidade de caracteres. \ Atribua a quantidade de caracteres da 1ª string para a quantidade de caracteres.
+  Adicione a quantidade de caracteres desta segunda string para a quantidade de caracteres.
+  Adicione a quantidade de caracteres desta terceira string para a quantidade de caracteres.
+  Reaponte um ponteiro usando a quantidade de caracteres.
+  Atribua o ponteiro para um endereço de byte .
+  Copie bytes desde o caractere inicial desta quarta string para o endereço de byte pela quantidade de caracteres desta quarta string.
+  Adicione a quantidade de caracteres desta quarta string para o endereço de byte .
+  Copie bytes desde o caractere inicial desta string para o endereço de byte pela quantidade de caracteres desta string.
+  Adicione a quantidade de caracteres desta string para o endereço de byte .
+  Copie bytes desde o caractere inicial desta segunda string para o endereço de byte pela quantidade de caracteres desta segunda string.
+  Adicione a quantidade de caracteres desta segunda string para o endereço de byte .
+  Copie bytes desde o caractere inicial desta terceira string para o endereço de byte pela quantidade de caracteres desta terceira string.
+  Desassocie o caractere inicial desta quarta string.
+  Atribua o ponteiro ao caractere inicial desta quarta string.
+  Atribua o ponteiro mais a quantidade de caracteres menos 1 ao caractere final desta quarta string.
+
+Rotina para que se adicione um fragmento usando uma etiqueta e uma rotina:
+  Se a rotina utilizada atualmente for inexistente,
+    Esvazie o fragmento;
+    Retorne.
+  Crie o fragmento usando a etiqueta.
+  Acrescente o fragmento para os fragmentos desta rotina utilizada atualmente.
+  Atribua a rotina à rotina deste fragmento.
+  Compile o corpo pertencente à rotina.
+
+
+
+
 
 Rotina para que se adicione two fragmentos usando uma string e uma variável e um endereço local:
   Adicione um fragmento usando o etiqueta de inserção de endereço [na stack] e a variável.
