@@ -985,40 +985,7 @@ Rotina para que se compile um endereço da pasta usando um nível de profundidade 
   Carregue os arquivos fontes usando o nível de profundidade.
   Suspenda o temporizador de operacionalização.
 
-Rotina para que se compile uma expressão matematica usando um percorredor:
-  Se existir algum problema de compilação, retorne.
-  Compile um termo usando o percorredor.
-  Atribua o termo ao expressão matematica.
-  Itere.
-    Se existir algum problema de compilação, retorne.
-    Se o segmento inicial deste percorredor não for algum operador aritmético, retorne.
-    Se o segmento inicial deste percorredor for algum operador de divisão,
-    Compile o expressão matematica usando o percorredor (operador de divisão);
-    Reitere.
-    Se o segmento inicial deste percorredor for algum operador de subtração,
-    Compile o expressão matematica usando o percorredor (operador de subtração);
-    Reitere.
-    Se o segmento inicial deste percorredor for algum operador de adição,
-    Compile o expressão matematica usando o percorredor (operador de adição);
-    Reitere.
-    Se o segmento inicial deste percorredor for algum operador de concatenação,
-    Compile o expressão matematica usando o percorredor (operador de concatenação);
-    Reitere.
-    Se o segmento inicial deste percorredor for algum operador de multiplicação,
-    Compile o expressão matematica usando o percorredor (operador de multiplicação);
-    Reitere.
-    Se o segmento inicial deste percorredor for "junto",
-    Compile o expressão matematica usando o percorredor (operador de concatenação);
-    Reitere.
-    Se o segmento inicial deste percorredor for "juntamente",
-    Compile o expressão matematica usando o percorredor (operador de concatenação);
-    Reitere.
-    Se o segmento inicial deste percorredor for "seguido",
-    Compile o expressão matematica usando o percorredor (operador de concatenação);
-    Reitere.
-    Se o segmento inicial deste percorredor for "acompanhado",
-    Compile o expressão matematica usando o percorredor (operador de concatenação);
-    Reitere.
+
 
 Rotina para que se compile uma expressão matematica usando um percorredor (operador de divisão):
   Se existir algum problema de compilação, retorne.
@@ -1523,18 +1490,7 @@ Rotina para que se compile uma referência da rotina usando um percorredor (strin
   Adicione uma unidade semântica para a referência da rotina usando o segmento inicial deste percorredor.
   Mova o percorredor (usando diretrizes de compilação).
 
-Rotina para que se compile um termo usando um percorredor:
-  Limpe o termo.
-  Se existir algum problema de compilação, retorne.
-  Compile o termo usando o percorredor (análise preliminar).
-  Se o percorredor estiver sobre algum simile, retorne. \ added for invisible turtle project ***
-  \Se o segmento inicial deste percorredor for "as", compile o termo usando o percorredor (cláusula comparativa). \preposição
-  \Se o segmento inicial deste percorredor for "tão", compile o termo usando o percorredor (cláusula comparativa). \ me parece desnecessário por ser usado apenas em funções.
-  Se o segmento inicial deste percorredor for "quão", compile o termo usando o percorredor (cláusula comparativa).
-  Se o segmento inicial deste percorredor for "quanto", compile o termo usando o percorredor (cláusula comparativa).
-  Se o segmento inicial deste percorredor for "como", compile o termo usando o percorredor (cláusula comparativa).
-  \Se o segmento inicial deste percorredor for "que nem", compile o termo usando o percorredor (cláusula comparativa).
-  Se o segmento inicial deste percorredor for "/", compile o termo usando o percorredor (proporção de execução).
+
 
 Rotina para que se compile um termo usando um percorredor (cláusula comparativa):
   Se existir algum problema de compilação, retorne.
@@ -1556,25 +1512,7 @@ Rotina para que se compile um termo usando um percorredor (cláusula comparativa)
   Atribua o scratch à variável deste termo.
   Limpe a frase deste termo.
 
-Rotina para que se compile um termo usando um percorredor (análise preliminar):
-  Se existir algum problema de compilação, retorne.
-  Se o segmento inicial deste percorredor for o sinal de subtração,
-    Compile o termo usando o percorredor (subtração de termo);
-    Retorne.
-  Se o segmento inicial deste percorredor for o sinal de adição,
-    Compile o termo usando o percorredor (adição de termo);
-    Retorne.
-  Se o segmento inicial deste percorredor for o início de alguma variável,
-    Compile o termo usando o percorredor (variável);
-    Retorne.
-  Se o segmento inicial deste percorredor for o início de alguma variável local,
-    Compile o termo usando o percorredor (nova variável local);
-    Retorne.
-  Se o segmento inicial deste percorredor for algum valor literal,
-    Compile o termo usando o percorredor (valor literal);
-    Retorne.
-  Apresente uma mensagem de erro contendo "Erro #95. O Compilador esperava encontrar um termo. Encontrado: '"
-  junto com o segmento inicial deste percorredor seguido de "'." e o percorredor.
+
 
 Rotina para que se compile um termo usando um percorredor (redirecionamentos de endereços - campos de estruturas):
   Se a variável deste termo for inexistente,
@@ -1610,20 +1548,7 @@ Rotina para que se compile um termo usando um percorredor (valor literal):
   Limpe o frase deste termo.
   Compile o termo usando o percorredor (possessivos).
 
-Rotina para que se compile um termo usando um percorredor (subtração de termo):
-  Se existir algum problema de compilação, retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Compile uma segunda termo usando o percorredor.
-  Se existir algum problema de compilação, retorne.
-  Se a variável desta segunda termo for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #99. Comando 'inverta' inválido. A variável: "
-    junto com o frase desta segunda termo seguido de "' não foi encontrada." e o percorredor;
-    Retorne.
-  Adicione uma variável intermediária usando o nome do tipo desta segunda termo e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione fragmentos diversos usando "Atribua" e a variável desta segunda termo e "para" e a variável intermediária e o endereço local desta segunda termo.
-  Adicione two fragmentos usando "inverta o sinal de" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
-  Atribua a variável intermediária à variável deste termo.
-  Limpe o frase deste termo.
+
 
 Rotina para que se compile um termo usando um percorredor (nova variável local):
   Se existir algum problema de compilação, retorne.
