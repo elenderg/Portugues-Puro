@@ -3565,8 +3565,102 @@ Rotina para que se elimine apelidos duplicados usando uma variável e um catálogo
 Rotina para que se compile o corpo pertencente para uma rotina (etapa preliminar):
   Se a rotina for inexistente, retorne.
   Se existir algum problema de compilação, retorne.
-  Adicione um fragmento usando o etiqueta preliminar.
-  Adicione um segundo fragmento usando o etiqueta de laço.
+  Adicione um fragmento usando a etiqueta preliminar.
+  Adicione um segundo fragmento usando a etiqueta de laço.
+
+Rotina para que se adicione um fragmento usando uma etiqueta:
+  Se a rotina utilizada atualmente for inexistente,
+    Esvazie o fragmento;
+    Retorne.
+  Crie o fragmento usando a etiqueta.
+  Acrescente o fragmento para os fragmentos desta rotina utilizada atualmente.
+
+Rotina para que se crie um fragmento usando uma etiqueta:
+  Aloque memória para o fragmento.
+  Atribua a etiqueta à etiqueta deste fragmento.
+
+Rotina para que se compile a próxima instrução usando um percorredor:
+  Se existir algum problema de compilação, retorne.
+  Se o segmento inicial deste percorredor for algum comando condicional,
+    Compile a próxima instrução usando o percorredor (cláusula de condicional);
+    Retorne.
+  Se o segmento inicial deste percorredor for algum comando de percorrimento,
+    Compile a próxima instrução usando o percorredor (cláusula de inicio de laço);
+    Retorne.
+  Se o segmento inicial deste percorredor for algum comando de proteção,
+    Compile a próxima instrução usando o percorredor (cláusula de isolamento);
+    Retorne.
+  Se o segmento inicial deste percorredor não for o início de alguma declaração,
+    Apresente uma mensagem de erro contendo "Erro #50. Esperado declaração. Encontrado: " 
+    junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
+    Retorne.
+  Compile a próxima instrução usando o percorredor (demais cláusulas).
+  Se o segmento inicial deste percorredor não for o ponto final,
+    Apresente a mensagem de erro contendo "Erro #51. Este comando está incorreto ou é uma palavra-chave reservada." e o percorredor;
+    Retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+
+Rotina para que se compile a próxima instrução usando um percorredor (cláusula de condicional):
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Compile umas unidades semânticas usando o percorredor.
+  Remova alguns termos negativos desde as unidades semânticas retornando um sinalizador.
+  Encontre uma rotina usando as unidades semânticas.
+  Se a rotina não for inexistente, adicione push fragmentos usando as unidades semânticas.
+  Se a rotina for inexistente, converta as unidades semânticas para uma representação interna da rotina.
+  Destrua as unidades semânticas.
+  Se a rotina for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #61. A rotina para que se determine se '"
+    junto com a representação interna da rotina seguido de "' não existe." e o percorredor;
+    Retorne.
+  Se o sinalizador de deliberação desta rotina não estiver ativo,
+    Apresente a mensagem de erro contendo "Erro #62. Necessário utilizar um decisor." e o percorredor;
+    Retorne.
+  \ Se o segmento inicial deste percorredor não for a vírgula, apresente a mensagem de erro contendo "Acho que você esqueceu de uma vírgula, eu achei isso aqui: " junto com o segmento inicial deste percorredor seguido de "." e o percorredor; Retorne.
+  Se o segmento inicial deste percorredor não for qualquer separador de comandos,
+    Apresente a mensagem de erro contendo "Erro #63. Necessário incluir uma vírgula ao invés de: "
+    junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
+    Retorne.
+  Adicione um fragmento usando a etiqueta de demanda interna e a rotina.
+  Se o sinalizador estiver ativo, adicione um segundo fragmento usando a etiqueta de negação lógica.
+  Adicione um terceiro fragmento usando o etiqueta de desvio falso.
+  Mova o percorredor (usando diretrizes de compilação).
+  Itere.
+    Compile a próxima instrução usando o percorredor (demais cláusulas).
+    Se existir algum problema de compilação, retorne.
+    Se o segmento inicial deste percorredor for o ponto&vírgula,
+    Mova o percorredor (usando diretrizes de compilação);
+    Reitere.
+    Se o segmento inicial deste percorredor não for o ponto final,
+    Apresente a mensagem de erro contendo "Erro #64. Necessário incluir um '.' ao invés de: " junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
+    Retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Adicione um quarto fragmento usando o etiqueta delimitadora de bloco condicional.
+
+Rotina para que se compile umas unidades semânticas usando um percorredor:
+    Se existir algum problema de compilação, retorne.
+    Se o percorredor estiver sobre algum unidade semântica string,
+      Adicione uma unidade semântica para as unidades semânticas usando o segmento inicial deste percorredor;
+      Mova o percorredor (usando diretrizes de compilação); Reitere.
+    Se o segmento inicial deste percorredor não for o início de alguma expressão matematica, retorne.
+    Compile uma expressão matematica usando o percorredor.
+    Se existir algum problema de compilação, retorne.
+    Adicione uma segunda unidade semântica para as unidades semânticas usando o expressão matematica.
+  Reitere.
+
+Função para que se determine se um percorredor está sobre algum unidade semântica string:
+  Se o segmento inicial deste percorredor estiver em branco, diga não.
+  Se o percorredor estiver sobre algum artigo definido, diga não.
+  Se o percorredor estiver sobre algum artigo indefinido, diga não.
+  Se o segmento inicial deste percorredor for algum possessivo inglês, diga não.
+  Se o segmento inicial deste percorredor for algum valor literal, diga não.
+  Se o segmento inicial deste percorredor for algum sinal de pontuação, diga não.
+  Se o segmento inicial deste percorredor for algum símbolo, diga não.
+  Se o segmento inicial deste percorredor for "então", diga não.
+  Diga sim.
+
+
+
 
 
 
