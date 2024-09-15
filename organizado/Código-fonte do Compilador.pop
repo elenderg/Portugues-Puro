@@ -137,14 +137,7 @@ Rotina para que se adicione um fragmento usando uma etiqueta e um sinalizador:
   Acrescente o fragmento para os fragmentos desta rotina utilizada atualmente.
   Atribua o sinalizador ao sinalizador deste fragmento.
 
-Rotina para que se adicione um fragmento usando uma etiqueta e uma rotina:
-  Se a rotina utilizada atualmente for inexistente,
-    Esvazie o fragmento;
-    Retorne.
-  Crie o fragmento usando a etiqueta.
-  Acrescente o fragmento para os fragmentos desta rotina utilizada atualmente.
-  Atribua a rotina à rotina deste fragmento.
-  Compile o corpo pertencente à rotina.
+
 
 
 
@@ -494,15 +487,7 @@ Rotina para que se acrescente uma unidade semântica para uma representação inter
     Acrescente a string desta unidade semântica para a representação interna da rotina ;
     Retorne.
 
-Rotina para que se acrescente uma unidade semântica para uma representação interna da rotina (inserção de colchetes):
-  Se a unidade semântica for inexistente, retorne.
-  Se a representação interna da rotina não estiver em branco, acrescente o caractere de espaço para a representação interna da rotina.
-  Se o subtexto atual desta unidade semântica não estiver em branco,
-    Acrescente o subtexto atual desta unidade semântica para a representação interna da rotina ;
-    Retorne.
-  Se o tipo atual desta unidade semântica não for inexistente,
-    Acrescente "[" e o nome deste tipo atual desta unidade semântica e "]" para a representação interna da rotina (rapidamente);
-    Retorne.
+
 
 Rotina para que se acrescente um número para um trecho (cifra hexadecimal com separador):
   Converta o número para uma cifra hexadecimal.
@@ -523,24 +508,7 @@ Rotina para que se acrescente uma rotina para um trecho (com separador):
     Retorne.
   Acrescente a representação interna da rotina deste rotina para o trecho (com separador).
 
-\ Rotina para que se acrescente 3 strings distintas para uma string.
-Rotina para que se acrescente uma string e uma segunda string e uma terceira string para uma quarta string (rapidamente):
-  Atribua a quantidade de caracteres desta quarta string para uma quantidade de caracteres. \ Atribua a quantidade de caracteres da 4ª string para uma quantidade de caracteres.
-  Adicione a quantidade de caracteres desta string para a quantidade de caracteres. \ Atribua a quantidade de caracteres da 1ª string para a quantidade de caracteres.
-  Adicione a quantidade de caracteres desta segunda string para a quantidade de caracteres. \ Atribua a quantidade de caracteres da 2ª string para a quantidade de caracteres.
-  Adicione a quantidade de caracteres desta terceira string para a quantidade de caracteres. \ Atribua a quantidade de caracteres da 3ª string para a quantidade de caracteres.
-  Reaponte um ponteiro usando a quantidade de caracteres.
-  Atribua o ponteiro para um endereço de byte .
-  Copie bytes desde o caractere inicial desta quarta string para o endereço de byte pelo quantidade de caracteres desta quarta string.
-  Adicione a quantidade de caracteres desta quarta string para o endereço de byte .
-  Copie bytes desde o caractere inicial desta string para o endereço de byte pelo quantidade de caracteres desta string.
-  Adicione a quantidade de caracteres desta string para o endereço de byte .
-  Copie bytes desde o caractere inicial desta segunda string para o endereço de byte pelo quantidade de caracteres desta segunda string.
-  Adicione a quantidade de caracteres desta segunda string para o endereço de byte .
-  Copie bytes desde o caractere inicial desta terceira string para o endereço de byte pelo quantidade de caracteres desta terceira string.
-  Desassocie o caractere inicial desta quarta string.
-  Atribua o ponteiro ao caractere inicial desta quarta string.
-  Atribua o ponteiro mais a quantidade de caracteres menos 1 ao caractere final desta quarta string.
+
 
 Rotina para que se acrescente uma string para um trecho (com separador):
   Acrescente a string para o trecho.
@@ -2491,26 +2459,9 @@ Rotina para que se encontre uma DLL usando uma string:
 
 
 
-Rotina para que se encontre uma rotina usando uma representação interna da rotina e uma unidade semântica e um catálogo:
-  Se a unidade semântica for inexistente, retorne.
-  Esvazie a rotina.
-  Preserve a representação interna da rotina.
-  Atribua o tipo desta unidade semântica ao tipo atual desta unidade semântica.
-  Lance o subtexto atual desta unidade semântica sobre a string desta unidade semântica.
-  Itere.
-    Acrescente a unidade semântica para a representação interna da rotina (inserção de colchetes).
-    Encontre uma referência usando a representação interna da rotina e o catálogo.
-    Se a referência não for inexistente, atribua o ponteiro deste referência à rotina.
-    Se a referência não for inexistente, encontre a rotina usando a representação interna da rotina e a próxima unidade semântica desta unidade semântica e o catálogo.
-    Se a rotina não for inexistente, pare.
-    Defina o tipo de a unidade semântica.
-    Se a unidade semântica estiver indefinida, pare.
-    Atribua a representação interna da rotina original para a representação interna da rotina.
-  Reitere.
 
-Rotina para que se encontre uma rotina usando umas unidades semânticas:
-  Esvazie a rotina.
-  Encontre a rotina usando uma representação interna da rotina e a primeira unidade semântica destas unidades semânticas e o catálogo geral de rotinas.
+
+
 
 Rotina para que se encontre uma rotina usando uma string e uma segunda string e uma terceira string e um quarto string:
   Adicione uma unidade semântica para umas unidades semânticas usando a string.
