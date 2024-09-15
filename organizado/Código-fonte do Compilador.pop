@@ -146,14 +146,7 @@ Rotina para que se adicione um fragmento usando uma etiqueta e uma rotina:
   Atribua a rotina à rotina deste fragmento.
   Compile o corpo pertencente à rotina.
 
-Rotina para que se adicione um fragmento usando uma etiqueta e uma variável:
-  Se a rotina utilizada atualmente for inexistente,
-    Esvazie o fragmento;
-    Retorne.
-  Crie o fragmento usando a etiqueta.
-  Acrescente o fragmento para os fragmentos desta rotina utilizada atualmente.
-  Atribua a variável à variável deste fragmento.
-  Ative o sinalizador de compilação na variável.
+
 
 Rotina para que se adicione um fragmento usando uma etiqueta e uma variável e uma segunda variável:
   Se a rotina utilizada atualmente for inexistente,
@@ -181,14 +174,7 @@ Rotina para que se adicione uma DLL para umas DLLs usando um nome da DLL:
   Acrescente a DLL para as DLLs.
   Atribua o nome da DLL ao nome desta DLL.
 
-Rotina para que se adicione uma variável intermediária usando um nome do tipo e um endereço local:
-  Se a rotina utilizada atualmente for inexistente,
-    Esvazie a variável intermediária;
-    Retorne.
-  Adicione a variável intermediária para as variáveis locais desta rotina utilizada atualmente usando "local" e o endereço local.
-  Gere o nome desta variável intermediária usando "~I".
-  Atribua o nome do tipo ao nome do tipo desta variável intermediária.
-  Destrinche a variável intermediária.
+
 
 
 
@@ -242,20 +228,7 @@ Rotina para que se adicione um scratch usando um nome do tipo e um endereço loca
   Atribua o nome do tipo ao nome do tipo deste scratch.
   Destrinche o scratch.
 
-Rotina para que se adicione fragmentos diversos usando uma string e uma variável e uma segunda string e uma segunda variável e um endereço local:
-  Adicione um fragmento usando o etiqueta de inserção de endereço [na stack] e a segunda variável.
-  Adicione um segundo fragmento usando o etiqueta de inserção de endereço [na stack] e a variável.
-  Adicione uma unidade semântica para umas unidades semânticas usando a string.
-  Adicione uma segunda unidade semântica para as unidades semânticas usando o tipo desta variável.
-  Adicione uma terceira unidade semântica para as unidades semânticas usando a segunda string.
-  Adicione uma quarta unidade semântica para as unidades semânticas usando o tipo desta segunda variável.
-  Encontre uma rotina usando as unidades semânticas.
-  Se a rotina for inexistente, converta as unidades semânticas para uma representação interna da rotina.
-  Destrua as unidades semânticas.
-  Se a rotina for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #3. A rotina para que se '" junto com a representação interna da rotina seguido de "' não foi encontrada." e o endereço local;
-    Retorne.
-  Adicione um terceiro fragmento usando a etiqueta de demanda interna e a rotina.
+
 
 Rotina para que se adicione fragmentos diversos usando uma string e uma variável e uma segunda string e uma segunda variável e uma terceira string e um terceira variável e um endereço de byte :
   Adicione um fragmento usando o etiqueta de inserção de endereço [na stack] e o terceira variável.
@@ -277,17 +250,7 @@ Rotina para que se adicione fragmentos diversos usando uma string e uma variável
 
 
 
-Rotina para que se adicione two fragmentos usando uma string e uma variável e um endereço local:
-  Adicione um fragmento usando o etiqueta de inserção de endereço [na stack] e a variável.
-  Adicione uma unidade semântica para umas unidades semânticas usando a string.
-  Adicione uma segunda unidade semântica para as unidades semânticas usando o tipo desta variável.
-  Encontre uma rotina usando as unidades semânticas.
-  Se a rotina for inexistente, converta as unidades semânticas para uma representação interna da rotina.
-  Destrua as unidades semânticas.
-  Se a rotina for inexistente,
-    Apresente uma mensagem de erro contendo "Erro. A rotina para que se '" junto com a representação interna da rotina seguido de "' ainda não foi definida." e o endereço local;
-    Retorne.
-  Adicione um segundo fragmento usando a etiqueta de demanda interna e a rotina.
+
 
 
 

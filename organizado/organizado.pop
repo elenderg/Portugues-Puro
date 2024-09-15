@@ -3739,18 +3739,59 @@ Rotina para que se compile um termo usando um percorredor (subtração de termo):
   Compile um novo termo usando o percorredor.
   Se existir algum problema de compilação, retorne.
   Se a variável deste novo termo for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #99. Comando 'inverta' inválido. A variável: "
+    Apresente uma mensagem de erro contendo "Erro #99. Identificador inválido após o sinal de subtração. A variável: "
     junto com a frase deste novo termo seguido de "' não foi encontrada." e o percorredor;
     Retorne.
   Adicione uma variável intermediária usando o nome do tipo deste novo termo e o caractere inicial deste segmento inicial deste percorredor.
   Adicione fragmentos diversos usando "Atribua" e a variável deste novo termo e "para" e a variável intermediária e o endereço local deste novo termo.
-  Adicione two fragmentos usando "inverta o sinal de" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione two fragmentos usando "Inverta o sinal de" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
   Atribua a variável intermediária à variável deste termo.
   Limpe a frase deste termo.
 
+Rotina para que se adicione uma variável intermediária usando um nome do tipo e um endereço local:
+  Se a rotina utilizada atualmente for inexistente,
+    Esvazie a variável intermediária;
+    Retorne.
+  Adicione a variável intermediária para as variáveis locais desta rotina utilizada atualmente usando "local" e o endereço local.
+  Gere o nome desta variável intermediária usando "~I".
+  Atribua o nome do tipo ao nome do tipo desta variável intermediária.
+  Destrinche a variável intermediária.
 
+Rotina para que se adicione fragmentos diversos usando uma string e uma variável e uma segunda string e uma segunda variável e um endereço local:
+  Adicione um fragmento usando o etiqueta de inserção de endereço [na stack] e a segunda variável.
+  Adicione um segundo fragmento usando o etiqueta de inserção de endereço [na stack] e a variável.
+  Adicione uma unidade semântica para umas unidades semânticas usando a string.
+  Adicione uma segunda unidade semântica para as unidades semânticas usando o tipo desta variável.
+  Adicione uma terceira unidade semântica para as unidades semânticas usando a segunda string.
+  Adicione uma quarta unidade semântica para as unidades semânticas usando o tipo desta segunda variável.
+  Encontre uma rotina usando as unidades semânticas.
+  Se a rotina for inexistente, converta as unidades semânticas para uma representação interna da rotina.
+  Destrua as unidades semânticas.
+  Se a rotina for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #3. A rotina para que se '" junto com a representação interna da rotina seguido de "' não foi encontrada." e o endereço local;
+    Retorne.
+  Adicione um terceiro fragmento usando a etiqueta de demanda interna e a rotina.
 
+Rotina para que se adicione um fragmento usando uma etiqueta e uma variável:
+  Se a rotina utilizada atualmente for inexistente,
+    Esvazie o fragmento;
+    Retorne.
+  Crie o fragmento usando a etiqueta.
+  Acrescente o fragmento para os fragmentos desta rotina utilizada atualmente.
+  Atribua a variável à variável deste fragmento.
+  Ative o sinalizador de compilação na variável.
 
+Rotina para que se adicione two fragmentos usando uma string e uma variável e um endereço local:
+  Adicione um fragmento usando o etiqueta de inserção de endereço [na stack] e a variável.
+  Adicione uma unidade semântica para umas unidades semânticas usando a string.
+  Adicione uma segunda unidade semântica para as unidades semânticas usando o tipo desta variável.
+  Encontre uma rotina usando as unidades semânticas.
+  Se a rotina for inexistente, converta as unidades semânticas para uma representação interna da rotina.
+  Destrua as unidades semânticas.
+  Se a rotina for inexistente,
+    Apresente uma mensagem de erro contendo "Erro. A rotina para que se '" junto com a representação interna da rotina seguido de "' ainda não foi definida." e o endereço local;
+    Retorne.
+  Adicione um segundo fragmento usando a etiqueta de demanda interna e a rotina.
 
 
 
