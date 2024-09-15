@@ -1137,7 +1137,7 @@ Rotina para que se compile uma expressão matematica usando um percorredor (opera
 
 \Rotina para que se compile umas unidades semânticas usando um percorredor:
   \Se existir algum problema de compilação, retorne.
-  \Se o segmento inicial deste percorredor for algum unidade semântica string, 
+  \Se o segmento inicial deste percorredor for alguma unidade semântica relevante, 
     \Adicione uma unidade semântica para as unidades semânticas usando o segmento inicial deste percorredor; 
     \Mova o percorredor (usando diretrizes de compilação); Reitere.
 \Se o segmento inicial deste percorredor não for o início de alguma expressão matematica, retorne.
@@ -1461,7 +1461,7 @@ Rotina para que se compile uma referência da rotina usando um percorredor:
     Se o segmento inicial deste percorredor for algum artigo indefinido,
       Compile a referência da rotina usando o percorredor (artigo indefinido);
       Reitere.
-    Se o percorredor está sobre algum unidade semântica string,
+    Se o percorredor está sobre alguma unidade semântica relevante,
       Compile a referência da rotina usando o percorredor (string de unidade semântica);
       Reitere.
     Apresente uma mensagem de erro contendo "Erro #86. O termo '"
@@ -2271,7 +2271,7 @@ Função para que se determine se uma string é algum sinal de pontuação:
   Se o conteúdo deste caractere inicial desta string for algum sinal de pontuação, diga sim.
   Diga não.
 
-\Função para que se determine se uma string é algum unidade semântica string:
+\Função para que se determine se uma string é alguma unidade semântica relevante:
 \Se a string estiver em branco, diga não.
 \Se a string for "the", diga não.
 \Se a string é algum artigo indefinido, diga não.

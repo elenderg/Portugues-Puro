@@ -2726,7 +2726,7 @@ Rotina para que se compile umas unidades semânticas e uns parâmetros usando um p
   Se o percorredor estiver sobre algum artigo indefinido,
     Compile as unidades semânticas e o parâmetros usando o percorredor (artigo indefinido);
     Reitere.
-  Se o percorredor estiver sobre algum unidade semântica string,
+  Se o percorredor estiver sobre alguma unidade semântica relevante,
     Compile as unidades semânticas e o parâmetros usando o percorredor (string de unidade semântica);
     Reitere.
   Apresente uma mensagem de erro contendo "Erro #055. A 'Rotina para que se " 
@@ -3638,8 +3638,9 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
   Adicione um quarto fragmento usando o etiqueta delimitadora de bloco condicional.
 
 Rotina para que se compile umas unidades semânticas usando um percorredor:
+  [Itere.]  
     Se existir algum problema de compilação, retorne.
-    Se o percorredor estiver sobre algum unidade semântica string,
+    Se o percorredor estiver sobre alguma unidade semântica relevante,
       Adicione uma unidade semântica para as unidades semânticas usando o segmento inicial deste percorredor;
       Mova o percorredor (usando diretrizes de compilação); Reitere.
     Se o segmento inicial deste percorredor não for o início de alguma expressão matematica, retorne.
@@ -3648,7 +3649,7 @@ Rotina para que se compile umas unidades semânticas usando um percorredor:
     Adicione uma segunda unidade semântica para as unidades semânticas usando o expressão matematica.
   Reitere.
 
-Função para que se determine se um percorredor está sobre algum unidade semântica string:
+Função para que se determine se um percorredor está sobre alguma unidade semântica relevante:
   Se o segmento inicial deste percorredor estiver em branco, diga não.
   Se o percorredor estiver sobre algum artigo definido, diga não.
   Se o percorredor estiver sobre algum artigo indefinido, diga não.
