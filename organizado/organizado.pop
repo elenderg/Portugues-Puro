@@ -3915,8 +3915,41 @@ Rotina para que se compile um termo usando um percorredor e um campo nome (posse
   Se o sinalizador de possessivo reverso estiver ativo, 
     Compile o termo usando o percorredor e o nome (possessivo reverso).
   Se o sinalizador de possessivo reverso não estiver ativo, 
-    Compile o termo usando o percorredor e o nome e o article (reversão de contrações do possessivo). \
+    Compile o termo usando o percorredor e o nome e o article (reversão de contrações do possessivo). \?
   Compile o termo usando o campo nome e o percorredor (possessivo reverso).
+
+Rotina para que se compile um termo usando um percorredor e uma variável nome e um article segmento inicial (reversão de contrações do possessivo):
+  \ Rotina nova criada pelo Dahn para a versão 2
+  Se o article for o início de alguma variável,
+    Compile o termo usando o percorredor e a variável nome e o article (reversão de contrações de variáveis do possessivo);
+    Retorne.
+  Compile o termo usando o percorredor e a variável nome (decomposição do possessivo reverso - variável local).
+
+Rotina para que se compile um termo usando um percorredor e uma variável nome e um article segmento inicial (reversão de contrações de variáveis do possessivo):
+  \ Rotina nova criada pelo Dahn para a versão 2
+  Encontre uma variável usando a variável nome.
+  Se a variável for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #112. Não foi possível encontrar a variável: " 
+    junto com a variável nome seguido de ".".
+  Atribua a variável à variável deste termo.
+  Atribua "O " à frase deste termo.
+  Acrescente a variável nome para a frase deste termo.
+
+Rotina para que se compile um termo usando um campo nome e um percorredor (possessivo reverso):
+  \ similar à rotina "compile um termo usando um percorredor (possessivo)" 
+  \ Rotina nova criada pelo Dahn 
+  Se existir algum problema de compilação, retorne.
+  Se o campo nome for alguma palavra-chave de obtenção de tamanho de variável,
+    Compile o termo usando o percorredor (possessivo - magnitude);
+    Retorne.
+  Se o campo nome for algum conteúdo,
+    Compile o termo usando o percorredor (possessivo - conteúdo);
+    Retorne.
+  Se o campo nome for algum endereçamento,
+    Compile o termo usando o percorredor (possessivo - endereçamento);
+    Retorne.
+  Compile o termo usando o percorredor e o campo nome (possessivo - campo).
+
 
 Função para que se determine se uma string é o início de alguma variável local:
   Se a string for algum artigo indefinido, diga sim.

@@ -1598,21 +1598,9 @@ Rotina para que se compile um termo usando um percorredor (proporção de execução
 
 
 
-Rotina para que se compile um termo usando um percorredor e uma variável nome e um article segmento inicial (reversão de contrações do possessivo):
-  \ Rotina nova criada pelo Dahn para version 2
-  Se o article for o início de alguma variável,
-    Compile o termo usando o percorredor e a variável nome e o article (reversão de contrações de variáveis do possessivo);
-    Retorne.
-  Compile o termo usando o percorredor e a variável nome (decomposição do possessivo reverso - variável local).
 
-Rotina para que se compile um termo usando um percorredor e uma variável nome e um article segmento inicial (reversão de contrações de variáveis do possessivo):
-  \ Rotina nova criada pelo Dahn para version 2
-  Encontre uma variável usando a variável nome.
-  Se a variável for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #112. Não foi possível encontrar a variável: " junto com a variável nome seguido de ".".
-  Atribua a variável à variável deste termo.
-  Atribua "o " à frase deste termo.
-  Acrescente a variável nome para a frase deste termo.
+
+
 
 Rotina para que se compile um termo usando um percorredor e uma variável nome (decomposição do possessivo reverso - variável local):
   \ Rotina nova criada pelo Dahn para version 2
@@ -1639,19 +1627,7 @@ Rotina para que se compile um termo usando um percorredor e uma variável nome (d
   Atribua a variável local à variável deste termo.
   Limpe a frase deste termo.
 
-Rotina para que se compile um termo usando um campo nome e um percorredor (possessivo reverso):
-  \ similar para "compile um termo usando um percorredor (possessivo)" \ Rotina nova criada pelo Dahn para
-  Se existir algum problema de compilação, retorne.
-  Se o campo nome for alguma palavra-chave de obtenção de tamanho de variável,
-    Compile o termo usando o percorredor (possessivo - magnitude);
-    Retorne.
-  Se o campo nome for algum conteúdo,
-    Compile o termo usando o percorredor (possessivo - conteúdo);
-    Retorne.
-  Se o campo nome for algum endereçamento,
-    Compile o termo usando o percorredor (possessivo - endereçamento);
-    Retorne.
-  Compile o termo usando o percorredor e o campo nome (possessivo - campo).
+
 
 Rotina para que se compile um termo usando um percorredor e um campo de estrutura:
   Se existir algum problema de compilação, retorne.
