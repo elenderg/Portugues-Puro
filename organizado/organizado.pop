@@ -3879,7 +3879,7 @@ Função para que se determine se uma string é o início de alguma variável:
 Rotina para que se compile um termo usando um percorredor (variável):
   Se existir algum problema de compilação, retorne.
   Se a rotina utilizada atualmente for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #110. Rotina inexistente. Impossível desempilhar termo possessivo." e o percorredor;
+    Apresente uma mensagem de erro contendo "Erro #110. Rotina inexistente. Impossível empilhar o identificador especificado." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Examine um nome usando o percorredor.
@@ -3888,10 +3888,35 @@ Rotina para que se compile um termo usando um percorredor (variável):
     Retorne.
   Encontre uma variável usando o nome.
   Atribua a variável à variável deste termo.
-  Atribua "o " à frase deste termo.
+  Atribua "O " à frase deste termo.
   Acrescente o nome para a frase deste termo.
   Compile o termo usando o percorredor (possessivos).
 
+Função para que se determine se uma string é algum possessivo reverso:
+  Se a string for "de", diga sim.
+  \Se a string for "do", diga sim. \ short por "de o", expanded em "compile um termo usando um percorredor e um campo nome (possessivo reverso)"
+  Diga não.
+
+Rotina para que se compile um termo usando um percorredor e um campo nome (possessivo reverso):
+  \ função recursiva
+  \ Rotina nova criada pelo Dahn para version 2
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação). \ após o starter do possessivo reverso
+  \Se o segmento inicial deste percorredor não for "del", mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor não for algum artigo,
+    Apresente uma mensagem de erro contendo "Erro #111. Esperado artigo. Encontrado '" 
+    junto com o segmento inicial deste percorredor seguido de "'.";
+    Retorne.
+  Atribua o segmento inicial deste percorredor para um article segmento inicial.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine um nome usando o percorredor.
+  Se o percorredor estiver sobre algum possessivo reverso, 
+    Ative um sinalizador de possessivo reverso.
+  Se o sinalizador de possessivo reverso estiver ativo, 
+    Compile o termo usando o percorredor e o nome (possessivo reverso).
+  Se o sinalizador de possessivo reverso não estiver ativo, 
+    Compile o termo usando o percorredor e o nome e o article (reversão de contrações do possessivo). \
+  Compile o termo usando o campo nome e o percorredor (possessivo reverso).
 
 Função para que se determine se uma string é o início de alguma variável local:
   Se a string for algum artigo indefinido, diga sim.

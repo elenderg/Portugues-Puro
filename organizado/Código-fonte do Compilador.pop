@@ -1596,22 +1596,7 @@ Rotina para que se compile um termo usando um percorredor (proporção de execução
 
 
 
-Rotina para que se compile um termo usando um percorredor e um campo nome (possessivo reverso):
-  \ função recursiva
-  \ Rotina nova criada pelo Dahn para version 2
-  Se existir algum problema de compilação, retorne.
-  Mova o percorredor (usando diretrizes de compilação). \ após o starter do possessivo reverso
-  \Se o segmento inicial deste percorredor não for "del", mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor não for algum artigo,
-    Apresente uma mensagem de erro contendo "Erro #111. O compilador esperava encontrar um artigo, mas encontrou: " junto com o segmento inicial deste percorredor seguido de ".";
-    Retorne.
-  Atribua o segmento inicial deste percorredor para um article segmento inicial.
-  Mova o percorredor (usando diretrizes de compilação).
-  Examine um nome usando o percorredor.
-  Se o percorredor estiver sobre algum possessivo reverso, ative um sinalizador de possessivo reverso.
-  Se o sinalizador de possessivo reverso estiver ativo, compile o termo usando o percorredor e o nome (possessivo reverso).
-  Se o sinalizador de possessivo reverso não estiver ativo, compile o termo usando o percorredor e o nome e o article (reversão de contrações do possessivo).\ não entendi
-  Compile o termo usando o campo nome e o percorredor (possessivo reverso).
+
 
 Rotina para que se compile um termo usando um percorredor e uma variável nome e um article segmento inicial (reversão de contrações do possessivo):
   \ Rotina nova criada pelo Dahn para version 2
@@ -2195,10 +2180,7 @@ Função para que se determine se uma string é alguma preposição:
   Diga não.
 
 
-Função para que se determine se uma string é algum possessivo reverso:
-  Se a string for "de", diga sim.
-  \Se a string for "do", diga sim. \ short por "de o", expanded em "compile um termo usando um percorredor e um campo nome (possessivo reverso)"
-  Diga não.
+
 
 
 
