@@ -1602,30 +1602,7 @@ Rotina para que se compile um termo usando um percorredor (proporção de execução
 
 
 
-Rotina para que se compile um termo usando um percorredor e uma variável nome (decomposição do possessivo reverso - variável local):
-  \ Rotina nova criada pelo Dahn para version 2
-  Se existir algum problema de compilação, retorne.
-  Adicione uma variável local para as variáveis locais desta rotina utilizada atualmente usando "local" e o caractere inicial deste segmento inicial deste percorredor.
-  \PAL
-  Se o segmento inicial deste percorredor for "outra", atribua "outra" ao nome desta variável local.
-  Se o segmento inicial deste percorredor for "outro", atribua "outro" ao nome desta variável local.
-  Se o segmento inicial deste percorredor for "segundo", atribua "segundo" ao nome desta variável local.
-  Se o segmento inicial deste percorredor for "segunda", atribua "segunda" ao nome desta variável local.
-  Expanda o nome desta variável local com a variável nome.
-  Se o segmento inicial deste percorredor for uma palavra-chave de designação, 
-    Compile a parte designadora usando o percorredor e a variável local.
-  Destrinche a variável local.
-  Se a variável local estiver duplicada em os parâmetros desta rotina utilizada atualmente,
-    Apresente uma mensagem de erro contendo "Erro #113. O identificador: "
-    junto com o nome desta variável local seguido de "' já está sendo usado como parâmetro." e o endereço local desta variável local;
-    Retorne.
-  Se a variável local estiver duplicada em as variáveis locais desta rotina utilizada atualmente,
-    Apresente a mensagem de erro contendo "Erro #114. O identificador: " 
-    junto com o nome desta variável local seguido de "' já está sendo usado coma variável local." e o endereço local desta variável local;
-    Retorne.
-  Elimine apelidos duplicados usando a variável local e o catálogo de apelidos desta rotina utilizada atualmente.
-  Atribua a variável local à variável deste termo.
-  Limpe a frase deste termo.
+
 
 
 

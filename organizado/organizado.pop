@@ -3929,11 +3929,40 @@ Rotina para que se compile um termo usando um percorredor e uma variável nome e 
   \ Rotina nova criada pelo Dahn para a versão 2
   Encontre uma variável usando a variável nome.
   Se a variável for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #112. Não foi possível encontrar a variável: " 
-    junto com a variável nome seguido de ".".
+    Apresente uma mensagem de erro contendo "Erro #112. Não foi possível encontrar a variável '" 
+    junto com a variável nome seguido de "'.".
   Atribua a variável à variável deste termo.
   Atribua "O " à frase deste termo.
   Acrescente a variável nome para a frase deste termo.
+
+Rotina para que se compile um termo usando um percorredor e uma variável nome (decomposição do possessivo reverso - variável local):
+  \ Rotina nova criada pelo Dahn para a versão 2
+  Se existir algum problema de compilação, retorne.
+  Adicione uma variável local para as variáveis locais desta rotina utilizada atualmente usando "local" e o caractere inicial deste segmento inicial deste percorredor.
+  \PAL
+  \Se o segmento inicial deste percorredor for "outra", 
+    \Atribua "outra" ao nome desta variável local.
+  \Se o segmento inicial deste percorredor for "outro", 
+    \Atribua "outro" ao nome desta variável local.
+  \Se o segmento inicial deste percorredor for "segundo", 
+    \Atribua "segundo" ao nome desta variável local.
+  \Se o segmento inicial deste percorredor for "segunda", 
+    \Atribua "segunda" ao nome desta variável local.
+  Expanda o nome desta variável local com a variável nome.
+  Se o segmento inicial deste percorredor for uma palavra-chave de designação, 
+    Compile a parte designadora usando o percorredor e a variável local.
+  Destrinche a variável local.
+  Se a variável local estiver duplicada em os parâmetros desta rotina utilizada atualmente,
+    Apresente uma mensagem de erro contendo "Erro #113. O identificador: "
+    junto com o nome desta variável local seguido de "' já está sendo usado como parâmetro." e o endereço local desta variável local;
+    Retorne.
+  Se a variável local estiver duplicada em as variáveis locais desta rotina utilizada atualmente,
+    Apresente a mensagem de erro contendo "Erro #114. O identificador: " 
+    junto com o nome desta variável local seguido de "' já está sendo usado coma variável local." e o endereço local desta variável local;
+    Retorne.
+  Elimine apelidos duplicados usando a variável local e o catálogo de apelidos desta rotina utilizada atualmente.
+  Atribua a variável local à variável deste termo.
+  Limpe a frase deste termo.
 
 Rotina para que se compile um termo usando um campo nome e um percorredor (possessivo reverso):
   \ similar à rotina "compile um termo usando um percorredor (possessivo)" 
