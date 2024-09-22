@@ -3938,7 +3938,8 @@ Rotina para que se compile um termo usando um percorredor e uma variável nome e 
 Rotina para que se compile um termo usando um percorredor e uma variável nome (decomposição do possessivo reverso - variável local):
   \ Rotina nova criada pelo Dahn para a versão 2
   Se existir algum problema de compilação, retorne.
-  Adicione uma variável local para as variáveis locais desta rotina utilizada atualmente usando "local" e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione uma variável local para as variáveis locais desta rotina utilizada atualmente 
+  usando "local" e o caractere inicial deste segmento inicial deste percorredor.
   \PAL
   \Se o segmento inicial deste percorredor for "outra", 
     \Atribua "outra" ao nome desta variável local.
@@ -3983,6 +3984,17 @@ Rotina para que se compile um termo usando um campo nome e um percorredor (posse
 Função para que se determine se uma string é o início de alguma variável local:
   Se a string for algum artigo indefinido, diga sim.
   Diga não.
+
+Rotina para que se compile um termo usando um percorredor (possessivos):
+  [Itere.]
+  Se existir algum problema de compilação, retorne.
+    Se o segmento inicial deste percorredor não for algum possessivo inglês, retorne.
+    Compile o termo usando o percorredor (possessivo).
+  Reitere.
+
+
+
+
 
 
 

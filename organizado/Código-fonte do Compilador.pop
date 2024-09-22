@@ -1566,11 +1566,7 @@ Rotina para que se compile um termo usando um percorredor (possessivo):
     Retorne.
   Compile o termo usando o percorredor e o nome (possessivo - campo).
 
-Rotina para que se compile um termo usando um percorredor (possessivos):
-  Se existir algum problema de compilação, retorne.
-  Se o segmento inicial deste percorredor não for algum possessivo inglês, retorne.
-  Compile o termo usando o percorredor (possessivo).
-  Reitere.
+
 
 Rotina para que se compile um termo usando um percorredor (proporção de execução):
   Se existir algum problema de compilação, retorne.
