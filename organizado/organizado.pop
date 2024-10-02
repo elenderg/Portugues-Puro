@@ -971,10 +971,11 @@ Função para que se determine se uma string é algum operador aritmético:
   Se a string for "vezes", diga sim.
   Se a string for "dividido", diga sim.
   Se a string for "depois", diga sim.
-  Se a string for "seguido", diga sim.
-  Se a string for "juntamente", diga sim.
-  Se a string for "junto", diga sim.
-  Se a string for "acompanhado", diga sim.
+  Se a string for algum operador de concatenação, diga sim.
+  \Se a string for "seguido", diga sim.
+  \Se a string for "juntamente", diga sim.
+  \Se a string for "junto", diga sim.
+  \Se a string for "acompanhado", diga sim.
   Diga não.
 
 Função para que se determine se um percorredor está sobre alguma preposição:
@@ -3667,7 +3668,7 @@ Rotina para que se compile uma expressão matemática usando um percorredor:
     Se existir algum problema de compilação, retorne.
     Se o segmento inicial deste percorredor não for algum operador aritmético, retorne.
     Se o segmento inicial deste percorredor for algum operador de divisão,
-      Compile a expressão matemática usando o percorredor (operador de divisão);
+      Compile a expressão matemática usando o percorredor (operador de divisão); \ 
       Reitere.
     Se o segmento inicial deste percorredor for algum operador de subtração,
       Compile a expressão matemática usando o percorredor (operador de subtração);
@@ -3681,18 +3682,18 @@ Rotina para que se compile uma expressão matemática usando um percorredor:
     Se o segmento inicial deste percorredor for algum operador de multiplicação,
       Compile a expressão matemática usando o percorredor (operador de multiplicação);
       Reitere.
-    Se o segmento inicial deste percorredor for "junto",
-      Compile a expressão matemática usando o percorredor (operador de concatenação);
-      Reitere.
-    Se o segmento inicial deste percorredor for "juntamente",
-      Compile a expressão matemática usando o percorredor (operador de concatenação);
-      Reitere.
-    Se o segmento inicial deste percorredor for "seguido",
-      Compile a expressão matemática usando o percorredor (operador de concatenação);
-      Reitere.
-    Se o segmento inicial deste percorredor for "acompanhado",
-      Compile a expressão matemática usando o percorredor (operador de concatenação);
-      Reitere.
+    \Se o segmento inicial deste percorredor for "junto",
+      \Compile a expressão matemática usando o percorredor (operador de concatenação);
+      \Reitere.
+    \Se o segmento inicial deste percorredor for "juntamente",
+      \Compile a expressão matemática usando o percorredor (operador de concatenação);
+      \Reitere.
+    \Se o segmento inicial deste percorredor for "seguido",
+      \Compile a expressão matemática usando o percorredor (operador de concatenação);
+      \Reitere.
+    \Se o segmento inicial deste percorredor for "acompanhado",
+      \Compile a expressão matemática usando o percorredor (operador de concatenação);
+      \Reitere.
 
 Rotina para que se compile um termo usando um percorredor:
   Limpe o termo.
