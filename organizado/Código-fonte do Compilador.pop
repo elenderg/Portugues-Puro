@@ -925,48 +925,7 @@ Rotina para que se compile um endereço da pasta usando um nível de profundidade 
 
 
 
-Rotina para que se compile uma expressão matemática usando um percorredor (operador de concatenação):
-  Se existir algum problema de compilação, retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor não for alguma palavra de concatenação,
-    Apresente uma mensagem de erro contendo "Erro #29. Necessário escrever 'junto DE/junto COM/etc'." e o percorredor;
-    Retorne.
-  Se a variável desta expressão matemática for inexistente,
-    Apresente a mensagem de erro contendo "Erro #30. A variável da expressão matemática: " junto com a frase desta expressão matemática seguido de " é inválida." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Compile um termo usando o percorredor.
-  Se existir algum problema de compilação, retorne.
-  Se a variável deste termo for inexistente,
-    Apresente a mensagem de erro contendo "Erro #31. A variável do termo '" junto com a frase deste termo seguido de "' é inválida." e o percorredor;
-    Retorne.
-  Adicione uma variável intermediária usando "string" e o caractere inicial deste segmento inicial deste percorredor.
-  \Adicione uma variável intermediária usando "texto" e o caractere inicial deste segmento inicial deste percorredor.
-  \Adicione uma variável intermediária usando "cadeia de caracteres" e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione o atribua ou converta fragmentos usando a variável desta expressão matemática e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
-  Converta o termo por concatenação usando o percorredor. \\ aqui faz a concatenação
-  Adicione fragmentos diversos usando "Acrescente" e a variável deste termo e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
-  Atribua a variável intermediária à variável desta expressão matemática.
-  Limpe a frase desta expressão matemática.
 
-Rotina para que se compile uma expressão matemática usando um percorredor (operador de multiplicação):
-  Se existir algum problema de compilação, retorne.
-  Se a variável desta expressão matemática for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #32. Erro de sintaxe. Comando 'vezes' incorreto. Não é póssível multiplicar por '"
-    junto com a frase desta expressão matemática seguido de "'." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Compile um termo usando o percorredor.
-  Se existir algum problema de compilação, retorne.
-  Se a variável deste termo for inexistente,
-    Apresente a mensagem de erro contendo "Erro #33. Erro de sintaxe. Comando 'multiplicado por' incorreto. Não é póssível multiplicar por '" 
-    junto com a frase deste termo seguido de "'." e o percorredor;
-    Retorne.
-  Adicione uma variável intermediária usando o nome do tipo desta expressão matemática e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione fragmentos diversos usando "Atribua" e a variável desta expressão matemática e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione fragmentos diversos usando "Multiplique" e a variável intermediária e "por" e a variável deste termo e o caractere inicial deste segmento inicial deste percorredor.
-  Atribua a variável intermediária à variável desta expressão matemática.
-  Limpe a frase desta expressão matemática.
 
 
 
@@ -1885,11 +1844,7 @@ Função para que se determine se uma string é algum operador de divisão:
 
 
 
-Função para que se determine se uma string é alguma palavra de concatenação:
-  Se a string for "com", diga sim.
-  Se a string for "de", diga sim.
-  Se a string for "a", diga sim.
-  Se a string for "seguida", diga sim.
+
   Diga não.
 
 Função para que se determine se uma string é algum operador de concatenação:
