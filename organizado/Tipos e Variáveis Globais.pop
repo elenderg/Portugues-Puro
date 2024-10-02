@@ -20,7 +20,7 @@ Um endereço local é um endereço de byte .
 Um endereço thunk é um endereço.
 Um endereço é um número.
 Uma etiqueta é um número.
-Uma expressão matematica é um termo.
+Uma expressão matemática é um termo.
 Uma frase é uma string.
 Uma instrução é um subtexto.
 Uma mensagem de erro é uma string.

@@ -171,12 +171,12 @@ Rotina para que se adicione uma DLL para umas DLLs usando um nome da DLL:
 
 
 
-Rotina para que se adicione uma unidade semântica para umas unidades semânticas usando uma expressão matematica:
+Rotina para que se adicione uma unidade semântica para umas unidades semânticas usando uma expressão matemática:
   Crie a unidade semântica.
   Acrescente a unidade semântica para as unidades semânticas.
-  Atribua a frase desta expressão matematica à string desta unidade semântica.
-  Atribua a variável desta expressão matematica à variável desta unidade semântica.
-  Se a variável desta expressão matematica não for inexistente, atribua o tipo desta expressão matematica ao tipo desta unidade semântica.
+  Atribua a frase desta expressão matemática à string desta unidade semântica.
+  Atribua a variável desta expressão matemática à variável desta unidade semântica.
+  Se a variável desta expressão matemática não for inexistente, atribua o tipo desta expressão matemática ao tipo desta unidade semântica.
 
 
 
@@ -919,14 +919,14 @@ Rotina para que se compile um endereço da pasta usando um nível de profundidade 
 
 
 
-Rotina para que se compile uma expressão matematica usando um percorredor (operador de divisão):
+Rotina para que se compile uma expressão matemática usando um percorredor (operador de divisão):
   Se existir algum problema de compilação, retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum objeto indireto,
     Apresente uma mensagem de erro contendo "Erro #22. Você deve usar o termo 'dividido POR'." e o percorredor;
     Retorne.
-  Se a variável desta expressão matematica for inexistente,
-    Apresente a mensagem de erro contendo "Erro #23. Comando 'dividido por' inválido. Erro na variável  '" junto com a frase desta expressão matematica seguido de "'." e o percorredor;
+  Se a variável desta expressão matemática for inexistente,
+    Apresente a mensagem de erro contendo "Erro #23. Comando 'dividido por' inválido. Erro na variável  '" junto com a frase desta expressão matemática seguido de "'." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Compile um termo usando o percorredor.
@@ -934,16 +934,16 @@ Rotina para que se compile uma expressão matematica usando um percorredor (opera
   Se a variável deste termo for inexistente,
     Apresente a mensagem de erro contendo "Erro #24. O comando 'dividido por', está errado. Não é possível dividir por '" junto com a frase deste termo seguido de "'." e o percorredor;
     Retorne.
-  Adicione uma variável intermediária usando o nome do tipo desta expressão matematica e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione fragmentos diversos usando "Atribua" e a variável desta expressão matematica e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione uma variável intermediária usando o nome do tipo desta expressão matemática e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione fragmentos diversos usando "Atribua" e a variável desta expressão matemática e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
   Adicione fragmentos diversos usando "Divida" e a variável intermediária e "por" e a variável deste termo e o caractere inicial deste segmento inicial deste percorredor.
-  Atribua a variável intermediária à variável desta expressão matematica.
-  Limpe a frase desta expressão matematica.
+  Atribua a variável intermediária à variável desta expressão matemática.
+  Limpe a frase desta expressão matemática.
 
-Rotina para que se compile uma expressão matematica usando um percorredor (operador de subtração):
+Rotina para que se compile uma expressão matemática usando um percorredor (operador de subtração):
   Se existir algum problema de compilação, retorne.
-  Se a variável desta expressão matematica for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #25. O comando 'menos', está incorreto. Não é possível subtrair de '" junto com a frase desta expressão matematica seguido de "'." e o percorredor;
+  Se a variável desta expressão matemática for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #25. O comando 'menos', está incorreto. Não é possível subtrair de '" junto com a frase desta expressão matemática seguido de "'." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Compile um termo usando o percorredor.
@@ -951,16 +951,16 @@ Rotina para que se compile uma expressão matematica usando um percorredor (opera
   Se a variável deste termo for inexistente,
     Apresente a mensagem de erro contendo "Erro #26. O comando 'menos', está incorreto. Não consigo diminuir de '" junto com a frase deste termo seguido de "'." e o percorredor;
     Retorne.
-  Adicione uma variável intermediária usando o nome do tipo desta expressão matematica e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione fragmentos diversos usando "Atribua" e a variável desta expressão matematica e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione uma variável intermediária usando o nome do tipo desta expressão matemática e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione fragmentos diversos usando "Atribua" e a variável desta expressão matemática e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
   Adicione fragmentos diversos usando "Subtraia" e a variável deste termo e "desde" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
-  Atribua a variável intermediária à variável desta expressão matematica.
-  Limpe a frase desta expressão matematica.
+  Atribua a variável intermediária à variável desta expressão matemática.
+  Limpe a frase desta expressão matemática.
 
-Rotina para que se compile uma expressão matematica usando um percorredor (operador de adição):
+Rotina para que se compile uma expressão matemática usando um percorredor (operador de adição):
   Se existir algum problema de compilação, retorne.
-  Se a variável desta expressão matematica for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #27. Comando 'mais' incorreto. Não é possível somar o '" junto com a frase desta expressão matematica seguido de "'." e o percorredor;
+  Se a variável desta expressão matemática for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #27. Comando 'mais' incorreto. Não é possível somar o '" junto com a frase desta expressão matemática seguido de "'." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação). \talvez fosse o caso de repetir aqui
   Compile um termo usando o percorredor.
@@ -968,20 +968,20 @@ Rotina para que se compile uma expressão matematica usando um percorredor (opera
   Se a variável deste termo for inexistente,
     Apresente a mensagem de erro contendo "Erro #28. Comando 'mais' incorreto. Não é possível adicionar o" junto com a frase deste termo seguido de "." e o percorredor;
     Retorne.
-  Adicione uma variável intermediária usando o nome do tipo desta expressão matematica e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione fragmentos diversos usando "Atribua" e a variável desta expressão matematica e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.\aqui muda o atribua
+  Adicione uma variável intermediária usando o nome do tipo desta expressão matemática e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione fragmentos diversos usando "Atribua" e a variável desta expressão matemática e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.\aqui muda o atribua
   Adicione fragmentos diversos usando "Adicione" e a variável deste termo e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor. \ aqui muda o add
-  Atribua a variável intermediária à variável desta expressão matematica.
-  Limpe a frase desta expressão matematica.
+  Atribua a variável intermediária à variável desta expressão matemática.
+  Limpe a frase desta expressão matemática.
 
-Rotina para que se compile uma expressão matematica usando um percorredor (operador de concatenação):
+Rotina para que se compile uma expressão matemática usando um percorredor (operador de concatenação):
   Se existir algum problema de compilação, retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for alguma palavra de concatenação,
     Apresente uma mensagem de erro contendo "Erro #29. Necessário escrever 'junto DE/junto COM/etc'." e o percorredor;
     Retorne.
-  Se a variável desta expressão matematica for inexistente,
-    Apresente a mensagem de erro contendo "Erro #30. A variável da expressão matematica: " junto com a frase desta expressão matematica seguido de " é inválida." e o percorredor;
+  Se a variável desta expressão matemática for inexistente,
+    Apresente a mensagem de erro contendo "Erro #30. A variável da expressão matemática: " junto com a frase desta expressão matemática seguido de " é inválida." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Compile um termo usando o percorredor.
@@ -992,17 +992,17 @@ Rotina para que se compile uma expressão matematica usando um percorredor (opera
   Adicione uma variável intermediária usando "string" e o caractere inicial deste segmento inicial deste percorredor.
   \Adicione uma variável intermediária usando "texto" e o caractere inicial deste segmento inicial deste percorredor.
   \Adicione uma variável intermediária usando "cadeia de caracteres" e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione o atribua ou converta fragmentos usando a variável desta expressão matematica e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione o atribua ou converta fragmentos usando a variável desta expressão matemática e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
   Converta o termo por concatenação usando o percorredor. \\ aqui faz a concatenação
   Adicione fragmentos diversos usando "Acrescente" e a variável deste termo e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
-  Atribua a variável intermediária à variável desta expressão matematica.
-  Limpe a frase desta expressão matematica.
+  Atribua a variável intermediária à variável desta expressão matemática.
+  Limpe a frase desta expressão matemática.
 
-Rotina para que se compile uma expressão matematica usando um percorredor (operador de multiplicação):
+Rotina para que se compile uma expressão matemática usando um percorredor (operador de multiplicação):
   Se existir algum problema de compilação, retorne.
-  Se a variável desta expressão matematica for inexistente,
+  Se a variável desta expressão matemática for inexistente,
     Apresente uma mensagem de erro contendo "Erro #32. Erro de sintaxe. Comando 'vezes' incorreto. Não é póssível multiplicar por '"
-    junto com a frase desta expressão matematica seguido de "'." e o percorredor;
+    junto com a frase desta expressão matemática seguido de "'." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Compile um termo usando o percorredor.
@@ -1011,11 +1011,11 @@ Rotina para que se compile uma expressão matematica usando um percorredor (opera
     Apresente a mensagem de erro contendo "Erro #33. Erro de sintaxe. Comando 'multiplicado por' incorreto. Não é póssível multiplicar por '" 
     junto com a frase deste termo seguido de "'." e o percorredor;
     Retorne.
-  Adicione uma variável intermediária usando o nome do tipo desta expressão matematica e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione fragmentos diversos usando "Atribua" e a variável desta expressão matematica e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione uma variável intermediária usando o nome do tipo desta expressão matemática e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione fragmentos diversos usando "Atribua" e a variável desta expressão matemática e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
   Adicione fragmentos diversos usando "Multiplique" e a variável intermediária e "por" e a variável deste termo e o caractere inicial deste segmento inicial deste percorredor.
-  Atribua a variável intermediária à variável desta expressão matematica.
-  Limpe a frase desta expressão matematica.
+  Atribua a variável intermediária à variável desta expressão matemática.
+  Limpe a frase desta expressão matemática.
 
 
 
@@ -1039,10 +1039,10 @@ Rotina para que se compile uma expressão matematica usando um percorredor (opera
   \Se o segmento inicial deste percorredor for alguma unidade semântica relevante, 
     \Adicione uma unidade semântica para as unidades semânticas usando o segmento inicial deste percorredor; 
     \Mova o percorredor (usando diretrizes de compilação); Reitere.
-\Se o segmento inicial deste percorredor não for o início de alguma expressão matematica, retorne.
-\Compile uma expressão matematica usando o percorredor.
+\Se o segmento inicial deste percorredor não for o início de alguma expressão matemática, retorne.
+\Compile uma expressão matemática usando o percorredor.
 \Se existir algum problema de compilação, retorne.
-\Adicione uma segunda unidade semântica para as unidades semânticas usando o expressão matematica.
+\Adicione uma segunda unidade semântica para as unidades semânticas usando a expressão matemática.
 \Reitere.
 
 
@@ -1082,20 +1082,20 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
   Adicione um segundo fragmento usando o etiqueta de obtenção do registrador EAX e a variável deste termo.
 
 Rotina para que se compile a próxima instrução usando um percorredor (palavra-chave 'processe' - chamada indireta):
-  Compile uma expressão matematica usando o percorredor.
+  Compile uma expressão matemática usando o percorredor.
   Se existir algum problema de compilação, retorne.
-  Se a variável desta expressão matematica for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #54. A variável da expressão matematica'" 
-    junto com a frase desta expressão matematica seguido de "' não pode ser localizada." e o percorredor;
+  Se a variável desta expressão matemática for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #54. A variável da expressão matemática'" 
+    junto com a frase desta expressão matemática seguido de "' não pode ser localizada." e o percorredor;
     Retorne.
-  Se o tipo desta expressão matematica não puder ser reduzido para "ponteiro",
-    Apresente a mensagem de erro contendo "Erro #55. Neste comando 'Processe' é necessário usar uma expressão matematica do tipo ponteiro." e o percorredor;
+  Se o tipo desta expressão matemática não puder ser reduzido para "ponteiro",
+    Apresente a mensagem de erro contendo "Erro #55. Neste comando 'Processe' é necessário usar uma expressão matemática do tipo ponteiro." e o percorredor;
     Retorne.
   Se o segmento inicial deste percorredor for "com", compile a próxima instrução usando o percorredor (palavra-chave 'processe' - cláusula com).
   Se o segmento inicial deste percorredor for "usando", compile a próxima instrução usando o percorredor (palavra-chave 'processe' - cláusula com).
   Se o segmento inicial deste percorredor for alguma palavra-chave de devolução, compile a próxima instrução usando o percorredor retornando um termo (palavra-chave 'processe' - cláusula retornando).
   \Se o segmento inicial deste percorredor for "retornando", compile a próxima instrução usando o percorredor retornando um termo (palavra-chave 'processe' - cláusula retornando).
-  Adicione um fragmento usando a etiqueta de demanda indireta e a variável desta expressão matematica.
+  Adicione um fragmento usando a etiqueta de demanda indireta e a variável desta expressão matemática.
   Se o termo estiver vazio, retorne.
   Se a variável deste termo for inexistente,
     Apresente a mensagem de erro contendo "Erro #56. A variável do termo '"
@@ -1123,18 +1123,18 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
   \ this routine is recursise so parameters get passed right to  left
   Se existir algum problema de compilação, retorne.
   Mova o percorredor (usando diretrizes de compilação).
-  Compile uma expressão matematica usando o percorredor.
+  Compile uma expressão matemática usando o percorredor.
   Se existir algum problema de compilação, retorne.
-  Se a variável desta expressão matematica for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #58. A variável da expressão matematica '"
-    junto com a frase desta expressão matematica seguido de "' é inexistente." e o percorredor;
+  Se a variável desta expressão matemática for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #58. A variável da expressão matemática '"
+    junto com a frase desta expressão matemática seguido de "' é inexistente." e o percorredor;
     Retorne.
-  Se o tipo desta expressão matematica não for valor empilhável,
+  Se o tipo desta expressão matemática não for valor empilhável,
     Apresente a mensagem de erro contendo "Erro #59. O tipo '" 
-    junto com o nome deste tipo desta expressão matematica seguido de "' da expressão matematica não é um valor empilhável." e o percorredor;
+    junto com o nome deste tipo desta expressão matemática seguido de "' da expressão matemática não é um valor empilhável." e o percorredor;
     Retorne.
   Se o segmento inicial deste percorredor for algum operador de continuidade, compile a próxima instrução usando o percorredor (palavra-chave 'processe' - cláusula com).
-  Adicione um fragmento usando o etiqueta de inserção de valor [na stack] e a variável desta expressão matematica.
+  Adicione um fragmento usando o etiqueta de inserção de valor [na stack] e a variável desta expressão matemática.
 
 Rotina para que se compile a próxima instrução usando um percorredor (palavra-chave 'processe'):
   Se existir algum problema de compilação, retorne.
@@ -1293,15 +1293,15 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
 Rotina para que se compile a próxima instrução usando um percorredor (cláusula de empilhamento):
   Se existir algum problema de compilação, retorne.
   Mova o percorredor (usando diretrizes de compilação).
-  Compile uma expressão matematica usando o percorredor.
+  Compile uma expressão matemática usando o percorredor.
   Se existir algum problema de compilação, retorne.
-  Se a variável desta expressão matematica for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #80. Comando de empilhamento inválido devido a expressão matematica: " junto com a frase desta expressão matematica seguido de "' ser inexistente." e o percorredor;
+  Se a variável desta expressão matemática for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #80. Comando de empilhamento inválido devido a expressão matemática: " junto com a frase desta expressão matemática seguido de "' ser inexistente." e o percorredor;
     Retorne.
-  Se o tipo desta expressão matematica não for valor empilhável,
-    Apresente a mensagem de erro contendo "Erro #81. Valores do tipo: " junto com o nome deste tipo desta expressão matematica seguido de "' não podem ser empilhados." e o percorredor;
+  Se o tipo desta expressão matemática não for valor empilhável,
+    Apresente a mensagem de erro contendo "Erro #81. Valores do tipo: " junto com o nome deste tipo desta expressão matemática seguido de "' não podem ser empilhados." e o percorredor;
     Retorne.
-  Adicione um fragmento usando o etiqueta de inserção de valor [na stack] e a variável desta expressão matematica.
+  Adicione um fragmento usando o etiqueta de inserção de valor [na stack] e a variável desta expressão matemática.
 
 Rotina para que se compile a próxima instrução usando um percorredor(cláusula de repetição):
   Adicione um fragmento usando a etiqueta de repetição.
@@ -1310,11 +1310,11 @@ Rotina para que se compile a próxima instrução usando um percorredor(cláusula de
 \Rotina para que se compile a próxima instrução usando um percorredor (palavra-chave 'diga'):
 \Se o sinalizador de deliberação desta rotina utilizada atualmente não estiver ativo, compile a próxima instrução usando o percorredor (palavra-chave 'processe' - chamada interna); Retorne.
 \Mova o percorredor (usando diretrizes de compilação).
-\Compile uma expressão matematica usando o percorredor.
+\Compile uma expressão matemática usando o percorredor.
 \Se existir algum problema de compilação, retorne.
-\Se a variável desta expressão matematica for inexistente, apresente uma mensagem de erro contendo "No es válido este 'diga', no entiendo la variável: " junto com a frase desta expressão matematica seguido de "." e o percorredor; Retorne.
-\Se o tipo desta expressão matematica não puder ser reduzido para "sinalizador", apresente uma mensagem de erro contendo "Necesito un rotundo 'si' o 'no' aquí." e o percorredor; Retorne.
-\Adicione um fragmento usando o etiqueta de carregamento de registrador EAX e a variável desta expressão matematica.
+\Se a variável desta expressão matemática for inexistente, apresente uma mensagem de erro contendo "No es válido este 'diga', no entiendo la variável: " junto com a frase desta expressão matemática seguido de "." e o percorredor; Retorne.
+\Se o tipo desta expressão matemática não puder ser reduzido para "sinalizador", apresente uma mensagem de erro contendo "Necesito un rotundo 'si' o 'no' aquí." e o percorredor; Retorne.
+\Adicione um fragmento usando o etiqueta de carregamento de registrador EAX e a variável desta expressão matemática.
 \Adicione um segundo fragmento usando o etiqueta de retorno.
 
 Rotina para que se compile a próxima instrução usando um percorredor (palavra-chave 'diga'):
