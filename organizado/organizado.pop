@@ -3702,19 +3702,38 @@ Rotina para que se compile uma expressão matemática usando um percorredor (opera
     Apresente uma mensagem de erro contendo "Erro #22. Você deve usar o termo 'dividido POR'." e o percorredor;
     Retorne.
   Se a variável desta expressão matemática for inexistente,
-    Apresente a mensagem de erro contendo "Erro #23. Comando 'dividido por' inválido. Erro na variável  '" junto com a frase desta expressão matemática seguido de "'." e o percorredor;
+    Apresente a mensagem de erro contendo "Erro #23. Comando 'dividido por' inválido. A variável '" 
+    junto com a frase desta expressão matemática seguido de "' é nula." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Compile um termo usando o percorredor.
   Se existir algum problema de compilação, retorne.
   Se a variável deste termo for inexistente,
-    Apresente a mensagem de erro contendo "Erro #24. O comando 'dividido por', está errado. Não é possível dividir por '" junto com a frase deste termo seguido de "'." e o percorredor;
+    Apresente a mensagem de erro contendo "Erro #24. O comando 'dividido por', está errado. Não é possível dividir por '" 
+    junto com a frase deste termo seguido de "'." e o percorredor;
     Retorne.
-  Adicione uma variável intermediária usando o nome do tipo desta expressão matemática e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione fragmentos diversos usando "Atribua" e a variável desta expressão matemática e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione fragmentos diversos usando "Divida" e a variável intermediária e "por" e a variável deste termo e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione uma variável intermediária usando 
+    o nome do tipo desta expressão matemática e 
+    o caractere inicial deste segmento inicial deste percorredor.
+  Adicione fragmentos diversos usando 
+    "Atribua" e a variável desta expressão matemática e 
+    "para" e 
+    a variável intermediária e 
+    o caractere inicial deste segmento inicial deste percorredor.
+  Adicione fragmentos diversos usando 
+    "Divida" e 
+    a variável intermediária e 
+    "por" e 
+    a variável deste termo e 
+    o caractere inicial deste segmento inicial deste percorredor.
   Atribua a variável intermediária à variável desta expressão matemática.
   Limpe a frase desta expressão matemática.
+
+Função para que se determine se uma string é algum objeto indireto:
+  Se a string for "via", diga sim. 
+  Se a string for "por", diga sim. \ TODO: Testar a compatibilidade
+  Diga não.
+
 
 Rotina para que se compile um termo usando um percorredor:
   Limpe o termo.

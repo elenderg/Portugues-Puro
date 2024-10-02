@@ -1913,10 +1913,7 @@ Função para que se determine se uma string é algum operador de divisão:
   Se a string for "dividido", diga sim.
   Diga não.
 
-Função para que se determine se uma string é algum objeto indireto:
-  Se a string for "via", diga sim. 
-  Se a string for "por", diga sim. \ TODO: Testar a compatibilidade
-  Diga não.
+
 
 Função para que se determine se uma string é alguma palavra de concatenação:
   Se a string for "com", diga sim.
