@@ -3492,7 +3492,6 @@ Rotina para que se reduza um tipo para um segundo tipo por utilização:
     Atribua o tipo base deste segundo tipo ao segundo tipo.
   Reitere.
 
-
 Rotina para que se compile um endereço da pasta (conteúdo das rotinas): \ Etapa #010
   Se existir algum problema de compilação, retorne.
   Escreva "Agrupando o conteúdo das rotinas..." junto com o texto CRLF para StdOut.
