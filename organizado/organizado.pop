@@ -3706,7 +3706,7 @@ Rotina para que se compile uma expressão matemática usando um percorredor (opera
     Apresente a mensagem de erro contendo "Erro #23. A variável '" 
     junto com a frase desta expressão matemática 
     seguido de "' possui um valor nulo." 
-    seguido de " Não é possível realizar uma divisão por uma variável sem valor definido." e o percorredor;
+    seguido de " Não é possível realizar uma divisão por um número sem valor definido." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Compile um termo usando o percorredor.
@@ -3715,7 +3715,7 @@ Rotina para que se compile uma expressão matemática usando um percorredor (opera
     Apresente a mensagem de erro contendo "Erro #24. O termo '" 
     junto com a frase deste termo 
     seguido de "' possui um valor nulo." 
-    seguido de " Não é possível realizar uma divisão por uma variável sem valor definido." e o percorredor;
+    seguido de " Não é possível realizar uma divisão por um número sem valor definido." e o percorredor;
     Retorne.
   Adicione uma variável intermediária usando 
     o nome do tipo desta expressão matemática e 
@@ -3745,8 +3745,8 @@ Rotina para que se compile uma expressão matemática usando um percorredor (opera
   Se a variável desta expressão matemática for inexistente,
     Apresente uma mensagem de erro contendo  "Erro #25. A variável '" 
     junto com a frase desta expressão matemática 
-    seguido de "' não possui um valor válido (nulo)." 
-    seguido de " Não é possível subtrair um valor de uma variável que não possui um valor definido." e o percorredor;
+    seguido de "' possui um valor inválido (nulo)." 
+    seguido de " Não é possível subtrair um valor de um número indefinido." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Compile um termo usando o percorredor.
@@ -3754,8 +3754,8 @@ Rotina para que se compile uma expressão matemática usando um percorredor (opera
   Se a variável deste termo for inexistente,
     Apresente a mensagem de erro contendo "Erro #26. O termo '" 
     junto com a frase deste termo 
-    seguido de "' possui um valor nulo." 
-    seguido de " Não é possível subtrair um valor de uma variável que não possui um valor definido." e o percorredor;
+    seguido de "' possui um valor inválido (nulo)." 
+    seguido de " Não é possível subtrair um valor de um número indefinido." e o percorredor;
     Retorne.
   Adicione uma variável intermediária usando 
     o nome do tipo desta expressão matemática e 
@@ -3778,8 +3778,8 @@ Rotina para que se compile uma expressão matemática usando um percorredor (opera
   Se a variável desta expressão matemática for inexistente,
     Apresente uma mensagem de erro contendo "Erro #27. A variável '" 
     junto com a frase desta expressão matemática 
-    seguido de "' não possui um valor válido (nulo)."
-    seguido de " Não é possível somar uma variável que não possui um valor definido." e o percorredor;
+    seguido de "' possui um valor inválido (nulo)."
+    seguido de " Não é possível somar um número que não possui um valor definido." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação). \talvez fosse o caso de repetir aqui
   Compile um termo usando o percorredor.
@@ -3787,8 +3787,8 @@ Rotina para que se compile uma expressão matemática usando um percorredor (opera
   Se a variável deste termo for inexistente,
     Apresente a mensagem de erro contendo "Erro #28. O termo '" 
     junto com a frase deste termo 
-    seguido de "' possui um valor nulo." 
-    seguido de " Não é possível somar uma variável que não possui um valor definido." e o percorredor;
+    seguido de "' possui um valor inválido (nulo)." 
+    seguido de " Não é possível somar um número que não possui um valor definido." e o percorredor;
     Retorne.
   Adicione uma variável intermediária usando 
     o nome do tipo desta expressão matemática e 
@@ -3811,23 +3811,38 @@ Rotina para que se compile uma expressão matemática usando um percorredor (opera
   Se existir algum problema de compilação, retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for alguma palavra de concatenação,
-    Apresente uma mensagem de erro contendo "Erro #29. Necessário escrever 'junto DE/junto COM/etc'." e o percorredor;
+    Apresente uma mensagem de erro contendo "Erro #29. Erro de sintaxe: Preposição ausente. " 
+    seguido de "Verifique se está usando a preposição correta para concatenar as strings ('junto COM', 'seguido DE', etc.)." e o percorredor;
     Retorne.
   Se a variável desta expressão matemática for inexistente,
-    Apresente a mensagem de erro contendo "Erro #30. A variável da expressão matemática: " junto com a frase desta expressão matemática seguido de " é inválida." e o percorredor;
+    Apresente a mensagem de erro contendo "Erro #30. A variável '" 
+    junto com a frase desta expressão matemática 
+    seguido de "'  possui um valor inválido (nulo)."
+    seguido de " Não é possível concatenar strings nulas." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Compile um termo usando o percorredor.
   Se existir algum problema de compilação, retorne.
   Se a variável deste termo for inexistente,
-    Apresente a mensagem de erro contendo "Erro #31. A variável do termo '" junto com a frase deste termo seguido de "' é inválida." e o percorredor;
+    Apresente a mensagem de erro contendo "Erro #31. O termo '" 
+    junto com a frase deste termo 
+    seguido de "' possui um valor inválido (nulo)." 
+    seguido de " Não é possível concatenar strings nulas." e o percorredor;
     Retorne.
   Adicione uma variável intermediária usando "string" e o caractere inicial deste segmento inicial deste percorredor.
   \Adicione uma variável intermediária usando "texto" e o caractere inicial deste segmento inicial deste percorredor.
   \Adicione uma variável intermediária usando "cadeia de caracteres" e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione o atribua ou converta fragmentos usando a variável desta expressão matemática e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
-  Converta o termo por concatenação usando o percorredor. \\ aqui faz a concatenação
-  Adicione fragmentos diversos usando "Acrescente" e a variável deste termo e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione os fragmentos de atribuição ou conversão de valores usando 
+    a variável desta expressão matemática e 
+    a variável intermediária e 
+    o caractere inicial deste segmento inicial deste percorredor.
+  Converta o termo por concatenação usando o percorredor. \ aqui faz a concatenação
+  Adicione fragmentos diversos usando 
+    "Acrescente" e 
+    a variável deste termo e 
+    "para" e 
+    a variável intermediária e 
+    o caractere inicial deste segmento inicial deste percorredor.
   Atribua a variável intermediária à variável desta expressão matemática.
   Limpe a frase desta expressão matemática.
 
@@ -3837,22 +3852,55 @@ Função para que se determine se uma string é alguma palavra de concatenação:
   Se a string for "a", diga sim.
   Se a string for "seguida", diga sim.
 
-Rotina para que se compile uma expressão matemática usando um percorredor (operador de multiplicação):
+Rotina para que se adicione os fragmentos de atribuição ou conversão de valores usando uma variável e uma segunda variável e um endereço local:
+  Adicione um fragmento usando o etiqueta de inserção de endereço [na stack] e a segunda variável.
+  Adicione um segundo fragmento usando o etiqueta de inserção de endereço [na stack] e a variável.
+  Encontre uma rotina usando "Atribua" e o tipo desta variável e "para" e o tipo desta segunda variável.
+  Se a rotina for inexistente, 
+    Encontre a rotina usando "Converta" e o tipo desta variável e "para" e o tipo desta segunda variável.
+  Se a rotina não for inexistente,
+    Adicione um terceiro fragmento usando a etiqueta de demanda interna e a rotina;
+    Retorne.
+  \ Criação da Mensagem de Erro, caso a rotina não tenha sido encontrada
+  Adicione uma unidade semântica para umas unidades semânticas usando "Atribua/Converta".
+  Adicione uma segunda unidade semântica para as unidades semânticas usando o tipo desta variável.
+  Adicione uma terceira unidade semântica para as unidades semânticas usando "para/a".
+  Adicione uma quarta unidade semântica para as unidades semânticas usando o tipo desta segunda variável.
+  Converta as unidades semânticas para uma representação interna da rotina.
+  Destrua as unidades semânticas.
+  Apresente uma mensagem de erro contendo "Erro. A rotina para que se " 
+    junto com a representação interna da rotina seguido de " ainda não foi definida." e o endereço local.
+
+Rotina para que se compile uma expressão matemática usando um percorredor (operador de multiplicação): \ vezes
   Se existir algum problema de compilação, retorne.
   Se a variável desta expressão matemática for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #32. Erro de sintaxe. Comando 'vezes' incorreto. Não é póssível multiplicar por '"
-    junto com a frase desta expressão matemática seguido de "'." e o percorredor;
+    Apresente uma mensagem de erro contendo "Erro #32. Erro de sintaxe. A variável '" 
+    junto com a frase desta expressão matemática 
+    seguido de "' possui um valor inválido (nulo)."
+    seguido de " Não é possível multiplicar um número que não possui um valor definido." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Compile um termo usando o percorredor.
   Se existir algum problema de compilação, retorne.
   Se a variável deste termo for inexistente,
-    Apresente a mensagem de erro contendo "Erro #33. Erro de sintaxe. Comando 'multiplicado por' incorreto. Não é póssível multiplicar por '" 
-    junto com a frase deste termo seguido de "'." e o percorredor;
+    Apresente a mensagem de erro contendo "Erro #33. Erro de sintaxe. O termo '" 
+    junto com a frase deste termo 
+    seguido de "' possui um valor inválido (nulo)." 
+    seguido de " Não é possível multiplicar um número que não possui um valor definido." e o percorredor;
     Retorne.
-  Adicione uma variável intermediária usando o nome do tipo desta expressão matemática e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione fragmentos diversos usando "Atribua" e a variável desta expressão matemática e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione fragmentos diversos usando "Multiplique" e a variável intermediária e "por" e a variável deste termo e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione uma variável intermediária usando 
+    o nome do tipo desta expressão matemática e 
+    o caractere inicial deste segmento inicial deste percorredor.
+  Adicione fragmentos diversos usando 
+    "Atribua" e 
+    a variável desta expressão matemática e 
+    "para" e a variável intermediária e 
+    o caractere inicial deste segmento inicial deste percorredor.
+  Adicione fragmentos diversos usando 
+    "Multiplique" e 
+    a variável intermediária e 
+    "por" e a variável deste termo e 
+    o caractere inicial deste segmento inicial deste percorredor.
   Atribua a variável intermediária à variável desta expressão matemática.
   Limpe a frase desta expressão matemática.
 

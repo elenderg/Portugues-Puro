@@ -193,22 +193,6 @@ Rotina para que se adicione push fragmentos usando umas unidades semânticas:
     Adicione um fragmento usando o etiqueta de inserção de endereço [na stack] e a variável desta unidade semântica.
   Reitere.
 
-Rotina para que se adicione o atribua ou converta fragmentos usando uma variável e uma segunda variável e um endereço local:
-  Adicione um fragmento usando o etiqueta de inserção de endereço [na stack] e a segunda variável.
-  Adicione um segundo fragmento usando o etiqueta de inserção de endereço [na stack] e a variável.
-  Encontre uma rotina usando "Atribua" e o tipo desta variável e "para" e o tipo desta segunda variável.
-  Se a rotina for inexistente, encontre a rotina usando "Converta" e o tipo desta variável e "para" e o tipo desta segunda variável.
-  Se a rotina não for inexistente,
-    Adicione um terceiro fragmento usando a etiqueta de demanda interna e a rotina;
-    Retorne.
-  \ Mensagem de Erro
-  Adicione uma unidade semântica para umas unidades semânticas usando "Atribua/Converta".
-  Adicione uma segunda unidade semântica para as unidades semânticas usando o tipo desta variável.
-  Adicione uma terceira unidade semântica para as unidades semânticas usando "para/a".
-  Adicione uma quarta unidade semântica para as unidades semânticas usando o tipo desta segunda variável.
-  Converta as unidades semânticas para uma representação interna da rotina.
-  Destrua as unidades semânticas.
-  Apresente uma mensagem de erro contendo "Erro. A rotina para que se " junto com a representação interna da rotina seguido de " ainda não foi definida." e o endereço local.
 
 
 
@@ -1601,7 +1585,7 @@ Rotina para que se converta um termo por concatenação usando um percorredor: \\ 
   Se o tipo deste termo puder ser reduzido para "texto", retorne.
   Adicione uma variável intermediária usando "string" e o caractere inicial deste segmento inicial deste percorredor.
   \Adicione uma variável intermediária usando "texto" e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione o atribua ou converta fragmentos usando a variável deste termo e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione os fragmentos de atribuição ou conversão de valores usando a variável deste termo e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
   Atribua a variável intermediária à variável deste termo.
   Limpe a frase deste termo.
 
