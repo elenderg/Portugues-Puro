@@ -3604,7 +3604,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
   Se existir algum problema de compilação, retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Compile umas unidades semânticas usando o percorredor.
-  Remova alguns termos negativos desde as unidades semânticas retornando um sinalizador.
+  Remova alguns termos negativos desde as unidades semânticas retornando um sinalizador. \ 
   Encontre uma rotina usando as unidades semânticas.
   Se a rotina não for inexistente, adicione push fragmentos usando as unidades semânticas.
   Se a rotina for inexistente, converta as unidades semânticas para uma representação interna da rotina.
@@ -3642,7 +3642,8 @@ Rotina para que se compile umas unidades semânticas usando um percorredor:
     Se existir algum problema de compilação, retorne.
     Se o percorredor estiver sobre alguma unidade semântica relevante, \
       Adicione uma unidade semântica para as unidades semânticas usando o segmento inicial deste percorredor;
-      Mova o percorredor (usando diretrizes de compilação); Reitere.
+      Mova o percorredor (usando diretrizes de compilação); 
+      Reitere.
     Se o segmento inicial deste percorredor não for o início de alguma expressão matemática, retorne.
     Compile uma expressão matemática usando o percorredor.
     Se existir algum problema de compilação, retorne.
