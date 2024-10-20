@@ -182,16 +182,7 @@ Rotina para que se adicione uma unidade semântica para umas unidades semânticas 
 
 
 
-Rotina para que se adicione push fragmentos usando umas unidades semânticas:
-  Se a rotina utilizada atualmente for inexistente, retorne.
-  Itere.
-    Obtenha uma unidade semântica desde as unidades semânticas (regressivamente).
-    Se a unidade semântica for inexistente, retorne.
-    Se a variável desta unidade semântica for inexistente, reitere.
-    Se o subtexto atual desta unidade semântica não estiver em branco, reitere.
-    Se o tipo atual desta unidade semântica for inexistente, reitere.
-    Adicione um fragmento usando o etiqueta de inserção de endereço [na stack] e a variável desta unidade semântica.
-  Reitere.
+
 
 
 
@@ -2930,27 +2921,7 @@ Rotina para que se carregue uns arquivos fonte usando um endereço da pasta e um 
 
 
 
-Rotina para que se remova alguns termos negativos desde umas unidades semânticas retornando um sinalizador:
-  Desative o sinalizador.
-  Permute as unidades semânticas com umas segunda unidades semânticas.
-  Itere.
-    Atribua a primeira unidade semântica destas segunda unidades semânticas para uma unidade semântica.
-    Se a unidade semântica for inexistente, retorne.
-    Remova a unidade semântica desde a segunda unidades semânticas.
-    \PAL
-    Se a string desta unidade semântica for "não",
-    Inverta o sinalizador;
-    Destrua a unidade semântica; Reitere.
-    \CAL
-    Acrescente a unidade semântica para as unidades semânticas.
-    Se a string desta unidade semântica for "nothing",
-    Inverta o sinalizador;
-    Atribua "something" à string desta unidade semântica; Reitere.
-    Se a string desta unidade semântica for "nada",
-    Inverta o sinalizador;
-    Atribua "something" à string desta unidade semântica; Reitere.
-    \Se a string desta unidade semântica termina com "n't", inverta o sinalizador; remova final bytes desde a string desta unidade semântica usando 3; Reitere.
-  Reitere.
+
 
 
 

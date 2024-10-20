@@ -3526,7 +3526,7 @@ Rotina para que se compile o corpo pertencente para uma rotina:
   Itere.
     Se existir algum problema de compilação, retorne.
     Se o segmento inicial deste percorredor estiver em branco, pare.
-    Compile a próxima instrução usando o percorredor.
+    Compile a próxima instrução usando o percorredor. \ --------------------------------------------------------------------------------------------------------------
   Reitere.
   Compile o corpo pertencente à rotina (etapa conclusiva).
   Atribua a nova rotina à rotina utilizada atualmente.
@@ -3600,14 +3600,16 @@ Rotina para que se compile a próxima instrução usando um percorredor:
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
 
-Rotina para que se compile a próxima instrução usando um percorredor (cláusula de condicional):
+Rotina para que se compile a próxima instrução usando um percorredor (cláusula de condicional): \----------------
   Se existir algum problema de compilação, retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Compile umas unidades semânticas usando o percorredor.
   Remova alguns termos negativos desde as unidades semânticas retornando um sinalizador. \ 
   Encontre uma rotina usando as unidades semânticas.
-  Se a rotina não for inexistente, adicione push fragmentos usando as unidades semânticas.
-  Se a rotina for inexistente, converta as unidades semânticas para uma representação interna da rotina.
+  Se a rotina não for inexistente, 
+    Adicione push fragmentos usando as unidades semânticas.
+  Se a rotina for inexistente, 
+    Converta as unidades semânticas para uma representação interna da rotina.
   Destrua as unidades semânticas.
   Se a rotina for inexistente,
     Apresente uma mensagem de erro contendo "Erro #61. A rotina para que se determine se '"
@@ -3616,7 +3618,10 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
   Se o sinalizador de deliberação desta rotina não estiver ativo,
     Apresente a mensagem de erro contendo "Erro #62. Necessário utilizar um decisor." e o percorredor;
     Retorne.
-  \ Se o segmento inicial deste percorredor não for a vírgula, apresente a mensagem de erro contendo "Acho que você esqueceu de uma vírgula, eu achei isso aqui: " junto com o segmento inicial deste percorredor seguido de "." e o percorredor; Retorne.
+  \ Se o segmento inicial deste percorredor não for a vírgula, 
+    \Apresente a mensagem de erro contendo "Acho que você esqueceu de uma vírgula, eu achei isso aqui: " 
+    \junto com o segmento inicial deste percorredor seguido de "." e o percorredor; 
+    \Retorne.
   Se o segmento inicial deste percorredor não for qualquer separador de comandos,
     Apresente a mensagem de erro contendo "Erro #63. Necessário incluir uma vírgula ao invés de: "
     junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
@@ -3632,7 +3637,8 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
     Mova o percorredor (usando diretrizes de compilação);
     Reitere.
     Se o segmento inicial deste percorredor não for o ponto final,
-    Apresente a mensagem de erro contendo "Erro #64. Necessário incluir um '.' ao invés de: " junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
+    Apresente a mensagem de erro contendo "Erro #64. Necessário incluir um '.' ao invés de: " 
+    junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Adicione um quarto fragmento usando o etiqueta delimitadora de bloco condicional.
@@ -3660,6 +3666,47 @@ Função para que se determine se um percorredor está sobre alguma unidade semânti
   Se o segmento inicial deste percorredor for algum símbolo, diga não.
   Se o segmento inicial deste percorredor for "então", diga não.
   Diga sim.
+
+Rotina para que se remova alguns termos negativos desde umas unidades semânticas retornando um sinalizador:
+  Desative o sinalizador.
+  Permute as unidades semânticas com umas segunda unidades semânticas.
+  Itere.
+    Atribua a primeira unidade semântica destas segunda unidades semânticas para uma unidade semântica.
+    Se a unidade semântica for inexistente, retorne.
+    Remova a unidade semântica desde a segunda unidades semânticas.
+    \PAL
+    Se a string desta unidade semântica for "não",
+      Inverta o sinalizador;
+      Destrua a unidade semântica; 
+      Reitere.
+    \CAL
+    Acrescente a unidade semântica para as unidades semânticas.
+    Se a string desta unidade semântica for "nothing",
+      Inverta o sinalizador;
+      Atribua "something" à string desta unidade semântica; 
+      Reitere.
+    Se a string desta unidade semântica for "nada",
+      Inverta o sinalizador;
+      Atribua "something" à string desta unidade semântica; 
+      Reitere.
+    \Se a string desta unidade semântica termina com "n't", 
+      \Inverta o sinalizador; 
+      \Remova final bytes desde a string desta unidade semântica usando 3; 
+      \Reitere.
+  Reitere.
+
+Rotina para que se adicione push fragmentos usando umas unidades semânticas:
+  Se a rotina utilizada atualmente for inexistente, retorne.
+  Itere.
+    Obtenha uma unidade semântica desde as unidades semânticas (regressivamente).
+    Se a unidade semântica for inexistente, retorne.
+    Se a variável desta unidade semântica for inexistente, reitere.
+    Se o subtexto atual desta unidade semântica não estiver em branco, reitere.
+    Se o tipo atual desta unidade semântica for inexistente, reitere.
+    Adicione um fragmento usando o etiqueta de inserção de endereço [na stack] e a variável desta unidade semântica.
+  Reitere.
+
+
 
 Rotina para que se compile uma expressão matemática usando um percorredor:
   Se existir algum problema de compilação, retorne.
