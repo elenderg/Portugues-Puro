@@ -3607,7 +3607,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
   Remova alguns termos negativos desde as unidades semânticas retornando um sinalizador. \ 
   Encontre uma rotina usando as unidades semânticas.
   Se a rotina não for inexistente, 
-    Adicione push fragmentos usando as unidades semânticas.
+    Adicione fragmentos push usando as unidades semânticas.
   Se a rotina for inexistente, 
     Converta as unidades semânticas para uma representação interna da rotina.
   Destrua as unidades semânticas.
@@ -3627,21 +3627,24 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
     junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
     Retorne.
   Adicione um fragmento usando a etiqueta de demanda interna e a rotina.
-  Se o sinalizador estiver ativo, adicione um segundo fragmento usando a etiqueta de negação lógica.
+  Se o sinalizador estiver ativo, 
+    Adicione um segundo fragmento usando a etiqueta de negação lógica.
   Adicione um terceiro fragmento usando o etiqueta de desvio falso.
   Mova o percorredor (usando diretrizes de compilação).
   Itere.
-    Compile a próxima instrução usando o percorredor (demais cláusulas).
+    Compile a próxima instrução usando o percorredor (demais cláusulas). \
     Se existir algum problema de compilação, retorne.
     Se o segmento inicial deste percorredor for o ponto&vírgula,
-    Mova o percorredor (usando diretrizes de compilação);
-    Reitere.
+      Mova o percorredor (usando diretrizes de compilação);
+      Reitere.
     Se o segmento inicial deste percorredor não for o ponto final,
-    Apresente a mensagem de erro contendo "Erro #64. Necessário incluir um '.' ao invés de: " 
-    junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Adicione um quarto fragmento usando o etiqueta delimitadora de bloco condicional.
+      Apresente a mensagem de erro contendo "Erro #64. Necessário incluir um '.' ao invés de: " 
+      junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
+      Retorne.
+    Mova o percorredor (usando diretrizes de compilação).
+    Adicione um quarto fragmento usando o etiqueta delimitadora de bloco condicional.
+  [Reitere.]  
+
 
 Rotina para que se compile umas unidades semânticas usando um percorredor:
   [Itere.]  
@@ -3695,18 +3698,22 @@ Rotina para que se remova alguns termos negativos desde umas unidades semânticas
       \Reitere.
   Reitere.
 
-Rotina para que se adicione push fragmentos usando umas unidades semânticas:
+Rotina para que se adicione fragmentos push usando umas unidades semânticas:
   Se a rotina utilizada atualmente for inexistente, retorne.
   Itere.
     Obtenha uma unidade semântica desde as unidades semânticas (regressivamente).
     Se a unidade semântica for inexistente, retorne.
-    Se a variável desta unidade semântica for inexistente, reitere.
+    Se a variável desta unidade semântica for inexistente, reitere. \ obtém a próxima unidade semântica (regressivamente)
     Se o subtexto atual desta unidade semântica não estiver em branco, reitere.
     Se o tipo atual desta unidade semântica for inexistente, reitere.
-    Adicione um fragmento usando o etiqueta de inserção de endereço [na stack] e a variável desta unidade semântica.
+    Adicione um fragmento usando a etiqueta de inserção de endereço [na stack] e a variável desta unidade semântica.
   Reitere.
 
-
+Função para que se determine se um subtexto é qualquer separador de comandos:
+  Se o subtexto for a vírgula, diga sim.
+  Se o subtexto for "então", diga sim.
+  [Caso contrário] 
+  Diga não.
 
 Rotina para que se compile uma expressão matemática usando um percorredor:
   Se existir algum problema de compilação, retorne.

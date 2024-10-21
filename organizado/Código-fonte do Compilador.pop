@@ -992,7 +992,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
   Compile umas unidades semânticas usando o percorredor.
   Encontre uma rotina usando as unidades semânticas.
   Se a rotina não for inexistente,
-    Adicione push fragmentos usando as unidades semânticas.
+    Adicione fragmentos push usando as unidades semânticas.
   Se a rotina não for inexistente,
     Destrua as unidades semânticas;
     Adicione um fragmento usando a etiqueta de demanda interna e a rotina;
@@ -1035,14 +1035,6 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
     Retorne.
   Adicione um fragmento usando o etiqueta de retorno.
   Mova o percorredor (usando diretrizes de compilação).
-
-
-
-Função para que se determine se um subtexto é qualquer separador de comandos:
-  Se o subtexto for a vírgula, diga sim.
-  Se o subtexto for "então", diga sim.
-  [Caso contrário] 
-  Diga não.
 
 Rotina para que se compile a próxima instrução usando um percorredor (cláusula de decodificação):
   Mova o percorredor (usando diretrizes de compilação).
