@@ -3632,7 +3632,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
   Adicione um terceiro fragmento usando o etiqueta de desvio falso.
   Mova o percorredor (usando diretrizes de compilação).
   Itere.
-    Compile a próxima instrução usando o percorredor (demais cláusulas). \
+    Compile a próxima instrução usando o percorredor (demais cláusulas). \ -------------
     Se existir algum problema de compilação, retorne.
     Se o segmento inicial deste percorredor for o ponto&vírgula,
       Mova o percorredor (usando diretrizes de compilação);
