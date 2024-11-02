@@ -11931,6 +11931,7 @@ Rotina para que se encolha uma caixa usando uns twips:
   Subtraia os twips desde a coordenada X2 desta caixa.
   Subtraia os twips desde a coordenada Y2 desta caixa.
 
+Rotina para que se finalize os componentes;
 Rotina para que se feche este programa;
 Rotina para que se feche o nosso programa;
 Rotina para que se feche nosso programa;
