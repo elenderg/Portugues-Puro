@@ -17,6 +17,10 @@ Rotina para que se execute o programa:
   Delegue o controle.
   Feche o nosso programa.
 
+O STD_INPUT_HANDLE é um número igual a -10.
+O CodePage é um número igual a 1252.
+O INVALID_HANDLE_VALUE é um número igual a -1.
+
 Rotina para que se obtenha o Número Identificador do Fluxo de Entrada Padrão:
   Processe "kernel32.dll" "GetStdHandle" com 
     O STD_INPUT_HANDLE [nStdHandle = STD_INPUT_HANDLE]
@@ -45,7 +49,7 @@ Rotina para que se obtenha o modo do console:
 Rotina para que se leia um trecho desde a STDIN:
   Atribua 0 para um número denominado lpNumberOfBytesRead.
   Atribua 0 para um número denominado quantidade de caracteres NULL restantes.
-  Atribua "" para o trecho.
+  \Atribua "" para o trecho.
   Preencha o trecho com o caractere NULL usando 256.
   \Anexe o caractere NULL após o trecho.
   Processe "kernel32.dll" "ReadFile" com
@@ -57,8 +61,10 @@ Rotina para que se leia um trecho desde a STDIN:
     Retornando um status de erro.
   Se o status de erro for 0 [NULL], 
     Escreva "Erro ao ler do Console." junto com o texto CRLF para STDOUT.
-  Converta o lpNumberOfBytesRead para uma string.
-  Escreva "Bytes lidos: " junto com a string junto com o texto CRLF para Stdout.
   Se o lpNumberOfBytesRead for menor do que 256,
     Atribua 256 menos o lpNumberOfBytesRead para a quantidade de caracteres NULL restantes.
     Remova os caracteres finais desde o trecho usando a quantidade de caracteres NULL restantes.
+  Subtraia 2 desde o lpNumberOfBytesRead.
+  Converta o lpNumberOfBytesRead para uma string.
+  Escreva "Bytes lidos: " junto com a string junto com o texto CRLF para Stdout.
+

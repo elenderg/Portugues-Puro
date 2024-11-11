@@ -3116,6 +3116,60 @@ Rotina para que se associe um ponteiro usando um quantidade de bytes:\ Aloque me
     Adicione 1 para a contagem do heap;
     Retorne.
 
+O STD_INPUT_HANDLE é um número igual a -10.
+O CodePage é um número igual a 1252.
+O INVALID_HANDLE_VALUE é um número igual a -1.
+
+Rotina para que se obtenha o Número Identificador do Fluxo de Entrada Padrão:
+  Processe "kernel32.dll" "GetStdHandle" com 
+    O STD_INPUT_HANDLE [nStdHandle = STD_INPUT_HANDLE]
+    Retornando o Número Identificador do Fluxo de Entrada Padrão.
+  Se o Número Identificador do Fluxo de Entrada Padrão for a INVALID_HANDLE_VALUE,
+    Escreva "Erro ao obter o número identificador do fluxo de entrada padrão." junto com o texto CRLF para STDOUT.
+  Escreva "STDIN HANDLE: " junto com o número identificador do fluxo de entrada padrão junto com o texto CRLF para STDOUT.
+
+Rotina para que se defina o CodePage do Console:
+  Processe "kernel32.dll" "SetConsoleOutputCP" com 
+    O codepage 
+    Retornando um número denominado status de erro.
+  Se o status de erro for 0 [NULL], 
+    Escreva "Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT.  
+
+Rotina para que se obtenha o modo do console:
+  Processe "kernel32.dll" "GetConsoleMode" com
+    O número identificador do fluxo de entrada padrão e
+    O endereçamento dum número denominado modo do console
+    Retornando um status de erro.
+  Se o status de erro for 0 [NULL], 
+     Escreva "Erro ao obter o modo do Console." junto com o texto CRLF para STDOUT.
+  Se o status de erro não for 0 [NULL], 
+     Escreva "Modo do console: " junto com o modo do console junto com o texto CRLF para STDOUT.
+
+Rotina para que se leia um trecho desde a STDIN:
+  Atribua 0 para um número denominado lpNumberOfBytesRead.
+  Atribua 0 para um número denominado quantidade de caracteres NULL restantes.
+  \Atribua "" para o trecho.
+  Preencha o trecho com o caractere NULL usando 256.
+  \Anexe o caractere NULL após o trecho.
+  Processe "kernel32.dll" "ReadFile" com
+    O número identificador do fluxo de entrada padrão [hFile] e
+    O caractere inicial deste trecho [lpBuffer] e
+    256 [nNumberOfBytesToRead] e 
+    O endereçamento deste lpNumberOfBytesRead [lpNumberOfBytesRead] \ O número de bytes lidos ao usar o parâmetro hFile síncrono.
+    e 0 [lpOverlapped = NULL] 
+    Retornando um status de erro.
+  Se o status de erro for 0 [NULL], 
+    Escreva "Erro ao ler do Console." junto com o texto CRLF para STDOUT.
+  Se o lpNumberOfBytesRead for menor do que 256,
+    Atribua 256 menos o lpNumberOfBytesRead para a quantidade de caracteres NULL restantes.
+    Remova os caracteres finais desde o trecho usando a quantidade de caracteres NULL restantes.
+  Subtraia 2 desde o lpNumberOfBytesRead.
+  \Converta o lpNumberOfBytesRead para uma string.
+  \Escreva "Bytes lidos: " junto com a string junto com o texto CRLF para Stdout.
+
+
+
+
 Rotina para que se role automaticamente uma caixa de texto usando uma localização e um sinalizador:
   Se a caixa de texto for inexistente,
     Desative o sinalizador;

@@ -1,0 +1,34 @@
+
+Atribua {1,2,3,4,5,6,7,8,9} para uma matriz numérica denominada umanove.
+
+Multiplique o último elemento desta umanove por 2.
+Multiplique o elemento da posição 1 desta umanove pelo elemento da posição 2 desta umanove.
+Multiplique o 1º elemento desta umanove pelo 2º elemento desta umanove.
+
+
+
+
+Um matriz numérica é uma matriz com uns números.
+
+
+
+
+
+Uma matriz é uma estrutura com
+  Um número denominado tamanho,
+  Uma string denominada tipo de dados,
+  Uma número denominado índice atual,
+  Um ponteiro denominado primeiro elemento,
+  Um ponteiro denominado último elemento.
+  
+
+Obtenha o 
+
+Para que se duplique uma matriz numérica:
+  Se o tipo de dados desta matriz não for "numérico", retorne.
+  Itere.
+    Multiplique o conteúdo deste índice atual desta matriz por 2.
+    Se o índice desta matriz não for o último elemento desta matriz,
+      Adicione 1 para o índice,
+      Reitere.
+  

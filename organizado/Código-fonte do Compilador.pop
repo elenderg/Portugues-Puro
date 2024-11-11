@@ -176,7 +176,8 @@ Rotina para que se adicione uma unidade semântica para umas unidades semânticas 
   Acrescente a unidade semântica para as unidades semânticas.
   Atribua a frase desta expressão matemática à string desta unidade semântica.
   Atribua a variável desta expressão matemática à variável desta unidade semântica.
-  Se a variável desta expressão matemática não for inexistente, atribua o tipo desta expressão matemática ao tipo desta unidade semântica.
+  Se a variável desta expressão matemática não for inexistente, 
+    Atribua o tipo desta expressão matemática ao tipo desta unidade semântica.
 
 
 
@@ -414,9 +415,12 @@ Rotina para que se enderece uma variável usando um endereço:
   Se o sinalizador de compilação desta variável não estiver ativo, retorne.
   Atribua o image base mais o endereço ao endereço desta variável.
   Adicione a quantidade de caracteres deste tipo desta variável para o endereço.
-  Se o tipo desta variável puder ser reduzido para "string", adicione a quantidade de caracteres deste data desta variável mais 1 para o endereço.
-  Se o tipo desta variável puder ser reduzido para "cadeia de caracteres", adicione a quantidade de caracteres deste data desta variável mais 1 para o endereço.
-  Se o tipo desta variável puder ser reduzido para "texto", adicione a quantidade de caracteres deste data desta variável mais 1 para o endereço.
+  Se o tipo desta variável puder ser reduzido para "string", 
+    Adicione a quantidade de caracteres deste data desta variável mais 1 para o endereço.
+  Se o tipo desta variável puder ser reduzido para "cadeia de caracteres", 
+    Adicione a quantidade de caracteres deste data desta variável mais 1 para o endereço.
+  Se o tipo desta variável puder ser reduzido para "texto", 
+    Adicione a quantidade de caracteres deste data desta variável mais 1 para o endereço.
   Arredonde para cima o endereço usando o múltiplo imediato de 4.
 
 Rotina para que se enderece umas variáveis usando um endereço:
