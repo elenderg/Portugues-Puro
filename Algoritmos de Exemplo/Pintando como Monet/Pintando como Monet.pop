@@ -39,20 +39,23 @@ Rotina para que se inicialize a interface:
 
 Rotina para que se crie o plano de fundo:
   Pinte a caixa desta tela com a cor branca e a cor branca.
+  Atribua 0 para um contador.
   Itere.
     Escolha aleatoriamente uma localização no interior de a caixa desta tela.
     Escolha aleatoriamente uma cor entre a cor cinza claríssimo e a cor branca.
     Pincele a cor sobre a localização.
-    Se um contador estiver ultrapassando 80000,
+    Adicione 1 para o contador.
+    Se o contador for maior do que 80000,
+    \Se um contador estiver ultrapassando 80000,
       Pare.
     Se o contador for uniformemente divisível por 10000, 
       Atualize a tela.
   Reitere.
-  Extraia o plano de fundo usando a caixa desta tela. \ou Crie o plano de fundo desde o tela.
+  Extraia o plano de fundo usando a caixa desta tela. \ou Crie o plano de fundo desde a tela.
 
 Rotina para que se pincele uma cor sobre uma localização:
-  Escolha aleatoriamente o canto superior esquerdo duma elipse dentre 6 pixels de_ a localização.
-  Escolha aleatoriamente o canto inferior direito desta elipse dentre 6 pixels de_ a localização.
+  Escolha aleatoriamente o canto superior esquerdo duma elipse dentre 6 pixels d' a localização.
+  Escolha aleatoriamente o canto inferior direito desta elipse dentre 6 pixels d' a localização.
   Pinte a elipse com a cor.
 
 Rotina para que se inicialize a caixa de status:

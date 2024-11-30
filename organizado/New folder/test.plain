@@ -1,0 +1,23 @@
+A class is a record.
+
+A person is a class with
+  A string called first name and
+  A string called last name and
+  A number called age.
+
+To set a string as the last name of a person :
+  Privatize the person.
+  Put the string into the person's original name.
+
+\method overload, a kind of polymorphism
+To set a number as the age of a person: 
+  Privatize the person.
+  Put the number into the person's original age.
+
+To run:
+  Define a person called John. 
+  Set "John" as the name of the John.
+  Set 42 as the age of the John.
+  Write the Johns' original first name on the console. \ Output: John
+  Put "Doe" into John's original last name.
+  Write the Johns' original last name on the console. \ Output: Doe

@@ -7613,7 +7613,21 @@ Rotina para que se encontre um ponteiro usando uma string e um catálogo:
     Retorne.
   Esvazie o ponteiro.
 
+Rotina para que se encontre uma referência usando uma string e um catálogo:
+  Se o catálogo for inexistente, retorne.
+  Se a string estiver em branco,
+    Esvazie a referência;
+    Retorne.
+  Obtenha um recipiente usando a string e o catálogo.
+  Encontre a referência usando a string e as referências deste recipiente.
 
+Rotina para que se encontre uma referência usando uma string e umas referências:
+  Esvazie a referência.
+  Itere.
+    Obtenha a referência desde as referências.
+    Se a referência for inexistente, retorne.
+    Se a string for a string deste referência, retorne.
+  Reitere.
 
 Rotina para que se encontre um sector usando uma malha quadriculada e uma localização:
   Atribua a coordenada X desta localização dividido pelo número X desta malha quadriculada vezes o número X desta malha quadriculada à coordenada X deste sector.

@@ -1,0 +1,540 @@
+\ Este arquivo contém o código fonte do compilador da linguagem de programação "Português Puro"
+Uma mensagem de erro é uma string.
+Uma contagem de nomes é uma contagem.
+Um trecho de listagem é um trecho.
+Um sinalizador de erros é um sinalizador.
+
+Um endereço do arquivo atual é um endereço completo.
+\Um problema é um número.
+Um nome plural é um nome.
+Um nome da DLL é um nome.
+Um nome da função é um nome.
+Um sinalizador de compilação é um sinalizador.
+Um endereço é um número.
+Um endereço base é um endereço.
+
+Uma zona é uma estrutura com
+  Um endereço base,
+  Uma quantidade de caracteres e
+  Um tamanho.
+
+Um tipo primitivo é um tipo.
+Uma rotina alvo é uma rotina.
+Um sinalizador de possessivo reverso é um sinalizador.
+Um campo de estrutura-membro é um campo de estrutura.
+Um sinalizador de redirecionamento é um sinalizador.
+Um byte ignorável é um byte.
+Uma palavra-chave de referenciamento é uma palavra-chave.
+Uma palavra-chave de reutilização de rotina é uma palavra-chave.
+
+Um Cabeçalho DOS é uma estrutura com
+\ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/debug/pe-format
+  Uma word denominada Signature,
+  Uma word denominada NumberOfBytesOnLastPage,
+  Uma word denominada NumberOfPages,
+  Uma word denominada Relocations,
+  Uma word denominada SizeOfHeaderInParagraphs,
+  Uma word denominada MinimumExtraParagraphsNeeded,
+  Uma word denominada MamixmumExtraParagraphsNeeded,
+  Uma word denominada InitialRelativeSS,  \\ Initial Sstack segment
+  Uma word denominada InitialSP,  \\ Initial Stack Pointer value.
+  Uma word denominada InitialChecksum,
+  Uma word denominada InitialIP,  \\ Initial Instruction Pointer value.
+  Uma word denominada InitialRelativeCS, \\ Pre-relocated initial CS register value.
+  Uma word denominada AddressOfRelocationTableInFile, \
+  Uma word denominada OverlyNumber,
+  8 bytes denominados ReservedBytes,
+  Uma word denominada OEM_Identifier,
+  Uma word denominada OEM_Info,
+  20 bytes denominados ReservedWords,
+  Um número denominado AddressOfPEHeaderInFile.
+
+Um endereço thunk é um endereço.
+Um endereço do nome é um endereço.
+
+Uma função é uma lista com
+  Um endereço do nome,
+  Um endereço thunk, \ Consulte https://en.wikipedia.org/wiki/Thunk e http://ftp.informatik.rwth-aachen.de/jargon300/thunk.html
+  Um nome e
+  Um endereço.
+
+Uma expressão matemática é um termo.
+
+Um campo é uma variável.
+
+Um sinalizador de empilhamento é um sinalizador.
+
+Uma rotina de função é uma rotina.
+
+Um campo de estrutura é uma estrutura com
+  Um sinalizador de redirecionamento,
+  Um campo (referência),
+  Uma rotina de função (referência),
+  Um sinalizador de empilhamento.
+
+Um fragmento é uma lista com
+  \ we have three lists in the compiler memory — tipos, variables, and rotinas
+  \ each rotina consists of a series of logical instructions called “fragments.” There are just 22 fragmento tipos:
+  Uma etiqueta [break, Demanda Externa, Demanda Indireta, Demanda Interna, redirecionamento, end if, etapa conclusiva, exit, finalize, increment, Decodifique, jump false, load address, load eax, loop, not, etapa preliminar, push address, empilhamento de valor, salve eax, repeat, rotina address],
+  Uma variável (referência) [Demanda Indireta, redirecionamento, increment, load address, load eax, pop, push address, empilhamento de valor, rotina address, salve eax],
+  Uma segunda variável (referência) [load address],
+  Uma rotina (referência) [Demanda Interna, rotina address],
+  Uma função (referência) [Demanda Externa],
+  Um número [increment],
+  Um sinalizador [load eax], \SAL
+  Um endereço,
+  Um texto hexadecimal denominado código.
+
+Um corpo de variável global é um subtexto.
+Uma variável global é uma variável.
+
+Um cabeçalho da DLL é uma estrutura com
+\traduzir isso aqui
+  Um endereço denominado primeiro thunk, \ consulte https://www.linkedin.com/pulse/why-pe-need-original-primeiro-thunkoft-milad-kahsari-alhadi/
+  \ https://stackoverflow.com/questions/42413937/why-pe-need-original-first-thunkoft
+  \ Thunks são as partes definitivas dos códigos em um sistema operacional que manipula as transições entre o código de 16 e 32 bits.
+  \ Assim, eles garantem a compatibilidade com versões anteriores entre as chamadas feitas pelo aplicativo.
+  \ O OS está sujeito a esta facilidade para compatibilidade com versões anteriores, de modo que os aplicativos de 16 bits possam funcionar sem problemas em ambientes de 32 bits.
+  Um número denominado TimeStamp, \ Set to zero until bound; then this feld is set to the TimeDateStamp of the exporting FileHeader of the DLL
+  Um endereço denominado corrente de encaminhamento, \ forward chain: The 32-bit index of the primeiro forwarder in the list of imported functions
+  Um endereço denominado endereço do nome, \Esse endereço contém o RVA [Endereço Virtual Relativo] da DLL a ser carregada na memória. É um valor dword.
+  \É composto por: RVA = Base da Imagem + Ordem Endian
+  Um endereço denominado primeiro endereço thunk de memória.
+
+Uma DLL é uma lista com
+  Um endereço do nome,
+  Um endereço do cabeçalho,
+  Um nome,
+  Um cabeçalho da DLL,
+  Umas funções.
+
+Um endereço do cabeçalho é um endereço.
+Um variável intermediária é uma variável local.
+Um valor literal é uma variável.
+Uma variável local é uma variável.
+Um endereço local é um endereço de byte .
+Uma representação interna da rotina é uma string.  \ moniker
+\ https://learn.microsoft.com/pt-br/windows/win32/com/monikers
+\ Trata-se de uma representação interna de um nome de rotina, sendo que
+\ • Não há artigos precedendo os tipos dos parâmetros. 
+\ • Os tipos dos parâmetros estão rodeados por colchetes. 
+\ • As preposições são expandidas para incluir seus sinônimos.
+\ Cada pedaço de um moniker é uma unidade semântica. Por exemplo:
+\ Nome da rotina: Rotina para que se adicione um número para uma contagem:
+\ Moniker: adicione [número] em/para [contagem]
+\ Monikettes: 
+\ 1º: adicione 
+\ 2º [número] 
+\ 3º em/para 
+\ 4º [contagem]
+\ Essa representação interna é necessária porque
+\ • quando o compilador busca a rotina a ser chamada, 
+\   a representação interna faz com que seja fácil detectar o tipo base do tipo atual
+\   (por exemplo, [contagem] é um tipo derivado de [número])  when looking for an appropriate routine to call;
+\ • tampém faz com que seja fácil expandir as preposições
+\ • Nos ajuda a entender como o compilador entendeu a invoação da rotina, pois ele exibe a representação nas suas mensagens de erro.
+
+Uma unidade semântica é uma lista com
+  Uma string,
+  Um tipo (referência),
+  Um variável (referência),
+  \ para fazer o bubbling
+  Um tipo atual (referência),
+  Um subtexto atual.
+
+Um cabeçalho compactado é uma representação interna da rotina.
+Uma string de erro é uma string.
+Um parte da cifra binária é um subtexto.
+Um apelido é um nome.
+
+Um parâmetro é uma variável.
+
+Um Cabeçalho PE é uma estrutura com   \ O formato Portable Executable (PE) é baseado na especificação COFF (Common Object File Format).
+\Para obter mais informações, consulte https://learn.microsoft.com/pt-br/windows/win32/debug/pe-format
+\ O cabeçalho MS-DOS ocupa os primeiros 64 bytes do arquivo. A estrutura básica está representada abaixo:
+  Um número denominado Signature,
+  Uma word denominada MachineType,
+  Uma word denominada NumberOfSections,
+  Um número denominado TimeStamp,
+  Um número denominado PointerToSymbolTable,
+  Um número denominado NumberOfSymbols,
+  Uma word denominada SizeOfOptionalHeaderInBytes,
+  Uma word denominada Characteristics,
+  \ PARTE OPCIONAL - _IMAGE_OPTIONAL_HEADER64
+  Uma word denominada MagicNumber,
+  Um byte denominado MajorLinkerVersion,
+  Um byte denominado MinorLinkerVersion,
+  Um número denominado SizeOfCodeInFile, \ SizeOfCode
+  Um número denominado SizeOfInitializedDataInFile,
+  Um número denominado SizeOfUninitializedDataInFile,
+  Um número denominado AddressOfEntryPointInMemory, \ AddressOfEntryPoint
+  Um número denominado AddressOfCodeInMemory,  [BaseOfCode]
+  Um número denominado AddressOfInitializedDataInMemory, [BaseOfData]
+  Um número denominado ImageBase,
+  Um número denominado MemoryAlignment, [SectionAlignment]
+  Um número denominado FileAlignment,
+  Uma word denominada OS_MajorVersion, [MajorOperatingSystemVersion]
+  Uma word denominada OS_MinorVersion, [MinorOperatingSystemVersion]
+  Uma word denominada UserMajorVersion,  [MajorImageVersion]
+  Uma word denominada UserMinorVersion, [MinorImageVersion]
+  Uma word denominada SubsystemMajorVersion, [MajorSubsystemVersion]
+  Uma word denominada SubsystemMinorVersion, [MinorSubsystemVersion]
+  Um número denominado Reserved,  [Win32VersionValue]
+  Um número denominado SizeOfImageInMemory, [SizeOfImage]
+  Um número denominado SizeOfAllHeadersInFile, [SizeOfHeaders]
+  Um número denominado CheckSum,
+  Uma word denominada Subsystem,
+  Uma word denominada DLLCharacteristics,
+  Um número denominado MaxStack, [SizeOfStackReserve]
+  Um número denominado MinStack, [SizeOfStackCommit]
+  Um número denominado MaxHeap, [SizeOfHeapReserve]
+  Um número denominado MinHeap, [SizeOfHeapCommit]
+  Um número denominado LoaderFlags,  \ _IMAGE_OPTIONAL_HEADER64
+  Um número denominado NumberOfDirectories, [NumberOfRvaAndSizes]
+  8 bytes denominados Directory0,
+  Um número denominado ImageDirectoryEntryImportAddress,
+  Um número denominado ImageDirectoryEntryImportSize,
+  112 bytes denominados Directories2-15,
+  Um Cabeçalho de Seção PE denominado Idata Section,
+  Um Cabeçalho de Seção PE denominado Data Section,
+  Um Cabeçalho de Seção PE denominado Code Section.
+
+Um Cabeçalho de Seção PE é uma estrutura com
+  8 bytes denominados Nome, \ Each section header has a name fielf up to eight characters em comprimento, for which the primeiro character must be a period.
+  Um número denominado SizeInBytes,
+  Um número denominado AddressInMemory,
+  Um número denominado SizeInFile,
+  Um número denominado AddressInFile,
+  12 bytes denominados Reserved,
+  Um número denominado Characteristics. \ Defines the section Characteristics.
+  \These values are encontrado both em WINNT.H and in the Portable Executable Format specification.
+
+Uma frase é uma string.
+
+Um protótipo de string é uma estrutura com
+  Um caractere inicial e
+  Um caractere final .
+
+Um campo português é um campo.
+Um campo português feminino é um campo.
+Um tipo encadeado é um tipo.
+Um tipo estruturado é um tipo.
+Um tipo base é um tipo.
+Uma instrução é um subtexto.
+Um cabeçalho de rotina é um subtexto.
+Um tamanho local é um tamanho.
+Um sinalizador de função é um sinalizador.
+Uma representação de emprego é uma representação interna da rotina.
+\Um catálogo de apelidos é um catálogo.
+
+Uma rotina é uma lista com
+  Um endereço local (referência),
+  Um sinalizador de compatibilidade,
+  Um sinalizador de deliberação,
+  Um sinalizador de função,
+  Um sinalizador de compilação,
+  Um catálogo denominado catálogo de apelidos, \ alocação dinâmica. Verificar
+  Uma representação interna da rotina,
+  Umas unidades semânticas,
+  Uns parâmetros,
+  Um tamanho do parâmetro,
+  Uma representação de emprego,
+  Umas variáveis locais,
+  Um tamanho local,
+  Um cabeçalho de rotina,
+  Uma string do cabeçalho,
+  Umas instruções,
+  Uma string do corpo,
+  Uns fragmentos,
+  Um endereço.
+
+Uma string do corpo é uma string.
+Uma string do cabeçalho é uma string.
+Uma referência da rotina é [composta de] umas unidades semânticas.
+Uma palavra-chave é uma string.
+Uma palavra-chave de designação é uma palavra-chave.
+Um scratch é uma variável local.
+
+Um arquivo fonte é uma lista com
+  Um endereço completo e
+  Um trecho.
+
+Os arquivos fontes são uns arquivos fontes.
+
+Uma etiqueta é um número.
+
+Um termo é uma estrutura com
+  Uma variável e
+  Uma frase.
+
+Um tamanho do parâmetro é um tamanho.
+Um nome do tipo primitivo é um nome.
+Um sinalizador de informações complementares é um sinalizador.
+
+Um tipo é uma lista com
+  Um endereço local (referência),
+  Um nome, um nome plural,
+  Um cabeçalho compactado,
+  Uma quantidade de caracteres,
+  Um nome do tipo primitivo,
+  Um tipo base (referência),
+  Um nome do conteúdo,
+  Um tipo do conteúdo (referência) [aplicável somente a ponteiros],
+  Uma razão de escala,
+  Uns campos [aplicável somente a estruturas],
+  Um sinalizador de recursividade,
+  Um sinalizador de informações complementares.
+
+Um sinalizador de recursividade é um sinalizador.
+Um nome do tipo é um nome.
+
+Uma variável é uma lista com
+  Um endereço local (referência),
+  Um categoria [lvalor iteral, variável global, variável local, parâmetro, scratch],
+  Um sinalizador de compilação,
+  Um nome,
+  Um apelido,
+  Um nome do tipo,
+  Um tipo (referência), \ tipo real em literal, variável global e local; tipos revogados em parâmetros e scratches
+  Um endereço [variáveis globais e valores literais somente] ou
+  Um deslocamento sob o endereço [variáveis locais, parâmetros, e campos somente],
+  Uma contagem [campos somente],
+  Um sinalizador de referência [campos somente],
+  Um novo nome [campos somente],
+  Um sinalizador de passagem por-valor [parâmetros somente],
+  Um corpo de variável global [variáveis globais somente],
+  Um texto inicializador [variáveis globais somente],
+  Um valor literal (referência) [variáveis globais somente - constante com a qual se inicializa a variável global],
+  Um texto hexadecimal denominado data [literais somente].
+
+Um deslocamento é um número.
+Um texto inicializador é uma string.
+Um sinalizador de referência é um sinalizador.
+Um sinalizador de passagem por-valor é um sinalizador.
+Um novo nome é um nome.
+
+O temporizador de escrita é um temporizador. 
+\ Um temporizador é uma estrutura com uma contagem, uns intervalos iniciais e uns intervalos totais. 
+\ Um intervalo é um número.
+O temporizador de transmutação é um temporizador.
+O temporizador de análise/verificação é um temporizador.
+O temporizador de resolução de variáveis globais é um temporizador.
+O temporizador de resolução de tipos é um temporizador.
+O temporizador de operacionalização é um temporizador.
+O temporizador de deslocamentos é um temporizador.
+O temporizador de vinculação é um temporizador.
+O temporizador de ferramentas de catalogação é um temporizador.
+O temporizador de compilação do conteúdo das rotinas é um temporizador.
+O temporizador de compilação de cabeçalhos de rotina é um temporizador.
+O temporizador de etapas de cálculo é um temporizador.
+O temporizador de endereçamento é um temporizador.
+O temporizador de adição de rotinas pré-definidas de mémoria é um temporizador.
+O temporizador de adição de rotinas pré-definidas de inicialização é um temporizador.
+
+A etiqueta de interrupção é uma etiqueta igual a 1.
+A etiqueta de demanda externa é uma etiqueta igual a 2.
+A etiqueta de demanda indireta é uma etiqueta igual a 3.
+A etiqueta de demanda interna é uma etiqueta igual a 4.
+A etiqueta de redirecionamento é uma etiqueta igual a 5.
+A etiqueta delimitadora de bloco condicional é uma etiqueta igual a 6.
+A etiqueta conclusiva é uma etiqueta igual a 7.
+A etiqueta de retorno é uma etiqueta igual a 8.
+A etiqueta de finalização é uma etiqueta igual a 9.
+A etiqueta de acréscimo é uma etiqueta igual a 10.
+A etiqueta de decodificação é uma etiqueta igual a 11.
+A etiqueta de desvio falso é uma etiqueta igual a 12.
+A etiqueta de carregamento de endereço é uma etiqueta igual a 13.
+A etiqueta de carregamento de registrador EAX é uma etiqueta igual a 14.
+A etiqueta de laço é uma etiqueta igual a 15.
+A etiqueta de negação lógica é uma etiqueta igual a 16.
+A etiqueta preliminar é uma etiqueta igual a 17.
+A etiqueta de inserção de endereço [na stack] é uma etiqueta igual a 18.
+A etiqueta de inserção de valor [na stack] é uma etiqueta igual a 19.
+A etiqueta de obtenção do registrador EAX é uma etiqueta igual a 20.
+A etiqueta de repetição é uma etiqueta igual a 21.
+A etiqueta de endereço de rotina é uma etiqueta igual a 22.
+
+O compilador é uma estrutura com
+  Um endereço da pasta,
+  Um temporizador,
+  Um sinalizador de erros,
+  Um mensagem de erro,
+  Um endereço do arquivo atual,
+  Um número da linha de erro,
+  Uma contagem de nomes,
+  Um trecho exe,
+  Um trecho de listagem.
+
+O catálogo de variáveis globais é um catálogo.
+As variáveis globais são umas variáveis globais.
+A image base é um endereço igual a 4194304 [$00400000].
+A seção de DLLs é uma zona.
+As DLLs são umas DLLs.
+O catálogo de variáveis hexadecimais é um catálogo.
+Os valores literais são uns valores literais.
+O catálogo geral de rotinas é um catálogo.
+As rotinas são umas rotinas.
+O catálogo de tipos é um catálogo.
+O nome do conteúdo é um nome.
+O tipo do conteúdo é um tipo.
+Os tipos são uns tipos.
+O catálogo de rotinas úteis é um catálogo.
+O endereço do cabeçalho usado atualmente é um endereço.
+O endereço do nome usado atualmente é um endereço.
+O rotina utilizada atualmente é uma rotina.
+O endereço pré-calculado atual é um endereço.
+A região de dados é um zona.
+O percorredor de contrações é um percorredor.
+A Região de Código é um zona.
+As variáveis globais predefinidas são umas variáveis globais.
+
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  \Inicialize o compilador.
+  Faça tudo.
+  Finalize o compilador.
+  Escreva na próxima linha em StdOut.
+  Escreva "Operação finalizada." junto com o texto CRLF para StdOut.
+  \Execute os eventos.\
+  Feche o programa.
+
+Rotina para que se faça tudo:
+  Atribua 1252 a um número denominado codepage.
+  Processe "kernel32.dll" "SetConsoleOutputCP" com o codepage retornando um número denominado status de erro.
+  Se o status de erro for 0 [NULL], 
+    Escreva "Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT.
+  Obtenha uma string desde os argumentos da linha de comando.
+  Se a string estiver em branco, 
+    Escreva "--------------------------------------------------------------------------------------------------------------- " junto com o texto CRLF para StdOut;
+    Escreva "Aviso. Para utilizar este compilador, você deve invocá-lo através da linha de comando. " junto com o texto CRLF para StdOut;
+    Escreva "Para fazer isso, abra o Prompt de Comando (cmd.exe), navegue até a pasta do compilador e digite:" junto com o texto CRLF para StdOut;
+    Escreva " " junto com o texto CRLF para StdOut;
+    Escreva " c:\endereço_do_compilador.exe\  c:\pasta_do_projeto_atual\ " junto com o texto CRLF para StdOut;
+  Retorne.
+  Se o conteúdo deste caractere final desta string não for a barra invertida, 
+    Acrescente a barra invertida para a string.
+  Se a string não estiver no sistema de arquivos, 
+    Escreva "Erro. O diretório '" junto com a string seguido de "' não foi encontrado." junto com o texto CRLF para StdOut;
+    Retorne.
+  Escreva "Compilando o diretório '" junto com a string seguido de "' ..." junto com o texto CRLF para StdOut. \ #0
+  Escreva o texto CRLF para StdOut.
+  Compile a string.
+  Se existir algum problema de compilação, 
+    Exiba o erro de compilação; 
+    Retorne.
+  Escreva "Tempo de compilação: " junto com a string deste temporizador deste compilador seguido de " ms" junto com o texto CRLF para StdOut.
+
+Rotina para que se obtenha uma string desde os argumentos da linha de comando:
+  Processe "kernel32.dll" "GetCommandLineA" 
+    Retornando um endereço do caractere.
+  Converta o endereço do caractere para uma string denominada argumentos.
+  Lance um subtexto sobre os argumentos.
+  Itere.
+    Se o subtexto estiver em branco, 
+      Limpe a string; 
+      Retorne. 
+    Se o conteúdo deste caractere inicial deste subtexto não for o caractere de espaço, 
+      Adicione 1 para o caractere inicial deste subtexto; 
+      Reitere.
+    Atribua o subtexto para a string.
+    Elimine os resíduos na string.
+  \Reitere. 
+
+Rotina para que se compile um endereço da pasta:
+  Compile o endereço da pasta (inicialização). \ #001
+  Compile o endereço da pasta (arquivos de código fonte). \ #002
+  Compile o endereço da pasta (análise dos arquivos fornecidos). \ #003
+  Compile o endereço da pasta (identificação dos tipos das variáveis). \ #004
+  Compile o endereço da pasta (identificação de variáveis globais). \ #005
+  Compile o endereço da pasta (cabeçalhos de rotinas). \ #006
+  Compile o endereço da pasta (cálculo de tamanhos e deslocamentos). \ #007
+  Compile o endereço da pasta (adição de rotinas de memória incorporadas). \ #008
+  Compile o endereço da pasta (catalogue as rotinas por utilização). \ #009
+  Compile o endereço da pasta (conteúdo das rotinas). \ #010
+  Compile o endereço da pasta (adição e compilação da rotina de inicialização). \ #011
+  Compile o endereço da pasta (deslocamento de parâmetros e variáveis). \ #012
+  Compile o endereço da pasta (endereço). \ #013
+  Compile o endereço da pasta (transmutação). \ #014
+  Compile o endereço da pasta (vinculação). \ #015
+  Compile o endereço da pasta (etapa final). \ #016
+  Compile o endereço da pasta (interrupção). \ #017
+
+Rotina para que se exiba o erro de compilação:
+  Se o endereço do arquivo atual deste compilador estiver em branco, 
+    Escreva a mensagem de erro deste compilador para StdOut; 
+    Retorne.
+  Escreva 
+    A mensagem de erro deste compilador seguido de " - " 
+      junto com o endereço do arquivo atual deste compilador 
+      seguido de " linha: " 
+      junto com o número da linha de erro deste compilador
+    para StdOut.
+  Escreva o texto CRLF para StdOut.
+
+Rotina para que se compile um endereço da pasta usando um nível de profundidade:
+  Atribua 1 ao nível de profundidade.
+  Compile o endereço da pasta (inicialização). \ #001
+  Compile o endereço da pasta (arquivos de código fonte). \ #002
+  \Compile o endereço da pasta usando o nível de profundidade (arquivos de código fonte). \ #002
+  Defina uma variável global usando "O código de retorno é um número.".
+  Compile o endereço da pasta (análise dos arquivos fornecidos). \ #003
+  Compile o endereço da pasta (identificação dos tipos das variáveis). \ #004
+  Compile o endereço da pasta (identificação de variáveis globais). \ #005
+  Compile o endereço da pasta (cabeçalhos de rotinas). \ #006
+  Compile o endereço da pasta (cálculo de tamanhos e deslocamentos). \ #007
+  Compile o endereço da pasta (adição de rotinas de memória incorporadas). \ #008
+  Compile o endereço da pasta (catalogue as rotinas por utilização). \ #009
+  Compile o endereço da pasta (conteúdo das rotinas). \ #010
+  Compile o endereço da pasta (adição e compilação da rotina de inicialização). \ #011
+  Compile o endereço da pasta (deslocamento de parâmetros e variáveis). \ #012
+  Compile o endereço da pasta (endereço). \ #013
+  Compile o endereço da pasta (transmutação). \ #014
+  Compile o endereço da pasta (vinculação). \ #015
+  Compile o endereço da pasta (etapa final). \ #016
+  Compile o endereço da pasta (interrupção). \ #017
+
+Rotina para que se compile um endereço da pasta usando um nível de profundidade (arquivos de código fonte): \#002
+  Se existir algum problema de compilação, retorne.
+  Escreva "Carregando arquivos..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de operacionalização.
+  Carregue os arquivos fontes usando o nível de profundidade.
+  Suspenda o temporizador de operacionalização.
+
+Rotina para que se carregue uns arquivos fonte usando um nível de profundidade: \ Jasper
+  Leia os arquivos fonte usando o endereço completo deste compilador e o nível de profundidade.
+
+Rotina para que se carregue uns arquivos fonte usando um endereço da pasta e um nível de profundidade: \Jasper
+  Atribua ".pop" a uma nova extensão.
+  Anexe o caractere NULL após a nova extensão.
+  Se o nível de profundidade for menor do que 1, retorne.
+  Preserve a nível de profundidade.
+  Atribua o nível de profundidade para um segundo nível de profundidade.
+  Subtraia 1 desde o segundo nível de profundidade.
+  Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha um item desde o endereço da pasta.
+    Se o item não for encontrado, pare.
+    Se a categoria deste item for "endereço de pasta", 
+      Leia os arquivos fonte usando o endereço da pasta deste item e o segundo nível de profundidade;
+      Reitere.
+    Se a categoria deste item não for "arquivo", reitere.
+    Se a extensão deste  item não for a nova extensão, reitere.
+    Se o item parece ser encadernável, reitere.
+    Se o item parece ser lexical, reitere.
+    Adicione um arquivo fonte para os arquivos fontes usando o endereço completo deste item.
+    Carregue o arquivo fonte.
+  Reitere.
+
+\ Rotina para que se carregue uns arquivos fontes:
+  \ Atribua ".pop" a uma nova extensão.
+  \ Anexe o caractere NULL após a nova extensão.
+  \ Itere.
+    \ Se existir algum problema de compilação, retorne.
+    \ Obtenha um item desde o endereço da pasta deste compilador.
+    \ Se o item não for encontrado, pare.
+    \ Se a categoria deste item não for "arquivo", reitere.
+    \ Se a extensão deste  item não for a nova extensão, reitere.
+    \ Se o item parece ser encadernável, reitere.
+    \ Adicione um arquivo fonte para os arquivos fontes usando o endereço completo deste item.
+    \ Carregue o arquivo fonte.
+  \ Reitere.

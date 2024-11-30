@@ -1,16 +1,11 @@
-
-Atribua {1,2,3,4,5,6,7,8,9} para uma matriz numérica denominada umanove.
-
-Multiplique o último elemento desta umanove por 2.
-Multiplique o elemento da posição 1 desta umanove pelo elemento da posição 2 desta umanove.
-Multiplique o 1º elemento desta umanove pelo 2º elemento desta umanove.
-
-
-
-
 Um matriz numérica é uma matriz com uns números.
 
 
+Atribua {1,2,3,4,5,6,7,8,9} para uma matriz numérica denominada matriz de exemplo.
+
+Multiplique o último elemento desta matriz de exemplo por 2.
+Multiplique o elemento da posição 1 desta matriz de exemplo pelo elemento da posição 2 desta matriz de exemplo.
+Multiplique o 1º elemento desta matriz de exemplo pelo 2º elemento desta matriz de exemplo.
 
 
 

@@ -1,0 +1,538 @@
+Rotina para que se compile um endereço da pasta (cabeçalhos de rotinas): \ #006
+  Se existir algum problema de compilação, retorne.
+  Escreva "Agrupando os nomes das rotinas..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de compilação de cabeçalhos de rotina.
+  Compile os cabeçalhos apropriados para as rotinas.
+  Suspenda o temporizador de compilação de cabeçalhos de rotina.
+
+Rotina para que se compile os cabeçalhos apropriados para umas rotinas:
+  \Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha uma rotina desde as rotinas.
+    Se a rotina for inexistente, retorne.
+    Compile o cabeçalho próprio à rotina.
+  Reitere.
+
+Rotina para que se compile o cabeçalho próprio para uma rotina:
+  Se a rotina for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Lance um percorredor sobre a cabeçalho de rotina desta rotina.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor for algum comando de deliberação,
+    Compile o cabeçalho próprio à rotina usando o percorredor (rotina deliberativa);
+    Retorne.
+  Se o percorredor for o início de alguma função possessiva reversa,
+    Compile o cabeçalho próprio à rotina usando o percorredor (função do possessivo reverso);
+    Retorne.
+  Se o percorredor for o início de alguma função, 
+    Compile o cabeçalho próprio à rotina usando o percorredor (função);
+    Retorne.
+  Se o segmento inicial deste percorredor for "compativelmente",
+    Compile o cabeçalho próprio à rotina usando o percorredor (modo de compatibilidade);
+    Retorne.
+  Compile o cabeçalho próprio à rotina usando o percorredor (procedimento).
+
+Função para que se determine se uma string é algum comando de deliberação:
+  \Se a string for "decida", diga sim.
+  Se a string for "determine", diga sim.
+  \Se a string for "esclareça", diga sim.
+  Diga não.
+
+Rotina para que se compile o cabeçalho próprio para uma rotina usando um percorredor (rotina deliberativa):
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor não for algum comando condicional,
+    Apresente uma mensagem de erro contendo 
+      "Erro #35. Esperado encontrar 'para que se determine se'. Encontrado '" 
+      [junto com o segmento inicial deste percorredor] e o percorredor;
+    Retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Ative o sinalizador de deliberação desta rotina.
+  Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor.
+  Se algumas dentre as unidades semânticas desta rotina forem advérbios de negação,
+    Apresente a mensagem de erro contendo 
+      "Erro #36. É proibido utilizar o identificador 'não' em cabeçalhos de funções booleanas." e o percorredor;
+    Retorne.
+  Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
+  Se a representação interna da rotina desta rotina estiver no catálogo geral de rotinas,
+    Apresente a mensagem de erro contendo 
+    "Erro #37. A rotina para que se ''" junto com a representação interna da rotina desta rotina 
+    seguido de "' já havia sido definida anteriormente." e o endereço local desta rotina;
+    Retorne.
+  Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
+
+Função para que se determine se uma string é algum comando condicional:
+  Se a string for "se", diga sim.
+  Se a string for "quando", diga sim.
+  Diga não.
+
+Rotina para que se compile umas unidades semânticas e uns parâmetros usando um percorredor:
+  Se existir algum problema de compilação, retorne.
+  Se o segmento inicial deste percorredor estiver em branco, retorne.
+  Se o segmento inicial deste percorredor for algum artigo definido,
+    Compile as unidades semânticas e o parâmetros usando o percorredor (artigo definido);
+    Reitere.
+  Se o percorredor estiver sobre algum artigo indefinido,
+    Compile as unidades semânticas e o parâmetros usando o percorredor (artigo indefinido);
+    Reitere.
+  Se o percorredor estiver sobre alguma string de unidade semântica,
+    Compile as unidades semânticas e o parâmetros usando o percorredor (string de unidade semântica);
+    Reitere.
+  \Se o percorredor estiver sobre uma rotina não definida,
+    Apresente uma mensagem de erro contendo 
+      "Erro #48. A rotina 'para que se '" junto com o segmento inicial deste percorredor 
+      seguido de "' não foi localizada." e o percorredor.
+
+Rotina para que se compile umas unidades semânticas e uns parâmetros usando um percorredor (artigo definido):
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine um nome usando o percorredor.
+  Se existir algum problema de compilação, retorne.
+  Anteponha "o " para o nome.
+  Adicione uma unidade semântica para as unidades semânticas usando o nome.
+
+\ Unifica o sentido de diferentes termos usados em proposições, verbos e conjunções.
+Rotina para que se adicione uma unidade semântica para umas unidades semânticas usando uma string:
+  Crie a unidade semântica.
+  Acrescente a unidade semântica para as unidades semânticas.
+  \ conjunções
+  Se a string for "e",
+    Atribua "e" à string desta unidade semântica;
+    Retorne. \ and
+  Se a string for "ou",
+    Atribua "ou" à string desta unidade semântica;
+    Retorne. \ or
+  \ usando
+  Se a string for "desde",
+    Atribua "usando" à string desta unidade semântica;
+    Retorne.
+  \Se a string for "de", atribua "usando" à string desta unidade semântica; Retorne.
+  Se a string for "dada",
+    Atribua "usando" à string desta unidade semântica;
+    Retorne.
+  Se a string for "dado",
+    Atribua "usando" à string desta unidade semântica;
+    Retorne.
+  Se a string for "dadas",
+    Atribua "usando" à string desta unidade semântica;
+    Retorne.
+  Se a string for "dados",
+    Atribua "usando" à string desta unidade semântica;
+    Retorne.
+  Se a string for "com",
+    Atribua "usando" à string desta unidade semântica;
+    Retorne.
+  Se a string for "usando",
+    Atribua "usando" à string desta unidade semântica;
+    Retorne.
+  Se a string for "contendo",
+    Atribua "usando" à string desta unidade semântica;
+    Retorne.
+  \\ para
+  Se a string for "em", 
+    Atribua "para" à string desta unidade semântica; 
+    Retorne.
+  Se a string for "a",
+    Atribua "para" à string desta unidade semântica;
+    Retorne. \  ver isso aqui com calma
+  Se a string for "para",
+    Atribua "para" à string desta unidade semântica;
+    Retorne.
+  \\ VERBO SER/ESTAR
+  Se a string for "é",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "está",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "for",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "foi",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "foram",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "forem",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "estiver",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "estiverem",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "estamos",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "há",
+    Atribua "há" à string desta unidade semântica;
+    Retorne.
+  Se a string for "houver",
+    Atribua "há" à string desta unidade semântica;
+    Retorne.
+  Se a string for "seja",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "sejam",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "começar",
+    Atribua "começa" à string desta unidade semântica;
+    Retorne.
+  Se a string for "terminar",
+    Atribua "termina" à string desta unidade semântica;
+    Retorne.
+  \Se a string for "tem", atribua "tem" à string desta unidade semântica; Retorne.
+  \Se a string for "tiver", atribua "tem" à string desta unidade semântica; Retorne.
+  Se a string for "são",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "estão",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "forem",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "estiverem",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "puder",
+    Atribua "pode" à string desta unidade semântica;
+    Retorne.
+  Se a string for "puderem",
+    Atribua "pode" à string desta unidade semântica;
+    Retorne.
+  Se a string for "existe",
+    Atribua "existe" à string desta unidade semântica;
+    Retorne.
+  Se a string for "existir",
+    Atribua "existe" à string desta unidade semântica;
+    Retorne.
+  Se a string for "há",
+    Atribua "há" à string desta unidade semântica;
+    Retorne.
+  Se a string for "houver",
+    Atribua "há" à string desta unidade semântica;
+    Retorne.
+  Se a string for "possuir",
+    Atribua "possui" à string desta unidade semântica;
+    Retorne.
+  \ allocates e destroys
+  \Se a string for "crie", Atribua "aloque memória para" à string desta unidade semântica; Retorne.
+  \Se a string for "desaloque", atribua "desaloque" à string desta unidade semântica; Retorne.
+  \Se a string for "esvazie", atribua "deallocate" à string desta unidade semântica; Retorne.
+  \Se a string for "destrua", atribua "destrua" à string desta unidade semântica; Retorne.
+  Se a string for "pelo",
+    Atribua "por o" à string desta unidade semântica;
+    Retorne.
+  Se a string for "pela",
+    Atribua "por o" à string desta unidade semântica;
+    Retorne.
+  \ sobre
+  Se a string for "sob",
+    Atribua "sobre" à string desta unidade semântica;
+    Retorne.
+  Se a string for "sobre",
+    Atribua "sobre" à string desta unidade semântica;
+    Retorne.
+  Se a string for "começa",
+    Atribua "começa" à string desta unidade semântica;
+    Retorne.
+  Se a string for "começar",
+    Atribua "começa" à string desta unidade semântica;
+    Retorne.
+  Se a string for "termina",
+    Atribua "termina" à string desta unidade semântica;
+    Retorne.
+  Se a string for "terminar",
+    Atribua "termina" à string desta unidade semântica;
+    Retorne.
+  Se a string for "cabe",
+    Atribua "cabe" à string desta unidade semântica;
+    Retorne.
+  Se a string for "couber",
+    Atribua "cabe" à string desta unidade semântica;
+    Retorne.
+  Se a string for "sobre",
+    Atribua "sobre" à string desta unidade semântica;
+    Retorne.
+  \ other
+  Atribua a string à string desta unidade semântica.
+
+Rotina para que se compile umas unidades semânticas e uns parâmetros usando um percorredor (artigo indefinido):
+  Se existir algum problema de compilação, retorne.
+  Adicione um parâmetro para o parâmetros usando "parâmetro" e o caractere inicial deste segmento inicial deste percorredor.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine um nome usando o percorredor.
+  Expanda o nome deste parâmetro com o nome.
+  Se o segmento inicial deste percorredor for uma palavra-chave de designação, 
+    Compile a parte designadora usando o percorredor e o parâmetro.
+  Destrinche o parâmetro.
+  Se o parâmetro estiver duplicada nos parâmetros,
+    Apresente uma mensagem de erro contendo 
+      "Erro #49. O identificador '" junto com o nome deste parâmetro seguido de 
+      "' já foi declarado como parâmetro anteriormente nesta rotina." e o endereço local deste parâmetro;
+    Retorne.
+  Adicione uma unidade semântica para as unidades semânticas usando o tipo deste parâmetro.
+
+Rotina para que se compile a parte designadora usando um percorredor e uma variável:
+  Se existir algum problema de compilação, retorne.
+  Se a variável for inexistente, retorne.
+  Atribua o nome desta variável ao nome do tipo desta variável.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine o nome desta variável usando o percorredor.
+
+Rotina para que se adicione uma unidade semântica para umas unidades semânticas usando um tipo:
+  Crie a unidade semântica.
+  Acrescente a unidade semântica para as unidades semânticas.
+  Atribua o tipo ao tipo desta unidade semântica.
+
+Função para que se determine se um percorredor está sobre alguma string de unidade semântica:
+  Se o segmento inicial deste percorredor estiver em branco, diga não.
+  Se o percorredor estiver sobre algum artigo definido, diga não.
+  Se o percorredor estiver sobre algum artigo indefinido, diga não.
+  Se o segmento inicial deste percorredor for algum possessivo inglês, diga não.
+  Se o segmento inicial deste percorredor for algum valor literal, diga não.
+  Se o segmento inicial deste percorredor for algum sinal de pontuação, diga não.
+  Se o segmento inicial deste percorredor for algum símbolo, diga não.
+  Se o segmento inicial deste percorredor for "então", diga não.
+  Diga sim.
+
+Rotina para que se compile umas unidades semânticas e uns parâmetros usando um percorredor (string de unidade semântica):
+  Se existir algum problema de compilação, retorne.
+  Adicione uma unidade semântica para as unidades semânticas usando o segmento inicial deste percorredor.
+  Mova o percorredor (usando diretrizes de compilação).
+
+Função para que se determine se algumas dentre umas unidades semânticas são advérbios de negação:
+    Obtenha uma unidade semântica desde as unidades semânticas.
+    Se a unidade semântica for inexistente, diga não. \ return false
+    Se a string desta unidade semântica for algum advérbio de negação, diga sim.\ return true
+  Reitere.
+
+Rotina para que se converta umas unidades semânticas para uma representação interna da rotina:
+  Converta as unidades semânticas para 
+    a representação interna da rotina usando 
+    a última unidade semântica destas unidades semânticas.
+
+Rotina para que se converta umas unidades semânticas para uma representação interna da rotina usando uma unidade semântica:
+  Limpe a representação interna da rotina.
+  Itere.
+    Obtenha uma unidade semântica denominada unidade atual desde as unidades semânticas.
+    Se a unidade atual for inexistente, retorne.
+    Acrescente a unidade atual para a representação interna da rotina.
+    Se a unidade atual for a unidade semântica, retorne.
+  Reitere.
+
+Rotina para que se acrescente uma unidade semântica para uma representação interna da rotina :
+  Se a unidade semântica for inexistente, retorne.
+  Se a representação interna da rotina não estiver em branco, 
+    Acrescente o caractere de espaço para a representação interna da rotina.
+  Se o tipo desta unidade semântica não for inexistente,
+    Acrescente "[" e o nome deste tipo desta unidade semântica e "]" para a representação interna da rotina (rapidamente);
+    Retorne. \ moniker
+  Se a string desta unidade semântica não estiver em branco,
+    Acrescente a string desta unidade semântica para a representação interna da rotina;
+    Retorne.
+  
+\ Rotina para que se acrescente 3 strings distintas para uma string.
+Rotina para que se acrescente uma string e uma segunda string e uma terceira string para uma quarta string (rapidamente):
+  Atribua a quantidade de caracteres desta quarta string para uma quantidade de caracteres. 
+  Adicione a quantidade de caracteres desta string para a quantidade de caracteres.
+  Adicione a quantidade de caracteres desta segunda string para a quantidade de caracteres. 
+  Adicione a quantidade de caracteres desta terceira string para a quantidade de caracteres. 
+  Reaponte um ponteiro usando a quantidade de caracteres.
+  Atribua o ponteiro para um endereço de byte .
+  Copie bytes desde o caractere inicial desta quarta string para o endereço de byte pelo quantidade de caracteres desta quarta string.
+  Adicione a quantidade de caracteres desta quarta string para o endereço de byte .
+  Copie bytes desde o caractere inicial desta string para o endereço de byte pelo quantidade de caracteres desta string.
+  Adicione a quantidade de caracteres desta string para o endereço de byte .
+  Copie bytes desde o caractere inicial desta segunda string para o endereço de byte pelo quantidade de caracteres desta segunda string.
+  Adicione a quantidade de caracteres desta segunda string para o endereço de byte .
+  Copie bytes desde o caractere inicial desta terceira string para o endereço de byte pelo quantidade de caracteres desta terceira string.
+  Desassocie o caractere inicial desta quarta string.
+  Atribua o ponteiro ao caractere inicial desta quarta string.
+  Atribua o ponteiro mais a quantidade de caracteres menos 1 ao caractere final desta quarta string.
+
+Função para que se determine se uma representação interna da rotina está em um catálogo:
+  Encontre um referência usando a representação interna da rotina e o catálogo.
+  Se o referência for inexistente, diga não.
+  Se o ponteiro deste referência for inexistente, diga não.
+  Diga sim.
+
+Rotina para que se catalogue uma rotina usando umas unidades semânticas e um catálogo:
+  Se a rotina for inexistente, retorne.
+  Limpe um cabeçalho compactado.
+  Itere.
+    Obtenha uma unidade semântica desde as unidades semânticas.
+    Se a unidade semântica for inexistente, retorne.
+    Acrescente a unidade semântica para o cabeçalho compactado.
+    Se a unidade semântica for a última unidade semântica destas unidades semânticas, pare.
+    Catalogue o cabeçalho compactado usando o catálogo (especial).
+  Reitere.
+  Catalogue a rotina usando o cabeçalho compactado como uma representação interna da rotina e o catálogo (especial).
+
+Rotina para que se catalogue um cabeçalho compactado usando um catálogo (especial):
+  Encontre uma referência usando o cabeçalho compactado e o catálogo.
+  Se a referência não for inexistente, retorne.
+  Catalogue o cabeçalho compactado no catálogo.
+
+Rotina para que se catalogue uma rotina usando uma representação interna da rotina e um catálogo (especial):
+  Encontre uma referência usando a representação interna da rotina e o catálogo.
+  Se a referência não for inexistente,
+    Atribua a rotina ao ponteiro deste referência;
+    Retorne.
+  Catalogue a rotina usando a representação interna da rotina e o catálogo.
+
+\ Rotina nova criada pelo Dahn para - reverse functions
+\ para atribua o xxx uv a/the yyy para zzz
+Função para que se determine se um percorredor é o início de alguma função possessiva reversa:
+  Se o sinalizador de erros deste compilador estiver ativo, diga não.
+  Se o segmento inicial deste percorredor não for algum comando de atribuição, diga não.
+  Preserve o percorredor.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor não for algum artigo definido, diga não.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine um nome usando o percorredor.
+  Se o percorredor não estiver sobre algum possessivo reverso, diga não.
+  Diga sim.
+
+Função para que se determine se uma string é algum comando de atribuição:
+  \"Rotina para que se acrescente uma string para uma segunda string usando uma terceira string (para expandir contrações)"
+  Se a string for "atribua", diga sim.
+  Diga não.
+
+\ Rotina nova criada pelo Dahn para o possessivo reverso
+\ Por exemplo, na rotina "para que se atribua o campo duma estrutura para uma variável:"
+\ Internamente o compilador altera a estrutura da frase para:
+\ "Para que se atribua a estrutura's campo para uma variável:"
+Rotina para que se compile o cabeçalho próprio para uma rotina usando um percorredor (função do possessivo reverso):
+  Se existir algum problema de compilação, retorne.
+  Ative o sinalizador de função desta rotina.
+  Adicione uma unidade semântica para as unidades semânticas desta rotina usando "atribua".
+  Mova o percorredor (usando diretrizes de compilação). \ ignora "atribua"
+  Mova o percorredor (usando diretrizes de compilação). \ ignora o artigo definido
+  Examine um nome usando o percorredor. \ o nome do campo
+  Mova o percorredor (usando diretrizes de compilação). \ ignora o "de"
+  Se o segmento inicial deste percorredor for algum artigo indefinido, \ "dum" -> "de um"
+    Ative um sinalizador.
+  Se o sinalizador estiver ativo, 
+    Compile as unidades semânticas desta rotina e o parâmetros desta rotina usando o percorredor (artigo indefinido).
+  Se o sinalizador não estiver ativo, 
+    Compile as unidades semânticas desta rotina e o parâmetros desta rotina usando o percorredor (artigo definido).
+  Adicione uma segunda unidade semântica para as unidades semânticas desta rotina usando "'s " junto com o nome.
+  Se o segmento inicial deste percorredor não for alguma preposição de atribuição,
+    Apresente uma mensagem de erro contendo 
+      "Erro #187. Esperado: 'para'. Encontrado: '" 
+      junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Retorne.
+  Adicione uma terceira unidade semântica para as unidades semânticas desta rotina usando "para".
+  Converta as unidades semânticas desta rotina para uma representação interna da rotina.
+  Se a representação interna da rotina estiver no catálogo geral de rotinas,
+    Apresente a mensagem de erro contendo 
+      "Erro #188. A 'rotina para que se " junto com a representação interna da rotina 
+      seguido de "' já foi definida anteriormente." e o endereço local desta rotina;
+    Retorne.
+  Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor não for algum artigo indefinido,
+    Apresente a mensagem de erro contendo 
+      "Erro #189. Erro. Esperado encontrar um artigo indefinido. Encontrado: '" 
+      junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Retorne.
+  Compile as unidades semânticas desta rotina e o parâmetros desta rotina usando o percorredor (artigo indefinido).
+  Se o segmento inicial deste percorredor não estiver em branco,
+    Apresente a mensagem de erro contendo 
+      "Erro #190. O compilador detectou instruções inválidas no final desta rotina." 
+      [junto com o segmento inicial deste percorredor seguido de "'." junto com] e o percorredor;
+    Retorne.
+  Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
+  Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas. \ Para os employs
+
+Função para que se determine se uma string é alguma preposição de atribuição:
+  Se a string for "em", diga sim.
+  Se a string for "para", diga sim.
+  Diga não.
+
+Função para que se determine se um percorredor é o início de alguma função:
+  Se existir algum problema de compilação, diga não.  
+  \Se o segmento inicial deste percorredor não for algum comando de atribuição, diga não.
+  Se o segmento inicial deste percorredor não for "atribua", diga não.
+  Preserve o percorredor.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor não for algum artigo, diga não.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine um nome usando o percorredor.
+  Se o segmento inicial deste percorredor for algum possessivo inglês, diga sim. 
+  Diga não.
+
+Rotina para que se compile o cabeçalho próprio para uma rotina usando um percorredor (função):
+  Se existir algum problema de compilação, retorne.
+  Ative o sinalizador de função desta rotina.
+  Adicione uma unidade semântica para as unidades semânticas desta rotina usando "atribua".
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor for algum artigo indefinido, 
+    Ative um sinalizador.
+  Se o sinalizador estiver ativo, 
+    Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo indefinido).
+  Se o sinalizador não estiver ativo, 
+    Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo definido).
+  Se o segmento inicial deste percorredor não for algum possessivo inglês,
+    Apresente uma mensagem de erro contendo 
+      "Erro #38. Funções de atribuição requerem a utilização de um apóstro seguido de um s ['s]" e o percorredor;
+    Retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine um nome usando o percorredor.
+  Adicione uma segunda unidade semântica para as unidades semânticas desta rotina usando "'s " junto com o nome.
+  Se o segmento inicial deste percorredor não for "para",
+    Apresente a mensagem de erro contendo 
+      "Erro #39. Esperado 'para' após o identificador. Encontrado '" 
+      junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Retorne. \ not translated - no possessives em Spanish
+  Adicione uma terceira unidade semântica para as unidades semânticas desta rotina usando "para".
+  Converta as unidades semânticas desta rotina para uma representação interna da rotina.
+  Se a representação interna da rotina estiver no catálogo geral de rotinas,
+    Apresente a mensagem de erro contendo 
+      "Erro #40. A rotina para que se '" junto com a representação interna da rotina 
+      seguido de "' já foi definida anteriormente." e o endereço local desta rotina;
+    Retorne.
+  Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor não for algum artigo indefinido,
+    Apresente a mensagem de erro contendo 
+      "Erro #41. Esperava encontrar um artigo indefinido. Encontrado '" 
+      junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+    Retorne.
+  Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo indefinido).
+  Se o segmento inicial deste percorredor não estiver em branco,
+    Apresente a mensagem de erro contendo 
+      "Erro #42. O compilador detectou instruções inválidas no final desta rotina." e o percorredor;
+    Retorne. \ not translated - no possessives em Spanish
+  Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
+  Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas. \ para utilizar com os employs
+
+Rotina para que se compile o cabeçalho próprio para uma rotina usando um percorredor (modo de compatibilidade): \ callback
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Ative o sinalizador de compatibilidade desta rotina.
+  Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor.
+  Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
+  Se a representação interna da rotina desta rotina estiver no catálogo geral de rotinas,
+    Apresente uma mensagem de erro contendo 
+      "Erro #34. A 'rotina para que se '" junto com a representação interna da rotina desta rotina 
+      seguido de "' já foi definida anteriormente." e o endereço local desta rotina;
+    Retorne.
+  Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
+
+Rotina para que se compile o cabeçalho próprio para uma rotina usando um percorredor (procedimento):
+\Erro noodle
+  Se existir algum problema de compilação, retorne.
+  Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor.
+  Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
+  Se a representação interna da rotina desta rotina estiver no catálogo geral de rotinas,
+    Apresente uma mensagem de erro contendo 
+      "Erro #43. A 'rotina para que se '" junto com a representação interna da rotina desta rotina 
+      seguido de "' já foi definida anteriormente." e o endereço local desta rotinas;
+    Retorne.
+  Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.

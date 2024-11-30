@@ -1,0 +1,96 @@
+Rotina para que se compile um endereço da pasta (catalogue as rotinas por utilização): \ #009
+  Se existir algum problema de compilação, retorne.
+  Escreva "Catalogando tarefas..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de ferramentas de catalogação.
+  Catalogue as rotinas por utilização.
+  Scrub o catálogo de rotinas úteis. \ higienizar? purificar? sanear?
+  Organize o catálogo de rotinas úteis.
+  Suspenda o temporizador de ferramentas de catalogação.
+
+Rotina para que se catalogue umas rotinas por utilização:
+  \Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha uma rotina desde as rotinas.
+    Se a rotina for inexistente, retorne.
+    Catalogue a rotina por utilização.
+  Reitere.
+
+Rotina para que se catalogue uma rotina por utilização:
+  Se existir algum problema de compilação, retorne.
+  Se a rotina for inexistente, retorne.
+  Se o sinalizador de função desta rotina estiver ativo, retorne.
+  Se a contagem destes parâmetros desta rotina for 0, retorne.
+  Copie as unidades semânticas desta rotina para umas unidades semânticas.
+  Reduza as unidades semânticas por utilização.
+  Converta as unidades semânticas para uma representação interna da rotina.
+  Destrua as unidades semânticas.
+  Se a representação interna da rotina estiver no catálogo geral de rotinas, retorne.
+  Encontre uma referência usando a representação interna da rotina e o catálogo de rotinas úteis.
+  Se a referência não for inexistente,
+    Atribua nulo ao ponteiro deste referência;
+    Retorne.
+  Catalogue a rotina usando a representação interna da rotina e o catálogo de rotinas úteis.
+
+Rotina para que se copie umas unidades semânticas para umas outras unidades semânticas:
+  Destrua as outras unidades semânticas.
+  Itere.
+    Obtenha uma unidade semântica desde as unidades semânticas.
+    Se a unidade semântica for inexistente, retorne.
+    Copie a unidade semântica para uma nova unidade semântica.
+    Acrescente a nova unidade semântica para as outras unidades semânticas.
+  Reitere.
+
+Rotina para que se copie uma unidade semântica para uma segunda unidade semântica:
+  \ Obs: esta rotina não copia as substrings
+  Se a unidade semântica for inexistente,
+    Esvazie a segunda unidade semântica;
+    Retorne.
+  Aloque memória para o segunda unidade semântica.
+  Atribua a string desta unidade semântica à string desta segunda unidade semântica.
+  Atribua o tipo desta unidade semântica ao tipo desta segunda unidade semântica.
+  Atribua a variável desta unidade semântica à variável desta segunda unidade semântica.
+  Atribua o tipo atual desta unidade semântica ao tipo atual desta segunda unidade semântica.
+
+Rotina para que se reduza umas unidades semânticas por utilização:
+  \Itere.
+    Obtenha uma unidade semântica desde as unidades semânticas.
+    Se a unidade semântica for inexistente, retorne.
+    Se o tipo desta unidade semântica for inexistente, reitere.
+    Reduza o tipo desta unidade semântica para um tipo por utilização.
+    Se o tipo não for inexistente, atribua o tipo ao tipo desta unidade semântica.
+  Reitere.
+
+Rotina para que se reduza um tipo para um segundo tipo por utilização:
+  Atribua o tipo ao segundo tipo.
+  Itere.
+    Se o segundo tipo for inexistente, retorne.
+    Se o nome deste segundo tipo for "texto hexadecimal", retorne.
+    Se o nome deste segundo tipo for "string", retorne.
+    Se o nome deste segundo tipo for "número", retorne.
+    Se o nome deste segundo tipo for "ponteiro", retorne.
+    Se o nome deste segundo tipo for "lista",
+      Esvazie o segundo tipo;
+      Retorne.
+    \PAL
+    Se o tipo base deste segundo tipo for o segundo tipo,
+      Esvazie o segundo tipo;
+      Retorne.
+    Atribua o tipo base deste segundo tipo ao segundo tipo.
+  Reitere.
+
+Rotina para que se encontre uma referência usando uma string e um catálogo:
+  Se o catálogo for inexistente, retorne.
+  Se a string estiver em branco,
+    Esvazie a referência;
+    Retorne.
+  Obtenha um recipiente usando a string e o catálogo.
+  Encontre a referência usando a string e as referências deste recipiente.
+
+
+Rotina para que se encontre uma referência usando uma string e umas referências:
+  Esvazie a referência.
+  Itere.
+    Obtenha a referência desde as referências.
+    Se a referência for inexistente, retorne.
+    Se a string for a string deste referência, retorne.
+  Reitere.

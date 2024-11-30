@@ -1,17 +1,18 @@
 Rotina para que se compile um endereço da pasta (inicialização): \#001 
   Escreva "Iniciando..." junto com o texto CRLF para StdOut.
-  Finalize o compilador. \ <------------------------ Por quê? 
+  Finalize o compilador. \ Por quê? 
   Comece o temporizador deste compilador.
-  Inicialize o compilador usando o endereço da pasta. \ <----------------------------------------
+  Inicialize o compilador usando o endereço da pasta. 
   Adicione o tipos primitivos. \ <----------------------------------------
 
 Rotina para que se finalize o compilador:
+ \ O comando "Destrua" desaloca a memória previamente alocada para o respectivo item. 
   Destrua o catálogo de rotinas úteis.
   Destrua o catálogo geral de rotinas.
   Destrua o catálogo de variáveis hexadecimais.
   Destrua o catálogo de variáveis globais.
   Destrua o catálogo de tipos.
-  \Destrua o catálogo de apelidos.
+  \Destrua o catálogo de apelidos. \Porque esta linha está inativa?
   Destrua as DLLs.
   Destrua as rotinas.
   Destrua os valores literais.
@@ -28,7 +29,14 @@ Rotina para que se inicialize o compilador usando um endereço da pasta:
   Limpe o endereço do arquivo atual deste compilador.
   Atribua 0 ao número da linha de erro deste compilador.
   Esvazie a rotina utilizada atualmente.
-  Crie o catálogo de tipos com 13001 [recipientes]. \ era 4027
+  Crie o catálogo de tipos usando 13001 [buckets]. \ anteriormente o valor era 4027. 
+  \ A quantidade de buckets foi determinado a partir de vários testes.
+  \ O hashing é feito usando um algoritmo semelhante ao “djb2" de Daniel J. Bernstein, 
+  \ mas fazemos o hash apenas do primeiro e do terceiro byte de cada string 
+  \ Como nomes de rotina emportuguês puro tendem a ter muitas palavras comuns 
+  \  e especialmente muitos verbos comuns… …que geralmente ocorrem no início dos substantivos, 
+  \ modificamos o algoritmo DJB2 para considerar apenas o primeiro e cada terceiro byte de cada string. 
+  \ Também semeamos o número do bucket com o comprimento do nome. 
   Crie o catálogo de variáveis globais com 13001 [recipientes]. \ era 4027
   Crie o catálogo de variáveis hexadecimais com 13001 [recipientes]. \ era 4027
   Crie o catálogo geral de rotinas com 13001 [recipientes]. \ era 7919
@@ -58,26 +66,27 @@ Rotina para que se adicione um tipo para uns tipos usando um nome e um nome plur
 Rotina para que se crie um tipo:
   Aloque memória para o tipo.
   Atribua 0/1 à razão de escala deste tipo.
-  Atribua -1 à quantidade de caracteres deste tipo.
+  Atribua -1 à quantidade de caracteres deste tipo. \ 
 
 Rotina para que se catalogue um tipo:
   Se o tipo for inexistente, retorne.
   Se existir algum problema de compilação, retorne.
-  Catalogue o tipo usando o nome deste tipo. \ < -------------------------------------------------------------
+  Catalogue o tipo usando o nome deste tipo. 
 
 Rotina para que se catalogue um tipo usando um nome:
   Se o tipo for inexistente, retorne.
   Se existir algum problema de compilação, retorne.
-  Encontre um existing tipo usando o nome e o catálogo de tipos.
-  Se o existing tipo for inexistente,
+  Encontre um tipo denominado tipo procurado usando o nome e o catálogo de tipos.
+  Se o tipo procurado for inexistente,
     Catalogue o tipo usando o nome e o catálogo de tipos;
     Retorne.
-  [Se o existing tipo já existir, então:]
+  [Se o tipo procurado já existir, então:]
   Atribua o endereço local deste tipo para um endereço local.
   Se o endereço local for inexistente, 
-    Atribua o endereço local deste existing tipo ao endereço local. \ Aponta o erro para um tipo presente no código fonte, não no catálogo de tipos (not a generated type)
+    Atribua o endereço local deste tipo procurado ao endereço local. 
+    \ Aponta o erro para um tipo presente no código fonte, não no catálogo interno de tipos na memória (not a generated type)
   Se o endereço local não for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #125. Tipo: " junto com o nome seguido de "' duplicado." e o endereço local.
+    Apresente uma mensagem de erro contendo "Erro #125. O tipo: " junto com o nome seguido de "' já foi definido anteriormente." e o endereço local.
 
 Rotina para que se compile um endereço da pasta (arquivos de código fonte): \#002 --------------------------------------------------------------------------------------------------------
   Se existir algum problema de compilação, retorne.

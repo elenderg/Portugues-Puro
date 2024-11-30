@@ -5137,8 +5137,8 @@ Função para que se determine se um byte é algum letra:
   Diga não.
 
 Função para que se determine se um byte é algum indicador numérico:
-  Se o byte for algum dígito, diga sim.
-  Se o byte for algum sinal aritmético, diga sim.
+  Se o byte é algum dígito, diga sim.
+  Se o byte é algum sinal aritmético, diga sim.
   Diga não.
 
 Função para que se determine se um byte é algum caractere não-alfanumérico:
@@ -6086,9 +6086,7 @@ Função para que se determine se uma string é uma segunda string ou uma terceira 
   Se a string for a terceira string, diga sim.
   Diga não.
 
-Função para que se determine se uma string é alguma fração literal;
 Função para que se determine se uma string é algum fração literal;
-Função para que se determine se uma string é alguma proporção literal;
 Função para que se determine se uma string é algum proporção literal:
   Lance um subtexto sobre a string.
   Se o subtexto estiver em branco, diga não.
@@ -6121,11 +6119,17 @@ Função para que se determine se uma string é algum numeral misto literal:
   Se a subtexto fracionário não for algum fração literal, diga não.
   Diga sim.
 
-
+Função para que se determine se uma string é algum valor numérico literal:
+  Se a string estiver em branco, diga não.
+  Se o conteúdo deste caractere inicial desta string não for algum indicador numérico, diga não.
+  Se a string é algum número inteiro, diga sim.
+  Se a string é algum fração literal, diga sim.
+  Se a string é algum numeral misto literal, diga sim.
+  Diga não.
 
 Função para que se determine se uma string é algum sinal aritmético:
   Se a quantidade de caracteres desta string não for 1, diga não.
-  Se o conteúdo deste caractere inicial desta string for algum sinal aritmético, diga sim.
+  Se o conteúdo deste caractere inicial desta string é algum sinal aritmético, diga sim.
   Diga não.
 
 Função para que se determine se uma string é alguma palavra:
@@ -6147,7 +6151,7 @@ Função para que se determine se uma string é um byte:
 
 Função para que se determine se uma string é compatível c/ o DOS:
   Se a string estiver em branco, diga não.
-  Se o conteúdo deste caractere inicial desta string é o ponto final, diga não.
+  Se o conteúdo deste caractere inicial desta string for o ponto final, diga não.
   Lance um subtexto sobre a string.
   Itere.
     Se o subtexto estiver em branco, diga sim.
@@ -7613,7 +7617,21 @@ Rotina para que se encontre um ponteiro usando uma string e um catálogo:
     Retorne.
   Esvazie o ponteiro.
 
+Rotina para que se encontre uma referência usando uma string e um catálogo:
+  Se o catálogo for inexistente, retorne.
+  Se a string estiver em branco,
+    Esvazie a referência;
+    Retorne.
+  Obtenha um recipiente usando a string e o catálogo.
+  Encontre a referência usando a string e as referências deste recipiente.
 
+Rotina para que se encontre uma referência usando uma string e umas referências:
+  Esvazie a referência.
+  Itere.
+    Obtenha a referência desde as referências.
+    Se a referência for inexistente, retorne.
+    Se a string for a string deste referência, retorne.
+  Reitere.
 
 Rotina para que se encontre um sector usando uma malha quadriculada e uma localização:
   Atribua a coordenada X desta localização dividido pelo número X desta malha quadriculada vezes o número X desta malha quadriculada à coordenada X deste sector.
@@ -9292,9 +9310,8 @@ Rotina para que se recue as linhas de texto selecionadas em uma caixa de texto:
   Anteponha o caractere de espaço para a string desta linha de texto.
   Reitere.
 
-\Rotina para que se catalogue uma lista usando uma string e um catálogo;
 Rotina para que se catalogue um ponteiro usando uma string e um catálogo:
-  \ Se o catálogo for inexistente, retorne. \ para deixar compilador mais rápido
+    \ if o catálogo for inexistente, retorne. \ para fazer compilador faster
   Se a quantidade de caracteres desta string for 0, retorne.
   Obtenha um recipiente usando a string e o catálogo.
   Crie uma referência.
@@ -9303,7 +9320,7 @@ Rotina para que se catalogue um ponteiro usando uma string e um catálogo:
   Atribua o ponteiro ao ponteiro deste referência.
 
 Rotina para que se catalogue uma string em um catálogo:
-  \ Se o catálogo for inexistente, retorne. \ para deixar compilador mais rápido
+  \ if o catálogo for inexistente, retorne. \ para fazer compilador faster
   Catalogue nil usando a string e o catálogo.
 
 Rotina para que se inicialize o terminal:
@@ -9609,7 +9626,7 @@ Rotina para que se inicialize a janela do programa:
     0 [dwExStyle] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/winmsg/extended-window-styles
     e O caractere inicial deste nome deste módulo [lpClassName]
     e O caractere inicial deste nome deste módulo  [lpWindowName]
-    e 13565952 \2147483648 [dwStyle]  [-2147483648 = WS_POPUP 0x80000000]
+    e -2147483648 \13565952 \2147483648 [dwStyle]  [-2147483648 = WS_POPUP 0x80000000]
     [13565952  WS_OVERLAPPEDWINDOW 0x00CF0000]
     \ Consulte https://www.autoitscript.com/autoit3/docs/appendix/GUIStyles.htm
     \ https://www.magnumdb.com/ . Para uma janela padrão, use o valor 13565952
@@ -9621,10 +9638,10 @@ Rotina para que se inicialize a janela do programa:
     e 0 [hMenu]
     e O número identificador deste módulo [hInstance]
     e 0. [lpParam]
-  \Processe "user32.dll" "ShowWindow" com \ Define o estado de exibição da janela especificada.
+  Processe "user32.dll" "ShowWindow" com \ Define o estado de exibição da janela especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-showwindow
-    \A janela principal do programa [hWnd]
-    \e 1. [nCmdShow = SW_SHOWNORMAL]
+    A janela principal do programa [hWnd]
+    e 1. [nCmdShow = SW_SHOWNORMAL]
 
 Rotina para que se inicialize a infraestrutura WinSock:
   Processe "ws2_32.dll" "WSAStartup" com \ Inicia o uso da DLL Winsock por um processo.
@@ -13311,9 +13328,10 @@ Rotina para que se remova as aspas de uma string:
   Adicione 1 para o caractere inicial deste subtexto.
   Itere.
     Se o subtexto estiver em branco, pare.
-    Se o caractere inicial deste subtexto é o caractere final deste subtexto, pare.
+    Se o caractere inicial deste subtexto for o caractere final deste subtexto, pare.
     Acrescente o conteúdo deste caractere inicial deste subtexto para uma segunda string.
-    Se o conteúdo deste caractere inicial deste subtexto for as aspas duplas, adicione 1 para o caractere inicial deste subtexto.
+    Se o conteúdo deste caractere inicial deste subtexto for as aspas duplas, 
+      Adicione 1 para o caractere inicial deste subtexto.
     Adicione 1 para o caractere inicial deste subtexto.
   Reitere.
   Atribua a segunda string à string.

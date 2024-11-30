@@ -1,0 +1,57 @@
+Rotina para que se compile um endereço da pasta (adição de rotinas de memória incorporadas): \ #008
+  Se existir algum problema de compilação, retorne.
+  Escreva "Adicionando tarefas predefinidas na memória..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de adição de rotinas pré-definidas de mémoria .
+  Adicione as rotinas de alocação e desalocação e finalização e destruição.
+  Suspenda o temporizador de adição de rotinas pré-definidas de mémoria.
+
+Rotina para que se adicione as rotinas de alocação e desalocação e finalização e destruição:
+  \Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha um tipo desde os tipos.
+    Se o tipo for inexistente, retorne.
+    Adicione a rotina de finalização para o tipo.
+    Adicione a rotina de alocação para o tipo.
+    Adicione a rotina de desalocação para o tipo.
+    Adicione a rotina de destruição para o tipo.
+ Reitere.
+
+Rotina para que se adicione a rotina de finalização para um tipo:
+  Se o tipo for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Se o tipo não deveria ser finalizado, retorne.
+  Se o nome deste tipo for "string",
+    Adicione a rotina de finalização para o tipo (cadeia de caracteres);
+    Retorne.
+  Se o tipo puder ser reduzido para "string", retorne. 
+  \ impede a geração de finalizadores para tipos derivados de string
+  Adicione a rotina de finalização para o tipo (estrutura).
+
+Função para que se determine se um tipo deveria ser finalizado: 
+  [determina se o compilador deveria desalocar a memória alocada para algum tipo]
+  Se o tipo for inexistente, diga não.
+  Se o tipo puder ser reduzido para "subtexto", diga não.
+  \ Substrings apontam para partes de strins reais, que por sua vez, serão desalocadas
+  Se o tipo puder ser reduzido para "string", diga sim.
+  \ O caso padrão para strings
+  Se os campos deste tipo deveriam ser finalizados, diga sim.
+  \ Para strings dentro de estruturas
+  Diga não.
+
+Rotina para que se adicione a rotina de finalização para um tipo (cadeia de caracteres):
+  Se o tipo for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Adicione uma rotina para as rotinas usando nil.
+  Acrescente "~Finalize um " junto com o nome deste tipo para a string do cabeçalho desta rotina.
+  Acrescente "Decodifique $50. " para a string do corpo desta rotina. 
+  \ push eax -> Empilha o valor presente no registrador EAX na stack
+  \ A instrução push primeiro subtrai 4 do registrador ESP (o ponteiro da pilha)
+  \ Depois coloca o operando no conteúdo apontado por ele
+  \ A stack no x86 começa com o maior endereço e vai decrescendo, por isso a subtração
+  Acrescente "Desassocie o caractere inicial de esta string . " para a string do corpo desta rotina. \ "string"
+  Acrescente "Decodifique $58." para a string do corpo desta rotina.
+  \ pop eax -> Move o elemento do topo da pilha (ESP), transferindo ele para o registrador EAX 
+  \ Depois ele adiciona 4 para o valor do ESP
+  Lance a cabeçalho de rotina desta rotina sobre a string do cabeçalho desta rotina.
+  Lance as instruções desta rotina sobre a string do corpo desta rotina.
+  Compile o cabeçalho próprio para a rotina.

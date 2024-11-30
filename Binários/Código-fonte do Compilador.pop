@@ -15,7 +15,6 @@ Rotina para que se faça tudo:
   Processe "kernel32.dll" "SetConsoleOutputCP" com o codepage retornando um número denominado status de erro.
   Se o status de erro for 0 [NULL], escreva "Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT.
   Obtenha uma string denominada Endereço Da Pasta desde os argumentos da linha de comando.
-  \ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   Se o Endereço Da Pasta estiver em branco, 
     Escreva "--------------------------------------------------------------------------------------------------------------- " junto com o texto CRLF para StdOut;
     Escreva "Aviso. Para utilizar este compilador utilize a seguinte sintaxe:" junto com o texto CRLF para StdOut;
@@ -50,7 +49,7 @@ Rotina para que se obtenha uma string desde os argumentos da linha de comando:
       Reitere.
     Atribua o subtexto para a string.
     Elimine os resíduos na string.
-  \Reitere. 
+  \Pare. 
 
 Rotina para que se compile um endereço da pasta: 
   Compile o endereço da pasta (inicialização). \ #001

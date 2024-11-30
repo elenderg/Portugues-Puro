@@ -1,0 +1,216 @@
+Rotina para que se compile um endereço da pasta (adição de rotinas de memória incorporadas): \ #008
+  Se existir algum problema de compilação, retorne.
+  Escreva "Adicionando tarefas predefinidas na memória..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de adição de rotinas pré-definidas de mémoria .
+  Adicione as rotinas de alocação e desalocação e finalização e destruição.
+  Suspenda o temporizador de adição de rotinas pré-definidas de mémoria.
+
+Rotina para que se adicione as rotinas de alocação e desalocação e finalização e destruição:
+  \Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha um tipo desde os tipos.
+    Se o tipo for inexistente, retorne.
+    Adicione a rotina de finalização para o tipo.
+    Adicione a rotina de alocação para o tipo.
+    Adicione a rotina de desalocação para o tipo.
+    Adicione a rotina de destruição para o tipo.
+ Reitere.
+
+Rotina para que se adicione a rotina de finalização para um tipo:
+  Se o tipo for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Se o tipo não deveria ser finalizado, retorne.
+  Se o nome deste tipo for "string",
+    Adicione a rotina de finalização para o tipo (cadeia de caracteres);
+    Retorne.
+  Se o tipo puder ser reduzido para "string", retorne. 
+  \ impede a geração de finalizadores para tipos derivados de string
+  Adicione a rotina de finalização para o tipo (estrutura).
+
+Função para que se determine se um tipo deveria ser finalizado: 
+  [determina se o compilador deveria desalocar a memória alocada para algum tipo]
+  Se o tipo for inexistente, diga não.
+  Se o tipo puder ser reduzido para "subtexto", diga não.
+  \ Substrings apontam para partes de strins reais, que por sua vez, serão desalocadas
+  Se o tipo puder ser reduzido para "string", diga sim.
+  \ O caso padrão para strings
+  Se os campos deste tipo deveriam ser finalizados, diga sim.
+  \ Para strings dentro de estruturas
+  Diga não.
+
+Rotina para que se adicione a rotina de finalização para um tipo (cadeia de caracteres):
+  Se o tipo for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Adicione uma rotina para as rotinas usando nil.
+  Acrescente "~Finalize um " junto com o nome deste tipo para a string do cabeçalho desta rotina.
+  Acrescente "Decodifique $50. " para a string do corpo desta rotina. 
+  \ push eax -> Empilha o valor presente no registrador EAX na stack
+  \ A instrução push primeiro subtrai 4 do registrador ESP (o ponteiro da pilha)
+  \ Depois coloca o operando no conteúdo apontado por ele
+  \ A stack no x86 começa com o maior endereço e vai decrescendo, por isso a subtração
+  Acrescente "Desassocie o caractere inicial de esta string . " para a string do corpo desta rotina. \ "string"
+  Acrescente "Decodifique $58." para a string do corpo desta rotina.
+  \ pop eax -> Move o elemento do topo da pilha (ESP), transferindo ele para o registrador EAX 
+  \ Depois ele adiciona 4 para o valor do ESP
+  Lance a cabeçalho de rotina desta rotina sobre a string do cabeçalho desta rotina.
+  Lance as instruções desta rotina sobre a string do corpo desta rotina.
+  Compile o cabeçalho próprio para a rotina.
+
+Rotina para que se adicione a rotina de finalização para um tipo (estrutura):
+  Se o tipo for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Adicione uma rotina para as rotinas usando nil.
+  Acrescente "~Finalize um " junto com o nome deste tipo para a string do cabeçalho desta rotina.
+  Acrescente "Decodifique $50. " para a string do corpo desta rotina. \push eax
+  Itere.
+    Obtenha um campo desde os campos deste tipo.
+    Se o campo for inexistente, pare.
+    Se o tipo deste campo não deveria ser finalizado, reitere.
+    Acrescente "~Finalize o " junto com o nome deste tipo seguido de "'s " 
+      junto com o nome deste campo seguido de ". " para a string do corpo desta rotina.
+  Reitere.
+  Acrescente "Decodifique $58." para a string do corpo desta rotina. \ pop eax 
+  Lance a cabeçalho de rotina desta rotina sobre a string do cabeçalho desta rotina.
+  Lance as instruções desta rotina sobre a string do corpo desta rotina.
+  Compile o cabeçalho próprio à rotina.
+
+Rotina para que se adicione a rotina de alocação para um tipo:
+  Se o tipo for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Se o tipo não puder ser reduzido para "ponteiro", retorne.
+  Se o tipo do conteúdo deste tipo for inexistente, retorne.
+  Adicione uma rotina para as rotinas usando nil.
+  Acrescente "Aloque memória para um " junto com o nome deste tipo 
+    para a string do cabeçalho desta rotina. \ 
+  Acrescente "Associe o " junto com o nome deste tipo 
+    seguido de " usando " para a string do corpo desta rotina. \ Acomodar
+  Acrescente a quantidade de caracteres deste tipo do conteúdo deste tipo 
+    seguido de "." para a string do corpo desta rotina.
+  Lance a cabeçalho de rotina desta rotina sobre a string do cabeçalho desta rotina.
+  Lance as instruções desta rotina sobre a string do corpo desta rotina.
+  Compile o cabeçalho próprio à rotina.
+
+Rotina para que se adicione a rotina de desalocação para um tipo:
+  Se o tipo for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Se o tipo não puder ser reduzido para "ponteiro", retorne.
+  Se o tipo do conteúdo deste tipo for inexistente, retorne.
+  Adicione uma rotina para as rotinas usando nil. \ Desaloque memória para o
+  Acrescente "Desaloque um " junto com o nome deste tipo para a string do cabeçalho desta rotina.
+  Acrescente "Se o " junto com o nome deste tipo 
+    seguido de " for inexistente, retorne. " para a string do corpo desta rotina.
+  Se o tipo do conteúdo deste tipo deveria ser finalizado [automaticamente por uma rotina],
+    Acrescente "~Finalize o conteúdo de este " 
+      junto com o nome deste tipo seguido de ". " para a string do corpo desta rotina.
+  \ Chamado quando o tipo precisa ter uma rotina de destruição gerada automaticamente para ele
+  Acrescente "Desassocie o " junto com o nome deste tipo 
+    seguido de "." para a string do corpo desta rotina. 
+  Lance a cabeçalho de rotina desta rotina sobre a string do cabeçalho desta rotina.
+  Lance as instruções desta rotina sobre a string do corpo desta rotina.
+  Compile o cabeçalho próprio à rotina.
+
+Rotina para que se adicione a rotina de destruição para um tipo:
+  Se o tipo for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Se o tipo não deveria ser ignorado, retorne.
+  Se o tipo puder ser reduzido para "listas",
+    Adicione a rotina de destruição para o tipo (listas);
+    Retorne.
+  Se o tipo puder ser reduzido para "ponteiro",
+    Adicione a rotina de destruição para o tipo (ponteiros);
+    Retorne.
+
+Função para que se determine se um tipo deveria ser ignorado:
+  [ou seja, determina se o compilador deveria gerar automaticamente uma rotina de finalização para o tipo]
+  \ Página 93
+  Se o tipo for inexistente, diga não.
+  Se o nome deste tipo for "lista", diga não. 
+  \ Não, porque este é um tipo primitivo que não é nem alocado nem destruído,
+  \ Ele simplesmente existe, assim podemos adicionar os campos "próximo" e anterior" para os tipos derivados dele
+  Se o nome deste tipo for "listas", diga não.
+  \ Não, porque este é um tipo primitivo usado para ancorar listas de listas, o mesmo do de cima
+  Se o tipo puder ser reduzido para "listas", diga sim. 
+  \ Sim, porque embora pareça ser contraditório, esta é uma instância do tipo, por exemplo "umas páginas"
+  Se o tipo não puder ser reduzido para "ponteiro", diga não. 
+  \ Não porque porque ponteiros são variáveis estáticas (somente o endereço na variável que muda)
+  \ O ponteiro em si não é algo que pode ser alocado dinamicamente então não precisa ser desalocado
+  Se o tipo do conteúdo deste tipo for inexistente, diga não. 
+  \ Não porque é um ponteiro nulo, não há nada para desalocar
+  Se o tipo do conteúdo deste tipo não puder ser reduzido para "ponteiro", diga sim.
+  \ Sim, porque é um ponteiro para algo que foi alocado, e que não é um ponteiro.
+  Se o tipo do conteúdo deste tipo não deveria ser ignorado, diga não. \ RECURSÃO
+  \ Não, porque é um ponteiro para algo que não deveria ser desalocado, por exemplo um ponteiro para uma lista
+  Diga sim.\ Esta linha é para os demais casos, e para a linha recursiva acima.
+
+Rotina para que se adicione a rotina de destruição para um tipo (listas):
+  Se o tipo for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Se o primeiro campo destes campos deste tipo for inexistente,
+    Apresente uma mensagem de erro contendo 
+      "Erro #1. O identificador '" junto com o nome deste primeiro campo destes campos deste tipo 
+      seguido de "' é um campo inválido.'";
+    Retorne. \
+  Se o tipo deste primeiro campo destes campos deste tipo for inexistente,
+    Apresente a mensagem de erro contendo 
+      "Erro #2'. O identificador '" junto com o nome deste tipo deste primeiro campo destes campos deste tipo 
+      seguido de "' é um tipo inválido.'";
+    Retorne.
+  Atribua "Destrua [" junto com o nome deste tipo 
+    seguido de "]" para uma representação interna da rotina.
+  Se a representação interna da rotina estiver no catálogo geral de rotinas, retorne.
+  Adicione uma rotina para as rotinas usando nil.
+  Acrescente "Destrua um " junto com o nome deste tipo para a string do cabeçalho desta rotina.
+  Acrescente "Se o primeiro " junto com o nome deste tipo deste primeiro campo destes campos deste tipo
+    junto com " de este " junto com o nome deste tipo 
+    seguido de " for inexistente, retorne. " para a string do corpo desta rotina. \ listas duplamente encadeadas
+  Atribua o nome deste tipo deste primeiro campo destes campos deste tipo para um nome.
+  Acrescente "Atribua o primeiro " junto com o nome 
+    junto com " de este "junto com o nome deste tipo 
+    seguido de " para um " junto com o nome 
+    seguido de ". " para a string do corpo desta rotina.\ traduzir
+  Acrescente "Remova o " junto com o nome 
+    seguido de " desde o " junto com o nome deste tipo 
+    seguido de ". " para a string do corpo desta rotina.
+  Acrescente "Destrua o " junto com o nome 
+    seguido de ". " para a string do corpo desta rotina.
+  Acrescente "Reitere. " para a string do corpo desta rotina.
+  Lance a cabeçalho de rotina desta rotina sobre a string do cabeçalho desta rotina.
+  Lance as instruções desta rotina sobre a string do corpo desta rotina.
+  Compile o cabeçalho próprio à rotina.
+
+Rotina para que se apresente uma mensagem de erro contendo uma string:
+  Se existir algum problema de compilação,
+    Retorne.
+  Ative o sinalizador de erros deste compilador.
+  Atribua esta string à mensagem de erro deste compilador.
+
+Rotina para que se adicione a rotina de destruição para um tipo (ponteiros):
+  Se o tipo for inexistente, retorne.
+  Se existir algum problema de compilação, retorne.
+  Atribua "Destrua [" junto com o nome deste tipo 
+    seguido de "]" para uma representação interna da rotina.
+  Se a representação interna da rotina estiver no catálogo geral de rotinas, retorne.
+  Adicione uma rotina para as rotinas usando nil.
+  Acrescente "Destrua um " junto com o nome deste tipo para a string do cabeçalho desta rotina.
+  Acrescente "Se o " junto com o nome deste tipo 
+    seguido de " for inexistente, retorne. " para a string do corpo desta rotina.
+  Se o tipo do conteúdo deste tipo puder ser reduzido para "ponteiro", 
+    Acrescente "Destrua o conteúdo de este " junto com o nome deste tipo 
+      seguido de "'. " para a string do corpo desta rotina.
+  Se o tipo do conteúdo deste tipo puder ser reduzido para "listas", 
+    Acrescente "Destrua o conteúdo de este " junto com o nome deste tipo 
+      seguido de "'. " para a string do corpo desta rotina.
+  Itere.
+    Obtenha um campo desde os campos deste tipo do conteúdo deste tipo.
+    Se o campo for inexistente, pare.
+    Se o sinalizador de referência deste campo estiver ativo, reitere.
+    Se o tipo deste campo não deveria ser ignorado, reitere.
+    Acrescente "Destrua o " junto com o nome deste campo 
+      seguido de " de este " junto com o nome deste tipo 
+      seguido de ". " para a string do corpo desta rotina.
+  Reitere.
+  Acrescente "Desaloque o " junto com o nome deste tipo 
+    seguido de ". " para a string do corpo desta rotina. \ traduzir aqui
+  Lance a cabeçalho de rotina desta rotina sobre a string do cabeçalho desta rotina.
+  Lance as instruções desta rotina sobre a string do corpo desta rotina.
+  Compile o cabeçalho próprio à rotina.

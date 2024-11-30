@@ -1,4 +1,15 @@
 
+Rotina para que se exiba o erro de compilação:
+  Se o endereço do arquivo atual deste compilador estiver em branco, 
+    Escreva a mensagem de erro deste compilador para StdOut; 
+    Retorne.
+  Escreva 
+    A mensagem de erro deste compilador seguido de " - " 
+      junto com o endereço do arquivo atual deste compilador 
+      seguido de " linha: " 
+      junto com o número da linha de erro deste compilador
+    para StdOut.
+  Escreva o texto CRLF para StdOut.
 
 Rotina para que se execute os eventos:
   [Itere.]
@@ -55,13 +66,19 @@ Rotina para que se execute um evento:
 
 
 
+Rotina para que se apresente uma mensagem de erro contendo uma string:
+  Se existir algum problema de compilação,
+    Retorne.
+  Ative o sinalizador de erros deste compilador.
+  Atribua esta string à mensagem de erro deste compilador.
 
 
 
-
-
-
-
+Rotina para que se apresente uma mensagem de erro contendo uma string e um percorredor:
+  Se o segmento inicial deste percorredor não estiver em branco,
+    Apresente a mensagem de erro contendo a string e o caractere inicial deste segmento inicial deste percorredor;
+    Retorne.
+  Apresente a mensagem de erro contendo a string e o caractere final deste segmento final deste percorredor.
 
 
 
@@ -77,9 +94,8 @@ Rotina para que se adicione e compile as rotinas de inicialização pré-execução e
   Acrescente "Processe ""kernel32.dll"" ""ExitProcess"" com 0. " para a string do corpo desta rotina.
   Lance a cabeçalho de rotina desta rotina sobre a string do cabeçalho desta rotina.
   Lance as instruções desta rotina sobre a string do corpo desta rotina.
-  Compile o cabeçalho próprio à rotina.
-  Compile o corpo referente à rotina.
-
+  Compile o cabeçalho pertencente à rotina.
+  Compile o corpo pertencente à rotina.
 
 
 
@@ -97,9 +113,6 @@ Rotina para que se adicione uma função para umas DLLs usando um nome da DLL e um
   Crie a função.
   Acrescente a função para as funções desta DLL.
   Atribua o nome da função ao nome desta função.
-
-
-
 
 
 
@@ -163,43 +176,26 @@ Rotina para que se adicione uma unidade semântica para umas unidades semânticas 
   Acrescente a unidade semântica para as unidades semânticas.
   Atribua a frase desta expressão matemática à string desta unidade semântica.
   Atribua a variável desta expressão matemática à variável desta unidade semântica.
-  Se a variável desta expressão matemática não for inexistente, atribua o tipo desta expressão matemática ao tipo desta unidade semântica.
+  Se a variável desta expressão matemática não for inexistente, 
+    Atribua o tipo desta expressão matemática ao tipo desta unidade semântica.
 
 
 
 
 
-Rotina para que se adicione push fragmentos usando umas unidades semânticas:
-  Se a rotina utilizada atualmente for inexistente, retorne.
-  Itere.
-    Obtenha uma unidade semântica desde as unidades semânticas (regressivamente).
-    Se a unidade semântica for inexistente, retorne.
-    Se a variável desta unidade semântica for inexistente, reitere.
-    Se o subtexto atual desta unidade semântica não estiver em branco, reitere.
-    Se o tipo atual desta unidade semântica for inexistente, reitere.
-    Adicione um fragmento usando o etiqueta de inserção de endereço [na stack] e a variável desta unidade semântica.
-  Reitere.
 
-Rotina para que se adicione o atribua ou converta fragmentos usando uma variável e uma segunda variável e um endereço local:
-  Adicione um fragmento usando o etiqueta de inserção de endereço [na stack] e a segunda variável.
-  Adicione um segundo fragmento usando o etiqueta de inserção de endereço [na stack] e a variável.
-  Encontre uma rotina usando "Atribua" e o tipo desta variável e "para" e o tipo desta segunda variável.
-  Se a rotina for inexistente, encontre a rotina usando "Converta" e o tipo desta variável e "para" e o tipo desta segunda variável.
-  Se a rotina não for inexistente,
-    Adicione um terceiro fragmento usando a etiqueta de demanda interna e a rotina;
+
+
+
+
+Rotina para que se adicione um scratch usando um nome do tipo e um endereço local:
+  Se a rotina utilizada atualmente for inexistente,
+    Esvazie o scratch;
     Retorne.
-  \ Mensagem de Erro
-  Adicione uma unidade semântica para umas unidades semânticas usando "Atribua/Converta".
-  Adicione uma segunda unidade semântica para as unidades semânticas usando o tipo desta variável.
-  Adicione uma terceira unidade semântica para as unidades semânticas usando "para/a".
-  Adicione uma quarta unidade semântica para as unidades semânticas usando o tipo desta segunda variável.
-  Converta as unidades semânticas para uma representação interna da rotina.
-  Destrua as unidades semânticas.
-  Apresente uma mensagem de erro contendo "Erro. A rotina para que se " junto com a representação interna da rotina seguido de " ainda não foi definida." e o endereço local.
-
-
-
-
+  Adicione o scratch para as variáveis locais desta rotina utilizada atualmente usando "scratch" e o endereço local.
+  Gere o nome deste scratch usando "~S".
+  Atribua o nome do tipo ao nome do tipo deste scratch.
+  Destrinche o scratch.
 
 
 
@@ -214,17 +210,16 @@ Rotina para que se adicione fragmentos diversos usando uma string e uma variável
   Adicione uma quinta unidade semântica para as unidades semânticas usando a terceira string.
   Adicione uma sexta unidade semântica para as unidades semânticas usando o tipo desta terceira variável.
   Encontre uma rotina usando as unidades semânticas.
-  Se a rotina for inexistente, converta as unidades semânticas para uma representação interna da rotina.
+  Se a rotina for inexistente, 
+    Converta as unidades semânticas para uma representação interna da rotina.
   Destrua as unidades semânticas.
   Se a rotina for inexistente,
     Apresente uma mensagem de erro contendo "Erro #4. A rotina para que se '" junto com a representação interna da rotina seguido de "' não pôde ser localizada." e o endereço de byte;
     Retorne.
   Adicione um quarto fragmento usando a etiqueta de demanda interna e a rotina.
 
-Rotina para que se adicione um arquivo fonte para uns arquivos fontes usando um endereço completo:
-  Crie o arquivo fonte.
-  Acrescente o arquivo fonte para os arquivos fontes.
-  Atribua o endereço completo ao endereço completo deste arquivo fonte.
+
+
 
 
 
@@ -420,9 +415,12 @@ Rotina para que se enderece uma variável usando um endereço:
   Se o sinalizador de compilação desta variável não estiver ativo, retorne.
   Atribua o image base mais o endereço ao endereço desta variável.
   Adicione a quantidade de caracteres deste tipo desta variável para o endereço.
-  Se o tipo desta variável puder ser reduzido para "string", adicione a quantidade de caracteres deste data desta variável mais 1 para o endereço.
-  Se o tipo desta variável puder ser reduzido para "cadeia de caracteres", adicione a quantidade de caracteres deste data desta variável mais 1 para o endereço.
-  Se o tipo desta variável puder ser reduzido para "texto", adicione a quantidade de caracteres deste data desta variável mais 1 para o endereço.
+  Se o tipo desta variável puder ser reduzido para "string", 
+    Adicione a quantidade de caracteres deste data desta variável mais 1 para o endereço.
+  Se o tipo desta variável puder ser reduzido para "cadeia de caracteres", 
+    Adicione a quantidade de caracteres deste data desta variável mais 1 para o endereço.
+  Se o tipo desta variável puder ser reduzido para "texto", 
+    Adicione a quantidade de caracteres deste data desta variável mais 1 para o endereço.
   Arredonde para cima o endereço usando o múltiplo imediato de 4.
 
 Rotina para que se enderece umas variáveis usando um endereço:
@@ -459,7 +457,15 @@ Rotina para que se acrescente os inicializadores de variáveis globais para uma s
   Acrescente o texto inicializador desta variável global para a string.
   Reitere.
 
-
+Rotina para que se acrescente uma unidade semântica para uma representação interna da rotina :
+  Se a unidade semântica for inexistente, retorne.
+  Se a representação interna da rotina não estiver em branco, acrescente o caractere de espaço para a representação interna da rotina.
+  Se o tipo desta unidade semântica não for inexistente,
+    Acrescente "[" e o nome deste tipo desta unidade semântica e "]" para a representação interna da rotina (rapidamente);
+    Retorne. \ moniker
+  Se a string desta unidade semântica não estiver em branco,
+    Acrescente a string desta unidade semântica para a representação interna da rotina ;
+    Retorne.
 
 
 
@@ -761,18 +767,18 @@ Rotina para que se defina o tipo de uma unidade semântica:
 
 
 
-
-
 Rotina para que se limpe um campo de estrutura:
   Preencha bytes com o caractere null começando sob o endereçamento deste campo de estrutura pelo magnitude deste campo de estrutura.
 
+Rotina para que se limpe um termo:
+  Esvazie a variável deste termo.
+  Limpe o frase deste termo.
 
 
 
 
 
-
-Rotina para que se compile o corpo referente para uma rotina (etapa conclusiva):
+Rotina para que se compile o corpo pertencente para uma rotina (etapa conclusiva):
   Se a rotina for inexistente, retorne.
   Se existir algum problema de compilação, retorne.
   Adicione um fragmento usando a etiqueta de finalização.
@@ -794,16 +800,16 @@ Rotina para que se compile o corpo referente para uma rotina (etapa conclusiva):
 
 
 
-Rotina para que se compile o corpo referente para a rotina denominada uma string;
-Rotina para que se compile o corpo referente para a rotina denominado uma string:
+Rotina para que se compile o corpo pertencente para a rotina denominada uma string;
+Rotina para que se compile o corpo pertencente para a rotina denominado uma string:
   Se existir algum problema de compilação, retorne.
   Encontre uma rotina usando a string e o catálogo geral de rotinas.
   Se a rotina for inexistente,
     Apresente uma mensagem de erro contendo "Erro #18. A rotina 'para que se " junto com a string seguido de "' não pode ser encontrada.";
     Retorne.
-  Compile o corpo referente à rotina.
+  Compile o corpo pertencente à rotina.
 
-Rotina para que se compile o corpo referente para uma rotina usando um percorredor (cláusula de reutilização):
+Rotina para que se compile o corpo pertencente para uma rotina usando um percorredor (cláusula de reutilização):
   Se existir algum problema de compilação, retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Compile uma referência da rotina usando o percorredor.
@@ -820,7 +826,7 @@ Rotina para que se compile o corpo referente para uma rotina usando um percorred
   Se a segunda rotina for inexistente,
     Apresente a mensagem de erro contendo "Erro #21. A rotina para que se '" junto com o representação de emprego desta rotina seguido de "' não foi encontrada." e o endereço local desta rotina;
     Retorne.
-  Compile o corpo referente à segunda rotina.
+  Compile o corpo pertencente à segunda rotina.
 
 
 
@@ -861,187 +867,34 @@ Rotina para que se duplique uma variável global retornando uma segunda variável 
   Atribua o nome do tipo desta variável global para o nome do tipo desta segunda variável global.
   Atribua o corpo de variável global desta variável global para o corpo de variável global desta segunda variável global.
 
+Rotina para que se compile um endereço da pasta usando um nível de profundidade:
+  Atribua 1 ao nível de profundidade.
+  Compile o endereço da pasta (inicialização). \ Etapa #001
+  Compile o endereço da pasta (arquivos de código fonte). \ Etapa #002
+  \Compile o endereço da pasta usando o nível de profundidade (arquivos de código fonte). \ Etapa #002
+  Defina uma variável global usando "O código de retorno é um número.".
+  Compile o endereço da pasta (análise dos arquivos fornecidos). \ Etapa #003
+  Compile o endereço da pasta (identificação dos tipos das variáveis). \ Etapa #004
+  Compile o endereço da pasta (identificação de variáveis globais). \ Etapa #005
+  Compile o endereço da pasta (cabeçalhos de rotinas). \ Etapa #006
+  Compile o endereço da pasta (cálculo de tamanhos e deslocamentos). \ Etapa #007
+  Compile o endereço da pasta (adição de rotinas de memória incorporadas). \ Etapa #008
+  Compile o endereço da pasta (catalogue as rotinas por utilização). \ Etapa #009
+  Compile o endereço da pasta (conteúdo das rotinas). \ Etapa #010
+  Compile o endereço da pasta (adição e compilação da rotina de inicialização). \ Etapa #011
+  Compile o endereço da pasta (deslocamento de parâmetros e variáveis). \ Etapa #012
+  Compile o endereço da pasta (endereço). \ Etapa #013
+  Compile o endereço da pasta (transmutação). \ Etapa #014
+  Compile o endereço da pasta (vinculação). \ Etapa #015
+  Compile o endereço da pasta (etapa final). \ Etapa #016
+  Compile o endereço da pasta (interrupção). \ Etapa #017
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Rotina para que se compile um endereço da pasta (adição e compilação da rotina de inicialização): \ #011
+Rotina para que se compile um endereço da pasta usando um nível de profundidade (arquivos de código fonte): \#002
   Se existir algum problema de compilação, retorne.
-  Escreva "Adicionando e agrupando as tarefas padrão de inicialização.." junto com o texto CRLF para StdOut.
-  Comece o temporizador de adição de rotinas pré-definidas de inicialização.
-  Adicione e compile as rotinas de inicialização pré-execução e finalização pós-execução.
-  Suspenda o temporizador de adição de rotinas pré-definidas de inicialização.
-
-Rotina para que se compile um endereço da pasta (deslocamento de parâmetros e variáveis): \ #012
-  Se existir algum problema de compilação, retorne.
-  Escreva "Deslocando parâmetros e variáveis..." junto com o texto CRLF para StdOut.
-  Comece o temporizador de deslocamentos.
-  Alinhe o parâmetros na rotinas.
-  Alinhe as variáveis locais na rotinas.
-  Suspenda o temporizador de deslocamentos.
-
-Rotina para que se compile um endereço da pasta (endereço): \ #013
-  Se existir algum problema de compilação, retorne.
-  Escreva "Obtendo endereço dos itens..." junto com o texto CRLF para StdOut.
-  Comece o temporizador de endereçamento.
-  Atribua 4096 para um endereço.
-  Atribua o endereço à endereço base desta Seção de DLLs.
-  Enderece as DLLs usando o endereço.
-  Atribua o endereço menos a endereço base desta Seção de DLLs à quantidade de caracteres desta Seção de DLLs.
-  Arredonde o endereço para cima usando o múltiplo imediato de 4096.
-  Atribua o endereço à endereço base desta Região de Dados.
-  Enderece as variáveis globais usando o endereço.
-  Enderece os valores literais usando o endereço.
-  Atribua o endereço menos a endereço base desta Região de Dados à quantidade de caracteres desta Região de Dados.
-  Arredonde o endereço para cima usando o múltiplo imediato de 4096.
-  Atribua o endereço à endereço base desta Região de Código. \ Uma zona é uma estrutura que contém um endereço base, uma quantidade de caracteres e um tamanho.
-  Enderece as rotinas usando o endereço.
-  Atribua o endereço menos a endereço base desta Região de Código à quantidade de caracteres desta Região de Código.
-  Suspenda o temporizador de endereçamento.
-
-Rotina para que se compile um endereço da pasta (transmutação): \ #014
-  Se existir algum problema de compilação, retorne.
-  Escreva "Convertendo código em instruções de máquina..." junto com o texto CRLF para StdOut.
-  Comece o temporizador de transmutação.
-  Transforme as rotinas em código hexadecimal.
-  Suspenda o temporizador de transmutação.
-
-Rotina para que se compile um endereço da pasta (vinculação): \ #015
-  Se existir algum problema de compilação, retorne.
-  Escreva "Elencando arquivos.." junto com o texto CRLF para StdOut.
-  Comece o temporizador de vinculação.
-  Vincule.
-  Suspenda o temporizador de vinculação.
-
-Rotina para que se compile um endereço da pasta (etapa final): \ #016
-  Se existir algum problema de compilação, retorne.
-  Escreva "Gerando arquivo executável..." junto com o texto CRLF para StdOut.
-  Comece o temporizador de escrita.
-  Escreva o trecho EXE deste compilador para o endereço EXE completo deste compilador.
-  \Se o erro do fluxo de entrada/saída não estiver em branco, apresente uma mensagem de erro contendo o erro do fluxo de entrada/saída.
-  Se o erro do fluxo de entrada/saída não estiver em branco,
-    Escreva o erro do fluxo de entrada/saída para StdOut.
-  Suspenda o temporizador de escrita.
-
-Rotina para que se compile um endereço da pasta (interrupção): \ #017
-  Suspenda o temporizador deste compilador.
-  Escreva "---------------------------------------" junto com o texto CRLF para StdOut.
-
-
-
-Rotina para que se compile uma expressão matemática usando um percorredor (operador de divisão):
-  Se existir algum problema de compilação, retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor não for algum objeto indireto,
-    Apresente uma mensagem de erro contendo "Erro #22. Você deve usar o termo 'dividido POR'." e o percorredor;
-    Retorne.
-  Se a variável desta expressão matemática for inexistente,
-    Apresente a mensagem de erro contendo "Erro #23. Comando 'dividido por' inválido. Erro na variável  '" junto com a frase desta expressão matemática seguido de "'." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Compile um termo usando o percorredor.
-  Se existir algum problema de compilação, retorne.
-  Se a variável deste termo for inexistente,
-    Apresente a mensagem de erro contendo "Erro #24. O comando 'dividido por', está errado. Não é possível dividir por '" junto com a frase deste termo seguido de "'." e o percorredor;
-    Retorne.
-  Adicione uma variável intermediária usando o nome do tipo desta expressão matemática e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione fragmentos diversos usando "Atribua" e a variável desta expressão matemática e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione fragmentos diversos usando "Divida" e a variável intermediária e "por" e a variável deste termo e o caractere inicial deste segmento inicial deste percorredor.
-  Atribua a variável intermediária à variável desta expressão matemática.
-  Limpe a frase desta expressão matemática.
-
-Rotina para que se compile uma expressão matemática usando um percorredor (operador de subtração):
-  Se existir algum problema de compilação, retorne.
-  Se a variável desta expressão matemática for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #25. O comando 'menos', está incorreto. Não é possível subtrair de '" junto com a frase desta expressão matemática seguido de "'." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Compile um termo usando o percorredor.
-  Se existir algum problema de compilação, retorne.
-  Se a variável deste termo for inexistente,
-    Apresente a mensagem de erro contendo "Erro #26. O comando 'menos', está incorreto. Não consigo diminuir de '" junto com a frase deste termo seguido de "'." e o percorredor;
-    Retorne.
-  Adicione uma variável intermediária usando o nome do tipo desta expressão matemática e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione fragmentos diversos usando "Atribua" e a variável desta expressão matemática e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione fragmentos diversos usando "Subtraia" e a variável deste termo e "desde" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
-  Atribua a variável intermediária à variável desta expressão matemática.
-  Limpe a frase desta expressão matemática.
-
-Rotina para que se compile uma expressão matemática usando um percorredor (operador de adição):
-  Se existir algum problema de compilação, retorne.
-  Se a variável desta expressão matemática for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #27. Comando 'mais' incorreto. Não é possível somar o '" junto com a frase desta expressão matemática seguido de "'." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação). \talvez fosse o caso de repetir aqui
-  Compile um termo usando o percorredor.
-  Se existir algum problema de compilação, retorne.
-  Se a variável deste termo for inexistente,
-    Apresente a mensagem de erro contendo "Erro #28. Comando 'mais' incorreto. Não é possível adicionar o" junto com a frase deste termo seguido de "." e o percorredor;
-    Retorne.
-  Adicione uma variável intermediária usando o nome do tipo desta expressão matemática e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione fragmentos diversos usando "Atribua" e a variável desta expressão matemática e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.\aqui muda o atribua
-  Adicione fragmentos diversos usando "Adicione" e a variável deste termo e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor. \ aqui muda o add
-  Atribua a variável intermediária à variável desta expressão matemática.
-  Limpe a frase desta expressão matemática.
-
-Rotina para que se compile uma expressão matemática usando um percorredor (operador de concatenação):
-  Se existir algum problema de compilação, retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor não for alguma palavra de concatenação,
-    Apresente uma mensagem de erro contendo "Erro #29. Necessário escrever 'junto DE/junto COM/etc'." e o percorredor;
-    Retorne.
-  Se a variável desta expressão matemática for inexistente,
-    Apresente a mensagem de erro contendo "Erro #30. A variável da expressão matemática: " junto com a frase desta expressão matemática seguido de " é inválida." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Compile um termo usando o percorredor.
-  Se existir algum problema de compilação, retorne.
-  Se a variável deste termo for inexistente,
-    Apresente a mensagem de erro contendo "Erro #31. A variável do termo '" junto com a frase deste termo seguido de "' é inválida." e o percorredor;
-    Retorne.
-  Adicione uma variável intermediária usando "string" e o caractere inicial deste segmento inicial deste percorredor.
-  \Adicione uma variável intermediária usando "texto" e o caractere inicial deste segmento inicial deste percorredor.
-  \Adicione uma variável intermediária usando "cadeia de caracteres" e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione o atribua ou converta fragmentos usando a variável desta expressão matemática e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
-  Converta o termo por concatenação usando o percorredor. \\ aqui faz a concatenação
-  Adicione fragmentos diversos usando "Acrescente" e a variável deste termo e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
-  Atribua a variável intermediária à variável desta expressão matemática.
-  Limpe a frase desta expressão matemática.
-
-Rotina para que se compile uma expressão matemática usando um percorredor (operador de multiplicação):
-  Se existir algum problema de compilação, retorne.
-  Se a variável desta expressão matemática for inexistente,
-    Apresente uma mensagem de erro contendo "Erro #32. Erro de sintaxe. Comando 'vezes' incorreto. Não é póssível multiplicar por '"
-    junto com a frase desta expressão matemática seguido de "'." e o percorredor;
-    Retorne.
-  Mova o percorredor (usando diretrizes de compilação).
-  Compile um termo usando o percorredor.
-  Se existir algum problema de compilação, retorne.
-  Se a variável deste termo for inexistente,
-    Apresente a mensagem de erro contendo "Erro #33. Erro de sintaxe. Comando 'multiplicado por' incorreto. Não é póssível multiplicar por '" 
-    junto com a frase deste termo seguido de "'." e o percorredor;
-    Retorne.
-  Adicione uma variável intermediária usando o nome do tipo desta expressão matemática e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione fragmentos diversos usando "Atribua" e a variável desta expressão matemática e "para" e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione fragmentos diversos usando "Multiplique" e a variável intermediária e "por" e a variável deste termo e o caractere inicial deste segmento inicial deste percorredor.
-  Atribua a variável intermediária à variável desta expressão matemática.
-  Limpe a frase desta expressão matemática.
+  Escreva "Carregando arquivos..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de operacionalização.
+  Carregue os arquivos fontes usando o nível de profundidade.
+  Suspenda o temporizador de operacionalização.
 
 
 
@@ -1057,38 +910,6 @@ Rotina para que se compile uma expressão matemática usando um percorredor (opera
 
 
 
-
-
-Rotina para que se compile um valor literal usando um percorredor (valores booleanos):
-  Se existir algum problema de compilação, retorne.
-  Converta o segmento inicial deste percorredor para um sinalizador.
-  Converta o sinalizador para os data deste valor literal.
-  Mova o percorredor (usando diretrizes de compilação).
-  Atribua "sinalizador" ao nome do tipo deste valor literal.
-  Destrinche o valor literal. \ 
-
-
-
-
-
-
-
-
-
-
-
-
-
-Rotina para que se compile um valor literal usando um percorredor (números ordinais):
-  Se existir algum problema de compilação, retorne.
-  Atribua o segmento inicial deste percorredor aos data deste valor literal.
-  Remova o último caractere de os data deste valor literal.
-  \Converta o segmento inicial deste percorredor para um número.
-  \Converta o número para os data deste valor literal.
-  \Converta 0 para os data deste valor literal. \ era nulo ao invés de 0
-  Mova o percorredor (usando diretrizes de compilação).
-  \Atribua "número" ao nome do tipo deste valor literal.
-  Destrinche o valor literal. \ 
 
 
 
@@ -1103,19 +924,17 @@ Rotina para que se compile um valor literal usando um percorredor (números ordin
 
 
 \Rotina para que se compile umas unidades semânticas usando um percorredor:
-\Se existir algum problema de compilação, retorne.
-\Se o segmento inicial deste percorredor for alguma string de unidade semântica, adicione uma unidade semântica para as unidades semânticas usando o segmento inicial deste percorredor; mova o percorredor (usando diretrizes de compilação); Reitere.
+  \Se existir algum problema de compilação, retorne.
+  \Se o segmento inicial deste percorredor for alguma unidade semântica relevante, 
+    \Adicione uma unidade semântica para as unidades semânticas usando o segmento inicial deste percorredor; 
+    \Mova o percorredor (usando diretrizes de compilação); Reitere.
 \Se o segmento inicial deste percorredor não for o início de alguma expressão matemática, retorne.
 \Compile uma expressão matemática usando o percorredor.
 \Se existir algum problema de compilação, retorne.
-\Adicione uma segunda unidade semântica para as unidades semânticas usando o expressão matemática.
+\Adicione uma segunda unidade semântica para as unidades semânticas usando a expressão matemática.
 \Reitere.
 
 
-
-Rotina para que se compile a próxima instrução usando um percorredor (cláusula de interrupção):
-  Adicione um fragmento usando o etiqueta de interrupção.
-  Mova o percorredor (usando diretrizes de compilação).
 
 Função para que se determine se uma string é alguma palavra-chave de devolução:
   Se a string for "retornando", diga sim.
@@ -1177,7 +996,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
   Compile umas unidades semânticas usando o percorredor.
   Encontre uma rotina usando as unidades semânticas.
   Se a rotina não for inexistente,
-    Adicione push fragmentos usando as unidades semânticas.
+    Adicione fragmentos push usando as unidades semânticas.
   Se a rotina não for inexistente,
     Destrua as unidades semânticas;
     Adicione um fragmento usando a etiqueta de demanda interna e a rotina;
@@ -1220,14 +1039,6 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
     Retorne.
   Adicione um fragmento usando o etiqueta de retorno.
   Mova o percorredor (usando diretrizes de compilação).
-
-
-
-Função para que se determine se um subtexto é qualquer separador de comandos:
-  Se o subtexto for a vírgula, diga sim.
-  Se o subtexto for "então", diga sim.
-  [Caso contrário] 
-  Diga não.
 
 Rotina para que se compile a próxima instrução usando um percorredor (cláusula de decodificação):
   Mova o percorredor (usando diretrizes de compilação).
@@ -1430,7 +1241,7 @@ Rotina para que se compile uma referência da rotina usando um percorredor:
     Se o segmento inicial deste percorredor for algum artigo indefinido,
       Compile a referência da rotina usando o percorredor (artigo indefinido);
       Reitere.
-    Se o percorredor está sobre alguma string de unidade semântica,
+    Se o percorredor está sobre alguma unidade semântica relevante,
       Compile a referência da rotina usando o percorredor (string de unidade semântica);
       Reitere.
     Apresente uma mensagem de erro contendo "Erro #86. O termo '"
@@ -1516,7 +1327,39 @@ Rotina para que se compile um termo usando um percorredor (cláusula comparativa)
 
 
 
+Rotina para que se compile um termo usando um percorredor (redirecionamentos de endereços - campos de estruturas):
+  Se a variável deste termo for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #96. Termo inexistente." e o percorredor;
+    Retorne.
+  Atribua o nome deste tipo do conteúdo deste tipo deste termo ao nome do tipo deste termo.
+  Atribua o tipo do conteúdo deste tipo deste termo ao tipo deste termo.
+  Adicione um fragmento usando o etiqueta de redirecionamento e a variável deste termo.
+  Limpe o frase deste termo.
 
+Rotina para que se compile um termo usando um percorredor (cláusula de redirecionamento):
+  Se existir algum problema de compilação, retorne.
+  Se a variável deste termo for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #97. Cláusula redirecionamento inválida. A variável '"
+    junto com a frase deste termo seguido de "' deste termo não foi encontrada." e o percorredor;
+    Retorne.
+  Se o tipo do conteúdo deste tipo deste termo for inexistente,
+    Apresente a mensagem de erro contendo "Erro #98. O tipo do conteúdo deste termo não foi encontrado." e o percorredor;
+    Retorne.
+  Se a categoria deste termo for "scratch",
+    Compile o termo usando o percorredor (redirecionamentos de endereços - campos de estruturas);
+    Retorne.
+  Adicione um scratch usando o nome deste tipo do conteúdo deste tipo deste termo e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione um fragmento usando o etiqueta de carregamento de endereço e a variável deste termo e o scratch.
+  Adicione um segundo fragmento usando o etiqueta de redirecionamento e o scratch.
+  Atribua o scratch à variável deste termo.
+  Limpe o frase deste termo.
+
+Rotina para que se compile um termo usando um percorredor (valor literal):
+  Se existir algum problema de compilação, retorne.
+  Compile um valor literal usando o percorredor.
+  Atribua o valor literal à variável deste termo.
+  Limpe o frase deste termo.
+  Compile o termo usando o percorredor (possessivos).
 
 
 
@@ -1534,10 +1377,11 @@ Rotina para que se compile um termo usando um percorredor (nova variável local):
   Mova o percorredor (usando diretrizes de compilação).
   Examine um nome usando o percorredor.
   Expanda o nome desta variável local com o nome.
-  Se o segmento inicial deste percorredor for uma palavra-chave de designação, compile a parte designadora usando o percorredor e a variável local.
+  Se o segmento inicial deste percorredor for uma palavra-chave de designação, 
+    Compile a parte designadora usando o percorredor e a variável local.
   Destrinche a variável local.
   Se a variável local estiver duplicada em os parâmetros desta rotina utilizada atualmente,
-    Apresente a mensagem de erro contendo "Erro #101. O parâmetro: "
+    Apresente a mensagem de erro contendo "Erro #101. O identificador: "
     junto com o nome desta variável local seguido de "' já está sendo usado como parâmetro." e o endereço local desta variável local;
     Retorne.
   Se a variável local estiver duplicada em as variáveis locais desta rotina utilizada atualmente,
@@ -1551,11 +1395,57 @@ Rotina para que se compile um termo usando um percorredor (nova variável local):
 
 
 
+Rotina para que se compile um termo usando um percorredor (possessivo - magnitude):
+  Se existir algum problema de compilação, retorne.
+  Se a variável deste termo for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #104. Comando magnitude inválido. A variável: " 
+    junto com a frase deste termo seguido de "'não foi localizada." e o percorredor;
+    Retorne.
+  Adicione um valor literal para os valores literais usando o caractere inicial deste segmento inicial deste percorredor.
+  Converta a quantidade de caracteres deste tipo deste termo para os data deste valor literal.
+  Atribua "número" ao nome do tipo deste valor literal.
+  Destrinche o valor literal.
+  Atribua o valor literal à variável deste termo.
+  Limpe a frase deste termo.
 
+Rotina para que se compile um termo usando um percorredor (possessivo - conteúdo):
+  Se existir algum problema de compilação, retorne.
+  Se a variável deste termo for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #105. Palavra-chave 'conteúdo' detectada, mas o termo da variável: "
+    junto com a frase deste termo seguido de "' não foi devidamente definido." e o percorredor;
+    Retorne.
+  Se o tipo deste termo não puder ser reduzido para "ponteiro",
+    Apresente a mensagem de erro contendo "Erro #106. A palavra 'conteúdo' exige valores do tipo 'ponteiro'." e o percorredor;
+    Retorne.
+  Compile o termo usando o percorredor (cláusula de redirecionamento).
 
+Rotina para que se compile um termo usando um percorredor (possessivo - endereçamento):
+  Se existir algum problema de compilação, retorne.
+  Se a variável deste termo for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #107. palavra-chave 'endereçamento' detectada, mas a variável do termo: " 
+    junto com a frase deste termo seguido de " não foi localizada." e o percorredor;
+    Retorne.
+  Adicione uma variável intermediária usando "ponteiro" e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione um fragmento usando o etiqueta de carregamento de endereço e a variável deste termo e a variável intermediária.
+  Atribua a variável intermediária à variável deste termo.
+  Limpe a frase deste termo.
 
-
-
+Rotina para que se compile um termo usando um percorredor (possessivo):
+  \ similar a "compile um termo usando um percorredor (possessivo reverso)
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine um nome usando o percorredor.
+  Se existir algum problema de compilação, retorne.
+  Se o nome for alguma palavra-chave de obtenção de tamanho de variável,
+    Compile o termo usando o percorredor (possessivo - magnitude);
+    Retorne.
+  Se o nome for algum conteúdo,
+    Compile o termo usando o percorredor (possessivo - conteúdo);
+    Retorne.
+  Se o nome for algum endereçamento,
+    Compile o termo usando o percorredor (possessivo - endereçamento);
+    Retorne.
+  Compile o termo usando o percorredor e o nome (possessivo - campo).
 
 
 
@@ -1587,43 +1477,11 @@ Rotina para que se compile um termo usando um percorredor (proporção de execução
 
 
 
-Rotina para que se compile um termo usando um percorredor e uma variável nome (decomposição do possessivo reverso - variável local):
-  \ Rotina nova criada pelo Dahn para version 2
-  Se existir algum problema de compilação, retorne.
-  Adicione uma variável local para as variáveis locais desta rotina utilizada atualmente usando "local" e o caractere inicial deste segmento inicial deste percorredor.
-  \PAL
-  Se o segmento inicial deste percorredor for "outra", atribua "outra" ao nome desta variável local.
-  Se o segmento inicial deste percorredor for "outro", atribua "outro" ao nome desta variável local.
-  Se o segmento inicial deste percorredor for "segundo", atribua "segundo" ao nome desta variável local.
-  Se o segmento inicial deste percorredor for "segunda", atribua "segunda" ao nome desta variável local.
-  Expanda o nome desta variável local com a variável nome.
-  Se o segmento inicial deste percorredor for uma palavra-chave de designação, compile a parte designadora usando o percorredor e a variável local.
-  Destrinche a variável local.
-  Se a variável local estiver duplicada em os parâmetros desta rotina utilizada atualmente,
-    Apresente uma mensagem de erro contendo "Erro #113. O termo: "
-    junto com o nome desta variável local seguido de "' já está sendo usado como parâmetro." e o endereço local desta variável local;
-    Retorne.
-  Se a variável local estiver duplicada em as variáveis locais desta rotina utilizada atualmente,
-    Apresente a mensagem de erro contendo "Erro #114. O termo: " 
-    junto com o nome desta variável local seguido de "' já está sendo usado coma variável local." e o endereço local desta variável local;
-    Retorne.
-  Elimine apelidos duplicados usando a variável local e o catálogo de apelidos desta rotina utilizada atualmente.
-  Atribua a variável local à variável deste termo.
-  Limpe a frase deste termo.
 
-Rotina para que se compile um termo usando um campo nome e um percorredor (possessivo reverso):
-  \ similar para "compile um termo usando um percorredor (possessivo)" \ Rotina nova criada pelo Dahn para
-  Se existir algum problema de compilação, retorne.
-  Se o campo nome for alguma palavra-chave de obtenção de tamanho de variável,
-    Compile o termo usando o percorredor (possessivo - magnitude);
-    Retorne.
-  Se o campo nome for algum conteúdo,
-    Compile o termo usando o percorredor (possessivo - conteúdo);
-    Retorne.
-  Se o campo nome for algum endereçamento,
-    Compile o termo usando o percorredor (possessivo - endereçamento);
-    Retorne.
-  Compile o termo usando o percorredor e o campo nome (possessivo - campo).
+
+
+
+
 
 Rotina para que se compile um termo usando um percorredor e um campo de estrutura:
   Se existir algum problema de compilação, retorne.
@@ -1702,6 +1560,8 @@ Rotina para que se compile um termo usando um percorredor e um nome (possessivo 
 
 
 
+
+
 Rotina para que se converta um termo por concatenação usando um percorredor: \\ concatenação
   \ used for right-lado followed by operand
   Se a variável deste termo for inexistente,
@@ -1712,7 +1572,7 @@ Rotina para que se converta um termo por concatenação usando um percorredor: \\ 
   Se o tipo deste termo puder ser reduzido para "texto", retorne.
   Adicione uma variável intermediária usando "string" e o caractere inicial deste segmento inicial deste percorredor.
   \Adicione uma variável intermediária usando "texto" e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione o atribua ou converta fragmentos usando a variável deste termo e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione os fragmentos de atribuição ou conversão de valores usando a variável deste termo e a variável intermediária e o caractere inicial deste segmento inicial deste percorredor.
   Atribua a variável intermediária à variável deste termo.
   Limpe a frase deste termo.
 
@@ -1720,7 +1580,29 @@ Rotina para que se converta um termo por concatenação usando um percorredor: \\ 
 
 
 
-
+Rotina para que se copie uns campos para uns segundo campos (apenas campos de dados):
+  Se a contagem destes campos for menor do que 4, retorne. \ for english próximo e prev e spanish next e prev redefinitions
+  \Se o primeiro campo destes campos for inexistente, retorne.
+  \Se o próximo campo deste primeiro campo destes campos for inexistente, retorne.
+  \Se o próximo campo deste próximo campo deste primeiro campo destes campos for inexistente, retorne.
+  \Atribua o próximo campo deste próximo campo deste primeiro campo destes campos para um campo. \ skip próximo e prev
+  \Se o próximo campo deste próximo campo deste próximo campo deste primeiro campo destes campos for inexistente, retorne.
+  \Se o próximo campo deste próximo campo deste próximo campo deste próximo campo deste primeiro campo destes campos for inexistente, retorne.
+  \Se o próximo campo deste próximo campo deste próximo campo deste próximo campo deste próximo campo deste primeiro campo destes campos for inexistente, retorne.
+  \Atribua o próximo campo deste próximo campo deste próximo campo deste próximo campo deste primeiro campo destes campos para um campo.
+  Atribua o próximo campo
+    Deste próximo campo
+    Deste próximo campo
+    Deste próximo campo
+    Deste primeiro campo destes campos
+  Para um campo.\ english próximo e prev e spanish próximo e prev redefinitions
+  \ talvez mudar isso aqui ajude?
+  Itere.
+    Se o campo for inexistente, retorne.
+    Copie o campo para um segundo campo.
+    Acrescente o segundo campo para o segundo campos.
+    Obtenha o campo desde o campos.
+  Reitere.
 
 
 
@@ -1736,11 +1618,8 @@ Rotina para que se crie uma DLL:
 Rotina para que se crie uma unidade semântica:
   Aloque memória para a unidade semântica.
 
-
-
-Rotina para que se crie um arquivo fonte:
-  Aloque memória para o arquivo fonte.
-
+Rotina para que se crie uma rotina:
+  Aloque memória à rotina.
 
 
 
@@ -1748,6 +1627,27 @@ Rotina para que se crie um arquivo fonte:
 
 
 
+Função para que se determine se algumas dentre umas unidades semânticas são advérbios de negação:
+    Obtenha uma unidade semântica desde as unidades semânticas.
+    Se a unidade semântica for inexistente, diga não. \ return true
+    Se a string desta unidade semântica for algum advérbio de negação, diga sim.\ return false
+  Reitere.
+
+Função para que se determine se um byte é um byte ignorável:
+  Se o byte for algum letra, diga sim.
+  Se o byte for algum dígito, diga sim.
+  Se o byte for o acento til, diga sim.
+  Se o byte for o sinal de arroba, diga sim.
+  Se o byte for o símbolo cardinal, diga sim.
+  Se o byte for o sinal de porcentagem, diga sim.
+  Se o byte for o & comercial, diga sim.
+  Se o byte for o underline, diga sim.
+  Se o byte for o single-quote byte, diga sim.
+  Se o byte for o hífem, diga sim.
+  Se o byte for o sinal de adição, diga sim.
+  Se o byte for o barra inclinada, diga sim.
+  Se o byte for o símbolo da Libra Esterlina, diga sim.
+  Diga não.
 
 
 
@@ -1765,12 +1665,7 @@ Função para que se determine se um campo de estrutura está vazio:
   Se a rotina de função deste campo de estrutura não for inexistente, diga não.
   Diga sim.
 
-Função para que se determine se uns campos deveriam ser finalizados;
-Função para que se determine se uns campos deveria ser finalizado:
-  Obtenha um campo desde o campos.
-  Se o campo for inexistente, diga não.
-  Se o tipo deste campo deveria ser finalizado, diga sim.
-  Reitere.
+
 
 Função para que se determine se uma variável global está causando conflitos: \ Jasper
   Se o nome desta variável global não estiver no catálogo de variáveis globais, diga não.
@@ -1824,21 +1719,14 @@ Função para que se determine se um item parece ser encadernável:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Função para que se determine se uma unidade semântica está indefinida:
+  Se a unidade semântica for inexistente, diga sim.
+  \Se a unidade semântica não for inexistente, diga não.\
+  Se o tipo atual desta unidade semântica não for inexistente, diga não. 
+  \Se o tipo atual desta unidade semântica for inexistente, diga sim. 
+  Se o subtexto atual desta unidade semântica não estiver em branco, diga não.
+  \Se o subtexto atual desta unidade semântica estiver em branco, diga sim.
+  Diga sim.
 
 
 
@@ -1855,7 +1743,18 @@ Função para que se determine se um percorredor está sobre algum simile:
   Se o segmento inicial deste percorredor for algum artigo indefinido, diga não.
   Diga sim.
 
-
+Função para que se determine se um percorredor é o início de alguma função:
+  Se existir algum problema de compilação, diga não.
+  \Se o segmento inicial deste percorredor for "Ponha", diga sim.
+  \Se o segmento inicial deste percorredor não for algum comando de atribuição, diga não.
+  Se o segmento inicial deste percorredor não for "atribua", diga não.
+  Preserve o percorredor.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor não for algum artigo, diga não.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine um nome usando o percorredor.
+  Se o segmento inicial deste percorredor for algum possessivo inglês, diga sim. \TODO: REMOVER POSSESSIVOS INGLÊS
+  Diga não.
 
 Função para que se determine se uma string deveria ser expandida usando uma segunda string (análise de termos compostos):
   Se a string não for "partir", diga não.
@@ -1899,7 +1798,10 @@ Função para que se determine se uma string é algum operador de adição:
   Se a string for "mais", diga sim.
   Diga não.
 
-
+Função para que se determine se uma string é algum comando de atribuição:
+  \"Rotina para que se acrescente uma string para uma segunda string usando uma terceira string (para expandir contrações)"
+  Se a string for "atribua", diga sim.
+  Diga não.
 
 Função para que se determine se uma string é algum operador de subtração:
   Se a string for "menos", diga sim.
@@ -1911,16 +1813,9 @@ Função para que se determine se uma string é algum operador de divisão:
   Se a string for "dividido", diga sim.
   Diga não.
 
-Função para que se determine se uma string é algum objeto indireto:
-  Se a string for "via", diga sim. 
-  Se a string for "por", diga sim. \ TODO: Testar a compatibilidade
-  Diga não.
 
-Função para que se determine se uma string é alguma palavra de concatenação:
-  Se a string for "com", diga sim.
-  Se a string for "de", diga sim.
-  Se a string for "a", diga sim.
-  Se a string for "seguida", diga sim.
+
+
   Diga não.
 
 Função para que se determine se uma string é algum operador de concatenação:
@@ -1975,6 +1870,8 @@ Função para que se determine se uma string é algum decisor literal negativo:
   Se a string for "negativamente", diga sim.
   Diga não.
 
+
+
 Função para que se determine se uma string é algum número órdinal:
   Se a string estiver em branco, diga não.
   Se o conteúdo deste caractere final desta string for o indicador ordinal masculino, diga sim.
@@ -1983,10 +1880,7 @@ Função para que se determine se uma string é algum número órdinal:
 
 
 
-Função para que se determine se uma string é algum pronome demonstrativo:
-  Se a string for algum pronome demonstrativo adjacente, diga sim.
-  Se a string for algum pronome demonstrativo abrangente, diga sim.
-  Diga não.
+
 
 
 
@@ -2015,20 +1909,31 @@ Função para que se determine se um percorredor está sobre algum preposição conec
 
 
 
+Função para que se determine se uma string é algum sinal de pontuação:
+  Se a quantidade de caracteres desta string não for 1, diga não.
+  Se o conteúdo deste caractere inicial desta string for algum sinal de pontuação, diga sim.
+  Diga não.
+
+\Função para que se determine se uma string é alguma unidade semântica relevante:
+\Se a string estiver em branco, diga não.
+\Se a string for "the", diga não.
+\Se a string é algum artigo indefinido, diga não.
+\Se a string é algum possessivo inglês, diga não.
+\Se a string é algum valor literal, diga não.
+\Se a string é algum sinal de pontuação, diga não.
+\Se a string é algum símbolo, diga não.
+\Diga sim.
 
 
 
-
-Função para que se determine se uma string é uma palavra-chave de referenciamento:
-  Se a string for "(referência)", diga sim.
+Função para que se determine se uma string é algum advérbio de negação:
+  Se a string for "não", diga sim.
   Diga não.
 
 
-
-
-
-
-
+Rotina para que se compile a próxima instrução usando um percorredor (cláusula de interrupção):
+  Adicione um fragmento usando o etiqueta de interrupção.
+  Mova o percorredor (usando diretrizes de compilação).
 
 
 
@@ -2072,7 +1977,7 @@ Função para que se determine se uma string é alguma preposição:
   Se a string for "em comprimento", diga sim.
   Se a string for "d'", diga sim.
   Se a string for "d'", diga sim.
-  Se a string for "referente", diga sim.
+  Se a string for "pertencente", diga sim.
   Se a string for "pertencente", diga sim.
   Se a string for "pertinente", diga sim.
   Se a string for "somente", diga sim.
@@ -2099,10 +2004,6 @@ Função para que se determine se uma string é alguma preposição:
 
 
 
-Função para que se determine se uma string é algum possessivo reverso:
-  Se a string for "de", diga sim.
-  \Se a string for "do", diga sim. \ short por "de o", expanded em "compile um termo usando um percorredor e um campo nome (possessivo reverso)"
-  Diga não.
 
 
 
@@ -2128,11 +2029,10 @@ Função para que se determine se uma string é alguma locução prepositiva:
   Se a string for alguma preposição, diga sim.
   Diga não.
 
-
-
-
-
-
+Função para que se determine se uma string é algum string literal:
+  Se a string estiver em branco, diga não.
+  Se o conteúdo deste caractere inicial desta string for as aspas duplas, diga sim.
+  Diga não.
 
 
 
@@ -2205,7 +2105,11 @@ Função para que se determine se uma string é alguma palavra ignorável:
 
 
 
-
+Função para que se determine se uma string é o início de algum dado complementar:
+  \PAL
+  Se a string for "com", diga sim.
+  Se a string for "contendo", diga sim.
+  Diga não.
 
 
 
@@ -2240,8 +2144,6 @@ Função para que se determine se um termo está vazio:
 
 
 
-
-
 Função para que se determine se um tipo é algum tipo pré-definido:
   Se o tipo for inexistente, diga não.
   Se o tipo for o tipo base deste tipo, diga sim.
@@ -2260,28 +2162,16 @@ Função para que se determine se um tipo é valor empilhável:
 
 
 
+Rotina para que se elimine apelidos duplicados desde umas variáveis:
+  Crie um catálogo usando 101.
+  Elimine apelidos duplicados desde as variáveis usando o catálogo.
+  Destrua o catálogo.
 
 
 
 
 
 
-
-
-Rotina para que se finalize o compilador:
-  Destrua o catálogo de rotinas úteis.
-  Destrua o catálogo geral de rotinas.
-  Destrua o catálogo de variáveis hexadecimais.
-  Destrua o catálogo de variáveis globais.
-  Destrua o catálogo de tipos.
-  \Destrua o catálogo de apelidos.
-  Destrua as DLLs.
-  Destrua as rotinas.
-  Destrua os valores literais.
-  Destrua as variáveis globais.
-  Destrua as variáveis globais predefinidas.
-  Destrua os tipos.
-  Destrua os arquivos fontes.
 
 Rotina para que se encontre uma função usando uma string e uns funções:
   Esvazie a função.
@@ -2346,13 +2236,7 @@ Rotina para que se encontre uma DLL usando uma string:
     Se o nome desta DLL for a string, retorne.
   Reitere.
 
-Rotina para que se encontre um endereço completo e um número da linha usando um endereço de byte:
-  Limpe o endereço completo.
-  Atribua 0 ao número da linha.
-  Encontre um arquivo fonte usando o endereço de byte .
-  Se o arquivo fonte for inexistente, retorne.
-  Atribua o endereço completo deste arquivo fonte ao endereço completo.
-  Encontre o número da linha usando o arquivo fonte e o endereço de byte .
+
 
 
 
@@ -2372,7 +2256,13 @@ Rotina para que se encontre uma rotina usando uma string e um tipo:
   Encontre a rotina usando as unidades semânticas.
   Destrua as unidades semânticas.
 
-
+Rotina para que se encontre uma rotina usando uma string e um tipo e uma segunda string e um segundo tipo:
+  Adicione uma unidade semântica para umas unidades semânticas usando a string.
+  Adicione uma segunda unidade semântica para as unidades semânticas usando o tipo.
+  Adicione uma terceira unidade semântica para as unidades semânticas usando a segunda string.
+  Adicione uma quarta unidade semântica para as unidades semânticas usando o segundo tipo.
+  Encontre a rotina usando as unidades semânticas.
+  Destrua as unidades semânticas.
 
 Rotina para que se encontre uma rotina usando uma string e um tipo e uma segunda string e uma terceira string:
   Adicione uma unidade semântica para umas unidades semânticas usando a string.
@@ -2392,39 +2282,17 @@ Rotina para que se encontre uma rotina usando uma string e um tipo e uma segunda
   Encontre a rotina usando as unidades semânticas.
   Destrua as unidades semânticas.
 
-Rotina para que se encontre um número da linha usando um arquivo fonte e um endereço de byte :
-  Se o endereço de byte for inexistente,
-    Atribua 0 ao número da linha;
+Rotina para que se encontre uma variável usando um nome:
+  Se a rotina utilizada atualmente for inexistente,
+    Esvazie a variável;
     Retorne.
-  Lance um subtexto sobre o trecho deste arquivo fonte.
-  Atribua 1 ao número da linha.
-  Itere.
-    Se o subtexto estiver em branco, retorne.
-    Se o caractere inicial deste subtexto for o endereço de byte , retorne.
-    Se o conteúdo deste caractere inicial deste subtexto for o retorno de carro, adicione 1 para o número da linha.
-  Adicione 1 para o caractere inicial deste subtexto.
-  Reitere.
-
-Rotina para que se encontre um arquivo fonte usando um endereço de byte :
-  Se o endereço de byte for inexistente,
-    Esvazie o arquivo fonte;
-    Retorne.
-  Itere.
-    Obtenha o arquivo fonte desde os arquivos fontes.
-    Se o arquivo fonte for inexistente,
-      Retorne.
-    Se o endereço de byte for menor do que o caractere inicial deste trecho deste arquivo fonte,
-      Reitere.
-    Se o endereço de byte for maior do que o caractere final deste trecho deste arquivo fonte,
-      Reitere.
-
-
-
-
-
-
-
-
+  Encontre a variável usando o nome e as variáveis locais desta rotina utilizada atualmente.
+  Se a variável não for inexistente, retorne.
+  Encontre a variável usando o nome e os parâmetros desta rotina utilizada atualmente.
+  Se a variável não for inexistente, retorne.
+  Encontre a variável usando o nome e o catálogo de variáveis globais.
+  Se a variável não for inexistente, retorne.
+  Encontre a variável usando o nome e o catálogo de variáveis hexadecimais.
 
 
 
@@ -2457,19 +2325,53 @@ Rotina para que se obtenha uma contagem usando umas DLLs (todas as funções mais 
     Adicione 1 para a contagem.
   Reitere.
 
+Rotina para que se compile um valor literal usando um percorredor (valores booleanos):
+  Se existir algum problema de compilação, retorne.
+  Converta o segmento inicial deste percorredor para um sinalizador.
+  Converta o sinalizador para os data deste valor literal.
+  Mova o percorredor (usando diretrizes de compilação).
+  Atribua "sinalizador" ao nome do tipo deste valor literal.
+  Destrinche o valor literal. \ 
+
+Rotina para que se compile um valor literal usando um percorredor (números ordinais):
+  Se existir algum problema de compilação, retorne.
+  Atribua o segmento inicial deste percorredor aos data deste valor literal.
+  Remova o último caractere de os data deste valor literal.
+  \Converta o segmento inicial deste percorredor para um número.
+  \Converta o número para os data deste valor literal.
+  \Converta 0 para os data deste valor literal. \ era nulo ao invés de 0
+  Mova o percorredor (usando diretrizes de compilação).
+  \Atribua "número" ao nome do tipo deste valor literal.
+  Destrinche o valor literal. \ 
+
+
+
+Rotina para que se catalogue uma rotina por utilização:
+  Se existir algum problema de compilação, retorne.
+  Se a rotina for inexistente, retorne.
+  Se o sinalizador de função desta rotina estiver ativo, retorne.
+  Se a contagem destes parâmetros desta rotina for 0, retorne.
+  Copie as unidades semânticas desta rotina para umas unidades semânticas.
+  Reduza as unidades semânticas por utilização.
+  Converta as unidades semânticas para uma representação interna da rotina.
+  Destrua as unidades semânticas.
+  Se a representação interna da rotina estiver no catálogo geral de rotinas, retorne.
+  Encontre uma referência usando a representação interna da rotina e o catálogo de rotinas úteis.
+  Se a referência não for inexistente,
+    Atribua nil ao ponteiro deste referência;
+    Retorne.
+  Catalogue a rotina usando a representação interna da rotina e o catálogo de rotinas úteis.
 
 
 
 
 
-
-
-
-
-
-
-
-
+Rotina para que se catalogue umas rotinas por utilização:
+  Se existir algum problema de compilação, retorne.
+  Obtenha uma rotina desde as rotinas.
+  Se a rotina for inexistente, retorne.
+  Catalogue a rotina por utilização.
+  Reitere.
 
 
 
@@ -2879,24 +2781,8 @@ Rotina para que se liste umas variáveis depois de uma string em um trecho:
 
 
 
-
-
-
-
-
-
-
-
-
-
 Rotina para que se mova um percorredor (símbolos):
   Avance o percorredor.
-
-
-
-
-
-
 
 
 
@@ -2964,21 +2850,6 @@ Rotina para que se alinhe o parâmetros em umas rotinas:
 
 
 
-Rotina para que se pluralize uma string:
-  Lance um percorredor sobre a string.
-  Itere.
-    Mova o percorredor (usando diretrizes de compilação).
-    Se o segmento inicial deste percorredor estiver em branco, pare.
-    Se uma string plural não estiver em branco, acrescente " " para a string plural.
-    Acrescente o segmento inicial deste percorredor para a string plural.
-    Se o segmento inicial deste percorredor for "de",
-      Ative um sinalizador;
-      Reitere. \ PLURAL
-    Se o sinalizador não estiver ativo, 
-      Pluralize a string plural (português - regras comuns).
-  Reitere.
-  Atribua a string plural à string.
-
 Rotina para que se atribua o endereço EXE completo deste compilador para um endereço completo:
   Extraia um designador desde o endereço da pasta deste compilador.
   Remova alguma barra invertida final desde o designador.
@@ -2999,55 +2870,44 @@ Rotina para que se atribua um termo para um segundo termo:
   Atribua a variável deste termo à variável deste segundo termo.
   Atribua a frase deste termo ao frase deste segundo termo.
 
+Rotina para que se carregue uns arquivos fonte usando um nível de profundidade: \ Jasper
+  Leia os arquivos fonte usando o endereço completo deste compilador e o nível de profundidade.
 
-
-
-
-
-
-Rotina para que se organize o catálogo de rotinas úteis:
-    Se existir algum problema de compilação, retorne.
-    Obtenha um recipiente usando o catálogo de rotinas úteis.
-    Se o recipiente for inexistente, retorne.
-    Se as referências deste recipiente estiverem vazios, reitere.
-    Organize o catálogo de rotinas úteis usando as referências deste recipiente.
-  Reitere.
-
-Rotina para que se organize o catálogo de rotinas úteis usando umas referências:
-    Obtenha uma referência desde as referências.
-    Se a referência for inexistente, retorne.
-    Atribua o ponteiro desta referência para uma rotina.
-    Se a rotina for inexistente,
-      Apresente uma mensagem de erro contendo "Erro interno #134. A rotina não foi localizada";
-      Retorne.
-    Copie as unidades semânticas desta rotina para umas unidades semânticas.
-    Reduza as unidades semânticas por utilização.
-    Catalogue a rotina usando as unidades semânticas e o catálogo geral de rotinas.
-    Destrua as unidades semânticas.
-  Reitere.
-
-Rotina para que se remova alguns termos negativos desde umas unidades semânticas retornando um sinalizador:
-  Desative o sinalizador.
-  Permute as unidades semânticas com umas segunda unidades semânticas.
+Rotina para que se carregue uns arquivos fonte usando um endereço da pasta e um nível de profundidade: \Jasper
+  Atribua ".pop" a uma nova extensão.
+  Anexe o caractere NULL após a nova extensão.
+  Se o nível de profundidade for menor do que 1, retorne.
+  Preserve a nível de profundidade.
+  Atribua o nível de profundidade para um segundo nível de profundidade.
+  Subtraia 1 desde o segundo nível de profundidade.
   Itere.
-    Atribua a primeira unidade semântica destas segunda unidades semânticas para uma unidade semântica.
-    Se a unidade semântica for inexistente, retorne.
-    Remova a unidade semântica desde a segunda unidades semânticas.
-    \PAL
-    Se a string desta unidade semântica for "não",
-    Inverta o sinalizador;
-    Destrua a unidade semântica; Reitere.
-    \CAL
-    Acrescente a unidade semântica para as unidades semânticas.
-    Se a string desta unidade semântica for "nothing",
-    Inverta o sinalizador;
-    Atribua "something" à string desta unidade semântica; Reitere.
-    Se a string desta unidade semântica for "nada",
-    Inverta o sinalizador;
-    Atribua "something" à string desta unidade semântica; Reitere.
-    \Se a string desta unidade semântica termina com "n't", inverta o sinalizador; remova final bytes desde a string desta unidade semântica usando 3; Reitere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha um item desde o endereço da pasta.
+    Se o item não for encontrado, pare.
+    Se a categoria deste item for "endereço de pasta", 
+      Leia os arquivos fonte usando o endereço da pasta deste item e o segundo nível de profundidade;
+      Reitere.
+    Se a categoria deste item não for "arquivo", reitere.
+    Se a extensão deste  item não for a nova extensão, reitere.
+    Se o item parece ser encadernável, reitere.
+    Se o item parece ser lexical, reitere.
+    Adicione um arquivo fonte para os arquivos fontes usando o endereço completo deste item.
+    Carregue o arquivo fonte.
   Reitere.
 
+\ Rotina para que se carregue uns arquivos fontes:
+  \ Atribua ".pop" a uma nova extensão.
+  \ Anexe o caractere NULL após a nova extensão.
+  \ Itere.
+    \ Se existir algum problema de compilação, retorne.
+    \ Obtenha um item desde o endereço da pasta deste compilador.
+    \ Se o item não for encontrado, pare.
+    \ Se a categoria deste item não for "arquivo", reitere.
+    \ Se a extensão deste  item não for a nova extensão, reitere.
+    \ Se o item parece ser encadernável, reitere.
+    \ Adicione um arquivo fonte para os arquivos fontes usando o endereço completo deste item.
+    \ Carregue o arquivo fonte.
+  \ Reitere.
 
 
 
@@ -3068,13 +2928,15 @@ Rotina para que se remova alguns termos negativos desde umas unidades semânticas
 
 
 
-
-
-
-
-
-
-
+  Atribua "primeiro " junto com o nome deste tipo ao novo nome deste terceiro campo português.
+  \Adicione um terceiro campo português feminino para os campos deste tipo encadeado usando "primeira " junto com o nome deste tipo e "primeira" e o nome deste tipo e o sinalizador de ignição.
+  \Atribua "primeiro " junto com o nome deste tipo ao novo nome deste terceiro campo português feminino.
+  Adicione um quarto campo para os campos deste tipo encadeado usando "último " junto com o nome deste tipo e "último" e o nome deste tipo e o sinalizador de ignição.
+  Adicione um quarto campo português para os campos deste tipo encadeado usando "última " junto com o nome deste tipo e "última" e o nome deste tipo e o sinalizador de ignição.
+  Atribua "último " junto com o nome deste tipo ao novo nome deste quarto campo português.
+  \Adicione um quarto campo português feminino para os campos deste tipo encadeado usando "última " junto com o nome deste tipo e "última" e o nome deste tipo e o sinalizador de ignição.
+  \Atribua "último " junto com o nome deste tipo ao novo nome deste quarto campo português feminino.
+  Catalogue o tipo encadeado.
 
 
 
@@ -3096,92 +2958,44 @@ Rotina para que se arredonde para cima tamanhos de zona:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Rotina para que se scrub um catálogo:
+Rotina para que se examine uma cabeçalho de rotina usando um percorredor:
+  Se existir algum problema de compilação, retorne.
+  Se o segmento inicial deste percorredor estiver em branco, retorne.
+  Atribua o caractere inicial deste segmento inicial deste percorredor ao caractere inicial deste cabeçalho de rotina.
+  Atribua -1 ao caractere final deste cabeçalho de rotina.
   Itere.
-    Obtenha um recipiente usando o catálogo.
-    Se o recipiente for inexistente,
-      Retorne.
-    Se as referências deste recipiente estiverem vazios,
-      Reitere.
-    Scrub as referências deste recipiente.
-  Reitere.
-
-Rotina para que se scrub umas referências:
-  Permute as referências com uns segunda referências.
-  Itere.
-    Atribua a primeira referência destes segunda referências para uma referência.
-    Se a referência for inexistente,
-      Retorne.
-    Remova a referência desde a segunda referências.
-    Se o ponteiro deste referência for inexistente,
-      Destrua a referência;
-      Reitere.
-    Acrescente a referência para as referências.
+    Se existir algum problema de compilação, retorne.
+    Se o segmento inicial deste percorredor estiver em branco, retorne.
+    Se o segmento inicial deste percorredor for o ponto&vírgula, retorne. \ *** alternate wording
+    Se o segmento inicial deste percorredor for o sinal de dois pontos, retorne.
+    Se o segmento inicial deste percorredor for o ponto final, retorne.
+    Atribua o caractere final deste segmento inicial deste percorredor ao caractere final deste cabeçalho de rotina.
+    Mova o percorredor (usando diretrizes de compilação).
   Reitere.
 
 
 
-Rotina para que se passe para a próxima palavra  em um subtexto:
-  Se o subtexto estiver em branco, retorne.
-  Se o conteúdo deste caractere inicial deste subtexto for irrelevante, pare.
-  Adicione 1 para o caractere inicial deste subtexto.
-  Reitere.
-  Ignore os caracteres ignoráveis no início no subtexto.
+Rotina para que se ative o sinalizador de compilação em uma variável;
+Rotina para que se ligue o sinalizador de compilação em uma variável:
+  Se a variável for inexistente, retorne.
+  Se o sinalizador de compilação desta variável [já] estiver ativo, retorne.
+  Ative o sinalizador de compilação desta variável.
+  Se a categoria desta variável não for "global", retorne.
+  Se o valor literal desta variável for inexistente, retorne.
+  Encontre uma rotina usando "atribua" e o tipo deste valor literal desta variável e "para" e o tipo desta variável.
+  Se a rotina for inexistente,
+    Encontre a rotina usando "converta" e o tipo deste valor literal desta variável e "para" e o tipo desta variável;
+    Ative um sinalizador.
+  Se a rotina for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #172. O tipo e o valor da variável variável global  não estão correspondendo." e o endereço local desta variável;
+    Retorne.
+  Compile o corpo pertencente à rotina.
+  Se o sinalizador estiver ativo, atribua "converta o " junto com o nome deste valor literal desta variável seguido de " para o " junto com o nome desta variável seguido de ". " ao texto inicializador desta variável.
+  Se o sinalizador não estiver ativo, atribua "atribua o " junto com o nome deste valor literal desta variável seguido de " para o " junto com o nome desta variável seguido de ". " ao texto inicializador desta variável. \ Era " ao ". NÃO PODIA MUDAR O " ao " não sei o porquê
 
-Rotina para que se passe para a palavra anterior em um subtexto:
-  Se o subtexto estiver em branco, retorne.
-  Se o conteúdo deste caractere final deste subtexto for irrelevante, pare.
-  Subtraia 1 desde o caractere final deste subtexto.
-  Reitere.
-  Ignore algum caractere ignorável final no subtexto.
+
+
+
 
 Rotina para que se transforme um fragmento em código hexadecimal:
   Se existir algum problema de compilação, retorne.
@@ -3244,8 +3058,7 @@ Rotina para que se transforme um fragmento em código hexadecimal:
 Rotina para que se transforme um fragmento em código hexadecimal (cláusula de interrupção):
   Atribua a etiqueta de repetição para uma etiqueta.
   Encontre um segundo fragmento usando o fragmento e a etiqueta.
-  Se o segundo fragmento for inexistente, 
-    Atribua a etiqueta de finalização para a etiqueta. \ para interromper sem um loop ou depois de um loop
+  Se o segundo fragmento for inexistente, atribua a etiqueta de finalização para a etiqueta. \ para break sem um loop ou depois de um loop
   Encontre um terceiro fragmento usando o último fragmento destes fragmentos desta rotina utilizada atualmente e a etiqueta (regressivamente).
   Se o terceiro fragmento for inexistente,
     Apresente uma mensagem de erro contendo "Erro interno #173. Fragmento não encontrado.";
@@ -3253,7 +3066,7 @@ Rotina para que se transforme um fragmento em código hexadecimal (cláusula de in
   Se o próximo fragmento deste terceiro fragmento for inexistente,
     Apresente a mensagem de erro contendo "Erro interno #174. Fragmento não encontrado.";
     Retorne.
-  Acrescente $E9 [JMP rel32] e o endereço deste próximo fragmento deste terceiro fragmento para o fragmento. \ JMP o endereço de destino. Jump near, relative, displacement relative to next instruction.
+  Acrescente $E9 [jmp] e o endereço deste próximo fragmento deste terceiro fragmento para o fragmento. \ JMP o endereço de destino
 
 Rotina para que se transforme um fragmento em código hexadecimal (Demanda Externa):
   Acrescente $FF15 [call] e o endereço desta função deste fragmento para o código deste fragmento. \ Processe [o endereço desta função deste fragmento ]
@@ -3444,14 +3257,19 @@ Rotina para que se transforme umas rotinas em código hexadecimal:
     Transforme a rotina em código hexadecimal.
   Reitere.
 
-Rotina para que se ignore algum caractere ignorável final em um subtexto:
-  Itere.
-    Se o subtexto estiver em branco, retorne.
-    Se o conteúdo deste caractere final deste subtexto não for irrelevante, retorne.
-    Subtraia 1 desde o caractere final deste subtexto.
-  Reitere.
 
 
-
+\ Rotina nova criada pelo Dahn para - reverse functions
+\ para atribua o xxx uv a/the yyy para zzz
+Função para que se determine se um percorredor é o início de alguma função possessiva reversa:
+  Se o sinalizador de erros deste compilador estiver ativo, diga não.
+  Se o segmento inicial deste percorredor não for algum comando de atribuição, diga não.
+  Preserve o percorredor.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor não for algum artigo definido, diga não.
+  Mova o percorredor (usando diretrizes de compilação).
+  Examine um nome usando o percorredor.
+  Se o percorredor não for sobre algum possessivo reverso, diga não.
+  Diga sim.
 
 \finalmente  acabou

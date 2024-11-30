@@ -1,0 +1,422 @@
+Rotina para que se compile um endereço da pasta (identificação dos tipos das variáveis): \ #004
+  Se existir algum problema de compilação, retorne.
+  Escreva "Identificando os tipos das variáveis..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de resolução de tipos.
+  Destrinche os tipos (expansão de listas).
+  Destrinche os tipos (registro de plurais).
+  Destrinche os tipos (tipos de dados primitivos).
+  Destrinche os tipos (dados complementares).
+  Suspenda o temporizador de resolução de tipos.
+
+\--------------------------------------------------------------------------LISTAS DUPLAMENTE ENCADEADAS---------------------------------------------------
+
+Rotina para que se destrinche uns tipos (expansão de listas):
+  \Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha um tipo desde os tipos.
+    Se o tipo for inexistente, retorne.
+    Destrinche o tipo (análise de listas).
+  Reitere.
+
+Rotina para que se destrinche um tipo (análise de listas): 
+ \ Necessário quando tipo base do tipo ainda não foi determinado
+  Se existir algum problema de compilação, retorne.
+  Se o tipo for inexistente, retorne.
+  Se o tipo base deste tipo não for inexistente, retorne.
+  Se o nome deste tipo for "lista", retorne.
+  Se o tipo não puder ser reduzido para "lista" usando o nome do tipo primitivo, retorne.
+  Encontre um tipo base usando o nome do tipo primitivo deste tipo e o catálogo de tipos.
+  \ O código abaixo adiciona a lista estruturada 
+  \ Obs: o número de campos pré-definidos da lista estruturada é igual a 4. 
+  \ Este valor está definido em 2 lugares. Pesquise por "do que 4" (anteriormente eram 6 campos)
+  Atribua o nome deste tipo seguido de " estruturada" para um nome.
+  Atribua o nome deste tipo seguido de " estruturadas" para um nome plural.
+  Atribua o nome deste tipo base seguido de " estruturada" para um nome do tipo primitivo.
+  Adicione um tipo estruturado para os tipos usando 
+    O nome e 
+    O nome plural e 
+    O nome do tipo primitivo.
+  Adicione um campo para os campos deste tipo estruturado usando 
+    "próximo " junto com o nome deste tipo e 
+    "próximo" e 
+    O nome deste tipo e 
+    O sinalizador de ignição.
+  Adicione um campo português para os campos deste tipo estruturado usando 
+    "próxima " junto com o nome deste tipo e 
+    "próxima" e 
+    O nome deste tipo e 
+    O sinalizador de ignição.
+  Atribua "próximo " junto com o nome deste tipo ao novo nome deste campo português.
+  Adicione um segundo campo para os campos deste tipo estruturado usando 
+    "precedente " junto com 
+    O nome deste tipo e 
+    "precedente" e 
+    O nome deste tipo 
+    e o sinalizador de ignição.
+  Adicione um segundo campo português para os campos deste tipo estruturado usando 
+    O nome deste tipo seguido de 
+    " anterior" e 
+    "anterior" e \ vem antes do nome do tipo
+    O nome deste tipo e 
+    O sinalizador de ignição.
+  Atribua "precedente " junto com o nome deste tipo ao novo nome deste segundo campo português.
+  Se os campos deste tipo não estiverem vazios, 
+    Acrescente os campos deste tipo para os campos deste tipo estruturado.
+  Catalogue o tipo estruturado.
+  \ Corrige o tipo original para assemelhar-se a um ponteiro
+  Atribua o nome deste tipo estruturado ao nome do conteúdo deste tipo.
+  \ LISTAS
+  Adicione um tipo encadeado para os tipos usando 
+    O nome plural deste tipo e "" e 
+    O nome plural deste tipo base.
+  Adicione um terceiro campo para os campos deste tipo encadeado usando 
+    "primeiro " junto com o nome deste tipo e 
+    "primeiro" e 
+    O nome deste tipo e 
+    O sinalizador de ignição.
+  Adicione um terceiro campo português para os campos deste tipo encadeado usando 
+    "primeira " junto com o nome deste tipo e 
+    "primeira" e 
+    O nome deste tipo e 
+    O sinalizador de ignição.
+  Atribua "primeiro " junto com o nome deste tipo ao novo nome deste terceiro campo português.
+  \Adicione um terceiro campo português feminino para os campos deste tipo encadeado usando 
+    \"primeira " junto com o nome deste tipo e "primeira" e o nome deste tipo e o sinalizador de ignição.
+  \Atribua "primeiro " junto com o nome deste tipo ao novo nome deste terceiro campo português feminino.
+  Adicione um quarto campo para os campos deste tipo encadeado usando 
+    "último " junto com o nome deste tipo e 
+    "último" e 
+    O nome deste tipo e 
+    O sinalizador de ignição.
+  Adicione um quarto campo português para os campos deste tipo encadeado usando 
+    "última " junto com o nome deste tipo e 
+    "última" e 
+    O nome deste tipo e 
+    O sinalizador de ignição.
+  Atribua "último " junto com o nome deste tipo ao novo nome deste quarto campo português.
+  \Adicione um quarto campo português feminino para os campos deste tipo encadeado usando 
+    \"última " junto com o nome deste tipo e "última" e o nome deste tipo e o sinalizador de ignição.
+  \Atribua "último " junto com o nome deste tipo ao novo nome deste quarto campo português feminino.
+  Catalogue o tipo encadeado.
+
+Função para que se determine se um tipo pode ser reduzido para uma string usando o nome do tipo primitivo:
+  Se o tipo for inexistente, diga não.
+  Se o nome deste tipo for a string, diga sim.
+  Se o sinalizador de recursividade deste tipo estiver ativo, diga não.
+  Ative o sinalizador de recursividade deste tipo.
+  Encontre um tipo base usando o nome do tipo primitivo deste tipo e o catálogo de tipos.
+  Se o tipo base for inexistente,
+    Desative o sinalizador de recursividade deste tipo;
+    Diga não.
+  Se o tipo base puder ser reduzido para a string usando o nome do tipo primitivo,
+    Desative o sinalizador de recursividade deste tipo;
+    Diga sim.
+  Desative o sinalizador de recursividade deste tipo.
+  Diga não.
+
+Rotina para que se encontre um tipo e um apelido usando um nome:
+  Esvazie o tipo.
+  Limpe o apelido.
+  Encontre o tipo e o apelido usando o nome (progressivamente).
+  Se o tipo não for inexistente, retorne.
+  Encontre o tipo e o apelido usando o nome (regressivamente).
+  \ TRECHO DA VERSÃO ANTIGA
+  \ Lance um subtexto sobre o nome.
+  \ Itere.
+    \ Se o subtexto estiver em branco, retorne.
+    \ Encontre o tipo usando o subtexto e o catálogo de tipos.
+    \ Se o tipo não for inexistente, pare.
+    \ Passe para a próxima palavra  no subtexto.
+  \ Reitere.
+  \ Atribua o caractere inicial deste nome para caractere inicial dum segundo subtexto. \ 
+  \ Atribua o caractere inicial deste subtexto menos 2 ao caractere final deste segundo subtexto.
+  \ Se o segundo subtexto não estiver em branco, atribua o segundo subtexto ao apelido.
+  \ Se o segundo subtexto estiver em branco, atribua o subtexto ao apelido.
+
+Rotina para que se encontre um tipo e um apelido usando um nome (progressivamente):
+  \ original - sem alterações
+  Esvazie o tipo.
+  Limpe o apelido.
+  Lance um subtexto sobre o nome.
+  Itere.
+    Se o subtexto estiver em branco, retorne.
+    Encontre o tipo usando o subtexto e o catálogo de tipos.
+    Se o tipo não for inexistente, pare.
+    Passe para a próxima palavra  no subtexto. \próximo
+  Reitere.
+  Atribua o caractere inicial deste nome para o caractere inicial dum segundo subtexto.
+  Atribua o caractere inicial deste subtexto MENOS 2 ao caractere final deste segundo subtexto.
+  Se o segundo subtexto não estiver em branco, 
+    Atribua o segundo subtexto ao apelido.
+  Se o segundo subtexto estiver em branco, 
+    Atribua o subtexto ao apelido.
+
+Rotina para que se encontre um tipo e um apelido usando um nome (regressivamente):
+  Esvazie o tipo.
+  Limpe o apelido.
+  Lance um subtexto sobre o nome.
+  Itere.
+    Se o subtexto estiver em branco, retorne.
+    Encontre o tipo usando o subtexto e o catálogo de tipos.
+    Se o tipo não for inexistente, pare.
+    Passe para a palavra anterior no subtexto. \ anterior
+  Reitere.
+  Atribua o caractere final deste nome para o caractere final dum segundo subtexto.
+  Atribua o caractere final deste subtexto MAIS 2 ao caractere inicial deste segundo subtexto.
+  Se o segundo subtexto não estiver em branco, 
+    Atribua o segundo subtexto ao apelido.
+  Se o segundo subtexto estiver em branco, 
+    Atribua o subtexto ao apelido.
+
+Função para que se determine se um tipo pode ser reduzido para um nome do tipo:
+  Se o tipo for inexistente, diga não.
+  Preserve o tipo.
+  Itere.
+    Se o tipo for inexistente, diga não.
+    Se o nome deste tipo for o nome do tipo, diga sim.
+    Se o tipo base deste tipo for o tipo, diga não.
+    Atribua o tipo base deste tipo ao tipo.
+  Reitere.
+
+Rotina para que se adicione um campo para uns campos usando um nome e um apelido e um nome do tipo e um sinalizador:
+  Adicione o campo para o campos usando "campo" e nil.
+  Atribua o nome ao nome deste campo.
+  Atribua o apelido ao apelido deste campo.
+  Atribua o nome do tipo ao nome do tipo deste campo.
+  Atribua um sinalizador de referência ao sinalizador de referência deste campo.
+
+\-------------------------------------------------------------------------------------- REGISTRO DE PLURAIS ------------------------------------------------------------
+
+Rotina para que se destrinche uns tipos (registro de plurais):
+  \Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha um tipo desde o tipos.
+    Se o tipo for inexistente, retorne.
+    Destrinche o tipo (registro de plurais).
+  Reitere.
+
+Rotina para que se destrinche um tipo (registro de plurais):
+  Se existir algum problema de compilação, retorne.
+  Se o tipo for inexistente, retorne.
+  Se o nome plural deste tipo estiver em branco, retorne.
+  Se o tipo puder ser reduzido para "lista" usando o nome do tipo primitivo, retorne.
+  Catalogue o tipo usando o nome plural deste tipo.
+
+\-------------------------------------------------------------------------- TIPOS BASE / TIPOS PRIMITIVOS ---------------------------------------------------------------------
+
+Rotina para que se destrinche uns tipos (tipos de dados primitivos): 
+  \Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha um tipo desde o tipos.
+    Se o tipo for inexistente, retorne.
+    Destrinche o tipo (tipos de dados primitivos).
+  Reitere.
+
+\ A rotina abaixo é recursiva
+Rotina para que se destrinche um tipo (tipos de dados primitivos):
+  Se existir algum problema de compilação, retorne.
+  Se o tipo for inexistente, retorne.
+  Se o tipo base deste tipo não for inexistente, retorne.
+  Encontre o tipo base deste tipo usando o nome do tipo primitivo deste tipo e o catálogo de tipos.
+  Se o tipo base deste tipo for inexistente,
+    Apresente uma mensagem de erro contendo 
+      "Erro #139. Tipo base '" junto com o nome do tipo primitivo deste tipo 
+      seguido de "' inválido." e o endereço local deste tipo;
+    Retorne.
+  Ative o sinalizador de recursividade deste tipo.
+  Se o sinalizador de recursividade deste tipo base deste tipo estiver ativo,
+    Apresente a mensagem de erro contendo 
+      "Erro #140. Definição recursiva encontrada no tipo '" junto com o nome do tipo primitivo deste tipo 
+      seguido de "'." e o endereço local deste tipo;
+    Retorne.
+  Destrinche o tipo base deste tipo (tipos de dados primitivos). \ RECURSÃO
+  Desative o sinalizador de recursividade deste tipo.
+
+\-------------------------------------------------------------------------- INFORMAÇÕES COMPLEMENTARES ---------------------------------------------------------------------
+
+Rotina para que se destrinche uns tipos (dados complementares):
+  \Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha um tipo desde o tipos.
+    Se o tipo for inexistente, retorne.
+    Destrinche o tipo (dados complementares).
+  Reitere.
+
+Rotina para que se destrinche um tipo (dados complementares):
+  Se existir algum problema de compilação, retorne.
+  Se o tipo for inexistente, retorne.
+  Se o sinalizador de informações complementares deste tipo estiver ativo, retorne.
+  Se o tipo base deste tipo for o tipo, retorne. \ para os tipos pré-definidos
+  Verifique por informações opcionais inválidas no tipo.
+  Ative o sinalizador de recursividade deste tipo.
+  Destrinche o tipo base deste tipo (dados complementares). \ RECURSÃO
+  Se o tipo puder ser reduzido para "ponteiro", 
+    Destrinche o tipo (dados opcionais - ponteiro).
+  Se o tipo puder ser reduzido para "estrutura", 
+    Destrinche o tipo (dados opcionais - estrutura). \ mudar aqui
+  Se o tipo puder ser reduzido para "número", 
+    Destrinche o tipo (dados opcionais - tipos fracionários).
+  Desative o sinalizador de recursividade deste tipo.
+  Ative o sinalizador de informações complementares deste tipo.
+
+Rotina para que se verifique por informações opcionais inválidas em um tipo:
+  Se existir algum problema de compilação, retorne.
+  Se o tipo for inexistente, retorne.
+  Se o nome do conteúdo deste tipo não estiver em branco, 
+    Verifique por informações opcionais inválidas no tipo (conteúdo).
+  Se o campos deste tipo não estiverem vazios, 
+    Verifique por informações opcionais inválidas no tipo (campos).
+  Se a razão de escala deste tipo não for 0, 
+    Verifique por informações opcionais inválidas no tipo (tipos fracionários).
+
+Rotina para que se verifique por informações opcionais inválidas em um tipo (conteúdo):
+  Se existir algum problema de compilação, retorne.
+  Se o tipo não puder ser reduzido para "ponteiro",
+    Apresente uma mensagem de erro contendo 
+      "Erro #15. A palavra-chave 'para' só pode ser utilizada com variáveis do tipo ponteiro." e o endereço local deste tipo;
+    Retorne.
+
+Rotina para que se verifique por informações opcionais inválidas em um tipo (campos):
+  Se existir algum problema de compilação, retorne.
+  Se o tipo não puder ser reduzido para "estrutura",
+    Apresente uma mensagem de erro contendo 
+      "Erro #13. A palavra-chave 'com' deve ser utilizada apenas em estruturas e listas." e o endereço local deste tipo;
+    Retorne.
+
+Rotina para que se verifique por informações opcionais inválidas em um tipo (tipos fracionários):
+  Se existir algum problema de compilação, retorne.
+  Se o tipo não puder ser reduzido para "número",
+    Apresente uma mensagem de erro contendo 
+      "Erro #14. Proporções e escalas de medida só devem ser utilizadas em tipos de dados numéricos." e o endereço local deste tipo;
+    Retorne.
+
+Rotina para que se destrinche um tipo (dados opcionais - ponteiro):
+  Se existir algum problema de compilação, retorne.
+  Se o tipo do conteúdo deste tipo não for inexistente, retorne.
+  Se o nome do conteúdo deste tipo estiver em branco,
+    Atribua o tipo do conteúdo deste tipo base deste tipo ao tipo do conteúdo deste tipo;
+    Retorne.
+  Encontre o tipo do conteúdo deste tipo usando o nome do conteúdo deste tipo e o catálogo de tipos. \?
+  Se o tipo do conteúdo deste tipo for inexistente,
+    Apresente uma mensagem de erro contendo 
+      "Erro #141. Não foi possível determinar o tipo do conteúdo apontado por este ponteiro." e o endereço local deste tipo;
+    Retorne.
+
+Rotina para que se destrinche um tipo (dados opcionais - estrutura):
+  Se existir algum problema de compilação, retorne.
+  Se os campos deste tipo estiverem vazios,
+    Copie os campos deste tipo base deste tipo aos campos deste tipo;
+    Retorne.
+  Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha um campo desde os campos deste tipo (regressivamente).
+    Se o campo for inexistente, pare.
+    Se o campo estiver duplicada nos campos deste tipo,
+    Apresente uma mensagem de erro contendo 
+      "Erro #142. O campo '" junto com o nome deste campo 
+      seguido de "' já foi definido anteriormente nesta estrutura." e o endereço local deste campo;
+    Retorne.
+    Destrinche o campo.
+    Se existir algum problema de compilação, retorne.
+    Se o sinalizador de recursividade deste tipo deste campo estiver ativo,
+    Apresente a mensagem de erro contendo 
+      "Erro #143. Definição recursiva encontrada no campo '" 
+      junto com o nome deste tipo deste campo seguido de "'." e o endereço local deste campo;
+    Retorne.
+    Destrinche o tipo deste campo (dados complementares). \ RECURSÃO
+    Se o sinalizador de referência deste campo não estiver ativo, reitere.
+    Se o tipo deste campo não puder ser reduzido para "ponteiro",
+      Apresente a mensagem de erro contendo 
+        "Erro #144. O campo '" 
+        junto com o nome deste campo seguido de "'não é do tipo ponteiro" e o endereço local deste campo;
+      Retorne.
+  Reitere.
+  Elimine apelidos duplicados desde os campos deste tipo.
+  Se o tipo não puder ser reduzido para "lista estruturada", retorne.
+  Se a contagem destes campos deste tipo for maior do que 4, retorne. 
+  \ Já copiado? Eram 2 quando era próximo e anterior, agora 4 para incluir as variantes
+  Copie os campos deste tipo base deste tipo aos campos deste tipo (apenas campos de dados).
+
+Rotina para que se copie uns campos para uns segundo campos:
+  \Itere.
+    Obtenha um campo desde o campos.
+    Se o campo for inexistente, retorne.
+    Copie o campo para um segundo campo.
+    Acrescente o segundo campo para o segundo campos.
+  Reitere.
+
+Rotina para que se copie um campo para um segundo campo:
+  Se o campo for inexistente,
+    Esvazie o segundo campo;
+    Retorne.
+  Aloque memória para o segundo campo.
+  Atribua o endereço local deste campo ao endereço local deste segundo campo.
+  Atribua o nome deste campo ao nome deste segundo campo.
+  Atribua o apelido deste campo ao apelido deste segundo campo.
+  Atribua o nome do tipo deste campo ao nome do tipo deste segundo campo.
+  Atribua o tipo deste campo ao tipo deste segundo campo.
+  Atribua a contagem deste campo à contagem deste segundo campo.
+  Atribua o novo nome deste campo ao novo nome deste segundo campo.
+  Atribua o sinalizador de referência deste campo ao sinalizador de referência deste segundo campo.
+  Atribua o deslocamento deste campo ao deslocamento deste segundo campo.
+
+\Função para que se determine se um campo está duplicado em uns campos;
+Função para que se determine se uma variável está duplicada em umas variáveis:
+  \Itere.
+    Obtenha uma segunda variável desde as variáveis.
+    Se a segunda variável for inexistente, diga não.
+    Se o nome desta segunda variável estiver em branco, reitere.
+    Se a segunda variável for a variável, reitere.
+    Se o nome desta segunda variável for o nome desta variável, diga sim.
+  Reitere.
+
+Rotina para que se elimine apelidos duplicados desde umas variáveis:
+  Crie um catálogo usando 101.
+  Elimine apelidos duplicados desde as variáveis usando o catálogo.
+  Destrua o catálogo.
+
+Rotina para que se elimine apelidos duplicados desde umas variáveis usando um catálogo:
+  Se o catálogo for inexistente, retorne.
+  Itere.
+    Obtenha uma variável desde as variáveis.
+    Se a variável for inexistente, retorne.
+    Elimine apelidos duplicados usando a variável e o catálogo.
+  Reitere.
+
+Rotina para que se elimine apelidos duplicados usando uma variável e um catálogo:
+  Se a variável for inexistente, retorne.
+  Se o catálogo for inexistente, retorne.
+  Encontre uma segunda variável usando o apelido desta variável e o catálogo.
+  Se a segunda variável for inexistente, \ encontre-a
+    Encontre a segunda variável usando o nome desta variável e o catálogo.
+  Se a segunda variável for inexistente, \ catalogue-a
+    Catalogue a variável usando o apelido desta variável e o catálogo;
+    Retorne.
+  Limpe o apelido desta segunda variável.
+  Limpe o apelido desta variável.
+
+Rotina para que se copie uns campos para uns outros campos (apenas campos de dados):
+  \Se o primeiro campo destes campos for inexistente, retorne.
+  Se a contagem destes campos for menor do que 4, retorne. \ próximo/próxima, anterior/precedente
+  Atribua o próximo campo
+    deste próximo campo
+    deste próximo campo
+    deste próximo campo
+    deste primeiro campo destes campos
+    para um campo.
+  Itere.
+    Se o campo for inexistente, retorne.
+    Copie o campo para um novo campo.
+    Acrescente o novo campo para os outros campos.
+    Obtenha o campo desde os campos.
+  Reitere.
+
+Rotina para que se destrinche um tipo (dados opcionais - tipos fracionários):
+  Se existir algum problema de compilação, retorne.
+  Atribua o tipo base deste tipo para um tipo base.
+  Se a razão de escala deste tipo for 0,
+    Atribua a razão de escala deste tipo base deste tipo à razão de escala deste tipo;
+    Retorne.
+  Se a razão de escala deste tipo base for 0, retorne.
+  Multiplique a razão de escala deste tipo pela razão de escala deste tipo base.
+  Atribua o tipo base deste tipo base ao tipo base deste tipo.
