@@ -1,0 +1,247 @@
+Rotina para que se compile um endereço da pasta (endereço): \ #013
+  Se existir algum problema de compilação, retorne.
+  Escreva "Obtendo endereço dos itens..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de endereçamento.
+  Atribua 4096 para um endereço.
+  Atribua o endereço ao endereço base desta Seção de DLLs.
+  Enderece as DLLs usando o endereço.
+  Atribua o endereço menos a endereço base desta Seção de DLLs à quantidade de caracteres desta Seção de DLLs.
+  Arredonde o endereço para cima usando o múltiplo imediato de 4096.
+  Atribua o endereço à endereço base desta Região de Dados.
+  Enderece as variáveis globais usando o endereço.
+  Enderece os valores literais usando o endereço.
+  Atribua o endereço menos a endereço base desta Região de Dados à quantidade de caracteres desta Região de Dados.
+  Arredonde o endereço para cima usando o múltiplo imediato de 4096.
+  Atribua o endereço à endereço base desta Região de Código. 
+  \ Uma zona é uma estrutura com um endereço base, uma quantidade de caracteres e um tamanho.
+  Enderece as rotinas usando o endereço.
+  Atribua o endereço menos a endereço base desta Região de Código à quantidade de caracteres desta Região de Código.
+  Suspenda o temporizador de endereçamento.
+
+Rotina para que se enderece umas DLLs usando um endereço:
+  Atribua o endereço ao endereço do cabeçalho usado atualmente.
+  Atribua as contagem destas DLLs para uma contagem.
+  Adicione 1 para a contagem.
+  Multiplique a contagem pela magnitude dum cabeçalho da DLL.
+  Atribua o endereço mais a contagem ao endereço pré-calculado atual.
+  Obtenha uma segunda contagem usando as DLLs (todas as funções mais os marcadores).
+  Multiplique a segunda contagem por 4.
+  Atribua o endereço pré-calculado atual mais a segunda contagem ao endereço do nome usado atualmente.
+  Itere.
+    Obtenha uma DLL desde as DLLs.
+    Se a DLL for inexistente, pare.
+    Enderece a DLL.
+  Reitere.
+  Atribua o endereço do nome usado atualmente menos o endereço para um número.
+  Adicione o número para o endereço.
+
+Rotina para que se obtenha uma contagem usando umas DLLs (todas as funções mais os marcadores):
+  Atribua 0 à contagem.
+  Itere.
+    Obtenha uma DLL desde as DLLs.
+    Se a DLL for inexistente, retorne.
+    Adicione a contagem destas funções desta DLL para a contagem.
+    Adicione 1 para a contagem.
+  Reitere.
+
+Rotina para que se enderece uma DLL:
+  Atribua o endereço do nome usado atualmente ao endereço do nome desta DLL.
+  Atribua o endereço do cabeçalho usado atualmente ao endereço do cabeçalho desta DLL.
+  Atribua o endereço do nome usado atualmente ao endereço do nome deste cabeçalho da DLL desta DLL.
+  Atribua a quantidade de caracteres deste nome desta DLL mais 1 para um número.
+  Arredonde o número para cima usando o múltiplo imediato de 2.
+  Adicione o número para o endereço do nome usado atualmente.
+  Adicione a magnitude dum cabeçalho da DLL para o endereço do cabeçalho usado atualmente.
+  Atribua o endereço pré-calculado atual ao primeiro endereço thunk de memória deste cabeçalho da DLL desta DLL.
+  Enderece as funções desta DLL.
+  Adicione 4 para o endereço pré-calculado atual.
+
+Rotina para que se enderece umas funções:
+  \Itere.
+    Obtenha uma função desde as funções.
+    Se a função for inexistente, retorne.
+    Enderece a função.
+  Reitere.
+
+Rotina para que se enderece uma função:
+  Atribua o endereço do nome usado atualmente ao endereço do nome desta função.
+  Atribua a quantidade de caracteres deste nome deste função mais 3 para um número.
+  Arredonde o número para cima usando o múltiplo imediato de 2.
+  Adicione o número para o endereço do nome usado atualmente.
+  Atribua o endereço pré-calculado atual ao endereço thunk desta função.
+  Atribua o image base mais o endereço pré-calculado atual ao endereço desta função.
+  Adicione 4 para o endereço pré-calculado atual.
+
+Rotina para que se enderece umas variáveis usando um endereço:
+  \Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha uma variável desde as variáveis.
+    Se a variável for inexistente, retorne.
+    Enderece a variável usando o endereço.
+  Reitere.
+
+Rotina para que se enderece uma variável usando um endereço:
+  Se existir algum problema de compilação, retorne.
+  Se a variável for inexistente, retorne.
+  Se o sinalizador de compilação desta variável não estiver ativo, retorne.
+  Atribua o image base mais o endereço ao endereço desta variável.
+  Adicione a quantidade de caracteres deste tipo desta variável para o endereço.
+  Se o tipo desta variável puder ser reduzido para "string", 
+    Adicione a quantidade de caracteres deste data desta variável mais 1 para o endereço.
+  Arredonde para cima o endereço usando o múltiplo imediato de 4.
+
+Rotina para que se enderece umas rotinas usando um endereço:
+  \Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha uma rotina desde as rotinas.
+    Se a rotina for inexistente, pare.
+    Enderece a rotina usando o endereço.
+  Reitere.
+
+Rotina para que se enderece uma rotina usando um endereço:
+  Se existir algum problema de compilação, retorne.
+  Se a rotina for inexistente, retorne.
+  Se o representação de emprego desta rotina não estiver em branco, retorne. 
+  \ Comandos de emprego são trabalhados posteriormente
+  Se o sinalizador de compilação desta rotina não estiver ativo, retorne.
+  Atribua a rotina à rotina utilizada atualmente.
+  Atribua o image base mais o endereço ao endereço desta rotina.
+  Enderece os fragmentos desta rotina usando o endereço.
+  Arredonde o endereço para cima usando o múltiplo imediato de 4.
+
+Rotina para que se enderece uns fragmentos usando um endereço:
+  \Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha um fragmento desde o fragmentos.
+    Se o fragmento for inexistente, retorne.
+    Enderece o fragmento usando o endereço.
+  Reitere.
+
+Rotina para que se enderece um fragmento usando um endereço:
+  Se existir algum problema de compilação, retorne.
+  Se o fragmento for inexistente, retorne.
+  Atribua o image base mais o endereço ao endereço deste fragmento.
+  Se a etiqueta deste fragmento for a etiqueta de inserção de endereço [na stack],
+    Adicione 7 para o endereço;
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de demanda interna,
+    Adicione 5 para o endereço;
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de carregamento de endereço,
+    Adicione 12 para o endereço;
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de acréscimo,
+    Adicione 10 para o endereço;
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de redirecionamento,
+    Adicione 14 para o endereço;
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de desvio falso,
+    Adicione 9 para o endereço;
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de negação lógica,
+    Adicione 3 para o endereço;
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de retorno,
+    Adicione 5 para o endereço;
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de repetição,
+    Adicione 5 para o endereço;
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de interrupção,
+    Adicione 5 para o endereço;
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta preliminar,
+    Enderece o fragmento usando o endereço (etapa preliminar);
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta conclusiva,
+    Enderece o fragmento usando o endereço (etapa conclusiva);
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de decodificação,
+    Adicione a quantidade de caracteres deste código deste fragmento para o endereço;
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de inserção de valor [na stack],
+    Enderece o fragmento usando o endereço (empilhamento de valor);
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de demanda externa,
+    Adicione 6 para o endereço;
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de carregamento de registrador EAX,
+    Adicione 5 para o endereço;
+    Retorne. \ O valor era 8 quando "load eax" aceitava strings ("yes" e "no"), 
+    \ agora a rotina "load eax" só aceita os números 1 e 0
+  Se a etiqueta deste fragmento for a etiqueta de obtenção do registrador EAX,
+    Enderece o fragmento usando o endereço (registrador EAX);
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de demanda indireta,
+    Adicione 8 para o endereço;
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de endereço de rotina,
+    Adicione 12 para o endereço;
+    Retorne.
+
+Rotina para que se enderece um fragmento usando um endereço (etapa preliminar):
+  Adicione 3 para o endereço.
+  Se o tamanho local desta rotina utilizada atualmente não for 0, 
+    Adicione 10 para o endereço.
+  Se o sinalizador de compatibilidade desta rotina utilizada atualmente estiver ativo, 
+    Adicione 3 para o endereço.
+
+Rotina para que se enderece um fragmento usando um endereço (etapa conclusiva):
+  Se o sinalizador de compatibilidade desta rotina utilizada atualmente estiver ativo,
+    Adicione 3 para o endereço.
+  Adicione 6 para o endereço.
+
+Rotina para que se enderece um fragmento usando um endereço (empilhamento de valor):
+  Adicione 6 para o endereço.
+  Se a variável deste fragmento for inexistente,
+    Apresente uma mensagem de erro contendo 
+      "Erro #5. A variável '" junto com o nome desta variável deste fragmento 
+      seguido de "' ainda não foi inicializada.";
+    Retorne.
+  Se o tipo desta variável deste fragmento for inexistente,
+    Apresente a mensagem de erro contendo 
+      "Erro #6. O tipo '" junto com o nome deste tipo desta variável deste fragmento seguido de 
+      "' ainda não foi implementado.";
+    Retorne.
+  Atribua a quantidade de caracteres deste tipo desta variável deste fragmento para uma quantidade de caracteres.
+  Se a quantidade de caracteres for 4,
+    Adicione 2 para o endereço;
+    Retorne.
+  Se a quantidade de caracteres for 2,
+    Adicione 3 para o endereço;
+    Retorne.
+  Se a quantidade de caracteres for 1,
+    Adicione 4 para o endereço;
+    Retorne.
+  Apresente a mensagem de erro contendo 
+    "Erro #7.  O tipo '" junto com o nome deste tipo desta variável deste fragmento 
+    seguido de "' não pode ser empilhado na Stack por conta de seu tamanho irregular.".
+
+Rotina para que se enderece um fragmento usando um endereço (registrador EAX):
+  Adicione 6 para o endereço.
+  Se a variável deste fragmento for inexistente,
+    Apresente uma mensagem de erro contendo 
+      "Erro #8. A variável '" junto com o nome desta variável deste fragmento seguido de 
+      "' ainda não foi inicializada";
+    Retorne.
+  Se o tipo desta variável deste fragmento for inexistente,
+    Apresente a mensagem de erro contendo 
+      "Erro #9. O tipo '" junto com o nome deste tipo desta variável deste fragmento
+      seguido de "da variável '" junto com o nome desta variável deste fragmento 
+      seguido de "' não foi implementado ainda";
+    Retorne.
+  Atribua a quantidade de caracteres deste tipo desta variável deste fragmento para uma quantidade de caracteres.
+  Se a quantidade de caracteres for 4,
+    Adicione 2 para o endereço;
+    Retorne.
+  Se a quantidade de caracteres for 2,
+    Adicione 3 para o endereço;
+    Retorne.
+  Se a quantidade de caracteres for 1,
+    Adicione 2 para o endereço;
+    Retorne.
+  Apresente a mensagem de erro contendo 
+    "Erro #10. O tipo '" 
+    junto com o nome deste tipo desta variável deste fragmento seguido de 
+    "' não pode ser salvo por conta de seu tamanho irregular.".

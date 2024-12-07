@@ -228,3 +228,24 @@ Rotina para que se catalogue um valor literal:
       e o endereço local deste valor literal;
     Retorne.
   Catalogue o valor literal usando o nome deste valor literal e o catálogo de variáveis hexadecimais.
+
+\ ------------------------------------------------------------------------------ ROTINAS EXTRAS ----------------------------------------------------------
+
+Rotina para que se compile um valor literal usando um percorredor (valores booleanos):
+  Se existir algum problema de compilação, retorne.
+  Converta o segmento inicial deste percorredor para um sinalizador.
+  Converta o sinalizador para os data deste valor literal.
+  Mova o percorredor (usando diretrizes de compilação).
+  Atribua "sinalizador" ao nome do tipo deste valor literal.
+  Destrinche o valor literal. \ 
+
+Rotina para que se compile um valor literal usando um percorredor (números ordinais):
+  Se existir algum problema de compilação, retorne.
+  Atribua o segmento inicial deste percorredor aos data deste valor literal.
+  Remova o último caractere de os data deste valor literal.
+  \Converta o segmento inicial deste percorredor para um número.
+  \Converta o número para os data deste valor literal.
+  \Converta 0 para os data deste valor literal. \ era nulo ao invés de 0
+  Mova o percorredor (usando diretrizes de compilação).
+  \Atribua "número" ao nome do tipo deste valor literal.
+  Destrinche o valor literal. \ 

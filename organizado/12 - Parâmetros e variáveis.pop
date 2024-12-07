@@ -1,0 +1,60 @@
+Rotina para que se compile um endereço da pasta (deslocamento de parâmetros e variáveis): \ #012
+  Se existir algum problema de compilação, retorne.
+  Escreva "Deslocando parâmetros e variáveis..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de deslocamentos.
+  Alinhe os parâmetros na rotinas.
+  Alinhe as variáveis locais na rotinas.
+  Suspenda o temporizador de deslocamentos.
+
+Rotina para que se alinhe os parâmetros em umas rotinas:
+  \Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha uma rotina desde as rotinas.
+    Se a rotina for inexistente, retorne.
+    Alinhe os parâmetros na rotina.
+  Reitere.
+
+\ Aqui temos a convenção de chamada de Português Puro
+Rotina para que se alinhe os parâmetros em uma rotina:
+  Se a rotina for inexistente, retorne.
+  Se a sinalizador de compilação desta rotina não estiver ativo, retorne.
+  Limpe o tamanho do parâmetro desta rotina.
+  Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha um parâmetro desde os parâmetros desta rotina.
+    Se o parâmetro for inexistente, retorne.
+    Se o sinalizador de compatibilidade desta rotina estiver ativo, 
+      Ative o sinalizador de passagem por-valor deste parâmetro.
+    Se o parâmetro anterior deste parâmetro for inexistente, 
+      Atribua 8 ao deslocamento deste parâmetro. \ Ignora o endereço de retorno e o ebp salvo
+    Se o parâmetro anterior deste parâmetro não for inexistente, 
+      Atribua o deslocamento deste parâmetro anterior deste parâmetro mais 4 ao deslocamento deste parâmetro. 
+      \ Todos os parâmetros possuem um 4 endereço de bytes ou valor de 4 bytes (callbacks)
+    Adicione 4 para a tamanho do parâmetro desta rotina.
+  Reitere.
+
+Rotina para que se alinhe as variáveis locais em umas rotinas:
+  \Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha uma rotina desde as rotinas.
+    Se a rotina for inexistente, retorne.
+    Alinhe as variáveis locais na rotina.
+  Reitere.
+
+Rotina para que se alinhe as variáveis locais em uma rotina:
+  Se a rotina for inexistente, retorne.
+  Se a sinalizador de compilação desta rotina não estiver ativo, retorne.
+  Limpe o tamanho local desta rotina.
+  Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha uma variável local desde as variáveis locais desta rotina.
+    Se a variável local for inexistente, retorne.
+    Se o variável local anterior desta variável local não for inexistente, 
+      Atribua o deslocamento deste variável local anterior desta variável local ao deslocamento desta variável local.
+    Atribua a quantidade de caracteres deste tipo desta variável local para uma quantidade de caracteres.
+    Se a categoria desta variável local for "scratch", 
+      Atribua a magnitude dum ponteiro à quantidade de caracteres.
+    Arredonde a quantidade de caracteres para cima usando o múltiplo imediato de 4.
+    Subtraia a quantidade de caracteres desde o deslocamento desta variável local.
+    Adicione a quantidade de caracteres para o tamanho local desta rotina.
+  Reitere.

@@ -151,6 +151,27 @@ Rotina para que se encontre um tipo e um apelido usando um nome (progressivament
   Se o segundo subtexto estiver em branco, 
     Atribua o subtexto ao apelido.
 
+Rotina para que se passe para a próxima palavra  em um subtexto:
+  Se o subtexto estiver em branco, retorne.
+  Se o conteúdo deste caractere inicial deste subtexto for irrelevante, pare.
+  Adicione 1 para o caractere inicial deste subtexto.
+  Reitere.
+  Ignore os caracteres ignoráveis no início no subtexto.
+
+Rotina para que se passe para a palavra anterior em um subtexto:
+  Se o subtexto estiver em branco, retorne.
+  Se o conteúdo deste caractere final deste subtexto for irrelevante, pare.
+  Subtraia 1 desde o caractere final deste subtexto.
+  Reitere.
+  Ignore algum caractere ignorável final no subtexto.
+
+Rotina para que se ignore algum caractere ignorável final em um subtexto:
+  Itere.
+    Se o subtexto estiver em branco, retorne.
+    Se o conteúdo deste caractere final deste subtexto não for irrelevante, retorne.
+    Subtraia 1 desde o caractere final deste subtexto.
+  Reitere.
+
 Rotina para que se encontre um tipo e um apelido usando um nome (regressivamente):
   Esvazie o tipo.
   Limpe o apelido.

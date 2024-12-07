@@ -1,0 +1,603 @@
+Rotina para que se compile um endereço da pasta (etapa final): \ #016
+  Se existir algum problema de compilação, retorne.
+  Escreva "Gerando arquivo executável..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de escrita.
+  Escreva o trecho EXE deste compilador para o endereço EXE completo deste compilador.
+  \Se o erro do fluxo de entrada/saída não estiver em branco, 
+    \Apresente uma mensagem de erro contendo o erro do fluxo de entrada/saída.
+  Se o erro do fluxo de entrada/saída não estiver em branco,
+    Escreva o erro do fluxo de entrada/saída para StdOut.
+  Suspenda o temporizador de escrita.
+
+Rotina para que se atribua o endereço EXE completo deste compilador para um endereço completo:
+  Extraia um designador desde o endereço da pasta deste compilador.
+  Remova alguma barra invertida final desde o designador.
+  Atribua o endereço da pasta deste compilador junto com o designador seguido de ".exe" ao endereço completo.
+  
+
+Rotina para que se compile um endereço da pasta (interrupção): \ #017
+  Suspenda o temporizador deste compilador.
+  Escreva "---------------------------------------" junto com o texto CRLF para StdOut.
+
+
+\ ------------------------------------------------------------- ROTINAS EXTRAS ---------------------------------------------------------------------------------------------
+
+Rotina para que se acrescente uma função para um trecho (com separador):
+  Se a função for inexistente,
+    Acrescente "(entrada não inicializada)" para o trecho (com separador);
+    Retorne.
+  Acrescente o nome desta função para o trecho (com separador).
+
+Rotina para que se acrescente um sinalizador para um trecho (com separador):
+  Converta o sinalizador para uma string.
+  Acrescente a string para o trecho (com separador).
+
+Rotina para que se acrescente um número para um trecho (cifra hexadecimal com separador):
+  Converta o número para uma cifra hexadecimal.
+  Acrescente a cifra hexadecimal para o trecho (com separador).
+
+Rotina para que se acrescente um número para um trecho (com separador):
+  Converta o número para uma string.
+  Acrescente a string para o trecho (com separador).
+
+Rotina para que se acrescente uma proporção para um trecho (com separador):
+  Converta a proporção para uma string.
+  \ Se a string for "0", acrescente "---" para o trecho; Retorne.
+  Acrescente a string para o trecho (com separador).
+
+Rotina para que se acrescente uma rotina para um trecho (com separador):
+  Se a rotina for inexistente,
+    Acrescente "(rotina inexistente)" para o trecho (com separador);
+    Retorne.
+  Acrescente a representação interna da rotina deste rotina para o trecho (com separador).
+
+Rotina para que se acrescente uma string para um trecho (com separador):
+  Acrescente a string para o trecho.
+  Acrescente " | " para o trecho.
+
+Rotina para que se acrescente uma etiqueta para um trecho (geral):
+  Se a etiqueta for a etiqueta de interrupção,
+    Acrescente "Interrupção do Laço" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta de demanda externa,
+    Acrescente "Demanda Externa" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta de demanda indireta,
+    Acrescente "Demanda Indireta" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta de demanda interna,
+    Acrescente "Demanda Interna" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta de redirecionamento,
+    Acrescente "Redirecionamento" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta delimitadora de bloco condicional,
+    Acrescente "Fim de bloco condicional" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta conclusiva,
+    Acrescente "Epílogo" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta de retorno,
+    Acrescente "Retorno de Rotina" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta de finalização,
+    Acrescente "Finalização" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta de acréscimo,
+    Acrescente "Incremento" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta de decodificação,
+    Acrescente "Decodificação" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta de desvio falso,
+    Acrescente "Desvio de condição insatisfeita" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta de carregamento de endereço,
+    Acrescente "Carregamento de endereço" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta de carregamento de registrador EAX,
+    Acrescente "Atribuição EAX" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta de laço,
+    Acrescente "Loop" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta de negação lógica,
+    Acrescente "Negação Lógica" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta preliminar,
+    Acrescente "Prólogo" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta de inserção de endereço [na stack],
+    Acrescente "Empilhamento de endereço" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta de inserção de valor [na stack],
+    Acrescente "Empilhamento de valor" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta de obtenção do registrador EAX,
+    Acrescente "Requisição EAX" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta de repetição,
+    Acrescente "Repetição" para o trecho (com separador);
+    Retorne.
+  Se a etiqueta for a etiqueta de endereço de rotina,
+    Acrescente "Endereço de Rotina" para o trecho (com separador);
+    Retorne.
+  \ Se a etiquete for outra etiqueta,
+  Acrescente "?" para o trecho (com separador).
+
+Rotina para que se acrescente um tipo para um trecho (com separador):
+  Se o tipo for inexistente,
+    Acrescente "(tipo não inicializado)" para o trecho (com separador);
+    Retorne.
+  Acrescente o nome deste tipo para o trecho (com separador).
+
+Rotina para que se acrescente uma variável para um trecho (com separador):
+  Se a variável for inexistente,
+    Acrescente "(variável não inicializada)" para o trecho (com separador);
+    Retorne.
+  Acrescente o nome desta variável para o trecho (com separador).
+
+\Rotina para que se inicialize o compilador:
+\Rotina em branco. Serve apenas para fazer com que o código fique "simétrico"
+
+Rotina para que se liste tudo:
+  Limpe o trecho de listagem deste compilador.
+  Liste a mensagem de erro deste compilador na trecho de listagem deste compilador.
+  Liste os tipos depois de "TIPOS:" na trecho de listagem deste compilador.
+  Liste as variáveis globais depois de "VARIÁVEIS GLOBAIS:" na trecho de listagem deste compilador.
+  Liste os valores literais depois de "VALORES LITERAIS:" na trecho de listagem deste compilador.
+  Liste as rotinas depois de "ROTINAS:" na trecho de listagem deste compilador.
+  Liste o catálogo de tipos depois de "ÍNDICE DE TIPOS:" na trecho de listagem deste compilador.
+  Liste o catálogo de variáveis globais depois de "ÍNDICE GLOBAL:" na trecho de listagem deste compilador.
+  Liste o catálogo de variáveis hexadecimais depois de "ÍNDICE DE VALORES LITERAIS:" na trecho de listagem deste compilador.
+  Liste o catálogo geral de rotinas depois de "ÍNDICE DE ROTINAS:" na trecho de listagem deste compilador.
+  Liste o catálogo de rotinas úteis depois de "Catálogo de Rotinas Úteis:" na trecho de listagem deste compilador.
+  Liste as DLLs depois de "DLL's:" na trecho de listagem deste compilador.
+  Liste os arquivos fontes depois de "ARQUIVOS FONTE:" na trecho de listagem deste compilador.
+  Liste os temporizadores depois de "TEMPORIZADORES:" na trecho de listagem deste compilador.
+  Escreva o trecho de listagem deste compilador para o listagem endereço completo deste compilador.
+
+Rotina para que se atribua o listagem endereço completo deste compilador para um endereço completo:
+  Extraia um designador desde o endereço da pasta deste compilador.
+  Remova alguma barra invertida final desde o designador.
+  Atribua o endereço da pasta deste compilador junto com o designador seguido de ".lst" ao endereço completo.
+
+Rotina para que se liste um mensagem de erro em um trecho:
+  Se o mensagem de erro estiver em branco, retorne.
+  Acrescente "COMPILAÇÃO INTERROMPIDA - LISTAGEM INCOMPLETA" para o trecho.
+  Insira quebra de linha no trecho (duas vezes).
+  Acrescente o mensagem de erro para o trecho.
+  Insira quebra de linha no trecho (duas vezes).
+
+Rotina para que se liste um recipiente em um trecho:
+  Se as referências deste recipiente estiverem vazios, retorne.
+  Acrescente "| RECIPIENTE" para o trecho (com separador).
+  Insira quebra de linha no trecho.
+  Liste as referências deste recipiente no trecho.
+  Insira quebra de linha no trecho.
+
+Rotina para que se liste umas funções em um trecho:
+  Obtenha uma função desde as funções.
+  Se a função for inexistente, retorne.
+  Liste a função no trecho.
+  Reitere.
+
+Rotina para que se liste uma função em um trecho:
+  Se a função for inexistente, retorne.
+  Acrescente "| FUNÇÃO" para o trecho (com separador).
+  Acrescente o nome desta função para o trecho (com separador).
+  Acrescente o endereço desta função para o trecho (cifra hexadecimal com separador).
+  Insira quebra de linha no trecho.
+
+Rotina para que se liste um fragmento em um trecho:
+  Acrescente "| FRAGMENTO" para o trecho (com separador).
+  Acrescente a etiqueta deste fragmento para o trecho (geral).
+  Acrescente "Variável principal: " para o trecho.
+  Acrescente a variável deste fragmento para o trecho (com separador).
+  Acrescente "Variável secundária: " para o trecho.
+  Acrescente a segunda variável deste fragmento para o trecho (com separador).
+  Acrescente "Rotina: " para o trecho.
+  Acrescente a rotina deste fragmento para o trecho (com separador).
+  Acrescente "Entrada: " para o trecho.
+  Acrescente a função desta fragmento para o trecho (com separador).
+  Acrescente "Número hexadecimal: " para o trecho.
+  Acrescente o número deste fragmento para o trecho (cifra hexadecimal com separador).
+  Acrescente "Endereço: " para o trecho.
+  Acrescente o endereço deste fragmento para o trecho (cifra hexadecimal com separador).
+  Converta o código deste fragmento para uma cifra hexadecimal.
+  Acrescente "Código compilado: " para o trecho.
+  Acrescente a cifra hexadecimal para o trecho (com separador).
+  Insira quebra de linha no trecho.
+
+Rotina para que se liste uns fragmentos em um trecho:
+  Obtenha um fragmento desde o fragmentos.
+  Se o fragmento for inexistente, retorne.
+  Liste o fragmento no trecho.
+  Reitere.
+
+Rotina para que se liste uma DLL em um trecho:
+  Se a DLL for inexistente, retorne.
+  Acrescente "| DLL" para o trecho (com separador).
+  Acrescente o nome desta DLL para o trecho (com separador).
+  Insira quebra de linha no trecho.
+  Liste as funções desta DLL no trecho.
+  Insira quebra de linha no trecho.
+
+Rotina para que se liste umas DLLs em um trecho:
+    Obtenha uma DLL desde as DLLs.
+    Se a DLL for inexistente, retorne.
+    Liste a DLL no trecho.
+  Reitere.
+
+Rotina para que se liste umas DLLs depois de uma string em um trecho:
+  Acrescente a string para o trecho.
+  Insira quebra de linha no trecho (duas vezes).
+  Se as DLLs estiverem vazios, retorne.
+  Liste as DLLs no trecho.
+
+Rotina para que se liste um catálogo em um trecho:
+  Acrescente "| " junto com o used contagem de recipientes deste catálogo seguido de " recipientes" para o trecho (com separador).
+  Acrescente a contagem deste catálogo seguido de " referências" para o trecho (com separador).
+  Insira quebra de linha no trecho (duas vezes).
+  Itere.
+    Obtenha um recipiente usando o catálogo.
+    Se o recipiente for inexistente, retorne.
+    Liste o recipiente no trecho.
+  Reitere.
+
+Rotina para que se liste um catálogo depois de uma string em um trecho:
+  Acrescente a string para o trecho.
+  Insira quebra de linha no trecho (duas vezes).
+  Se o catálogo estiver vazio, retorne.
+  Liste o catálogo no trecho.
+
+Rotina para que se liste uma referência em um trecho:
+  Se a referência for inexistente, retorne.
+  Acrescente "| REFERÊNCIA" para o trecho (com separador).
+  Acrescente a string deste referência para o trecho.
+  Se o ponteiro deste referência for inexistente, acrescente " (ponteiro inexistente) " para o trecho.
+  Acrescente "| " para o trecho.
+  Insira quebra de linha no trecho.
+
+Rotina para que se liste umas referências em um trecho:
+  Obtenha uma referência desde as referências.
+  Se a referência for inexistente, retorne.
+  Liste a referência no trecho.
+  Reitere.
+
+Rotina para que se liste uma rotina em um trecho:
+  Se a rotina for inexistente, retorne.
+  Acrescente "| ROTINA: " para o trecho.
+  Acrescente a representação interna da rotina desta rotina para o trecho (com separador). \ por exemplo: atribua [matiz] e [saturação] e [luminosidade] para [cor]
+  Acrescente o texto CRLF para o trecho.
+  Acrescente "| A rotina foi compilada? " para o trecho .
+  Acrescente o sinalizador de compilação desta rotina para o trecho (com separador). \ A rotina foi compilada? SIM / NÃO
+  Acrescente o texto CRLF para o trecho.
+  Acrescente "| A rotina é um callback? " para o trecho.
+  Acrescente o sinalizador de compatibilidade desta rotina para o trecho (com separador). \ A rotina é um callback? SIM / NÃO
+  Acrescente o texto CRLF para o trecho.
+  Acrescente "| A rotina é uma rotina decisora? " para o trecho.
+  Acrescente o sinalizador de deliberação desta rotina para o trecho (com separador). \ A rotina é uma rotina decisora? SIM / NÃO
+  Acrescente o texto CRLF para o trecho.
+  Acrescente "| A rotina é uma função? " para o trecho.
+  Acrescente o sinalizador de função desta rotina para o trecho (com separador). \ A rotina é uma função ? SIM / NÃO
+  Acrescente o texto CRLF para o trecho.
+  Acrescente "| Employs utilizados: |    " para o trecho.
+  Acrescente o representação de emprego desta rotina para o trecho (com separador).
+  Acrescente o texto CRLF para o trecho.
+  Acrescente "| Tamanho dos parâmetros: " para o trecho.
+  Acrescente o tamanho do parâmetro desta rotina para o trecho (com separador). \ Tamanho dos parâmetros. Exemplo: 16 ( 4 parâmetros)
+  Acrescente " Tamanho das variáveis: " para o trecho.
+  Acrescente o tamanho local desta rotina para o trecho (com separador). \Tamanho da variável local. Exemplo: 28
+  Acrescente o texto CRLF para o trecho.
+  Acrescente "| Endereço da Rotina: " para o trecho.
+  Acrescente o endereço desta rotina para o trecho (cifra hexadecimal com separador). \ Endereço da rotina, Exemplo: 0041D000
+  Insira quebra de linha no trecho.
+  Liste os parâmetros desta rotina no trecho.
+  Liste as variáveis locais desta rotina no trecho.
+  Liste os fragmentos desta rotina no trecho.
+  Insira quebra de linha no trecho.
+
+Rotina para que se liste umas rotinas em um trecho:
+  Obtenha uma rotina desde as rotinas.
+  Se a rotina for inexistente, retorne.
+  Liste a rotina no trecho.
+  Reitere.
+
+Rotina para que se liste umas rotinas depois de uma string em um trecho:
+  Acrescente a string para o trecho.
+  Insira quebra de linha no trecho (duas vezes).
+  Se as rotinas estiverem vazias, retorne.
+  Liste as rotinas no trecho.
+
+Rotina para que se liste um arquivo fonte em um trecho:
+  Se o arquivo fonte for inexistente, retorne.
+  Acrescente "| ARQUIVO FONTE" para o trecho (com separador).
+  Acrescente o endereço completo deste arquivo fonte para o trecho (com separador).
+  Insira quebra de linha no trecho.
+
+Rotina para que se liste uns arquivos fontes em um trecho:
+  Obtenha um arquivo fonte desde os arquivos fontes.
+  Se o arquivo fonte for inexistente, retorne.
+  Liste o arquivo fonte no trecho.
+  Reitere.
+
+Rotina para que se liste uns arquivos fontes depois de uma string em um trecho:
+  Acrescente a string para o trecho.
+  Insira quebra de linha no trecho (duas vezes).
+  Se os arquivos fontes estiverem vazios, retorne.
+  Liste os arquivos fontes no trecho.
+  Insira quebra de linha no trecho.
+
+Rotina para que se liste um temporizador usando uma string em um trecho:
+  Acrescente "| TEMPORIZADOR" para o trecho (com separador).
+  Acrescente a string para o trecho (com separador).
+  Acrescente a string deste temporizador para o trecho.
+  Acrescente " milissegundos" para o trecho (com separador).
+  Insira quebra de linha no trecho.
+
+Rotina para que se liste os temporizadores depois de uma string em um trecho:
+  Acrescente a string para o trecho.
+  Insira quebra de linha no trecho (duas vezes).
+  Liste o temporizador de operacionalização usando "Tempo de carregamento: " no trecho.
+  Liste o temporizador de análise/verificação usando "Tempo de verificação: " no trecho.
+  Liste o temporizador de resolução de tipos usando "Resolução de tipos: " no trecho.
+  Liste o temporizador de resolução de variáveis globais usando "Resolução de variáveis globais: " no trecho.
+  Liste o temporizador de compilação de cabeçalhos de rotina usando "Compilação de cabeçalhos de rotinas: " no trecho.
+  Liste o temporizador de etapas de cálculo usando "Cálculos matemáticos: " no trecho.
+  Liste o temporizador de adição de rotinas pré-definidas de mémoria  usando "Inclusão de rotinas pré-definidas: " no trecho.
+  Liste o temporizador de ferramentas de catalogação usando "Catalogação de ferramentas: " no trecho.
+  Liste o temporizador de compilação do conteúdo das rotinas usando "Compilação de rotinas: " no trecho.
+  Liste o temporizador de adição de rotinas pré-definidas de inicialização usando "Inserção rotina de inicialização:" no trecho.
+  Liste o temporizador de deslocamentos usando "Alinhamento de bytes na memória: " no trecho.
+  Liste o temporizador de endereçamento usando "Endereçamento: " no trecho.
+  Liste o temporizador de transmutação usando "Conversão em binário" no trecho.
+  Liste o temporizador de vinculação usando "Vinculação: " no trecho.
+  Liste o temporizador de escrita usando "Escrita e gravação no SO: " no trecho.
+  Liste o temporizador deste compilador usando "Tempo total: " no trecho.
+  Insira quebra de linha no trecho.
+
+Rotina para que se liste um tipo em um trecho:
+  Se o tipo for inexistente, retorne.
+  Acrescente "| TIPO" para o trecho (com separador).
+  Acrescente o nome deste tipo para o trecho (com separador).
+  Acrescente " Plural: " para o trecho.
+  Acrescente o nome plural deste tipo para o trecho (com separador).
+  Acrescente " Comprimento: " para o trecho.
+  Acrescente a quantidade de caracteres deste tipo para o trecho (cifra hexadecimal com separador).
+  Acrescente " Tipo: " para o trecho.
+  Acrescente o nome do tipo primitivo deste tipo para o trecho (com separador).
+  Acrescente " Tipo base: " para o trecho.
+  Acrescente o tipo base deste tipo para o trecho (com separador).
+  Acrescente o nome do conteúdo deste tipo para o trecho (com separador).
+  Acrescente o tipo do conteúdo deste tipo para o trecho (com separador).
+  Acrescente " Razão de escala: " para o trecho.
+  Acrescente a razão de escala deste tipo para o trecho (com separador).
+  Insira quebra de linha no trecho.
+  Liste os campos deste tipo no trecho.
+  Insira quebra de linha no trecho.
+
+Rotina para que se liste uns tipos em um trecho:
+  Obtenha um tipo desde o tipos.
+  Se o tipo for inexistente, retorne.
+  Liste o tipo no trecho.
+  Reitere.
+
+Rotina para que se liste uns tipos depois de uma string em um trecho:
+  Acrescente a string para o trecho.
+  Insira quebra de linha no trecho (duas vezes).
+  Se os tipos estiverem vazios, retorne.
+  Liste os tipos no trecho.
+
+Rotina para que se liste uma variável em um trecho:
+  Se a variável for inexistente, retorne.
+  Acrescente "| VARIÁVEL" para o trecho (com separador).
+  Acrescente "Categoria: " para o trecho.
+  Acrescente a categoria desta variável para o trecho (com separador).
+  Acrescente "Compilada? " para o trecho.
+  Acrescente o sinalizador de compilação desta variável para o trecho (com separador).
+  Acrescente "Nome completo: " para o trecho.
+  Acrescente o nome desta variável para o trecho (com separador).
+  Acrescente "Nome resumido: " para o trecho.
+  Acrescente o apelido desta variável para o trecho (com separador).
+  Acrescente "Nome do tipo: " para o trecho.
+  Acrescente o nome do tipo desta variável para o trecho (com separador).
+  Acrescente "Tipo: " para o trecho.
+  Acrescente o tipo desta variável para o trecho (com separador).
+  Acrescente "Endereço (deslocamento): " para o trecho.
+  Acrescente o endereço desta variável [or deslocamento] para o trecho (cifra hexadecimal com separador).
+  Acrescente "Passagem por valor? " para o trecho.
+  Acrescente o sinalizador de passagem por-valor desta variável para o trecho (com separador).
+  Acrescente "Contagem: " para o trecho.
+  Acrescente a contagem desta variável para o trecho (com separador).
+  Acrescente "Referência somente? " para o trecho.
+  Acrescente o sinalizador de referência desta variável para o trecho (com separador).
+  Acrescente "Redefinição: " para o trecho.
+  Acrescente o novo nome desta variável para o trecho (com separador).
+  Acrescente "Conteúdo: " para o trecho.
+  Acrescente o valor literal desta variável para o trecho (com separador).
+  Converta o data desta variável para uma cifra hexadecimal.
+  Acrescente "Conteúdo (valores hexadecimais): " para o trecho.
+  Acrescente a cifra hexadecimal para o trecho (com separador).
+  Insira quebra de linha no trecho.
+
+Rotina para que se liste umas variáveis em um trecho:
+  Obtenha uma variável desde as variáveis.
+  Se a variável for inexistente, retorne.
+  Liste a variável no trecho.
+  Reitere.
+
+Rotina para que se liste umas variáveis depois de uma string em um trecho:
+  Acrescente a string para o trecho.
+  Insira quebra de linha no trecho (duas vezes).
+  Se as variáveis estiverem vazias, retorne.
+  Liste as variáveis no trecho.
+  Insira quebra de linha no trecho.
+
+Função para que se determine se uma string é algum decisor literal negativo:
+  Se a string for "não", diga sim.
+  Se a string for "negativo", diga sim.
+  Se a string for "negativamente", diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum número ordinal:
+  Se a string estiver em branco, diga não.
+  Se o conteúdo deste caractere final desta string for o indicador ordinal masculino, diga sim.
+  Se o conteúdo deste caractere final desta string for o indicador ordinal feminino, diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum pronome demonstrativo:
+  Se a string for algum pronome demonstrativo adjacente, diga sim.
+  Se a string for algum pronome demonstrativo abrangente, diga sim.
+  Diga não.
+
+Função para que se determine se uma string é alguma preposição:
+  Se a string for "a_partir_de", diga sim.
+  Se a string for "aproximadamente", diga sim.
+  Se a string for "através", diga sim.
+  Se a string for "after", diga sim.
+  \Se a string for "all", diga sim.
+  Se a string for "alone", diga sim.
+  Se a string for "algum", diga sim.
+  \Se a string for "as", diga sim.
+  Se a string for "sob", diga sim.
+  Se a string for "backward", diga sim.
+  Se a string for "regressivamente", diga sim.
+  Se a string for "backwards", diga sim.
+  Se a string for "entre", diga sim.
+  Se a string for "aproada", diga sim.
+  Se a string for "aproado", diga sim.
+  Se a string for "aproando", diga sim.
+  Se a string for "orientada", diga sim.
+  Se a string for "orientado", diga sim.
+  Se a string for "orientando", diga sim.
+  Se a string for "orientando-se", diga sim.
+  Se a string for "virada", diga sim.
+  Se a string for "virado", diga sim.
+  Se a string for "virando", diga sim.
+  Se a string for "virando-se", diga sim.
+  \Se a string for "for", diga sim.
+  Se a string for "por", diga sim.
+  Se a string for "usando", diga sim.
+  Se a string for "tão", diga sim.
+  Se a string for "quão", diga sim.
+  Se a string for "tanto", diga sim.
+  Se a string for "quanto", diga sim.
+  Se a string for "dentro", diga sim.
+  Se a string for "em comprimento", diga sim.
+  Se a string for "d'", diga sim.
+  Se a string for "d'", diga sim.
+  Se a string for "referente", diga sim.
+  Se a string for "pertencente", diga sim.
+  Se a string for "pertinente", diga sim.
+  Se a string for "somente", diga sim.
+  Se a string for "apenas", diga sim.
+  Se a string for "só", diga sim.
+  Se a string for "exclusivamente", diga sim.
+  Se a string for "fora", diga sim.
+  \Se a string for "sobre", diga sim.
+  Se a string for "pointing", diga sim.
+  Se a string for "retornando", diga sim.
+  Se a string for "retornando", diga sim.
+  Se a string for "começando", diga sim.
+  Se o subtexto for "começando", diga sim.
+  Se o subtexto for "iniciando", diga sim.
+  Se a string for "usando", diga sim.
+  Se a string for "via", diga sim.
+  Se a string for "com", diga sim.
+  Se a string for "dentre", diga sim.
+  Se a string for "depois", diga sim. \ depois de
+  Se a string for "desde", diga sim.
+  Se a string for "aproximadamente", diga sim.
+  Se a string for "cerca", diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum possessivo reverso:
+  Se a string for "de", diga sim.
+  \Se a string for "do", diga sim. \ short por "de o", expanded em "compile um termo usando um percorredor e um campo nome (possessivo reverso)"
+  Diga não.
+
+Função para que se determine se um percorredor está sobre ("de" como preposição):
+  Preserve o percorredor.
+  Se o segmento inicial deste percorredor não for "de", diga não.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor for algum artigo, diga sim.
+  Diga não.
+
+Função para que se determine se um percorredor está sobre alguma locução prepositiva:
+  Preserve o percorredor.
+  Se o segmento inicial deste percorredor não for alguma locução prepositiva diga não.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor for "de", diga sim.
+  Se o segmento inicial deste percorredor for "do", diga sim.\ Se o segmento inicial deste percorredor for "do", atribua "o" para o segmento inicial deste percorredor original; diga sim.
+  Se o segmento inicial deste percorredor for "dos", diga sim.
+  Se o segmento inicial deste percorredor for "da", diga sim.
+  Se o segmento inicial deste percorredor for "das", diga sim.
+  Diga não.
+
+Função para que se determine se uma string é alguma locução prepositiva:
+  Se a string for alguma preposição, diga sim.
+  Diga não.
+
+Função para que se determine se uma string é alguma palavra ignorável:
+  Se a string for "já", diga sim.
+  Se a string for "ainda", diga sim.
+  \Se a string for "que", diga sim.
+  \Se a string for "se", diga sim.
+  Diga não.
+
+Função para que se determine se um byte é alguma vogal acentuada:
+  Se o byte estiver em "áãâàéèêëíîìïóõôöúùüûý", diga sim.
+  Diga não.
+
+Rotina para que se encontre uma rotina usando uma string e um tipo:
+  Adicione uma unidade semântica para umas unidades semânticas usando a string.
+  Adicione uma segunda unidade semântica para as unidades semânticas usando o tipo.
+  Encontre a rotina usando as unidades semânticas.
+  Destrua as unidades semânticas.
+
+Rotina para que se encontre uma rotina usando uma string e um tipo e uma segunda string e uma terceira string e uma quarta string e uma quinta string:
+  Adicione uma unidade semântica para umas unidades semânticas usando a string.
+  Adicione uma segunda unidade semântica para as unidades semânticas usando o tipo.
+  Adicione uma terceira unidade semântica para as unidades semânticas usando a segunda string.
+  Adicione uma quarta unidade semântica para as unidades semânticas usando a terceira string.
+  Adicione uma quinta unidade semântica para as unidades semânticas usando a quarta string.
+  Adicione uma sexta unidade semântica para as unidades semânticas usando a quinta string.
+  Encontre a rotina usando as unidades semânticas.
+  Destrua as unidades semânticas.
+
+
+Rotina para que se mova um percorredor (símbolos):
+  Avance o percorredor.
+
+\Função para que se determine se uma string looks like English:
+\Carregue o dicionário léxico.
+\Se o dicionário léxico for inexistente, Mostre na tela "Não foi possível encontrar o dicionário léxico."; diga não.
+\Se a string estiver em branco, diga não.
+\Lance um subtexto sobre a string.
+\Atribua o caractere final deste subtexto ao caractere inicial deste subtexto.
+\Itere.
+  \Se o caractere inicial deste subtexto é o caractere inicial desta string, pare.
+  \Se o target deste caractere inicial deste subtexto for o caractere de espaço, adicione 1 para o caractere inicial deste subtexto; pare.
+  \Subtraia 1 desde o caractere inicial deste subtexto.
+\Reitere.
+\Se o subtexto estiver no catálogo deste dicionário léxico, diga sim.
+\Diga não.
+
+Rotina para que se pluralize uma string:
+  Lance um percorredor sobre a string.
+  Itere.
+    Mova o percorredor (usando diretrizes de compilação).
+    Se o segmento inicial deste percorredor estiver em branco, pare.
+    Se uma string plural não estiver em branco, acrescente " " para a string plural.
+    Acrescente o segmento inicial deste percorredor para a string plural.
+    Se o segmento inicial deste percorredor for "de",
+      Ative um sinalizador;
+      Reitere. \ PLURAL
+    Se o sinalizador não estiver ativo, 
+      Pluralize a string plural (português - regras comuns).
+  Reitere.
+  Atribua a string plural à string.
+
+
+\finalmente  acabou

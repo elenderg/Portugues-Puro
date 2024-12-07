@@ -1,0 +1,40 @@
+Rotina para que se compile um endereço da pasta (adição e compilação da rotina de inicialização): \ #011
+  Se existir algum problema de compilação, retorne.
+  Escreva "Adicionando e agrupando as tarefas padrão de inicialização.." junto com o texto CRLF para StdOut.
+  Comece o temporizador de adição de rotinas pré-definidas de inicialização.
+  Adicione e compile as rotinas de inicialização pré-execução e finalização pós-execução.
+  Suspenda o temporizador de adição de rotinas pré-definidas de inicialização.
+
+Rotina para que se adicione e compile as rotinas de inicialização pré-execução e finalização pós-execução:
+  Se existir algum problema de compilação, retorne.
+  Adicione uma rotina para as rotinas usando nulo [como endereço local].
+  Acrescente "~Inicialize antes da execução e Execute o programa e Finalize após execução" para a string do cabeçalho desta rotina.
+  Acrescente "Inicialize antes da execução. " para a string do corpo desta rotina.
+  Acrescente os inicializadores de variáveis globais para a string do corpo desta rotina.
+  Acrescente "Execute o programa. " para a string do corpo desta rotina.
+  Acrescente os finalizadores de variáveis globais para a string do corpo desta rotina.
+  Acrescente "Finalize após execução. " para a string do corpo desta rotina.
+  Acrescente "Processe ""kernel32.dll"" ""ExitProcess"" com 0. " para a string do corpo desta rotina.
+  Lance a cabeçalho de rotina desta rotina sobre a string do cabeçalho desta rotina.
+  Lance as instruções desta rotina sobre a string do corpo desta rotina.
+  Compile o cabeçalho próprio à rotina.
+  Compile o corpo referente à rotina.
+
+Rotina para que se acrescente os inicializadores de variáveis globais para uma string:
+  \Itere.
+    Obtenha uma variável global desde as variáveis globais.
+    Se a variável global for inexistente, retorne.
+    Se o valor literal desta variável global for inexistente, reitere.
+    Se o sinalizador de compilação desta variável global não estiver ativo, reitere.
+    Desative um sinalizador.
+    Acrescente o texto inicializador desta variável global para a string.
+  Reitere.
+
+Rotina para que se acrescente os finalizadores de variáveis globais para uma string:
+  \Itere.
+    Obtenha uma variável global desde as variáveis globais.
+    Se a variável global for inexistente, retorne.
+    Se o sinalizador de compilação desta variável global não estiver ativo, reitere.
+    Se o tipo desta variável global não deveria ser finalizado, reitere.
+    Acrescente "~Finalize o " junto com o nome desta variável global seguido de ". " para a string.
+  Reitere.

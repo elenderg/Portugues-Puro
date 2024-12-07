@@ -1,0 +1,419 @@
+Rotina para que se compile um endereço da pasta (transmutação): \ #014
+  Se existir algum problema de compilação, retorne.
+  Escreva "Convertendo código em instruções de máquina..." junto com o texto CRLF para StdOut.
+  Comece o temporizador de transmutação.
+  Transforme as rotinas em código hexadecimal.
+  Suspenda o temporizador de transmutação.
+
+Rotina para que se transforme umas rotinas em código hexadecimal:
+  Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha uma rotina desde as rotinas.
+    Se a rotina for inexistente, pare.
+    Transforme a rotina em código hexadecimal.
+  Reitere.
+
+Rotina para que se transforme uma rotina em código hexadecimal:
+  Se existir algum problema de compilação, retorne.
+  Se a rotina for inexistente, retorne.
+  Se o representação de emprego desta rotina não estiver em branco, retorne.
+  Se o sinalizador de compilação desta rotina não estiver ativo, retorne.
+  Atribua a rotina à rotina utilizada atualmente.
+  Transforme os fragmentos desta rotina em código hexadecimal.
+
+Rotina para que se transforme uns fragmentos em código hexadecimal:
+  Itere.
+    Se existir algum problema de compilação, retorne.
+    Obtenha um fragmento desde o fragmentos.
+    Se o fragmento for inexistente, retorne.
+    Transforme o fragmento em código hexadecimal.
+  Reitere.
+
+Rotina para que se transforme um fragmento em código hexadecimal:
+  Se existir algum problema de compilação, retorne.
+  Se o fragmento for inexistente, retorne.
+  Se a etiqueta deste fragmento for o etiqueta de inserção de endereço [na stack],
+    Transforme o fragmento em código hexadecimal (empilhamento de endereço);
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de demanda interna,
+    Transforme o fragmento em código hexadecimal (Demanda Interna);
+    Retorne.
+  Se a etiqueta deste fragmento for o etiqueta de carregamento de endereço,
+    Transforme o fragmento em código hexadecimal (load endereço);
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de acréscimo,
+    Transforme o fragmento em código hexadecimal (increment);
+    Retorne.
+  Se a etiqueta deste fragmento for o etiqueta de redirecionamento,
+    Transforme o fragmento em código hexadecimal (cláusula de redirecionamento);
+    Retorne.
+  Se a etiqueta deste fragmento for o etiqueta de desvio falso,
+    Transforme o fragmento em código hexadecimal (desvio caso resultado negativo);
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de negação lógica,
+    Transforme o fragmento em código hexadecimal (negação lógica);
+    Retorne.
+  Se a etiqueta deste fragmento for o etiqueta de retorno,
+    Transforme o fragmento em código hexadecimal (cláusula de retorno);
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de repetição,
+    Transforme o fragmento em código hexadecimal (cláusula de repetição);
+    Retorne.
+  Se a etiqueta deste fragmento for o etiqueta de interrupção,
+    Transforme o fragmento em código hexadecimal (cláusula de interrupção);
+    Retorne.
+  Se a etiqueta deste fragmento for o etiqueta preliminar,
+    Transforme o fragmento em código hexadecimal (etapa preliminar);
+    Retorne.
+  Se a etiqueta deste fragmento for o etiqueta conclusiva,
+    Transforme o fragmento em código hexadecimal (etapa conclusiva);
+    Retorne.
+  Se a etiqueta deste fragmento for o etiqueta de inserção de valor [na stack],
+    Transforme o fragmento em código hexadecimal (empilhamento de valor);
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de demanda externa,
+    Transforme o fragmento em código hexadecimal (Demanda Externa);
+    Retorne.
+  Se a etiqueta deste fragmento for o etiqueta de carregamento de registrador EAX,
+    Transforme o fragmento em código hexadecimal (atribuição de EAX);
+    Retorne.
+  Se a etiqueta deste fragmento for o etiqueta de obtenção do registrador EAX,
+    Transforme o fragmento em código hexadecimal (registrador EAX);
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de demanda indireta,
+    Transforme o fragmento em código hexadecimal (Demanda Indireta);
+    Retorne.
+  Se a etiqueta deste fragmento for a etiqueta de endereço de rotina,
+    Transforme o fragmento em código hexadecimal (endereço de rotina);
+    Retorne.
+
+Rotina para que se transforme um fragmento em código hexadecimal (empilhamento de endereço):
+  Acrescente a instrução de carregamento de endereço para o código deste fragmento usando a variável deste fragmento. 
+  \ Atribui o endereço para edx
+  Acrescente $52 para o código deste fragmento. \ push edx
+
+Rotina para que se acrescente a instrução de carregamento de endereço para um texto hexadecimal usando uma variável:
+  \ carrega o valor em edx
+  Se a variável for inexistente,
+    Acrescente $C7C200000000 para o texto hexadecimal; \ mov edx,0
+    Retorne. 
+  Se a categoria desta variável for "global",
+    Acrescente $C7C2 e o endereço desta variável para o texto hexadecimal; 
+    \ mov edx, o endereço da variável
+    Retorne. 
+  Se a categoria desta variável for "literal",
+    Acrescente $C7C2 e o endereço desta variável para o texto hexadecimal; 
+    \ mov edx, o endereço da variável
+    Retorne. 
+  Se a categoria desta variável for "local",
+    Acrescente $8D95 e o deslocamento desta variável para o texto hexadecimal; 
+    \ lea edx,[ebp+ o deslocamento da variável]
+    Retorne. 
+  Se a categoria desta variável for "scratch",
+    Acrescente $8B95 e o deslocamento desta variável para o texto hexadecimal; 
+    \ mov edx, [ebp+ o deslocamento da variável]
+    Retorne. 
+  Se a categoria desta variável não for "parâmetro",
+    Apresente uma mensagem de erro contendo 
+      "Erro #11. A variável '" junto com o nome desta variável seguido de "' não é do tipo 'parâmetro.'";
+    Retorne.
+  Se o sinalizador de passagem por-valor desta variável estiver ativo,
+    Acrescente $8D95 e o deslocamento desta variável para o texto hexadecimal; 
+    \ lea edx,[ebp+ o deslocamento da variável]
+    Retorne. 
+  Acrescente $8B95 e o deslocamento desta variável para o texto hexadecimal. 
+  \ mov edx,[ebp+ o deslocamento da variável]
+
+Rotina para que se transforme um fragmento em código hexadecimal (Demanda Interna):
+  Obtenha um endereço usando a rotina deste fragmento.
+  Acrescente $E8 e o endereço para o fragmento. \ call o endereço da rotina do fragmento
+
+Rotina para que se obtenha um endereço usando uma rotina:
+  Se o endereço desta rotina não for 0,
+    Atribua o endereço desta rotina ao endereço;
+    Retorne.
+  Atribua -1 ao endereço desta rotina.
+  Encontre uma segunda rotina usando o representação de emprego desta rotina e o catálogo geral de rotinas.
+  Se a segunda rotina for inexistente,
+    Apresente uma mensagem de erro contendo "Erro #121. Rotina: " junto com 
+    a representação de emprego desta rotina seguido de "' não encontrada. (palavra-chave empregue)" 
+    e o endereço local desta rotina;
+    Retorne.
+  Se o endereço desta segunda rotina for -1,
+    Apresente a mensagem de erro contendo "Erro #122. Referência recursiva na palavra-chave 'empregue'." 
+    e o endereço local desta rotina;
+    Retorne.
+  Obtenha o endereço usando a segunda rotina.
+  Atribua o endereço ao endereço desta rotina.
+
+Rotina para que se transforme um fragmento em código hexadecimal (load endereço):
+  Acrescente a instrução de carregamento de endereço para o código deste fragmento usando a variável deste fragmento.
+  Acrescente $8995 e o deslocamento desta segunda variável deste fragmento para o código deste fragmento. 
+  \ mov [ebp+ o deslocamento da variável do fragmento], edx
+
+Rotina para que se acrescente um texto hexadecimal e um sinalizador para um segundo texto hexadecimal;
+Rotina para que se acrescente um texto hexadecimal e um número para um segundo texto hexadecimal:
+  Acrescente o texto hexadecimal para o segundo texto hexadecimal.
+  Converta o número para um terceiro texto hexadecimal.
+  Acrescente o terceiro texto hexadecimal para o segundo texto hexadecimal.
+
+Rotina para que se transforme um fragmento em código hexadecimal (increment):
+  Se a variável deste fragmento for inexistente,
+    Apresente uma mensagem de erro contendo 
+      "Erro interno #176. A variável '" junto com o nome desta variável deste fragmento 
+      seguido de "' do fragmento não foi encontrada.";
+    Retorne.
+  Se a categoria desta variável deste fragmento não for "scratch",
+    Apresente a mensagem de erro contendo 
+      "Erro interno #177. A categoria da variável '" junto com o nome desta variável deste fragmento 
+      seguido de "' não é 'scratch'. Categoria detectada: '" junto com a categoria desta variável deste fragmento 
+      seguido de "'.";
+    Retorne.
+  Acrescente 
+      $8185 e 
+      o deslocamento desta variável deste fragmento e 
+      o número deste fragmento 
+    para 
+      o código deste fragmento. 
+  \ add [ebp+ o deslocamento da variável do fragmento], o número do fragmento
+
+Rotina para que se acrescente um texto hexadecimal e um número e um segundo número para um segundo texto hexadecimal:
+  Acrescente o texto hexadecimal para o segundo texto hexadecimal.
+  Converta o número para um terceiro texto hexadecimal.
+  Acrescente o terceiro texto hexadecimal para o segundo texto hexadecimal.
+  Converta o segundo número para um quarto texto hexadecimal.
+  Acrescente o quarto texto hexadecimal para o segundo texto hexadecimal.
+
+Rotina para que se transforme um fragmento em código hexadecimal (cláusula de redirecionamento):
+  Acrescente $8B95 e o deslocamento desta variável deste fragmento para o código deste fragmento. 
+  \ mov edx, [ebp+ o deslocamento da variável do fragmento]
+  Acrescente $8B12 para o código deste fragmento. \ mov edx,[edx]
+  Acrescente $8995 e o deslocamento desta variável deste fragmento para o código deste fragmento. 
+  \ mov [ebp+ o deslocamento da variável do fragmento]
+
+Rotina para que se transforme um fragmento em código hexadecimal (desvio caso resultado negativo):
+  Encontre um segundo fragmento usando o fragmento e o etiqueta delimitadora de bloco condicional.
+  Se o segundo fragmento for inexistente,
+    Apresente uma mensagem de erro contendo 
+      "Erro interno #178. Fragmento não encontrado.";
+    Retorne.
+  Acrescente $83F800 para o código deste fragmento. \ cmp eax,0
+  Acrescente $0F84 e o endereço deste segundo fragmento para o fragmento. \ je + o endereço do fragmento
+
+Rotina para que se encontre um fragmento usando um segundo fragmento e uma etiqueta:
+  Atribua o segundo fragmento ao fragmento.
+  Itere.
+    Se o fragmento for inexistente, retorne.
+    Se a etiqueta deste fragmento for a etiqueta, retorne.
+    Atribua o próximo fragmento deste fragmento ao fragmento.
+  Reitere.
+
+Rotina para que se acrescente um texto hexadecimal e um endereço para um fragmento:
+  \ Call / Jump
+  Atribua o endereço para um número.
+  Subtraia o endereço deste fragmento desde o número.
+  Subtraia a quantidade de caracteres deste código deste fragmento desde o número.
+  Subtraia a quantidade de caracteres deste texto hexadecimal desde o número.
+  Subtraia 4 desde o número.
+  Acrescente o texto hexadecimal e o número para o código deste fragmento.
+
+Rotina para que se transforme um fragmento em código hexadecimal (negação lógica):
+  \ deveria ser conjunção lógica?
+  Acrescente $83F001 para o código deste fragmento. \ xor eax,1
+
+Rotina para que se transforme um fragmento em código hexadecimal (cláusula de retorno):
+  Encontre um segundo fragmento usando o fragmento e a etiqueta de finalização.
+  Se o segundo fragmento for inexistente,
+    Apresente uma mensagem de erro contendo 
+      "Erro interno #175. Fragmento não encontrado.";
+    Retorne.
+  Acrescente $E9 e o endereço deste segundo fragmento para o fragmento. 
+  \ jmp + o endereço do fragmento
+
+Rotina para que se transforme um fragmento em código hexadecimal (cláusula de repetição):
+  Encontre um segundo fragmento usando o fragmento e o etiqueta de laço (regressivamente).
+  Se o segundo fragmento for inexistente,
+    Apresente uma mensagem de erro contendo 
+      "Erro interno #182. Fragmento não encontrado.";
+    Retorne.
+  Acrescente $E9 e o endereço deste segundo fragmento para o fragmento. 
+  \ jmp o endereço do fragmento
+
+Rotina para que se encontre um fragmento usando um segundo fragmento e uma etiqueta (regressivamente):
+  Atribua o segundo fragmento ao fragmento.
+  Itere.
+    Se o fragmento for inexistente, retorne.
+    Se a etiqueta deste fragmento for a etiqueta, retorne.
+    Atribua o fragmento anterior deste fragmento ao fragmento.
+  Reitere.
+
+Rotina para que se transforme um fragmento em código hexadecimal (cláusula de interrupção):
+  Atribua a etiqueta de repetição para uma etiqueta.
+  Encontre um segundo fragmento usando o fragmento e a etiqueta.
+  Se o segundo fragmento for inexistente, 
+    Atribua a etiqueta de finalização para a etiqueta. \ para interromper um loop
+  Encontre um terceiro fragmento usando 
+    o último fragmento destes fragmentos desta rotina utilizada atualmente e 
+    a etiqueta (regressivamente).
+  Se o terceiro fragmento for inexistente,
+    Apresente uma mensagem de erro contendo 
+      "Erro interno #173. Fragmento não encontrado.";
+    Retorne.
+  Se o próximo fragmento deste terceiro fragmento for inexistente,
+    Apresente a mensagem de erro contendo 
+      "Erro interno #174. Fragmento não encontrado.";
+    Retorne.
+  Acrescente $E9 [JMP rel32] e o endereço deste próximo fragmento deste terceiro fragmento para o fragmento. 
+  \ JMP o endereço de destino. 
+  \Salto próximo, relativo, deslocamento relativo à próxima instrução.
+
+\ O PRÓLOGO DE TODA ROTINA DE INGLÊS SIMPLES COMEÇA SALVANDO O EBP DO CHAMADOR NA PILHA, LOGO ACIMA DO ENDEREÇO DE RETORNO.
+Rotina para que se transforme um fragmento em código hexadecimal (etapa preliminar):
+  Acrescente $55 para o código deste fragmento. \ push ebp
+  Acrescente $8BEC para o código deste fragmento. \ mov ebp,esp
+  Atribua o tamanho local desta rotina utilizada atualmente dividido por 4 para um número.
+  Se o número não for 0,
+    Acrescente $B9 e o número \ mov ecx,number;  
+    \ -> configura o loop que irá liberar espaço suficiente na pilha para as variáveis locais da rotina
+    e $6A004975FB 
+    \ loop: 
+        \push 0; 
+        \dec ecx; 
+        \jnz loop 
+    \ é um loop que coloca zeros suficientes na pilha para inicializar as variáveis locais.
+    para o código deste fragmento.
+  Se o sinalizador de compatibilidade desta rotina utilizada atualmente estiver ativo,
+    Acrescente $535657 para o código deste fragmento. \ push ebx, esi, edi
+
+\ O EPÍLOGO DE CADA ROTINA REMOVE AS VARIÁVEIS LOCAIS, 
+\ RESTAURA O EBP E RETORNA AO CHAMADOR, 
+\ POPPING OS PARÂMETROS ASSIM QUE ISSO OCORRE
+Rotina para que se transforme um fragmento em código hexadecimal (etapa conclusiva):
+  Se o sinalizador de compatibilidade desta rotina utilizada atualmente estiver ativo,
+    Acrescente $5F5E5B para o código deste fragmento. \ pop edi; pop esi; pop ebx;
+  Acrescente $8BE5 para o código deste fragmento. \ mov esp,ebp -> não seria 89EC?
+  Acrescente $5D para o código deste fragmento. \ pop ebp
+  Acrescente $C2 e o tamanho do parâmetro desta rotina utilizada atualmente para o código deste fragmento. 
+  \ ret + o tamanho do parâmetro da rotina utilizada atualmente
+
+Rotina para que se transforme um fragmento em código hexadecimal (empilhamento de valor):
+  Acrescente a instrução de carregamento de endereço para o código deste fragmento usando a variável deste fragmento. 
+  \ Salva o endereço em edx
+  Se a variável deste fragmento for inexistente,
+    Apresente uma mensagem de erro contendo 
+      "Erro interno #179. Fragmento não encontrado.";
+    Retorne.
+  Se o tipo desta variável deste fragmento for inexistente,
+    Apresente a mensagem de erro contendo 
+      "Erro interno #180. O tipo '" junto com o nome deste tipo desta variável deste fragmento 
+      seguido de "' da variável '" junto com o nome desta variável deste fragmento 
+      seguido de "' não foi encontrado.";
+    Retorne.
+  Atribua a quantidade de caracteres deste tipo desta variável deste fragmento para uma quantidade de caracteres.
+  Se a quantidade de caracteres for 4,
+    Acrescente $FF32 para o código deste fragmento;
+    Retorne. \ push [edx]
+  Se a quantidade de caracteres for 2,
+    Acrescente $66FF32 para o código deste fragmento;
+    Retorne. \ push word ptr [edx]
+  Se a quantidade de caracteres for 1,
+    Acrescente $0FB61252 para o código deste fragmento;
+    Retorne. 
+    \ movzxb edx,[edx]; 
+    \ push edx
+  \Se a quantidade de caracteres for outra, então...
+    Apresente a mensagem de erro contendo 
+    "Erro interno #181. Tamanho do fragmento inválido".
+
+Rotina para que se transforme um fragmento em código hexadecimal (Demanda Externa):
+  Acrescente $FF15 [call] e o endereço desta função deste fragmento para o código deste fragmento. 
+  \ Call [o endereço desta função deste fragmento ]
+  \ O código acima gera o código de máquina para uma chamada ao sistema operacional Windows.
+  \ O código op é especificado em hexadecimal ($FF15) 
+  \ O restante da instrução é o endereço da função da rotina de destino, que é anexado ao código da operação
+
+Rotina para que se transforme um fragmento em código hexadecimal (atribuição de EAX):
+  Acrescente $B8 e o sinalizador deste fragmento para o código deste fragmento. \ mov eax,sinalizador
+  \ atribuI endereço para edx
+\Acrescente a instrução de carregamento de endereço para o código deste fragmento usando a variável do fragmento. 
+\Se a variável deste fragmento for inexistente,
+  \apresente uma mensagem de erro contendo "Internal erro - transforme um fragmento em código hexadecimal (atribuição de EAX)";
+  \Retorne.
+\Se o tipo desta variável deste fragmento for inexistente,
+  \apresente uma mensagem de erro contendo "Internal erro 2 - transforme um fragmento em código hexadecimal (atribuição de EAX)";
+  \Retorne.
+\Se a quantidade de caracteres deste tipo desta variável deste fragmento não for 4,
+  \apresente uma mensagem de erro contendo "Internal erro 3 - transforme um fragmento em código hexadecimal (atribuição de EAX)";
+  \Retorne.
+\Acrescente $8B02 para o código deste fragmento. \ mov eax,[edx]
+
+\VERSÃO ANTIGA
+\Rotina para que se transforme um fragmento em código hexadecimal (atribuição de EAX):
+\Acrescente a instrução de carregamento de endereço para o código deste fragmento usando a variável deste fragmento. 
+\Se a variável deste fragmento for inexistente,
+  \Apresente uma mensagem de erro contendo 
+    \"Internal erro - transforme um fragmento em código hexadecimal (atribuição de EAX)";
+  \Retorne.
+\Se o tipo desta variável deste fragmento for inexistente,
+  \Apresente uma mensagem de erro contendo 
+    \"Internal erro 2 - transforme um fragmento em código hexadecimal (atribuição de EAX)";
+  \Retorne.
+ \Se a quantidade de caracteres deste tipo desta variável deste fragmento não for 4,
+   \Apresente uma mensagem de erro contendo 
+    \"Internal erro 3 - transforme um fragmento em código hexadecimal (atribuição de EAX)";
+   \Retorne.
+\Acrescente $8B02 para o código deste fragmento. \ mov eax,[edx]
+
+Rotina para que se transforme um fragmento em código hexadecimal (registrador EAX):
+  Acrescente a instrução de carregamento de endereço para o código deste fragmento usando a variável deste fragmento. 
+  \ atribui o endereço para o registrador edx
+  Se a variável deste fragmento for inexistente,
+    Apresente uma mensagem de erro contendo 
+      "Erro interno #184. A variável '" junto com o nome desta variável deste fragmento 
+      seguido de "' não foi encontrada.";
+    Retorne.
+  Se o tipo desta variável deste fragmento for inexistente,
+    Apresente a mensagem de erro contendo 
+      "Erro interno #185. O tipo '" junto com o nome deste tipo desta variável deste fragmento 
+      seguido de "' da variável '" junto com o nome desta variável deste fragmento 
+      seguido de "' não encontrado.";
+    Retorne.
+  Atribua a quantidade de caracteres deste tipo desta variável deste fragmento para uma quantidade de caracteres.
+  \Se a quantidade de caracteres for 8, \ para 64 bits
+    \Acrescente $67488902  para o código deste fragmento; \ mov [edx],rax
+    \Retorne.   
+  Se a quantidade de caracteres for 4,
+    Acrescente $8902 para o código deste fragmento; \ mov [edx],eax
+    Retorne. 
+  Se a quantidade de caracteres for 2,
+    Acrescente $668902 para o código deste fragmento; \ mov [edx],ax
+    Retorne. 
+  Se a quantidade de caracteres for 1,
+    Acrescente $8802 para o código deste fragmento; \ mov [edx],al
+    Retorne. 
+  [Se a quantidade de caracteres não for 1, 2 ou 4] 
+    Apresente a mensagem de erro contendo 
+      "Erro interno #186. O tipo '" junto com o tipo desta variável deste fragmento 
+      seguido de "deste fragmento possui um tamanho inválido".
+
+Rotina para que se transforme um fragmento em código hexadecimal (Demanda Indireta):
+  Acrescente a instrução de carregamento de endereço para o código deste fragmento usando a variável deste fragmento.
+  Acrescente $FF12 para o código deste fragmento. \ call [edx]
+
+Rotina para que se transforme um fragmento em código hexadecimal (endereço de rotina):
+  Acrescente a instrução de carregamento de endereço para o código deste fragmento usando a variável deste fragmento. 
+  \ atribui o endereço para o registrador edx
+  Se a rotina deste fragmento for inexistente,
+    Apresente uma mensagem de erro contendo 
+      "Erro interno #183. Rotina não encontrada.";
+    Retorne.
+  Obtenha um endereço usando a rotina deste fragmento.
+  Acrescente $C702 e o endereço para o código deste fragmento. \ mov [edx],the endereço
+
+\---------------------------------------------------------------------- ROTINAS EXTRAS ---------------------------------------------------------------------
+
+Rotina para que se acrescente um texto hexadecimal e um número e um segundo texto hexadecimal para um terceiro texto hexadecimal:
+  Acrescente o texto hexadecimal para o terceiro texto hexadecimal.
+  Converta o número para um quarto texto hexadecimal.
+  Acrescente o quarto texto hexadecimal para o terceiro texto hexadecimal.
+  Acrescente o segundo texto hexadecimal para o terceiro texto hexadecimal.

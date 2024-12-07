@@ -261,6 +261,18 @@ Rotina para que se adicione uma unidade semântica para umas unidades semânticas 
   \ other
   Atribua a string à string desta unidade semântica.
 
+Função para que se determine se um percorredor está sobre algum artigo indefinido:
+  Se o percorredor estiver sobre algum preposição conectiva, diga não.
+  Se o segmento inicial deste percorredor não for algum artigo indefinido, diga não.
+  Diga sim.
+
+Função para que se determine se um percorredor está sobre algum preposição conectiva:
+  Se o segmento inicial deste percorredor não for "a", diga não.
+  Preserve o percorredor.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor for algum artigo, diga sim.
+  Diga não.
+
 Rotina para que se compile umas unidades semânticas e uns parâmetros usando um percorredor (artigo indefinido):
   Se existir algum problema de compilação, retorne.
   Adicione um parâmetro para o parâmetros usando "parâmetro" e o caractere inicial deste segmento inicial deste percorredor.
@@ -298,6 +310,11 @@ Função para que se determine se um percorredor está sobre alguma string de unida
   Se o segmento inicial deste percorredor for algum sinal de pontuação, diga não.
   Se o segmento inicial deste percorredor for algum símbolo, diga não.
   Se o segmento inicial deste percorredor for "então", diga não.
+  Diga sim.
+
+Função para que se determine se um percorredor está sobre algum artigo definido:
+  Se o percorredor estiver sobre algum preposição conectiva, diga não.
+  Se o segmento inicial deste percorredor não for algum artigo definido, diga não.
   Diga sim.
 
 Rotina para que se compile umas unidades semânticas e uns parâmetros usando um percorredor (string de unidade semântica):

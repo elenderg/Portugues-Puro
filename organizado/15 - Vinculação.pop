@@ -1,0 +1,235 @@
+Rotina para que se compile um endereço da pasta (vinculação): \ #015
+  Se existir algum problema de compilação, retorne.
+  Escreva "Elencando arquivos.." junto com o texto CRLF para StdOut.
+  Comece o temporizador de vinculação.
+  Vincule.
+  Suspenda o temporizador de vinculação.
+
+Rotina para que se vincule:
+  Arredonde para cima tamanhos de zona.
+  Inicialize um cabeçalho DOS.
+  Inicialize um Cabeçalho PE.
+  Preencha o trecho EXE deste compilador com o caractere null usando o tamanho do executável deste compilador.
+  Disponibilize o cabeçalho DOS ao trecho EXE deste compilador.
+  Disponibilize o Cabeçalho PE ao trecho EXE deste compilador.
+  Disponibilize as DLLs ao trecho EXE deste compilador.
+  Disponibilize as variáveis globais ao trecho EXE deste compilador.
+  Disponibilize os valores literais ao trecho EXE deste compilador.
+  Disponibilize as rotinas ao trecho EXE deste compilador.
+
+Rotina para que se arredonde tamanhos de zona para cima;
+Rotina para que se arredonde para cima tamanhos de zona:
+  Atribua a quantidade de caracteres desta seção de DLLs ao tamanho desta seção de DLLs.
+  Arredonde para cima o tamanho desta seção de DLLs usando o múltiplo imediato de 4096.
+  Atribua a quantidade de caracteres desta região de dados ao tamanho desta região de dados.
+  Arredonde para cima o tamanho desta região de dados  usando o múltiplo imediato de 4096.
+  Atribua a quantidade de caracteres desta região de código ao tamanho desta região de código.
+  Arredonde para cima o tamanho desta região de código  usando o múltiplo imediato de 4096.
+
+Rotina para que se inicialize um cabeçalho DOS: \ vou alterar depois
+  Atribua 23117 [$5A4D] ao Signature deste cabeçalho DOS.
+  Atribua 64 [$0040] ao AddressOfRelocationTableInFile deste cabeçalho DOS. \ pointer to the table of DLLs needed for this program.
+  Atribua 256 [$00000100] ao AddressOfPEHeaderInFile deste cabeçalho DOS. \ pointer to the PE Header, 
+  \Os 16 camposrestantes  do cabeçalho DOS não são utilizados
+
+Rotina para que se inicialize um Cabeçalho PE:
+  Inicialize o Cabeçalho PE (cabeçalho padrão).
+  Inicialize o Cabeçalho PE (cabeçalho opcional).
+  Inicialize o Cabeçalho PE (informação da versão).
+  Inicialize o Cabeçalho PE (diretórios).
+  Inicialize o Cabeçalho PE (Seção de DLLs).
+  Inicialize o Cabeçalho PE (seção de dados).
+  Inicialize o Cabeçalho PE (seção de código).
+
+Rotina para que se inicialize um Cabeçalho PE (cabeçalho padrão):
+  Atribua 17744 [$00004550] ao Signature deste Cabeçalho PE. \ -> 50 45 00 00
+  Atribua 332 [$014C] ao MachineType deste Cabeçalho PE. \ IMAGE_FILE_MACHINE_I386 
+  Atribua 3 [$0003] ao NumberOfSections deste Cabeçalho PE. \ IMAGE_SCN_ALIGN_4BYTES
+  Atribua 0 ao TimeStamp deste Cabeçalho PE.
+  Atribua 0 ao PointerToSymbolTable deste Cabeçalho PE.
+  Atribua 0 ao NumberOfSymbols deste Cabeçalho PE.
+  Atribua 224 [$00E0] ao SizeOfOptionalHeaderInBytes deste Cabeçalho PE. \ IMAGE_SCN_ALIGN_8192BYTES
+  Atribua 33166 [$818E] às Characteristics deste Cabeçalho PE.
+
+Rotina para que se inicialize um Cabeçalho PE (cabeçalho opcional):
+  Atribua 267 [$010B] ao MagicNumber deste Cabeçalho PE.
+  \The magic number for PE32+ executables is $020B [523]
+  Atribua a quantidade de caracteres desta Região de Código ao SizeOfCodeInFile deste Cabeçalho PE.
+  Atribua a quantidade de caracteres desta Região de Dados ao SizeOfInitializedDataInFile deste Cabeçalho PE.
+  Atribua 0 ao SizeOfUninitializedDataInFile deste Cabeçalho PE.
+  Encontre uma rotina usando 
+    "~Inicialize antes da execução e Execute o programa e Finalize após execução" e 
+    o catálogo geral de rotinas. \ AddressOfEntryPointInMemory
+  Se a rotina for inexistente,
+    Apresente uma mensagem de erro contendo 
+      "Erro interno #126. Uma das rotinas de inicialização do cabeçalho PE não foi encontrada. ";
+    Retorne.
+  Atribua o endereço desta rotina menos o image base ao AddressOfEntryPointInMemory deste Cabeçalho PE.
+  Atribua o Endereço Base desta Região de Código ao AddressOfCodeInMemory deste Cabeçalho PE. \BaseOfCode
+  Atribua o Endereço Base desta Região de Dados ao AddressOfInitializedDataInMemory deste Cabeçalho PE. \BaseOfData
+  Atribua o Image Base à ImageBase deste Cabeçalho PE.
+  Atribua 4096 [$00001000] ao MemoryAlignment deste Cabeçalho PE. \ 4 KB
+  Atribua 4096 [$00001000] ao FileAlignment deste Cabeçalho PE. \ 4 KB. 
+  \ usado para alinhar os dados brutos das seções no arquivo de imagem.
+  \ O valor deve ser uma potência de 2
+  Atribua 0 ao Reserved deste Cabeçalho PE.
+  Atribua o Tamanho Do Executável deste Compilador ao SizeOfImageInMemory deste Cabeçalho PE.
+  Atribua 4096 [section base] ao SizeOfAllHeadersInFile deste Cabeçalho PE. \ 4 KB
+  Atribua 0 ao CheckSum deste Cabeçalho PE.
+  Atribua 0 para as DLLCharacteristics deste Cabeçalho PE.
+  Atribua 1048576 [$00100000] ao MaxStack deste Cabeçalho PE. \ SizeOfStackReserve
+  Atribua 16384 [$00004000] ao MinStack deste Cabeçalho PE. \ SizeOfStackCommit
+  Atribua 1048576 [$00100000] ao MaxHeap deste Cabeçalho PE. \ SizeOfHeapReserve. 
+  \ O número de bytes para reservar no heap local
+  Atribua 16384 [$00004000] ao MinHeap deste Cabeçalho PE. \ SizeOfHeapCommit. 
+  \O número de bytes a serem vinculados no heap local.
+  Atribua 0 ao LoaderFlags deste Cabeçalho PE. \ Esse membro é obsoleto.
+
+Rotina para que se atribua o tamanho do executável deste compilador para um tamanho:
+  Atribua 4096 [section base] ao tamanho.
+  Adicione o tamanho desta seção de DLLs para o tamanho.
+  Adicione o tamanho desta região de dados para o tamanho.
+  Adicione o tamanho desta região de código para o tamanho.
+
+Rotina para que se inicialize um Cabeçalho PE (informação da versão):
+  Atribua 0 ao MajorLinkerVersion deste Cabeçalho PE.
+  Atribua 0 ao MinorLinkerVersion deste Cabeçalho PE.
+  Atribua 4 [$0004] ao OS_MajorVersion deste Cabeçalho PE.
+  Atribua 0 [$0000] ao OS_MinorVersion deste Cabeçalho PE.
+  Atribua 0 ao UserMajorVersion deste Cabeçalho PE.
+  Atribua 0 ao UserMinorVersion deste Cabeçalho PE.
+  Atribua 4 [$0004] ao SubsystemMajorVersion deste Cabeçalho PE.
+  Atribua 0 [$0000] ao SubsystemMinorVersion deste Cabeçalho PE.
+  Atribua 3 [$0003] ao Subsystem deste Cabeçalho PE.
+
+Rotina para que se inicialize um Cabeçalho PE (diretórios):
+  Atribua 16 [$00000010] ao NumberOfDirectories deste Cabeçalho PE.
+  Atribua o endereço base desta seção de DLLs ao ImageDirectoryEntryImportAddress deste Cabeçalho PE.
+  Atribua a quantidade de caracteres desta seção de DLLs ao ImageDirectoryEntryImportSize deste Cabeçalho PE.
+
+Rotina para que se inicialize um Cabeçalho PE (Seção de DLLs):
+  Atribua "idata " para uma string.
+  Copie bytes desde o caractere inicial desta string para o endereçamento deste nome desta Idata Section deste Cabeçalho PE por 6.
+  Atribua a quantidade de caracteres desta seção de DLLs ao SizeInBytes desta Idata Section deste Cabeçalho PE.
+  Atribua o endereço base desta seção de DLLs ao AddressInMemory desta Idata Section deste Cabeçalho PE.
+  Atribua a quantidade de caracteres desta seção de DLLs ao SizeInFile desta Idata Section deste Cabeçalho PE.
+  Atribua o endereço base desta seção de DLLs ao AddressInFile desta Idata Section deste Cabeçalho PE.
+  Atribua -1073741760 [$C0000040] para as Characteristics desta Idata Section deste Cabeçalho PE. 
+  \ inicializado, legível, gravável
+
+Rotina para que se inicialize um Cabeçalho PE (seção de dados):
+  Atribua "data " para uma string.
+  Copie bytes desde o caractere inicial desta string para o endereçamento deste nome desta Data Section deste Cabeçalho PE por 6.
+  Atribua a quantidade de caracteres desta região de dados ao SizeInBytes desta Data Section deste Cabeçalho PE.
+  Atribua o endereço base desta região de dados ao AddressInMemory desta Data Section deste Cabeçalho PE.
+  Atribua a quantidade de caracteres desta região de dados ao SizeInFile desta Data Section deste Cabeçalho PE.
+  Atribua o endereço base desta região de dados ao AddressInFile desta Data Section deste Cabeçalho PE.
+  Atribua -1073741760 [$C0000040] para as Characteristics desta Data Section deste Cabeçalho PE. 
+  \ inicializado, legível, gravável
+
+Rotina para que se inicialize um Cabeçalho PE (seção de código):
+  Atribua "code  " para uma string.
+  Copie bytes desde o caractere inicial desta string para o endereçamento deste nome desta Code Section deste Cabeçalho PE por 6.
+  Atribua a quantidade de caracteres desta Região de Código ao SizeInBytes desta Code Section deste Cabeçalho PE.
+  Atribua o endereço base desta Região de Código ao AddressInMemory desta Code Section deste Cabeçalho PE.
+  Atribua a quantidade de caracteres desta Região de Código  ao SizeInFile desta Code Section deste Cabeçalho PE.
+  Atribua o endereço base desta Região de Código ao AddressInFile desta Code Section deste Cabeçalho PE.
+  Atribua -536870880 [$E0000020 ] para as Characteristics desta Code Section deste Cabeçalho PE. 
+  \ executável, legível, gravável, objeto de código
+  \IMAGE_FILE_LARGE_ADDRESS_ AWARE 0x0020 - A aplicação pode manipular endereços > que 2 GB.
+
+Rotina para que se disponibilize um cabeçalho DOS para um trecho:
+  Disponibilize bytes usando o endereçamento deste cabeçalho DOS e a magnitude deste cabeçalho DOS e o trecho e 0.
+
+Rotina para que se disponibilize bytes usando um ponteiro e uma quantidade de caracteres e um trecho e um deslocamento:
+  Atribua o caractere inicial deste trecho mais o deslocamento para um segundo ponteiro.
+  Copie bytes desde o ponteiro para o segundo ponteiro pelo quantidade de caracteres.
+
+Rotina para que se disponibilize um Cabeçalho PE para um trecho:
+  Disponibilize bytes usando o endereçamento deste Cabeçalho PE e a magnitude deste Cabeçalho PE e o trecho e 256.
+
+Rotina para que se disponibilize umas DLLs para um trecho:
+  \Itere.
+    Obtenha uma DLL desde as DLLs.
+    Se a DLL for inexistente, retorne.
+    Disponibilize a DLL ao trecho.
+  Reitere.
+
+Rotina para que se disponibilize uma DLL para um trecho:
+  Disponibilize bytes usando 
+    o endereçamento deste cabeçalho da DLL desta DLL e 
+    a magnitude deste cabeçalho da DLL desta DLL e 
+    o trecho e 
+    o endereço do cabeçalho desta DLL.
+  Disponibilize o nome desta DLL para o trecho sob o endereço do nome desta DLL.
+  Disponibilize as funções desta DLL ao trecho.
+
+Rotina para que se disponibilize uma string para um trecho sob um endereço:
+  Disponibilize bytes usando o caractere inicial desta string e a quantidade de caracteres desta string e o trecho e o endereço.
+
+Rotina para que se disponibilize umas variáveis para um trecho:
+  \Itere.
+    Obtenha uma variável desde as variáveis.
+    Se a variável for inexistente, retorne.
+    Disponibilize a variável ao trecho.
+  Reitere.
+
+Rotina para que se disponibilize uma variável para um trecho:
+  Se o sinalizador de compilação desta variável não estiver ativo, retorne.
+  Se o tipo desta variável puder ser reduzido para "string",
+    Disponibilize a variável ao trecho (como um texto);
+    Retorne.
+  Atribua o endereço desta variável menos o image base para um endereço. 
+  \ SUGESTÃO Atribua a diferença entre o endereço da variável e a base da imagem para um endereço.
+  Disponibilize o data desta variável ao trecho sob o endereço.
+
+Rotina para que se disponibilize uma variável para um trecho (como um texto):
+  Atribua o endereço desta variável menos o image base para um endereço.
+  Atribua a quantidade de caracteres deste data desta variável para uma quantidade de caracteres.
+  Atribua o endereço para um segundo endereço.
+  Adicione a magnitude dum protótipo de string para o segundo endereço.
+  Adicione a image base para o segundo endereço.
+  Atribua 0 ao caractere inicial deste protótipo de string.
+  Atribua -1 ao caractere final deste protótipo de string.
+  Se a quantidade de caracteres não for 0, 
+    Atribua o segundo endereço ao caractere inicial deste protótipo de string.
+  Se a quantidade de caracteres não for 0, 
+    Atribua o caractere inicial deste protótipo de string mais a quantidade de caracteres menos 1 ao caractere final deste protótipo de string.
+  Disponibilize bytes usando o endereçamento deste protótipo de string e a magnitude deste protótipo de string e o trecho e o endereço.
+  Adicione a magnitude [tamanho em bytes] deste protótipo de string para o endereço.
+  Disponibilize os data desta variável ao trecho sob o endereço.
+
+Rotina para que se disponibilize umas funções para um trecho:
+  \Itere.
+    Obtenha uma função desde as funções.
+    Se a função for inexistente, retorne.
+    Disponibilize a função ao trecho.
+  Reitere.
+
+Rotina para que se disponibilize uma função para um trecho:
+  Disponibilize bytes usando o endereçamento deste endereço do nome desta função e 4 e o trecho e o endereço thunk desta função.
+  Atribua o endereço do nome desta função mais 2 para um endereço.
+  Disponibilize o nome desta função ao trecho sob o endereço.
+
+Rotina para que se disponibilize umas rotinas para um trecho:
+  \Itere.
+    Obtenha uma rotina desde as rotinas.
+    Se a rotina for inexistente, retorne.
+    Disponibilize a rotina ao trecho.
+  Reitere.
+
+Rotina para que se disponibilize uma rotina para um trecho:
+  Se o sinalizador de compilação desta rotina não estiver ativo, retorne.
+  Disponibilize os fragmentos desta rotina ao trecho.
+
+Rotina para que se disponibilize uns fragmentos para um trecho:
+  \Itere.
+    Obtenha um fragmento desde o fragmentos.
+    Se o fragmento for inexistente, retorne.
+    Disponibilize o fragmento ao trecho.
+  Reitere.
+
+Rotina para que se disponibilize um fragmento para um trecho:
+  Se o código deste fragmento estiver em branco, retorne.
+  Atribua o endereço deste fragmento menos o image base para um endereço.
+  Disponibilize o código deste fragmento ao trecho sob o endereço.

@@ -23,6 +23,22 @@ Rotina para que se carregue uns arquivos fontes:
     Carregue o arquivo fonte.
   Reitere.
 
+Função para que se determine se um item parece ser encadernável:
+  Carregue o endereço completo deste item para um trecho.
+  Se o trecho começa com "ream cal", diga sim. \ ream
+  Se o trecho começa com "ream SAL", diga sim. \
+  Se o trecho começa com "ream CEL", diga sim. \ 
+  Se o trecho começa com "Este documento foi produzido pelo Editor de Documentos - CEL", diga sim.
+  Diga não.
+
+Rotina para que se adicione um arquivo fonte para uns arquivos fontes usando um endereço completo:
+  Crie o arquivo fonte.
+  Acrescente o arquivo fonte para os arquivos fontes.
+  Atribua o endereço completo ao endereço completo deste arquivo fonte.
+
+Rotina para que se crie um arquivo fonte:
+  Aloque memória para o arquivo fonte.
+
 Rotina para que se carregue um arquivo fonte:
   Se o arquivo fonte for inexistente, retorne.
   \Carregue o endereço completo deste arquivo fonte para o trecho deste arquivo fonte.
@@ -432,3 +448,34 @@ Rotina para que se acrescente uma string para uma segunda string usando uma terc
     Acrescente "por as" para a segunda string;
     Retorne.
   Acrescente a string para a segunda string.
+
+
+\-------------------------------------- ROTINAS EXTRAS -------------------------------------
+
+Função para que se determine se uma string deveria ser expandida usando uma segunda string (análise de termos compostos):
+  Se a string não for "partir", diga não.
+  Se a string não for "partindo", diga não.
+  \Se a string for alguma locução prepositiva, diga sim.
+  Se a segunda string não for "de", diga não.
+  Diga sim.
+
+Função para que se determine se uma string está precisando ser decomposta:
+  Lance um percorredor sobre a string.
+  Se a string for algum operador de concatenação contraído usando o percorredor, diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum operador de concatenação contraído usando um percorredor:
+  Se o segmento inicial deste percorredor de contrações for "seguido", mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor de contrações for "seguida", mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor de contrações for "junto", mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor de contrações for "acompanhado", mova o percorredor (usando diretrizes de compilação).
+  \Se o segmento inicial deste percorredor for uma variável, recue o percorredor.
+  Se o segmento inicial deste percorredor de contrações for alguma contração de preposição com artigo definido, diga sim.
+  Diga não.
+
+Função para que se determine se uma string é alguma contração de preposição com artigo definido:
+  Se a string for "do", diga sim.
+  Se a string for "da", diga sim.
+  Se a string for "dos", diga sim.
+  Se a string for "das", diga sim.
+  Diga não.

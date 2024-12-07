@@ -38,6 +38,13 @@ Função para que se determine se um tipo deveria ser finalizado:
   \ Para strings dentro de estruturas
   Diga não.
 
+Função para que se determine se uns campos deveriam ser finalizados;
+Função para que se determine se uns campos deveria ser finalizado:
+  Obtenha um campo desde o campos.
+  Se o campo for inexistente, diga não.
+  Se o tipo deste campo deveria ser finalizado, diga sim.
+  Reitere.
+
 Rotina para que se adicione a rotina de finalização para um tipo (cadeia de caracteres):
   Se o tipo for inexistente, retorne.
   Se existir algum problema de compilação, retorne.

@@ -8301,7 +8301,7 @@ Rotina para que se obtenha um deslocamento vertical e um deslocamento horizontal
     Atribua 7071 ao deslocamento horizontal;
     Atribua 7071 ao deslocamento vertical;
     Pare.  \ 45 degraus = 8/64 do caminho
-  Reitere. \ não é realmente um comando de repetição, é apenas um marcador para as "breaks" aí de cima.
+  Reitere. 
   \ ajuste por segunda eighths do círculo
   Se o orientação original estiver entre 0 e 480,
     Inverta o sinal de o deslocamento vertical;
