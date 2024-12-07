@@ -1,6 +1,0 @@
-Rotina para que se compile um endereço da pasta (análise dos arquivos fornecidos): \#003
-  Se existir algum problema de compilação, retorne.
-  Escreva "Analisando código fonte dos arquivos..." junto com o texto CRLF para StdOut.
-  Comece o temporizador de análise/verificação.
-  Examine os arquivos fontes. \ < -------------------------------------------------------------
-  Suspenda o temporizador de análise/verificação.
