@@ -2,8 +2,6 @@ Um array é uma estrutura com
   Um ponteiro denominado endereço,
   Um número denominado tamanho.
 
-
-A cor eigengrau é uma cor.
 \O conteúdo deste arquivo foi traduzido a parir do arquivo "The noodle" do projeto "CAL-4700" 
 \Todos os direitos originais pertencem à "Osmosian Order of Plain Language Programmers"-  - Fundada em 2006
 \O conteúdo deste arquivo, porém, possui autorização para divulgação, modificação e redistribuição no domínio público sem a necessidade de prévia autorização.
@@ -39,6 +37,8 @@ Uma string é uma estrutura com
   Um caractere final.
 
 Uma lista é um ponteiro [que aponta] para uma lista estruturada.
+
+Uma lista estrutura é uma lista estruturada.
 
 Uma lista estruturada é uma estrutura com
   Uma lista denominada lista posterior e
@@ -1309,7 +1309,7 @@ Um tom de cor monótono é uma cor.
 Uma cor monótona é uma cor.
 Um tom de cor multicolorido é uma cor.
 Uma cor multicolorida é uma cor.
-Um tom de cor  neutro é uma cor.
+Um tom de cor neutro é uma cor.
 Uma cor neutra é uma cor.
 Um tom opaco é uma cor.
 Uma cor opaca é uma cor.
@@ -2063,6 +2063,7 @@ A grossura da canetinha é um número.
 \CORES
 
 \CORES VÍVIDAS
+A cor eigengrau é uma cor.
 A cor branco é uma cor.
 A cor branca é uma cor.
 A cor preta é uma cor.  \
@@ -3116,6 +3117,66 @@ Rotina para que se associe um ponteiro usando um quantidade de bytes:\ Aloque me
   Se o ponteiro não for inexistente,
     Adicione 1 para a contagem do heap;
     Retorne.
+
+O STD_INPUT_HANDLE é um número igual a -10.
+O CodePage é um número igual a 1252.
+O INVALID_HANDLE_VALUE é um número igual a -1.
+
+Rotina para que se obtenha o Número Identificador do Fluxo de Entrada Padrão:
+  Processe "kernel32.dll" "GetStdHandle" com 
+    O STD_INPUT_HANDLE [nStdHandle = STD_INPUT_HANDLE]
+    Retornando o Número Identificador do Fluxo de Entrada Padrão.
+  Se o Número Identificador do Fluxo de Entrada Padrão for a INVALID_HANDLE_VALUE,
+    Escreva "Erro ao obter o número identificador do fluxo de entrada padrão." junto com o texto CRLF para STDOUT.
+  \Se o Número Identificador do Fluxo de Entrada Padrão não for a INVALID_HANDLE_VALUE,
+  \Escreva "STDIN HANDLE: " junto com o número identificador do fluxo de entrada padrão junto com o texto CRLF para STDOUT.
+
+Rotina para que se prepare o Console:
+  Inicialize os componentes.
+  Obtenha o Número Identificador do Fluxo de Entrada Padrão.
+  Defina o CodePage do Console.
+  Obtenha o Modo do Console.
+
+Rotina para que se defina o CodePage do Console:
+  Processe "kernel32.dll" "SetConsoleOutputCP" com 
+    O codepage 
+    Retornando um número denominado status de erro.
+  Se o status de erro for 0 [NULL], 
+    Escreva "Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT.  
+
+Rotina para que se obtenha o modo do console:
+  Processe "kernel32.dll" "GetConsoleMode" com
+    O número identificador do fluxo de entrada padrão e
+    O endereçamento dum número denominado modo do console
+    Retornando um status de erro.
+  Se o status de erro for 0 [NULL], 
+     Escreva "Erro ao obter o modo do Console." junto com o texto CRLF para STDOUT.
+  \Se o status de erro não for 0 [NULL], 
+     \Escreva "Modo do console: " junto com o modo do console junto com o texto CRLF para STDOUT.
+
+Rotina para que se leia um trecho desde a STDIN:  
+  Atribua 0 para um número denominado lpNumberOfBytesRead.
+  Atribua 0 para um número denominado quantidade de caracteres NULL restantes.
+  \Atribua "" para o trecho.
+  Preencha o trecho com o caractere NULL usando 256.
+  \Anexe o caractere NULL após o trecho.
+  Processe "kernel32.dll" "ReadFile" com
+    O número identificador do fluxo de entrada padrão [hFile] e
+    O caractere inicial deste trecho [lpBuffer] e
+    256 [nNumberOfBytesToRead] e 
+    O endereçamento deste lpNumberOfBytesRead [lpNumberOfBytesRead] \ O número de bytes lidos ao usar o parâmetro hFile síncrono.
+    e 0 [lpOverlapped = NULL] 
+    Retornando um status de erro.
+  Se o status de erro for 0 [NULL], 
+    Escreva "Erro ao ler do Console." junto com o texto CRLF para STDOUT.
+  Se o lpNumberOfBytesRead for menor do que 256,
+    Atribua 256 menos o lpNumberOfBytesRead para a quantidade de caracteres NULL restantes.
+    Remova os caracteres finais desde o trecho usando a quantidade de caracteres NULL restantes.
+  Subtraia 2 desde o lpNumberOfBytesRead.
+  Elimine os resíduos no trecho.
+  \Converta o lpNumberOfBytesRead para uma string.
+  \Escreva "Bytes lidos: " junto com a string junto com o texto CRLF para Stdout.
+
 
 Rotina para que se role automaticamente uma caixa de texto usando uma localização e um sinalizador:
   Se a caixa de texto for inexistente,
@@ -5084,8 +5145,8 @@ Função para que se determine se um byte é algum letra:
   Diga não.
 
 Função para que se determine se um byte é algum indicador numérico:
-  Se o byte é algum dígito, diga sim.
-  Se o byte é algum sinal aritmético, diga sim.
+  Se o byte for algum dígito, diga sim.
+  Se o byte for algum sinal aritmético, diga sim.
   Diga não.
 
 Função para que se determine se um byte é algum caractere não-alfanumérico:
@@ -5143,7 +5204,7 @@ Função para que se determine se um byte é semelhante para um segundo byte:
 
 Função para que se determine se um byte é irrelevante:
   Se o byte for menor do que ou igual ao caractere de espaço, diga sim.
-  Se o byte for o símbolo DEL [que agora está descontinuado], diga sim.
+  Se o byte for o [ANTIGO] símbolo DEL [O descontinuado], diga sim.
   Se o byte for o espaço rígido, diga sim.
   Se o byte for 129, diga sim. \ Unused
   Se o byte for 141, diga sim. \ Unused
@@ -5152,7 +5213,7 @@ Função para que se determine se um byte é irrelevante:
   Se o byte for 157, diga sim. \ Unused
   Diga não.
 
-Função para que se determine se um byte é igual para  um número ou para um segundo número;
+Função para que se determine se um byte é igual para um número ou para um segundo número;
 Função para que se determine se um byte é um número ou um segundo número:
   Se o byte for o número, diga sim.
   Se o byte for o segundo número, diga sim.
@@ -6033,7 +6094,9 @@ Função para que se determine se uma string é uma segunda string ou uma terceira 
   Se a string for a terceira string, diga sim.
   Diga não.
 
+Função para que se determine se uma string é alguma fração literal;
 Função para que se determine se uma string é algum fração literal;
+Função para que se determine se uma string é alguma proporção literal;
 Função para que se determine se uma string é algum proporção literal:
   Lance um subtexto sobre a string.
   Se o subtexto estiver em branco, diga não.
@@ -6066,17 +6129,11 @@ Função para que se determine se uma string é algum numeral misto literal:
   Se a subtexto fracionário não for algum fração literal, diga não.
   Diga sim.
 
-Função para que se determine se uma string é algum valor numérico literal:
-  Se a string estiver em branco, diga não.
-  Se o conteúdo deste caractere inicial desta string não for algum indicador numérico, diga não.
-  Se a string é algum número inteiro, diga sim.
-  Se a string é algum fração literal, diga sim.
-  Se a string é algum numeral misto literal, diga sim.
-  Diga não.
+
 
 Função para que se determine se uma string é algum sinal aritmético:
   Se a quantidade de caracteres desta string não for 1, diga não.
-  Se o conteúdo deste caractere inicial desta string é algum sinal aritmético, diga sim.
+  Se o conteúdo deste caractere inicial desta string for algum sinal aritmético, diga sim.
   Diga não.
 
 Função para que se determine se uma string é alguma palavra:
@@ -7564,21 +7621,7 @@ Rotina para que se encontre um ponteiro usando uma string e um catálogo:
     Retorne.
   Esvazie o ponteiro.
 
-Rotina para que se encontre uma referência usando uma string e um catálogo:
-  Se o catálogo for inexistente, retorne.
-  Se a string estiver em branco,
-    Esvazie a referência;
-    Retorne.
-  Obtenha um recipiente usando a string e o catálogo.
-  Encontre a referência usando a string e as referências deste recipiente.
 
-Rotina para que se encontre uma referência usando uma string e umas referências:
-  Esvazie a referência.
-  Itere.
-    Obtenha a referência desde as referências.
-    Se a referência for inexistente, retorne.
-    Se a string for a string deste referência, retorne.
-  Reitere.
 
 Rotina para que se encontre um sector usando uma malha quadriculada e uma localização:
   Atribua a coordenada X desta localização dividido pelo número X desta malha quadriculada vezes o número X desta malha quadriculada à coordenada X deste sector.
@@ -8266,7 +8309,7 @@ Rotina para que se obtenha um deslocamento vertical e um deslocamento horizontal
     Atribua 7071 ao deslocamento horizontal;
     Atribua 7071 ao deslocamento vertical;
     Pare.  \ 45 degraus = 8/64 do caminho
-  Reitere. \ não é realmente um comando de repetição, é apenas um marcador para as "breaks" aí de cima.
+  Reitere. 
   \ ajuste por segunda eighths do círculo
   Se o orientação original estiver entre 0 e 480,
     Inverta o sinal de o deslocamento vertical;
@@ -9257,8 +9300,9 @@ Rotina para que se recue as linhas de texto selecionadas em uma caixa de texto:
   Anteponha o caractere de espaço para a string desta linha de texto.
   Reitere.
 
+\Rotina para que se catalogue uma lista usando uma string e um catálogo;
 Rotina para que se catalogue um ponteiro usando uma string e um catálogo:
-    \ if o catálogo for inexistente, retorne. \ para fazer compilador faster
+  \ Se o catálogo for inexistente, retorne. \ para deixar compilador mais rápido
   Se a quantidade de caracteres desta string for 0, retorne.
   Obtenha um recipiente usando a string e o catálogo.
   Crie uma referência.
@@ -9267,7 +9311,7 @@ Rotina para que se catalogue um ponteiro usando uma string e um catálogo:
   Atribua o ponteiro ao ponteiro deste referência.
 
 Rotina para que se catalogue uma string em um catálogo:
-  \ if o catálogo for inexistente, retorne. \ para fazer compilador faster
+  \ Se o catálogo for inexistente, retorne. \ para deixar compilador mais rápido
   Catalogue nil usando a string e o catálogo.
 
 Rotina para que se inicialize o terminal:
@@ -11932,6 +11976,7 @@ Rotina para que se encolha uma caixa usando uns twips:
   Subtraia os twips desde a coordenada X2 desta caixa.
   Subtraia os twips desde a coordenada Y2 desta caixa.
 
+Rotina para que se finalize os componentes;
 Rotina para que se feche este programa;
 Rotina para que se feche o nosso programa;
 Rotina para que se feche nosso programa;
@@ -12972,6 +13017,10 @@ Rotina para que se escreva um trecho para um endereço completo:
 Rotina para que se escreva um byte:
   Atribua o byte para uma string.
   Escreva a string.
+
+Rotina para que se escreva um número para StdOut:
+  Converta o número para uma string.
+  Escreva a string para StdOut.
 
 Rotina para que se escreva um byte para o console do NppExec;
 Rotina para que se escreva um byte para o console do Notepad++;
@@ -20381,7 +20430,7 @@ Rotina para que se adicione um número para um segundo número:
   Decodifique $8B8508000000. \ mov eax,[ebp+8] ; -> salva o valor do endereço atual da pilha do processador + 8 no registrador de acumulação (eax)
   Decodifique $8B00. \ mov eax,[eax] ; ->  load memory pointed to by accumulator into accumulator
   Decodifique $8B9D0C000000. \ mov ebx,[ebp+12] ; -> load the current stack address + 12 into working register
-  Decodifique $0103. \ adicione [ebx],eax ; ->add accumulator to memory pointed to by working register
+  Decodifique $0103. \ add [ebx],eax ; ->add accumulator to memory pointed to by working register
 
 Rotina para que se conjuncione logicamente um byte com um segundo byte:
   Decodifique $8B850C000000. \ mov eax,[ebp+12] \ o segundo byte
@@ -20634,7 +20683,7 @@ Função para que se determine se um número é um segundo número:
 
 Função para que se determine se um ponteiro é maior do que um segundo ponteiro;
 Função para que se determine se um número é maior do que um segundo número:
-  Decodifique $C7C001000000. \ mov eax,1 \ assume true
+  Decodifique $C7C001000000. \ mov eax,1 \ presume que o número seja maior logo de começo
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o número
   Decodifique $8B1B. \ mov ebx,[ebx]
   Decodifique $8B8D0C000000. \ mov ecx,[ebp+12] \ o segundo número
