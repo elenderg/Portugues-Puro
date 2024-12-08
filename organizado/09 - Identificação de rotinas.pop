@@ -66,7 +66,8 @@ Rotina para que se organize o catálogo de rotinas úteis usando umas referências:
     Se a referência for inexistente, retorne.
     Atribua o ponteiro desta referência para uma rotina.
     Se a rotina for inexistente,
-      Apresente uma mensagem de erro contendo "Erro interno #134. A rotina não foi localizada";
+      Apresente uma mensagem de erro contendo
+        "Erro #076. A rotina não foi localizada"; \ Erro interno
       Retorne.
     Copie as unidades semânticas desta rotina para umas unidades semânticas.
     Reduza as unidades semânticas por utilização.

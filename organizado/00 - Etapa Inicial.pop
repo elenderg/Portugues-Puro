@@ -441,7 +441,7 @@ Rotina para que se faça tudo:
   Atribua 1252 a um número denominado codepage.
   Processe "kernel32.dll" "SetConsoleOutputCP" com o codepage retornando um número denominado status de erro.
   Se o status de erro for 0 [NULL], 
-    Escreva "Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT.
+    Escreva "Erro #001. Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT.
   Obtenha uma string desde os argumentos da linha de comando.
   Se a string estiver em branco, 
     Escreva "--------------------------------------------------------------------------------------------------------------- " junto com o texto CRLF para StdOut;
@@ -453,7 +453,7 @@ Rotina para que se faça tudo:
   Se o conteúdo deste caractere final desta string não for a barra invertida, 
     Acrescente a barra invertida para a string.
   Se a string não estiver no sistema de arquivos, 
-    Escreva "Erro. O diretório '" junto com a string seguido de "' não foi encontrado." junto com o texto CRLF para StdOut;
+    Escreva "Erro #002. O diretório '" junto com a string seguido de "' não foi encontrado." junto com o texto CRLF para StdOut;
     Retorne.
   Escreva "Compilando o diretório '" junto com a string seguido de "' ..." junto com o texto CRLF para StdOut. \ #0
   Escreva o texto CRLF para StdOut.

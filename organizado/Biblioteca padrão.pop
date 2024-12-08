@@ -38,6 +38,8 @@ Uma string é uma estrutura com
 
 Uma lista é um ponteiro [que aponta] para uma lista estruturada.
 
+Uma lista estrutura é uma lista estruturada.
+
 Uma lista estruturada é uma estrutura com
   Uma lista denominada lista posterior e
   Uma lista denominada lista anterior.

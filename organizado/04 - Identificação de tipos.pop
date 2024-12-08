@@ -241,13 +241,13 @@ Rotina para que se destrinche um tipo (tipos de dados primitivos):
   Encontre o tipo base deste tipo usando o nome do tipo primitivo deste tipo e o catálogo de tipos.
   Se o tipo base deste tipo for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #139. Tipo base '" junto com o nome do tipo primitivo deste tipo 
+      "Erro #037. Tipo base '" junto com o nome do tipo primitivo deste tipo 
       seguido de "' inválido." e o endereço local deste tipo;
     Retorne.
   Ative o sinalizador de recursividade deste tipo.
   Se o sinalizador de recursividade deste tipo base deste tipo estiver ativo,
     Apresente a mensagem de erro contendo 
-      "Erro #140. Definição recursiva encontrada no tipo '" junto com o nome do tipo primitivo deste tipo 
+      "Erro #038. Definição recursiva encontrada no tipo '" junto com o nome do tipo primitivo deste tipo 
       seguido de "'." e o endereço local deste tipo;
     Retorne.
   Destrinche o tipo base deste tipo (tipos de dados primitivos). \ RECURSÃO
@@ -294,21 +294,21 @@ Rotina para que se verifique por informações opcionais inválidas em um tipo (con
   Se existir algum problema de compilação, retorne.
   Se o tipo não puder ser reduzido para "ponteiro",
     Apresente uma mensagem de erro contendo 
-      "Erro #15. A palavra-chave 'para' só pode ser utilizada com variáveis do tipo ponteiro." e o endereço local deste tipo;
+      "Erro #039. A palavra-chave 'para' só pode ser utilizada com variáveis do tipo ponteiro." e o endereço local deste tipo;
     Retorne.
 
 Rotina para que se verifique por informações opcionais inválidas em um tipo (campos):
   Se existir algum problema de compilação, retorne.
   Se o tipo não puder ser reduzido para "estrutura",
     Apresente uma mensagem de erro contendo 
-      "Erro #13. A palavra-chave 'com' deve ser utilizada apenas em estruturas e listas." e o endereço local deste tipo;
+      "Erro #040. A palavra-chave 'com' deve ser utilizada apenas em estruturas e listas." e o endereço local deste tipo;
     Retorne.
 
 Rotina para que se verifique por informações opcionais inválidas em um tipo (tipos fracionários):
   Se existir algum problema de compilação, retorne.
   Se o tipo não puder ser reduzido para "número",
     Apresente uma mensagem de erro contendo 
-      "Erro #14. Proporções e escalas de medida só devem ser utilizadas em tipos de dados numéricos." e o endereço local deste tipo;
+      "Erro #041. Proporções e escalas de medida só devem ser utilizadas em tipos de dados numéricos." e o endereço local deste tipo;
     Retorne.
 
 Rotina para que se destrinche um tipo (dados opcionais - ponteiro):
@@ -320,7 +320,7 @@ Rotina para que se destrinche um tipo (dados opcionais - ponteiro):
   Encontre o tipo do conteúdo deste tipo usando o nome do conteúdo deste tipo e o catálogo de tipos. \?
   Se o tipo do conteúdo deste tipo for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #141. Não foi possível determinar o tipo do conteúdo apontado por este ponteiro." e o endereço local deste tipo;
+      "Erro #042. Não foi possível determinar o tipo do conteúdo apontado por este ponteiro." e o endereço local deste tipo;
     Retorne.
 
 Rotina para que se destrinche um tipo (dados opcionais - estrutura):
@@ -334,22 +334,23 @@ Rotina para que se destrinche um tipo (dados opcionais - estrutura):
     Se o campo for inexistente, pare.
     Se o campo estiver duplicada nos campos deste tipo,
     Apresente uma mensagem de erro contendo 
-      "Erro #142. O campo '" junto com o nome deste campo 
+      "Erro #043. O campo '" junto com o nome deste campo 
       seguido de "' já foi definido anteriormente nesta estrutura." e o endereço local deste campo;
     Retorne.
     Destrinche o campo.
     Se existir algum problema de compilação, retorne.
     Se o sinalizador de recursividade deste tipo deste campo estiver ativo,
     Apresente a mensagem de erro contendo 
-      "Erro #143. Definição recursiva encontrada no campo '" 
+      "Erro #044. Definição recursiva encontrada no campo '" 
       junto com o nome deste tipo deste campo seguido de "'." e o endereço local deste campo;
     Retorne.
     Destrinche o tipo deste campo (dados complementares).
     Se o sinalizador de referência deste campo não estiver ativo, reitere.
     Se o tipo deste campo não puder ser reduzido para "ponteiro",
       Apresente a mensagem de erro contendo 
-        "Erro #144. O campo '" 
-        junto com o nome deste campo seguido de "'não é do tipo ponteiro" e o endereço local deste campo;
+        "Erro #045. O campo '" 
+        junto com o nome deste campo 
+        seguido de "' não é do tipo ponteiro" e o endereço local deste campo;
       Retorne.
   Reitere.
   Elimine apelidos duplicados desde os campos deste tipo.
@@ -399,8 +400,8 @@ Rotina para que se destrinche um campo:
     Limpe o apelido deste campo. \ poderia encurtar para "Limpe-o" ou "limpe ele" "it"
   Se o nome deste campo não for algum nome de campo válido,
     Apresente uma mensagem de erro contendo 
-    "Erro #135. '" junto com o nome deste campo seguido de 
-    "' é um nome de campo inválido." e o endereço local deste campo;
+      "Erro #046. O identificador '" junto com o nome deste campo seguido de 
+      "' é um nome de campo inválido." e o endereço local deste campo;
     Retorne.
 
 Função para que se determine se um nome é algum nome de campo válido:

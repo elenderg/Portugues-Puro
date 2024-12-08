@@ -62,7 +62,7 @@ Rotina para que se inicialize um Cabeçalho PE (cabeçalho opcional):
     o catálogo geral de rotinas. \ AddressOfEntryPointInMemory
   Se a rotina for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro interno #126. Uma das rotinas de inicialização do cabeçalho PE não foi encontrada. ";
+      "Erro #194. Uma das rotinas de inicialização do cabeçalho PE não foi encontrada. "; \ Erro interno
     Retorne.
   Atribua o endereço desta rotina menos o image base ao AddressOfEntryPointInMemory deste Cabeçalho PE.
   Atribua o Endereço Base desta Região de Código ao AddressOfCodeInMemory deste Cabeçalho PE. \BaseOfCode

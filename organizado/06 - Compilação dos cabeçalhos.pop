@@ -43,20 +43,20 @@ Rotina para que se compile o cabeçalho próprio para uma rotina usando um percorr
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum comando condicional,
     Apresente uma mensagem de erro contendo 
-      "Erro #35. Esperado encontrar 'para que se determine se'. Encontrado '" 
-      [junto com o segmento inicial deste percorredor] e o percorredor;
+      "Erro #057. Esperado encontrar 'para que se determine se'. Encontrado '" 
+      junto com o segmento inicial deste percorredor e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Ative o sinalizador de deliberação desta rotina.
   Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor.
   Se algumas dentre as unidades semânticas desta rotina forem advérbios de negação,
     Apresente a mensagem de erro contendo 
-      "Erro #36. É proibido utilizar o identificador 'não' em cabeçalhos de funções booleanas." e o percorredor;
+      "Erro #058. É proibido utilizar o identificador 'não' em cabeçalhos de funções booleanas." e o percorredor;
     Retorne.
   Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
   Se a representação interna da rotina desta rotina estiver no catálogo geral de rotinas,
     Apresente a mensagem de erro contendo 
-    "Erro #37. A rotina para que se ''" junto com a representação interna da rotina desta rotina 
+    "Erro #059. A rotina para que se ''" junto com a representação interna da rotina desta rotina 
     seguido de "' já havia sido definida anteriormente." e o endereço local desta rotina;
     Retorne.
   Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
@@ -80,7 +80,7 @@ Rotina para que se compile umas unidades semânticas e uns parâmetros usando um p
     Reitere.
   \Se o percorredor estiver sobre uma rotina não definida,
     Apresente uma mensagem de erro contendo 
-      "Erro #48. A rotina 'para que se '" junto com o segmento inicial deste percorredor 
+      "Erro #060. A rotina 'para que se '" junto com o segmento inicial deste percorredor 
       seguido de "' não foi localizada." e o percorredor.
 
 Rotina para que se compile umas unidades semânticas e uns parâmetros usando um percorredor (artigo definido):
@@ -284,7 +284,7 @@ Rotina para que se compile umas unidades semânticas e uns parâmetros usando um p
   Destrinche o parâmetro.
   Se o parâmetro estiver duplicada nos parâmetros,
     Apresente uma mensagem de erro contendo 
-      "Erro #49. O identificador '" junto com o nome deste parâmetro seguido de 
+      "Erro #061. O identificador '" junto com o nome deste parâmetro seguido de 
       "' já foi declarado como parâmetro anteriormente nesta rotina." e o endereço local deste parâmetro;
     Retorne.
   Adicione uma unidade semântica para as unidades semânticas usando o tipo deste parâmetro.
@@ -441,27 +441,27 @@ Rotina para que se compile o cabeçalho próprio para uma rotina usando um percorr
   Adicione uma segunda unidade semântica para as unidades semânticas desta rotina usando "'s " junto com o nome.
   Se o segmento inicial deste percorredor não for alguma preposição de atribuição,
     Apresente uma mensagem de erro contendo 
-      "Erro #187. Esperado: 'para'. Encontrado: '" 
+      "Erro #062. Esperado: 'para'. Encontrado: '" 
       junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
     Retorne.
   Adicione uma terceira unidade semântica para as unidades semânticas desta rotina usando "para".
   Converta as unidades semânticas desta rotina para uma representação interna da rotina.
   Se a representação interna da rotina estiver no catálogo geral de rotinas,
     Apresente a mensagem de erro contendo 
-      "Erro #188. A 'rotina para que se " junto com a representação interna da rotina 
+      "Erro #063. A 'rotina para que se " junto com a representação interna da rotina 
       seguido de "' já foi definida anteriormente." e o endereço local desta rotina;
     Retorne.
   Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum artigo indefinido,
     Apresente a mensagem de erro contendo 
-      "Erro #189. Erro. Esperado encontrar um artigo indefinido. Encontrado: '" 
+      "Erro #064. Erro. Esperado encontrar um artigo indefinido. Encontrado: '" 
       junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
     Retorne.
   Compile as unidades semânticas desta rotina e o parâmetros desta rotina usando o percorredor (artigo indefinido).
   Se o segmento inicial deste percorredor não estiver em branco,
     Apresente a mensagem de erro contendo 
-      "Erro #190. O compilador detectou instruções inválidas no final desta rotina." 
+      "Erro #065. O compilador detectou instruções inválidas no final desta rotina." 
       [junto com o segmento inicial deste percorredor seguido de "'." junto com] e o percorredor;
     Retorne.
   Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
@@ -497,34 +497,34 @@ Rotina para que se compile o cabeçalho próprio para uma rotina usando um percorr
     Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo definido).
   Se o segmento inicial deste percorredor não for algum possessivo inglês,
     Apresente uma mensagem de erro contendo 
-      "Erro #38. Funções de atribuição requerem a utilização de um apóstro seguido de um s ['s]" e o percorredor;
+      "Erro #066. Funções de atribuição requerem a utilização de um apóstro seguido de um s ['s]" e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Examine um nome usando o percorredor.
   Adicione uma segunda unidade semântica para as unidades semânticas desta rotina usando "'s " junto com o nome.
   Se o segmento inicial deste percorredor não for "para",
     Apresente a mensagem de erro contendo 
-      "Erro #39. Esperado 'para' após o identificador. Encontrado '" 
+      "Erro #067. Esperado 'para' após o identificador. Encontrado '" 
       junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
     Retorne. \ not translated - no possessives em Spanish
   Adicione uma terceira unidade semântica para as unidades semânticas desta rotina usando "para".
   Converta as unidades semânticas desta rotina para uma representação interna da rotina.
   Se a representação interna da rotina estiver no catálogo geral de rotinas,
     Apresente a mensagem de erro contendo 
-      "Erro #40. A rotina para que se '" junto com a representação interna da rotina 
+      "Erro #068. A rotina para que se '" junto com a representação interna da rotina 
       seguido de "' já foi definida anteriormente." e o endereço local desta rotina;
     Retorne.
   Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum artigo indefinido,
     Apresente a mensagem de erro contendo 
-      "Erro #41. Esperava encontrar um artigo indefinido. Encontrado '" 
+      "Erro #069. Esperava encontrar um artigo indefinido. Encontrado '" 
       junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
     Retorne.
   Compile as unidades semânticas desta rotina e os parâmetros desta rotina usando o percorredor (artigo indefinido).
   Se o segmento inicial deste percorredor não estiver em branco,
     Apresente a mensagem de erro contendo 
-      "Erro #42. O compilador detectou instruções inválidas no final desta rotina." e o percorredor;
+      "Erro #070. O compilador detectou instruções inválidas no final desta rotina." e o percorredor;
     Retorne. \ not translated - no possessives em Spanish
   Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
   Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas. \ para utilizar com os employs
@@ -537,7 +537,7 @@ Rotina para que se compile o cabeçalho próprio para uma rotina usando um percorr
   Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
   Se a representação interna da rotina desta rotina estiver no catálogo geral de rotinas,
     Apresente uma mensagem de erro contendo 
-      "Erro #34. A 'rotina para que se '" junto com a representação interna da rotina desta rotina 
+      "Erro #071. A 'rotina para que se '" junto com a representação interna da rotina desta rotina 
       seguido de "' já foi definida anteriormente." e o endereço local desta rotina;
     Retorne.
   Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
@@ -549,7 +549,7 @@ Rotina para que se compile o cabeçalho próprio para uma rotina usando um percorr
   Converta as unidades semânticas desta rotina para a representação interna da rotina desta rotina.
   Se a representação interna da rotina desta rotina estiver no catálogo geral de rotinas,
     Apresente uma mensagem de erro contendo 
-      "Erro #43. A 'rotina para que se '" junto com a representação interna da rotina desta rotina 
+      "Erro #072. A 'rotina para que se '" junto com a representação interna da rotina desta rotina 
       seguido de "' já foi definida anteriormente." e o endereço local desta rotinas;
     Retorne.
   Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.

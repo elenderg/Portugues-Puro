@@ -72,7 +72,7 @@ Rotina para que se calcule os deslocamentos das redefinições em um tipo:
     Se o novo nome deste campo estiver em branco, reitere.
     Encontre um segundo campo usando o novo nome deste campo e os campos deste tipo.
     Se o segundo campo for inexistente,
-      Apresente uma mensagem de erro contendo "Erro #12. O campo '" 
+      Apresente uma mensagem de erro contendo "Erro #073. O campo '" 
         junto com o novo nome deste campo seguido de "' não pode ser localizado na estrutura '"
         junto com o nome deste tipo seguido de "'." e o endereço local deste campo;
       Retorne.

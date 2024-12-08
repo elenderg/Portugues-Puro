@@ -20,7 +20,7 @@ Rotina para que se destrinche uma variável global:
     Destrinche a variável global (compilação do corpo).
   Se o nome do tipo desta variável global estiver em branco,
     Apresente uma mensagem de erro contendo 
-      "Erro #136. A variável global '" junto com o nome desta variável global 
+      "Erro #047. A variável global '" junto com o nome desta variável global 
       seguido de "' possui um tipo inválido." e o endereço local desta variável global;
     Retorne.
   Destrinche a variável global como uma variável.
@@ -32,14 +32,14 @@ Rotina para que se destrinche uma variável global (compilação do corpo):
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum valor literal,
     Apresente uma mensagem de erro contendo 
-      "Erro #137. Erro de tipo. O tipo: '" junto com o segmento inicial deste percorredor 
+      "Erro #048. Erro de tipo. O tipo: '" junto com o segmento inicial deste percorredor 
       seguido de "' deve possuir um valor literal." e o percorredor;
     Retorne.
   Compile um valor literal usando o percorredor.
   Se existir algum problema de compilação, retorne.
   Se o segmento inicial deste percorredor não estiver em branco,
     Apresente a mensagem de erro contendo 
-      "Erro #138. Esperado '.' após a declaração de uma variável global."\ ao invés de " 
+      "Erro #049. Esperado '.' após a declaração de uma variável global."\ ao invés de " 
       [junto com o segmento inicial deste percorredor ] e o percorredor;
     Retorne.
   Se o nome do tipo desta variável global estiver em branco, 
@@ -69,8 +69,10 @@ Rotina para que se compile um valor literal usando um percorredor:
     Compile o valor literal usando o percorredor (cadeia de caracteres);
     Retorne.
   \Se o segmento inicial deste percorredor não for nada disso, 
-    Apresente uma mensagem de erro contendo "Erro interno #44. O valor literal '" 
-      junto com o segmento inicial deste percorredor seguido de "' não pode ser compilado." e o percorredor.
+    Apresente uma mensagem de erro contendo 
+      "Erro #050. O valor literal '" \ Erro interno
+      junto com o segmento inicial deste percorredor seguido de 
+      "' não pode ser compilado." e o percorredor.
 
 Rotina para que se adicione um valor literal para umas variáveis usando um endereço local:
   Adicione o valor literal como uma variável para as variáveis usando "literal" e o endereço local.
@@ -107,14 +109,14 @@ Rotina para que se destrinche uma variável:
     Retorne.
   \Se o tipo desta variável for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #145. Não foi possível determinar o tipo da variável '" 
+      "Erro #051. Não foi possível determinar o tipo da variável '" 
       junto com o nome desta variável seguido de "'." e o endereço local desta variável.
 
 Rotina para que se destrinche uma variável (usando o nome do tipo declarado):
   Encontre o tipo desta variável usando o nome do tipo desta variável e o catálogo de tipos.
   Se o tipo desta variável for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #146. Não foi possível determinar o tipo da variável '" 
+      "Erro #052. Não foi possível determinar o tipo da variável '" 
       junto com o nome do tipo desta variável seguido de "'." e o endereço local desta variável;
     Retorne.
 
@@ -163,12 +165,12 @@ Rotina para que se compile um valor literal usando um percorredor (valor numéric
   Encontre um tipo usando o nome e o catálogo de tipos.
   Se o tipo for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #45. O identificador '" junto com o nome seguido de 
+      "Erro #053. O identificador '" junto com o nome seguido de 
       "' faz referência a unidade de medida inexistente." e o endereço local deste valor literal;
     Retorne.
   Se o tipo não puder ser reduzido para "número",
     Apresente a mensagem de erro contendo 
-      "Erro #46. O identificador '" junto com o nome seguido de 
+      "Erro #054. O identificador '" junto com o nome seguido de 
       "' não corresponde um tipo numérico válido." e o endereço local deste valor literal;
     Retorne.
   Atribua a razão de escala deste tipo para uma proporção denominada proporção fixa. 
@@ -179,7 +181,7 @@ Rotina para que se compile um valor literal usando um percorredor (valor numéric
   Reduza a proporção fixa.
   Se o denominador deste proporção fixa for 0,
     Apresente a mensagem de erro contendo 
-      "Erro #47. Proporção com denominador igual a 0. Unidade de medida inválida."
+      "Erro #055. Proporção com denominador igual a 0. Unidade de medida inválida."
       [junto com o nome deste tipo seguido de "'."] e o endereço local deste valor literal.
   Atribua o numerador deste proporção fixa dividido pelo denominador desta proporção fixa para um número.
   Atribua o nome deste tipo ao nome do tipo deste valor literal.
@@ -223,7 +225,7 @@ Rotina para que se catalogue um valor literal:
   Se o valor literal for inexistente, retorne.
   Se o nome deste valor literal estiver no catálogo de variáveis hexadecimais,
     Apresente uma mensagem de erro contendo 
-      "Erro interno #124. Esta variável já foi inicializada anteriormente." 
+      "Erro #056. Esta variável já foi inicializada anteriormente." \ Erro interno
       [junto com o nome deste valor literal]
       e o endereço local deste valor literal;
     Retorne.
