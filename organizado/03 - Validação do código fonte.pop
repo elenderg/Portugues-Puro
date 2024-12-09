@@ -288,12 +288,13 @@ Função para que se determine se uma string é algum símbolo:
   Se o conteúdo deste caractere inicial desta string for algum símbolo, diga sim.
   Diga não.
 
-Função para que se determine se um byte é algum símbolo: \ esta rotina deveria estar na biblioteca padrão
+Função para que se determine se um byte é algum símbolo: 
+  \ esta rotina deveria estar na biblioteca padrão
   Se o byte for o acento circumflexo, diga sim.
   Se o byte for o barra vertical, diga sim.
   Se o byte for o asterisco, diga sim.
   Se o byte for o sinal de adição, diga sim.
-  Se o byte for o hífem, diga sim.
+  Se o byte for o hífen, diga sim.
   Se o byte for o barra inclinada, diga sim.
   Se o byte for o símbolo menor do que, diga sim.
   Se o byte for o símbolo maior do que, diga sim.
@@ -1528,7 +1529,7 @@ Rotina para que se examine uma cabeçalho de rotina usando um percorredor:
     Se o segmento inicial deste percorredor estiver em branco, retorne.
     Se o segmento inicial deste percorredor for o ponto&vírgula, retorne.
     Se o segmento inicial deste percorredor for o sinal de dois pontos, retorne.
-    Se o segmento inicial deste percorredor for o ponto final, retorne. \ ??????????????????????
+    Se o segmento inicial deste percorredor for o ponto final, retorne.
     Atribua o caractere final deste segmento inicial deste percorredor ao caractere final deste cabeçalho de rotina.
     Mova o percorredor (usando diretrizes de compilação).
   Reitere.

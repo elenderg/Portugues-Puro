@@ -1594,11 +1594,11 @@ O símbolo asterisco é um byte igual a 42.
 O plus-sign byte é um byte igual a 43.
 O sinal de adição é um byte igual a 43.
 A vírgula é um byte igual a 44.
-O hífem é um byte igual a 45.
+O hífen é um byte igual a 45.
 O traço é um byte igual a 45.
 O sinal de subtração é um byte igual a 45.
-O sinal de hífem é um byte igual a 45.
-O símbolo hífem é um byte igual a 45.
+O sinal de hífen é um byte igual a 45.
+O símbolo hífen é um byte igual a 45.
 O ponto final é um byte igual a 46.
 A barra inclinada é um byte igual a 47.
 O número zero é um byte igual a 48.
@@ -2039,7 +2039,7 @@ A tecla de igualdade é uma tecla igual a 187.
 A tecla de sinal de igualdade é uma tecla igual a 187.
 A tecla de símbolo de igualdade é uma tecla igual a 187.
 A tecla de igualdade do teclado numérico é uma tecla igual a 187.
-A tecla hífem é uma tecla igual a 189.
+A tecla hífen é uma tecla igual a 189.
 A tecla traço é uma tecla igual a 189.
 A tecla VK_OEM_3 é uma tecla igual a 192. \\ Essa tecla depende do teclado do fabricante, e do idioma do teclado. Nos EUA é a tecla que fica em cima da tecla Tab
 
@@ -2551,7 +2551,7 @@ Rotina para que se converta uma fração para uma string:
   Se o fração deste numeral misto for 0,
     Retorne.
   Se a string não estiver em branco,
-    Acrescente o hífem para a string.
+    Acrescente o sinal de adição para a string.
   Acrescente o numerador deste numeral misto seguido de "/" junto com o denominador deste numeral misto para a string.
 
 Rotina para que se atribua um par de números fracionários para um segundo par de números fracionários:
@@ -3843,8 +3843,12 @@ Rotina para que se converta uma fração para uma string usando um número:
   Zero preencha o valor numérico usando o número e acrescente o mesmo para a string.
   Atribua a quantidade de caracteres desta string menos o número mais 1 para um byte#.
   Insira "." para a string antes de o byte#. \ TODO: verificar se é necessário trocar para vírgula
-  Se o conteúdo deste caractere inicial desta string for o ponto final, anteponha "0" para a string.
-  Se o sinalizador estiver ativo, anteponha "-" para a string.
+  Se o conteúdo deste caractere inicial desta string for o ponto final, 
+    Anteponha "0" para a string.
+  Se o sinalizador estiver ativo,
+    Anteponha "-" para a string.
+  Se o sinalizador estiver ativo,
+    Anteponha "-" para a string.
 
 Rotina para que se converta um texto hexadecimal para uma fração:
   Se a quantidade de caracteres deste texto hexadecimal não for a magnitude desta fração,
@@ -4059,11 +4063,13 @@ Rotina para que se converta uma string para uma fração:
     Converta a string para o numerador desta fração;
     Retorne.
   Lance um subtexto sobre a string.
-  Se o conteúdo deste caractere inicial deste subtexto for algum sinal aritmético, adicione 1 para o caractere inicial deste subtexto.
+  Se o conteúdo deste caractere inicial deste subtexto for algum sinal aritmético, 
+    Adicione 1 para o caractere inicial deste subtexto.
   Se o subtexto estiver em branco, retorne.
-  Subdivida o subtexto em um subtexto numérico e uma subtexto fracionário usando o hífem. \ Insere o hífem no meio do número misto
-  Se o subtexto numérico estiver em branco, atribua o subtexto ao subtexto fracionário.
-  Subdivida a subtexto fracionário em um numerador textual e um denominador textual usando o barra inclinada.
+  Subdivida o subtexto em um subtexto numérico e um subtexto fracionário usando o sinal de adição.
+  Se o subtexto numérico estiver em branco, 
+    Atribua o subtexto ao subtexto fracionário.
+  Subdivida a subtexto fracionário em um numerador textual e um denominador textual usando a barra inclinada.
   Converta o subtexto numérico para um número inteiro.
   Converta o numerador textual para um numerador número.
   Converta o denominador textual para um denominador número.
@@ -4075,7 +4081,8 @@ Rotina para que se converta uma string para uma fração:
     Adicione o denominador número vezes o número inteiro para o numerador número.
   Atribua o numerador número ao numerador desta fração.
   Atribua o denominador número ao denominador desta fração.
-  Se o conteúdo deste caractere inicial desta string for o hífem, inverta o sinal de a fração.
+  Se o conteúdo deste caractere inicial desta string for o hífen, 
+    Inverta o sinal de a fração.
 
 Rotina para que se converta uma string para uma cifra hexadecimal:
   Limpe a cifra hexadecimal.
@@ -4091,7 +4098,8 @@ Rotina para que se converta uma string para um número:
   Atribua 0 ao número.
   Lance um subtexto sobre a string.
   Se o subtexto estiver em branco, retorne.
-  Se o conteúdo deste caractere inicial deste subtexto for algum sinal aritmético, adicione 1 para o caractere inicial deste subtexto.
+  Se o conteúdo deste caractere inicial deste subtexto for algum sinal aritmético, 
+    Adicione 1 para o caractere inicial deste subtexto.
   Itere.
     Se o subtexto estiver em branco, pare.
     Multiplique o número por 10.
@@ -4100,7 +4108,8 @@ Rotina para que se converta uma string para um número:
     Adicione o segundo número para o número.
     Adicione 1 para o caractere inicial deste subtexto.
   Reitere.
-  Se o conteúdo deste caractere inicial desta string for o hífem, inverta o sinal de o número.
+  Se o conteúdo deste caractere inicial desta string for o hífen, 
+    Inverta o sinal de o número.
 
 Rotina para que se converta uma string para um número entre um segundo número e um terceiro número:
   Converta a string para o número.
@@ -6124,7 +6133,7 @@ Função para que se determine se uma string é algum numeral misto literal:
   Se o subtexto estiver em branco, diga não.
   Se o conteúdo deste caractere inicial deste subtexto não for algum indicador numérico, diga não.
   Se o conteúdo deste caractere inicial deste subtexto for algum sinal aritmético, adicione 1 para o caractere inicial deste subtexto.
-  Subdivida o subtexto em um subtexto numérico e uma subtexto fracionário usando o hífem.
+  Subdivida o subtexto em um subtexto numérico e uma subtexto fracionário usando o sinal de adição.
   Se o subtexto numérico não for algum número inteiro, diga não.
   Se a subtexto fracionário não for algum fração literal, diga não.
   Diga sim.
@@ -10600,7 +10609,8 @@ Rotina para que se converta um número para uma string:
     Se o quociente for 0, pare.
     Atribua o quociente ao número.
   Reitere.
-  Se o número original for menor do que 0, anteponha o hífem para a string.
+  Se o número original for menor do que 0, 
+    Anteponha o hífen para a string.
 
 Rotina para que se atribua um número sobre o stack:
   Converta o número para um segmento inicial.

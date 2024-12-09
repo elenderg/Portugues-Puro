@@ -76,7 +76,7 @@ Função para que se determine se um byte é um byte ignorável:
   Se o byte for o & comercial, diga sim.
   Se o byte for o underline, diga sim.
   Se o byte for o single-quote byte, diga sim.
-  Se o byte for o hífem, diga sim.
+  Se o byte for o hífen, diga sim.
   Se o byte for o sinal de adição, diga sim.
   Se o byte for o barra inclinada, diga sim.
   Se o byte for o símbolo da Libra Esterlina, diga sim.
