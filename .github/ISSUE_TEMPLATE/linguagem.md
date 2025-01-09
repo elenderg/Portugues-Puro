@@ -26,13 +26,13 @@ assignees: 'elenderg'
 - **Descreva detalhamente as alterações na linguagem.**
 - **O que mudaria nas especificações da linguagem?**
 - **Esta alteração é retrocompatível?**
-  - A introdução de alterações que não sejam retrocompatíveis só deve ser efetuada quando os benefícios superarem os custos.
+  - **A introdução de alterações que não sejam retrocompatíveis só deve ser efetuada quando os benefícios superarem os custos.**
   - **Forneça um exemplo de código ou situação em que esta funcionalidade poderia ser utilizada, com um antes e depois.**
   - **Antes**
   - **Depois**
 - **Ortogonalidade: de que forma esta mudança interage ou se sobrepõe a funcionalidades já existentes?**
 - **O foco da mudança é obter ganho em desempenho?**
-  - **Se sim, de que forma esse ganho pode ser quantificado? Qual a métric autilizada**
+  - **Se sim, de que forma esse ganho pode ser quantificado? Qual a métrica utilizada**
 
 ### Custos
 
