@@ -525,23 +525,6 @@ Rotina para que se finalize o compilador:
   Destrua os tipos.
   Destrua os arquivos fontes.
 
-Rotina para que se defina uma variável global usando uma string:
-  Se existir algum problema de compilação, retorne.
-  Preserve a string.
-  Se a string começa com "O ", 
-    Remova os caracteres iniciais desde a string usando 2.
-  Se a string começa com "A ", 
-    Remova os caracteres iniciais desde a string usando 2.
-  Se a string começa com "Os ", 
-    Remova os caracteres iniciais desde a string usando 3.
-  Se a string começa com "As ",
-    Remova os caracteres iniciais desde a string usando 3.
-  Remova os caracteres ignoráveis no final de a string.
-  Lance um percorredor sobre a string.
-  Examine uma variável global usando o percorredor. \ ETAPA 03
-  Atribua inexistente no endereço local desta variável global.
-  Duplique a variável global retornando uma segunda variável global.
-  Acrescente a segunda variável global para as variáveis globais prededinidas.
 
 
 
@@ -568,6 +551,25 @@ Rotina para que se compile um endereço da pasta usando um nível de profundidade:
   Compile o endereço da pasta (vinculação). \ #015
   Compile o endereço da pasta (etapa final). \ #016
   Compile o endereço da pasta (interrupção). \ #017
+
+Rotina para que se defina uma variável global usando uma string:
+  Se existir algum problema de compilação, retorne.
+  Preserve a string.
+  Se a string começa com "O ", 
+    Remova os caracteres iniciais desde a string usando 2.
+  Se a string começa com "A ", 
+    Remova os caracteres iniciais desde a string usando 2.
+  Se a string começa com "Os ", 
+    Remova os caracteres iniciais desde a string usando 3.
+  Se a string começa com "As ",
+    Remova os caracteres iniciais desde a string usando 3.
+  Remova os caracteres ignoráveis no final de a string.
+  Lance um percorredor sobre a string.
+  Examine uma variável global usando o percorredor. \ ETAPA 03
+  Atribua inexistente no endereço local desta variável global.
+  Duplique a variável global retornando uma segunda variável global.
+  Acrescente a segunda variável global para as variáveis globais prededinidas.
+
 
 
 Rotina para que se compile um endereço da pasta usando um nível de profundidade (arquivos de código fonte): \#002
@@ -668,8 +670,6 @@ Rotina para que se execute os eventos:
     Se o evento for inexistente, retorne.
     Execute o evento.
   Reitere.
-
-
 
 Rotina para que se execute um evento:
   Se a categoria deste evento for "pressionamento de tecla", 

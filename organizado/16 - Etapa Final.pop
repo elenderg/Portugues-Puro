@@ -584,20 +584,23 @@ Rotina para que se mova um percorredor (símbolos):
 \Se o subtexto estiver no catálogo deste dicionário léxico, diga sim.
 \Diga não.
 
-Rotina para que se pluralize uma string:
-  Lance um percorredor sobre a string.
-  Itere.
-    Mova o percorredor (usando diretrizes de compilação).
-    Se o segmento inicial deste percorredor estiver em branco, pare.
-    Se uma string plural não estiver em branco, acrescente " " para a string plural.
-    Acrescente o segmento inicial deste percorredor para a string plural.
-    Se o segmento inicial deste percorredor for "de",
-      Ative um sinalizador;
-      Reitere. \ PLURAL
-    Se o sinalizador não estiver ativo, 
-      Pluralize a string plural (português - regras comuns).
-  Reitere.
-  Atribua a string plural à string.
+\ Rotina para que se pluralize uma string:
+  \ Lance um percorredor sobre a string.
+  \Atribua "" para uma string denominada string plural.
+  \ Itere.
+    \ Mova o percorredor (usando diretrizes de compilação).
+    \ Se o segmento inicial deste percorredor estiver em branco, pare.
+    \Se a string plural não estiver em branco, 
+    \ Se uma string plural não estiver em branco, 
+      \ Acrescente " " para a string plural.
+    \ Acrescente o segmento inicial deste percorredor para a string plural.
+    \ Se o segmento inicial deste percorredor for "de",
+      \ Ative um sinalizador;
+      \ Reitere. \\ PLURAL
+    \ Se o sinalizador não estiver ativo, 
+      \ Pluralize a string plural (português - regras comuns).
+  \ Reitere.
+  \ Atribua a string plural à string.
 
 
 \finalmente  acabou

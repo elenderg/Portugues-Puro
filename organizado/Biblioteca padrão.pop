@@ -20754,20 +20754,29 @@ Função para que se determine se um número é menor ou igual para um segundo númer
   Decodifique $0F8E06000000. \ jle sobre o próximo 1 statement
   Decodifique $C7C000000000. \ mov eax,0 \ now it is false
 
+Função para que se determine se uma string possui conteúdo dentro dela;
+Função para que se determine se uma string contém algum texto;
+Função para que se determine se uma string contém texto;
+Função para que se determine se uma string está definida;
+Função para que se determine se há conteúdo dentro de uma string;
+Função para que se determine se uma string está preenchida:
+  Se a string estiver em branco, diga não.
+  Diga sim.
+
 Função para que se determine se uma string está em branco:
-  \ assume true
-  Decodifique $B801000000. \ mov eax,1
+  \ A função começa presumindo veracidade
+  Decodifique $B801000000. \ mov eax, 1
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ a string
-    \ if primeiro for 0, exit
+    \ Se o caractere inicial for 0, retorna
   Decodifique $833B00. \ cmp [ebx],0
   Decodifique $0F8410000000. \ je end
-  \ if último for menor do que primeiro, exit
-  Decodifique $8B5304. \ mov edx,[ebx+4] \ último ponteiro
+  \ Se o caractere final for menor do que o inicial, retorna
+  Decodifique $8B5304. \ mov edx,[ebx+4] \ caractere final
   Decodifique $3B13. \ cmp edx,[ebx]
   Decodifique $0F8C05000000. \ jl end
-  \Diga não.:
+  \ Retorna falso.
   Decodifique $B800000000. \ mov eax,0
-  \ END:
+  \ FIM:
 
 Rotina para que se preencha bytes com um byte começando sob um ponteiro por um quantidade de bytes:
   Decodifique $8BBD0C000000. \ mov edi,[ebp+12] \ o ponteiro

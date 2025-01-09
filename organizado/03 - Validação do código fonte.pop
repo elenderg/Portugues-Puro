@@ -13,10 +13,12 @@ Rotina para que se examine uns arquivos fontes:
     Examine o arquivo fonte.
   Reitere.
 
+\Um arquivo fonte é uma lista com um endereço completo e um trecho.
+
 Rotina para que se examine um arquivo fonte:
   Se o arquivo fonte for inexistente, retorne.
   Se existir algum problema de compilação, retorne.
-  Lance um percorredor sobre o trecho deste arquivo fonte.
+  Lance um percorredor sobre o trecho deste arquivo fonte. \ STRING INICIAL
   Mova o percorredor (usando diretrizes de compilação).
   Itere.
     Se existir algum problema de compilação, retorne.
@@ -103,7 +105,7 @@ Rotina para que se apresente uma mensagem de erro contendo uma string e um ender
   Se o endereço do arquivo atual deste compilador estiver em branco,
     Retorne.
   Extraia um nome do arquivo desde o endereço do arquivo atual deste compilador.
-  Anteponha "Erro no arquivo '" junto com o nome do arquivo seguido de "'. " para a mensagem de erro deste compilador.
+  Anteponha "ERRO: Não foi possível compilar o arquivo '" junto com o nome do arquivo seguido de "'. " para a mensagem de erro deste compilador.
 
 Rotina para que se encontre um endereço completo e um número da linha usando um endereço de byte:
   Limpe o endereço completo.
@@ -143,11 +145,12 @@ Função para que se determine se uma string é o início de algum tipo:
   Se a string for algum artigo indefinido, diga sim.
   Diga não.
 
-Função para que se determine se uma string é algum artigo indefinido:
-  Se a string for algum artigo indefinido português, diga sim.
+\Função para que se determine se uma string é algum artigo indefinido:
+  \Se a string for algum artigo indefinido português, diga sim.
   \Se a string for algum pronome demonstrativo abrangente, diga sim. \Duplicado
-  Diga não.
+  \Diga não.
 
+Função para que se determine se uma string é algum artigo indefinido;
 Função para que se determine se uma string é algum artigo indefinido português: 
   \PAL
   Se a string for "um", diga sim.
@@ -186,15 +189,15 @@ Função para que se determine se uma string é algum pronome demonstrativo abrange
 
 Rotina para que se examine um tipo usando um percorredor:
   Se existir algum problema de compilação, retorne.
-  Se o segmento inicial deste percorredor for algum artigo indefinido português, 
-    Ative um sinalizador denominado artigo indefinido português.
+  Se o segmento inicial deste percorredor for algum artigo indefinido, 
+    Ative um sinalizador denominado artigo indefinido.
   Adicione o tipo para os tipos usando o caractere inicial deste segmento inicial deste percorredor.
   Mova o percorredor (usando diretrizes de compilação).
   Examine o nome deste tipo usando o percorredor.
   Atribua o nome deste tipo ao nome plural deste tipo.
   Atribua 0 para uma contagem.
-  Se o artigo indefinido português estiver ativo,
-    Pluralize o nome plural deste tipo (strings em português);
+  Se o artigo indefinido estiver ativo,
+    Pluralize o nome plural deste tipo;
     Adicione 1 à contagem.
   Se a contagem for igual ou maior do que 2,
     Apresente uma mensagem de erro contendo 
@@ -350,69 +353,71 @@ Função para que se determine se uma string é algum possessivo inglês:
   Diga não.
 
 Função para que se determine se uma string é algum verbo:
-  \PAL
+  Se a string for "cabe", diga sim.
+  Se a string for "couber", diga sim.
+  Se a string for "começa", diga sim.  
+  Se a string for "começar", diga sim.  
+  Se a string for "conter", diga sim.
+  Se a string for "contiver", diga sim.
+  Se a string for "contém", diga sim.  
   Se a string for "deve", diga sim.
+  Se a string for "devem", diga sim.
   Se a string for "deveria", diga sim.
   Se a string for "deveriam", diga sim.
-  Se a string for "devem", diga sim.
+  Se a string for "estamos", diga sim.
   Se a string for "estar", diga sim.
-  Se a string for "ser", diga sim.
-  Se a string for "for", diga sim.
-  Se a string for "forem", diga sim.
+  Se a string for "estará", diga sim.
+  Se a string for "estarão", diga sim.
+  Se a string for "estava", diga sim.
+  Se a string for "estavam", diga sim.
   Se a string for "estiver", diga sim.
   Se a string for "estiverem", diga sim.
-  Se a string for "estamos", diga sim.
-  Se a string for "há", diga sim.
-  Se a string for "houver", diga sim.
-  Se a string for "é", diga sim.
   Se a string for "está", diga sim.
-  Se a string for "são", diga sim.
   Se a string for "estão", diga sim.
-  Se a string for "foi", diga sim.
-  Se a string for "estava", diga sim.
-  Se a string for "foram", diga sim.
-  Se a string for "estavam", diga sim.
-  Se a string for "será", diga sim.
-  Se a string for "estará", diga sim.
-  Se a string for "serão", diga sim.
-  Se a string for "estarão", diga sim.
-  Se a string for "existir", diga sim.
-  Se a string for "existe", diga sim.
-  \Se a string for "seja", diga sim.
-  Se a string for "supera", diga sim.
-  Se a string for "superam", diga sim.
   Se a string for "excede", diga sim.
   Se a string for "excedem", diga sim.
-  Se a string for "pode", diga sim.
-  Se a string for "puder", diga sim.
-  Se a string for "puderem", diga sim.
-  Se a string for "podem", diga sim.
-  Se a string for "poderia", diga sim.
-  Se a string for "poderia", diga sim.
-  Se a string for "podemos", diga sim.
-  Se a string for "tem", diga sim.
-  Se a string for "têm", diga sim.
-  Se a string for "ter", diga sim.
-  Se a string for "possui", diga sim.
-  Se a string for "possuem", diga sim.
-  Se a string for "possuir", diga sim.
-  \\ trouble makers
-  Se a string for "inicia", diga sim.
-  Se a string for "iniciar", diga sim.
-  Se a string for "começa", diga sim.
-  Se a string for "começar", diga sim.
-  Se a string for "termina", diga sim.
-  Se a string for "terminar", diga sim.
+  Se a string for "existe", diga sim.
+  Se a string for "existem", diga sim.
+  Se a string for "existir", diga sim.
   Se a string for "finaliza", diga sim.
   Se a string for "finalizar", diga sim.
-  Se a string for "parece", diga sim.
+  Se a string for "é", diga sim.  
+  Se a string for "foi", diga sim.
+  Se a string for "for", diga sim.
+  Se a string for "foram", diga sim.
+  Se a string for "forem", diga sim.
+  Se a string for "há", diga sim.
+  Se a string for "houver", diga sim.  
+  Se a string for "inicia", diga sim.
+  Se a string for "iniciar", diga sim.
   Se a string for "necessita", diga sim.
   Se a string for "necessitar", diga sim.
+  Se a string for "parece", diga sim.
+  Se a string for "pode", diga sim.
+  Se a string for "podem", diga sim.
+  Se a string for "podemos", diga sim.
+  Se a string for "poderia", diga sim.
+  Se a string for "poderia", diga sim.
+  Se a string for "possuem", diga sim.
+  Se a string for "possui", diga sim.
+  Se a string for "possuir", diga sim.
+  Se a string for "puder", diga sim.
+  Se a string for "puderem", diga sim.
   Se a string for "requer", diga sim.
-  Se a string for "começa", diga sim.
-  Se a string for "começar", diga sim.
+  \Se a string for "seja", diga sim.
+  Se a string for "ser", diga sim.
+  Se a string for "será", diga sim.
+  Se a string for "serão", diga sim.
+  Se a string for "supera", diga sim.
+  Se a string for "superam", diga sim.
+  Se a string for "superar", diga sim.
+  Se a string for "são", diga sim.
+  Se a string for "tem", diga sim.
+  Se a string for "ter", diga sim.
   Se a string for "termina", diga sim.
   Se a string for "terminar", diga sim.
+  Se a string for "tiver", diga sim.
+  Se a string for "têm", diga sim.
   Diga não.
 
 Função para que se determine se uma string é algum operador aritmético:
@@ -420,7 +425,7 @@ Função para que se determine se uma string é algum operador aritmético:
   Se a string for "menos", diga sim.
   Se a string for "vezes", diga sim.
   Se a string for "dividido", diga sim.
-  Se a string for "depois", diga sim.
+  \Se a string for "depois", diga sim.
   Se a string for "seguido", diga sim.
   Se a string for "juntamente", diga sim.
   Se a string for "junto", diga sim.
@@ -642,23 +647,60 @@ Função para que se determine se uma string é algum advérbio de negação:
   Se a string for "não", diga sim.
   Diga não.
 
-Rotina para que se pluralize uma string (strings em português):
+Rotina para que se pluralize uma string:
   Lance um percorredor sobre a string.
+  Atribua "" para uma string denominada string pluralizada.
   Itere.
-    Mova o percorredor (usando diretrizes de compilação).
-    Se o segmento inicial deste percorredor estiver em branco, pare.
-    Se uma string plural não estiver em branco, 
-      Acrescente " " para a string plural.
-    Acrescente o segmento inicial deste percorredor para a string plural.
+    Mova o percorredor (palavras plurais). \ Aqui posso mudar a formação dos plurais.
+    Se o segmento inicial deste percorredor estiver em branco, pare. \ Se atingirmos o final da string.
+    Se a string pluralizada não estiver em branco, 
+      Acrescente " " para a string pluralizada.
+    Acrescente o segmento inicial deste percorredor para a string pluralizada.
     Se o segmento inicial deste percorredor for "de",
       Ative um sinalizador;
       Reitere. \ PLURAL
     Se o sinalizador não estiver ativo, 
-      Pluralize a string plural (português - regras comuns) .
+      Aplique o plural adequado para a string pluralizada.
   Reitere.
-  Atribua a string plural à string.
+  Atribua a string pluralizada à string.
 
-Rotina para que se pluralize uma string (português - regras comuns) :
+Rotina para que se mova um percorredor (palavras plurais): \ talvez aqui conserte o comando "subtraia"
+  [Itere.]
+    Se o sinalizador de erros deste compilador estiver ativo,
+       Limpe o segmento inicial deste percorredor;
+       Retorne.
+    Mova o percorredor retornando uma string de erro (plurais).
+    \Se a string de erro estiver definida e contiver conteúdo, 
+    Se a string de erro não estiver em branco,
+       Apresente uma mensagem de erro contendo a string de erro e o caractere inicial deste segmento inicial deste percorredor; \#191
+       Retorne.
+    \Se o segmento inicial deste percorredor for "del", recue o percorredor; Retorne. 
+    \ Spanish contraction "del"; fudged para "de l", short por "de el"
+    Se o segmento inicial deste percorredor estiver em branco, 
+      Retorne.
+    Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor for irrelevante, 
+      Reitere.
+    Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor for a barra invertida, 
+      Reitere.
+    Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor for o colchete esquerdo, 
+      Reitere.
+  \Reitere.
+
+Rotina para que se mova um percorredor retornando uma string de erro (plurais):
+  Limpe a string de erro.
+  Mova o percorredor (englobando tudo).
+  Se o segmento inicial deste percorredor estiver em branco, retorne.
+  Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor for o colchete esquerdo,
+    Mova o percorredor retornando a string de erro (validação de comentários de bloco);
+    Retorne.
+  Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor for as aspas duplas,
+    Mova o percorredor retornando a string de erro (validação de strings literais);
+    Retorne.
+  Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor for o parênteses esquerdo,
+    Mova o percorredor retornando a string de erro (diretrizes de validação de qualificadores);
+    Retorne.
+
+Rotina para que se aplique o plural adequado para uma string:
   \# https://www.normaculta.com.br/singular-e-plural/
   \# palavras que são exceções às regras
   Se a string for "caráter",

@@ -279,18 +279,18 @@ Rotina para que se acrescente uma string para uma segunda string usando uma terc
   Se a string for "duns",
     Acrescente "de esses" para a segunda string;
     Retorne.
-  Se a string for "daqui",
-    Acrescente "de aqui" para a segunda string;
-    Retorne.
-  Se a string for "dali",
-    Acrescente "de ali" para a segunda string;
-    Retorne.
-  Se a string for "dele",
-    Acrescente "de ele" para a segunda string;
-    Retorne.
-  Se a string for "dela",
-    Acrescente "de ela" para a segunda string;
-    Retorne.
+  \ Se a string for "daqui",
+    \ Acrescente "de aqui" para a segunda string;
+    \ Retorne.
+  \ Se a string for "dali",
+    \ Acrescente "de ali" para a segunda string;
+    \ Retorne.
+  \ Se a string for "dele",
+    \ Acrescente "de ele" para a segunda string;
+    \ Retorne.
+  \ Se a string for "dela",
+    \ Acrescente "de ela" para a segunda string;
+    \ Retorne.
   Se a string for "desse",
     Acrescente "de esse" para a segunda string;
     Retorne.
@@ -315,12 +315,12 @@ Rotina para que se acrescente uma string para uma segunda string usando uma terc
   Se a string for "destas",
     Acrescente "de estas" para a segunda string;
     Retorne.
-  Se a string for "disso",
-    Acrescente "de isso" para a segunda string;
-    Retorne.
-  Se a string for "disto",
-    Acrescente "de isto" para a segunda string;
-    Retorne.
+  \ Se a string for "disso",
+    \ Acrescente "de isso" para a segunda string;
+    \ Retorne.
+  \ Se a string for "disto",
+    \ Acrescente "de isto" para a segunda string;
+    \ Retorne.
   Se a string for "nesse",
     Acrescente "em esse" para a segunda string;
     Retorne.
@@ -336,9 +336,9 @@ Rotina para que se acrescente uma string para uma segunda string usando uma terc
   Se a string for "nisso",
     Acrescente "em isso" para a segunda string;
     Retorne.
-  Se a string for "nisto",
-    Acrescente "em isto" para a segunda string;
-    Retorne.
+  \ Se a string for "nisto",
+    \ Acrescente "em isto" para a segunda string;
+    \ Retorne.
   Se a string for "nessa",
     Acrescente "em essa" para a segunda string;
     Retorne.
@@ -354,57 +354,57 @@ Rotina para que se acrescente uma string para uma segunda string usando uma terc
   \Se a string for "donde", acrescente "de onde" para a segunda string; Retorne.
   \Se a string for "dentre", acrescente "de entre" para a segunda string; Retorne.
   \Se a string for "dantes", acrescente "de antes" para a segunda string; Retorne.
-  Se a string for "dalguém",
-    Acrescente "de alguém" para a segunda string;
-    Retorne.
-  Se a string for "dalgum",
-    Acrescente "de um" para a segunda string;
-    Retorne.
-  Se a string for "dalguma",
-    Acrescente "de uma" para a segunda string;
-    Retorne.
-  Se a string for "dalguns",
-    Acrescente "de uns" para a segunda string;
-    Retorne.
-  Se a string for "dalgumas",
-    Acrescente "de umas" para a segunda string;
-    Retorne.
-  Se a string for "nalgum",
-    Acrescente "em um" para a segunda string;
-    Retorne.
-  Se a string for "nalguma",
-    Acrescente "em uma" para a segunda string;
-    Retorne.
-  Se a string for "nalguns",
-    Acrescente "em uns" para a segunda string;
-    Retorne.
-  Se a string for "nalgumas",
-    Acrescente "em umas" para a segunda string;
-    Retorne.
-  Se a string for "doutro",
-    Acrescente "de outro" para a segunda string;
-    Retorne.
-  Se a string for "doutra",
-    Acrescente "de outra" para a segunda string;
-    Retorne.
-  Se a string for "doutros",
-    Acrescente "de outros" para a segunda string;
-    Retorne.
-  Se a string for "doutras",
-    Acrescente "de outras" para a segunda string;
-    Retorne.
-  Se a string for "noutro",
-    Acrescente "em outro" para a segunda string;
-    Retorne.
-  Se a string for "noutra",
-    Acrescente "em outra" para a segunda string;
-    Retorne.
-  Se a string for "noutros",
-    Acrescente "em outros" para a segunda string;
-    Retorne.
-  Se a string for "noutras",
-    Acrescente "em outras" para a segunda string;
-    Retorne.
+  \ Se a string for "dalguém",
+    \ Acrescente "de alguém" para a segunda string;
+    \ Retorne.
+  \ Se a string for "dalgum",
+    \ Acrescente "de um" para a segunda string;
+    \ Retorne.
+  \ Se a string for "dalguma",
+    \ Acrescente "de uma" para a segunda string;
+    \ Retorne.
+  \ Se a string for "dalguns",
+    \ Acrescente "de uns" para a segunda string;
+    \ Retorne.
+  \ Se a string for "dalgumas",
+    \ Acrescente "de umas" para a segunda string;
+    \ Retorne.
+  \ Se a string for "nalgum",
+    \ Acrescente "em um" para a segunda string;
+    \ Retorne.
+  \ Se a string for "nalguma",
+    \ Acrescente "em uma" para a segunda string;
+    \ Retorne.
+  \ Se a string for "nalguns",
+    \ Acrescente "em uns" para a segunda string;
+    \ Retorne.
+  \ Se a string for "nalgumas",
+    \ Acrescente "em umas" para a segunda string;
+    \ Retorne.
+  \ Se a string for "doutro",
+    \ Acrescente "de outro" para a segunda string;
+    \ Retorne.
+  \ Se a string for "doutra",
+    \ Acrescente "de outra" para a segunda string;
+    \ Retorne.
+  \ Se a string for "doutros",
+    \ Acrescente "de outros" para a segunda string;
+    \ Retorne.
+  \ Se a string for "doutras",
+    \ Acrescente "de outras" para a segunda string;
+    \ Retorne.
+  \ Se a string for "noutro",
+    \ Acrescente "em outro" para a segunda string;
+    \ Retorne.
+  \ Se a string for "noutra",
+    \ Acrescente "em outra" para a segunda string;
+    \ Retorne.
+  \ Se a string for "noutros",
+    \ Acrescente "em outros" para a segunda string;
+    \ Retorne.
+  \ Se a string for "noutras",
+    \ Acrescente "em outras" para a segunda string;
+    \ Retorne.
    \Se a string deveria ser expandida usando a terceira string (análise de termos compostos), 
       \Atribua "desde" para a string; 
       \Atribua "" para a segunda string; 

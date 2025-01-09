@@ -95,18 +95,94 @@ Rotina para que se compile umas unidades semânticas e uns parâmetros usando um p
 Rotina para que se adicione uma unidade semântica para umas unidades semânticas usando uma string:
   Crie a unidade semântica.
   Acrescente a unidade semântica para as unidades semânticas.
-  \ conjunções
-  Se a string for "e",
-    Atribua "e" à string desta unidade semântica;
-    Retorne. \ and
-  Se a string for "ou",
-    Atribua "ou" à string desta unidade semântica;
-    Retorne. \ or
-  \ usando
+  \-------------------------------------------------------------- VERBO SER -------------------------------------------------------
+  Se a string for "é",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "for",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "foi",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "foram",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "forem",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+    Se a string for "seja",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "sejam",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+    Se a string for "são",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "forem",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  \-------------------------------------------------------------- VERBO ESTAR -------------------------------------------------------
+    Se a string for "está",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "estão",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "estiver",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "estiverem",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  Se a string for "estamos",
+    Atribua "é" à string desta unidade semântica;
+    Retorne.
+  \-------------------------------------------------------------- VERBO TER --------------------------------------------------------------
+  Se a string for "tiver",
+    Atribua "tem" à string desta unidade semântica;
+    Retorne.
+  \-------------------------------------------------------------- VERBO HAVER ----------------------------------------------------------
+  Se a string for "houver",
+    Atribua "há" à string desta unidade semântica;
+    Retorne.
+  \------------------------------------------------------------- VERBO EXISTIR ----------------------------------------------------------  
+  Se a string for "existir",
+    Atribua "existe" à string desta unidade semântica;
+    Retorne.
+  \-------------------------------------------------------------- DEMAIS VERBOS -------------------------------------------------------
+  Se a string for "começar",
+    Atribua "começa" à string desta unidade semântica;
+    Retorne.
+  Se a string for "começa",
+    Atribua "começa" à string desta unidade semântica;
+    Retorne.
+  Se a string for "termina",
+    Atribua "termina" à string desta unidade semântica;
+    Retorne.
+  Se a string for "terminar",
+    Atribua "termina" à string desta unidade semântica;
+    Retorne.
+  Se a string for "puder",
+    Atribua "pode" à string desta unidade semântica;
+    Retorne.
+  Se a string for "puderem",
+    Atribua "pode" à string desta unidade semântica;
+    Retorne.
+  Se a string for "possuir",
+    Atribua "possui" à string desta unidade semântica;
+    Retorne.
+  Se a string for "cabe",
+    Atribua "cabe" à string desta unidade semântica;
+    Retorne.
+  Se a string for "couber",
+    Atribua "cabe" à string desta unidade semântica;
+    Retorne.
+  \ ----------------------------------------------- USANDO | DESDE | DADO ----------------------------------------------------------------------
   Se a string for "desde",
     Atribua "usando" à string desta unidade semântica;
-    Retorne.
-  \Se a string for "de", atribua "usando" à string desta unidade semântica; Retorne.
+    Retorne.  
   Se a string for "dada",
     Atribua "usando" à string desta unidade semântica;
     Retorne.
@@ -128,102 +204,14 @@ Rotina para que se adicione uma unidade semântica para umas unidades semânticas 
   Se a string for "contendo",
     Atribua "usando" à string desta unidade semântica;
     Retorne.
-  \\ para
+  \ ----------------------------------------------------------------------- PREPOSIÇÕES -----------------------------------------------------
   Se a string for "em", 
     Atribua "para" à string desta unidade semântica; 
     Retorne.
   Se a string for "a",
     Atribua "para" à string desta unidade semântica;
-    Retorne. \  ver isso aqui com calma
-  Se a string for "para",
-    Atribua "para" à string desta unidade semântica;
-    Retorne.
-  \\ VERBO SER/ESTAR
-  Se a string for "é",
-    Atribua "é" à string desta unidade semântica;
-    Retorne.
-  Se a string for "está",
-    Atribua "é" à string desta unidade semântica;
-    Retorne.
-  Se a string for "for",
-    Atribua "é" à string desta unidade semântica;
-    Retorne.
-  Se a string for "foi",
-    Atribua "é" à string desta unidade semântica;
-    Retorne.
-  Se a string for "foram",
-    Atribua "é" à string desta unidade semântica;
-    Retorne.
-  Se a string for "forem",
-    Atribua "é" à string desta unidade semântica;
-    Retorne.
-  Se a string for "estiver",
-    Atribua "é" à string desta unidade semântica;
-    Retorne.
-  Se a string for "estiverem",
-    Atribua "é" à string desta unidade semântica;
-    Retorne.
-  Se a string for "estamos",
-    Atribua "é" à string desta unidade semântica;
-    Retorne.
-  Se a string for "há",
-    Atribua "há" à string desta unidade semântica;
-    Retorne.
-  Se a string for "houver",
-    Atribua "há" à string desta unidade semântica;
-    Retorne.
-  Se a string for "seja",
-    Atribua "é" à string desta unidade semântica;
-    Retorne.
-  Se a string for "sejam",
-    Atribua "é" à string desta unidade semântica;
-    Retorne.
-  Se a string for "começar",
-    Atribua "começa" à string desta unidade semântica;
-    Retorne.
-  Se a string for "terminar",
-    Atribua "termina" à string desta unidade semântica;
-    Retorne.
-  \Se a string for "tem", atribua "tem" à string desta unidade semântica; Retorne.
-  \Se a string for "tiver", atribua "tem" à string desta unidade semântica; Retorne.
-  Se a string for "são",
-    Atribua "é" à string desta unidade semântica;
-    Retorne.
-  Se a string for "estão",
-    Atribua "é" à string desta unidade semântica;
-    Retorne.
-  Se a string for "forem",
-    Atribua "é" à string desta unidade semântica;
-    Retorne.
-  Se a string for "estiverem",
-    Atribua "é" à string desta unidade semântica;
-    Retorne.
-  Se a string for "puder",
-    Atribua "pode" à string desta unidade semântica;
-    Retorne.
-  Se a string for "puderem",
-    Atribua "pode" à string desta unidade semântica;
-    Retorne.
-  Se a string for "existe",
-    Atribua "existe" à string desta unidade semântica;
-    Retorne.
-  Se a string for "existir",
-    Atribua "existe" à string desta unidade semântica;
-    Retorne.
-  Se a string for "há",
-    Atribua "há" à string desta unidade semântica;
-    Retorne.
-  Se a string for "houver",
-    Atribua "há" à string desta unidade semântica;
-    Retorne.
-  Se a string for "possuir",
-    Atribua "possui" à string desta unidade semântica;
-    Retorne.
-  \ allocates e destroys
-  \Se a string for "crie", Atribua "aloque memória para" à string desta unidade semântica; Retorne.
-  \Se a string for "desaloque", atribua "desaloque" à string desta unidade semântica; Retorne.
-  \Se a string for "esvazie", atribua "deallocate" à string desta unidade semântica; Retorne.
-  \Se a string for "destrua", atribua "destrua" à string desta unidade semântica; Retorne.
+    Retorne. 
+  \---------------------------------------------------------------------- CONTRAÇÕES ------------------------------------------------------
   Se a string for "pelo",
     Atribua "por o" à string desta unidade semântica;
     Retorne.
@@ -237,28 +225,7 @@ Rotina para que se adicione uma unidade semântica para umas unidades semânticas 
   Se a string for "sobre",
     Atribua "sobre" à string desta unidade semântica;
     Retorne.
-  Se a string for "começa",
-    Atribua "começa" à string desta unidade semântica;
-    Retorne.
-  Se a string for "começar",
-    Atribua "começa" à string desta unidade semântica;
-    Retorne.
-  Se a string for "termina",
-    Atribua "termina" à string desta unidade semântica;
-    Retorne.
-  Se a string for "terminar",
-    Atribua "termina" à string desta unidade semântica;
-    Retorne.
-  Se a string for "cabe",
-    Atribua "cabe" à string desta unidade semântica;
-    Retorne.
-  Se a string for "couber",
-    Atribua "cabe" à string desta unidade semântica;
-    Retorne.
-  Se a string for "sobre",
-    Atribua "sobre" à string desta unidade semântica;
-    Retorne.
-  \ other
+  \ ------------------------------------------------------------------- DEMAIS CASOS ------------------------------------------------------
   Atribua a string à string desta unidade semântica.
 
 Função para que se determine se um percorredor está sobre algum artigo indefinido:
