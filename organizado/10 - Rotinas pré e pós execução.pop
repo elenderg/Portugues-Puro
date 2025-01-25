@@ -6,21 +6,21 @@ Rotina para que se compile um endereço da pasta (conteúdo das rotinas): \ #010
   Suspenda o temporizador de compilação do conteúdo das rotinas.
 
 Rotina para que se compile os corpos referentes para as rotinas:
-  Compile o corpo referente à rotina denominada "Inicialize antes da execução".
-  Compile o corpo referente à rotina denominada "Execute o programa".
-  Compile o corpo referente à rotina denominada "Finalize após execução".
+  Compile o corpo relacionado com a rotina denominada "Inicialize antes da execução".
+  Compile o corpo relacionado com a rotina denominada "Execute o programa".
+  Compile o corpo relacionado com a rotina denominada "Finalize após execução".
 
-Rotina para que se compile o corpo referente para a rotina denominada uma string;
-Rotina para que se compile o corpo referente para a rotina denominado uma string:
+Rotina para que se compile o corpo relacionado com a rotina denominada uma string;
+Rotina para que se compile o corpo relacionado com a rotina denominado uma string:
   Se existir algum problema de compilação, retorne.
   Encontre uma rotina usando a string e o catálogo geral de rotinas.
   Se a rotina for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #077. A rotina 'para que se " junto com a string seguido de "' não pode ser encontrada.";
+      "Código de Erro #077. A rotina 'para que se " junto com a string seguido de "' não pode ser encontrada.";
     Retorne.
-  Compile o corpo referente à rotina.
+  Compile o corpo relacionado com a rotina.
 
-Rotina para que se compile o corpo referente para uma rotina:
+Rotina para que se compile o corpo relacionado com uma rotina:
   Se a rotina for inexistente, retorne.
   Se existir algum problema de compilação, retorne.
   Se o sinalizador de compilação desta rotina estiver ativo, retorne.
@@ -28,37 +28,37 @@ Rotina para que se compile o corpo referente para uma rotina:
   Lance um percorredor sobre as instruções desta rotina.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor for o ponto&vírgula,
-    Compile o corpo referente à rotina usando o percorredor (sobrecarga de métodos);
+    Compile o corpo relacionado com a rotina usando o percorredor (sobrecarga de métodos);
     Retorne. \ *** alternate wording
   \Se o segmento inicial deste percorredor for uma palavra-chave de reutilização de rotina, 
-    \compile o corpo referente à rotina usando o percorredor (cláusula de reutilização); 
+    \compile o corpo relacionado com a rotina usando o percorredor (cláusula de reutilização); 
     \Retorne.
   Atribua a rotina utilizada atualmente para um rotina denominada rotina armazenada.
   Atribua a rotina à rotina utilizada atualmente.
   Crie o catálogo de apelidos desta rotina usando 101. [buckets]
   Elimine apelidos duplicados desde os parâmetros desta rotina usando o catálogo de apelidos desta rotina.
-  Compile o corpo referente à rotina (etapa preliminar).
+  Compile o corpo relacionado com a rotina (etapa preliminar).
   Itere.
     Se existir algum problema de compilação, retorne.
     Se o segmento inicial deste percorredor estiver em branco, pare.
     Compile a próxima instrução usando o percorredor.
   Reitere.
-  Compile o corpo referente à rotina (etapa conclusiva).
+  Compile o corpo relacionado com a rotina (etapa conclusiva).
   Atribua a rotina armazenada à rotina utilizada atualmente.
   \Destrua o catálogo de apelidos desta rotina.
 
-Rotina para que se compile o corpo referente para uma rotina usando um percorredor (sobrecarga de métodos):
+Rotina para que se compile o corpo relacionado com uma rotina usando um percorredor (sobrecarga de métodos):
   Se existir algum problema de compilação, retorne.
   Mova o percorredor (usando diretrizes de compilação). \ *** do we need this? I think so
   Atribua a próxima rotina desta rotina para um rotina alvo.
   Se a rotina alvo for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #078. Não foi possível encontrar o cabeçalho alternativo desta rotina." e o percorredor;
+      "Código de Erro #078. Não foi possível encontrar o cabeçalho alternativo desta rotina." junto com o texto CRLF e o percorredor;
     Retorne.
   Atribua a representação interna da rotina deste rotina alvo ao representação de emprego desta rotina.
-  Compile o corpo referente para a rotina alvo.
+  Compile o corpo relacionado com a rotina alvo.
 
-Rotina para que se compile o corpo referente para uma rotina (etapa preliminar):
+Rotina para que se compile o corpo relacionado com uma rotina (etapa preliminar):
   Se a rotina for inexistente, retorne.
   Se existir algum problema de compilação, retorne.
   Adicione um fragmento usando a etiqueta preliminar.
@@ -88,13 +88,13 @@ Rotina para que se compile a próxima instrução usando um percorredor:
     Retorne.
   Se o segmento inicial deste percorredor não for o início de alguma declaração,
     Apresente uma mensagem de erro contendo 
-      "Erro #079. Esperado invocação de rotina. Encontrado: " 
-    junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
+      "Código de Erro #079. Esperado invocação de rotina. Encontrado: " 
+    junto com o segmento inicial deste percorredor seguido de "." junto com o texto CRLF e o percorredor;
     Retorne.
   Compile a próxima instrução usando o percorredor (demais cláusulas).
   Se o segmento inicial deste percorredor não for o ponto final,
     Apresente a mensagem de erro contendo 
-      "Erro #080. Invocação de rotina inexistente (ou uso de palavra-chave reservada)." e o percorredor;
+      "Código de Erro #080. Invocação de rotina inexistente (ou uso de palavra-chave reservada)." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
 
@@ -111,24 +111,24 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
   Destrua as unidades semânticas.
   Se a rotina for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #081. A rotina 'para que se determine se "
+      "Código de Erro #081. A rotina 'para que se determine se "
       junto com a representação interna da rotina 
-      seguido de "' não existe." e o percorredor;
+      seguido de "' não existe." junto com o texto CRLF e o percorredor;
     Retorne.
   Se o sinalizador de deliberação desta rotina não estiver ativo,
     Apresente a mensagem de erro contendo 
-      "Erro #082. Necessário utilizar um decisor." e o percorredor;
+      "Código de Erro #082. Necessário utilizar um decisor." junto com o texto CRLF e o percorredor;
       Retorne.
   \ Se o segmento inicial deste percorredor não for a vírgula, 
     \apresente a mensagem de erro contendo 
       \"Acho que você esqueceu de uma vírgula, eu achei isso aqui: " 
-      \junto com o segmento inicial deste percorredor seguido de "." e o percorredor; 
+      \junto com o segmento inicial deste percorredor seguido de "." junto com o texto CRLF e o percorredor; 
       \Retorne.
   Se o segmento inicial deste percorredor não for qualquer separador de comandos,
     Apresente a mensagem de erro contendo 
-      "Erro #083. Necessário incluir uma vírgula ao invés de: '"
+      "Código de Erro #083. Necessário incluir uma vírgula ao invés de: '"
       junto com o segmento inicial deste percorredor 
-      seguido de "'." e o percorredor;
+      seguido de "'." junto com o texto CRLF e o percorredor;
       Retorne.
   Adicione um fragmento usando a etiqueta de demanda interna e a rotina.
   Se o sinalizador estiver ativo, 
@@ -143,8 +143,8 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
       Reitere.
     Se o segmento inicial deste percorredor não for o ponto final,
       Apresente a mensagem de erro contendo 
-        "Erro #084. Necessário incluir um '.' ao invés de: " 
-        junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
+        "Código de Erro #084. Necessário incluir um '.' ao invés de: " 
+        junto com o segmento inicial deste percorredor seguido de "." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Adicione um quarto fragmento usando o etiqueta delimitadora de bloco condicional.
@@ -248,8 +248,9 @@ Rotina para que se compile um termo usando um percorredor (análise preliminar):
     Compile o termo usando o percorredor (valor literal);
     Retorne.
   Apresente uma mensagem de erro contendo 
-    "Erro #085. O Compilador esperava encontrar um termo. Encontrado: '"
-    junto com o segmento inicial deste percorredor seguido de "'." e o percorredor.
+    "Código de Erro #085. O Compilador esperava encontrar um termo. Encontrado: '"
+    junto com o segmento inicial deste percorredor seguido de "'." 
+    junto com o texto CRLF e o percorredor.
 
 Rotina para que se compile um termo usando um percorredor (subtração de termo):
   Se existir algum problema de compilação, retorne.
@@ -258,8 +259,8 @@ Rotina para que se compile um termo usando um percorredor (subtração de termo):
   Se existir algum problema de compilação, retorne.
   Se a variável deste novo termo for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #086. Comando 'inverta' inválido. A variável: "
-      junto com o frase deste novo termo seguido de "' não foi encontrada." e o percorredor;
+      "Código de Erro #086. Comando 'inverta' inválido. A variável: "
+      junto com o frase deste novo termo seguido de "' não foi encontrada." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione uma variável intermediária usando 
     o nome do tipo deste novo termo e 
@@ -317,7 +318,7 @@ Rotina para que se adicione fragmentos diversos usando
   Destrua as unidades semânticas.
   Se a rotina for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #087. A rotina 'para que se " junto com a representação interna da rotina 
+      "Código de Erro #087. A rotina 'para que se " junto com a representação interna da rotina 
       seguido de "' não foi encontrada." e o endereço local;
     Retorne.
   Adicione um terceiro fragmento usando a etiqueta de demanda interna e a rotina. 
@@ -352,10 +353,10 @@ Rotina para que se ligue o sinalizador de compilação em uma variável:
     Ative um sinalizador.
   Se a rotina for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #088. O tipo e o valor da variável variável global  não estão correspondendo." e 
+      "Código de Erro #088. O tipo e o valor da variável variável global  não estão correspondendo." e 
       o endereço local desta variável;
     Retorne.
-  Compile o corpo referente à rotina.
+  Compile o corpo relacionado com a rotina.
   Se o sinalizador estiver ativo, 
     Atribua "converta o " junto com o nome deste valor literal desta variável 
       seguido de " para o " junto com o nome desta variável 
@@ -444,7 +445,7 @@ Rotina para que se adicione um fragmento usando uma etiqueta e uma rotina:
   Crie o fragmento usando a etiqueta.
   Acrescente o fragmento para os fragmentos desta rotina utilizada atualmente.
   Atribua a rotina à rotina deste fragmento.
-  Compile o corpo referente à rotina.
+  Compile o corpo relacionado com a rotina.
 
 Rotina para que se adicione dois fragmentos usando uma string e uma variável e um endereço local:
   Adicione um fragmento usando o etiqueta de inserção de endereço [na stack] e a variável.
@@ -456,7 +457,7 @@ Rotina para que se adicione dois fragmentos usando uma string e uma variável e u
   Destrua as unidades semânticas.
   Se a rotina for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #089. A rotina 'para que se " junto com a representação interna da rotina 
+      "Código de Erro #089. A rotina 'para que se " junto com a representação interna da rotina 
       seguido de "' ainda não foi definida." e o endereço local;
     Retorne.
   Adicione um segundo fragmento usando a etiqueta de demanda interna e a rotina.
@@ -467,8 +468,8 @@ Rotina para que se compile um termo usando um percorredor (adição de termo):
   Compile o termo usando o percorredor.
   Se a variável deste termo for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #090. Comando '+' incorreto. A variável do termo '" junto com a frase deste termo 
-      seguido de "' não foi localizada." e o percorredor;
+      "Código de Erro #090. Comando '+' incorreto. A variável do termo '" junto com a frase deste termo 
+      seguido de "' não foi localizada." junto com o texto CRLF e o percorredor;
     Retorne.
   Limpe a frase deste termo.
 
@@ -476,8 +477,8 @@ Rotina para que se compile um termo usando um percorredor (variável):
   Se existir algum problema de compilação, retorne.
   Se a rotina utilizada atualmente for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #091. Esta rotina é inexistente." junto com 
-      "Não sei o que você está tentando fazer aqui." e o percorredor;
+      "Código de Erro #091. Esta rotina é inexistente." junto com 
+      "Não sei o que você está tentando fazer aqui." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Examine um nome usando o percorredor.
@@ -496,8 +497,9 @@ Rotina para que se compile um termo usando um percorredor e um nome denominado n
   Mova o percorredor (usando diretrizes de compilação). \ após o indicador do possessivo reverso ("de")
   Se o segmento inicial deste percorredor não for algum artigo,
     Apresente uma mensagem de erro contendo 
-      "Erro #092. Esperava encontrar um artigo. Encontrado: '" 
-      junto com o segmento inicial deste percorredor seguido de "'.";
+      "Código de Erro #092. O compilador esperava encontrar um artigo após o 'de'. Encontrado: '" 
+      junto com o segmento inicial deste percorredor seguido de "'."
+      junto com o texto CRLF e o percorredor;
     Retorne.
   Atribua o segmento inicial deste percorredor para um segmento inicial denominado pronome.
   Mova o percorredor (usando diretrizes de compilação).
@@ -518,16 +520,17 @@ Rotina para que se compile um termo usando um percorredor e um nome denominado n
     Retorne.
   Compile o termo usando o percorredor e o nome do campo (decomposição do possessivo reverso - variável local).
 
-Rotina para que se compile um termo usando um percorredor e um nome denominado nome do campo e um segmento inicial (reversão de contrações de variáveis do possessivo):
+Rotina para que se compile um termo usando um percorredor e um nome denominado nome da estrutura e um segmento inicial (reversão de contrações de variáveis do possessivo):
   \ Rotina nova criada pelo Dahn para o SAL
-  Encontre uma variável usando o nome do campo.
+  Encontre uma variável usando o nome da estrutura.
   Se a variável for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #093. Não foi possível encontrar a variável: " 
-      junto com o nome do campo seguido de ".".
+      "Código de Erro #093. Não foi possível encontrar a estrutura: " 
+      junto com o nome da estrutura seguido de "."
+      junto com o texto CRLF e o percorredor.
   Atribua a variável à variável deste termo.
   Atribua "O " à frase deste termo.
-  Acrescente o nome do campo para a frase deste termo.
+  Acrescente o nome da estrutura para a frase deste termo.
 
 Rotina para que se compile um termo usando um percorredor e uma variável nome (decomposição do possessivo reverso - variável local):
   \ Rotina nova criada pelo Dahn para version 2
@@ -540,12 +543,12 @@ Rotina para que se compile um termo usando um percorredor e uma variável nome (d
   Destrinche a variável local.
   Se a variável local estiver duplicada em os parâmetros desta rotina utilizada atualmente,
     Apresente uma mensagem de erro contendo 
-      "Erro #094. O termo: "junto com o nome desta variável local 
+      "Código de Erro #094. O termo: "junto com o nome desta variável local 
       seguido de "' já está sendo usado como parâmetro." e o endereço local desta variável local;
     Retorne.
   Se a variável local estiver duplicada em as variáveis locais desta rotina utilizada atualmente,
     Apresente a mensagem de erro contendo 
-      "Erro #095. O termo: " junto com o nome desta variável local seguido de 
+      "Código de Erro #095. O termo: " junto com o nome desta variável local seguido de 
       "' já está sendo usado coma variável local." e o endereço local desta variável local;
     Retorne.
   Elimine apelidos duplicados usando a variável local e o catálogo de apelidos desta rotina utilizada atualmente.
@@ -592,7 +595,7 @@ Rotina para que se compile um termo usando um percorredor (nova variável local):
   Se existir algum problema de compilação, retorne.
   Se a rotina utilizada atualmente for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #096. Rotina não localizada. Não foi possível desempilhar o item da stack." e o percorredor;
+      "Código de Erro #096. Rotina não localizada. Não foi possível desempilhar o item da stack." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione uma variável local para as variáveis locais desta rotina utilizada atualmente usando 
     "local" e o caractere inicial deste segmento inicial deste percorredor.
@@ -605,12 +608,12 @@ Rotina para que se compile um termo usando um percorredor (nova variável local):
   Destrinche a variável local.
   Se a variável local estiver duplicada nos parâmetros desta rotina utilizada atualmente,
     Apresente a mensagem de erro contendo 
-      "Erro #097. O parâmetro: " junto com o nome desta variável local 
+      "Código de Erro #097. O parâmetro: " junto com o nome desta variável local 
       seguido de "' já está sendo usado como parâmetro." e o endereço local desta variável local;
     Retorne.
   Se a variável local estiver duplicada nas variáveis locais desta rotina utilizada atualmente,
     Apresente a mensagem de erro contendo 
-      "Erro #098. A variável local " junto com o nome desta variável local 
+      "Código de Erro #098. A variável local " junto com o nome desta variável local 
       seguido de "' já foi declarada nesta rotina. Utilize um nome de variável diferente." 
       e o endereço local desta variável local;
     Retorne.
@@ -654,8 +657,8 @@ Rotina para que se compile um termo usando um percorredor (possessivo - magnitud
   Se existir algum problema de compilação, retorne.
   Se a variável deste termo for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #099. Comando magnitude inválido. A variável: " 
-      junto com a frase deste termo seguido de "'não foi localizada." e o percorredor;
+      "Código de Erro #099. Comando magnitude inválido. A variável: " 
+      junto com a frase deste termo seguido de "'não foi localizada." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione um valor literal para os valores literais usando o caractere inicial deste segmento inicial deste percorredor.
   Converta a quantidade de caracteres deste tipo deste termo para os data deste valor literal.
@@ -668,12 +671,12 @@ Rotina para que se compile um termo usando um percorredor (possessivo - conteúdo
   Se existir algum problema de compilação, retorne.
   Se a variável deste termo for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #100. Palavra-chave 'conteúdo' detectada, mas o termo '"
-      junto com a frase deste termo seguido de "' não foi devidamente definido." e o percorredor;
+      "Código de Erro #100. Palavra-chave 'conteúdo' detectada, mas o termo '"
+      junto com a frase deste termo seguido de "' não foi devidamente definido." junto com o texto CRLF e o percorredor;
     Retorne.
   Se o tipo deste termo não puder ser reduzido para "ponteiro",
     Apresente a mensagem de erro contendo 
-      "Erro #101. A palavra-chave 'conteúdo' só pode ser utilizada em ponteiros." e o percorredor;
+      "Código de Erro #101. A palavra-chave 'conteúdo' só pode ser utilizada em ponteiros." junto com o texto CRLF e o percorredor;
     Retorne.
   Compile o termo usando o percorredor (cláusula de redirecionamento).
 
@@ -681,13 +684,13 @@ Rotina para que se compile um termo usando um percorredor (cláusula de redirecio
   Se existir algum problema de compilação, retorne.
   Se a variável deste termo for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #102. Cláusula redirecionamento inválida. O termo '"
-      junto com a frase deste termo seguido de "' não foi encontrado." e o percorredor;
+      "Código de Erro #102. Cláusula redirecionamento inválida. O termo '"
+      junto com a frase deste termo seguido de "' não foi encontrado." junto com o texto CRLF e o percorredor;
     Retorne.
   Se o tipo do conteúdo deste tipo deste termo for inexistente,
     Apresente a mensagem de erro contendo 
-      "Erro #103. O tipo do conteúdo do termo '" \ MODIFICADO - TESTAR
-      junto com a frase deste termo seguido de "' não foi encontrado."e o percorredor; 
+      "Código de Erro #103. O tipo do conteúdo do termo '" \ MODIFICADO - TESTAR
+      junto com a frase deste termo seguido de "' não foi encontrado."junto com o texto CRLF e o percorredor; 
     Retorne.
   Se a categoria deste termo for "scratch",
     Compile o termo usando o percorredor (redirecionamentos de endereços - campos de estruturas);
@@ -706,8 +709,8 @@ Rotina para que se compile um termo usando um percorredor (cláusula de redirecio
 Rotina para que se compile um termo usando um percorredor (redirecionamentos de endereços - campos de estruturas):
   Se a variável deste termo for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #104. O termo '" junto com a frase deste termo \ ALTERAÇÃO - TESTAR
-      seguido de "' não foi encontrado na estrutura." e o percorredor;
+      "Código de Erro #104. O termo '" junto com a frase deste termo \ ALTERAÇÃO - TESTAR
+      seguido de "' não foi encontrado na estrutura." junto com o texto CRLF e o percorredor;
     Retorne.
   Atribua o nome deste tipo do conteúdo deste tipo deste termo ao nome do tipo deste termo.
   Atribua o tipo do conteúdo deste tipo deste termo ao tipo deste termo.
@@ -719,8 +722,8 @@ Rotina para que se compile um termo usando um percorredor (possessivo - endereça
   Se existir algum problema de compilação, retorne.
   Se a variável deste termo for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #105. palavra-chave 'endereçamento' detectada, mas a variável do termo: " 
-      junto com a frase deste termo seguido de " não foi localizada." e o percorredor;
+      "Código de Erro #105. palavra-chave 'endereçamento' detectada, mas a variável do termo: " 
+      junto com a frase deste termo seguido de " não foi localizada." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione uma variável intermediária usando "ponteiro" e o caractere inicial deste segmento inicial deste percorredor.
   Adicione um fragmento usando a etiqueta de carregamento de endereço e a variável deste termo e a variável intermediária.
@@ -757,28 +760,27 @@ Rotina para que se compile um termo usando um percorredor e um nome (possessivo 
     Retorne.
   Se a variável deste termo for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #106. A variável do termo '" junto com a frase deste termo 
-      seguido de "' não foi localizada." e o percorredor;
+      "Código de Erro #106. A variável do termo '" junto com a frase deste termo 
+      seguido de "' não foi localizada." junto com o texto CRLF e o percorredor;
     Retorne.
   Se o tipo puder ser reduzido para "ponteiro",
     Atribua o tipo do conteúdo deste tipo ao tipo.
   Se o tipo for inexistente,
     Apresente a mensagem de erro contendo 
-      "Erro #107. O tipo: "junto com o nome 
+      "Código de Erro #107. O tipo: "junto com o nome 
       seguido de "' não foi localizada na estrutura: " 
       junto com o nome deste tipo deste termo 
-      seguido de "." 
-    e o percorredor;
+      seguido de "." junto com o texto CRLF e o percorredor;
     Retorne.
   Itere.
     Se existir algum problema de compilação, retorne.
     Obtenha um campo desde os campos deste tipo.
     Se o campo for inexistente,
       Apresente a mensagem de erro contendo 
-        "Erro #108. O campo '" junto com o nome 
+        "Código de Erro #108. O campo '" junto com o nome 
         seguido de "' não foi localizado na estrutura '"
         junto com o nome deste tipo deste termo 
-        seguido de "'." e o percorredor;
+        seguido de "'." junto com o texto CRLF e o percorredor;
       Retorne.
     Encontre um campo de estrutura-membro usando "" e o tipo deste campo e o nome.
     Se o campo de estrutura-membro estiver vazio, 
@@ -878,11 +880,11 @@ Rotina para que se compile um termo usando um percorredor e um campo de estrutur
   Atribua o último parâmetro destes parâmetros desta rotina para um parâmetro.
   Se o parâmetro for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #109. Parâmetro inexistente. " e o percorredor;
+      "Código de Erro #109. Parâmetro inexistente. " junto com o texto CRLF e o percorredor;
     Retorne.
   Se o tipo deste parâmetro for inexistente,
     Apresente a mensagem de erro contendo 
-      "Erro #110. Tipo de parâmetro inexistente. " e o percorredor;
+      "Código de Erro #110. Tipo de parâmetro inexistente. " junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione uma variável intermediária usando o nome deste tipo deste parâmetro e o caractere inicial deste segmento inicial deste percorredor.
   Adicione um fragmento usando a etiqueta de inserção de endereço [na stack] e a variável intermediária.
@@ -925,23 +927,23 @@ Rotina para que se compile um termo usando um percorredor (cláusula comparativa)
   Se existir algum problema de compilação, retorne.
   Se a variável deste termo for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #111. Comando 'como' inválido. Variável: " 
-      junto com a frase deste termo seguido de "' inexistente." e o percorredor;
+      "Código de Erro #111. Comando 'como' inválido. Variável: " 
+      junto com a frase deste termo seguido de "' inexistente." junto com o texto CRLF e o percorredor;
     Retorne.
   \ TODO: Refatorar as linha acima que estão repetidas em outros 19 lugares.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum artigo indefinido,
     Apresente a mensagem de erro contendo 
-      "Erro #112. Esperado Artigo indefinido. Encontrado: " 
-      junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+      "Código de Erro #112. Esperado Artigo indefinido. Encontrado: " 
+      junto com o segmento inicial deste percorredor seguido de "'." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Examine um nome do tipo usando o percorredor.
   Encontre um tipo usando o nome do tipo e o catálogo de tipos.
   Se o tipo for inexistente,
     Apresente a mensagem de erro contendo 
-      "Erro #113. Tipo: '" junto com o nome do tipo 
-      seguido de "' inválido." e o percorredor;
+      "Código de Erro #113. Tipo: '" junto com o nome do tipo 
+      seguido de "' inválido." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione um scratch usando o nome deste tipo e o caractere inicial deste segmento inicial deste percorredor.
   Adicione um fragmento usando o etiqueta de carregamento de endereço e a variável deste termo e o scratch.
@@ -952,16 +954,16 @@ Rotina para que se compile um termo usando um percorredor (proporção de execução
   Se existir algum problema de compilação, retorne.
   Se a variável deste termo for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #114. Operador '/' detectado, mas o numerador do termo: "
-      junto com a frase deste termo seguido de " não foi localizada." e o percorredor;
+      "Código de Erro #114. Operador '/' detectado, mas o numerador do termo: "
+      junto com a frase deste termo seguido de " não foi localizada." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Compile um segundo termo usando o percorredor.
   Se existir algum problema de compilação, retorne.
   Se a variável deste segundo termo for inexistente,
     Apresente a mensagem de erro contendo 
-      "Erro #115. Operador '/' detectado, mas o denominador do termo: "
-      junto com o frase deste segundo termo seguido de "' não foi localizado." e o percorredor;
+      "Código de Erro #115. Operador '/' detectado, mas o denominador do termo: "
+      junto com o frase deste segundo termo seguido de "' não foi localizado." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione uma variável intermediária usando "proporção" e o caractere inicial deste segmento inicial deste percorredor.
   Adicione fragmentos diversos usando 
@@ -998,7 +1000,7 @@ Rotina para que se adicione fragmentos diversos usando
   Destrua as unidades semânticas.
   Se a rotina for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #116. A rotina para que se '" junto com a representação interna da rotina 
+      "Código de Erro #116. A rotina para que se '" junto com a representação interna da rotina 
       seguido de "' não pôde ser localizada." e o endereço de byte;
     Retorne.
   Adicione um quarto fragmento usando a etiqueta de demanda interna e a rotina.
@@ -1016,21 +1018,21 @@ Rotina para que se compile uma expressão matemática usando um percorredor (opera
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum objeto indireto,
     Apresente uma mensagem de erro contendo 
-      "Erro #117. Você deve usar o termo 'dividido POR'." e o percorredor;
+      "Código de Erro #117. Você deve usar o termo 'dividido POR'." junto com o texto CRLF e o percorredor;
     Retorne.
   Se a variável desta expressão matemática for inexistente,
     Apresente a mensagem de erro contendo 
-      "Erro #118. Comando 'dividido por' inválido. Erro na variável ''" 
+      "Código de Erro #118. Comando 'dividido por' inválido. Erro na variável ''" 
       junto com a frase desta expressão matemática 
-      seguido de "'." e o percorredor;
+      seguido de "'." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Compile um termo usando o percorredor.
   Se existir algum problema de compilação, retorne.
   Se a variável deste termo for inexistente,
     Apresente a mensagem de erro contendo 
-      "Erro #119. Não é possível dividir por '" 
-      junto com a frase deste termo seguido de "'." e o percorredor;
+      "Código de Erro #119. Não é possível dividir por '" 
+      junto com a frase deste termo seguido de "'." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione uma variável intermediária usando 
     o nome do tipo desta expressão matemática e 
@@ -1063,17 +1065,17 @@ Rotina para que se compile uma expressão matemática usando um percorredor (opera
   Se existir algum problema de compilação, retorne.
   Se a variável desta expressão matemática for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #120. Não é possível subtrair de '" 
+      "Código de Erro #120. Não é possível subtrair de '" 
       junto com a frase desta expressão matemática 
-      seguido de "'." e o percorredor;
+      seguido de "'." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Compile um termo usando o percorredor.
   Se existir algum problema de compilação, retorne.
   Se a variável deste termo for inexistente,
     Apresente a mensagem de erro contendo 
-      "Erro #121. Não é possível subtrair de '" junto com a frase deste termo 
-      seguido de "'." e o percorredor;
+      "Código de Erro #121. Não é possível subtrair de '" junto com a frase deste termo 
+      seguido de "'." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione uma variável intermediária usando 
     o nome do tipo desta expressão matemática e 
@@ -1101,18 +1103,18 @@ Rotina para que se compile uma expressão matemática usando um percorredor (opera
   Se existir algum problema de compilação, retorne.
   Se a variável desta expressão matemática for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #122. Não é possível somar o '" 
+      "Código de Erro #122. Não é possível somar o '" 
       junto com a frase desta expressão matemática 
-      seguido de "'." e o percorredor;
+      seguido de "'." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Compile um termo usando o percorredor.
   Se existir algum problema de compilação, retorne.
   Se a variável deste termo for inexistente,
     Apresente a mensagem de erro contendo 
-      "Erro #123. Não é possível adicionar o '" 
+      "Código de Erro #123. Não é possível adicionar o '" 
       junto com a frase deste termo 
-      seguido de "'." e o percorredor;
+      seguido de "'." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione uma variável intermediária usando 
     o nome do tipo desta expressão matemática e 
@@ -1146,22 +1148,22 @@ Rotina para que se compile uma expressão matemática usando um percorredor (opera
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for alguma palavra de concatenação,
     Apresente uma mensagem de erro contendo 
-      "Erro #124. Necessário escrever 'junto DE/junto COM/etc'." e 
+      "Código de Erro #124. Necessário escrever 'junto DE/junto COM/etc'." e 
       o percorredor;
     Retorne.
   Se a variável desta expressão matemática for inexistente,
     Apresente a mensagem de erro contendo 
-      "Erro #125. A variável da expressão matemática: " 
+      "Código de Erro #125. A variável da expressão matemática: " 
       junto com a frase desta expressão matemática 
-      seguido de " é inválida." e o percorredor;
+      seguido de " é inválida." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Compile um termo usando o percorredor.
   Se existir algum problema de compilação, retorne.
   Se a variável deste termo for inexistente,
     Apresente a mensagem de erro contendo 
-      "Erro #126. A variável do termo '" junto com a frase deste termo 
-      seguido de "' é inválida." e o percorredor;
+      "Código de Erro #126. A variável do termo '" junto com a frase deste termo 
+      seguido de "' é inválida." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione uma variável intermediária usando 
     "string" e 
@@ -1218,7 +1220,7 @@ Rotina para que se adicione o atribua ou converta fragmentos usando
   Converta as unidades semânticas para uma representação interna da rotina.
   Destrua as unidades semânticas.
   Apresente uma mensagem de erro contendo 
-    "Erro #127. A rotina para que se " junto com 
+    "Código de Erro #127. A rotina para que se " junto com 
     a representação interna da rotina seguido de 
     " ainda não foi definida." e o endereço local.
 
@@ -1226,9 +1228,9 @@ Rotina para que se converta um termo por concatenação usando um percorredor:
   \\ concatenação
   Se a variável deste termo for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #128. A variável do termo '" junto com 
+      "Código de Erro #128. A variável do termo '" junto com 
       a frase deste termo seguido de 
-      "' não pode ser encontrada." e o percorredor;
+      "' não pode ser encontrada." junto com o texto CRLF e o percorredor;
     Retorne.
   Se o tipo deste termo puder ser reduzido para "string", retorne.
   Adicione uma variável intermediária usando "string" e o caractere inicial deste segmento inicial deste percorredor.
@@ -1243,18 +1245,18 @@ Rotina para que se compile uma expressão matemática usando um percorredor (opera
   Se existir algum problema de compilação, retorne.
   Se a variável desta expressão matemática for inexistente,
     Apresente uma mensagem de erro contendo 
-        "Erro #129. Não é póssível multiplicar por '"
+        "Código de Erro #129. Não é póssível multiplicar por '"
       junto com a frase desta expressão matemática 
-      seguido de "'." e o percorredor;
+      seguido de "'." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Compile um termo usando o percorredor.
   Se existir algum problema de compilação, retorne.
   Se a variável deste termo for inexistente,
     Apresente a mensagem de erro contendo 
-      "Erro #130. Não é póssível multiplicar por '" 
+      "Código de Erro #130. Não é póssível multiplicar por '" 
       junto com a frase deste termo 
-      seguido de "'." e o percorredor;
+      seguido de "'." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione uma variável intermediária usando 
     o nome do tipo desta expressão matemática e 
@@ -1355,19 +1357,19 @@ Rotina para que se compile a próxima instrução usando um percorredor (demais clá
     Retorne.
   Se o segmento inicial deste percorredor for algum comando condicional,
     Apresente uma mensagem de erro contendo 
-      "Erro #131. O aninhamento de condicionais não é permitido." e o percorredor;
+      "Código de Erro #131. O aninhamento de condicionais não é permitido." junto com o texto CRLF e o percorredor;
     Retorne.
   Se o segmento inicial deste percorredor for algum comando de proteção,
     Apresente a mensagem de erro contendo 
-      "Erro #132. A palavra-chave 'Preserve' não pode ser usada nesse tipo de comando." e o percorredor;
+      "Código de Erro #132. A palavra-chave 'Preserve' não pode ser usada nesse tipo de comando." junto com o texto CRLF e o percorredor;
     Retorne.
   Se o segmento inicial deste percorredor for algum comando de percorrimento,
     Apresente a mensagem de erro contendo 
-      "Erro #133. Loops não são permitidos em expressões condicionais." e o percorredor;
+      "Código de Erro #133. Loops não são permitidos em expressões condicionais." junto com o texto CRLF e o percorredor;
     Retorne.
   Se o segmento inicial deste percorredor for uma palavra-chave de reutilização de rotina,
     Apresente a mensagem de erro contendo 
-      "Erro #134. O comando 'Empregue' deve ser o único comando de uma rotina." e o percorredor;
+      "Código de Erro #134. O comando 'Empregue' deve ser o único comando de uma rotina." junto com o texto CRLF e o percorredor;
     Retorne.
   \Se o segmento inicial deste percorredor for "senão", 
     \mova o percorredor (usando diretrizes de compilação); 
@@ -1387,7 +1389,7 @@ Função para que se determine se uma string é algum comando de retorno de rotina:
 Rotina para que se compile a próxima instrução usando um percorredor (cláusula de retorno):
   Se o sinalizador de deliberação desta rotina utilizada atualmente estiver ativo,
     Apresente uma mensagem de erro contendo 
-      "Erro #135. Funções booleanas devem retornar apenas 'sim' ou 'não'" e o percorredor;
+      "Código de Erro #135. Funções booleanas devem retornar apenas 'sim' ou 'não'" junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione um fragmento usando o etiqueta de retorno.
   Mova o percorredor (usando diretrizes de compilação).
@@ -1427,9 +1429,9 @@ Função para que se determine se uma string é algum comando de confirmação ou neg
   \Se a variável desta expressão matemática for inexistente, 
     \Apresente uma mensagem de erro contendo 
       \"No es válido este 'diga', no entiendo la variável: " 
-      \junto com a frase desta expressão matemática seguido de "." e o percorredor; Retorne.
+      \junto com a frase desta expressão matemática seguido de "." junto com o texto CRLF e o percorredor; Retorne.
   \Se o tipo desta expressão matemática não puder ser reduzido para "sinalizador", 
-    \Apresente uma mensagem de erro contendo "Necesito un rotundo 'si' o 'no' aquí." e o percorredor; 
+    \Apresente uma mensagem de erro contendo "Necesito un rotundo 'si' o 'no' aquí." junto com o texto CRLF e o percorredor; 
     \Retorne.
   \Adicione um fragmento usando o etiqueta de carregamento de registrador EAX e a variável desta expressão matemática.
   \Adicione um segundo fragmento usando o etiqueta de retorno.
@@ -1441,7 +1443,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum comando de deliberação literal,
     Apresente uma mensagem de erro contendo 
-      "Erro #136. Funções booleanas devem terminar com um 'sim' ou 'não'." e o percorredor;
+      "Código de Erro #136. Funções booleanas devem terminar com um 'sim' ou 'não'." junto com o texto CRLF e o percorredor;
     Retorne.
   Desative um sinalizador. 
   Se o segmento inicial deste percorredor for algum decisor literal afirmativo, 
@@ -1449,8 +1451,8 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for o ponto final,
     Apresente a mensagem de erro contendo 
-      "Erro #137. O compilador esperava encontrar um '.' Encontrado o termo: " 
-      junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
+      "Código de Erro #137. O compilador esperava encontrar um '.' Encontrado o termo: " 
+      junto com o segmento inicial deste percorredor seguido de "." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione um fragmento usando a etiqueta de carregamento de registrador EAX e o sinalizador.
   Adicione um segundo fragmento usando a etiqueta de retorno.
@@ -1469,8 +1471,8 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
   Destrua as unidades semânticas.
   Atribua a representação interna da rotina ao texto retornado.
   Apresente uma mensagem de erro contendo 
-    "Erro #138. A rotina para que se " junto com a representação interna da rotina 
-    seguido de " não foi localizada." e o percorredor.
+    "Código de Erro #138. A rotina para que se " junto com a representação interna da rotina 
+    seguido de " não foi localizada." junto com o texto CRLF e o percorredor.
 
 Função para que se determine se uma string é algum comando de deliberação literal:
   Se a string for "sim", diga sim.
@@ -1502,8 +1504,8 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum valor hexadecimal literal,
     Apresente uma mensagem de erro contendo 
-      "Erro #139. Encontrado '"junto com o segmento inicial deste percorredor 
-      seguido de "'. Esperado encontrar valor hexadecimal" e o percorredor;
+      "Código de Erro #139. Encontrado '"junto com o segmento inicial deste percorredor 
+      seguido de "'. Esperado encontrar valor hexadecimal" junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione um fragmento usando a etiqueta de decodificação.
   Atribua o segmento inicial deste percorredor para um parte da cifra binária.
@@ -1518,13 +1520,13 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
   Se existir algum problema de compilação, retorne.
   Se a variável desta expressão matemática for inexistente,
     Apresente uma mensagem de erro contendo 
-    "Erro #140. Comando de empilhamento inválido devido a variável '" 
-    junto com a frase desta expressão matemática seguido de "' ser inexistente." e o percorredor;
+    "Código de Erro #140. Comando de empilhamento inválido devido a variável '" 
+    junto com a frase desta expressão matemática seguido de "' ser inexistente." junto com o texto CRLF e o percorredor;
     Retorne.
   Se o tipo desta expressão matemática não for valor empilhável,
     Apresente a mensagem de erro contendo 
-      "Erro #141. Valores do tipo: " junto com o nome deste tipo desta expressão matemática 
-      seguido de "' não podem ser empilhados." e o percorredor;
+      "Código de Erro #141. Valores do tipo: " junto com o nome deste tipo desta expressão matemática 
+      seguido de "' não podem ser empilhados." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione um fragmento usando o etiqueta de inserção de valor [na stack] e a variável desta expressão matemática.
 
@@ -1558,8 +1560,8 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum string literal,
     Apresente uma mensagem de erro contendo 
-      "Erro #142. Nomes de bibliotecas dinâmicas devem ser escritos entre aspas. Encontrado: " 
-      junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
+      "Código de Erro #142. Nomes de bibliotecas dinâmicas devem ser escritos entre aspas. Encontrado: " 
+      junto com o segmento inicial deste percorredor seguido de "." junto com o texto CRLF e o percorredor;
     Retorne.
   Atribua o segmento inicial deste percorredor para uma segunda string.
   Remova as aspas de a segunda string.
@@ -1575,8 +1577,8 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
   Se o termo estiver vazio, retorne.
   Se a variável deste termo for inexistente,
     Apresente a mensagem de erro contendo 
-      "Erro #143. A variável do termo '" junto com a frase deste termo 
-      seguido de "' não pode ser localizada." e o percorredor;
+      "Código de Erro #143. A variável do termo '" junto com a frase deste termo 
+      seguido de "' não pode ser localizada." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione um segundo fragmento usando o etiqueta de obtenção do registrador EAX e a variável deste termo.
 
@@ -1633,14 +1635,14 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
   Se existir algum problema de compilação, retorne.
   Se a variável desta expressão matemática for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #144. A variável da expressão matemática '"
+      "Código de Erro #144. A variável da expressão matemática '"
       junto com a frase desta expressão matemática 
-      seguido de "' é inexistente." e o percorredor;
+      seguido de "' é inexistente." junto com o texto CRLF e o percorredor;
     Retorne.
   Se o tipo desta expressão matemática não for valor empilhável,
     Apresente a mensagem de erro contendo 
-      "Erro #145. O tipo '" junto com o nome deste tipo desta expressão matemática 
-      seguido de "' da expressão matemática não é um valor empilhável." e o percorredor;
+      "Código de Erro #145. O tipo '" junto com o nome deste tipo desta expressão matemática 
+      seguido de "' da expressão matemática não é um valor empilhável." junto com o texto CRLF e o percorredor;
     Retorne.
   Se o segmento inicial deste percorredor for algum operador de continuidade, 
     Compile a próxima instrução usando o percorredor (palavra-chave 'processe' - cláusula com). \ RECURSÃO
@@ -1662,12 +1664,13 @@ Rotina para que se compile a próxima instrução usando um percorredor retornando 
   Se existir algum problema de compilação, retorne.
   Se a variável deste termo for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #146. O termo da variável: '" junto com a frase deste termo 
-      seguido de "'. aparenta estar vazio." e o percorredor;
+      "Código de Erro #146. O termo da variável: '" junto com a frase deste termo 
+      seguido de "'. aparenta estar vazio." junto com o texto CRLF e o percorredor;
     Retorne.
   Se o tipo deste termo não for valor empilhável, 
     Apresente a mensagem de erro contendo 
-      "Erro #147. Uma varíavel de 1, 2, ou 4 bytes é necessária na cláusula de devolução." e o percorredor.
+      "Código de Erro #147. Uma varíavel de 1, 2, ou 4 bytes é necessária na cláusula de devolução." 
+      junto com o texto CRLF e o percorredor.
 
 Rotina para que se adicione um fragmento usando uma etiqueta e uma função:
   Se a rotina utilizada atualmente for inexistente,
@@ -1682,13 +1685,13 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
   Se existir algum problema de compilação, retorne.
   Se a variável desta expressão matemática for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #148. A variável da expressão matemática'" 
+      "Código de Erro #148. A variável da expressão matemática'" 
       junto com a frase desta expressão matemática 
-      seguido de "' não pode ser localizada." e o percorredor;
+      seguido de "' não pode ser localizada." junto com o texto CRLF e o percorredor;
     Retorne.
   Se o tipo desta expressão matemática não puder ser reduzido para "ponteiro",
     Apresente a mensagem de erro contendo 
-      "Erro #149. Comando 'Processe' exige o tipo ponteiro." e o percorredor;
+      "Código de Erro #149. Comando 'Processe' exige o tipo ponteiro." junto com o texto CRLF e o percorredor;
     Retorne.
   Se o segmento inicial deste percorredor for "com", 
     Compile a próxima instrução usando o percorredor (palavra-chave 'processe' - cláusula com).
@@ -1700,9 +1703,9 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
   Se o termo estiver vazio, retorne.
   Se a variável deste termo for inexistente,
     Apresente a mensagem de erro contendo 
-      "Erro #150. A variável do termo '" 
+      "Código de Erro #150. A variável do termo '" 
       junto com a frase deste termo 
-      seguido de "' é inexistente." e o percorredor;
+      seguido de "' é inexistente." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione um segundo fragmento usando a etiqueta de obtenção do registrador EAX e a variável deste termo.
 
@@ -1718,27 +1721,29 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
   Se existir algum problema de compilação, retorne.
   Se a variável deste termo for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #151. A variável '" junto com a frase deste termo 
-      seguido de "' deste termo não pode ser encontrada." e o percorredor;
+      "Código de Erro #151. A variável '" junto com a frase deste termo 
+      seguido de "' deste termo não pode ser encontrada." junto com o texto CRLF e o percorredor;
     Retorne.
   Se a categoria deste termo for "literal",
     Apresente a mensagem de erro contendo 
-      "Erro #152. Identificado valor literal na categoria deste termo." e o percorredor.
+      "Código de Erro #152. Identificado valor literal na categoria deste termo." 
+      junto com o texto CRLF e o percorredor.
   Se a quantidade de caracteres deste tipo deste termo não for 4,
     Apresente a mensagem de erro contendo 
-      "Erro #153. Variável de tamanho diferente de 32 bits." e o percorredor.
+      "Código de Erro #153. Variável de tamanho diferente de 32 bits." 
+      junto com o texto CRLF e o percorredor.
   Se o segmento inicial deste percorredor não for "para",
     Apresente a mensagem de erro contendo 
-      "Erro #154. A palavra-chave 'para é necessária após o comando 'aponte'. Termo encontrado: " 
-      junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
+      "Código de Erro #154. A palavra-chave 'para é necessária após o comando 'aponte'. Termo encontrado: " 
+      junto com o segmento inicial deste percorredor seguido de "." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Mova o percorredor (usando diretrizes de compilação).
   \Mova o percorredor (usando diretrizes de compilação). \ artigo definido
   Se o segmento inicial deste percorredor não for "rotina",
     Apresente a mensagem de erro contendo 
-      "Erro #155. A sintaxe do comando é 'Aponte para a rotina'. Encontrado termo: " 
-      junto com o segmento inicial deste percorredor seguido de "." e o percorredor;
+      "Código de Erro #155. A sintaxe do comando é 'Aponte para a rotina'. Encontrado termo: " 
+      junto com o segmento inicial deste percorredor seguido de "." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Compile uma referência da rotina usando o percorredor.
@@ -1747,8 +1752,8 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
   Encontre uma rotina usando a representação interna da rotina e o catálogo geral de rotinas.
   Se a rotina for inexistente,
     Apresente a mensagem de erro contendo 
-      "Erro #156. A rotina para que se " junto com a representação interna da rotina 
-      seguido de " é inexistente." e o percorredor;
+      "Código de Erro #156. A rotina para que se " junto com a representação interna da rotina 
+      seguido de " é inexistente." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione um fragmento usando a etiqueta de endereço de rotina e a rotina.
   Atribua a variável deste termo à variável deste fragmento.
@@ -1775,8 +1780,9 @@ Rotina para que se compile uma referência da rotina usando um percorredor:
       Compile a referência da rotina usando o percorredor (string de unidade semântica);
       Reitere.
     Apresente uma mensagem de erro contendo 
-      "Erro #157. O termo '" junto com o segmento inicial deste percorredor 
-      seguido de "' não é válido neste tipo de comando." e o percorredor.
+      "Código de Erro #157. O termo '" junto com o segmento inicial deste percorredor 
+      seguido de "' não é válido neste tipo de comando." 
+      junto com o texto CRLF e o percorredor.
   [Reitere.]
 
 Rotina para que se compile uma referência da rotina usando um percorredor (função):
@@ -1791,23 +1797,23 @@ Rotina para que se compile uma referência da rotina usando um percorredor (funçã
     Compile a referência da rotina usando o percorredor (artigo definido).
   Se o segmento inicial deste percorredor não for algum possessivo inglês,
     Apresente uma mensagem de erro contendo 
-      "Erro #158. O compilador esperava encontrar um 's. Encontrado: '"
-      junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+      "Código de Erro #158. O compilador esperava encontrar um 's. Encontrado: '"
+      junto com o segmento inicial deste percorredor seguido de "'." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Examine um nome usando o percorredor.
   Adicione uma segunda unidade semântica para a referência da rotina usando "'s " junto com o nome.
   Se o segmento inicial deste percorredor não for "para",
     Apresente a mensagem de erro contendo 
-      "Erro #159. O compilador esperava encontrar a palavra 'para'. Encontrado: '"
-      junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+      "Código de Erro #159. O compilador esperava encontrar a palavra 'para'. Encontrado: '"
+      junto com o segmento inicial deste percorredor seguido de "'." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione uma terceira unidade semântica para a referência da rotina usando "para".
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum artigo indefinido,
     Apresente a mensagem de erro contendo 
-      "Erro #160. O compilador esperava encontrar um artigo indefinido. Encontrado: '" 
-      junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+      "Código de Erro #160. O compilador esperava encontrar um artigo indefinido. Encontrado: '" 
+      junto com o segmento inicial deste percorredor seguido de "'." junto com o texto CRLF e o percorredor;
     Retorne.
   Compile a referência da rotina usando o percorredor (artigo indefinido).
 
@@ -1818,8 +1824,8 @@ Rotina para que se compile uma referência da rotina usando um percorredor (artig
   Encontre um tipo e um apelido usando o nome.
   Se o tipo for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #161. O comando '" junto com o nome seguido de 
-      "' não é um comando de reutilização válido." e o percorredor;
+      "Código de Erro #161. O comando '" junto com o nome seguido de 
+      "' não é um comando de reutilização válido." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione uma unidade semântica para a referência da rotina usando o tipo.
 
@@ -1834,8 +1840,8 @@ Rotina para que se compile uma referência da rotina usando um percorredor (decid
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum comando condicional,
     Apresente uma mensagem de erro contendo 
-      "Erro #162. Esperava encontrar: 'Para que se determine SE xxxx'. Encontrado: 'Para que se determine '"
-      junto com o segmento inicial deste percorredor seguido de "' '." e o percorredor;
+      "Código de Erro #162. Esperava encontrar: 'Para que se determine SE xxxx'. Encontrado: 'Para que se determine '"
+      junto com o segmento inicial deste percorredor seguido de "' '." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
 
@@ -1850,7 +1856,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for o ponto final,
     Apresente uma mensagem de erro contendo 
-      "Erro #163. Necessário incluir um '.' após comandos em blocos de repetição." e o percorredor;
+      "Código de Erro #163. Necessário incluir um '.' após comandos em blocos de repetição." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
 
@@ -1868,15 +1874,14 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
   Se existir algum problema de compilação, retorne.
   Se a variável deste termo for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #164. Comando 'Isole', Inválido. A variável '" 
+      "Código de Erro #164. Comando 'Isole', Inválido. A variável '" 
       junto com a frase deste termo 
       [seguido de "do termo '" junto com o termo]
-      seguido de "' está vazia. " 
-      e o percorredor;
+      seguido de "' está vazia. " junto com o texto CRLF e o percorredor;
     Retorne.
   Se a categoria deste termo não for "parâmetro",
     Apresente a mensagem de erro contendo 
-      "Erro #165. Apenas parâmetros podem ser isolados." e o percorredor;
+      "Código de Erro #165. Apenas parâmetros podem ser isolados." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione uma variável local para as variáveis locais desta rotina utilizada atualmente usando "local" e o caractere inicial deste segmento inicial deste percorredor.
   Atribua o nome deste termo ao nome desta variável local.
@@ -1890,7 +1895,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
     Acrescente " original" para o apelido deste termo.
   Adicione fragmentos diversos usando "Atribua" e a variável deste termo e "para" e a variável local e o caractere inicial deste segmento inicial deste percorredor.
   Se o segmento inicial deste percorredor não for o ponto final,
-    Apresente a mensagem de erro contendo "Erro #166. Necessário incluir um '.' ao fim do comando" e o percorredor;
+    Apresente a mensagem de erro contendo "Código de Erro #166. Necessário incluir um '.' ao fim do comando" junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
 
@@ -1912,7 +1917,7 @@ Função para que se determine se uma string é o início de alguma declaração:
   Se a string estiver em branco, diga não.
   Diga sim.
 
-Rotina para que se compile o corpo referente para uma rotina (etapa conclusiva):
+Rotina para que se compile o corpo relacionado com uma rotina (etapa conclusiva):
   Se a rotina for inexistente, retorne.
   Se existir algum problema de compilação, retorne.
   Adicione um fragmento usando a etiqueta de finalização.
@@ -1925,7 +1930,7 @@ Rotina para que se compile o corpo referente para uma rotina (etapa conclusiva):
     Encontre uma segunda rotina usando "~Finalize" e o tipo desta variável.
     Se a segunda rotina for inexistente,
       Apresente uma mensagem de erro contendo 
-        "Erro #167. A rotina para que se finalize um '" junto com o tipo desta variável 
+        "Código de Erro #167. A 'rotina para que se finalize um " junto com o tipo desta variável 
         seguido de "' não foi encontrada'";
       Retorne.
     Adicione um terceiro fragmento usando a etiqueta de demanda interna e a segunda rotina.
@@ -1934,7 +1939,7 @@ Rotina para que se compile o corpo referente para uma rotina (etapa conclusiva):
 
 \-------------------------------------------------------------------------------------- ROTINAS EXTRAS --------------------------------------------------------
 
-Rotina para que se compile o corpo referente para uma rotina usando um percorredor (cláusula de reutilização):
+Rotina para que se compile o corpo relacionado com uma rotina usando um percorredor (cláusula de reutilização):
   Se existir algum problema de compilação, retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Compile uma referência da rotina usando o percorredor.
@@ -1942,18 +1947,18 @@ Rotina para que se compile o corpo referente para uma rotina usando um percorred
   Destrua a referência da rotina.
   Se o segmento inicial deste percorredor não for ".",
     Apresente uma mensagem de erro contendo 
-      "Erro #168. O comando 'Empregue' deve terminar com um '.' ao invés de '" 
-      junto com o segmento inicial deste percorredor seguido de "'." e o percorredor;
+      "Código de Erro #168. O comando 'Empregue' deve terminar com um '.' ao invés de '" 
+      junto com o segmento inicial deste percorredor seguido de "'." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não estiver em branco,
     Apresente a mensagem de erro contendo 
-      "Erro #169. Permitido apenas uma cláusula de reutilização dentro de cada rotina" e o percorredor;
+      "Código de Erro #169. Permitido apenas uma cláusula de reutilização dentro de cada rotina" junto com o texto CRLF e o percorredor;
     Retorne.
   Encontre uma segunda rotina usando o representação de emprego desta rotina e o catálogo geral de rotinas.
   Se a segunda rotina for inexistente,
     Apresente a mensagem de erro contendo 
-      "Erro #170. A rotina para que se '" junto com a representação de emprego desta rotina 
+      "Código de Erro #170. A rotina para que se '" junto com a representação de emprego desta rotina 
       seguido de "' não foi encontrada." e o endereço local desta rotina;
     Retorne.
-  Compile o corpo referente à segunda rotina.
+  Compile o corpo relacionado com a segunda rotina.

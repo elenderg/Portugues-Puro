@@ -18,7 +18,7 @@ Rotina para que se adicione e compile as rotinas de inicialização pré-execução e
   Lance a cabeçalho de rotina desta rotina sobre a string do cabeçalho desta rotina.
   Lance as instruções desta rotina sobre a string do corpo desta rotina.
   Compile o cabeçalho próprio à rotina.
-  Compile o corpo referente à rotina.
+  Compile o corpo relacionado com a rotina.
 
 Rotina para que se acrescente os inicializadores de variáveis globais para uma string:
   \Itere.

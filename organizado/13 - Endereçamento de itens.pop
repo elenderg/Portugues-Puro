@@ -196,12 +196,12 @@ Rotina para que se enderece um fragmento usando um endereço (empilhamento de val
   Adicione 6 para o endereço.
   Se a variável deste fragmento for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #171. A variável '" junto com o nome desta variável deste fragmento 
+      "Código de Erro #171. A variável '" junto com o nome desta variável deste fragmento 
       seguido de "' ainda não foi inicializada.";
     Retorne.
   Se o tipo desta variável deste fragmento for inexistente,
     Apresente a mensagem de erro contendo 
-      "Erro #172. O tipo '" junto com o nome deste tipo desta variável deste fragmento seguido de 
+      "Código de Erro #172. O tipo '" junto com o nome deste tipo desta variável deste fragmento seguido de 
       "' ainda não foi implementado.";
     Retorne.
   Atribua a quantidade de caracteres deste tipo desta variável deste fragmento para uma quantidade de caracteres.
@@ -215,19 +215,19 @@ Rotina para que se enderece um fragmento usando um endereço (empilhamento de val
     Adicione 4 para o endereço;
     Retorne.
   Apresente a mensagem de erro contendo 
-    "Erro #173.  O tipo '" junto com o nome deste tipo desta variável deste fragmento 
+    "Código de Erro #173.  O tipo '" junto com o nome deste tipo desta variável deste fragmento 
     seguido de "' não pode ser empilhado na Stack por conta de seu tamanho irregular.".
 
 Rotina para que se enderece um fragmento usando um endereço (registrador EAX):
   Adicione 6 para o endereço.
   Se a variável deste fragmento for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #174. A variável '" junto com o nome desta variável deste fragmento seguido de 
+      "Código de Erro #174. A variável '" junto com o nome desta variável deste fragmento seguido de 
       "' ainda não foi inicializada";
     Retorne.
   Se o tipo desta variável deste fragmento for inexistente,
     Apresente a mensagem de erro contendo 
-      "Erro #175. O tipo '" junto com o nome deste tipo desta variável deste fragmento
+      "Código de Erro #175. O tipo '" junto com o nome deste tipo desta variável deste fragmento
       seguido de "da variável '" junto com o nome desta variável deste fragmento 
       seguido de "' não foi implementado ainda";
     Retorne.
@@ -242,6 +242,6 @@ Rotina para que se enderece um fragmento usando um endereço (registrador EAX):
     Adicione 2 para o endereço;
     Retorne.
   Apresente a mensagem de erro contendo 
-    "Erro #176. O tipo '" 
+    "Código de Erro #176. O tipo '" 
     junto com o nome deste tipo desta variável deste fragmento seguido de 
     "' não pode ser salvo por conta de seu tamanho irregular.".

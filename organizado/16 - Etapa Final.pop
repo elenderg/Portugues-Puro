@@ -270,16 +270,16 @@ Rotina para que se liste uma rotina em um trecho:
   Acrescente "| ROTINA: " para o trecho.
   Acrescente a representação interna da rotina desta rotina para o trecho (com separador). \ por exemplo: atribua [matiz] e [saturação] e [luminosidade] para [cor]
   Acrescente o texto CRLF para o trecho.
-  Acrescente "| A rotina foi compilada? " para o trecho .
+  Acrescente "| compilada: " para o trecho .
   Acrescente o sinalizador de compilação desta rotina para o trecho (com separador). \ A rotina foi compilada? SIM / NÃO
   Acrescente o texto CRLF para o trecho.
-  Acrescente "| A rotina é um callback? " para o trecho.
+  Acrescente "| callback: " para o trecho.
   Acrescente o sinalizador de compatibilidade desta rotina para o trecho (com separador). \ A rotina é um callback? SIM / NÃO
   Acrescente o texto CRLF para o trecho.
-  Acrescente "| A rotina é uma rotina decisora? " para o trecho.
+  Acrescente "| decisora: " para o trecho.
   Acrescente o sinalizador de deliberação desta rotina para o trecho (com separador). \ A rotina é uma rotina decisora? SIM / NÃO
   Acrescente o texto CRLF para o trecho.
-  Acrescente "| A rotina é uma função? " para o trecho.
+  Acrescente "| função: " para o trecho.
   Acrescente o sinalizador de função desta rotina para o trecho (com separador). \ A rotina é uma função ? SIM / NÃO
   Acrescente o texto CRLF para o trecho.
   Acrescente "| Employs utilizados: |    " para o trecho.
@@ -394,7 +394,7 @@ Rotina para que se liste uma variável em um trecho:
   Acrescente "| VARIÁVEL" para o trecho (com separador).
   Acrescente "Categoria: " para o trecho.
   Acrescente a categoria desta variável para o trecho (com separador).
-  Acrescente "Compilada? " para o trecho.
+  Acrescente "Compilada: " para o trecho.
   Acrescente o sinalizador de compilação desta variável para o trecho (com separador).
   Acrescente "Nome completo: " para o trecho.
   Acrescente o nome desta variável para o trecho (com separador).
@@ -410,7 +410,7 @@ Rotina para que se liste uma variável em um trecho:
   Acrescente o sinalizador de passagem por-valor desta variável para o trecho (com separador).
   Acrescente "Contagem: " para o trecho.
   Acrescente a contagem desta variável para o trecho (com separador).
-  Acrescente "Referência somente? " para o trecho.
+  Acrescente "Referência: " para o trecho.
   Acrescente o sinalizador de referência desta variável para o trecho (com separador).
   Acrescente "Redefinição: " para o trecho.
   Acrescente o novo nome desta variável para o trecho (com separador).

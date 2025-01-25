@@ -154,12 +154,12 @@ Rotina para que se adicione a rotina de destruição para um tipo (listas):
   Se existir algum problema de compilação, retorne.
   Se o primeiro campo destes campos deste tipo for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #074. O identificador '" junto com o nome deste primeiro campo destes campos deste tipo 
+      "Código de Erro #074. O identificador '" junto com o nome deste primeiro campo destes campos deste tipo 
       seguido de "' é um campo inválido.'";
     Retorne. \
   Se o tipo deste primeiro campo destes campos deste tipo for inexistente,
     Apresente a mensagem de erro contendo 
-      "Erro #075. O identificador '" junto com o nome deste tipo deste primeiro campo destes campos deste tipo 
+      "Código de Erro #075. O identificador '" junto com o nome deste tipo deste primeiro campo destes campos deste tipo 
       seguido de "' é um tipo inválido.'";
     Retorne.
   Atribua "Destrua [" junto com o nome deste tipo 

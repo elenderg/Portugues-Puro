@@ -73,9 +73,14 @@ Um campo de estrutura é uma estrutura com
   Um sinalizador de empilhamento.
 
 Um fragmento é uma lista com
-  \ we have three lists in the compiler memory — tipos, variables, and rotinas
-  \ each rotina consists of a series of logical instructions called “fragments.” There are just 22 fragmento tipos:
-  Uma etiqueta [break, Demanda Externa, Demanda Indireta, Demanda Interna, redirecionamento, end if, etapa conclusiva, exit, finalize, increment, Decodifique, jump false, load address, load eax, loop, not, etapa preliminar, push address, empilhamento de valor, salve eax, repeat, rotina address],
+  \ Existem 3 listas na memória do compilador. Uma lista de tipos, uma lista de variáveis, e uma lista de rotinas
+  \ Cada rotina consiste em um conjunto de instruções lógicas chamadas de "fragmentos"
+   \ Existem apenas 22 tipos de fragmento. São eles:
+   \ interrupção, Demanda Externa, Demanda Indireta, Demanda Interna, Redirecionamento, 
+   \ Fim de bloco condicional, etapa conclusiva, Retorno, finalize, incremento, Decodificação, desvio falso, 
+   \carregamento de endereço, load eax, Iteração, Negação, etapa preliminar, 
+   \Empilhamento de endereço, empilhamento de valor, Salvamento em eax, Reiteração, Endereço de Rotina
+  Uma etiqueta,
   Uma variável (referência) [Demanda Indireta, redirecionamento, increment, load address, load eax, pop, push address, empilhamento de valor, rotina address, salve eax],
   Uma segunda variável (referência) [load address],
   Uma rotina (referência) [Demanda Interna, rotina address],
@@ -441,7 +446,7 @@ Rotina para que se faça tudo:
   Atribua 1252 a um número denominado codepage.
   Processe "kernel32.dll" "SetConsoleOutputCP" com o codepage retornando um número denominado status de erro.
   Se o status de erro for 0 [NULL], 
-    Escreva "Erro #001. Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT.
+    Escreva "Código de Erro #001. Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT.
   Obtenha uma string desde os argumentos da linha de comando.
   Se a string estiver em branco, 
     Escreva "--------------------------------------------------------------------------------------------------------------- " junto com o texto CRLF para StdOut;
@@ -453,7 +458,7 @@ Rotina para que se faça tudo:
   Se o conteúdo deste caractere final desta string não for a barra invertida, 
     Acrescente a barra invertida para a string.
   Se a string não estiver no sistema de arquivos, 
-    Escreva "Erro #002. O diretório '" junto com a string seguido de "' não foi encontrado." junto com o texto CRLF para StdOut;
+    Escreva "Código de Erro #002. O diretório '" junto com a string seguido de "' não foi encontrado." junto com o texto CRLF para StdOut;
     Retorne.
   Escreva "Compilando o diretório '" junto com a string seguido de "' ..." junto com o texto CRLF para StdOut. \ #0
   Escreva o texto CRLF para StdOut.
@@ -503,9 +508,10 @@ Rotina para que se exiba o erro de compilação:
     Escreva a mensagem de erro deste compilador para StdOut; 
     Retorne.
   Escreva 
-    A mensagem de erro deste compilador seguido de " - " 
+    A mensagem de erro deste compilador seguido de "Arquivo: " 
       junto com o endereço do arquivo atual deste compilador 
-      seguido de " linha: " 
+      junto com o texto CRLF
+      seguido de "Linha: " 
       junto com o número da linha de erro deste compilador
     para StdOut.
   Escreva o texto CRLF para StdOut.
@@ -586,7 +592,7 @@ Rotina para que se carregue uns arquivos fonte usando um endereço da pasta e um 
   Atribua ".pop" a uma nova extensão.
   Anexe o caractere NULL após a nova extensão.
   Se o nível de profundidade for menor do que 1, retorne.
-  Preserve a nível de profundidade.
+  Preserve o nível de profundidade.
   Atribua o nível de profundidade para um segundo nível de profundidade.
   Subtraia 1 desde o segundo nível de profundidade.
   Itere.
@@ -609,14 +615,14 @@ Função para que se determine se uma variável global está causando conflitos: \ J
   Se a variável global estiver perfeitamente predefinida, diga não.
   Diga sim.
 
-Função para que se determine se uma variável global está perfeitamente predefinida: \ Jasper
+Função para que se determine se uma variável global está perfeitamente predefinida: \ Jasper Paulsen
   Itere.
     Obtenha uma segunda variável global desde as variáveis globais prededinidas.
     Se a segunda variável global for inexistente, diga não.
     Se a variável for alguma cópia de a segunda variável global, diga sim.
   Reitere.
 
-Função para que se determine se uma variável global é alguma cópia de uma segunda variável global: \ Jasper
+Função para que se determine se uma variável global é alguma cópia de uma segunda variável global: \ Jasper Paulsen
   Se a variável global for inexistente, diga não.
   Se a segunda variável global for inexistente, diga não.
   \ OK to have different loci.

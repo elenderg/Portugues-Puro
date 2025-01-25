@@ -9,6 +9,7 @@ Rotina para que se vincule:
   Arredonde para cima tamanhos de zona.
   Inicialize um cabeçalho DOS.
   Inicialize um Cabeçalho PE.
+  \ Atribua o tamanho do executável deste compilador para um número denominado quantidade de repetições.
   Preencha o trecho EXE deste compilador com o caractere null usando o tamanho do executável deste compilador.
   Disponibilize o cabeçalho DOS ao trecho EXE deste compilador.
   Disponibilize o Cabeçalho PE ao trecho EXE deste compilador.
@@ -62,7 +63,7 @@ Rotina para que se inicialize um Cabeçalho PE (cabeçalho opcional):
     o catálogo geral de rotinas. \ AddressOfEntryPointInMemory
   Se a rotina for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Erro #194. Uma das rotinas de inicialização do cabeçalho PE não foi encontrada. "; \ Erro interno
+      "Código de Erro #194. Uma das rotinas de inicialização do cabeçalho PE não foi encontrada. "; \ Erro interno
     Retorne.
   Atribua o endereço desta rotina menos o image base ao AddressOfEntryPointInMemory deste Cabeçalho PE.
   Atribua o Endereço Base desta Região de Código ao AddressOfCodeInMemory deste Cabeçalho PE. \BaseOfCode

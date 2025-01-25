@@ -1,0 +1,30 @@
+\Um botão é uma lista com
+  \Uma caixa e 
+  \Um nome.
+
+Rotina para que se execute o programa:
+  Carregue as bibliotecas padrão do sistema.
+  Limpe a tela.
+  Mostre a seta do mouse.
+  Faça uma caixa 96 px por 48 px.
+  Centralize a caixa sobre a tela.
+  Itere.
+    Desenfileire um evento.
+    Se o evento for inexistente, pare.
+    Se a categoria deste evento for "movimentação de cursor", 
+      Execute o evento usando a caixa (exibir cursor do mouse).
+    Se a categoria deste evento for "clique do botão esquerdo",
+      Pare.
+  Reitere.
+  Desmanche todos os eventos.
+  Feche o programa.
+
+
+Rotina para que se execute um evento usando uma caixa (exibir cursor do mouse):
+  Atribua a cor branca a uma cor.
+  Se a localização deste evento estiver na caixa, 
+    Atribua a cor verde à cor.
+  Pinte e preencha a caixa com a cor.
+  Atualize a tela.
+
+
