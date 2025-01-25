@@ -2,9 +2,9 @@ Um array é uma estrutura com
   Um ponteiro denominado endereço,
   Um número denominado tamanho.
 
-\O conteúdo deste arquivo foi traduzido a parir do arquivo "The noodle" do projeto "CAL-4700" 
-\Todos os direitos originais pertencem à "Osmosian Order of Plain Language Programmers"-  - Fundada em 2006
-\O conteúdo deste arquivo, porém, possui autorização para divulgação, modificação e redistribuição no domínio público sem a necessidade de prévia autorização.
+\O conteúdo deste arquivo foi originalmente extraído do arquivo "The noodle" do projeto "CAL-4700" 
+\Todos os direitos originais pertencem à "Osmosian Order of Plain Language Programmers"- Fundada em 2006
+\O conteúdo do arquivo atual, porém, possui autorização para divulgação, modificação e redistribuição no domínio público sem a necessidade de autorização prévia.
 
 \ Um byte tem 8 bits.
 \ Uma estrutura ocupa a soma do tamanho de seus campos. Uma estrutura vazia ocupa 0 bytes.

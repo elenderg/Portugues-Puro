@@ -467,12 +467,22 @@ Função para que se determine se uma string está precisando ser decomposta:
   Diga não.
 
 Função para que se determine se uma string é algum operador de concatenação contraído usando um percorredor:
-  Se o segmento inicial deste percorredor de contrações for "seguido", mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor de contrações for "seguida", mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor de contrações for "junto", mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor de contrações for "acompanhado", mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor de contrações for algum operador de concatenação, mova o percorredor (usando diretrizes de compilação).
+  \Se o segmento inicial deste percorredor de contrações for "seguida", mova o percorredor (usando diretrizes de compilação).
+  \Se o segmento inicial deste percorredor de contrações for "junto", mova o percorredor (usando diretrizes de compilação).
+ \ Se o segmento inicial deste percorredor de contrações for "acompanhado", mova o percorredor (usando diretrizes de compilação).
   \Se o segmento inicial deste percorredor for uma variável, recue o percorredor.
   Se o segmento inicial deste percorredor de contrações for alguma contração de preposição com artigo definido, diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum operador de concatenação:
+  Se a string for "junto", diga sim. \ junto de ".., junto com o ...
+  Se a string for "juntamente", diga sim. \ juntamente com o...
+  Se a string for "seguido", diga sim. \ seguido de "....
+  Se a string for "seguida", diga sim. \ seguido de "....
+  Se a string for "acompanhado", diga sim. \ acompanhado de "...
+  \Se a string for "em", diga sim.
+  \Se a string for "&", diga sim.
   Diga não.
 
 Função para que se determine se uma string é alguma contração de preposição com artigo definido:

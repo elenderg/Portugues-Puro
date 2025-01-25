@@ -16,7 +16,7 @@ Rotina para que se compile o corpo relacionado com a rotina denominado uma strin
   Encontre uma rotina usando a string e o catálogo geral de rotinas.
   Se a rotina for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Código de Erro #077. A rotina 'para que se " junto com a string seguido de "' não pode ser encontrada.";
+      "Código de Erro #077. A rotina 'para que se " junto com a string seguido de "' não foi encontrada no catálogo geral de rotinas";
     Retorne.
   Compile o corpo relacionado com a rotina.
 
@@ -1134,14 +1134,7 @@ Rotina para que se compile uma expressão matemática usando um percorredor (opera
   Atribua a variável intermediária à variável desta expressão matemática.
   Limpe a frase desta expressão matemática.
 
-Função para que se determine se uma string é algum operador de concatenação:
-  Se a string for "junto", diga sim. \ junto de ".., junto com o ...
-  Se a string for "juntamente", diga sim. \ juntamente com o...
-  Se a string for "seguido", diga sim. \ seguido de "....
-  Se a string for "acompanhado", diga sim. \ acompanhado de "...
-  Se a string for "em", diga sim.
-  \Se a string for "&", diga sim.
-  Diga não.
+
 
 Rotina para que se compile uma expressão matemática usando um percorredor (operador de concatenação):
   Se existir algum problema de compilação, retorne.
@@ -1931,7 +1924,7 @@ Rotina para que se compile o corpo relacionado com uma rotina (etapa conclusiva)
     Se a segunda rotina for inexistente,
       Apresente uma mensagem de erro contendo 
         "Código de Erro #167. A 'rotina para que se finalize um " junto com o tipo desta variável 
-        seguido de "' não foi encontrada'";
+        seguido de "' não foi encontrada no catálogo geral de rotinas.";
       Retorne.
     Adicione um terceiro fragmento usando a etiqueta de demanda interna e a segunda rotina.
   Reitere.

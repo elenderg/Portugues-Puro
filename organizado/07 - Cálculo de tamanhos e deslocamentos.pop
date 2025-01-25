@@ -19,7 +19,7 @@ Rotina para que se calcule os comprimentos relacionados com uns tipos:
 Rotina para que se calcule a quantidade de caracteres referentes para um tipo;
 Rotina para que se calcule a quantidade de caracteres relacionados com um tipo:
   Se o tipo for inexistente, retorne.
-  Se a quantidade de caracteres deste tipo não for -1, retorne.
+  Se a quantidade de caracteres deste tipo não for -1, retorne. \ sai da RECURSÃO
   Calcule a quantidade de caracteres referentes ao tipo base deste tipo. \ RECURSÃO
   Se os campos deste tipo estiverem vazios,
     Atribua a quantidade de caracteres deste tipo base deste tipo à quantidade de caracteres deste tipo;
