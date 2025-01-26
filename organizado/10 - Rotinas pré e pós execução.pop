@@ -16,7 +16,8 @@ Rotina para que se compile o corpo relacionado com a rotina denominado uma strin
   Encontre uma rotina usando a string e o catálogo geral de rotinas.
   Se a rotina for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Código de Erro #077. A rotina 'para que se " junto com a string seguido de "' não foi encontrada no catálogo geral de rotinas";
+      "Código de Erro #077. A rotina 'para que se " junto com a string 
+      seguido de "' não foi encontrada no catálogo geral de rotinas" junto com o texto CRLF;
     Retorne.
   Compile o corpo relacionado com a rotina.
 
@@ -1924,7 +1925,7 @@ Rotina para que se compile o corpo relacionado com uma rotina (etapa conclusiva)
     Se a segunda rotina for inexistente,
       Apresente uma mensagem de erro contendo 
         "Código de Erro #167. A 'rotina para que se finalize um " junto com o tipo desta variável 
-        seguido de "' não foi encontrada no catálogo geral de rotinas.";
+        seguido de "' não foi encontrada no catálogo geral de rotinas." junto com o texto CRLF;
       Retorne.
     Adicione um terceiro fragmento usando a etiqueta de demanda interna e a segunda rotina.
   Reitere.

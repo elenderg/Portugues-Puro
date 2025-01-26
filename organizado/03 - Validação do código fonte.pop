@@ -48,8 +48,7 @@ Rotina para que se mova um percorredor (usando diretrizes de compilação): \ talv
     Se a string de erro não estiver em branco,
        Apresente uma mensagem de erro contendo a string de erro e o caractere inicial deste segmento inicial deste percorredor; \#191
        Retorne.
-    \Se o segmento inicial deste percorredor for "del", recue o percorredor; Retorne. 
-    \ Spanish contraction "del"; fudged para "de l", short por "de el"
+    \Se o segmento inicial deste percorredor for "del", recue o percorredor; Retorne.
     Se o segmento inicial deste percorredor estiver em branco, retorne.
     Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor for irrelevante, 
       Reitere.
@@ -202,14 +201,14 @@ Rotina para que se examine um tipo usando um percorredor:
     Adicione 1 à contagem.
   Se a contagem for igual ou maior do que 2,
     Apresente uma mensagem de erro contendo 
-      "Código de Erro #011. não foi possível detectar o idioma desta variável" e o endereço local deste tipo;
+      "Código de Erro #011. não foi possível detectar o idioma desta variável" junto com o texto CRLF e o endereço local deste tipo;
     Retorne.
   Se o segmento inicial deste percorredor for algum operador de atribuição de estruturas compostas,
     Examine o tipo usando o percorredor (cláusula 'tem');
     Retorne.
   Se o segmento inicial deste percorredor não for algum operador de atribuição simples,
     Apresente a mensagem de erro contendo 
-      "Código de Erro #012. Esperado enontrar 'é'. Encontrado '" 
+      "Código de Erro #012. Esperado encontrar 'é'. Encontrado '" 
        junto com o segmento inicial deste percorredor seguido de "'." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
@@ -676,7 +675,6 @@ Rotina para que se mova um percorredor (palavras plurais): \ talvez aqui consert
        Apresente uma mensagem de erro contendo a string de erro e o caractere inicial deste segmento inicial deste percorredor; \#191
        Retorne.
     \Se o segmento inicial deste percorredor for "del", recue o percorredor; Retorne. 
-    \ Spanish contraction "del"; fudged para "de l", short por "de el"
     Se o segmento inicial deste percorredor estiver em branco, 
       Retorne.
     Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor for irrelevante, 
@@ -1280,8 +1278,8 @@ Rotina para que se catalogue um tipo usando um nome:
     Atribua o endereço local deste tipo procurado ao endereço local. \ aponta para um erro do tipo no código-fonte, não para um tipo gerado
   Se o endereço local não for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Código de Erro #021. Tipo: '" junto com o nome seguido de 
-      "' já declarado anteriormente." e o endereço local.
+      "Código de Erro #021. O identificador '" junto com o nome seguido de 
+      "' corresponde a um tipo já declarado anteriormente." junto com o texto CRLF e o endereço local.
 
 Função para que se determine se uma string é algum operador de atribuição simples:
   Se a string for "é", diga sim.
@@ -1302,13 +1300,14 @@ Rotina para que se examine um tipo usando um percorredor (unidade de medida):
   Converta o segmento inicial deste percorredor para a razão de escala deste tipo.
   Se a razão de escala deste tipo for 0,
     Apresente uma mensagem de erro contendo 
-      "Código de Erro #022. Impossível utilizar 0 como razão de escala em tipos escalares." e o endereço local deste tipo;
+      "Código de Erro #022. Impossível utilizar 0 como razão de escala em tipos escalares." 
+      junto com o texto CRLF e o endereço local deste tipo;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Examine o nome do tipo primitivo deste tipo usando o percorredor.
   Se o segmento inicial deste percorredor não for o ponto final,
     Apresente a mensagem de erro contendo 
-      "Código de Erro #023. Esperado encontrar um '.' após a declaração desta unidade de medida. Encontrado. '" 
+      "Código de Erro #023. Esperado encontrar um '.' após a declaração de unidade de medida. Encontrado. '" 
       junto com o segmento inicial deste percorredor seguido de "'." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
@@ -1410,9 +1409,9 @@ Rotina para que se catalogue uma variável global:
   Se a variável global for inexistente, retorne.
   Se o nome desta variável global estiver no catálogo de variáveis globais,
     Apresente uma mensagem de erro contendo 
-      "Código de Erro #028. A variável global '" junto com o nome desta variável global 
-      seguido de "' já foi declarada anteriormente." 
-    e o endereço local desta variável global;
+      "Código de Erro #028. O identificador '" junto com o nome desta variável global 
+      seguido de "' corresponde a uma variável global já declarada anteriormente." 
+      junto com o texto CRLF e o endereço local desta variável global;
     Retorne.
   Catalogue a variável global usando o nome desta variável global e o catálogo de variáveis globais.
 
@@ -1421,7 +1420,8 @@ Rotina para que se examine uma variável global usando um percorredor (literal te
   Examine o corpo de variável global desta variável global usando o percorredor.
   Se o segmento inicial deste percorredor não for o ponto final,
     Apresente uma mensagem de erro contendo 
-      "Código de Erro #029. Erro de sintaxe. Esperado '.' no final de declarações de valores." junto com o texto CRLF e o percorredor;
+      "Código de Erro #029. Erro de sintaxe. Necessário inserir '.' ao inicializar variáveis globais." 
+      junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Catalogue a variável global.
@@ -1539,7 +1539,7 @@ Rotina para que se examine uma rotina usando um percorredor:
     Retorne. \ *** usado para nomes alternativos de rotinas
   Se o segmento inicial deste percorredor não for o sinal de dois pontos,
     Apresente a mensagem de erro contendo 
-      "Código de Erro #034. Erro de sintaxe. ':' ausente ou mal posicionado" 
+      "Código de Erro #034. Erro de sintaxe no cabeçalho de rotina. ':' ausente ou mal posicionado" 
       e o endereço local desta rotina;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).

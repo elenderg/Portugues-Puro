@@ -197,12 +197,12 @@ Rotina para que se enderece um fragmento usando um endereço (empilhamento de val
   Se a variável deste fragmento for inexistente,
     Apresente uma mensagem de erro contendo 
       "Código de Erro #171. A variável '" junto com o nome desta variável deste fragmento 
-      seguido de "' ainda não foi inicializada.";
+      seguido de "' ainda não foi inicializada." junto com o texto CRLF;
     Retorne.
   Se o tipo desta variável deste fragmento for inexistente,
     Apresente a mensagem de erro contendo 
       "Código de Erro #172. O tipo '" junto com o nome deste tipo desta variável deste fragmento seguido de 
-      "' ainda não foi implementado.";
+      "' ainda não foi implementado." junto com o texto CRLF;
     Retorne.
   Atribua a quantidade de caracteres deste tipo desta variável deste fragmento para uma quantidade de caracteres.
   Se a quantidade de caracteres for 4,
@@ -216,20 +216,20 @@ Rotina para que se enderece um fragmento usando um endereço (empilhamento de val
     Retorne.
   Apresente a mensagem de erro contendo 
     "Código de Erro #173.  O tipo '" junto com o nome deste tipo desta variável deste fragmento 
-    seguido de "' não pode ser empilhado na Stack por conta de seu tamanho irregular.".
+    seguido de "' não pode ser empilhado na Stack por conta de seu tamanho irregular." junto com o texto CRLF.
 
 Rotina para que se enderece um fragmento usando um endereço (registrador EAX):
   Adicione 6 para o endereço.
   Se a variável deste fragmento for inexistente,
     Apresente uma mensagem de erro contendo 
       "Código de Erro #174. A variável '" junto com o nome desta variável deste fragmento seguido de 
-      "' ainda não foi inicializada";
+      "' ainda não foi inicializada" junto com o texto CRLF;
     Retorne.
   Se o tipo desta variável deste fragmento for inexistente,
     Apresente a mensagem de erro contendo 
       "Código de Erro #175. O tipo '" junto com o nome deste tipo desta variável deste fragmento
       seguido de "da variável '" junto com o nome desta variável deste fragmento 
-      seguido de "' não foi implementado ainda";
+      seguido de "' não foi implementado ainda" junto com o texto CRLF;
     Retorne.
   Atribua a quantidade de caracteres deste tipo desta variável deste fragmento para uma quantidade de caracteres.
   Se a quantidade de caracteres for 4,

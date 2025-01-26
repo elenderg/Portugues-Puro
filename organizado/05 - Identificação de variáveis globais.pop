@@ -110,7 +110,7 @@ Rotina para que se destrinche uma variável:
   \Se o tipo desta variável for inexistente,
     Apresente uma mensagem de erro contendo 
       "Código de Erro #051. Não foi possível determinar o tipo da variável '" 
-      junto com o nome desta variável seguido de "'." e o endereço local desta variável.
+      junto com o nome desta variável seguido de "'." junto com o texto CRLF e o endereço local desta variável.
 
 Rotina para que se destrinche uma variável (usando o nome do tipo declarado):
   Encontre o tipo desta variável usando o nome do tipo desta variável e o catálogo de tipos.
