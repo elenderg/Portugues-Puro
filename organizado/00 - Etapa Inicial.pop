@@ -258,7 +258,7 @@ Uma string do cabeçalho é uma string.
 Uma referência da rotina é [composta de] umas unidades semânticas.
 Uma palavra-chave é uma string.
 Uma palavra-chave de designação é uma palavra-chave.
-Um scratch é uma variável local.
+Um variável temporária de compilação é uma variável local.
 
 Um arquivo fonte é uma lista com
   Um endereço completo e
@@ -295,12 +295,12 @@ Um nome do tipo é um nome.
 
 Uma variável é uma lista com
   Um endereço local (referência),
-  Um categoria [lvalor iteral, variável global, variável local, parâmetro, scratch],
+  Um categoria [lvalor iteral, variável global, variável local, parâmetro, variável temporária de compilação],
   Um sinalizador de compilação,
   Um nome,
   Um apelido,
   Um nome do tipo,
-  Um tipo (referência), \ tipo real em literal, variável global e local; tipos revogados em parâmetros e scratches
+  Um tipo (referência), \ tipo real no caso de valores literais, variáveis globais e locais; tipos revogados em parâmetros e variável temporária de compilaçãoes
   Um endereço [variáveis globais e valores literais somente] ou
   Um deslocamento sob o endereço [variáveis locais, parâmetros, e campos somente],
   Uma contagem [campos somente],

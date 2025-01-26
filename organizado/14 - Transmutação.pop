@@ -32,52 +32,52 @@ Rotina para que se transforme uns fragmentos em código hexadecimal:
 Rotina para que se transforme um fragmento em código hexadecimal:
   Se existir algum problema de compilação, retorne.
   Se o fragmento for inexistente, retorne.
-  Se a etiqueta deste fragmento for o etiqueta de inserção de endereço [na stack],
+  Se a etiqueta deste fragmento for a etiqueta de inserção de endereço [na stack],
     Transforme o fragmento em código hexadecimal (empilhamento de endereço);
     Retorne.
   Se a etiqueta deste fragmento for a etiqueta de demanda interna,
     Transforme o fragmento em código hexadecimal (Demanda Interna);
     Retorne.
-  Se a etiqueta deste fragmento for o etiqueta de carregamento de endereço,
+  Se a etiqueta deste fragmento for a etiqueta de carregamento de endereço,
     Transforme o fragmento em código hexadecimal (load endereço);
     Retorne.
   Se a etiqueta deste fragmento for a etiqueta de acréscimo,
     Transforme o fragmento em código hexadecimal (increment);
     Retorne.
-  Se a etiqueta deste fragmento for o etiqueta de redirecionamento,
+  Se a etiqueta deste fragmento for a etiqueta de redirecionamento,
     Transforme o fragmento em código hexadecimal (cláusula de redirecionamento);
     Retorne.
-  Se a etiqueta deste fragmento for o etiqueta de desvio falso,
+  Se a etiqueta deste fragmento for a etiqueta de desvio falso,
     Transforme o fragmento em código hexadecimal (desvio caso resultado negativo);
     Retorne.
   Se a etiqueta deste fragmento for a etiqueta de negação lógica,
     Transforme o fragmento em código hexadecimal (negação lógica);
     Retorne.
-  Se a etiqueta deste fragmento for o etiqueta de retorno,
+  Se a etiqueta deste fragmento for a etiqueta de retorno,
     Transforme o fragmento em código hexadecimal (cláusula de retorno);
     Retorne.
   Se a etiqueta deste fragmento for a etiqueta de repetição,
     Transforme o fragmento em código hexadecimal (cláusula de repetição);
     Retorne.
-  Se a etiqueta deste fragmento for o etiqueta de interrupção,
+  Se a etiqueta deste fragmento for a etiqueta de interrupção,
     Transforme o fragmento em código hexadecimal (cláusula de interrupção);
     Retorne.
-  Se a etiqueta deste fragmento for o etiqueta preliminar,
+  Se a etiqueta deste fragmento for a etiqueta preliminar,
     Transforme o fragmento em código hexadecimal (etapa preliminar);
     Retorne.
-  Se a etiqueta deste fragmento for o etiqueta conclusiva,
+  Se a etiqueta deste fragmento for a etiqueta conclusiva,
     Transforme o fragmento em código hexadecimal (etapa conclusiva);
     Retorne.
-  Se a etiqueta deste fragmento for o etiqueta de inserção de valor [na stack],
+  Se a etiqueta deste fragmento for a etiqueta de inserção de valor [na stack],
     Transforme o fragmento em código hexadecimal (empilhamento de valor);
     Retorne.
   Se a etiqueta deste fragmento for a etiqueta de demanda externa,
     Transforme o fragmento em código hexadecimal (Demanda Externa);
     Retorne.
-  Se a etiqueta deste fragmento for o etiqueta de carregamento de registrador EAX,
+  Se a etiqueta deste fragmento for a etiqueta de carregamento de registrador EAX,
     Transforme o fragmento em código hexadecimal (atribuição de EAX);
     Retorne.
-  Se a etiqueta deste fragmento for o etiqueta de obtenção do registrador EAX,
+  Se a etiqueta deste fragmento for a etiqueta de obtenção do registrador EAX,
     Transforme o fragmento em código hexadecimal (registrador EAX);
     Retorne.
   Se a etiqueta deste fragmento for a etiqueta de demanda indireta,
@@ -109,7 +109,7 @@ Rotina para que se acrescente a instrução de carregamento de endereço para um te
     Acrescente $8D95 e o deslocamento desta variável para o texto hexadecimal; 
     \ lea edx, [ebp+ o deslocamento da variável]
     Retorne. 
-  Se a categoria desta variável for "scratch",
+  Se a categoria desta variável for "variável temporária de compilação",
     Acrescente $8B95 e o deslocamento desta variável para o texto hexadecimal; 
     \ mov edx, [ebp+ o deslocamento da variável]
     Retorne. 
@@ -164,13 +164,13 @@ Rotina para que se transforme um fragmento em código hexadecimal (increment):
   Se a variável deste fragmento for inexistente,
     Apresente uma mensagem de erro contendo 
       "Código de Erro #180. A variável '" junto com o nome desta variável deste fragmento \ Erro interno
-      seguido de "' do fragmento não foi encontrada." junto com o texto CRLF;
+      seguido de "' deste fragmento não foi encontrada." junto com o texto CRLF;
     Retorne.
-  Se a categoria desta variável deste fragmento não for "scratch",
+  Se a categoria desta variável deste fragmento não for "variável temporária de compilação",
     Apresente a mensagem de erro contendo 
       "Código de Erro #181. A categoria da variável '" junto com o nome desta variável deste fragmento \ Erro interno
-      seguido de "' não é 'scratch'. Categoria detectada: '" junto com a categoria desta variável deste fragmento 
-      seguido de "'." junto com o texto CRLF;
+      seguido de "' não corresponde 'variável temporária de compilação'. Categoria detectada: '" 
+      junto com a categoria desta variável deste fragmento seguido de "'." junto com o texto CRLF;
     Retorne.
   Acrescente 
       $8185 e 
@@ -195,10 +195,11 @@ Rotina para que se transforme um fragmento em código hexadecimal (cláusula de re
   \ mov [ebp+ o deslocamento da variável do fragmento]
 
 Rotina para que se transforme um fragmento em código hexadecimal (desvio caso resultado negativo):
-  Encontre um segundo fragmento usando o fragmento e o etiqueta delimitadora de bloco condicional.
+  Encontre um segundo fragmento usando o fragmento e a etiqueta delimitadora de bloco condicional.
   Se o segundo fragmento for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Código de Erro #182. A variável deste fragmento não foi localizada" junto com o texto CRLF; \ Erro interno
+      "Código de Erro #182. A variável '"  junto com o nome desta variável deste segundo fragmento 
+      junto com "' deste fragmento não foi localizada" junto com o texto CRLF; \ Erro interno
     Retorne.
   Acrescente $83F800 para o código deste fragmento. \ cmp eax,0
   Acrescente $0F84 e o endereço deste segundo fragmento para o fragmento. \ je + o endereço do fragmento
@@ -228,16 +229,18 @@ Rotina para que se transforme um fragmento em código hexadecimal (cláusula de re
   Encontre um segundo fragmento usando o fragmento e a etiqueta de finalização.
   Se o segundo fragmento for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Código de Erro #183. A variável deste fragmento não foi localizada" junto com o texto CRLF; \ Erro interno
+      "Código de Erro #183. A variável '"  junto com o nome desta variável deste segundo fragmento 
+      junto com "' deste fragmento não foi localizada" junto com o texto CRLF; \ Erro interno
     Retorne.
   Acrescente $E9 e o endereço deste segundo fragmento para o fragmento. 
   \ jmp + o endereço do fragmento
 
 Rotina para que se transforme um fragmento em código hexadecimal (cláusula de repetição):
-  Encontre um segundo fragmento usando o fragmento e o etiqueta de laço (regressivamente).
+  Encontre um segundo fragmento usando o fragmento e a etiqueta de laço (regressivamente).
   Se o segundo fragmento for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Código de Erro #184. A variável deste fragmento não foi localizada" junto com o texto CRLF; \ Erro interno
+      "Código de Erro #184. A variável '"  junto com o nome desta variável deste segundo fragmento 
+      junto com "' deste fragmento não foi localizada" junto com o texto CRLF; \ Erro interno
     Retorne.
   Acrescente $E9 e o endereço deste segundo fragmento para o fragmento. 
   \ jmp o endereço do fragmento
@@ -260,11 +263,13 @@ Rotina para que se transforme um fragmento em código hexadecimal (cláusula de in
     a etiqueta (regressivamente).
   Se o terceiro fragmento for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Código de Erro #185. A variável deste fragmento não foi localizada" junto com o texto CRLF; \ Erro interno
+      "Código de Erro #185. A variável '"  junto com o nome desta variável deste terceiro fragmento 
+      junto com "' deste fragmento não foi localizada" junto com o texto CRLF; \ Erro interno
     Retorne.
   Se o próximo fragmento deste terceiro fragmento for inexistente,
     Apresente a mensagem de erro contendo 
-      "Código de Erro #186. A variável deste fragmento não foi localizada" junto com o texto CRLF; \ Erro interno
+      "Código de Erro #186. A variável '"  junto com o nome desta variável deste terceiro fragmento 
+      junto com "' deste fragmento não foi localizada" junto com o texto CRLF; \ Erro interno
     Retorne.
   Acrescente $E9 [JMP rel32] e o endereço deste próximo fragmento deste terceiro fragmento para o fragmento. 
   \ JMP o endereço de destino. 
@@ -304,7 +309,8 @@ Rotina para que se transforme um fragmento em código hexadecimal (empilhamento d
   \ Salva o endereço em edx
   Se a variável deste fragmento for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Código de Erro #187. A variável deste fragmento não foi localizada" junto com o texto CRLF; \ Erro interno
+      "Código de Erro #187. A variável '"  junto com o nome desta variável deste fragmento 
+      junto com "' deste fragmento não foi localizada" junto com o texto CRLF; \ Erro interno
     Retorne.
   Se o tipo desta variável deste fragmento for inexistente,
     Apresente a mensagem de erro contendo 

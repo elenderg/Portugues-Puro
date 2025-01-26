@@ -197,12 +197,13 @@ Rotina para que se enderece um fragmento usando um endereço (empilhamento de val
   Se a variável deste fragmento for inexistente,
     Apresente uma mensagem de erro contendo 
       "Código de Erro #171. A variável '" junto com o nome desta variável deste fragmento 
-      seguido de "' ainda não foi inicializada." junto com o texto CRLF;
+      seguido de "' não foi devidamente inicializada. Certifique-se de atribuir um valor antes do uso." junto com o texto CRLF;
     Retorne.
   Se o tipo desta variável deste fragmento for inexistente,
     Apresente a mensagem de erro contendo 
-      "Código de Erro #172. O tipo '" junto com o nome deste tipo desta variável deste fragmento seguido de 
-      "' ainda não foi implementado." junto com o texto CRLF;
+      "Código de Erro #172. O tipo '" junto com o nome deste tipo desta variável deste fragmento 
+       seguido de "da variável '" junto com o nome desta variável deste fragmento seguido de 
+      "' não foi implementado.  Verifique se ele foi definido corretamente." junto com o texto CRLF;
     Retorne.
   Atribua a quantidade de caracteres deste tipo desta variável deste fragmento para uma quantidade de caracteres.
   Se a quantidade de caracteres for 4,
@@ -216,20 +217,20 @@ Rotina para que se enderece um fragmento usando um endereço (empilhamento de val
     Retorne.
   Apresente a mensagem de erro contendo 
     "Código de Erro #173.  O tipo '" junto com o nome deste tipo desta variável deste fragmento 
-    seguido de "' não pode ser empilhado na Stack por conta de seu tamanho irregular." junto com o texto CRLF.
+    seguido de "' possui um tamanho inválido para a pilha. Apenas tipos de 8, 16 ou 32 bits são permitidos." junto com o texto CRLF.
 
 Rotina para que se enderece um fragmento usando um endereço (registrador EAX):
   Adicione 6 para o endereço.
   Se a variável deste fragmento for inexistente,
     Apresente uma mensagem de erro contendo 
       "Código de Erro #174. A variável '" junto com o nome desta variável deste fragmento seguido de 
-      "' ainda não foi inicializada" junto com o texto CRLF;
+      "' não foi inicializada corretamente. Certifique-se de atribuir um valor antes do uso." junto com o texto CRLF;
     Retorne.
   Se o tipo desta variável deste fragmento for inexistente,
     Apresente a mensagem de erro contendo 
       "Código de Erro #175. O tipo '" junto com o nome deste tipo desta variável deste fragmento
       seguido de "da variável '" junto com o nome desta variável deste fragmento 
-      seguido de "' não foi implementado ainda" junto com o texto CRLF;
+      seguido de "' não foi implementado.  Verifique se ele foi definido corretamente." junto com o texto CRLF;
     Retorne.
   Atribua a quantidade de caracteres deste tipo desta variável deste fragmento para uma quantidade de caracteres.
   Se a quantidade de caracteres for 4,
@@ -244,4 +245,4 @@ Rotina para que se enderece um fragmento usando um endereço (registrador EAX):
   Apresente a mensagem de erro contendo 
     "Código de Erro #176. O tipo '" 
     junto com o nome deste tipo desta variável deste fragmento seguido de 
-    "' não pode ser salvo por conta de seu tamanho irregular.".
+    "' possui um tamanho inválido. Apenas tipos de 8, 16 ou 32 bits são permitidos.".

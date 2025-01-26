@@ -10,8 +10,7 @@ Rotina para que se compile os corpos referentes para as rotinas:
   Compile o corpo relacionado com a rotina denominada "Execute o programa".
   Compile o corpo relacionado com a rotina denominada "Finalize após execução".
 
-Rotina para que se compile o corpo relacionado com a rotina denominada uma string;
-Rotina para que se compile o corpo relacionado com a rotina denominado uma string:
+Rotina para que se compile o corpo relacionado com a rotina denominada uma string:
   Se existir algum problema de compilação, retorne.
   Encontre uma rotina usando a string e o catálogo geral de rotinas.
   Se a rotina for inexistente,
@@ -134,7 +133,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
   Adicione um fragmento usando a etiqueta de demanda interna e a rotina.
   Se o sinalizador estiver ativo, 
     Adicione um segundo fragmento usando a etiqueta de negação lógica.
-  Adicione um terceiro fragmento usando o etiqueta de desvio falso.
+  Adicione um terceiro fragmento usando a etiqueta de desvio falso.
   Mova o percorredor (usando diretrizes de compilação).
   Itere.
     Compile a próxima instrução usando o percorredor (demais cláusulas). \ retorno
@@ -148,7 +147,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
         junto com o segmento inicial deste percorredor seguido de "." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
-  Adicione um quarto fragmento usando o etiqueta delimitadora de bloco condicional.
+  Adicione um quarto fragmento usando a etiqueta delimitadora de bloco condicional.
 
 Rotina para que se compile umas unidades semânticas usando um percorredor:
   \Itere.
@@ -449,7 +448,7 @@ Rotina para que se adicione um fragmento usando uma etiqueta e uma rotina:
   Compile o corpo relacionado com a rotina.
 
 Rotina para que se adicione dois fragmentos usando uma string e uma variável e um endereço local:
-  Adicione um fragmento usando o etiqueta de inserção de endereço [na stack] e a variável.
+  Adicione um fragmento usando a etiqueta de inserção de endereço [na stack] e a variável.
   Adicione uma unidade semântica para umas unidades semânticas usando a string.
   Adicione uma segunda unidade semântica para as unidades semânticas usando o tipo desta variável.
   Encontre uma rotina usando as unidades semânticas.
@@ -693,18 +692,18 @@ Rotina para que se compile um termo usando um percorredor (cláusula de redirecio
       "Código de Erro #103. O tipo do conteúdo do termo '" \ MODIFICADO - TESTAR
       junto com a frase deste termo seguido de "' não foi encontrado."junto com o texto CRLF e o percorredor; 
     Retorne.
-  Se a categoria deste termo for "scratch",
+  Se a categoria deste termo for "variável temporária de compilação",
     Compile o termo usando o percorredor (redirecionamentos de endereços - campos de estruturas);
     Retorne.
-  Adicione um scratch usando 
+  Adicione uma variável temporária de compilação usando 
     o nome deste tipo do conteúdo deste tipo deste termo e 
     o caractere inicial deste segmento inicial deste percorredor.
   Adicione um fragmento usando 
     a etiqueta de carregamento de endereço e 
     a variável deste termo e 
-    o scratch.
-  Adicione um segundo fragmento usando o etiqueta de redirecionamento e o scratch.
-  Atribua o scratch à variável deste termo.
+    a variável temporária de compilação.
+  Adicione um segundo fragmento usando a etiqueta de redirecionamento e a variável temporária de compilação.
+  Atribua a variável temporária de compilação à variável deste termo.
   Limpe a frase deste termo.
 
 Rotina para que se compile um termo usando um percorredor (redirecionamentos de endereços - campos de estruturas):
@@ -731,14 +730,14 @@ Rotina para que se compile um termo usando um percorredor (possessivo - endereça
   Atribua a variável intermediária à variável deste termo.
   Limpe a frase deste termo.
 
-Rotina para que se adicione um scratch usando um nome do tipo e um endereço local:
+Rotina para que se adicione uma variável temporária de compilação usando um nome do tipo e um endereço local:
   Se a rotina utilizada atualmente for inexistente,
-    Esvazie o scratch;
+    Esvazie a variável temporária de compilação;
     Retorne.
-  Adicione o scratch para as variáveis locais desta rotina utilizada atualmente usando "scratch" e o endereço local.
-  Gere o nome deste scratch usando "~S".
-  Atribua o nome do tipo ao nome do tipo deste scratch.
-  Destrinche o scratch.
+  Adicione a variável temporária de compilação para as variáveis locais desta rotina utilizada atualmente usando "variável temporária de compilação" e o endereço local.
+  Gere o nome deste variável temporária de compilação usando "~S".
+  Atribua o nome do tipo ao nome do tipo deste variável temporária de compilação.
+  Destrinche a variável temporária de compilação.
 
 Rotina para que se adicione um fragmento usando uma etiqueta e uma variável e uma segunda variável:
   Se a rotina utilizada atualmente for inexistente,
@@ -863,16 +862,16 @@ Rotina para que se compile um termo usando um percorredor e um campo de estrutur
   Se a rotina de função deste campo de estrutura não for inexistente,
     Compile o termo usando o percorredor e o campo de estrutura (função);
     Retorne.
-  Se a categoria deste termo for "scratch",
+  Se a categoria deste termo for "variável temporária de compilação",
     Compile o termo usando o percorredor e 
     o campo de estrutura (campos de estruturas);
     Retorne.
   Atribua o campo deste campo de estrutura para um campo.
-  Adicione um scratch usando o nome deste tipo deste campo e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione um fragmento usando a etiqueta de carregamento de endereço e a variável deste termo e o scratch.
+  Adicione uma variável temporária de compilação usando o nome deste tipo deste campo e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione um fragmento usando a etiqueta de carregamento de endereço e a variável deste termo e a variável temporária de compilação.
   Se o deslocamento deste campo não for 0, 
-    Adicione um terceiro fragmento usando a etiqueta de acréscimo e o scratch e o deslocamento deste campo.
-  Atribua o scratch à variável deste termo.
+    Adicione um terceiro fragmento usando a etiqueta de acréscimo e a variável temporária de compilação e o deslocamento deste campo.
+  Atribua a variável temporária de compilação à variável deste termo.
   Limpe a frase deste termo.
   
 Rotina para que se compile um termo usando um percorredor e um campo de estrutura (função):
@@ -946,9 +945,9 @@ Rotina para que se compile um termo usando um percorredor (cláusula comparativa)
       "Código de Erro #113. Tipo: '" junto com o nome do tipo 
       seguido de "' inválido." junto com o texto CRLF e o percorredor;
     Retorne.
-  Adicione um scratch usando o nome deste tipo e o caractere inicial deste segmento inicial deste percorredor.
-  Adicione um fragmento usando o etiqueta de carregamento de endereço e a variável deste termo e o scratch.
-  Atribua o scratch à variável deste termo.
+  Adicione uma variável temporária de compilação usando o nome deste tipo e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione um fragmento usando a etiqueta de carregamento de endereço e a variável deste termo e a variável temporária de compilação.
+  Atribua a variável temporária de compilação à variável deste termo.
   Limpe a frase deste termo.
 
 Rotina para que se compile um termo usando um percorredor (proporção de execução):
@@ -986,9 +985,9 @@ Rotina para que se adicione fragmentos diversos usando
       uma terceira string e 
       uma terceira variável e 
       um endereço de byte :
-  Adicione um fragmento usando o etiqueta de inserção de endereço [na stack] e o terceira variável.
-  Adicione um segundo fragmento usando o etiqueta de inserção de endereço [na stack] e a segunda variável.
-  Adicione um terceiro fragmento usando o etiqueta de inserção de endereço [na stack] e a variável.
+  Adicione um fragmento usando a etiqueta de inserção de endereço [na stack] e o terceira variável.
+  Adicione um segundo fragmento usando a etiqueta de inserção de endereço [na stack] e a segunda variável.
+  Adicione um terceiro fragmento usando a etiqueta de inserção de endereço [na stack] e a variável.
   Adicione uma unidade semântica para umas unidades semânticas usando a string.
   Adicione uma segunda unidade semântica para as unidades semânticas usando o tipo desta variável.
   Adicione uma terceira unidade semântica para as unidades semânticas usando a segunda string.
@@ -1385,7 +1384,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
     Apresente uma mensagem de erro contendo 
       "Código de Erro #135. Funções booleanas devem retornar apenas 'sim' ou 'não'" junto com o texto CRLF e o percorredor;
     Retorne.
-  Adicione um fragmento usando o etiqueta de retorno.
+  Adicione um fragmento usando a etiqueta de retorno.
   Mova o percorredor (usando diretrizes de compilação).
 
 Função para que se determine se uma string é algum comando de repetição:
@@ -1427,8 +1426,8 @@ Função para que se determine se uma string é algum comando de confirmação ou neg
   \Se o tipo desta expressão matemática não puder ser reduzido para "sinalizador", 
     \Apresente uma mensagem de erro contendo "Necesito un rotundo 'si' o 'no' aquí." junto com o texto CRLF e o percorredor; 
     \Retorne.
-  \Adicione um fragmento usando o etiqueta de carregamento de registrador EAX e a variável desta expressão matemática.
-  \Adicione um segundo fragmento usando o etiqueta de retorno.
+  \Adicione um fragmento usando a etiqueta de carregamento de registrador EAX e a variável desta expressão matemática.
+  \Adicione um segundo fragmento usando a etiqueta de retorno.
 
 Rotina para que se compile a próxima instrução usando um percorredor (palavra-chave 'diga'):
   Se o sinalizador de deliberação desta rotina utilizada atualmente não estiver ativo,
@@ -1522,7 +1521,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
       "Código de Erro #141. Valores do tipo: " junto com o nome deste tipo desta expressão matemática 
       seguido de "' não podem ser empilhados." junto com o texto CRLF e o percorredor;
     Retorne.
-  Adicione um fragmento usando o etiqueta de inserção de valor [na stack] e a variável desta expressão matemática.
+  Adicione um fragmento usando a etiqueta de inserção de valor [na stack] e a variável desta expressão matemática.
 
 Função para que se determine se um tipo é valor empilhável:
   Se o tipo for inexistente, diga não.
@@ -1574,7 +1573,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
       "Código de Erro #143. A variável do termo '" junto com a frase deste termo 
       seguido de "' não pode ser localizada." junto com o texto CRLF e o percorredor;
     Retorne.
-  Adicione um segundo fragmento usando o etiqueta de obtenção do registrador EAX e a variável deste termo.
+  Adicione um segundo fragmento usando a etiqueta de obtenção do registrador EAX e a variável deste termo.
 
 Rotina para que se adicione uma função para umas DLLs usando um nome da DLL e um nome da função:
   Encontre uma DLL usando o nome da DLL.
@@ -1846,7 +1845,7 @@ Rotina para que se compile uma referência da rotina usando um percorredor (strin
 
 Rotina para que se compile a próxima instrução usando um percorredor (cláusula de inicio de laço):
   Se existir algum problema de compilação, retorne.
-  Adicione um fragmento usando o etiqueta de laço.
+  Adicione um fragmento usando a etiqueta de laço.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for o ponto final,
     Apresente uma mensagem de erro contendo 
@@ -1918,9 +1917,9 @@ Rotina para que se compile o corpo relacionado com uma rotina (etapa conclusiva)
   Itere.
     Obtenha uma variável desde as variáveis locais desta rotina.
     Se a variável for inexistente, pare.
-    Se a categoria desta variável for "scratch", reitere.
+    Se a categoria desta variável for "variável temporária de compilação", reitere.
     Se o tipo desta variável não deveria ser finalizado, reitere.
-    Adicione um segundo fragmento usando o etiqueta de inserção de endereço [na stack] e a variável.
+    Adicione um segundo fragmento usando a etiqueta de inserção de endereço [na stack] e a variável.
     Encontre uma segunda rotina usando "~Finalize" e o tipo desta variável.
     Se a segunda rotina for inexistente,
       Apresente uma mensagem de erro contendo 
