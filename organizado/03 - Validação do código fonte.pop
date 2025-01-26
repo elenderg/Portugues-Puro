@@ -208,7 +208,7 @@ Rotina para que se examine um tipo usando um percorredor:
     Retorne.
   Se o segmento inicial deste percorredor não for algum operador de atribuição simples,
     Apresente a mensagem de erro contendo 
-      "Código de Erro #012. Esperado encontrar 'é'. Encontrado '" 
+      "Código de Erro #012. O compilador esperava encontrar um operador de atribuição ('é' ou 'são'), porém encontrou o seguinte termo: '" 
        junto com o segmento inicial deste percorredor seguido de "'." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
