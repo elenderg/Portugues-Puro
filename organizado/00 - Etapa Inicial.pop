@@ -591,7 +591,7 @@ Rotina para que se defina uma variável global usando uma string:
     Remova os caracteres iniciais desde a string usando 3.
   Se a string começa com "As ",
     Remova os caracteres iniciais desde a string usando 3.
-  Remova os caracteres ignoráveis no final de a string.
+  Remova os caracteres ignoráveis no final dessa string.
   Lance um percorredor sobre a string.
   Examine uma variável global usando o percorredor. \ ETAPA 03
   Atribua inexistente no endereço local desta variável global.
@@ -641,7 +641,7 @@ Função para que se determine se uma variável global está perfeitamente predefini
   Itere.
     Obtenha uma segunda variável global desde as variáveis globais prededinidas.
     Se a segunda variável global for inexistente, diga não.
-    Se a variável for alguma cópia de a segunda variável global, diga sim.
+    Se a variável for alguma cópia dessa segunda variável global, diga sim.
   Reitere.
 
 Função para que se determine se uma variável global é alguma cópia de uma segunda variável global: \ Jasper Paulsen

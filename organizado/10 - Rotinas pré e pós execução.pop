@@ -397,7 +397,7 @@ Rotina para que se encontre uma rotina usando uma representação interna da rotin
         a próxima unidade semântica desta unidade semântica e 
         o catálogo.
     Se a rotina não for inexistente, pare.
-    Defina o tipo de a unidade semântica.
+    Defina o tipo dessa unidade semântica.
     Se a unidade semântica estiver indefinida, pare.
     Atribua a representação interna da rotina original para a representação interna da rotina.
   Reitere.
@@ -1549,7 +1549,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
 
 Rotina para que se compile a próxima instrução usando um percorredor (palavra-chave 'processe' - chamada externa):
   Atribua o segmento inicial deste percorredor para uma string.
-  Remova as aspas de a string.
+  Remova as aspas dessa string.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum string literal,
     Apresente uma mensagem de erro contendo 
@@ -1557,7 +1557,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
       junto com o segmento inicial deste percorredor seguido de "." junto com o texto CRLF e o percorredor;
     Retorne.
   Atribua o segmento inicial deste percorredor para uma segunda string.
-  Remova as aspas de a segunda string.
+  Remova as aspas dessa segunda string.
   Mova o percorredor (usando diretrizes de compilação).
   Adicione uma função para as DLLs usando a string e a segunda string.
   Se o segmento inicial deste percorredor for "com",

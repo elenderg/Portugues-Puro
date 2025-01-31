@@ -292,16 +292,16 @@ Rotina para que se acrescente uma string para uma segunda string usando uma terc
     \ Acrescente "de ela" para a segunda string;
     \ Retorne.
   Se a string for "desse",
-    Acrescente "de esse" para a segunda string;
+    Acrescente "de o" para a segunda string;
     Retorne.
   Se a string for "dessa",
-    Acrescente "de essa" para a segunda string;
+    Acrescente "de a" para a segunda string;
     Retorne.
   Se a string for "desses",
-    Acrescente "de esses" para a segunda string;
+    Acrescente "de os" para a segunda string;
     Retorne.
   Se a string for "dessas",
-    Acrescente "de essas" para a segunda string;
+    Acrescente "de as" para a segunda string;
     Retorne.
   Se a string for "deste",
     Acrescente "de este" para a segunda string;

@@ -20,7 +20,7 @@ Rotina para que se compile um endereço da pasta (endereço): \ #013
 
 Rotina para que se enderece umas DLLs usando um endereço:
   Atribua o endereço ao endereço do cabeçalho usado atualmente.
-  Atribua as contagem destas DLLs para uma contagem.
+  Atribua a contagem destas DLLs para uma contagem.
   Adicione 1 para a contagem.
   Multiplique a contagem pela magnitude dum cabeçalho da DLL.
   Atribua o endereço mais a contagem ao endereço pré-calculado atual.
