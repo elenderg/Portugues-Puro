@@ -73,13 +73,35 @@ Um campo de estrutura é uma estrutura com
   Um sinalizador de empilhamento.
 
 Um fragmento é uma lista com
-  \ Existem 3 listas na memória do compilador. Uma lista de tipos, uma lista de variáveis, e uma lista de rotinas
-  \ Cada rotina consiste em um conjunto de instruções lógicas chamadas de "fragmentos"
-   \ Existem apenas 22 tipos de fragmento. São eles:
-   \ interrupção, Demanda Externa, Demanda Indireta, Demanda Interna, Redirecionamento, 
-   \ Fim de bloco condicional, etapa conclusiva, Retorno, finalize, incremento, Decodificação, desvio falso, 
-   \carregamento de endereço, load eax, Iteração, Negação, etapa preliminar, 
-   \Empilhamento de endereço, empilhamento de valor, Salvamento em eax, Reiteração, Endereço de Rotina
+  \ O compilador gera 3 listas durante o processo de compilação: 
+  \ 1. Uma lista de tipos, 
+  \ 2. Uma lista de variáveis, e 
+  \ 3. Uma lista de rotinas
+  \ Cada rotina consiste em um conjunto de instruções lógicas.
+   \ Essas instruções lógicas são chamadas de "fragmentos"
+   \ O compilador trabalha com apenas 22 tipos de instruções lógicas. São elas:
+   \  Interrupção,
+    \ Demanda Externa,
+    \ Demanda Indireta,
+    \ Demanda Interna,
+    \ Redirecionamento,
+    \ Fim de bloco condicional,
+    \ Etapa conclusiva,
+    \ Retorno,
+    \ Finalização,
+    \ Incremento,
+    \ Decodificação,
+    \ Desvio falso,
+    \ Carregamento de endereço,
+    \ Carregamento EAX,
+    \ Iteração,
+    \ Negação,
+    \ Etapa preliminar,
+    \ Empilhamento de endereço,
+    \ Empilhamento de valor,
+    \ Salvamento EAX,
+    \ Reiteração,
+    \ Endereço de Rotina
   Uma etiqueta,
   Uma variável (referência) [Demanda Indireta, redirecionamento, increment, load address, load eax, pop, push address, empilhamento de valor, rotina address, salve eax],
   Uma segunda variável (referência) [load address],
@@ -626,8 +648,8 @@ Função para que se determine se uma variável global é alguma cópia de uma segund
   Se a variável global for inexistente, diga não.
   Se a segunda variável global for inexistente, diga não.
   \ OK to have different loci.
-  Se a categoria desta variável global não for "global", diga não.
-  Se a categoria desta segunda variável global não for "global", diga não.
+  Se a categoria desta variável global não for "variável global", diga não.
+  Se a categoria desta segunda variável global não for "variável global", diga não.
   Se o nome desta variável global não for o nome desta segunda variável global, diga não.
   Se o nome do tipo desta variável global não for o nome do tipo desta segunda variável global, diga não.
   Se o corpo de variável global desta variável global não for o corpo de variável global desta segunda variável global, diga não.

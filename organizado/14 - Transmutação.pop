@@ -97,15 +97,15 @@ Rotina para que se acrescente a instrução de carregamento de endereço para um te
   Se a variável for inexistente,
     Acrescente $C7C200000000 para o texto hexadecimal; \ mov edx, 0x0
     Retorne. 
-  Se a categoria desta variável for "global",
+  Se a categoria desta variável for "variável global",
     Acrescente $C7C2 e o endereço desta variável para o texto hexadecimal; 
     \ mov edx, o endereço da variável
     Retorne. 
-  Se a categoria desta variável for "literal",
+  Se a categoria desta variável for "valor literal",
     Acrescente $C7C2 e o endereço desta variável para o texto hexadecimal; 
     \ mov edx, o endereço da variável
     Retorne. 
-  Se a categoria desta variável for "local",
+  Se a categoria desta variável for "variável local",
     Acrescente $8D95 e o deslocamento desta variável para o texto hexadecimal; 
     \ lea edx, [ebp+ o deslocamento da variável]
     Retorne. 
@@ -113,17 +113,20 @@ Rotina para que se acrescente a instrução de carregamento de endereço para um te
     Acrescente $8B95 e o deslocamento desta variável para o texto hexadecimal; 
     \ mov edx, [ebp+ o deslocamento da variável]
     Retorne. 
+  \ Se a variável não se encaixar em nenhuma dessas categorias é porque ela é um parâmetro
   Se a categoria desta variável não for "parâmetro",
     Apresente uma mensagem de erro contendo 
-      "Código de Erro #177. A variável '" junto com o nome desta variável 
-      seguido de "' não é do tipo 'parâmetro.'" junto com o texto CRLF;
+      "Código de Erro #177. A categoria da variável '" junto com o nome desta variável 
+      seguido de "' é diferente de 'parâmetro'." junto com o texto CRLF;
     Retorne.
-  Se o sinalizador de passagem por-valor desta variável estiver ativo,
+  \ Se a categoria desta variável for "parâmetro",
+  Se o sinalizador de passagem por-valor desta variável estiver ativo, \ Só é ativado em callbacks (do Windows)
     Acrescente $8D95 e o deslocamento desta variável para o texto hexadecimal; 
     \ lea edx,[ebp+ o deslocamento da variável]
     Retorne. 
-  Acrescente $8B95 e o deslocamento desta variável para o texto hexadecimal. 
-  \ mov edx,[ebp+ o deslocamento da variável]
+  \Se o sinalizador de passagem por-valor desta variável não estiver ativo,
+    Acrescente $8B95 e o deslocamento desta variável para o texto hexadecimal. 
+    \ mov edx,[ebp+ o deslocamento da variável]
 
 Rotina para que se transforme um fragmento em código hexadecimal (Demanda Interna):
   Obtenha um endereço usando a rotina deste fragmento.
@@ -137,13 +140,13 @@ Rotina para que se obtenha um endereço usando uma rotina:
   Encontre uma segunda rotina usando o representação de emprego desta rotina e o catálogo geral de rotinas.
   Se a segunda rotina for inexistente,
     Apresente uma mensagem de erro contendo 
-      "Código de Erro #178. Rotina: " junto com a representação de emprego desta rotina 
-      seguido de "' não encontrada. (palavra-chave empregue)" 
+      "Código de Erro #178. A 'Rotina para que se " junto com a representação de emprego desta rotina 
+      seguido de "' não foi encontrada. (Esta rotina foi invocada utilizando palavra-chave 'Empregue')." 
       junto com o texto CRLF e o endereço local desta rotina;
     Retorne.
   Se o endereço desta segunda rotina for -1,
     Apresente a mensagem de erro contendo 
-      "Código de Erro #179. Referência recursiva na palavra-chave 'empregue'." 
+      "Código de Erro #179. A palavra-chave 'Empregue' está fazendo uma referência recursiva. " 
        junto com o texto CRLF e o endereço local desta rotina;
     Retorne.
   Obtenha o endereço usando a segunda rotina.

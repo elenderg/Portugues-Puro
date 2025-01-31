@@ -1355,7 +1355,7 @@ Função para que se determine se uma string é o início de alguma variável global:
 
 Rotina para que se examine uma variável global usando um percorredor:
   Se existir algum problema de compilação, retorne.
-  Adicione a variável global para as variáveis globais usando "global" [categoria] e o caractere inicial deste segmento inicial deste percorredor. [endereço local]
+  Adicione a variável global para as variáveis globais usando "variável global" [categoria] e o caractere inicial deste segmento inicial deste percorredor. [endereço local]
   Mova o percorredor (usando diretrizes de compilação).
   Examine o nome desta variável global usando o percorredor.
   Se o segmento inicial deste percorredor for algum operador de atribuição de estruturas compostas,

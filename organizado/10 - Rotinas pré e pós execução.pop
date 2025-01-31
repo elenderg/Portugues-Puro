@@ -283,7 +283,7 @@ Rotina para que se adicione uma variável intermediária usando um nome do tipo e 
     Esvazie a variável intermediária;
     Retorne.
   Adicione a variável intermediária para 
-    as variáveis locais desta rotina utilizada atualmente usando "local" e o endereço local.
+    as variáveis locais desta rotina utilizada atualmente usando "variável local" e o endereço local.
   Gere o nome desta variável intermediária usando "~I".
   Atribua o nome do tipo ao nome do tipo desta variável intermediária.
   Destrinche a variável intermediária.
@@ -337,7 +337,7 @@ Rotina para que se ligue o sinalizador de compilação em uma variável:
   Se a variável for inexistente, retorne.
   Se o sinalizador de compilação desta variável estiver ativo, retorne.
   Ative o sinalizador de compilação desta variável.
-  Se a categoria desta variável não for "global", retorne.
+  Se a categoria desta variável não for "variável global", retorne.
   Se o valor literal desta variável for inexistente, retorne.
   Encontre uma rotina usando 
     "atribua" e 
@@ -535,7 +535,7 @@ Rotina para que se compile um termo usando um percorredor e um nome denominado n
 Rotina para que se compile um termo usando um percorredor e uma variável nome (decomposição do possessivo reverso - variável local):
   \ Rotina nova criada pelo Dahn para version 2
   Se existir algum problema de compilação, retorne.
-  Adicione uma variável local para as variáveis locais desta rotina utilizada atualmente usando "local" e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione uma variável local para as variáveis locais desta rotina utilizada atualmente usando "variável local" e o caractere inicial deste segmento inicial deste percorredor.
   \PAL
   Expanda o nome desta variável local com a variável nome.
   Se o segmento inicial deste percorredor for uma palavra-chave de designação, 
@@ -598,7 +598,7 @@ Rotina para que se compile um termo usando um percorredor (nova variável local):
       "Código de Erro #096. Rotina não localizada. Não foi possível desempilhar o item da stack." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione uma variável local para as variáveis locais desta rotina utilizada atualmente usando 
-    "local" e o caractere inicial deste segmento inicial deste percorredor.
+    "variável local" e o caractere inicial deste segmento inicial deste percorredor.
   \PAL
   Mova o percorredor (usando diretrizes de compilação).
   Examine um nome usando o percorredor.
@@ -1360,10 +1360,10 @@ Rotina para que se compile a próxima instrução usando um percorredor (demais clá
     Apresente a mensagem de erro contendo 
       "Código de Erro #133. Loops não são permitidos em expressões condicionais." junto com o texto CRLF e o percorredor;
     Retorne.
-  Se o segmento inicial deste percorredor for uma palavra-chave de reutilização de rotina,
-    Apresente a mensagem de erro contendo 
-      "Código de Erro #134. O comando 'Empregue' deve ser o único comando de uma rotina." junto com o texto CRLF e o percorredor;
-    Retorne.
+  \Se o segmento inicial deste percorredor for uma palavra-chave de reutilização de rotina,
+    \Apresente a mensagem de erro contendo 
+      \"Código de Erro #134. O comando 'Empregue' deve ser o único comando de uma rotina." junto com o texto CRLF e o percorredor;
+    \Retorne.
   \Se o segmento inicial deste percorredor for "senão", 
     \mova o percorredor (usando diretrizes de compilação); 
     \Retorne.
@@ -1717,7 +1717,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
       "Código de Erro #151. A variável '" junto com a frase deste termo 
       seguido de "' deste termo não pode ser encontrada." junto com o texto CRLF e o percorredor;
     Retorne.
-  Se a categoria deste termo for "literal",
+  Se a categoria deste termo for "valor literal",
     Apresente a mensagem de erro contendo 
       "Código de Erro #152. Identificado valor literal na categoria deste termo." 
       junto com o texto CRLF e o percorredor.
@@ -1876,7 +1876,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
     Apresente a mensagem de erro contendo 
       "Código de Erro #165. Apenas parâmetros podem ser isolados." junto com o texto CRLF e o percorredor;
     Retorne.
-  Adicione uma variável local para as variáveis locais desta rotina utilizada atualmente usando "local" e o caractere inicial deste segmento inicial deste percorredor.
+  Adicione uma variável local para as variáveis locais desta rotina utilizada atualmente usando "variável local" e o caractere inicial deste segmento inicial deste percorredor.
   Atribua o nome deste termo ao nome desta variável local.
   Atribua o apelido deste termo ao apelido desta variável local.
   Atribua o nome do tipo deste termo ao nome do tipo desta variável local.

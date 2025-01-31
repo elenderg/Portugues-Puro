@@ -75,7 +75,7 @@ Rotina para que se compile um valor literal usando um percorredor:
       "' não pode ser compilado." junto com o texto CRLF e o percorredor.
 
 Rotina para que se adicione um valor literal para umas variáveis usando um endereço local:
-  Adicione o valor literal como uma variável para as variáveis usando "literal" e o endereço local.
+  Adicione o valor literal como uma variável para as variáveis usando "valor literal" e o endereço local.
   Gere o nome deste valor literal usando "~L".
 
 Rotina para que se gere um nome usando uma string:

@@ -87,7 +87,8 @@ Rotina para que se enderece uma variável usando um endereço:
   Atribua o image base mais o endereço ao endereço desta variável.
   Adicione a quantidade de caracteres deste tipo desta variável para o endereço.
   Se o tipo desta variável puder ser reduzido para "string", 
-    Adicione a quantidade de caracteres deste data desta variável mais 1 para o endereço.
+    Adicione a quantidade de caracteres deste data desta variável mais 1 para o endereço. 
+    \ Strings adicionam um espaço extra para o caractere nulo, para compatibilidade com o Windows
   Arredonde para cima o endereço usando o múltiplo imediato de 4.
 
 Rotina para que se enderece umas rotinas usando um endereço:
