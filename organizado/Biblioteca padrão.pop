@@ -225,8 +225,9 @@ Uma díade é uma lista com
   Um nome,
   Um valor da díade. 
 
-Um contexto é uma lista com \ Um contexto de dispositivo é uma estrutura que define um conjunto de objetos gráficos e seus atributos associados,
-  Uma localização,                     \ bem como os modos gráficos que afetam a saída. Pense nele como a tela do monitor.
+Um contexto é uma lista com 
+  \ Um contexto de dispositivo é uma estrutura que define um conjunto de objetos gráficos, como a tela do monitor.
+  Uma localização,
   Uma caixa,
   Uma orientação,
   Um tamanho da letra,
@@ -241,8 +242,8 @@ Um recipiente# é um número.
 Um bit é uma unidade.
 
 Um percorredor é uma estrutura com 
-\ Não se esqueça de alterar as rotinas "avance um percorredor" e "recue um percorredor" se você alterar a ordem dos membros da estrutura
-  Um cópia da string original, 
+\ Necessário altrar as rotinas "avance um percorredor" e "recue um percorredor" ao alterar a ordem dos membros desta estrutura
+  Um cópia da string original,
   Um segmento final, \ Armazena a última parte da string, porém inicialmente ele é igual à string original
   \ (Ele diminui de tamanho a cada vez que o percorredor é movido)
   Um segmento inicial. \ Armazena a primeira/próxima palavra da string (quando o percorredor é movido). Inicialmente vazio 
@@ -2052,10 +2053,10 @@ A tabela de caracteres maiúsculos ascii é uma tabela de tradução igual a $000102
 
 As figuras geométricas são uns polígonos.
 
-O remembered pdf endereço completo é um endereço completo.
 O pdf state é um pdf state.
 
-O número atual da cor do arco-íris é um número [esse número vairia de 1 a 6 indicando, respectivamente, as seguintes cores: Vermelho, Laranja, Amarelo, Verde, Azul e Roxo].
+O número atual da cor do arco-íris é um número 
+[esse número vairia de 1 a 6 indicando, respectivamente, as seguintes cores: Vermelho, Laranja, Amarelo, Verde, Azul e Roxo].
 
 A grossura da canetinha é um número.
 
@@ -2351,10 +2352,10 @@ O canvas da tela é um canvas.
 
 A tela é uma estrutura com
   Uma caixa,
-  Uma pixel altura e
-  Uma pixel largura.
+  Uma altura denominada altura do pixel e
+  Uma largura denominada largura do pixel.
 
-O silent sinalizador é um sinalizador.
+O aviso de silêncio é um sinalizador.
 O número identificador do fluxo de entrada padrão é um número identificador.
 
 O número identificador do fluxo de saída padrão é um número identificador.
@@ -9504,8 +9505,8 @@ Rotina para que se inicialize o contexto de dispositivo de memória:
   Processe "gdi32.dll" "CreateCompatibleBitmap" com \ Cria um bitmap compatível com o dispositivo que está associado ao contexto de dispositivo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-createcompatiblebitmap
     O canvas da tela [hdc]
-    e A pixel largura desta tela [cx]
-    e A pixel altura desta tela [xy]
+    e A largura do pixel desta tela [cx]
+    e A altura do pixel desta tela [xy]
   Retornando um hBitMap.
   Processe "gdi32.dll" "SelectObject" com \ Seleciona um objeto no contexto de dispositivo (DC) especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-selectobject
@@ -9579,14 +9580,14 @@ Rotina para que se inicialize a tela:
   Processe "user32.dll" "GetSystemMetrics" com \ Obtém o tamanho da tela, em pixels
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getsystemmetrics
   0 [nIndex = SM_CXSCREEN]
-  Retornando a pixel largura desta tela.
+  Retornando a largura do pixel desta tela.
   Processe "user32.dll" "GetSystemMetrics" com
   1 [nIndex = SM_CYSCREEN]
-  Retornando a pixel altura desta tela.
+  Retornando a altura do pixel desta tela.
   Atribua 96 ao ppi.
   Atribua o tpi dividido pelo ppi à quantidade de twips/pixel .
-  Atribua a pixel largura desta tela vezes a quantidade de twips/pixel para uma largura.
-  Atribua a pixel altura desta tela vezes a quantidade de twips/pixel para uma altura.
+  Atribua a largura do pixel desta tela vezes a quantidade de twips/pixel para uma largura.
+  Atribua a altura do pixel desta tela vezes a quantidade de twips/pixel para uma altura.
   Atribua 0 [coordenda X1] e 0 [coordenda Y1] e a largura e a altura à caixa desta tela.
   Subtraia a quantidade de twips/pixel desde o canto inferior direito desta tela.
 
@@ -9635,8 +9636,8 @@ Rotina para que se inicialize a janela do programa:
     \ https://www.magnumdb.com/ . Para uma janela padrão, use o valor 13565952
     e 0 [x]
     e 0 [y]
-    e A pixel largura desta tela [nWidth]
-    e A pixel altura desta tela  [nHeight]
+    e A largura do pixel desta tela [nWidth]
+    e A altura do pixel desta tela  [nHeight]
     e 0 [hWndParent]
     e 0 [hMenu]
     e O número identificador deste módulo [hInstance]
@@ -10272,14 +10273,14 @@ Rotina para que se mova uma janela do programa para a esquerda:
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getwindowrect
     A janela principal do programa [hWnd]
     e O endereçamento duma caixa. [lpRect] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/api/windef/ns-windef-rect
-  Subtraia a pixel largura desta tela desde a coordenada X1 desta caixa.
+  Subtraia a largura do pixel desta tela desde a coordenada X1 desta caixa.
   Processe "user32.dll" "MoveWindow" com \ Altera a posição e as dimensões da janela especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-movewindow
     A janela do programa [hWnd]
     e A coordenada X1 desta caixa [X]
     e A coordenada Y1 desta caixa [Y]
-    e A pixel largura desta tela [nWidth]
-    e A pixel altura desta tela [nHeight]
+    e A largura do pixel desta tela [nWidth]
+    e A altura do pixel desta tela [nHeight]
     e 1. [bRepaint]
 
 Rotina para que se mova para a direita uma janela do programa;
@@ -10287,13 +10288,13 @@ Rotina para que se mova uma janela do programa para a direita:
   Processe "user32.dll" "GetWindowRect" com
     A janela principal do programa [hWnd]
     e O endereçamento duma caixa. [lpRect]
-  Adicione a pixel largura desta tela para a coordenada X1 desta caixa.
+  Adicione a largura do pixel desta tela para a coordenada X1 desta caixa.
   Processe "user32.dll" "MoveWindow" com
     A janela do programa [hWnd]
     e A coordenada X1 desta caixa [X]
     e A coordenada Y1 desta caixa [Y]
-    e A pixel largura desta tela [nWidth]
-    e A pixel altura desta tela [nHeight]
+    e A largura do pixel desta tela [nWidth]
+    e A altura do pixel desta tela [nHeight]
     e 1. [bRepaint]
 
 Rotina para que se redimensione cuidadosamente uma imagem usando um par de números racionais;
@@ -11189,11 +11190,12 @@ Rotina para que se redimensione uma linha reta usando um twip par de números:
 \Rotina para que se redimensione uma imagem deixando-a com uma largura por uma altura;
 Rotina para que se redimensione uma imagem para uma largura por uma altura:
   Se a imagem for inexistente, retorne.
-  Atribua a largura dividido pelo quantidade de twips/pixel para um pixel largura.
-  Atribua a altura dividido pelo quantidade de twips/pixel para um pixel altura.
+  Atribua a largura dividido pelo quantidade de twips/pixel para uma largura denominada largura do pixel.
+  Atribua a altura dividido pelo quantidade de twips/pixel para uma altura denominada altura do pixel.
   Processe "gdiplus.dll" "GdipCreateBitmapFromScan0" com
   \Cria um objeto Bitmap com base em uma matriz de bytes junto com informações de tamanho e formato.
-    A pixel largura [width] e A pixel altura [height]
+    A largura do pixel [width] e 
+    A altura do pixel [height]
     e 0 [stride]
     e 137224 [0x21808 = format = PixelFormat24bppRGB] \ Consulte https://learn.microsoft.com/pt-br/windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants
     e 0 [*scan0] \
@@ -11206,7 +11208,8 @@ Rotina para que se redimensione uma imagem para uma largura por uma altura:
    e O gpBitmap desta imagem [*image] \ https://learn.microsoft.com/pt-br/windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image
    [*destPoints] \ https://learn.microsoft.com/pt-br/windows/desktop/api/gdiplustypes/nl-gdiplustypes-point
    e 0 [dstx]  e 0 [dsty] [/*destPoints] [count]
-   e A pixel largura [dstwidth ] e A pixel altura [dstheight][/count]
+   e A largura do pixel [dstwidth ] e 
+   A altura do pixel [dstheight][/count]
    e 0 [srcx] e 0 [srcy]
    e A largura deste gpBitmap desta imagem menos 1 [srcwidth]
    e A altura deste gpBitmap desta imagem menos 1 [srcheight]
@@ -11470,7 +11473,7 @@ Rotina para que se fale um número:
 
 Rotina para que se fale uma string;
 Rotina para que se sintetize a fala de uma string:
-  Se o silent sinalizador estiver ativo, retorne.
+  Se o aviso de silêncio estiver ativo, retorne.
   Se o talker for inexistente, retorne.
   Se a string estiver em branco, retorne.
   Converta a string para uma string de caracteres amplos.
@@ -11487,8 +11490,7 @@ Rotina para que se sintetize a fala de uma string:
 
 Rotina para que se fale uma string e espere;
 Rotina para que se sintetize a fala de uma string e espere:
-  Se o silent sinalizador estiver ativo, retorne.
-  Se la bandera silenciosa estiver ativo, retorne.
+  Se o aviso de silêncio estiver ativo, retorne.
   Se o talker for inexistente, retorne.
   Se a string estiver em branco, retorne.
   Converta a string para uma string de caracteres amplos.
@@ -13127,7 +13129,6 @@ Rotina para que se escreva uns quoras em uma caixa:
   Itere.
     Obtenha um quora desde o quoras.
     Se o quora for inexistente, pare.
-    \pinte really fast. ***
     \Pinte o quora caixa com a cor amarela. \ temp ***
     Escreva a string deste quora no quora caixa com a cor deste quora.
     Mova o quora caixa para baixo 24 px.
@@ -16997,10 +16998,11 @@ Rotina para que se pinte o slash caractere:
   Restaure o contexto.
 
 Rotina para que se pinte uns quadrados:
-  Pinte o tamanho do quadrado vezes os quadrados dividido por 1 quadrado. \ quadrados são scaled para cima por precision hence o division sob o fim
+  Pinte o tamanho do quadrado vezes os quadrados dividido por 1 quadrado. 
+  \ quadrados são ampliados para precisão por isso dividimos ao fim
 
 Rotina para que se pinte uns quadrados na diagonal:
-  Pinte o tamanho do quadrado vezes os quadrados vezes o raiz de dois dividido por 1 quadrado. \ quadrados são scaled para cima por precision hence o division sob o fim
+  Pinte o tamanho do quadrado vezes os quadrados vezes a raiz de dois dividido por 1 quadrado.
 
 Rotina para que se pinte o three caractere:
   Salve o contexto.
