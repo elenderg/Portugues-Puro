@@ -14107,16 +14107,16 @@ Rotina para que se pinte um byte:
   Atribua a tamanho da letra deste contexto dividido por 4 ao tamanho do quadrado. \ ***
   \Pinte a grade de caracteres. \ para teste
   \LETRAS MAIÚSCULAS
-  Se o byte for o acento grave, pinte o accent caractere.
-  Se o byte for o asterisco, pinte o asterisk caractere.
-  Se o byte for o sinal de arroba, pinte o sinal de arroba caractere.
-  Se o byte for a barra invertida, pinte a barra invertida caractere.
-  Se o byte for o 'A' maiúsculo, pinte o big-a caractere.
-  Se o byte for o Á maiúsculo, pinte o big-a-acute caractere.
-  Se o byte for o Â maiúsculo, pinte o big-a-circumflex caractere.
-  Se o byte for o Ä maiúsculo, pinte o big-a-diaeresis caractere.
-  Se o byte for o 'À' maiúsculo, pinte o big-a-grave caractere.
-  Se o byte for o Ã maiúsculo, pinte o big-a-tilde caractere.
+  Se o byte for o acento grave, pinte o acento grave.
+  Se o byte for o asterisco, pinte o asterisco.
+  Se o byte for o sinal de arroba, pinte o sinal de arroba.
+  Se o byte for a barra invertida, pinte a barra invertida.
+  Se o byte for o 'A' maiúsculo, pinte a letra 'A' maiúscula.
+  Se o byte for o Á maiúsculo, pinte a letra 'Á' maiúscula.
+  Se o byte for o Â maiúsculo, pinte a letra 'Â' maiúscula.
+  Se o byte for o Ä maiúsculo, pinte a letra 'Ä' maiúscula.
+  Se o byte for o 'À' maiúsculo, pinte a letra 'À' maiúscula.
+  Se o byte for o Ã maiúsculo, pinte a letra 'Ã' maiúscula.
   Se o byte for o B maiúsculo, pinte o big-b caractere.
   Se o byte for o C maiúsculo, pinte o big-c caractere.
   Se o byte for o Ç maiúsculo, pinte o Ç maiúsculo caractere.
@@ -14289,7 +14289,7 @@ Rotina para que se pinte as caixas da grade de texto:
     Restaure o contexto.
   [Reitere.]
 
-Rotina para que se pinte o accent caractere:
+Rotina para que se pinte o acento grave:
   Salve o contexto.
   Ande 4 quadrados.
   Vire para a direita.
@@ -14297,7 +14297,7 @@ Rotina para que se pinte o accent caractere:
   Pinte 9/4 quadrado.
   Restaure o contexto.
 
-Rotina para que se pinte o asterisk caractere:
+Rotina para que se pinte o asterisco:
   Salve o contexto.
   Ande 2 quadrados.
   Vire para a direita.
@@ -14318,7 +14318,7 @@ Rotina para que se pinte o asterisk caractere:
   Pinte 2 quadrados na diagonal.
   Restaure o contexto.
 
-Rotina para que se pinte o sinal de arroba caractere:
+Rotina para que se pinte o sinal de arroba:
   Salve o contexto.
   Vire para a direita.
   Ande 2 quadrados.
@@ -14344,7 +14344,7 @@ Rotina para que se pinte o sinal de arroba caractere:
   Pinte 1/2 quadrado na diagonal.
   Restaure o contexto.
 
-Rotina para que se pinte a barra invertida caractere:
+Rotina para que se pinte a barra invertida:
   Salve o contexto.
   Vire para a direita.
   Ande 2 quadrados.
@@ -14354,7 +14354,7 @@ Rotina para que se pinte a barra invertida caractere:
   Restaure o contexto.
 
 
-Rotina para que se pinte o big-a caractere:
+Rotina para que se pinte a letra 'A' maiúscula:
   Salve o contexto.
   Pinte 2+2/3 quadrados.
   Vire para 1/8.
@@ -14369,7 +14369,7 @@ Rotina para que se pinte o big-a caractere:
   Pinte 2 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o big-a-acute caractere:
+Rotina para que se pinte a letra 'Á' maiúscula:
   Salve o contexto.
   Pinte 2+2/3 quadrados.
   Vire para 1/8.
@@ -14394,7 +14394,7 @@ Rotina para que se pinte o big-a-acute caractere:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o big-a-circumflex caractere:
+Rotina para que se pinte a letra 'Â' maiúscula:
   Salve o contexto.
   Pinte 2+2/3 quadrados.
   Vire para 1/8.
@@ -14420,7 +14420,7 @@ Rotina para que se pinte o big-a-circumflex caractere:
   \end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o big-a-diaeresis caractere:
+Rotina para que se pinte a letra 'Ä' maiúscula:
   Salve o contexto.
   Pinte 2+2/3 quadrados.
   Vire para 1/8.
@@ -14445,7 +14445,7 @@ Rotina para que se pinte o big-a-diaeresis caractere:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o big-a-grave caractere:
+Rotina para que se pinte a letra 'À' maiúscula:
   Salve o contexto.
   Pinte 2+2/3 quadrados.
   Vire para 1/8.
@@ -14470,7 +14470,7 @@ Rotina para que se pinte o big-a-grave caractere:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o big-a-tilde caractere:
+Rotina para que se pinte a letra 'Ã' maiúscula:
   Salve o contexto.
   Pinte 2+2/3 quadrados.
   Vire para 1/8.
