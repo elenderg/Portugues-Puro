@@ -5248,7 +5248,7 @@ Função para que se determine se um byte é uma string:
   Diga não.
 
 Função para que se determine se um byte é symbolic:
-  Se o byte estiver entre o ponto de exclamação e o barra inclinada, diga sim.
+  Se o byte estiver entre o ponto de exclamação e a barra inclinada, diga sim.
   Se o byte estiver entre o sinal de dois pontos e o sinal de arroba, diga sim.
   Se o byte estiver entre o colchete esquerdo e o acento grave, diga sim.
   Se o byte estiver entre a chave esquerda e o acento til, diga sim.
@@ -5524,7 +5524,7 @@ Função para que se determine se uma tecla é algum pad tecla:
   Diga não.
 
 Função para que se determine se uma tecla é algum tecla imprimível:
-  Se a tecla for o barra de espaço, diga sim.
+  Se a tecla for a barra de espaço, diga sim.
   Se a tecla for alguma tecla de dígito, diga sim.
   Se a tecla for alguma tecla de letra, diga sim.
   Se a tecla for algum pad tecla, diga sim.
@@ -6111,7 +6111,7 @@ Função para que se determine se uma string é algum proporção literal:
   Se o subtexto estiver em branco, diga não.
   Se o conteúdo deste caractere inicial deste subtexto não for algum indicador numérico, diga não.
   Se o conteúdo deste caractere inicial deste subtexto for algum sinal aritmético, adicione 1 para o caractere inicial deste subtexto.
-  Subdivida o subtexto em um numerador textual e um denominador textual usando o barra inclinada.
+  Subdivida o subtexto em um numerador textual e um denominador textual usando a barra inclinada.
   Se o numerador textual não for algum número inteiro, diga não.
   Se o denominador textual não for algum número inteiro, diga não.
   Diga sim.
@@ -6168,7 +6168,7 @@ Função para que se determine se uma string é compatível c/ o DOS:
   Lance um subtexto sobre a string.
   Itere.
     Se o subtexto estiver em branco, diga sim.
-    Se o conteúdo deste caractere inicial deste subtexto for o barra inclinada, diga não.
+    Se o conteúdo deste caractere inicial deste subtexto for a barra inclinada, diga não.
     Se o conteúdo deste caractere inicial deste subtexto for a barra invertida, diga não.
     Se o conteúdo deste caractere inicial deste subtexto for o sinal de dois pontos, diga não.
     Se o conteúdo deste caractere inicial deste subtexto for o asterisco, diga não.
@@ -6176,7 +6176,7 @@ Função para que se determine se uma string é compatível c/ o DOS:
     Se o conteúdo deste caractere inicial deste subtexto for as aspas duplas, diga não.
     Se o conteúdo deste caractere inicial deste subtexto for o símbolo menor do que, diga não.
     Se o conteúdo deste caractere inicial deste subtexto for o símbolo maior do que, diga não.
-    Se o conteúdo deste caractere inicial deste subtexto for o barra vertical, diga não.
+    Se o conteúdo deste caractere inicial deste subtexto for a barra vertical, diga não.
     Adicione 1 para o caractere inicial deste subtexto.
   Reitere.
 
@@ -14187,17 +14187,17 @@ Rotina para que se pinte um byte:
   Se o byte for o ponto de interrogação, pinte o ponto de interrogação.
   Se o byte for o ponto&vírgula, pinte o ponto&vírgula.
   Se o byte for o apóstrofo, pinte o apóstrofo.
-  Se o byte for o barra inclinada, pinte o slash caractere.
-  Se o byte for o acento til, pinte o tilde caractere.
-  Se o byte for o underline, pinte o underscore caractere.
-  Se o byte for o barra vertical, pinte o vertical-bar caractere.
+  Se o byte for a barra inclinada, pinte a barra inclinada.
+  Se o byte for o acento til, pinte o acento til.
+  Se o byte for o underline, pinte o underline.
+  Se o byte for a barra vertical, pinte a barra vertical.
   \letras minúsculas
   Se o byte for o 'a' minúsculo, pinte o little-a caractere.
   Se o byte for o 'á' minúsculo, pinte o little-a-acute caractere.
   Se o byte for o 'â' minúsculo, pinte o little-a-circumflex caractere.
   Se o byte for o 'ä' minúsculo, pinte o little-a-diaeresis caractere.
   Se o byte for o 'à' minúsculo, pinte o little-a-grave caractere.
-  Se o byte for o 'ã' minúsculo, pinte o little-a-tilde caractere.
+  Se o byte for o 'ã' minúsculo, pinte o little-a-acento til.
   Se o byte for o b minúsculo, pinte o little-b caractere.
   Se o byte for o c minúsculo, pinte o little-c caractere.
   Se o byte for o cê cedilha minúsculo, pinte o little-c-cedilla caractere.
@@ -14220,13 +14220,13 @@ Rotina para que se pinte um byte:
   Se o byte for o l minúsculo, pinte o little-l caractere.
   Se o byte for o m minúsculo, pinte o little-m caractere.
   Se o byte for o n minúsculo, pinte o little-n caractere.
-  Se o byte for o ñ minúsculo , pinte o little-n-tilde caractere.
+  Se o byte for o ñ minúsculo , pinte o little-n-acento til.
   Se o byte for o 'o' minúsculo, pinte o little-o caractere.
   Se o byte for o ó minúsculo , pinte o little-o-acute caractere.
   Se o byte for o ô minúsculo , pinte o little-o-circumflex caractere.
   Se o byte for o ö minúsculo , pinte o little-o-diaeresis caractere.
   Se o byte for o ò minúsculo , pinte o little-o-grave caractere.
-  Se o byte for o õ minúsculo , pinte o little-o-tilde caractere.
+  Se o byte for o õ minúsculo , pinte o little-o-acento til.
   Se o byte for o p minúsculo, pinte o little-p caractere.
   Se o byte for o q minúsculo, pinte o little-q caractere.
   Se o byte for o r minúsculo, pinte o little-r caractere.
@@ -14698,7 +14698,7 @@ Rotina para que se pinte o È maiúsculo:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o big-e-tilde caractere:
+Rotina para que se pinte o big-e-acento til:
   Salve o contexto.
   Pinte 4 quadrados.
   Vire para a direita.
@@ -15743,7 +15743,7 @@ Rotina para que se pinte o little-a-grave caractere:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o little-a-tilde caractere:
+Rotina para que se pinte o little-a-acento til:
   Salve o contexto.
   Vire para a direita.
   Ande 2 quadrados.
@@ -16259,7 +16259,7 @@ Rotina para que se pinte o little-n caractere:
   Pinte 2 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o little-n-tilde caractere:
+Rotina para que se pinte o little-n-acento til:
   Salve o contexto.
   Pinte 3 quadrados.
   Dê meia volta.
@@ -16425,7 +16425,7 @@ Rotina para que se pinte o little-o-grave caractere:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o little-o-tilde caractere:
+Rotina para que se pinte o little-o-acento til:
   Salve o contexto.
   Vire para a direita.
   Ande 2 quadrados.
@@ -16991,7 +16991,7 @@ Rotina para que se pinte o six caractere:
   Pinte 1 quadrado na diagonal.
   Restaure o contexto.
 
-Rotina para que se pinte o slash caractere:
+Rotina para que se pinte a barra inclinada:
   Salve o contexto.
   Vire para 7/96.
   Pinte 9/2 quadrado.
@@ -17021,7 +17021,7 @@ Rotina para que se pinte o three caractere:
   Pinte 1 quadrado na diagonal.
   Restaure o contexto.
 
-Rotina para que se pinte o tilde caractere:
+Rotina para que se pinte o acento til:
   Salve o contexto.
   Ande 2 quadrados.
   Vire para 7/96.
@@ -17050,7 +17050,7 @@ Rotina para que se pinte o two caractere:
   Pinte 2 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o underscore caractere:
+Rotina para que se pinte o underline:
   Salve o contexto.
   Dê meia volta.
   Ande 1 quadrado.
@@ -17058,7 +17058,7 @@ Rotina para que se pinte o underscore caractere:
   Pinte 2 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o vertical-bar caractere:
+Rotina para que se pinte a barra vertical:
   Salve o contexto.
   Vire para a direita.
   Ande 1 quadrado.
