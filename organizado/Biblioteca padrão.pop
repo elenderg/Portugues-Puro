@@ -14186,7 +14186,7 @@ Rotina para que se pinte um byte:
   Se o byte for o sinal de adição, pinte o sinal de adição.
   Se o byte for o ponto de interrogação, pinte o ponto de interrogação.
   Se o byte for o ponto&vírgula, pinte o ponto&vírgula.
-  Se o byte for o apóstrofo, pinte o single-quote caractere.
+  Se o byte for o apóstrofo, pinte o apóstrofo.
   Se o byte for o barra inclinada, pinte o slash caractere.
   Se o byte for o acento til, pinte o tilde caractere.
   Se o byte for o underline, pinte o underscore caractere.
@@ -16960,7 +16960,7 @@ Rotina para que se pinte o seven caractere:
   Pinte 1+4/8 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o single-quote caractere:
+Rotina para que se pinte o apóstrofo:
   Salve o contexto.
   Vire para a direita.
   Ande 1 quadrado.
