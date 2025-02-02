@@ -75,7 +75,7 @@ Função para que se determine se um byte é um byte ignorável:
   Se o byte for o sinal de porcentagem, diga sim.
   Se o byte for o & comercial, diga sim.
   Se o byte for o underline, diga sim.
-  Se o byte for o single-quote byte, diga sim.
+  Se o byte for o apóstrofo, diga sim.
   Se o byte for o hífen, diga sim.
   Se o byte for o sinal de adição, diga sim.
   Se o byte for o barra inclinada, diga sim.
@@ -182,7 +182,7 @@ Rotina para que se mova um percorredor (sinais de pontuação):
 
 Função para que se determine se um percorredor está sobre algum possessivo inglês:
   Se o segmento final deste percorredor estiver em branco, diga não.
-  Se o conteúdo deste caractere inicial deste segmento final deste percorredor não for o single-quote byte, diga não. \ apóstrofo
+  Se o conteúdo deste caractere inicial deste segmento final deste percorredor não for o apóstrofo, diga não. \ apóstrofo
   Se o percorredor estiver sobre algum possessivo inglês (tipo 1 - 's), diga sim.
   Se o percorredor estiver sobre algum possessivo inglês (tipo 2 - s'), diga sim.
   Diga não.

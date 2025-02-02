@@ -1583,7 +1583,7 @@ O símbolo & é um byte igual a 38.
 O sinal & é um byte igual a 38.
 O & é um byte igual a 38.
 O sinal tironiano é um byte igual a 38. \&
-O single-quote byte é um byte igual a 39.
+O apóstrofo é um byte igual a 39.
 O parênteses esquerdo é um byte igual a 40.
 O parênteses direito é um byte igual a 41.
 O asterisco é um byte igual a 42.
@@ -1591,7 +1591,6 @@ O sinal de asterisco é um byte igual a 42.
 O símbolo de asterisco é um byte igual a 42.
 O sinal asterisco é um byte igual a 42.
 O símbolo asterisco é um byte igual a 42.
-O plus-sign byte é um byte igual a 43.
 O sinal de adição é um byte igual a 43.
 A vírgula é um byte igual a 44.
 O hífen é um byte igual a 45.
@@ -5252,7 +5251,7 @@ Função para que se determine se um byte é symbolic:
   Se o byte estiver entre o ponto de exclamação e o barra inclinada, diga sim.
   Se o byte estiver entre o sinal de dois pontos e o sinal de arroba, diga sim.
   Se o byte estiver entre o colchete esquerdo e o acento grave, diga sim.
-  Se o byte estiver entre o chave esquerda e o acento til, diga sim.
+  Se o byte estiver entre a chave esquerda e o acento til, diga sim.
   Se o byte for 128, diga sim. \ €
   Se o byte for 130, diga sim. \ aspas simples inferiores‚ Não confundir com uma vírgula,
   Se o byte estiver entre 132 e 137, diga sim. \ símbolos em geral
@@ -6154,7 +6153,7 @@ Função para que se determine se uma string é alguma palavra:
     Adicione 1 para o caractere inicial deste subtexto.
     Se o subtexto estiver em branco, diga sim.
     Se o conteúdo deste caractere inicial deste subtexto for algum letra, reitere.
-    Se o conteúdo deste caractere inicial deste subtexto for o single-quote byte, reitere.
+    Se o conteúdo deste caractere inicial deste subtexto for o apóstrofo, reitere.
   Diga não.
 
 Função para que se determine se uma string é igual para um byte;
@@ -6247,7 +6246,7 @@ Função para que se determine se uma string é wider do que uma caixa:
 Função para que se determine se um subtexto está sobre alguma espécie de contração:
   Atribua o caractere inicial deste subtexto mais 1 para um endereço de byte .
   Se o endereço de byte for maior do que o caractere final deste subtexto, diga não.
-  Se o conteúdo deste caractere inicial deste subtexto não for o single-quote byte, diga não.
+  Se o conteúdo deste caractere inicial deste subtexto não for o apóstrofo, diga não.
   Se o conteúdo deste endereço de byte não for algum letra, diga não.
   Diga sim.
 
@@ -14170,24 +14169,24 @@ Rotina para que se pinte um byte:
   Se o byte for a vírgula, pinte a vírgula.
   Se o byte for o cifrão, pinte o cifrão.
   Se o byte for as aspas duplas, pinte as aspas duplas.
-  Se o byte for o sinal de igualdade, pinte o equal-sign caractere.
-  Se o byte for o ponto de exclamação, pinte o exclamation-mark caractere.
+  Se o byte for o sinal de igualdade, pinte o sinal de igualdade.
+  Se o byte for o ponto de exclamação, pinte o ponto de exclamação.
   Se o byte for o símbolo menor do que, pinte o sinal menor do que.
-  Se o byte for o chave esquerda, pinte o chave de abertura.
+  Se o byte for a chave esquerda, pinte a chave de abertura.
   Se o byte for o colchete esquerdo, pinte o colchete de abertura.
   Se o byte for o parênteses esquerdo, pinte o parênteses de abertura.
   Se o byte for o símbolo maior do que, pinte o sinal maior do que.
-  Se o byte for o chave direita, pinte o chave de encerramento.
+  Se o byte for a chave direita, pinte a chave de encerramento.
   Se o byte for o colchete direito, pinte o colchete de encerramento.
   Se o byte for o parênteses direito, pinte o parênteses de encerramento.
-  Se o byte for o sinal de subtração, pinte o minus-sign caractere.
-  Se o byte for o símbolo cardinal, pinte o número-sign caractere.
-  Se o byte for o sinal de porcentagem, pinte o percentual-sign caractere.
-  Se o byte for o ponto final, pinte o period caractere.
-  Se o byte for o plus-sign byte, pinte o sinal de adição.
+  Se o byte for o sinal de subtração, pinte o sinal de subtração.
+  Se o byte for o símbolo cardinal, pinte o símbolo cardinal.
+  Se o byte for o sinal de porcentagem, pinte o sinal de porcentagem.
+  Se o byte for o ponto final, pinte o ponto final.
+  Se o byte for o sinal de adição, pinte o sinal de adição.
   Se o byte for o ponto de interrogação, pinte o ponto de interrogação.
-  Se o byte for o ponto&vírgula, pinte o semi-sinal de dois pontos.
-  Se o byte for o single-quote byte, pinte o single-quote caractere.
+  Se o byte for o ponto&vírgula, pinte o ponto&vírgula.
+  Se o byte for o apóstrofo, pinte o single-quote caractere.
   Se o byte for o barra inclinada, pinte o slash caractere.
   Se o byte for o acento til, pinte o tilde caractere.
   Se o byte for o underline, pinte o underscore caractere.
@@ -15491,7 +15490,7 @@ Rotina para que se pinte o eight caractere:
   Pinte 9/10 quadrado na diagonal.
   Restaure o contexto.
 
-Rotina para que se pinte o equal-sign caractere:
+Rotina para que se pinte o sinal de igualdade:
   Salve o contexto.
   Ande 1+1/2 quadrados.
   Vire para a direita.
@@ -15502,7 +15501,7 @@ Rotina para que se pinte o equal-sign caractere:
   Pinte 2 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o exclamation-mark caractere:
+Rotina para que se pinte o ponto de exclamação:
   Salve o contexto.
   Ande 4 quadrados.
   Vire para a direita.
@@ -15556,7 +15555,7 @@ Rotina para que se pinte o sinal menor do que:
   Pinte 9/4 quadrado.
   Restaure o contexto.
 
-Rotina para que se pinte o chave de abertura:
+Rotina para que se pinte a chave de abertura:
   Salve o contexto.
   Vire para a direita.
   Ande 2 quadrados.
@@ -16773,7 +16772,7 @@ Rotina para que se pinte o little-z caractere:
   Pinte 2 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o minus-sign caractere:
+Rotina para que se pinte o sinal de subtração:
   Salve o contexto.
   Ande 2 quadrados.
   Vire para a direita.
@@ -16799,7 +16798,7 @@ Rotina para que se pinte o nine caractere:
   Pinte 1 quadrado na diagonal.
   Restaure o contexto.
 
-Rotina para que se pinte o número-sign caractere:
+Rotina para que se pinte o símbolo cardinal:
   Salve o contexto.
   Ande 3 quadrados.
   Vire para a direita.
@@ -16835,7 +16834,7 @@ Rotina para que se pinte o one caractere:
   Pinte 1 quadrado na diagonal.
   Restaure o contexto.
 
-Rotina para que se pinte o percentual-sign caractere:
+Rotina para que se pinte o sinal de porcentagem:
   Salve o contexto.
   Vire para 7/96.
   Pinte 9/2 quadrados.
@@ -16850,7 +16849,7 @@ Rotina para que se pinte o percentual-sign caractere:
   Pinte 1/2 quadrado.
   Restaure o contexto.
 
-Rotina para que se pinte o period caractere:
+Rotina para que se pinte o ponto final:
   Salve o contexto.
   Vire para a direita.
   Ande 1 quadrado.
@@ -16895,7 +16894,7 @@ Rotina para que se pinte o sinal maior do que:
   Pinte 9/4 quadrado.
   Restaure o contexto.
 
-Rotina para que se pinte o chave de encerramento:
+Rotina para que se pinte a chave de encerramento:
   Salve o contexto.
   Vire para a direita.
   Pinte 1 quadrado.
@@ -16934,7 +16933,7 @@ Rotina para que se pinte o parênteses de encerramento:
   Pinte 1 quadrado na diagonal.
   Restaure o contexto.
 
-Rotina para que se pinte o semi-sinal de dois pontos:
+Rotina para que se pinte o ponto&vírgula:
   Salve o contexto.
   Dê meia volta.
   Ande 1 quadrado.
