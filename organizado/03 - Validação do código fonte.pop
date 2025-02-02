@@ -293,7 +293,7 @@ Função para que se determine se uma string é algum símbolo:
 
 Função para que se determine se um byte é algum símbolo: 
   \ esta rotina deveria estar na biblioteca padrão
-  Se o byte for o acento circumflexo, diga sim.
+  Se o byte for o acento circunflexo, diga sim.
   Se o byte for o barra vertical, diga sim.
   Se o byte for o asterisco, diga sim.
   Se o byte for o sinal de adição, diga sim.

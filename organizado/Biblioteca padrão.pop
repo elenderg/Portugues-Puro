@@ -1687,7 +1687,7 @@ A barra invertida é um byte igual a 92.
 A barra inversa é um byte igual a 92.
 A contrabarra é um byte igual a 92.
 O colchete direito é um byte igual a 93.
-O acento circumflexo é um byte igual a 94. \ ^
+O acento circunflexo é um byte igual a 94. \ ^
 O underline é um byte igual a 95.
 O sublinhado é um byte igual a 95.
 O traço baixo é um byte igual a 95.
@@ -1742,7 +1742,7 @@ O óbelo é um byte igual a 134.\†
 O punhal é um byte igual a 134.\†
 O diesis é um byte igual a 135.\‡
 O obelisco duplo é um byte igual a 135.\‡
-O circumflex byte é um byte igual a 136. \ Corresponde ao caractere ˆ. Não confundir com o acento circumflexo ^
+O circumflex byte é um byte igual a 136. \ Corresponde ao caractere ˆ. Não confundir com o acento circunflexo ^
 O símbolo de /milhar é um byte igual a 137.\‰
 O símbolo de permilagem é um byte igual a 137.\‰
 O sinal de permilagem é um byte igual a 137.\‰
@@ -3251,7 +3251,8 @@ Rotina para que se inicie uma folha usando um título de índice remissivo:
 \Rotina para que se avance um byte limitando-a para um segundo byte e um terceiro byte;
 Rotina para que se avance um byte limitando-o para um segundo byte e um terceiro byte:
   Adicione 1 para o byte.
-  Se o byte for maior do que o terceiro byte, atribua o segundo byte ao byte.
+  Se o byte for maior do que o terceiro byte, 
+    Atribua o segundo byte ao byte.
 
 Rotina para que se aumente um número;
 Rotina para que se incremente um número;
@@ -14119,56 +14120,56 @@ Rotina para que se pinte um byte:
   Se o byte for o Ã maiúsculo, pinte a letra 'Ã' maiúscula.
   Se o byte for o B maiúsculo, pinte o B maiúsculo.
   Se o byte for o C maiúsculo, pinte o C maiúsculo.
-  Se o byte for o Ç maiúsculo, pinte o Ç maiúsculo caractere.
+  Se o byte for o Ç maiúsculo, pinte o Ç maiúsculo.
   Se o byte for o D maiúsculo, pinte o D maiúsculo.
   Se o byte for o 'E' maiúsculo, pinte o 'E' maiúsculo.
-  Se o byte for o 'É' maiúsculo, pinte o big-e-acute caractere.
-  Se o byte for o Ê maiúsculo, pinte o big-e-circumflex caractere.
-  Se o byte for o Ë maiúsculo, pinte o big-e-diaeresis caractere.
-  Se o byte for o È maiúsculo, pinte o big-e-grave caractere.
+  Se o byte for o 'É' maiúsculo, pinte o 'É' maiúsculo.
+  Se o byte for o Ê maiúsculo, pinte o Ê maiúsculo.
+  Se o byte for o Ë maiúsculo, pinte o Ë maiúsculo.
+  Se o byte for o È maiúsculo, pinte o È maiúsculo.
   Se o byte for o F maiúsculo, pinte o F maiúsculo.
   Se o byte for o G maiúsculo, pinte o G maiúsculo.
   Se o byte for o H maiúsculo, pinte o H maiúsculo.
   Se o byte for o I maiúsculo, pinte o I maiúsculo.
-  Se o byte for o Í maiúsculo, pinte o big-i-acute caractere.
-  Se o byte for o Î maiúsculo, pinte o big-i-circumflex caractere.
-  Se o byte for o Ï maiúsculo, pinte o big-i-diaeresis caractere.
-  Se o byte for o Ì maiúsculo, pinte o big-i-grave caractere.
+  Se o byte for o Í maiúsculo, pinte o Í maiúsculo.
+  Se o byte for o Î maiúsculo, pinte o Î maiúsculo.
+  Se o byte for o Ï maiúsculo, pinte o Ï maiúsculo.
+  Se o byte for o Ì maiúsculo, pinte o Ì maiúsculo.
   Se o byte for o J maiúsculo, pinte o J maiúsculo.
   Se o byte for o K maiúsculo, pinte o K maiúsculo.
   Se o byte for o L maiúsculo, pinte o L maiúsculo.
   Se o byte for o M maiúsculo, pinte o M maiúsculo.
   Se o byte for o N maiúsculo, pinte o N maiúsculo.
-  Se o byte for o Ñ maiúsculo, pinte o big-n-tilde caractere.
+  Se o byte for o Ñ maiúsculo, pinte o Ñ maiúsculo.
   Se o byte for o 'O' maiúsculo, pinte o 'O' maiúsculo.
-  Se o byte for o Ó maiúsculo, pinte o big-o-acute caractere.
-  Se o byte for o Ô maiúsculo, pinte o big-o-circumflex caractere.
-  Se o byte for o Ö maiúsculo, pinte o big-o-diaeresis caractere.
-  Se o byte for o Ò maiúsculo, pinte o big-o-grave caractere.
-  Se o byte for o Õ maiúsculo, pinte o big-o-tilde caractere.
+  Se o byte for o Ó maiúsculo, pinte o Ó maiúsculo.
+  Se o byte for o Ô maiúsculo, pinte o Ô maiúsculo.
+  Se o byte for o Ö maiúsculo, pinte o Ö maiúsculo.
+  Se o byte for o Ò maiúsculo, pinte o Ò maiúsculo.
+  Se o byte for o Õ maiúsculo, pinte o Õ maiúsculo.
   Se o byte for o P maiúsculo, pinte o P maiúsculo.
   Se o byte for o Q maiúsculo, pinte o Q maiúsculo.
   Se o byte for o R maiúsculo, pinte o R maiúsculo.
   Se o byte for o S maiúsculo, pinte o S maiúsculo.
   Se o byte for o T maiúsculo, pinte o T maiúsculo.
   Se o byte for o U maiúsculo, pinte o U maiúsculo.
-  Se o byte for o Ú maiúsculo, pinte o big-u-acute caractere.
-  Se o byte for o Û maiúsculo, pinte o big-u-circumflex caractere.
-  Se o byte for o Ù maiúsculo, pinte o big-u-grave caractere.
-  Se o byte for o Ü maiúsculo, pinte o big-u-diaeresis caractere.
+  Se o byte for o Ú maiúsculo, pinte o Ú maiúsculo.
+  Se o byte for o Û maiúsculo, pinte o Û maiúsculo.
+  Se o byte for o Ù maiúsculo, pinte o Ù maiúsculo.
+  Se o byte for o Ü maiúsculo, pinte o Ü maiúsculo.
   Se o byte for o V maiúsculo, pinte o V maiúsculo.
   Se o byte for o W maiúsculo, pinte o W maiúsculo.
   Se o byte for o X maiúsculo, pinte o X maiúsculo.
   Se o byte for o Y maiúsculo, pinte o Y maiúsculo.
-  Se o byte for o Ý maiúsculo, pinte o big-y-acute caractere.
+  Se o byte for o Ý maiúsculo, pinte o Ý maiúsculo.
   Se o byte for o Z maiúsculo, pinte o Z maiúsculo.
   \FIM DAS LETRAS MAIÚSCULAS
   \SÍMBOLOS
-  Se o byte for o acento circumflexo, pinte o cursor de texto caractere.
-  Se o byte for o sinal de dois pontos, pinte o colon caractere.
-  Se o byte for a vírgula, pinte o comma caractere.
-  Se o byte for o cifrão, pinte o dollar-sign caractere.
-  Se o byte for as aspas duplas, pinte o double-quote caractere.
+  Se o byte for o acento circunflexo, pinte o acento circunflexo.
+  Se o byte for o sinal de dois pontos, pinte o sinal de dois pontos.
+  Se o byte for a vírgula, pinte a vírgula.
+  Se o byte for o cifrão, pinte o cifrão.
+  Se o byte for as aspas duplas, pinte as aspas duplas.
   Se o byte for o sinal de igualdade, pinte o equal-sign caractere.
   Se o byte for o ponto de exclamação, pinte o exclamation-mark caractere.
   Se o byte for o símbolo menor do que, pinte o sinal menor do que.
@@ -14185,7 +14186,7 @@ Rotina para que se pinte um byte:
   Se o byte for o ponto final, pinte o period caractere.
   Se o byte for o plus-sign byte, pinte o sinal de adição.
   Se o byte for o ponto de interrogação, pinte o ponto de interrogação.
-  Se o byte for o ponto&vírgula, pinte o semi-colon caractere.
+  Se o byte for o ponto&vírgula, pinte o semi-sinal de dois pontos.
   Se o byte for o single-quote byte, pinte o single-quote caractere.
   Se o byte for o barra inclinada, pinte o slash caractere.
   Se o byte for o acento til, pinte o tilde caractere.
@@ -14540,7 +14541,7 @@ Rotina para que se pinte o C maiúsculo:
   Pinte 1 quadrado na diagonal.
   Restaure o contexto.
 
-Rotina para que se pinte o Ç maiúsculo caractere:
+Rotina para que se pinte o Ç maiúsculo:
   Salve o contexto.
   Ande 1+3/4 quadrados.
   Pinte 1 quadrado.
@@ -14601,7 +14602,7 @@ Rotina para que se pinte o 'E' maiúsculo:
   Pinte 2 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o big-e-acute caractere:
+Rotina para que se pinte o 'É' maiúsculo:
   Salve o contexto.
   Pinte 3+1/2 quadrados.
   Vire para a direita.
@@ -14625,7 +14626,7 @@ Rotina para que se pinte o big-e-acute caractere:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o big-e-circumflex caractere:
+Rotina para que se pinte o Ê maiúsculo:
   Salve o contexto.
   Pinte 3+1/2 quadrados.
   Vire para a direita.
@@ -14650,7 +14651,7 @@ Rotina para que se pinte o big-e-circumflex caractere:
   \end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o big-e-diaeresis caractere:
+Rotina para que se pinte o Ë maiúsculo:
   Salve o contexto.
   Pinte 3+1/2 quadrados.
   Vire para a direita.
@@ -14674,7 +14675,7 @@ Rotina para que se pinte o big-e-diaeresis caractere:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o big-e-grave caractere:
+Rotina para que se pinte o È maiúsculo:
   Salve o contexto.
   Pinte 3+1/2 quadrados.
   Vire para a direita.
@@ -14787,7 +14788,7 @@ Rotina para que se pinte o I maiúsculo:
   Pinte 2 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o big-i-acute caractere:
+Rotina para que se pinte o Í maiúsculo:
   Salve o contexto.
   Vire para a direita.
   Ande 1 quadrado.
@@ -14812,7 +14813,7 @@ Rotina para que se pinte o big-i-acute caractere:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o big-i-circumflex caractere:
+Rotina para que se pinte o Î maiúsculo:
   Salve o contexto.
   Vire para a direita.
   Ande 1 quadrado.
@@ -14838,7 +14839,7 @@ Rotina para que se pinte o big-i-circumflex caractere:
   \end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o big-i-diaeresis caractere:
+Rotina para que se pinte o Ï maiúsculo:
   Salve o contexto.
   Vire para a direita.
   Ande 1 quadrado.
@@ -14863,7 +14864,7 @@ Rotina para que se pinte o big-i-diaeresis caractere:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o big-i-grave caractere:
+Rotina para que se pinte o Ì maiúsculo:
   Salve o contexto.
   Vire para a direita.
   Ande 1 quadrado.
@@ -14949,7 +14950,7 @@ Rotina para que se pinte o N maiúsculo:
   Pinte 3+1/2 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o big-n-tilde caractere:
+Rotina para que se pinte o Ñ maiúsculo:
   Salve o contexto.
   Pinte 3+1/2 quadrados.
   Vire para 41/96.
@@ -14986,7 +14987,7 @@ Rotina para que se pinte o 'O' maiúsculo:
   Pinte 1 quadrado na diagonal.
   Restaure o contexto.
 
-Rotina para que se pinte o big-o-acute caractere:
+Rotina para que se pinte o Ó maiúsculo:
   Salve o contexto.
   Ande 1 quadrado.
   Pinte 1+6/8 quadrados.
@@ -15012,7 +15013,7 @@ Rotina para que se pinte o big-o-acute caractere:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o big-o-circumflex caractere:
+Rotina para que se pinte o Ô maiúsculo:
   Salve o contexto.
   Ande 1 quadrado.
   Pinte 1+6/8 quadrados.
@@ -15039,7 +15040,7 @@ Rotina para que se pinte o big-o-circumflex caractere:
   \end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o big-o-diaeresis caractere:
+Rotina para que se pinte o Ö maiúsculo:
   Salve o contexto.
   Ande 1 quadrado.
   Pinte 1+6/8 quadrados.
@@ -15065,7 +15066,7 @@ Rotina para que se pinte o big-o-diaeresis caractere:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o big-o-grave caractere:
+Rotina para que se pinte o Ò maiúsculo:
   Salve o contexto.
   Ande 1 quadrado.
   Pinte 1+6/8 quadrados.
@@ -15091,7 +15092,7 @@ Rotina para que se pinte o big-o-grave caractere:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o big-o-tilde caractere:
+Rotina para que se pinte o Õ maiúsculo:
   Salve o contexto.
   Ande 1 quadrado.
   Pinte 2 quadrados.
@@ -15207,7 +15208,7 @@ Rotina para que se pinte o U maiúsculo:
   Pinte 3+1/2 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o big-u-acute caractere:
+Rotina para que se pinte o Ú maiúsculo:
   Salve o contexto.
   Ande 3+1/2 quadrados.
   Dê meia volta.
@@ -15228,7 +15229,7 @@ Rotina para que se pinte o big-u-acute caractere:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o big-u-circumflex caractere:
+Rotina para que se pinte o Û maiúsculo:
   Salve o contexto.
   Ande 3+1/2 quadrados.
   Dê meia volta.
@@ -15253,7 +15254,7 @@ Rotina para que se pinte o big-u-circumflex caractere:
   \end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o big-u-diaeresis caractere:
+Rotina para que se pinte o Ü maiúsculo:
   Salve o contexto.
   Ande 3+1/2 quadrados.
   Dê meia volta.
@@ -15274,7 +15275,7 @@ Rotina para que se pinte o big-u-diaeresis caractere:
   \end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o big-u-grave caractere:
+Rotina para que se pinte o Ù maiúsculo:
   Salve o contexto.
   Ande 3+1/2 quadrados.
   Dê meia volta.
@@ -15361,7 +15362,7 @@ Rotina para que se pinte o Y maiúsculo:
   Pinte 1+5/8 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o big-y-acute caractere:
+Rotina para que se pinte o Ý maiúsculo:
   Salve o contexto.
   Ande 3+5/8 quadrados.
   Dê meia volta.
@@ -15404,7 +15405,7 @@ Rotina para que se pinte o Z maiúsculo:
   Pinte 2 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o cursor de texto caractere:
+Rotina para que se pinte o acento circunflexo:
   Salve o contexto.
   Ande 3 quadrados.
   Vire para 1/8.
@@ -15413,7 +15414,7 @@ Rotina para que se pinte o cursor de texto caractere:
   Pinte 1 quadrado na diagonal.
   Restaure o contexto.
 
-Rotina para que se pinte o colon caractere:
+Rotina para que se pinte o sinal de dois pontos:
   Salve o contexto.
   Vire para a direita.
   Ande 1 quadrado.
@@ -15424,7 +15425,7 @@ Rotina para que se pinte o colon caractere:
   Pinte 1/2 quadrado.
   Restaure o contexto.
 
-Rotina para que se pinte o comma caractere:
+Rotina para que se pinte a vírgula:
   Salve o contexto.
   Dê meia volta.
   Ande 1 quadrado.
@@ -15434,7 +15435,7 @@ Rotina para que se pinte o comma caractere:
   Pinte 1/2 quadrado.
   Restaure o contexto.
 
-Rotina para que se pinte o dollar-sign caractere:
+Rotina para que se pinte o cifrão:
   Salve o contexto.
   Ande 1 quadrado.
   Dê meia volta.
@@ -15457,7 +15458,7 @@ Rotina para que se pinte o dollar-sign caractere:
   Pinte 5 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o double-quote caractere:
+Rotina para que se pinte as aspas duplas:
   Salve o contexto.
   Vire para a direita.
   Ande 1/2 quadrado.
@@ -16933,7 +16934,7 @@ Rotina para que se pinte o parênteses de encerramento:
   Pinte 1 quadrado na diagonal.
   Restaure o contexto.
 
-Rotina para que se pinte o semi-colon caractere:
+Rotina para que se pinte o semi-sinal de dois pontos:
   Salve o contexto.
   Dê meia volta.
   Ande 1 quadrado.
