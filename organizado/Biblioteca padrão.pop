@@ -2370,10 +2370,10 @@ A janela principal do programa é um janela do programa.
 A pasta de saída é um endereço da pasta igual a "C:\output\".
 O arquivo de saída é um endereço completo igual a "C:\output\output.txt".
 O tamanho de letra pequena é um tamanho da letra.
-A saved memory hBitMap é um hBitMap.
+O identificador do objeto BitMap é um hBitMap.
 
-A saved quantidade de twips/pixel é um número.
-A caixa zero é uma caixa.
+A quantidade armazenada de twips/pixel é um número.
+O retângulo abstrato é uma caixa.
 O som de aviso é uma wave igual a $524946463A02000057415645666D74201200000001000100401F0000401F000001000800000066616374040000000702000064617461070200007F7F807F7F807F7F808080807F807F7F80817F81817E7E827E7D847C79877D5F6D99B2A25D608269A5979869667F7D8D738C7D8C5E7E878F767A75868D84797278829A7D7E857A73929271657492907D7E7D787E8B887C758388827E817F7C7B89897C7A7E84838183827E7A8488877D7E8181808484817C7F84838181807E7F8283807E8081808182807F7F81818081807F7F8081818080807F7F808180807F80808080807F8080807F8080808080807F7F7F7F7F8080807F7F7F7C7B8182817C7B7D7E8082807D7D7C7F8281807F7C7D808082807E7E7E7D7E807D7B7C7B7D7D7B7A7979797875727269797A490F4571FFF4FF0C001297FBF492525BB0F5B26A001C69BEE5BA76476F9EBD953C3757BAC9BB705C7F9AA883645D7897AA9B806977959588696976999B83766F828C907F7375828E91877B757D868B837A757C858D8880787B8187847B7A7D8788807B79808486817D7C7F8384817D7C7F8484817B7B7D83847F7C7B7E8182827D7C7C8082817D7C7D7F81807F7D7D7F82817F7B7B7E8081807E7D7D7F80807E7D7D7E80807E7D7D7E7F807F7D7D7E7F807F7E7D7E7E80807F7E7D7E80807F7E7E7E7F7F7E7E7E7F7F7F7F7E7E7F7F807F7F7E7E7E7F8080807E7E7E80807F7E7E7F8081807F7F7E7F7F80807F7E7F8081807F7E7E7E80808080807F807F7F7F7F7F7F7F80808080807F7F7F808080807F80808180807F80808100.
 
 A matriz de tons de cinza é um texto hexadecimal igual a $8716993E8716993E8716993E0000000000000000A245163FA245163FA245163F0000000000000000D578E93DD578E93DD578E93D00000000000000000000000000000000000000000000803F00000000000000000000000000000000000000000000803F.
@@ -7474,7 +7474,7 @@ Rotina para que se finalize o contexto de dispositivo de memória:
   Processe "gdi32.dll" "SelectObject" com \A função SelectObject seleciona um objeto no contexto de dispositivo (Device Context) especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-selectobject
     O contexto de dispositivo de memória [HDC]
-    e O saved memory hBitMap [hGdiObj ]
+    e O identificador do objeto BitMap [hGdiObj ]
   Retornando um hBitMap. [hGdiObj]
   Processe "gdi32.dll" "DeleteObject" com \ Exclui o canvas, liberando todos os recursos do sistema associados ao objeto.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-deleteobject
@@ -9501,7 +9501,7 @@ Rotina para que se inicialize o contexto de dispositivo de memória:
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-getcurrentobject
     O contexto de dispositivo de memória [hDC]
     e 7 [OBJ_BITMAP]
-  Retornando o saved memory hBitMap. [h]
+  Retornando o identificador do objeto BitMap. [h]
   Processe "gdi32.dll" "CreateCompatibleBitmap" com \ Cria um bitmap compatível com o dispositivo que está associado ao contexto de dispositivo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-createcompatiblebitmap
     O canvas da tela [hdc]
@@ -12860,13 +12860,14 @@ Rotina para que se exponha exterior de uma elipse:
   Destrua o hRgn.
 
 Rotina para que se exponha exterior de uma hRgn:
-  Crie uma old hRgn usando a caixa zero.
+  Crie uma old hRgn usando o retângulo abstrato.
   Processe "gdi32.dll" "GetClipRgn" com \ Recupera um identificador que identifica a região de recorte definida pelo aplicativo atual para o contexto de dispositivo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-getcliprgn
     O contexto do dispositivo atual e [hdc]
     A old hRgn [hrgn]
   Retornando um número.
-  Se o número não for 1, limpe a old hRgn.
+  Se o número não for 1, 
+    Limpe a old hRgn.
   Processe "gdi32.dll" "SelectClipRgn" com \ Seleciona uma região como a região de recorte atual para o contexto de dispositivo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-selectcliprgn
     O contexto do dispositivo atual [hdc]
@@ -14221,7 +14222,7 @@ Rotina para que se pinte um byte:
   Se o byte for o m minúsculo, pinte o m minúsculo.
   Se o byte for o n minúsculo, pinte o n minúsculo.
   Se o byte for o ñ minúsculo , pinte o little-n-acento til.
-  Se o byte for o 'o' minúsculo, pinte o o minúsculo.
+  Se o byte for o 'o' minúsculo, pinte o 'o' minúsculo.
   Se o byte for o ó minúsculo , pinte o little-o-acute caractere.
   Se o byte for o ô minúsculo , pinte o little-o-circumflex caractere.
   Se o byte for o ö minúsculo , pinte o little-o-diaeresis caractere.
@@ -14257,9 +14258,9 @@ Rotina para que se pinte um byte:
   \ Atualize a tela. \
 
 Rotina para que se pinte a grade de caracteres :
-  \ this é chamado pelo temporary linha reta no "Stoke a ___ caractere" rotina
+  \ temporário
   Salve o contexto.
-  Atribua a grossura da canetinha para uma saved grossura da canetinha. \ ver REMARK abaixo
+  Atribua a grossura da canetinha para uma nova grossura da canetinha.
   Use a cor da canetinha cinza claro.
   Atribua o tamanho da letra deste contexto dividido por 4 para um tamanho.
   Dê meia volta.
@@ -14271,10 +14272,9 @@ Rotina para que se pinte a grade de caracteres :
   Vire para a esquerda.
   Pinte as caixas da grade de texto.
   Restaure o contexto.
-  Atribua o saved grossura da canetinha à grossura da canetinha. \ ver REMARK abaixo
+  Atribua a nova grossura da canetinha à grossura da canetinha. 
 
 Rotina para que se pinte as caixas da grade de texto:
-  \ isso é chamado a partir da a rotina acima para pintar uma coluna da grade
   Atribua a tamanho da letra deste contexto dividido por 4 para um tamanho.
   Salve o contexto.
   Use a cor da canetinha fina.
@@ -16286,7 +16286,7 @@ Rotina para que se pinte o little-n-acento til:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o o minúsculo:
+Rotina para que se pinte o 'o' minúsculo:
   Salve o contexto.
   Vire para a direita.
   Ande 2 quadrados.
@@ -18822,7 +18822,7 @@ Rotina para que se inicie uma folha usando uma caixa:
     A área de impressão [hdc]
     e 88 [index = LOGPIXELSX]
   Retornando um número.
-  Atribua a quantidade de twips/pixel ao saved quantidade de twips/pixel .
+  Atribua a quantidade de twips/pixel ao quantidade armazenada de twips/pixel .
   Atribua o tpi dividido pelo número à quantidade de twips/pixel .
 
 Rotina para que se inicie a impressão um pdf:
@@ -18884,7 +18884,7 @@ Rotina para que se end uma folha:
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-endpage
     A área de impressão. [hdc]
   Atribua o contexto de dispositivo de memória ao contexto do dispositivo atual.
-  Atribua o saved quantidade de twips/pixel à quantidade de twips/pixel .
+  Atribua o quantidade armazenada de twips/pixel à quantidade de twips/pixel .
 
 Rotina para que se atribua uma matiz e uma saturação e uma luminosidade para uma cor:
   Atribua a matiz à matiz desta cor. \ -> this.Color.Hue = Hue/
