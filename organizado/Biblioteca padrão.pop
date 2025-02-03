@@ -14244,16 +14244,16 @@ Rotina para que se pinte um byte:
   Se o byte for o ý minúsculo, pinte o little-y-acute caractere.
   Se o byte for o z minúsculo, pinte o z minúsculo.
   \números
-  Se o byte for o número zero, pinte o zero caractere.
-  Se o byte for o número hum, pinte o one caractere.
-  Se o byte for o número dois, pinte o two caractere.
-  Se o byte for o número três, pinte o three caractere.
-  Se o byte for o número quatro, pinte o four caractere.
-  Se o byte for o número cinco, pinte o five caractere.
-  Se o byte for o número seis, pinte o six caractere.
-  Se o byte for o número sete, pinte o seven caractere.
-  Se o byte for o número oito, pinte o eight caractere.
-  Se o byte for o número nove, pinte o nine caractere.
+  Se o byte for o número zero, pinte o número zero.
+  Se o byte for o número hum, pinte o número hum.
+  Se o byte for o número dois, pinte o número dois.
+  Se o byte for o número três, pinte o número três.
+  Se o byte for o número quatro, pinte o número quatro.
+  Se o byte for o número cinco, pinte o número five.
+  Se o byte for o número seis, pinte o número seis.
+  Se o byte for o número sete, pinte o número seven.
+  Se o byte for o número oito, pinte o número oito.
+  Se o byte for o número nove, pinte o número nove.
   \ Atualize a tela. \
 
 Rotina para que se pinte a grade de caracteres :
@@ -15472,7 +15472,7 @@ Rotina para que se pinte as aspas duplas:
   Pinte 1+1/2 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o eight caractere:
+Rotina para que se pinte o número oito:
   Salve o contexto.
   Vire para a direita.
   Ande 1 quadrado.
@@ -15512,7 +15512,7 @@ Rotina para que se pinte o ponto de exclamação:
   Pinte 1/2 quadrado.
   Restaure o contexto.
 
-Rotina para que se pinte o five caractere:
+Rotina para que se pinte o número five:
   Salve o contexto.
   Vire para a direita.
   Pinte 1 quadrado.
@@ -15531,7 +15531,7 @@ Rotina para que se pinte o five caractere:
   Pinte 2 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o four caractere:
+Rotina para que se pinte o número quatro:
   Salve o contexto.
   Vire para a direita.
   Ande 2 quadrados.
@@ -16779,7 +16779,7 @@ Rotina para que se pinte o sinal de subtração:
   Pinte 2 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o nine caractere:
+Rotina para que se pinte o número nove:
   Salve o contexto.
   Ande 1 quadrado.
   Vire para 3/8.
@@ -16819,7 +16819,7 @@ Rotina para que se pinte o símbolo cardinal:
   Pinte 4 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o one caractere:
+Rotina para que se pinte o número hum:
   Salve o contexto.
   Vire para a direita.
   Ande 1 quadrado.
@@ -16946,7 +16946,7 @@ Rotina para que se pinte o ponto&vírgula:
   Pinte 1/2 quadrado.
   Restaure o contexto.
 
-Rotina para que se pinte o seven caractere:
+Rotina para que se pinte o número seven:
   Salve o contexto.
   Ande 2+4/8 quadrados.
   Pinte 1 quadrado.
@@ -16969,7 +16969,7 @@ Rotina para que se pinte o apóstrofo:
   Pinte 1+1/2 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o six caractere:
+Rotina para que se pinte o número seis:
   Salve o contexto.
   Vire para a direita.
   Ande 2 quadrados.
@@ -17004,7 +17004,7 @@ Rotina para que se pinte uns quadrados:
 Rotina para que se pinte uns quadrados na diagonal:
   Pinte o tamanho do quadrado vezes os quadrados vezes a raiz de dois dividido por 1 quadrado.
 
-Rotina para que se pinte o three caractere:
+Rotina para que se pinte o número três:
   Salve o contexto.
   Ande 2+2/4 quadrados.
   Vire para 1/8.
@@ -17035,7 +17035,7 @@ Rotina para que se pinte o acento til:
 Rotina para que se pinte uns twips:
   Pinte uma linha reta os twips em comprimento.
 
-Rotina para que se pinte o two caractere:
+Rotina para que se pinte o número dois:
   Salve o contexto.
   Ande 2+4/8 quadrados.
   Vire para 1/8.
@@ -17068,7 +17068,7 @@ Rotina para que se pinte a barra vertical:
   Pinte 5 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o zero caractere:
+Rotina para que se pinte o número zero:
   Salve o contexto.
   Ande 1 quadrado.
   Pinte 1+3/8 quadrados.
