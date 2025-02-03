@@ -418,7 +418,7 @@ Um linha reta horizontal é uma linha reta.
 \Um hour é 60 minutes.
 Um hPen é um número identificador.
 Uma hRgn é um número identificador.
-O i-beam cursor é um cursor.
+O cursor de digitação é um cursor.
 Um IID é um UUID. \ Um interface identifier é um Identificador único universal de Interface
 Um quantidade de espaços é uma contagem.
 
@@ -1430,7 +1430,7 @@ O servidor SMTP padrão é uma string igual a "localhost".
 
 A fila de eventos é uma fila de eventos.
 
-O hand cursor é um cursor.
+O cursor de mão é um cursor.
 
 O tamanho de letra grande é um tamanho da letra.
 
@@ -7451,9 +7451,9 @@ Rotina para que se finalize um contexto:
 Rotina para que se finalize os cursors:
   Processe "user32.dll" "DestroyCursor" com \A função DestroyCursor destrói um cursor e libera qualquer memória ocupada por ele.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-destroycursor
-    O i-beam cursor. [hCursor] \ O identificador do cursor a ser destruída.
+    O cursor de digitação. [hCursor] \ O identificador do cursor a ser destruída.
   Processe "user32.dll" "DestroyCursor" com
-    O hand cursor. [hCursor]
+    O cursor de mão. [hCursor]
   Processe "user32.dll" "DestroyCursor" com
     A seta do mouse. [hCursor]
 
@@ -8853,7 +8853,7 @@ Rotina para que se execute um evento usando um console (atualização de tela):
   Mostre o console.
 
 Rotina para que se execute um evento usando um console (clique direito):
-  Mostre o hand cursor.
+  Mostre o cursor de mão.
   Role o console usando o evento.
   Atualize o cursor.
 
@@ -9391,8 +9391,8 @@ Rotina para que se inicialize um contexto: \ canvas?
 
 Rotina para que se inicialize os cursors:
   Inicialize os cursores (seta do mouse).
-  Inicialize os cursores (hand cursor).
-  Inicialize os cursores (i-beam cursor).
+  Inicialize os cursores (cursor de mão).
+  Inicialize os cursores (cursor de digitação).
   Oculte o cursor.
 
 Rotina para que se inicialize os cursores (seta do mouse):
@@ -9419,7 +9419,7 @@ Rotina para que se inicialize os cursores (seta do mouse):
     e O caractere inicial desta máscara de disjunção exclusiva [*pvXORPlane]
   Retornando a seta do mouse.
 
-Rotina para que se inicialize os cursores (hand cursor):
+Rotina para que se inicialize os cursores (cursor de mão):
   Acrescente $000000000180000019B0000019B00000 para uma máscara de disjunção exclusiva.
   Acrescente $0DB200000DB6000007F6000067FE0000 para a máscara de disjunção exclusiva.
   Acrescente $7FFC00003FFC00001FFC00001FF80000 para a máscara de disjunção exclusiva.
@@ -9438,9 +9438,9 @@ Rotina para que se inicialize os cursores (hand cursor):
     e 32 [nHeight]
     e O caractere inicial desta máscara de conjunção lógica [*pvANDPlane]
     e O caractere inicial desta máscara de disjunção exclusiva [*pvXORPlane]
-  Retornando o hand cursor.
+  Retornando o cursor de mão.
 
-Rotina para que se inicialize os cursores (i-beam cursor):
+Rotina para que se inicialize os cursores (cursor de digitação):
   Acrescente $EE000000100000001000000010000000 para um máscara de disjunção exclusiva.
   Acrescente $10000000100000001000000010000000 para o máscara de disjunção exclusiva.
   Acrescente $10000000100000001000000010000000 para o máscara de disjunção exclusiva.
@@ -9455,7 +9455,7 @@ Rotina para que se inicialize os cursores (i-beam cursor):
     e 32 [nHeight]
     e O caractere inicial desta máscara de conjunção lógica [*pvANDPlane]
     e O caractere inicial desta máscara de disjunção exclusiva [*pvXORPlane]
-  Retornando o i-beam cursor.
+  Retornando o cursor de digitação.
 
 Rotina para que se inicialize as fontes:
   Processe "gdi32.dll" "GetStockObject" com \ Recupera um identificador para uma das canetas, pincéis, fontes ou paletas de estoque.
