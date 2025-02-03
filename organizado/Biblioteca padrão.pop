@@ -14192,57 +14192,57 @@ Rotina para que se pinte um byte:
   Se o byte for o underline, pinte o underline.
   Se o byte for a barra vertical, pinte a barra vertical.
   \letras minúsculas
-  Se o byte for o 'a' minúsculo, pinte o little-a caractere.
-  Se o byte for o 'á' minúsculo, pinte o little-a-acute caractere.
-  Se o byte for o 'â' minúsculo, pinte o little-a-circumflex caractere.
-  Se o byte for o 'ä' minúsculo, pinte o little-a-diaeresis caractere.
-  Se o byte for o 'à' minúsculo, pinte o little-a-grave caractere.
-  Se o byte for o 'ã' minúsculo, pinte o little-a-acento til.
-  Se o byte for o b minúsculo, pinte o little-b caractere.
-  Se o byte for o c minúsculo, pinte o little-c caractere.
+  Se o byte for o 'a' minúsculo, pinte o 'a' minúsculo.
+  Se o byte for o 'á' minúsculo, pinte o 'á' minúsculo.
+  Se o byte for o 'â' minúsculo, pinte o 'â' minúsculo.
+  Se o byte for o 'ä' minúsculo, pinte o 'ä' minúsculo.
+  Se o byte for o 'à' minúsculo, pinte o 'à' minúsculo.
+  Se o byte for o 'ã' minúsculo, pinte o 'ã' minúsculo.
+  Se o byte for o b minúsculo, pinte o b minúsculo.
+  Se o byte for o c minúsculo, pinte o c minúsculo.
   Se o byte for o cê cedilha minúsculo, pinte o little-c-cedilla caractere.
-  Se o byte for o d minúsculo, pinte o little-d caractere.
+  Se o byte for o d minúsculo, pinte o d minúsculo.
   Se o byte for o 'e' minúsculo, pinte o little-e caractere.
   Se o byte for o little-e-acute byte, pinte o little-e-acute caractere.
   Se o byte for o ê minúsculo, pinte o little-e-circumflex caractere.
   Se o byte for o ë minúsculo, pinte o little-e-diaeresis caractere.
   Se o byte for o è minúsculo, pinte o little-e-grave caractere.
-  Se o byte for o f minúsculo, pinte o little-f caractere.
-  Se o byte for o g minúsculo, pinte o little-g caractere.
-  Se o byte for o h minúsculo, pinte o little-h caractere.
-  Se o byte for o i minúsculo, pinte o little-i caractere.
+  Se o byte for o f minúsculo, pinte o f minúsculo.
+  Se o byte for o g minúsculo, pinte o g minúsculo.
+  Se o byte for o h minúsculo, pinte o h minúsculo.
+  Se o byte for o i minúsculo, pinte o i minúsculo.
   Se o byte for o í minúsculo, pinte o little-i-acute caractere.
   Se o byte for o î minúsculo, pinte o little-i-circumflex caractere.
   Se o byte for o ï minúsculo , pinte o little-i-diaeresis caractere.
   Se o byte for o ì minúsculo, pinte o little-i-grave caractere.
-  Se o byte for o j minúsculo, pinte o little-j caractere.
-  Se o byte for o k minúsculo, pinte o little-k caractere.
-  Se o byte for o l minúsculo, pinte o little-l caractere.
-  Se o byte for o m minúsculo, pinte o little-m caractere.
-  Se o byte for o n minúsculo, pinte o little-n caractere.
+  Se o byte for o j minúsculo, pinte o j minúsculo.
+  Se o byte for o k minúsculo, pinte o k minúsculo.
+  Se o byte for o l minúsculo, pinte o l minúsculo.
+  Se o byte for o m minúsculo, pinte o m minúsculo.
+  Se o byte for o n minúsculo, pinte o n minúsculo.
   Se o byte for o ñ minúsculo , pinte o little-n-acento til.
-  Se o byte for o 'o' minúsculo, pinte o little-o caractere.
+  Se o byte for o 'o' minúsculo, pinte o o minúsculo.
   Se o byte for o ó minúsculo , pinte o little-o-acute caractere.
   Se o byte for o ô minúsculo , pinte o little-o-circumflex caractere.
   Se o byte for o ö minúsculo , pinte o little-o-diaeresis caractere.
   Se o byte for o ò minúsculo , pinte o little-o-grave caractere.
   Se o byte for o õ minúsculo , pinte o little-o-acento til.
-  Se o byte for o p minúsculo, pinte o little-p caractere.
-  Se o byte for o q minúsculo, pinte o little-q caractere.
-  Se o byte for o r minúsculo, pinte o little-r caractere.
-  Se o byte for o s minúsculo, pinte o little-s caractere.
-  Se o byte for o t minúsculo, pinte o little-t caractere.
-  Se o byte for o u minúsculo, pinte o little-u caractere.
+  Se o byte for o p minúsculo, pinte o p minúsculo.
+  Se o byte for o q minúsculo, pinte o q minúsculo.
+  Se o byte for o r minúsculo, pinte o r minúsculo.
+  Se o byte for o s minúsculo, pinte o s minúsculo.
+  Se o byte for o t minúsculo, pinte o t minúsculo.
+  Se o byte for o u minúsculo, pinte o u minúsculo.
   Se o byte for o ú minúsculo , pinte o little-u-acute caractere.
   Se o byte for o û minúsculo, pinte o little-u-circumflex caractere.
   Se o byte for o ü minúsculo, pinte o little-u-diaeresis caractere.
   Se o byte for o ù minúsculo , pinte o little-u-grave caractere.
-  Se o byte for o v minúsculo, pinte o little-v caractere.
-  Se o byte for o w minúsculo, pinte o little-w caractere.
-  Se o byte for o x minúsculo, pinte o little-x caractere.
-  Se o byte for o y minúsculo, pinte o little-y caractere.
+  Se o byte for o v minúsculo, pinte o v minúsculo.
+  Se o byte for o w minúsculo, pinte o w minúsculo.
+  Se o byte for o x minúsculo, pinte o x minúsculo.
+  Se o byte for o y minúsculo, pinte o y minúsculo.
   Se o byte for o ý minúsculo, pinte o little-y-acute caractere.
-  Se o byte for o z minúsculo, pinte o little-z caractere.
+  Se o byte for o z minúsculo, pinte o z minúsculo.
   \números
   Se o byte for o número zero, pinte o zero caractere.
   Se o byte for o número hum, pinte o one caractere.
@@ -15603,7 +15603,7 @@ Rotina para que se pinte uma linha reta tão alta quanto uma caixa:
 Rotina para que se pinte uma linha reta tão comprida quanto uma caixa:
   Pinte a largura desta caixa.
 
-Rotina para que se pinte o little-a caractere:
+Rotina para que se pinte o 'a' minúsculo:
   Salve o contexto.
   Vire para a direita.
   Ande 2 quadrados.
@@ -15623,7 +15623,7 @@ Rotina para que se pinte o little-a caractere:
   Pinte 1 quadrado na diagonal.
   Restaure o contexto.
 
-Rotina para que se pinte o little-a-acute caractere:
+Rotina para que se pinte o 'á' minúsculo:
   Salve o contexto.
   Vire para a direita.
   Ande 2 quadrados.
@@ -15653,7 +15653,7 @@ Rotina para que se pinte o little-a-acute caractere:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o little-a-circumflex caractere:
+Rotina para que se pinte o 'â' minúsculo:
   Salve o contexto.
   Vire para a direita.
   Ande 2 quadrados.
@@ -15684,7 +15684,7 @@ Rotina para que se pinte o little-a-circumflex caractere:
   \end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o little-a-diaeresis caractere:
+Rotina para que se pinte o 'ä' minúsculo:
   Salve o contexto.
   Vire para a direita.
   Ande 2 quadrados.
@@ -15714,7 +15714,7 @@ Rotina para que se pinte o little-a-diaeresis caractere:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o little-a-grave caractere:
+Rotina para que se pinte o 'à' minúsculo:
   Salve o contexto.
   Vire para a direita.
   Ande 2 quadrados.
@@ -15743,7 +15743,7 @@ Rotina para que se pinte o little-a-grave caractere:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o little-a-acento til:
+Rotina para que se pinte o 'ã' minúsculo:
   Salve o contexto.
   Vire para a direita.
   Ande 2 quadrados.
@@ -15775,7 +15775,7 @@ Rotina para que se pinte o little-a-acento til:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o little-b caractere:
+Rotina para que se pinte o b minúsculo:
   Salve o contexto.
   Pinte 4 quadrados.
   Dê meia volta.
@@ -15792,7 +15792,7 @@ Rotina para que se pinte o little-b caractere:
   Pinte 1 quadrado na diagonal.
   Restaure o contexto.
 
-Rotina para que se pinte o little-c caractere:
+Rotina para que se pinte o c minúsculo:
   Salve o contexto.
   Vire para a direita.
   Ande 2 quadrados.
@@ -15842,7 +15842,7 @@ Rotina para que se pinte o little-c-cedilla caractere:
   \ end cedilla mark
   Restaure o contexto.
 
-Rotina para que se pinte o little-d caractere:
+Rotina para que se pinte o d minúsculo:
   Salve o contexto.
   Vire para a direita.
   Ande 2 quadrados.
@@ -16002,7 +16002,7 @@ Rotina para que se pinte o little-e-grave caractere:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o little-f caractere:
+Rotina para que se pinte o f minúsculo:
   Salve o contexto.
   Vire para a direita.
   Ande 1 quadrado.
@@ -16024,7 +16024,7 @@ Rotina para que se pinte o little-f caractere:
   Pinte 1+1/2 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o little-g caractere:
+Rotina para que se pinte o g minúsculo:
   Salve o contexto.
   Vire para a direita.
   Ande 2 quadrados.
@@ -16052,7 +16052,7 @@ Rotina para que se pinte o little-g caractere:
   Pinte 5/10 quadrado.
   Restaure o contexto.
 
-Rotina para que se pinte o little-h caractere:
+Rotina para que se pinte o h minúsculo:
   Salve o contexto.
   Pinte 3+3/4 quadrados.
   Dê meia volta.
@@ -16065,7 +16065,7 @@ Rotina para que se pinte o little-h caractere:
   Pinte 1+3/4 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o little-i caractere:
+Rotina para que se pinte o i minúsculo:
   Salve o contexto.
   Vire para a direita.
   Pinte 2 quadrados.
@@ -16189,7 +16189,7 @@ Rotina para que se pinte o little-i-grave caractere:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o little-j caractere:
+Rotina para que se pinte o j minúsculo:
   Salve o contexto.
   Ande 1 quadrado.
   Dê meia volta.
@@ -16204,7 +16204,7 @@ Rotina para que se pinte o little-j caractere:
   Pinte 1/2 quadrado.
   Restaure o contexto.
 
-Rotina para que se pinte o little-k caractere:
+Rotina para que se pinte o k minúsculo:
   Salve o contexto.
   Pinte 3+1/4 quadrados.
   Dê meia volta.
@@ -16217,7 +16217,7 @@ Rotina para que se pinte o little-k caractere:
   Pinte 9/4 quadrado.
   Restaure o contexto.
 
-Rotina para que se pinte o little-l caractere:
+Rotina para que se pinte o l minúsculo:
   Salve o contexto.
   Vire para a direita.
   Pinte 2 quadrados.
@@ -16229,7 +16229,7 @@ Rotina para que se pinte o little-l caractere:
   Pinte 1 quadrado.
   Restaure o contexto.
 
-Rotina para que se pinte o little-m caractere:
+Rotina para que se pinte o m minúsculo:
   Salve o contexto.
   Pinte 3 quadrados.
   Dê meia volta.
@@ -16246,7 +16246,7 @@ Rotina para que se pinte o little-m caractere:
   Pinte 3 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o little-n caractere:
+Rotina para que se pinte o n minúsculo:
   Salve o contexto.
   Pinte 3 quadrados.
   Dê meia volta.
@@ -16286,7 +16286,7 @@ Rotina para que se pinte o little-n-acento til:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o little-o caractere:
+Rotina para que se pinte o o minúsculo:
   Salve o contexto.
   Vire para a direita.
   Ande 2 quadrados.
@@ -16457,7 +16457,7 @@ Rotina para que se pinte o little-o-acento til:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o little-p caractere:
+Rotina para que se pinte o p minúsculo:
   Salve o contexto.
   Ande 3 quadrados.
   Dê meia volta.
@@ -16476,7 +16476,7 @@ Rotina para que se pinte o little-p caractere:
   Pinte 1 quadrado na diagonal.
   Restaure o contexto.
 
-Rotina para que se pinte o little-q caractere:
+Rotina para que se pinte o q minúsculo:
   Salve o contexto.
   Vire para a direita.
   Ande 2 quadrados.
@@ -16498,7 +16498,7 @@ Rotina para que se pinte o little-q caractere:
   Pinte 4 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o little-r caractere:
+Rotina para que se pinte o r minúsculo:
   Salve o contexto.
   Pinte 3 quadrados.
   Dê meia volta.
@@ -16509,7 +16509,7 @@ Rotina para que se pinte o little-r caractere:
   Pinte 1 quadrado na diagonal.
   Restaure o contexto.
 
-Rotina para que se pinte o little-s caractere:
+Rotina para que se pinte o s minúsculo:
   Salve o contexto.
   Ande 1 quadrado.
   Vire para 3/8.
@@ -16528,7 +16528,7 @@ Rotina para que se pinte o little-s caractere:
   Pinte 9/4 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o little-t caractere:
+Rotina para que se pinte o t minúsculo:
   Salve o contexto.
   Vire para a direita.
   Ande 1 quadrado.
@@ -16549,7 +16549,7 @@ Rotina para que se pinte o little-t caractere:
   Pinte 1+1/2 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o little-u caractere:
+Rotina para que se pinte o u minúsculo:
   Salve o contexto.
   Ande 3 quadrados.
   Dê meia volta.
@@ -16664,7 +16664,7 @@ Rotina para que se pinte o little-u-grave caractere:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o little-v caractere:
+Rotina para que se pinte o v minúsculo:
   Salve o contexto.
   Ande 3 quadrados.
   Dê meia volta.
@@ -16677,7 +16677,7 @@ Rotina para que se pinte o little-v caractere:
   Pinte 2 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o little-w caractere:
+Rotina para que se pinte o w minúsculo:
   Salve o contexto.
   Ande 3 quadrados.
   Dê meia volta.
@@ -16691,7 +16691,7 @@ Rotina para que se pinte o little-w caractere:
   Pinte 3 quadrados.
   Restaure o contexto.
 
-Rotina para que se pinte o little-x caractere:
+Rotina para que se pinte o x minúsculo:
   Salve o contexto.
   Pinte 1 quadrado.
   Vire para 17/96.
@@ -16709,7 +16709,7 @@ Rotina para que se pinte o little-x caractere:
   Pinte 1 quadrado.
   Restaure o contexto.
 
-Rotina para que se pinte o little-y caractere:
+Rotina para que se pinte o y minúsculo:
   Salve o contexto.
   Ande 3 quadrados.
   Dê meia volta.
@@ -16757,7 +16757,7 @@ Rotina para que se pinte o little-y-acute caractere:
   \ end accent mark
   Restaure o contexto.
 
-Rotina para que se pinte o little-z caractere:
+Rotina para que se pinte o z minúsculo:
   Salve o contexto.
   Ande 3 quadrados.
   Vire para a direita.
