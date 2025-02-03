@@ -82,7 +82,8 @@ Rotina para que se reduza umas unidades semânticas por utilização:
     Se a unidade semântica for inexistente, retorne.
     Se o tipo desta unidade semântica for inexistente, reitere.
     Reduza o tipo desta unidade semântica para um tipo por utilização.
-    Se o tipo não for inexistente, atribua o tipo ao tipo desta unidade semântica.
+    Se o tipo não for inexistente, 
+      Atribua o tipo ao tipo desta unidade semântica.
   Reitere.
 
 Rotina para que se reduza um tipo para um segundo tipo por utilização:

@@ -255,7 +255,8 @@ Rotina para que se liste uma referência em um trecho:
   Se a referência for inexistente, retorne.
   Acrescente "| REFERÊNCIA" para o trecho (com separador).
   Acrescente a string deste referência para o trecho.
-  Se o ponteiro deste referência for inexistente, acrescente " (ponteiro inexistente) " para o trecho.
+  Se o ponteiro deste referência for inexistente, 
+    Acrescente " (ponteiro inexistente) " para o trecho.
   Acrescente "| " para o trecho.
   Insira quebra de linha no trecho.
 

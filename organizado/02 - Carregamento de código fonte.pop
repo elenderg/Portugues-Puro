@@ -13,11 +13,15 @@ Rotina para que se carregue uns arquivos fontes:
   Atribua ".pop" para uma nova extensão.
   Anexe o caractere NULL após a nova extensão.
   Itere.
-    Se existir algum problema de compilação, retorne.
+    Se existir algum problema de compilação, 
+      Retorne.
     Obtenha um item desde o endereço da pasta deste compilador.
-    Se o item não for encontrado, pare.
-    Se a categoria deste item não for "arquivo", reitere.
-    Se a extensão deste  item não for a nova extensão, reitere.
+    Se o item não for encontrado, 
+      Pare.
+    Se a categoria deste item não for "arquivo", 
+      Reitere.
+    Se a extensão deste  item não for a nova extensão, 
+      Reitere.
     \Se o item parece ser encadernável, reitere.
     Adicione um arquivo fonte para os arquivos fontes usando o endereço completo deste item.
     Carregue o arquivo fonte.
@@ -467,7 +471,8 @@ Função para que se determine se uma string está precisando ser decomposta:
   Diga não.
 
 Função para que se determine se uma string é algum operador de concatenação contraído usando um percorredor:
-  Se o segmento inicial deste percorredor de contrações for algum operador de concatenação, mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor de contrações for algum operador de concatenação, 
+    Mova o percorredor (usando diretrizes de compilação).
   \Se o segmento inicial deste percorredor de contrações for "seguida", mova o percorredor (usando diretrizes de compilação).
   \Se o segmento inicial deste percorredor de contrações for "junto", mova o percorredor (usando diretrizes de compilação).
  \ Se o segmento inicial deste percorredor de contrações for "acompanhado", mova o percorredor (usando diretrizes de compilação).

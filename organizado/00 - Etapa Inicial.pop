@@ -300,7 +300,8 @@ Um sinalizador de informações complementares é um sinalizador.
 
 Um tipo é uma lista com
   Um endereço local (referência),
-  Um nome, um nome plural,
+  Um nome, 
+  Um nome plural,
   Um cabeçalho compactado,
   Uma quantidade de caracteres,
   Um nome do tipo primitivo,

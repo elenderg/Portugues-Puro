@@ -124,7 +124,8 @@ Rotina para que se encontre um número da linha usando um arquivo fonte e um ende
   Itere.
     Se o subtexto estiver em branco, retorne.
     Se o caractere inicial deste subtexto for o endereço de byte , retorne.
-    Se o conteúdo deste caractere inicial deste subtexto for o retorno de carro, adicione 1 para o número da linha.
+    Se o conteúdo deste caractere inicial deste subtexto for o retorno de carro, 
+      Adicione 1 para o número da linha.
   Adicione 1 para o caractere inicial deste subtexto.
   Reitere.
 
