@@ -14279,13 +14279,18 @@ Rotina para que se pinte as caixas da grade de texto:
   Salve o contexto.
   Use a cor da canetinha fina.
   Itere.
-    Pinte o tamanho. Vire para a direita.
-    Pinte o tamanho. Vire para a direita.
-    Pinte o tamanho. Vire para a direita.
-    Pinte o tamanho. Vire para a direita.
+    Pinte o tamanho. 
+    Vire para a direita.
+    Pinte o tamanho. 
+    Vire para a direita.
+    Pinte o tamanho. 
+    Vire para a direita.
+    Pinte o tamanho. 
+    Vire para a direita.
     Ande o tamanho.
     Adicione 1 para uma contagem.
-    Se a contagem for menor do que 6, reitere.
+    Se a contagem for menor do que 6, 
+      Reitere.
     Restaure o contexto.
   [Reitere.]
 
@@ -14353,7 +14358,6 @@ Rotina para que se pinte a barra invertida:
   Pinte 9/2 quadrado.
   Restaure o contexto.
 
-
 Rotina para que se pinte a letra 'A' maiúscula:
   Salve o contexto.
   Pinte 2+2/3 quadrados.
@@ -14382,7 +14386,7 @@ Rotina para que se pinte a letra 'Á' maiúscula:
   Ande 1+1/2 quadrados.
   Vire para a esquerda.
   Pinte 2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/16 quadrados.
@@ -14391,7 +14395,7 @@ Rotina para que se pinte a letra 'Á' maiúscula:
   Vire para a esquerda.
   Vire para 4/32.
   Pinte 1 quadrado menos 1/2 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte a letra 'Â' maiúscula:
@@ -14407,7 +14411,7 @@ Rotina para que se pinte a letra 'Â' maiúscula:
   Ande 1+1/2 quadrados.
   Vire para a esquerda.
   Pinte 2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/16 quadrados.
@@ -14417,7 +14421,7 @@ Rotina para que se pinte a letra 'Â' maiúscula:
   Pinte 7/8 quadrado.
   Vire para 6/32.
   Pinte 7/8 quadrado.
-  \end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte a letra 'Ä' maiúscula:
@@ -14433,7 +14437,7 @@ Rotina para que se pinte a letra 'Ä' maiúscula:
   Ande 1+1/2 quadrados.
   Vire para a esquerda.
   Pinte 2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/2 quadrados.
@@ -14442,7 +14446,7 @@ Rotina para que se pinte a letra 'Ä' maiúscula:
   Pinte 1/8 quadrado.
   Ande 1 quadrado.
   Pinte 1/8 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte a letra 'À' maiúscula:
@@ -14458,7 +14462,7 @@ Rotina para que se pinte a letra 'À' maiúscula:
   Ande 1+1/2 quadrados.
   Vire para a esquerda.
   Pinte 2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+2/8 quadrados.
@@ -14467,7 +14471,7 @@ Rotina para que se pinte a letra 'À' maiúscula:
   \Vire para a esquerda.
   Vire para 4/32.
   Pinte 1 quadrado menos 2/4 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte a letra 'Ã' maiúscula:
@@ -14483,7 +14487,7 @@ Rotina para que se pinte a letra 'Ã' maiúscula:
   Ande 1+1/2 quadrados.
   Vire para a esquerda.
   Pinte 2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/8 quadrados.
@@ -14496,7 +14500,7 @@ Rotina para que se pinte a letra 'Ã' maiúscula:
   Pinte 1 quadrado.
   Vire para a esquerda 3/16.
   Pinte 5/8 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o B maiúsculo:
@@ -14613,7 +14617,7 @@ Rotina para que se pinte o 'É' maiúsculo:
   Redefina o contexto.
   Vire para a direita.
   Pinte 2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/2 quadrados.
@@ -14622,7 +14626,7 @@ Rotina para que se pinte o 'É' maiúsculo:
   Vire para a esquerda.
   Vire para 4/32.
   Pinte 1 quadrado menos 1/4 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o Ê maiúsculo:
@@ -14637,7 +14641,7 @@ Rotina para que se pinte o Ê maiúsculo:
   Redefina o contexto.
   Vire para a direita.
   Pinte 2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/8 quadrados.
@@ -14647,7 +14651,7 @@ Rotina para que se pinte o Ê maiúsculo:
   Pinte 7/8 quadrado.
   Vire para 6/32.
   Pinte 7/8 quadrado.
-  \end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o Ë maiúsculo:
@@ -14662,7 +14666,7 @@ Rotina para que se pinte o Ë maiúsculo:
   Redefina o contexto.
   Vire para a direita.
   Pinte 2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/2 quadrados.
@@ -14671,7 +14675,7 @@ Rotina para que se pinte o Ë maiúsculo:
   Pinte 1/8 quadrado.
   Ande 1 quadrado.
   Pinte 1/8 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o È maiúsculo:
@@ -14686,7 +14690,7 @@ Rotina para que se pinte o È maiúsculo:
   Redefina o contexto.
   Vire para a direita.
   Pinte 2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/2 quadrados.
@@ -14695,7 +14699,7 @@ Rotina para que se pinte o È maiúsculo:
   \Vire para a esquerda.
   Vire para 4/32.
   Pinte 1 quadrado menos 2/4 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o big-e-acento til:
@@ -14710,7 +14714,7 @@ Rotina para que se pinte o big-e-acento til:
   Redefina o contexto.
   Vire para a direita.
   Pinte 2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/2 quadrados.
@@ -14720,7 +14724,7 @@ Rotina para que se pinte o big-e-acento til:
   Pinte 1 quadrado.
   Vire para a esquerda 3/16.
   Pinte 5/8 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o F maiúsculo:
@@ -14800,7 +14804,7 @@ Rotina para que se pinte o Í maiúsculo:
   Ande 3+1/2 quadrados.
   Vire para a direita.
   Pinte 2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/2 quadrados.
@@ -14809,7 +14813,7 @@ Rotina para que se pinte o Í maiúsculo:
   Vire para a esquerda.
   Vire para 4/32.
   Pinte 1 quadrado menos 1/2 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o Î maiúsculo:
@@ -14825,7 +14829,7 @@ Rotina para que se pinte o Î maiúsculo:
   Ande 3+1/2 quadrados.
   Vire para a direita.
   Pinte 2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/8 quadrados.
@@ -14835,7 +14839,7 @@ Rotina para que se pinte o Î maiúsculo:
   Pinte 7/8 quadrado.
   Vire para 6/32.
   Pinte 7/8 quadrado.
-  \end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o Ï maiúsculo:
@@ -14851,7 +14855,7 @@ Rotina para que se pinte o Ï maiúsculo:
   Ande 3+1/2 quadrados.
   Vire para a direita.
   Pinte 2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/2 quadrados.
@@ -14860,7 +14864,7 @@ Rotina para que se pinte o Ï maiúsculo:
   Pinte 1/8 quadrado.
   Ande 1 quadrado.
   Pinte 1/8 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o Ì maiúsculo:
@@ -14876,7 +14880,7 @@ Rotina para que se pinte o Ì maiúsculo:
   Ande 3+1/2 quadrados.
   Vire para a direita.
   Pinte 2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/2 quadrados.
@@ -14885,7 +14889,7 @@ Rotina para que se pinte o Ì maiúsculo:
   \Vire para a esquerda.
   Vire para 4/32.
   Pinte 1 quadrado menos 3/4 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o J maiúsculo:
@@ -14957,7 +14961,7 @@ Rotina para que se pinte o Ñ maiúsculo:
   Vire para a esquerda 41/96.
   Pinte 3+1/2 quadrados.
   Restaure o contexto.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4 quadrados.
@@ -14967,7 +14971,7 @@ Rotina para que se pinte o Ñ maiúsculo:
   Pinte 1 quadrado.
   Vire para a esquerda 3/16.
   Pinte 5/8 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o 'O' maiúsculo:
@@ -15000,7 +15004,7 @@ Rotina para que se pinte o Ó maiúsculo:
   Pinte 1 quadrado na diagonal.
   Vire para 1/4.
   Pinte 1 quadrado na diagonal.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/8 quadrados.
@@ -15009,7 +15013,7 @@ Rotina para que se pinte o Ó maiúsculo:
   Vire para a esquerda.
   Vire para 4/32.
   Pinte 1 quadrado menos 1/4 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o Ô maiúsculo:
@@ -15026,7 +15030,7 @@ Rotina para que se pinte o Ô maiúsculo:
   Pinte 1 quadrado na diagonal.
   Vire para 1/4.
   Pinte 1 quadrado na diagonal.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/8 quadrados.
@@ -15036,7 +15040,7 @@ Rotina para que se pinte o Ô maiúsculo:
   Pinte 7/8 quadrado.
   Vire para 6/32.
   Pinte 7/8 quadrado.
-  \end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o Ö maiúsculo:
@@ -15053,7 +15057,7 @@ Rotina para que se pinte o Ö maiúsculo:
   Pinte 1 quadrado na diagonal.
   Vire para 1/4.
   Pinte 1 quadrado na diagonal.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/2 quadrados.
@@ -15062,7 +15066,7 @@ Rotina para que se pinte o Ö maiúsculo:
   Pinte 1/8 quadrado.
   Ande 1 quadrado.
   Pinte 1/8 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o Ò maiúsculo:
@@ -15079,7 +15083,7 @@ Rotina para que se pinte o Ò maiúsculo:
   Pinte 1 quadrado na diagonal.
   Vire para 1/4.
   Pinte 1 quadrado na diagonal.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/2 quadrados.
@@ -15088,7 +15092,7 @@ Rotina para que se pinte o Ò maiúsculo:
   \Vire para a esquerda.
   Vire para 4/32.
   Pinte 1 quadrado menos 3/8 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o Õ maiúsculo:
@@ -15105,7 +15109,7 @@ Rotina para que se pinte o Õ maiúsculo:
   Pinte 1 quadrado na diagonal.
   Vire para 1/4.
   Pinte 1 quadrado na diagonal.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/2 quadrados.
@@ -15118,7 +15122,7 @@ Rotina para que se pinte o Õ maiúsculo:
   Pinte 1 quadrado.
   Vire para a esquerda 3/16.
   Pinte 5/8 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o P maiúsculo:
@@ -15216,7 +15220,7 @@ Rotina para que se pinte o Ú maiúsculo:
   Pinte 2 quadrados.
   Vire para a esquerda.
   Pinte 3+1/2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+4/5 quadrados.
@@ -15225,7 +15229,7 @@ Rotina para que se pinte o Ú maiúsculo:
   Vire para a esquerda.
   Vire para 4/32.
   Pinte 1 quadrado menos 1/2 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o Û maiúsculo:
@@ -15237,7 +15241,7 @@ Rotina para que se pinte o Û maiúsculo:
   Pinte 2 quadrados.
   Vire para a esquerda.
   Pinte 3+1/2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/8 quadrados.
@@ -15250,7 +15254,7 @@ Rotina para que se pinte o Û maiúsculo:
   Pinte 7/8 quadrado.
   Vire para 6/32.
   Pinte 7/8 quadrado.
-  \end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o Ü maiúsculo:
@@ -15262,7 +15266,7 @@ Rotina para que se pinte o Ü maiúsculo:
   Pinte 2 quadrados.
   Vire para a esquerda.
   Pinte 3+1/2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/2 quadrados.
@@ -15271,7 +15275,7 @@ Rotina para que se pinte o Ü maiúsculo:
   Pinte 1/8 quadrado.
   Ande 1 quadrado.
   Pinte 1/8 quadrado.
-  \end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o Ù maiúsculo:
@@ -15283,7 +15287,7 @@ Rotina para que se pinte o Ù maiúsculo:
   Pinte 2 quadrados.
   Vire para a esquerda.
   Pinte 3+1/2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4+1/2 quadrados.
@@ -15292,7 +15296,7 @@ Rotina para que se pinte o Ù maiúsculo:
   \Vire para a esquerda.
   Vire para 4/32.
   Pinte 1 quadrado menos 1/4 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o V maiúsculo:
@@ -15377,7 +15381,7 @@ Rotina para que se pinte o Ý maiúsculo:
   Ande 1 quadrado.
   Vire para a esquerda.
   Pinte 1+5/8 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 4 quadrados.
@@ -15386,7 +15390,7 @@ Rotina para que se pinte o Ý maiúsculo:
   Vire para a esquerda.
   Vire para 4/32.
   Pinte 1 quadrado menos 1/2 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o Z maiúsculo:
@@ -15641,7 +15645,7 @@ Rotina para que se pinte o 'á' minúsculo:
   Pinte 1 quadrado na diagonal.
   Vire para a esquerda.
   Pinte 1 quadrado na diagonal.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+8/16 quadrados.
@@ -15650,7 +15654,7 @@ Rotina para que se pinte o 'á' minúsculo:
   Vire para a esquerda.
   Vire para 4/32.
   Pinte 2/3 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o 'â' minúsculo:
@@ -15671,7 +15675,7 @@ Rotina para que se pinte o 'â' minúsculo:
   Pinte 1 quadrado na diagonal.
   Vire para a esquerda.
   Pinte 1 quadrado na diagonal.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+1/2 quadrados.
@@ -15681,7 +15685,7 @@ Rotina para que se pinte o 'â' minúsculo:
   Pinte 7/8 quadrado.
   Vire para 6/32.
   Pinte 7/8 quadrado.
-  \end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o 'ä' minúsculo:
@@ -15702,7 +15706,7 @@ Rotina para que se pinte o 'ä' minúsculo:
   Pinte 1 quadrado na diagonal.
   Vire para a esquerda.
   Pinte 1 quadrado na diagonal.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+1/2 quadrados.
@@ -15711,7 +15715,7 @@ Rotina para que se pinte o 'ä' minúsculo:
   Pinte 1/8 quadrado.
   Ande 1 quadrado.
   Pinte 1/8 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o 'à' minúsculo:
@@ -15732,7 +15736,7 @@ Rotina para que se pinte o 'à' minúsculo:
   Pinte 1 quadrado na diagonal.
   Vire para a esquerda.
   Pinte 1 quadrado na diagonal.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+4/8 quadrados.
@@ -15740,7 +15744,7 @@ Rotina para que se pinte o 'à' minúsculo:
   Ande 1/100 quadrado.
   Vire para 4/32.
   Pinte 1 quadrado menos 2/4 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o 'ã' minúsculo:
@@ -15761,7 +15765,7 @@ Rotina para que se pinte o 'ã' minúsculo:
   Pinte 1 quadrado na diagonal.
   Vire para a esquerda.
   Pinte 1 quadrado na diagonal.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+1/8 quadrados.
@@ -15772,7 +15776,7 @@ Rotina para que se pinte o 'ã' minúsculo:
   Pinte 1 quadrado.
   Vire para a esquerda 3/16.
   Pinte 5/8 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o b minúsculo:
@@ -15900,7 +15904,7 @@ Rotina para que se pinte o little-e-acute caractere:
   Pinte 1/2 quadrado.
   Vire para a direita.
   Pinte 2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+8/16 quadrados.
@@ -15909,7 +15913,7 @@ Rotina para que se pinte o little-e-acute caractere:
   Vire para a esquerda.
   Vire para 4/32.
   Pinte 2/3 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o little-e-circumflex caractere:
@@ -15930,7 +15934,7 @@ Rotina para que se pinte o little-e-circumflex caractere:
   Pinte 1/2 quadrado.
   Vire para a direita.
   Pinte 2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+4/16 quadrados.
@@ -15940,7 +15944,7 @@ Rotina para que se pinte o little-e-circumflex caractere:
   Pinte 7/8 quadrado.
   Vire para 6/32.
   Pinte 7/8 quadrado.
-  \end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o little-e-diaeresis caractere:
@@ -15961,7 +15965,7 @@ Rotina para que se pinte o little-e-diaeresis caractere:
   Pinte 1/2 quadrado.
   Vire para a direita.
   Pinte 2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+1/2 quadrados.
@@ -15970,7 +15974,7 @@ Rotina para que se pinte o little-e-diaeresis caractere:
   Pinte 1/8 quadrado.
   Ande 1 quadrado.
   Pinte 1/8 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o little-e-grave caractere:
@@ -15991,7 +15995,7 @@ Rotina para que se pinte o little-e-grave caractere:
   Pinte 1/2 quadrado.
   Vire para a direita.
   Pinte 2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+4/8 quadrados.
@@ -15999,7 +16003,7 @@ Rotina para que se pinte o little-e-grave caractere:
   Ande 1/100 quadrado.
   Vire para 4/32.
   Pinte 1 quadrado menos 2/4 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o f minúsculo:
@@ -16097,7 +16101,7 @@ Rotina para que se pinte o little-i-acute caractere:
   Vire para a esquerda.
   Ande 1/2 quadrado.
   \Pinte 1/2 quadrado. \removido o ponto do i
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 2+15/16 quadrados.
@@ -16106,7 +16110,7 @@ Rotina para que se pinte o little-i-acute caractere:
   Vire para a esquerda.
   Vire para 4/32.
   Pinte 2/3 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o little-i-circumflex caractere:
@@ -16124,7 +16128,7 @@ Rotina para que se pinte o little-i-circumflex caractere:
   Vire para a esquerda.
   Ande 1/2 quadrado.
   \Pinte 1/2 quadrado.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+1/16 quadrados.
@@ -16133,7 +16137,7 @@ Rotina para que se pinte o little-i-circumflex caractere:
   Pinte 7/8 quadrado.
   Vire para 6/32.
   Pinte 7/8 quadrado.
-  \end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o little-i-diaeresis caractere:
@@ -16151,7 +16155,7 @@ Rotina para que se pinte o little-i-diaeresis caractere:
   \Vire para a esquerda.
   \Ande 1/2 quadrado.
   \Pinte 1/2 quadrado.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+1/2 quadrados.
@@ -16160,7 +16164,7 @@ Rotina para que se pinte o little-i-diaeresis caractere:
   Pinte 1/8 quadrado.
   Ande 1 quadrado.
   Pinte 1/8 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o little-i-grave caractere:
@@ -16178,7 +16182,7 @@ Rotina para que se pinte o little-i-grave caractere:
   Vire para a esquerda.
   Ande 1/2 quadrado.
   \Pinte 1/2 quadrado.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+4/8 quadrados.
@@ -16186,7 +16190,7 @@ Rotina para que se pinte o little-i-grave caractere:
   Ande 29/100 quadrado.
   Vire para 4/32.
   Pinte 1 quadrado menos 2/4 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o j minúsculo:
@@ -16270,7 +16274,7 @@ Rotina para que se pinte o little-n-acento til:
   Pinte 1 quadrado na diagonal.
   Vire para 1/8.
   Pinte 2 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+4/8 quadrados.
@@ -16283,7 +16287,7 @@ Rotina para que se pinte o little-n-acento til:
   Pinte 1 quadrado.
   Vire para a esquerda 3/16.
   Pinte 5/8 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o 'o' minúsculo:
@@ -16324,7 +16328,7 @@ Rotina para que se pinte o little-o-acute caractere:
   Pinte 1 quadrado na diagonal.
   Vire para 1/8.
   Pinte 1 quadrado.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+1/16 quadrados.
@@ -16333,7 +16337,7 @@ Rotina para que se pinte o little-o-acute caractere:
   Vire para a esquerda.
   Vire para 4/32.
   Pinte 2/3 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o little-o-circumflex caractere:
@@ -16354,7 +16358,7 @@ Rotina para que se pinte o little-o-circumflex caractere:
   Pinte 1 quadrado na diagonal.
   Vire para 1/8.
   Pinte 1 quadrado.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+4/16 quadrados.
@@ -16364,7 +16368,7 @@ Rotina para que se pinte o little-o-circumflex caractere:
   Pinte 7/8 quadrado.
   Vire para 6/32.
   Pinte 7/8 quadrado.
-  \end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o little-o-diaeresis caractere:
@@ -16385,7 +16389,7 @@ Rotina para que se pinte o little-o-diaeresis caractere:
   Pinte 1 quadrado na diagonal.
   Vire para 1/8.
   Pinte 1 quadrado.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+1/2 quadrados.
@@ -16394,7 +16398,7 @@ Rotina para que se pinte o little-o-diaeresis caractere:
   Pinte 1/8 quadrado.
   Ande 1 quadrado.
   Pinte 1/8 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o little-o-grave caractere:
@@ -16415,14 +16419,14 @@ Rotina para que se pinte o little-o-grave caractere:
   Pinte 1 quadrado na diagonal.
   Vire para 1/8.
   Pinte 1 quadrado.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto. Salve o contexto.
   Ande 3+4/8 quadrados.
   Vire para a direita.
   Ande 1/100 quadrado.
   Vire para 4/32.
   Pinte 1 quadrado menos 2/4 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o little-o-acento til:
@@ -16443,7 +16447,7 @@ Rotina para que se pinte o little-o-acento til:
   Pinte 1 quadrado na diagonal.
   Vire para 1/8.
   Pinte 1 quadrado.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+1/8 quadrados.
@@ -16454,7 +16458,7 @@ Rotina para que se pinte o little-o-acento til:
   Pinte 1 quadrado.
   Vire para a esquerda 3/16.
   Pinte 5/8 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o p minúsculo:
@@ -16577,7 +16581,7 @@ Rotina para que se pinte o little-u-acute caractere:
   Ande 2 quadrados.
   Dê meia volta.
   Pinte 3 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+5/16 quadrados.
@@ -16586,7 +16590,7 @@ Rotina para que se pinte o little-u-acute caractere:
   Vire para a esquerda.
   Vire para 4/32.
   Pinte 2/3 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o little-u-circumflex caractere:
@@ -16602,7 +16606,7 @@ Rotina para que se pinte o little-u-circumflex caractere:
   Ande 2 quadrados.
   Dê meia volta.
   Pinte 3 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+1/2 quadrados.
@@ -16612,7 +16616,7 @@ Rotina para que se pinte o little-u-circumflex caractere:
   Pinte 7/8 quadrado.
   Vire para 6/32.
   Pinte 7/8 quadrado.
-  \end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o little-u-diaeresis caractere:
@@ -16628,7 +16632,7 @@ Rotina para que se pinte o little-u-diaeresis caractere:
   Ande 2 quadrados.
   Dê meia volta.
   Pinte 3 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+1/2 quadrados.
@@ -16637,7 +16641,7 @@ Rotina para que se pinte o little-u-diaeresis caractere:
   Pinte 1/8 quadrado.
   Ande 1 quadrado.
   Pinte 1/8 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o little-u-grave caractere:
@@ -16653,7 +16657,7 @@ Rotina para que se pinte o little-u-grave caractere:
   Ande 2 quadrados.
   Dê meia volta.
   Pinte 3 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+6/8 quadrados.
@@ -16661,7 +16665,7 @@ Rotina para que se pinte o little-u-grave caractere:
   Ande 59/100 quadrado.
   Vire para 4/32.
   Pinte 1 quadrado menos 1/4 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o v minúsculo:
@@ -16745,7 +16749,7 @@ Rotina para que se pinte o little-y-acute caractere:
   Pinte 1 quadrados na diagonal.
   Vire para a direita.
   Pinte 1 quadrados.
-  \ comece accent mark
+  \ início do acento
   Restaure o contexto.
   Salve o contexto.
   Ande 3+4/16 quadrados.
@@ -16754,7 +16758,7 @@ Rotina para que se pinte o little-y-acute caractere:
   Vire para a esquerda.
   Vire para 4/32.
   Pinte 2/3 quadrado.
-  \ end accent mark
+  \ fim do acento
   Restaure o contexto.
 
 Rotina para que se pinte o z minúsculo:
