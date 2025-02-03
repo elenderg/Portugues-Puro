@@ -477,7 +477,7 @@ Um y-offset é um offset.
 Um número X é um número.
 Um número Y é um número.
 Um endereço do caractere é um endereço de byte.
-Um pDevMode é um ponteiro [que aponta] para um devmode.
+Um pDevMode é um ponteiro [que aponta] para um DEVMODE.
 
 Uma imagem é uma lista com \FIGURA?
   \ as caixas estão em twits
@@ -490,8 +490,7 @@ Uma imagem é uma lista com \FIGURA?
   Um gpBitmap.
 
 Um process é um número identificador.
-Um process ponteiro é um ponteiro [que aponta] para um process.
-Um punch linha reta é uma string.
+Um ponteiro de processo é um ponteiro [que aponta] para um process.
 
 Um quora é uma lista com \ quora parece ser abreviação de "question or answer"
   Uma string e
@@ -556,7 +555,7 @@ Um terminal é uma lista com
   Uns quoras,
   Uma output cor,
   Uma input cor, e
-  Uma texto retornado string.
+  Uma string denominada retorno de consulta.
 
 Um temporizador é uma estrutura com
   Uma contagem,
@@ -3638,15 +3637,15 @@ Rotina para que se compativelmente handle alguma mensagem com uma janela do prog
     e O wParam [wParam]
     e O lParam. [lParam]
 
-Rotina para que se compativelmente aguarde por um process ponteiro:
+Rotina para que se compativelmente aguarde por um ponteiro de processo:
   Processe "kernel32.dll" "WaitForSingleObject" com \ Espera até que o objeto esteja no estado sinalizado ou o intervalo de tempo delimite expire.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/synchapi/nf-synchapi-waitforsingleobject
-    O conteúdo deste process ponteiro [hHandle]
+    O conteúdo deste ponteiro de processo [hHandle]
     e -1. [dwMilliseconds]
   Processe "kernel32.dll" "CloseHandle" com \ Fecha um identificador de objeto aberto.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/handleapi/nf-handleapi-closehandle
-    O conteúdo deste process ponteiro. [hObject]
-  Atribua 0 ao conteúdo deste process ponteiro.
+    O conteúdo deste ponteiro de processo. [hObject]
+  Atribua 0 ao conteúdo deste ponteiro de processo.
   Processe "user32.dll" "GetForegroundWindow" \ Recupera um identificador para a janela do primeiro plano (a janela com a qual o usuário está trabalhando atualmente).
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getforegroundwindow
   Retornando uma janela do programa.
@@ -9378,7 +9377,7 @@ Rotina para que se inicialize o Component Object Model:
   Processe "ole32.dll" "CoInitializeEx" com \ Inicializa a biblioteca COM
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/combaseapi/nf-combaseapi-coinitializeex
     0 [pvReserved]
-    e 2 [dwCoInit = COINIT_APARTMENTTHREADED]. \ Consulte https://learn.microsoft.com/pt-br/windows/win32/api/objbase/ne-objbase-coinit
+    e 2. [dwCoInit = COINIT_APARTMENTTHREADED] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/api/objbase/ne-objbase-coinit
 
 Rotina para que se inicialize um contexto: \ canvas?
   Aloque memória para o contexto.
@@ -12619,7 +12618,7 @@ Rotina para que se comece um process usando um endereço completo:
   Processe "kernel32.dll" "CloseHandle" com \ Fecha um identificador de objeto aberto.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/handleapi/nf-handleapi-closehandle
     O hthread deste PROCESS_INFORMATION. [hObject]
-  Direcione um ponteiro para a rotina Aguarde por um process ponteiro.
+  Direcione um ponteiro para a rotina Aguarde por um ponteiro de processo.
   Processe "kernel32.dll" "CreateThread" com
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/processthreadsapi/nf-processthreadsapi-createthread
   \ Cria um thread a ser executado no espaço de endereço virtual do processo de chamada.
