@@ -10551,8 +10551,8 @@ Rotina para que se contorne uma caixa com uma cor:
 Rotina para que se transcreva o arco de uma elipse usando uma string: \\ interessante.
   Atribua 2761/10000 para uma fração. \ (sqrt(2) -1 ) * (2/3)   = 0,2761423749153967
   Atribua o centro desta elipse para um centro localização.
-  Atribua o x-extent desta elipse dividido por 2 para um half largura.
-  Atribua o y-extent desta elipse dividido por 2 para um half altura.
+  Atribua o x-extent desta elipse dividido por 2 para uma half largura.
+  Atribua o y-extent desta elipse dividido por 2 para uma half altura.
   Atribua o x-extent desta elipse vezes a fração para um x-offset.
   Atribua o y-extent desta elipse vezes a fração para um y-offset.
   \ control point 1
@@ -10665,8 +10665,10 @@ Rotina para que se toque um arquivo de som e espere:
 Rotina para que se anteponha uma lista para umas listas:
   Se a lista for inexistente, retorne.
   Atribua a lista inicial destas listas à lista posterior desta lista.
-  Se as listas não estiverem vazias, atribua a lista à lista anterior desta lista inicial destas listas.
-  Se as listas estiverem vazias, atribua a lista à lista final destas listas.
+  Se as listas não estiverem vazias, 
+    Atribua a lista à lista anterior desta lista inicial destas listas.
+  Se as listas estiverem vazias, 
+    Atribua a lista à lista final destas listas.
   Atribua a lista à lista inicial destas listas.
 
 Rotina para que se anteponha umas listas para umas outras listas:
@@ -10962,7 +10964,8 @@ Rotina para que se atribua a selecionado contagem de linhas duma caixa de texto 
   Se a âncora de linha desta seleção é o número de linhas do cursor desta seleção, retorne.
   Atribua o número de linhas do cursor desta seleção à contagem.
   Subtraia a âncora de linha desta seleção desde a contagem.
-  Se o cursor da coluna desta seleção não for 1, adicione 1 para a contagem.
+  Se o cursor da coluna desta seleção não for 1, 
+    Adicione 1 para a contagem.
 
 Rotina para que se atribua o painel de informações string duma caixa de texto para uma string:
   Se a caixa de texto for inexistente,
@@ -10980,12 +10983,14 @@ Rotina para que se atribua o painel de informações string duma caixa de texto pa
   Acrescente ":" para a string.
   Acrescente o cursor da coluna desta seleção desta caixa de texto para a string.
 
-\Rotina para que se atribua uma lista sob o fim d'umas listas;
+\Rotina para que se coloque uma lista no fim de umas listas;
 Rotina para que se acrescente uma lista para umas listas:
   Se a lista for inexistente, retorne.
   Atribua a lista final destas listas à lista anterior desta lista.
-  Se as listas não estiverem vazias, atribua a lista à lista posterior desta lista final destas listas.
-  Se as listas estiverem vazias, atribua a lista à lista inicial destas listas.
+  Se as listas não estiverem vazias, 
+    Atribua a lista à lista posterior desta lista final destas listas.
+  Se as listas estiverem vazias, 
+    Atribua a lista à lista inicial destas listas.
   Atribua a lista à lista final destas listas.
 
 Rotina para que se atribua umas listas para umas outras listas:
@@ -11189,10 +11194,14 @@ Rotina para que se remova as linhas de texto de uma caixa de texto entre uma lin
 
 Rotina para que se remova uma lista desde umas listas:
   Se a lista for inexistente, retorne.
-  Se a lista for a lista inicial destas listas, atribua a lista posterior desta lista à lista inicial destas listas.
-  Se a lista for a lista final destas listas, atribua a lista anterior desta lista à lista final destas listas.
-  Se o lista posterior desta lista não for inexistente, atribua a lista anterior desta lista à lista anterior desta lista posterior desta lista.
-  Se o lista anterior desta lista não for inexistente, atribua o lista posterior desta lista à lista posterior desta lista anterior desta lista.
+  Se a lista for a lista inicial destas listas, 
+    Atribua a lista posterior desta lista à lista inicial destas listas.
+  Se a lista for a lista final destas listas, 
+    Atribua a lista anterior desta lista à lista final destas listas.
+  Se o lista posterior desta lista não for inexistente, 
+    Atribua a lista anterior desta lista à lista anterior desta lista posterior desta lista.
+  Se o lista anterior desta lista não for inexistente, 
+    Atribua o lista posterior desta lista à lista posterior desta lista anterior desta lista.
   Esvazie a lista posterior desta lista.
   Esvazie a lista anterior desta lista.
 
@@ -11504,7 +11513,8 @@ Rotina para que se rotacione uma linha reta:
 Rotina para que se rotacione uma imagem:
   Se a imagem for inexistente, retorne.
   Adicione 900 para o ângulo de rotação desta imagem.
-  Se o espelhamento horizontal desta imagem estiver ativo, adicione 1800 para o ângulo de rotação desta imagem.
+  Se o espelhamento horizontal desta imagem estiver ativo, 
+    Adicione 1800 para o ângulo de rotação desta imagem.
   Normalize o ângulo de rotação desta imagem.
   Rotacione a caixa desta imagem.
   Rotacione a caixa intacta desta imagem.
@@ -11788,13 +11798,18 @@ Rotina para que se role uma caixa de texto para a base:
 
 Rotina para que se role uma caixa de texto para o cursor de texto:
   Se a caixa de texto for inexistente, retorne.
-  Se o número de coluna deste cursor de texto desta seleção desta caixa de texto for 1, atribua a margem desta caixa de texto à coordenada X desta caixa de texto.
+  Se o número de coluna deste cursor de texto desta seleção desta caixa de texto for 1, 
+    Atribua a margem desta caixa de texto à coordenada X desta caixa de texto.
   Obtenha uma caixa pelo cursor de texto na caixa de texto.
   Ajuste a caixa usando 0 e - a quantidade de twips/pixel e 0 e a quantidade de twips/pixel . \ cursor de texto caixas do not preencha entire linha de texto
-  Se a coordenada Y1 desta caixa for menor do que a coordenada Y1 desta caixa desta caixa de texto, atribua a coordenada Y1 desta caixa desta caixa de texto menos a coordenada Y1 desta caixa ao número Y duma valor da diferença.
-  Se a coordenada Y2 desta caixa for maior do que a coordenada Y2 desta caixa desta caixa de texto, atribua a coordenada Y2 desta caixa desta caixa de texto menos a coordenada Y2 desta caixa ao número Y deste valor da diferença.
-  Se a coordenada X1 desta caixa for menor do que a coordenada X1 desta caixa desta caixa de texto , atribua a coordenada X1 desta caixa desta caixa de texto menos a coordenada X1 desta caixa ao número X deste valor da diferença.
-  Se a coordenada X2 desta caixa for maior do que a coordenada X2 desta caixa desta caixa de texto, atribua a coordenada X2 desta caixa desta caixa de texto menos a coordenada X2 desta caixa ao número X deste valor da diferença.
+  Se a coordenada Y1 desta caixa for menor do que a coordenada Y1 desta caixa desta caixa de texto, 
+    Atribua a coordenada Y1 desta caixa desta caixa de texto menos a coordenada Y1 desta caixa ao número Y duma valor da diferença.
+  Se a coordenada Y2 desta caixa for maior do que a coordenada Y2 desta caixa desta caixa de texto, 
+    Atribua a coordenada Y2 desta caixa desta caixa de texto menos a coordenada Y2 desta caixa ao número Y deste valor da diferença.
+  Se a coordenada X1 desta caixa for menor do que a coordenada X1 desta caixa desta caixa de texto , 
+    Atribua a coordenada X1 desta caixa desta caixa de texto menos a coordenada X1 desta caixa ao número X deste valor da diferença.
+  Se a coordenada X2 desta caixa for maior do que a coordenada X2 desta caixa desta caixa de texto, 
+    Atribua a coordenada X2 desta caixa desta caixa de texto menos a coordenada X2 desta caixa ao número X deste valor da diferença.
   Se o valor da diferença for 0, retorne.
   Role a caixa de texto usando o valor da diferença.
 
@@ -11808,10 +11823,14 @@ Rotina para que se role uma caixa de texto para o cursor de texto e centralize-o
   Arredonde a altura para baixo usando o múltiplo imediato dessa altura da linha desta caixa de texto.\ calculated field
   Atribua a coordenada Y1 desta caixa desta caixa de texto mais a altura para uma coordenada Y1.
   Atribua a coordenada Y1 mais a altura da linha desta caixa de texto para uma coordenada Y2.\ calculated field
-  Se a coordenada Y1 desta caixa for menor do que a coordenada Y1, atribua a coordenada Y1 menos a coordenada Y1 desta caixa ao número Y duma valor da diferença.
-  Se a coordenada Y2 desta caixa for maior do que a coordenada Y2, atribua a coordenada Y2 menos a coordenada Y2 desta caixa ao número Y deste valor da diferença.
-  Se a coordenada X1 desta caixa for menor do que a coordenada X1 desta caixa desta caixa de texto , atribua a coordenada X1 desta caixa desta caixa de texto menos a coordenada X1 desta caixa ao número X deste valor da diferença.
-  Se a coordenada X2 desta caixa for maior do que a coordenada X2 desta caixa desta caixa de texto, atribua a coordenada X2 desta caixa desta caixa de texto menos a coordenada X2 desta caixa ao número X deste valor da diferença.
+  Se a coordenada Y1 desta caixa for menor do que a coordenada Y1, 
+    Atribua a coordenada Y1 menos a coordenada Y1 desta caixa ao número Y duma valor da diferença.
+  Se a coordenada Y2 desta caixa for maior do que a coordenada Y2, 
+    Atribua a coordenada Y2 menos a coordenada Y2 desta caixa ao número Y deste valor da diferença.
+  Se a coordenada X1 desta caixa for menor do que a coordenada X1 desta caixa desta caixa de texto , 
+    Atribua a coordenada X1 desta caixa desta caixa de texto menos a coordenada X1 desta caixa ao número X deste valor da diferença.
+  Se a coordenada X2 desta caixa for maior do que a coordenada X2 desta caixa desta caixa de texto, 
+    Atribua a coordenada X2 desta caixa desta caixa de texto menos a coordenada X2 desta caixa ao número X deste valor da diferença.
   Se o valor da diferença for 0, retorne.
   Role a caixa de texto usando o valor da diferença.
 
@@ -11831,8 +11850,10 @@ Rotina para que se role uma caixa de texto para baixo one página:
 Rotina para que se role uma caixa de texto usando uma valor da diferença:
   Se a caixa de texto for inexistente, retorne.
   Preserve o valor da diferença.
-  Se o sinalizador de rolagem horizontal desta caixa de texto não estiver ativo, atribua 0 ao número X deste valor da diferença.
-  Se o sinalizador de rolagem vertical desta caixa de texto não estiver ativo, atribua 0 ao número Y deste valor da diferença.
+  Se o sinalizador de rolagem horizontal desta caixa de texto não estiver ativo, 
+    Atribua 0 ao número X deste valor da diferença.
+  Se o sinalizador de rolagem vertical desta caixa de texto não estiver ativo, 
+    Atribua 0 ao número Y deste valor da diferença.
   Se o valor da diferença for 0, retorne.
   Mova a origem desta caixa de texto usando o valor da diferença.
   Delimite a origem dessa caixa de texto.
@@ -12060,7 +12081,8 @@ Rotina para que se defina o drawing origem para uma localização:
     e 113 [PhysicalOffsetY ]
   Retornando o número Y deste par de números.
   Inverta o sinal de o par de números.
-  Se o contexto do dispositivo atual não for a área de impressão, limpe o par de números.
+  Se o contexto do dispositivo atual não for a área de impressão, 
+    Limpe o par de números.
   Processe "gdi32.dll" "SetViewportOrgEx" com \ Especifica qual ponto do dispositivo mapeia para a origem da janela (0,0).
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setviewportorgex
     O contexto do dispositivo atual [hdc]
@@ -13396,7 +13418,8 @@ Rotina para que se mova um percorredor (usando diretrizes de arquivos de texto):
     Avance o percorredor.
   Reitere.
   Se o segmento final deste percorredor estiver em branco, retorne.
-  Se o conteúdo deste caractere inicial deste segmento final deste percorredor for a quebra de linha, adicione 1 para o caractere inicial deste segmento final deste percorredor.
+  Se o conteúdo deste caractere inicial deste segmento final deste percorredor for a quebra de linha, 
+    Adicione 1 para o caractere inicial deste segmento final deste percorredor.
 
 Rotina para que se mova um percorredor (word wrapping rules):
   Posicione o segmento inicial deste percorredor sobre o segmento final deste percorredor.
@@ -13479,7 +13502,8 @@ Rotina para que se remova as aspas de uma string:
     Se o subtexto estiver em branco, pare.
     Se o caractere inicial deste subtexto é o caractere final deste subtexto, pare.
     Acrescente o conteúdo deste caractere inicial deste subtexto para uma segunda string.
-    Se o conteúdo deste caractere inicial deste subtexto for as aspas duplas, adicione 1 para o caractere inicial deste subtexto.
+    Se o conteúdo deste caractere inicial deste subtexto for as aspas duplas, 
+      Adicione 1 para o caractere inicial deste subtexto.
     Adicione 1 para o caractere inicial deste subtexto.
   Reitere.
   Atribua a segunda string à string.
@@ -13551,7 +13575,8 @@ Rotina para que se pinte uma string:
   Se a string estiver em branco, retorne.
     Obtenha um byte desde a string.
     Pinte o byte.
-    Se a string não estiver em branco, providencie espaçamento adequado entre caracteres.
+    Se a string não estiver em branco, 
+      Providencie espaçamento adequado entre caracteres.
   Reitere.
 
 Rotina para que se escreva uma string usando um centro localização e um raio;
@@ -13757,8 +13782,10 @@ Rotina para que se escreva uma string para o fluxo de saída:
   Escreva a string para o arquivo de saída.
 
 Rotina para que se escreva uma string para o arquivo de saída:
-  Se a pasta de saída não estiver no sistema de arquivos, crie a pasta de saída no sistema de arquivos.
-  Se o arquivo de saída não estiver no sistema de arquivos, crie o arquivo de saída no sistema de arquivos.
+  Se a pasta de saída não estiver no sistema de arquivos, 
+    Crie a pasta de saída no sistema de arquivos.
+  Se o arquivo de saída não estiver no sistema de arquivos, 
+    Crie o arquivo de saída no sistema de arquivos.
   Leia o arquivo de saída para um trecho.
   Acrescente a string junto com o texto CRLF para o trecho.
   Grave o trecho para o arquivo de saída.
@@ -13822,9 +13849,12 @@ Rotina para que se leia uma string desde um console:
 Rotina para que se atualize o cursor:
   Crie um evento.
   Atribua "movimentação de cursor" à categoria deste evento.
-  Se a tecla Alt estiver sendo pressionada, ative o sinalizador de tecla Alt deste evento.
-  Se a tecla Ctrl estiver sendo pressionada, ative o sinalizador de tecla Ctrl deste evento.
-  Se a tecla Shift estiver sendo pressionada, ative o sinalizador de tecla Shift deste evento.
+  Se a tecla Alt estiver sendo pressionada, 
+    Ative o sinalizador de tecla Alt deste evento.
+  Se a tecla Ctrl estiver sendo pressionada, 
+    Ative o sinalizador de tecla Ctrl deste evento.
+  Se a tecla Shift estiver sendo pressionada, 
+    Ative o sinalizador de tecla Shift deste evento.
   Atribua a localização deste mouse à localização deste evento.
   Enfileire o evento.
 
@@ -17405,10 +17435,14 @@ Rotina para que se atribua a caixa dum polígono para uma caixa:
   Itere.
     Obtenha um vértice desde os vértices deste polígono.
     Se o vértice for inexistente, pare.
-    Se a coordenada X deste vértice for menor do que a coordenada X1 desta caixa, atribua a coordenada X deste vértice à coordenada X1 desta caixa.
-    Se a coordenada Y deste vértice for menor do que a coordenada Y1 desta caixa, atribua a coordenada Y deste vértice à coordenada Y1 desta caixa.
-    Se a coordenada X deste vértice for maior do que a coordenada X2 desta caixa, atribua a coordenada X deste vértice à coordenada X2 desta caixa.
-    Se a coordenada Y deste vértice for maior do que a coordenada Y2 desta caixa, atribua a coordenada Y deste vértice à coordenada Y2 desta caixa.
+    Se a coordenada X deste vértice for menor do que a coordenada X1 desta caixa, 
+      Atribua a coordenada X deste vértice à coordenada X1 desta caixa.
+    Se a coordenada Y deste vértice for menor do que a coordenada Y1 desta caixa, 
+      Atribua a coordenada Y deste vértice à coordenada Y1 desta caixa.
+    Se a coordenada X deste vértice for maior do que a coordenada X2 desta caixa, 
+      Atribua a coordenada X deste vértice à coordenada X2 desta caixa.
+    Se a coordenada Y deste vértice for maior do que a coordenada Y2 desta caixa, 
+      Atribua a coordenada Y deste vértice à coordenada Y2 desta caixa.
   Reitere.
 
 Rotina para que se atribua o meio de uma linha reta sobre uma localização;
