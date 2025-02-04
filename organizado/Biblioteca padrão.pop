@@ -17487,7 +17487,8 @@ Rotina para que se atribua uma linha reta para uma segunda linha reta:
 
 Rotina para que se atribua a base duma linha reta para uma coordenada:
   Atribua a coordenada Y desta localização inicial desta linha reta à coordenada.
-  Se a coordenada Y desta localização final desta linha reta for maior do que a coordenada Y desta localização inicial desta linha reta, atribua a coordenada Y desta localização final desta linha reta à coordenada.
+  Se a coordenada Y desta localização final desta linha reta for maior do que a coordenada Y desta localização inicial desta linha reta, 
+    Atribua a coordenada Y desta localização final desta linha reta à coordenada.
 
 Rotina para que se atribua a caixa duma linha reta para uma caixa:
   Atribua a localização inicial desta linha reta ao canto superior esquerdo desta caixa.
@@ -17501,15 +17502,18 @@ Rotina para que se atribua o centro duma linha reta para uma localização:
 
 Rotina para que se atribua a coordenada X1 duma linha reta para uma coordenada:
   Atribua a coordenada X desta localização inicial desta linha reta à coordenada.
-  Se a coordenada X desta localização final desta linha reta for menor do que a coordenada X desta localização inicial desta linha reta, atribua a coordenada X desta localização final desta linha reta à coordenada.
+  Se a coordenada X desta localização final desta linha reta for menor do que a coordenada X desta localização inicial desta linha reta, 
+    Atribua a coordenada X desta localização final desta linha reta à coordenada.
 
 Rotina para que se atribua o lado direito duma linha reta para uma coordenada:
   Atribua a coordenada X desta localização inicial desta linha reta à coordenada.
-  Se a coordenada X desta localização final desta linha reta for maior do que a coordenada X desta localização inicial desta linha reta, atribua a coordenada X desta localização final desta linha reta à coordenada.
+  Se a coordenada X desta localização final desta linha reta for maior do que a coordenada X desta localização inicial desta linha reta, 
+    Atribua a coordenada X desta localização final desta linha reta à coordenada.
 
 Rotina para que se atribua o topo duma linha reta para uma coordenada:
   Atribua a coordenada Y desta localização inicial desta linha reta à coordenada.
-  Se a coordenada Y desta localização final desta linha reta for menor do que a coordenada Y desta localização inicial desta linha reta, atribua a coordenada Y desta localização final desta linha reta à coordenada.
+  Se a coordenada Y desta localização final desta linha reta for menor do que a coordenada Y desta localização inicial desta linha reta, 
+    Atribua a coordenada Y desta localização final desta linha reta à coordenada.
 
 Rotina para que se atribua masking tape debaixo de uma figura geométrica:
   Se a figura geométrica for inexistente, retorne.
@@ -18114,7 +18118,8 @@ Rotina para que se atribua umas larguras de fonte para um trecho:
     Adicione 1 para o contador.
     Acrescente o conteúdo deste endereço numérico seguido de " " para o trecho.
     Adicione 1 para uma contagem.
-    Se a contagem for uniformemente divisível por 16, acrescente o texto CRLF para o trecho.
+    Se a contagem for uniformemente divisível por 16, 
+      Acrescente o texto CRLF para o trecho.
     Adicione a magnitude dum número para o endereço numérico.
   Reitere.
 
@@ -18242,7 +18247,8 @@ Rotina para que se end uma folha (modo pdf - finalização da página atual - fonte
   Itere.
     Obtenha um conjunto de texto desde as textos de fonte desta página.
     Se o conjunto de texto for inexistente, pare.
-    Se um sinalizador estiver ativo, acrescente " " para a página sem passar pra próxima linha.
+    Se um sinalizador estiver ativo, 
+      Acrescente " " para a página sem passar pra próxima linha.
     Acrescente a string deste conjunto de texto para a página sem passar pra próxima linha.
     Ative o sinalizador.
   Reitere.
@@ -18255,7 +18261,8 @@ Rotina para que se end uma folha (modo pdf - finalização da página atual - recur
   Itere.
     Obtenha um conjunto de texto desde as textos de imagem desta página.
     Se o conjunto de texto for inexistente, pare.
-    Se um sinalizador estiver ativo, acrescente " " para a página sem passar pra próxima linha.
+    Se um sinalizador estiver ativo, 
+      Acrescente " " para a página sem passar pra próxima linha.
     Acrescente a string deste conjunto de texto para a página sem passar pra próxima linha.
     Ative o sinalizador.
   Reitere.
@@ -18460,7 +18467,8 @@ Rotina para que se pinte uma string sob uma localização com uma cor e uma fonte:
   Preserve a localização.
   Itere.
     Se o subtexto estiver em branco, pare.
-    Se o caractere final deste subtexto for maior do que o caractere final desta string, atribua o caractere final desta string ao caractere final deste subtexto.
+    Se o caractere final deste subtexto for maior do que o caractere final desta string, 
+      Atribua o caractere final desta string ao caractere final deste subtexto.
     Processe "gdi32.dll" "TextOutA" com \ Grava uma sequência de caracteres no DC especificado, usando a fonte, a cor de fundo e a cor do texto atualmente selecionadas.
     \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-textouta
       O contexto do dispositivo atual [hdc]
@@ -18511,7 +18519,8 @@ Rotina para que se pinte uma caixa arredondada com uma cor da borda e uma cor de
   Preserve a caixa arredondada.
   Crie o hPen de o contexto do dispositivo atual usando a cor da borda.
   Crie o hBrush de o contexto do dispositivo atual usando a cor de preenchimento.
-  Se a cor da borda estiver clear, adicione a quantidade de twips/pixel para o canto superior esquerdo desta caixa arredondada.
+  Se a cor da borda estiver clear, 
+    Adicione a quantidade de twips/pixel para o canto superior esquerdo desta caixa arredondada.
   Atribua o raio desta caixa arredondada vezes 2 para um diâmetro.
   Processe "gdi32.dll" "RoundRect" com \ Desenha um retângulo com cantos arredondados.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-roundrect
@@ -18570,7 +18579,8 @@ Rotina para que se pinte uma imagem (modo pdf):
   Processe "gdiplus.dll" "GdipGetImageGraphicsContext" com \ INSERIR Documentação
     O gpBitmap
     e O endereçamento dum gpGraphic.
-  Se o sinalizador de escala de cinza desta imagem estiver ativo, crie um GpImageAttributes (escala de cinza).
+  Se o sinalizador de escala de cinza desta imagem estiver ativo, 
+    Crie um GpImageAttributes (escala de cinza).
   Processe "gdiplus.dll" "GdipDrawImageRectRectI" com \Desenha uma imagem em um local especificado.
     O gpGraphic [*graphics]
     e O gpBitmap desta imagem [*image] \ https://learn.microsoft.com/pt-br/windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image
@@ -18590,7 +18600,8 @@ Rotina para que se pinte uma imagem (modo pdf):
     e O GpImageAttributes [*imageAttributes] \ https://learn.microsoft.com/pt-br/windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes
     e nil [callback]
     e 0. [*callbackData]
-  Se o GpImageAttributes não for inexistente, destrua o GpImageAttributes.
+  Se o GpImageAttributes não for inexistente, 
+    Destrua o GpImageAttributes.
   Processe "gdiplus.dll" "GdipDeleteGraphics" com \Exclui o objeto Graphics especificado.
    O gpGraphic. [*graphics]
   Pinte o gpBitmap sob o canto superior esquerdo desta caixa desta imagem (modo pdf).
@@ -18730,7 +18741,8 @@ Rotina para que se pinte uma elipse com uma cor da borda e uma cor de preenchime
   Preserve a elipse.
   Crie o hPen de o contexto do dispositivo atual usando a cor da borda.
   Crie o hBrush de o contexto do dispositivo atual usando a cor de preenchimento.
-  Se a cor da borda estiver clear, adicione a quantidade de twips/pixel para o canto superior esquerdo desta elipse.
+  Se a cor da borda estiver clear, 
+    Adicione a quantidade de twips/pixel para o canto superior esquerdo desta elipse.
   Processe "gdi32.dll" "Ellipse" com \ Desenha uma elipse
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-ellipse
     O contexto do dispositivo atual [hDC]
@@ -18757,7 +18769,8 @@ Rotina para que se pinte uma caixa com uma cor da borda e uma cor de preenchimen
   Preserve a caixa.
   Crie o hPen de o contexto do dispositivo atual usando a cor da borda.
   Crie o hBrush de o contexto do dispositivo atual usando a cor de preenchimento.
-  Se a cor da borda estiver clear, adicione a quantidade de twips/pixel para o canto superior esquerdo desta caixa.
+  Se a cor da borda estiver clear, 
+    Adicione a quantidade de twips/pixel para o canto superior esquerdo desta caixa.
   Processe "gdi32.dll" "Rectangle" com
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-rectangle
   \A função Retângulo desenha um retângulo. O retângulo é delineado com a caneta (canetinha) atual e preenchido com o rolo de tinta (brush) atual.
@@ -18924,7 +18937,8 @@ Rotina para que se inicie uma folha usando uma caixa:
   Se o pDevMode for inexistente, retorne.
   Disjuncione logicamente o dmFields deste pDevMode usando 1 [DM_ORIENTATION].
   Atribua 1 [DMORIENT_PORTRAIT] ao dmOrientation deste pDevMode .
-  Se a largura desta caixa for maior do que a altura desta caixa, atribua 2 [DMORIENT_LANDSCAPE] ao dmOrientation deste pDevMode .
+  Se a largura desta caixa for maior do que a altura desta caixa, 
+    Atribua 2 [DMORIENT_LANDSCAPE] ao dmOrientation deste pDevMode .
   Processe "gdi32.dll" "ResetDCA" com \ Atualiza a impressora especificada ou contexto de dispositivo (DC) usando as informações especificadas.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-resetdca
     A área de impressão [hdc]
@@ -19757,13 +19771,20 @@ Rotina para que se escolha aleatoriamente uma cor pastel:
 
 Rotina para que se escolha aleatoriamente uma cor do arco-íris:
   Adicione 1 para o número atual da cor do arco-íris.
-  Se o número atual da cor do arco-íris for maior do que 6, atribua 1 ao número atual da cor do arco-íris.
-  Se o número atual da cor do arco-íris for 1, atribua a cor vermelha ao cor do arco-íris.
-  Se o número atual da cor do arco-íris for 2, atribua a cor laranja ao cor do arco-íris.
-  Se o número atual da cor do arco-íris for 3, atribua a cor amarela ao cor do arco-íris.
-  Se o número atual da cor do arco-íris for 4, atribua a cor verde ao cor do arco-íris.
-  Se o número atual da cor do arco-íris for 5, atribua a cor azul ao cor do arco-íris.
-  Se o número atual da cor do arco-íris for 6, atribua a cor púrpura ao cor do arco-íris.
+  Se o número atual da cor do arco-íris for maior do que 6, 
+    Atribua 1 ao número atual da cor do arco-íris.
+  Se o número atual da cor do arco-íris for 1, 
+    Atribua a cor vermelha ao cor do arco-íris.
+  Se o número atual da cor do arco-íris for 2, 
+    Atribua a cor laranja ao cor do arco-íris.
+  Se o número atual da cor do arco-íris for 3, 
+    Atribua a cor amarela ao cor do arco-íris.
+  Se o número atual da cor do arco-íris for 4, 
+    Atribua a cor verde ao cor do arco-íris.
+  Se o número atual da cor do arco-íris for 5, 
+    Atribua a cor azul ao cor do arco-íris.
+  Se o número atual da cor do arco-íris for 6, 
+    Atribua a cor púrpura ao cor do arco-íris.
   Atribua a cor do arco-íris à cor deste contexto.
 
 Rotina para que se redefina as cores do arco-íris:
