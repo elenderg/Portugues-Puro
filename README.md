@@ -55,6 +55,7 @@ Dan Rzeppa
 [Jasper Paulsen](https://github.com/Folds)  
 [Walter Moura Júnior](https://github.com/waltermourajr)  
 [Élisson Góis Gallas](https://github.com/elisson-zlq3x)  
+[Mike Gonta](https://github.com/mikegonta)  
 
 
 ---
