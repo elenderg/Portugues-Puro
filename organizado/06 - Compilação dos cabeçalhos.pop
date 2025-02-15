@@ -355,7 +355,7 @@ Rotina para que se catalogue uma rotina usando umas unidades semânticas e um cat
     Se a unidade semântica for a última unidade semântica destas unidades semânticas, pare.
     Catalogue o cabeçalho compactado usando o catálogo (especial).
   Reitere.
-  Catalogue a rotina usando o cabeçalho compactado como uma representação interna da rotina e o catálogo (especial).
+  Catalogue a rotina usando o cabeçalho compactado tal como uma representação interna da rotina e o catálogo (especial).
 
 Rotina para que se catalogue um cabeçalho compactado usando um catálogo (especial):
   Encontre uma referência usando o cabeçalho compactado e o catálogo.

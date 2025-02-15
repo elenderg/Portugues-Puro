@@ -456,6 +456,7 @@ As variáveis globais predefinidas são umas variáveis globais.
 
 
 Rotina para que se execute o programa:
+  Atribua "console" para o tipo da aplicação.
   Inicialize os componentes.
   \Inicialize o compilador.
   Faça tudo.

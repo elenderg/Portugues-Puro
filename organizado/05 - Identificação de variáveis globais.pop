@@ -23,7 +23,7 @@ Rotina para que se destrinche uma variável global:
       "Código de Erro #047. A variável global '" junto com o nome desta variável global 
       seguido de "' possui um tipo inválido." e o endereço local desta variável global;
     Retorne.
-  Destrinche a variável global como uma variável.
+  Destrinche a variável global tal como uma variável.
 
 Rotina para que se destrinche uma variável global (compilação do corpo):
   Se a variável global for inexistente, retorne.
@@ -75,7 +75,7 @@ Rotina para que se compile um valor literal usando um percorredor:
       "' não pode ser compilado." junto com o texto CRLF e o percorredor.
 
 Rotina para que se adicione um valor literal para umas variáveis usando um endereço local:
-  Adicione o valor literal como uma variável para as variáveis usando "valor literal" e o endereço local.
+  Adicione o valor literal tal como uma variável para as variáveis usando "valor literal" e o endereço local.
   Gere o nome deste valor literal usando "~L".
 
 Rotina para que se gere um nome usando uma string:

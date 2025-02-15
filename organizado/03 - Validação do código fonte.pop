@@ -456,6 +456,7 @@ Função para que se determine se um percorredor está sobre alguma preposição:
   Se o subtexto for "perto", diga sim.
   Se o subtexto for "com", diga sim.
   \Se o subtexto for "contendo", diga sim.
+  Se o subtexto for "tal", diga sim.
   Se o subtexto for "como", diga sim.
   Se o subtexto for "contra", diga sim.
   Se o subtexto for "dada", diga sim.
@@ -526,6 +527,7 @@ Função para que se determine se um percorredor está sobre alguma preposição:
   Se o subtexto for "tanto", diga sim.
   Se o subtexto for "quanto", diga sim.
   Se o subtexto for "quão", diga sim.
+  Se o subtexto for "qual", diga sim.
   Se o subtexto for "after", diga sim.
   Se o subtexto for "regressivamente", diga sim.
   Se o subtexto for "dentro de", diga sim.

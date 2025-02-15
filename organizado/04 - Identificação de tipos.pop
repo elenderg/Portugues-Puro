@@ -403,7 +403,7 @@ Função para que se determine se uma variável está duplicada em umas variáveis:
 Rotina para que se destrinche um campo:
   Se existir algum problema de compilação, retorne.
   Se o campo for inexistente, retorne.
-  Destrinche o campo como uma variável.
+  Destrinche o campo tal como uma variável.
   Se o apelido deste campo não for algum nome de campo válido, 
     Limpe o apelido deste campo. \ poderia encurtar para "Limpe-o" ou "limpe ele" "it"
   Se o nome deste campo não for algum nome de campo válido,
