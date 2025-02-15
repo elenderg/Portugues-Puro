@@ -143,7 +143,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
       Reitere.
     Se o segmento inicial deste percorredor não for o ponto final,
       Apresente a mensagem de erro contendo 
-        "Código de Erro #084. Necessário incluir um '.' ao invés de: " 
+        "Código de Erro #084. Necessário incluir um '.' ou ';' ao invés de: " 
         junto com o segmento inicial deste percorredor seguido de "." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
@@ -218,14 +218,9 @@ Rotina para que se compile um termo usando um percorredor:
   Compile o termo usando o percorredor (análise preliminar).
   Se o percorredor estiver sobre alguma conjunção modificadora, retorne. 
   \ A linha acima foi adicionada por causa do projeto de desenhar caracteres usando gráficos de tartaruga (grade invisível) ***
-  Se o segmento inicial deste percorredor for "tal",
-    Adicione 1 para o número de comparação;
-    Mova o percorredor (usando diretrizes de compilação).
-  Se o segmento inicial deste percorredor for "como",
-    Adicione 1 para o número de comparação.
-  Se o número de comparação for 2,
-    Atribua 0 para o número de comparação;
-    Compile o termo usando o percorredor (cláusula comparativa).
+    Se o segmento inicial deste percorredor for "tal",
+      Mova o percorredor (usando diretrizes de compilação);
+      Compile o termo usando o percorredor (cláusula comparativa).
   Se o segmento inicial deste percorredor for "/", 
     Compile o termo usando o percorredor (proporção de execução).
 

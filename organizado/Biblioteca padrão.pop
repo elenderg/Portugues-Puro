@@ -2383,7 +2383,8 @@ A fonte osmosiana é um texto hexadecimal igual a $00010000000B0080000300304F532F
 
 O tipo da aplicação é uma string.
 
-Rotina para que se defina o tipo da aplicação usando uma string:
+Rotina para que se defina uma string como o tipo da aplicação;
+Rotina para que se defina o tipo da aplicação como uma string:
   Atribua a string para o tipo da aplicação.
   Se o tipo da aplicação for "console", 
     Prepare o Console.

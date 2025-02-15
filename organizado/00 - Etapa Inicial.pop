@@ -428,10 +428,13 @@ As variáveis globais predefinidas são umas variáveis globais.
 
 \ Os registradores EBP (ponteiro base) e ESP (ponteiro de pilha) são usados para manipular a PILHA
 \ que é uma área da memória que você pode imaginar como uma pilha de pratos,
-\ sendo que cada prato contém um valor
+\ sendo que cada prato representando um valor salvo em um registrador,
+\ ou um endereço em algum lugar no código do programa,
+\ ou o endereço de uma variável (que reside em algum outro lugar na memória),
+\ ou o conteúdo de uma variável. 
 
-\ No Windows, a pilha cresce inversamente.
-\ Dessa forma o endereço do “topo” da pilha é sempre menor que o endereço da base.
+\ Como é típico do Windows, a pilha cresce inversamente.
+\ ou seja, o endereço do “topo” da pilha é sempre menor que o endereço da base.
 
 \ O registrador ESP sempre contém o endereço do “topo” da pilha. 
 \O registrador EBP contém o endereço da “base” da pilha da rotina atual.
