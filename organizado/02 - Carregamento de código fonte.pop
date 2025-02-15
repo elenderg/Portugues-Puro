@@ -63,6 +63,8 @@ Rotina para que se parse uma string para uma segunda string (para expandir contr
     Se o segmento final deste percorredor de contrações estiver em branco, retorne.
     Posicione o segmento inicial deste percorredor de contrações sobre o segmento final deste percorredor de contrações.
     Mova o percorredor de contrações (englobando tudo).
+    Se o percorredor de contrações estiver sobre alguma preposição conectiva,
+      Acrescente "par" para a segunda string. \ converte o "a" em "para" ("par" + "a"), quando aplicável
     Se o conteúdo deste caractere inicial deste segmento inicial deste percorredor de contrações não for um byte ignorável,
       Acrescente o segmento inicial deste percorredor de contrações para a segunda string;
       Reitere.

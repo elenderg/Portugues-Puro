@@ -1531,7 +1531,7 @@ Rotina para que se examine uma rotina usando um percorredor:
     Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor for "se", 
     Mova o percorredor (usando diretrizes de compilação).
-  Examine a cabeçalho de rotina desta rotina usando o percorredor.
+  Examine o cabeçalho de rotina desta rotina usando o percorredor.
   Se o segmento inicial deste percorredor for o ponto&vírgula,
     Examine a rotina usando o percorredor (sobrecarga de métodos);
     Retorne. \ *** usado para nomes alternativos de rotinas
@@ -1560,7 +1560,7 @@ Função para que se determine se uma string é açúcar sintático:
   Se a string for "Função", diga sim.
   Diga não.
 
-Rotina para que se examine uma cabeçalho de rotina usando um percorredor:
+Rotina para que se examine um cabeçalho de rotina usando um percorredor:
   Se existir algum problema de compilação, retorne.
   Se o segmento inicial deste percorredor estiver em branco, retorne.
   Atribua o caractere inicial deste segmento inicial deste percorredor ao caractere inicial deste cabeçalho de rotina.
