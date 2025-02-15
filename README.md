@@ -52,8 +52,11 @@ Agradecemos às seguintes pessoas pela colaboração direta e indireta neste pro
 [Gerry Rzeppa](https://www.linkedin.com/in/gerry-rzeppa-17b8051b/)  
 Dan Rzeppa  
 [Pablo Cayuella](https://www.linkedin.com/in/pablo-cayuela-a42b019/)  
-Jasper Paulsen  
+[Jasper Paulsen](https://github.com/Folds)  
 [Walter Moura Júnior](https://github.com/waltermourajr)  
+[Élisson Góis Gallas](https://github.com/elisson-zlq3x)  
+[Mike Gonta](https://github.com/mikegonta)  
+
 
 ---
 
