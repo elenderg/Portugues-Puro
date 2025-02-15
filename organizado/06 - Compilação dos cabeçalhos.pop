@@ -229,11 +229,11 @@ Rotina para que se adicione uma unidade semântica para umas unidades semânticas 
   Atribua a string à string desta unidade semântica.
 
 Função para que se determine se um percorredor está sobre algum artigo indefinido:
-  Se o percorredor estiver sobre algum preposição conectiva, diga não.
+  Se o percorredor estiver sobre alguma preposição conectiva, diga não.
   Se o segmento inicial deste percorredor não for algum artigo indefinido, diga não.
   Diga sim.
 
-Função para que se determine se um percorredor está sobre algum preposição conectiva:
+Função para que se determine se um percorredor está sobre alguma preposição conectiva:
   Se o segmento inicial deste percorredor não for "a", diga não.
   Preserve o percorredor.
   Mova o percorredor (usando diretrizes de compilação).
@@ -280,7 +280,7 @@ Função para que se determine se um percorredor está sobre alguma string de unida
   Diga sim.
 
 Função para que se determine se um percorredor está sobre algum artigo definido:
-  Se o percorredor estiver sobre algum preposição conectiva, diga não.
+  Se o percorredor estiver sobre alguma preposição conectiva, diga não.
   Se o segmento inicial deste percorredor não for algum artigo definido, diga não.
   Diga sim.
 
