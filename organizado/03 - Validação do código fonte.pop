@@ -146,13 +146,7 @@ Função para que se determine se uma string é o início de algum tipo:
   Se a string for algum artigo indefinido, diga sim.
   Diga não.
 
-\Função para que se determine se uma string é algum artigo indefinido:
-  \Se a string for algum artigo indefinido português, diga sim.
-  \Se a string for algum pronome demonstrativo abrangente, diga sim. \Duplicado
-  \Diga não.
-
-Função para que se determine se uma string é algum artigo indefinido;
-Função para que se determine se uma string é algum artigo indefinido português: 
+Função para que se determine se uma string é algum artigo indefinido:
   \PAL
   Se a string for "um", diga sim.
   Se a string for "uma", diga sim.
@@ -245,7 +239,8 @@ Rotina para que se examine um nome usando um percorredor:
     Mova o percorredor (usando diretrizes de compilação).
   Itere.
     Se existir algum problema de compilação, retorne.
-    Se o percorredor estiver sobre algum indicador de fim de variável, pare.
+    Se o percorredor estiver sobre algum indicador de fim de variável, 
+      Pare.
     Expanda o nome com o segmento inicial deste percorredor.
     Mova o percorredor (usando diretrizes de compilação).
   Reitere.
