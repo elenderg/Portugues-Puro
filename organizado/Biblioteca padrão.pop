@@ -5368,12 +5368,12 @@ Função para que se determine se uma cor é muito clara:
 
 Função para que se determine se uma cor é alguma cor muitíssimo escura;
 Função para que se determine se uma cor é muitíssimo escura:
-  Se a luminosidade desta cor for menor do que ou igual para 124, diga sim.
+  Se a luminosidade desta cor for menor do que ou igual a 124, diga sim.
   Diga não.
 
 Função para que se determine se uma cor é alguma cor muitíssimo clara;
 Função para que se determine se uma cor é muitíssimo clara:
-  Se a luminosidade desta cor for maior do que ou igual para 875, diga sim.
+  Se a luminosidade desta cor for maior do que ou igual a 875, diga sim.
   Diga não.
 
 Função para que se determine se um contador está ultrapassando um número:
@@ -6217,7 +6217,7 @@ Função para que se determine se uma string é maior do que ou igual para uma segu
 Função para que se determine se uma string é maior que ou igual para uma segunda string;
 Função para que se determine se uma string é maior ou igual para uma segunda string:
   Compare a string para a segunda string usando a quantidade de caracteres desta string e a quantidade de caracteres desta segunda string retornando um número.
-  Se o número for maior do que ou igual para 0, diga sim.
+  Se o número for maior do que ou igual a 0, diga sim.
   Diga não.
 
 Função para que se determine se uma string está em uma segunda string:
@@ -6248,7 +6248,7 @@ Função para que se determine se uma string é igual ou menor do que uma segunda s
 Função para que se determine se uma string é igual ou menor que uma segunda string;
 Função para que se determine se uma string é menor ou igual para uma segunda string:
   Compare a string para a segunda string usando a quantidade de caracteres desta string e a quantidade de caracteres desta segunda string retornando um número.
-  Se o número for menor do que ou igual para 0, diga sim.
+  Se o número for menor do que ou igual a 0, diga sim.
   Diga não.
 
 \ needs work por Spanish
@@ -13088,7 +13088,7 @@ Rotina para que se pause uns milissegundos;
 Rotina para que se espere por uns milissegundos;
 Rotina para que se pause por uns milissegundos;
 Rotina para que se aguarde por uns milissegundos:
-  Se o milissegundos forem menor do que ou igual para 0, retorne.
+  Se o milissegundos forem menor do que ou igual a 0, retorne.
   Processe "kernel32.dll" "Sleep" com \ Suspende a execução do thread atual até que o intervalo de tempo delimite expire.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/synchapi/nf-synchapi-sleep
     Os milissegundos. [dwMilliseconds]
