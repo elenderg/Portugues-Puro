@@ -234,10 +234,15 @@ Função para que se determine se um percorredor está sobre algum artigo indefinid
   Diga sim.
 
 Função para que se determine se um percorredor está sobre alguma preposição conectiva:
-  Se o segmento inicial deste percorredor não for "a", diga não.
+  Se o segmento inicial deste percorredor não for alguma preposição especial, diga não.
   Preserve o percorredor.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor for algum artigo, diga sim.
+  Diga não.
+
+Função para que se determine se uma string é alguma preposição especial:
+  Se a string for "a", diga sim.
+  \Se a string for "de", diga sim.
   Diga não.
 
 Rotina para que se compile umas unidades semânticas e uns parâmetros usando um percorredor (artigo indefinido):
