@@ -214,7 +214,7 @@ Rotina para que se compile um valor literal usando um percorredor (ponteiros):
 Rotina para que se compile um valor literal usando um percorredor (cadeia de caracteres):
   Se existir algum problema de compilação, retorne.
   Atribua o segmento inicial deste percorredor aos data deste valor literal.
-  Remova as aspas de os data deste valor literal.
+  Remova as aspas desses data deste valor literal.
   Mova o percorredor (usando diretrizes de compilação).
   Atribua "string" ao nome do tipo deste valor literal.
   \Atribua "texto" ao nome do tipo deste valor literal.
@@ -244,7 +244,7 @@ Rotina para que se compile um valor literal usando um percorredor (valores boole
 Rotina para que se compile um valor literal usando um percorredor (números ordinais):
   Se existir algum problema de compilação, retorne.
   Atribua o segmento inicial deste percorredor aos data deste valor literal.
-  Remova o último caractere de os data deste valor literal.
+  Remova o último caractere desses data deste valor literal.
   \Converta o segmento inicial deste percorredor para um número.
   \Converta o número para os data deste valor literal.
   \Converta 0 para os data deste valor literal. \ era nulo ao invés de 0
