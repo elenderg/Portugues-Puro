@@ -453,7 +453,8 @@ Função para que se determine se uma string é algum pronome demonstrativo:
   Diga não.
 
 Função para que se determine se uma string é alguma preposição:
-  Se a string for "a_partir_de", diga sim.
+  Se a string for "partir", diga sim.
+  Se a string for "partindo", diga sim.
   Se a string for "aproximadamente", diga sim.
   Se a string for "através", diga sim.
   Se a string for "after", diga sim.

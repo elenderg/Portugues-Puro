@@ -3367,9 +3367,7 @@ Rotina para que se centralize uma imagem na tela:
   Centralize a imagem na caixa desta tela (verticalmente).
 
 \ unclear why this does not get called properly when hoja apaisada is replaced with  caja ***
-Rotina para que se centralize uma imagem no centro d' uma caixa;
 Rotina para que se centralize uma imagem no centro de uma caixa;
-Rotina para que se centralize uma imagem no meio d' uma caixa;
 Rotina para que se centralize uma imagem no meio de uma caixa;
 Rotina para que se centralize uma imagem em uma caixa:
   Se a imagem for inexistente, retorne.
@@ -5393,8 +5391,8 @@ Função para que se determine se a localização atual está para o lado direito de 
   Se a coordenada X desta localização deste contexto for maior do que a coordenada X2 desta caixa, diga sim.
   Diga não.
 
-Função para que se determine se a localização atual está dentre uns twips d'uma caixa:
-  Se a localização deste contexto estiver dentre os twips d'a caixa, diga sim.
+Função para que se determine se a localização atual está dentre uns twips em uma caixa:
+  Se a localização deste contexto estiver dentre os twips em a caixa, diga sim.
   Diga não.
 
 Função para que se determine se uma valor da diferença está dentre uma malha quadriculada:
@@ -5710,7 +5708,7 @@ Função para que se determine se um número é uniformemente divisível por um segun
   Se o resto for 0, diga sim.
   Diga não.
 
-Função para que se determine se um número é um múltiplo d'um segundo número:
+Função para que se determine se um número é um múltiplo em um segundo número:
   Se o número for uniformemente divisível pelo segundo número, diga sim.
   Diga não.
 
@@ -6071,23 +6069,23 @@ Função para que se determine se uma localização é tocando uma caixa:
   Se a localização estiver na caixa, diga sim.
   Diga não.
 
-Função para que se determine se uma localização está dentre uma malha quadriculada d'uma segunda localização:
+Função para que se determine se uma localização está dentre uma malha quadriculada em uma segunda localização:
   Calcule um valor da diferença entre a segunda localização e a localização.
   Se o valor da diferença está dentre a malha quadriculada, diga sim.
   Diga não.
 
-Função para que se determine se uma localização está dentre uns twips d'uma segunda localização:
+Função para que se determine se uma localização está dentre uns twips em uma segunda localização:
   Atribua os twips e os twips para uma malha quadriculada.
-  Se a localização estiver dentre a malha quadriculada d'a segunda localização, diga sim.
+  Se a localização estiver dentre a malha quadriculada em a segunda localização, diga sim.
   Diga não.
 
-Função para que se determine se uma localização está dentre uns twips d'uma caixa:
+Função para que se determine se uma localização está dentre uns twips em uma caixa:
   Preserve a caixa.
   Recue a caixa usando os twips.
   Se a localização estiver dentre a caixa [recuada], diga sim.
   Diga não.
 
-Função para que se determine se o stack possui just one lista sobre it:
+Função para que se determine se o stack possui just one coisa sobre it:
   Se a contagem deste stack for 1, diga sim.
   Diga não.
 
@@ -6431,8 +6429,8 @@ Função para que se determine se estamos em uma caixa:
   Se a localização deste contexto estiver na caixa, diga sim.
   Diga não.
 
-Função para que se determine se estamos dentre uns twips d'uma caixa:
-  Se a localização deste contexto está dentre os twips d'a caixa, diga sim.
+Função para que se determine se estamos dentre uns twips em uma caixa:
+  Se a localização deste contexto estiver dentre os twips em a caixa, diga sim.
   Diga não.
 
 Função para que se determine se estamos com sorte:
@@ -7430,7 +7428,7 @@ Rotina para que se extraia uma string desde uma caixa de texto (trecho seleciona
   Itere.
     Obtenha uma linha de texto desde as linhas de texto desta caixa de texto.
     Se a linha de texto for inexistente, retorne.
-    Lance um subtexto sobre qualquer trecho selecionado na linha de texto d'a caixa de texto.
+    Lance um subtexto sobre qualquer trecho selecionado na linha de texto em a caixa de texto.
     Se o subtexto estiver em branco, reitere.
     Acrescente o subtexto para a string.
     Se o conteúdo deste caractere final deste subtexto for o retorno de carro, 
@@ -7690,7 +7688,7 @@ Rotina para que se encontre um região da tela usando uma malha quadriculada e um
   Atribua a coordenada Y desta localização dividido pelo número Y desta malha quadriculada vezes o número Y desta malha quadriculada à coordenada Y deste região da tela.
 
 \Rotina para que se encontre a raiz quadrada de um número:
-Rotina para que se encontre uma raiz quadrada d'um número:
+Rotina para que se encontre uma raiz quadrada em um número:
   \ arredonda para baixo
   Preserve o número.
   Remova o sinal desde o número.
@@ -8055,7 +8053,7 @@ Rotina para que se obtenha uma distância entre uma localização e uma segunda loc
   Remova o sinal desde o segundo número.
   Atribua o número vezes o número à distância.
   Adicione o segundo número vezes o segundo número para a distância.
-  Encontre uma raiz quadrada d'a distância.
+  Encontre uma raiz quadrada em a distância.
   Atribua o raiz quadrada à distância.
   Se a tecla D/d estiver sendo pressionada, 
     Produza o relatório de informações usando a distância.
@@ -10061,7 +10059,7 @@ Rotina para que se lowercase qualquer trecho selecionado em uma caixa de texto:
     Obtenha uma linha de texto desde as linhas de texto desta caixa de texto.
     Se a linha de texto for inexistente, retorne.
     Se a linha de texto na caixa de texto não estiver selecionado, reitere.
-    Lance um subtexto sobre qualquer trecho selecionado na linha de texto d'a caixa de texto.
+    Lance um subtexto sobre qualquer trecho selecionado na linha de texto em a caixa de texto.
     Lowercase o subtexto.
   Reitere.
 
@@ -10634,7 +10632,7 @@ Rotina para que se transcreva stroke e preencha usando uma cor da borda e uma co
   Se a cor da borda estiver clear, atribua "f" à string. \ fill
   Transcreva a string.
 
-Rotina para que se escolha aleatoriamente um número dentre uma quantia d'um segundo número:
+Rotina para que se escolha aleatoriamente um número dentre uma quantia em um segundo número:
   Escolha aleatoriamente o número entre o segundo número menos o quantia e o segundo número mais o quantia.
   Atribua o número ao número deste contexto.
 
@@ -10962,7 +10960,7 @@ Rotina para que se atribua a quantidade de caracteres selecionados duma caixa de
   Itere.
   Obtenha uma linha de texto desde as linhas de texto desta caixa de texto.
   Se a linha de texto for inexistente, retorne.
-  Lance um subtexto sobre qualquer trecho selecionado na linha de texto d'a caixa de texto.
+  Lance um subtexto sobre qualquer trecho selecionado na linha de texto em a caixa de texto.
   Adicione a quantidade de caracteres deste subtexto para a contagem.
   Reitere.
 
@@ -12240,7 +12238,7 @@ Rotina para que se lance um percorredor sobre uma string:
   Lance o segmento final deste percorredor sobre a string.
   Posicione o segmento inicial deste percorredor sobre o segmento final deste percorredor.
 
-Rotina para que se lance um subtexto sobre qualquer trecho selecionado em uma linha de texto d'uma caixa de texto:
+Rotina para que se lance um subtexto sobre qualquer trecho selecionado em uma linha de texto em uma caixa de texto:
   Limpe o subtexto.
   Se a caixa de texto for inexistente, retorne.
   Se a linha de texto na caixa de texto não estiver selecionado, retorne.
@@ -13523,7 +13521,7 @@ Rotina para que se uppercase qualquer trecho selecionado em uma caixa de texto:
     Obtenha uma linha de texto desde as linhas de texto desta caixa de texto.
     Se a linha de texto for inexistente, retorne.
     Se a linha de texto na caixa de texto não estiver selecionado, reitere.
-    Lance um subtexto sobre qualquer trecho selecionado na linha de texto d'a caixa de texto.
+    Lance um subtexto sobre qualquer trecho selecionado na linha de texto em a caixa de texto.
     Uppercase o subtexto.
   Reitere.
 
@@ -17274,7 +17272,7 @@ Rotina para que se providencie espaçamento adequado entre caracteres:
 Rotina para que se use um tamanho da letra:
   Atribua o tamanho da letra à tamanho da letra deste contexto.
 
-Rotina para que se use um tamanho da letra d' uns twips:
+Rotina para que se use um tamanho da letra em  uns twips:
   Atribua os twips ao tamanho da letra.
   Atribua os twips à tamanho da letra deste contexto.
 
@@ -17693,7 +17691,7 @@ Rotina para que se atribua o y-extent duma caixa para uma altura:
   Atribua a coordenada Y2 desta caixa à altura.
   Subtraia a coordenada Y1 desta caixa desde a altura.
 
-Rotina para que se escolha aleatoriamente uma localização no base uma fração d'uma caixa:
+Rotina para que se escolha aleatoriamente uma localização no base uma fração em uma caixa:
   Preserve a caixa.
   Atribua a altura desta caixa vezes a fração a uns twips.
   Atribua a coordenada Y2 desta caixa menos os twips à coordenada Y1 desta caixa.
@@ -17704,7 +17702,7 @@ Rotina para que se escolha aleatoriamente uma localização no interior de uma cai
   Escolha aleatoriamente a coordenada Y desta localização entre a coordenada Y1 desta caixa e a coordenada Y2 desta caixa.
   Atribua a localização à localização deste contexto.
 
-Rotina para que se escolha aleatoriamente uma localização no meio de uma fração d'uma caixa:
+Rotina para que se escolha aleatoriamente uma localização no meio de uma fração em uma caixa:
   Preserve a caixa.
   Atribua o y deste centro desta caixa para uma coordenada.
   Atribua a altura desta caixa vezes a fração dividido por 2 para um número.
@@ -17717,7 +17715,7 @@ Rotina para que se escolha aleatoriamente uma localização no topo half de uma ca
   Atribua o y deste centro desta caixa à coordenada Y2 desta caixa.
   Escolha aleatoriamente a localização na caixa.
 
-Rotina para que se escolha aleatoriamente uma localização na metade de cima de uma fração d'uma caixa:
+Rotina para que se escolha aleatoriamente uma localização na metade de cima de uma fração em uma caixa:
   Preserve a caixa.
   Atribua o y deste centro desta caixa para uma coordenada.
   Atribua a altura desta caixa vezes a fração para um número.
@@ -17760,9 +17758,9 @@ Rotina para que se escolha aleatoriamente uma localização em uma caixa uns twips
   Atribua a coordenada Y1 desta bounding caixa mais os outros twips à coordenada Y2 desta bounding caixa.
   Escolha aleatoriamente a localização na bounding caixa.
 
-Rotina para que se escolha aleatoriamente uma localização dentre uma distância d'uma segunda localização:
-  Escolha aleatoriamente a coordenada X desta localização dentre a distância d'a coordenada X desta segunda localização.
-  Escolha aleatoriamente a coordenada Y desta localização dentre a distância d'a coordenada Y desta segunda localização.
+Rotina para que se escolha aleatoriamente uma localização dentre uma distância em uma segunda localização:
+  Escolha aleatoriamente a coordenada X desta localização dentre a distância em a coordenada X desta segunda localização.
+  Escolha aleatoriamente a coordenada Y desta localização dentre a distância em a coordenada Y desta segunda localização.
   Atribua a localização à localização deste contexto.
 
 Rotina para que se escolha aleatoriamente uma orientação:
@@ -17877,7 +17875,7 @@ Rotina para que se mova para uma localização:
   Atribua a localização à localização deste contexto.
 
 Rotina para que se mova uma localização aproximadamente uns twips em algum direction:
-  Escolha aleatoriamente uma segunda localização dentre os twips d'a localização.
+  Escolha aleatoriamente uma segunda localização dentre os twips em a localização.
   Atribua a segunda localização à localização.
 
 Rotina para que se mova uma localização para uma segunda localização:

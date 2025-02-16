@@ -69,9 +69,6 @@ Função para que se determine se uma string é algum comando condicional:
 Rotina para que se compile umas unidades semânticas e uns parâmetros usando um percorredor:
   Se existir algum problema de compilação, retorne.
   Se o segmento inicial deste percorredor estiver em branco, retorne.
-  \Se o percorredor estiver sobre alguma preposição conectiva, \ Gerava vazamento de memória
-      \Limpe o segmento inicial deste percorredor;
-      \Atribua "para" para o segmento inicial deste percorredor.
   Se o segmento inicial deste percorredor for algum artigo definido,
     Compile as unidades semânticas e o parâmetros usando o percorredor (artigo definido);
     Reitere.

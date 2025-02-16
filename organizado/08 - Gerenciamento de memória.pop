@@ -31,7 +31,7 @@ Função para que se determine se um tipo deveria ser finalizado:
   [determina se o compilador deveria desalocar a memória alocada para algum tipo]
   Se o tipo for inexistente, diga não.
   Se o tipo puder ser reduzido para "subtexto", diga não.
-  \ Substrings apontam para partes de strins reais, que por sua vez, serão desalocadas
+  \ Substrings apontam para partes de strings reais, que por sua vez, serão desalocadas
   Se o tipo puder ser reduzido para "string", diga sim.
   \ O caso padrão para strings
   Se os campos deste tipo deveriam ser finalizados, diga sim.

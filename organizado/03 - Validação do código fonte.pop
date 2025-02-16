@@ -431,7 +431,8 @@ Função para que se determine se uma string é algum operador aritmético:
 Função para que se determine se um percorredor está sobre alguma preposição:
   Atribua o segmento inicial deste percorredor para um subtexto.
   Se o percorredor estiver sobre alguma preposição conectiva, diga sim. \ "a" no sentido de "para"
-  Se o subtexto for "a_partir_de", diga sim.
+  Se o subtexto for "partir", diga sim.
+  Se o subtexto for "partindo", diga sim.
   Se o subtexto for "abaixo", diga sim.
   \Se o subtexto for "baixo", diga sim.
   Se o subtexto for "acima", diga sim.
@@ -447,7 +448,7 @@ Função para que se determine se um percorredor está sobre alguma preposição:
   Se o subtexto for "cujo", diga sim.
   Se o subtexto for "cujas", diga sim.
   Se o subtexto for "cujos", diga sim.
-  \Se o subtexto for "próximo", diga sim.
+  Se o subtexto for "próximo", diga sim.
   Se o subtexto for "perto", diga sim.
   Se o subtexto for "com", diga sim.
   \Se o subtexto for "contendo", diga sim.
