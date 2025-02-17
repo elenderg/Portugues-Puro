@@ -421,7 +421,7 @@ Um catálogo é uma lista com
 Um nome da biblioteca é uma string.
 Um nome do processo é uma string.
 Um número identificador do processo é um número.
-Um input é um evento.
+
 
 Um Endereço IP é uma estrutura com
   Um número,
@@ -445,6 +445,7 @@ Uma categoria é uma string.
 Um lParam é um número.
 \Uma folha no modo paisagem é uma folha.
 Um mínimo múltiplo comum é um número.
+Um input é um evento.
 Um clique é um input.
 Uma quantidade de caracteres é [composta de] uns twips.
 Um tamanho da letra é [composto de] uns twips. \ indica a altura real de uma letra maiúscula
@@ -480,8 +481,8 @@ Uma imagem é uma lista com \FIGURA?
   Um texto hexadecimal denominado dados hexadecimais [bytes no formato original],
   Um gpBitmap.
 
-Um process é um número identificador.
-Um ponteiro de processo é um ponteiro [que aponta] para um process.
+Um processo é um número identificador.
+Um ponteiro de processo é um ponteiro [que aponta] para um processo.
 
 Um quora é uma lista com \ quora parece ser abreviação de "question or answer"
   Uma string e
@@ -12735,10 +12736,10 @@ Rotina para que se mova para o centro de uma caixa voltada para o west:
   Atribua o centro desta caixa à localização deste contexto.
   Face west.
 
-Rotina para que se comece um process usando um endereço completo:
+Rotina para que se comece um processo usando um endereço completo:
   \ deve ser chamado com uma variávelglobal
   Limpe o erro do fluxo de entrada/saída.
-  Se o process não for 0,
+  Se o processo não for 0,
     Atribua "Erro. Este processo já está sendo executado." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
@@ -12769,7 +12770,7 @@ Rotina para que se comece um process usando um endereço completo:
     Atribua "Erro. Não foi possível executar o programa." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
-  Atribua o hprocess deste PROCESS_INFORMATION ao process.
+  Atribua o hprocess deste PROCESS_INFORMATION ao processo.
   Processe "kernel32.dll" "CloseHandle" com \ Fecha um identificador de objeto aberto.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/handleapi/nf-handleapi-closehandle
     O hthread deste PROCESS_INFORMATION. [hObject]
@@ -12780,7 +12781,7 @@ Rotina para que se comece um process usando um endereço completo:
     0 [lpThreadAttributes] \ Consulte https://learn.microsoft.com/pt-br/previous-versions/windows/desktop/legacy/aa379560(v=vs.85)
     e 0 [dwStackSize]\ Consulte https://learn.microsoft.com/pt-br/windows/win32/procthread/thread-stack-size
     e O ponteiro [lpStartAddress] \ Consulte https://learn.microsoft.com/pt-br/previous-versions/windows/desktop/legacy/ms686736(v=vs.85)
-    e O endereçamento deste process [lpParameter]
+    e O endereçamento deste processo [lpParameter]
     e 0 [dwCreationFlags]
     e O endereçamento dum segundo número [lpThreadId]
   Retornando um número identificador.
@@ -12869,13 +12870,13 @@ Rotina para que se comece com uma cor:
 Rotina para que se comece com nada em um ponteiro:
   Esvazie o ponteiro.
 
-Rotina para que se suspenda um process:
-  Se o process for 0, retorne.
+Rotina para que se suspenda um processo:
+  Se o processo for 0, retorne.
   Processe "kernel32.dll" "TerminateProcess" com \ Encerra o processo especificado e todos os seus threads.
   \ Documentação: ->  https://learn.microsoft.com/pt-br/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess
-    O process [hProcess] \ Consulte https://learn.microsoft.com/pt-br/windows/desktop/ProcThread/process-security-and-access-rights
+    O processo [hProcess] \ Consulte https://learn.microsoft.com/pt-br/windows/desktop/ProcThread/process-security-and-access-rights
     e 0. [uExitCode]
-  Atribua 0 ao process.
+  Atribua 0 ao processo.
 
 Rotina para que se suspenda um temporizador:
   Se a contagem deste temporizador for 0, retorne.
