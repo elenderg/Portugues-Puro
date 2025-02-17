@@ -485,7 +485,7 @@ Um processo é um número identificador.
 Um ponteiro de processo é um ponteiro [que aponta] para um processo.
 
 Um quora é uma lista com \ quora parece ser abreviação de "question or answer"
-  Uma string e
+  Uma string e \ aparenta ser usado para apresetar uma lista de inputs no terminal com determinada cor
   Uma cor.
 
 Um número do ano é um número.
@@ -525,11 +525,11 @@ Um número da linha é um número.
 
 Um região da tela é um par de números com
   Uma coordenada X e
-  Uma coordenada Y.  [indicando o canto superior esquerdo da região da tela]
+  Uma coordenada Y. [canto superior esquerdo da região]
 
 Uma caixa de seleção é uma caixa.
 Um remetente é uma string.
-Um folha é uma caixa. \ Uma folha de papel virtual consiste de um retângulo
+Um folha é uma caixa.
 Um tamanho é[composto de] uns twips.
 Umas vezes é um número.
 Um servidor SMTP é uma string.
@@ -538,9 +538,6 @@ Um subtexto de denominação é um subtexto.
 Um subtexto de consulta é um subtexto.
 Uma ponteiro da localização é um ponteiro [que aponta] para uma localização.
 Um assunto é uma string.
-Um talker é um ponteiro [que aponta] para um talker object.
-Um talker object é uma estrutura com um talker VTable denominado VTable.
-Um talker VTable é um ponteiro [que aponta] para um talker VTable conjunto.
 
 Um terminal é uma lista com
   Uma caixa,
@@ -976,12 +973,58 @@ Um SYSTEMTIME é uma estrutura com \Especifica uma data e hora, usando membros in
   Uma word denominada wSecond, \ O segundo. De 0 a 59.
   Uma word denominada wMilliseconds. \ O milissegundo. De 0 a 999.
 
-Um talker VTable conjunto é uma estrutura com
+\ As linhas abaixo descrevem a estrutura de um objeto "talker" (um sintetizador de voz) 
+\ usando a interface de programação COM (Component Object Model) da Microsoft, 
+\ especificamente no contexto da API de fala (SAPI). Vamos detalhar cada parte:
+
+\ Estruturas e Interfaces
+\ Talker Object:
+\ É uma estrutura que contém um ponteiro para uma tabela de métodos chamada VTable. 
+\ Essa tabela contém as funções que podem ser chamadas para interagir com o objeto.
+\ Talker VTable:
+\ Um ponteiro que aponta para a tabela de métodos do sintetizador de voz. 
+\ Essa tabela contém funções que permitem manipular o objeto, como iniciar a fala, pausar, etc.
+\ Talker:
+\ Um ponteiro que aponta para um objeto sintetizador de voz. 
+\ Isso permite que outras partes do código acessem e utilizem as funcionalidades do objeto.
+\ Talker VTable Conjunto
+\ Este conjunto é uma estrutura que contém os métodos que o objeto "sintetizador de voz" pode implementar. 
+\ Vamos ver os principais métodos:
+
+\ IUnknown:
+\ Métodos básicos para gerenciamento de memória e interface:
+\ QueryInterface: Recupera um ponteiro para uma interface específica.
+\ AddRef: Aumenta a contagem de referências para o objeto.
+\ Release: Diminui a contagem de referências e libera o objeto se a contagem chegar a zero.
+\ ITalker (ou similar):
+\ Métodos específicos para manipulação de eventos e fala:
+\ SetNotifySink, SetNotifyWindowMessage, etc.: Configuram como o objeto notificará eventos.
+\ SetOutput, GetOutputObjectToken, GetOutputStream: Manipulam a saída de áudio.
+\ Speak, SpeakStream: Iniciam a síntese de fala com texto ou fluxo de áudio.
+\ SetVoice, GetVoice: Alteram ou recuperam a voz utilizada na síntese.
+\ SetRate, GetRate, SetVolume, GetVolume: Ajustam a taxa de fala e o volume.
+\ Métodos de Notificação e Controle
+\ Métodos de Notificação:
+\ WaitForNotifyEvent, GetNotifyEventHandle: Para gerenciar eventos de notificação.
+\ Métodos de Controle:
+\ Pause, Resume: Controlam a execução da fala.
+\ WaitUntilDone, SetSyncSpeakTimeout: Gerenciam o tempo de espera para a conclusão da fala.
+\ Métodos de Interface do Usuário:
+\ IsUISupported, DisplayUI: Permitem interações com a interface do usuário, como exibir diálogos.
+
+Um objeto sintetizador de voz é uma estrutura com 
+  Um sintetizador de voz VTable denominado VTable.
+
+Um sintetizador de voz VTable é um ponteiro [que aponta] para um sintetizador de voz VTable.
+
+Um sintetizador de voz é um ponteiro [que aponta] para um objeto sintetizador de voz.
+
+Um sintetizador de voz VTable é uma estrutura com
 \ Documentação: ->  https://learn.microsoft.com/pt-br/previous-versions/windows/desktop/ee413476(v=vs.85)
   \ iunknown
   Um ponteiro denominado QueryInterface,\https://learn.microsoft.com/pt-br/previous-versions/windows/desktop/ms719854(v=vs.85)
   Um ponteiro denominado AddRef,
-  Um ponteiro denominado Release, \ em this:pspvoice out número
+  Um ponteiro denominado Release, \ in this:pspvoice out number
   \ italker -.https://learn.microsoft.com/pt-br/previous-versions/windows/desktop/ms717961(v=vs.85)
   Um ponteiro denominado SetNotifySink,
   Um ponteiro denominado SetNotifyWindowMessage,
@@ -1434,7 +1477,7 @@ O dicionário léxico é uma lista com um catálogo.
 O texto retornado é um texto retornado.
 
 A semente aleatória é um número.
-O talker é um talker.
+O sintetizador de voz é um sintetizador de voz.
 
 O temp endereço completo é um endereço completo.
 
@@ -7532,10 +7575,10 @@ Rotina para que se finalize a área de impressão:
 \Rotina para que se finalize a tela:
 \Rotina para que se finalize o canvas da tela:
 
-Rotina para que se finalize um talker:
-  Se o talker for inexistente, retorne.
-  Processe a release desta VTable deste talker com o talker.
-  Atribua nil ao talker.
+Rotina para que se finalize um sintetizador de voz:
+  Se o sintetizador de voz for inexistente, retorne.
+  Processe a release desta VTable deste sintetizador de voz com o sintetizador de voz.
+  Atribua nil ao sintetizador de voz.
 
 Rotina para que se finalize o janela do programa:
   Processe "user32.dll" "DestroyWindow" com \ Destrói a janela especificada.
@@ -9692,7 +9735,7 @@ Rotina para que se inicialize o canvas da tela:
   Retornando o canvas da tela.
   Normalize o canvas da tela.
 
-Rotina para que se inicialize um talker:
+Rotina para que se inicialize um sintetizador de voz:
   Converta "{96749377-3391-11D2-9EE3-00C04F797396}" [CLSID_SpVoice] para um CLSID.
   Converta "{6C44DF74-72B9-4992-A1EC-EF996E0422D4}" [IID_ISpVoice] para um IID.
   Processe "ole32.dll" "CoCreateInstance" com \ Cria e inicializa um objeto da classe associada para um CLSID especificado
@@ -9705,7 +9748,7 @@ Rotina para que se inicialize um talker:
     \ https://learn.microsoft.com/pt-br/windows/win32/com/localservice
     \ https://learn.microsoft.com/pt-br/windows/win32/com/localserver32
     e O endereçamento deste IID [RefIID riid]
-    e O endereçamento deste talker.[*ppv]
+    e O endereçamento deste sintetizador de voz.[*ppv]
 
 Rotina para que se inicialize a janela do programa:
   Atribua a magnitude [tamanho em bytes] duma WNDCLASS [estrutura] ao cbSize desta classe da janela.
@@ -11617,7 +11660,7 @@ Rotina para que se fale um número:
 Rotina para que se fale uma string;
 Rotina para que se sintetize a fala de uma string:
   Se o aviso de silêncio estiver ativo, retorne.
-  Se o talker for inexistente, retorne.
+  Se o sintetizador de voz for inexistente, retorne.
   Se a string estiver em branco, retorne.
   Converta a string para uma string de caracteres amplos.
   Anexe o caractere NULL após a string de caracteres amplos.
@@ -11634,13 +11677,13 @@ Rotina para que se sintetize a fala de uma string:
 Rotina para que se fale uma string e espere;
 Rotina para que se sintetize a fala de uma string e espere:
   Se o aviso de silêncio estiver ativo, retorne.
-  Se o talker for inexistente, retorne.
+  Se o sintetizador de voz for inexistente, retorne.
   Se a string estiver em branco, retorne.
   Converta a string para uma string de caracteres amplos.
   Anexe o caractere NULL após a string de caracteres amplos.
-  Processe o speak [método speak] desta VTable deste talker com
+  Processe o speak [método speak] desta VTable deste sintetizador de voz com
   \O método Speak inicia a fala de uma string de texto, um arquivo de texto, um arquivo XML ou um arquivo de onda pela voz.
-    O talker
+    O sintetizador de voz
     e O caractere inicial desta string de caracteres amplos
     e 16 [ SVSFDefault Especifica que as configurações padrão devem ser usadas.]
     [SVSFIsNotXML = O texto de entrada não será analisado para marcação XML.]
@@ -12171,7 +12214,7 @@ Rotina para que se desligue:
   \Finalize a tela.
   \Finalize as cores.
   \Finalize o módulo.
-  Finalize o talker.
+  Finalize o sintetizador de voz.
   Finalize gdi+.
   Finalize winsock.
   Finalize o Component Object Model.
@@ -12846,7 +12889,7 @@ Rotina para que se inicialize os componentes:
   Inicialize o Component Object Model.
   Inicialize a infraestrutura WinSock.
   Inicialize gdi+.
-  Inicialize o talker.
+  Inicialize o sintetizador de voz.
   Inicialize o módulo.
   Inicialize as cores.
   Inicialize o tela.
@@ -13087,8 +13130,8 @@ Rotina para que se aguarde até finalizar a narração;
 Rotina para que se aguarde até que a narração esteja finalizada;
 Rotina para que se aguarde até finalizarmos narração;
 Rotina para que se aguarde até que narração esteja concluída:
-  Se o talker for inexistente, retorne.
-  Processe o [método] WaitUntilDone desta VTable [SpVoice] deste talker com o talker e -1.
+  Se o sintetizador de voz for inexistente, retorne.
+  Processe o [método] WaitUntilDone desta VTable [SpVoice] deste sintetizador de voz com o sintetizador de voz e -1.
 
 Rotina para que se selecione o texto em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
