@@ -236,7 +236,7 @@ Um recipiente# é um número.
 Um bit é uma unidade.
 
 Um percorredor é uma estrutura com 
-\ Necessário altrar as rotinas "avance um percorredor" e "recue um percorredor" ao alterar a ordem dos membros desta estrutura
+\ Necessário alterar as rotinas "avance um percorredor" e "recue um percorredor" ao alterar a ordem dos membros desta estrutura
   Um cópia da string original,
   Um segmento final, \ Armazena a última parte da string, porém inicialmente ele é igual à string original
   \ (Ele diminui de tamanho a cada vez que o percorredor é movido)
@@ -297,8 +297,8 @@ Uma contagem é um número.
 Um contador é um número.
 Uma palavra-passe é uma string.
 Um diâmetro é um número.
-Um timeout de envio é um número.
-Um timeout de recepção é um número.
+Um tempo limite de envio é um número.
+Um tempo limite de recepção é um número.
 Um cursor é um número identificador.
 Um relatório é uma string.
 Um relatório de informações é uma string.
@@ -308,7 +308,6 @@ Um relatório de falhas é uma string.
 Um relatório de panes é uma string.
 Um degrau é um número [cujos valores variam entre 0 até 359]. \ grau
 Uma profundidade é [composta de] uns twips.
-Um description é uma string.
 Uma valor da diferença é um par de números.
 
 [ARQUIVOS]
@@ -326,7 +325,7 @@ Uma unidade de rede é uma string. \ é basicamente a cópia da variável anterior. 
 Uma categoria da unidade de disco é uma string. \HD, Pen-drive, Disquete, DVD, etc
 Um nome da unidade de disco é uma string.
 Uma distância é [composta de] uns twips.
-
+Uma descrição de dispositivo é uma string.
 \Um DOCINFO é uma estrutura com
 \Um número denominado cbSize,
 \Um ponteiro denominado lpszDocName,
@@ -335,7 +334,7 @@ Uma distância é [composta de] uns twips.
 \Um número denominado fwtype.
 
 Um ponto circular é uma elipse.
-\Uma elipse é uma estrutura com uma caixa.
+
 Uma elipse é uma estrutura com uma caixa.
 
 Um email é uma estrutura com
@@ -373,7 +372,6 @@ Um par de números fracionários é uma estrutura com
   Uma segunda fração.
 
 Um máximo divisor comum é um número.
-\Uma figura geométrica geométrica é uma figura geométrica.
 Um nome de dll é uma string.
 Um nome de função é uma string.
 Um nome de processo é uma string.
@@ -409,7 +407,6 @@ Um texto hexadecimal é uma string.
 Um número da fonte é um número identificador.
 Um hIcon é um número identificador.
 Um linha reta horizontal é uma linha reta.
-\Um hour é 60 minutes.
 Um hPen é um número identificador.
 Uma hRgn é um número identificador.
 O cursor de digitação é um cursor.
@@ -433,7 +430,7 @@ Um Endereço IP é uma estrutura com
 Um grupo data/hora de criação é uma string.
 
 Um item é uma estrutura com
-  Uma categoria [pasta, arquivo, etc],
+  Uma categoria, [pasta, arquivo, etc]
   Um endereço completo,
   Um endereço da pasta,
   Um designador,
@@ -4820,13 +4817,13 @@ Rotina para que se crie um soquete [ipv4] usando uma host string e um número de 
     Atribua "Erro. Não foi possível estabelecer uma conexão com o soquete informado." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
-  Atribua 30 segundos para um timeout de envio. \ timeout
+  Atribua 30 segundos para um tempo limite de envio. \ timeout
   Processe "ws2_32.dll" "setsockopt" com \ Define as opções do soquete.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winsock/nf-winsock-setsockopt
     O soquete [s]
     e 65535 [0xFFFF = level]
     e 4101 [optname SO_SNDTIMEO 0x00001005]
-    e o endereçamento deste timeout de envio [30 segundos' endereçamento ][*optval]
+    e o endereçamento deste tempo limite de envio [30 segundos' endereçamento ][*optval]
     e 4 [optlen]
   Retornando o número resultante.
   Se o número resultante não for 0 [SOCKET_ERROR ],
@@ -4834,12 +4831,12 @@ Rotina para que se crie um soquete [ipv4] usando uma host string e um número de 
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   \ abra receba timeout 30 segundos
-  Atribua 30 segundos para um timeout de recepção.
+  Atribua 30 segundos para um tempo limite de recepção.
   Processe "ws2_32.dll" "setsockopt" com
     O soquete [s]
     e 65535 [level]
     e 4102 [optname SO_RCVTIMEO  0x00001006]
-    e o endereçamento deste  timeout de recepção [30 segundos' endereçamento] [*optval]
+    e o endereçamento deste  tempo limite de recepção [30 segundos' endereçamento] [*optval]
     e 4 [optlen]
   Retornando o número resultante.
   Se o número resultante não for 0,
@@ -8021,14 +8018,14 @@ Rotina para que se obtenha uma contagem de itens em um endereço completo no sist
     Adicione 1 para a contagem de itens.
   Reitere.
 
-Rotina para que se obtenha uma description por um endereço completo:
-  Limpe a description.
+Rotina para que se obtenha uma descrição de dispositivo por um endereço completo:
+  Limpe a descrição de dispositivo.
   Obtenha um categoria da unidade de disco pelo endereço completo.
-  Atribua a categoria da unidade de disco para a description.
+  Atribua a categoria da unidade de disco para a descrição de dispositivo.
   Obtenha um nome da unidade de disco pelo endereço completo.
   Se o nome da unidade de disco não estiver em branco, 
-    Atribua o nome da unidade de disco para a description.
-  \Lowercase a description. -> aqui põe em minúsculas o path
+    Atribua o nome da unidade de disco para a descrição de dispositivo.
+  \Lowercase a descrição de dispositivo. -> aqui põe em minúsculas o path
 
 Rotina para que se calcule um valor da diferença entre um par de números e um segundo par de números:
   Atribua o par de números à valor da diferença.
