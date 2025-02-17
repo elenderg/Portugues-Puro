@@ -113,7 +113,7 @@ Um milímetro é 1/10 centímetros. \
 Um micrômetro é 1/1000 milímetros.
 Um metro são 100 centímetros. 
 Um quadrado são 1440 unidades numéricas. 
-Um percentual é um número. \ uma escala com 100 no denominador
+Um percentual é um número. \ uma fração cujo denominador é igual a 100
 Uma raiz quadrada é um número.
 Um número fracionário é uma fração.
 Um lado é 1 unidade numérica.
@@ -124,13 +124,10 @@ Uma centena são 10 dezenas.
 Um milhar são 10 centenas.
 Um milhão são 1000 milhares.
 Um bilhão são 1000 milhões.
-\Um millisecond é um número.
 Um ms é 1 milissegundo.
 Um milissegundo é um número.
 \Um grain é 10 milissegundos.
-\Um second é 1000 milliseconds.
 Um segundo são 1000 milissegundos.
-\Um minute é 60 seconds.
 Um minuto são 60 segundos.
 Uma hora são 60 minutos.
 Um dia são 24 horas.
@@ -140,13 +137,10 @@ Uma razão de escala é uma proporção. \ usado em formas geométricas
 Um fator de escala é uma fração. \ usado em caixas de texto
 Um raio é [composto de] uns twips.
 Um número aleatório é um número.
-
 Um par de números racionais é um par de números fracionários.
 Um múltiplo é um número.
 Uma cópia é um número.
 Um intervalo é um número.
-\Um intervalo inicial é um intervalo.
-\Um intervalo total é um intervalo.
 
 Uma caixa de texto é uma lista com
   Uma caixa,
@@ -173,7 +167,7 @@ Uma seleção é uma estrutura com
   Uma número de linha denominada âncora de linha,
   Uma âncora sob a âncora de coluna,
   Um número de coluna denominado cursor da coluna,
-  Um número de linhas do cursor,
+  Um número de linha denominado número de linhas do cursor,
   Um cursor de texto sob o cursor da coluna.
 
 Um sinalizador de quebra de texto é um sinalizador.
