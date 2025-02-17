@@ -1012,12 +1012,14 @@ Um SYSTEMTIME é uma estrutura com \Especifica uma data e hora, usando membros in
 \ Métodos de Interface do Usuário:
 \ IsUISupported, DisplayUI: Permitem interações com a interface do usuário, como exibir diálogos.
 
+Um sintetizador de voz é um ponteiro [que aponta] para um objeto sintetizador de voz.
+
 Um objeto sintetizador de voz é uma estrutura com 
   Um sintetizador de voz VTable denominado VTable.
 
-Um sintetizador de voz VTable é um ponteiro [que aponta] para um sintetizador de voz VTable.
+Um identificador VTable é um ponteiro [que aponta] para um sintetizador de voz VTable.
 
-Um sintetizador de voz é um ponteiro [que aponta] para um objeto sintetizador de voz.
+
 
 Um sintetizador de voz VTable é uma estrutura com
 \ Documentação: ->  https://learn.microsoft.com/pt-br/previous-versions/windows/desktop/ee413476(v=vs.85)
