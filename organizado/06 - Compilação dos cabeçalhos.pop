@@ -225,6 +225,10 @@ Rotina para que se adicione uma unidade semântica para umas unidades semânticas 
   Se a string for "sobre",
     Atribua "sobre" à string desta unidade semântica;
     Retorne.
+  Se a string for "parde", 
+  \ contração de "para" com "de, usada internamente pelo compilador para distinguir a preposição "de" 
+    Atribua "de" à string desta unidade semântica;
+    Retorne.
   \ ------------------------------------------------------------------- DEMAIS CASOS ------------------------------------------------------
   Atribua a string à string desta unidade semântica.
 
@@ -242,7 +246,7 @@ Função para que se determine se um percorredor está sobre alguma preposição cone
 
 Função para que se determine se uma string é alguma preposição especial:
   Se a string for "a", diga sim.
-  \Se a string for "de", diga sim.
+  Se a string for "de", diga sim.
   Diga não.
 
 Rotina para que se compile umas unidades semânticas e uns parâmetros usando um percorredor (artigo indefinido):
