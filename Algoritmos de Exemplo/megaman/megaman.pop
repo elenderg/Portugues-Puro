@@ -1,41 +1,40 @@
 Um sprite é uma imagem.
 
 Rotina para que se crie uns sprites usando um nome do arquivo:
-Atribua o endereço da pasta deste módulo junto com o nome do arquivo em um endereço completo.
-Leia o endereço completo em um trecho.
-Crie uma imagem denominada sprite sheet usando o trecho.
-Pinte o sprite sheet.
-Faça uma caixa denominada caixa grande 720 pixels por 288 pixels.
-Faça uma caixa 144 pixels por 144 pixels.
-Itere.
-  Extraia uma imagem denominada sprite usando a caixa.
-  Centralize o sprite na caixa desta tela.
-  Acrescente o sprite para os sprites.
-  Mova a caixa 144 pixels para a direita.
-  \Escreva "caixa movida para a direita" para StdOut.
-  Escreva o retorno de carro para StdOut.
-  Escreva a quebra de linha para StdOut.
-  Se a caixa estiver na caixa grande, reitere.
-  Mova a caixa para o lado esquerdo de a caixa grande.
-  Mova a caixa 144 pixels para baixo.
-  Se a caixa estiver na caixa grande, reitere.  
-Destrua o sprite sheet.
+  Atribua o endereço da pasta deste módulo junto com o nome do arquivo para um endereço completo.
+  Leia o endereço completo em um trecho.
+  Crie uma imagem denominada sprite sheet usando o trecho.
+  Pinte o sprite sheet.
+  Faça uma caixa denominada caixa grande 720 pixels por 288 pixels.
+  Faça uma caixa 144 pixels por 144 pixels.
+  Itere.
+    Extraia uma imagem denominada sprite usando a caixa.
+    Centralize o sprite na caixa desta tela.
+    Acrescente o sprite para os sprites.
+    Mova a caixa 144 pixels para a direita.
+    Se a caixa estiver na caixa grande, 
+      Reitere.
+    Mova a caixa para o lado esquerdo dessa caixa grande.
+    Mova a caixa 144 pixels para baixo.
+    Se a caixa estiver na caixa grande, 
+      Reitere.
+  Destrua o sprite sheet.
 
 Rotina para que se execute o programa:
-Carregue as bibliotecas padrão do sistema.
-Atribua "sprite sheet.png" para um nome do arquivo.
-Crie uns sprites usando o nome do arquivo.
-Pinte a tela usando a cor branca.
-Itere.
-  Se a Tecla Esc estiver sendo pressionada, pare.
-  Se um sprite for inexistente, 
-    Atribua o primeiro sprite destes sprites ao sprite.
-  Pinte a caixa deste sprite usando a cor preta [na borda] e a cor branca [no preenchimento].
-  Pinte o sprite.
-  Atribua o próximo sprite destas sprites ao sprite.
-  \Aguarde 100 milissegundos.
-  Atualize a tela.
-Reitere.
-Destrua os sprites.
-\Aguarde 1 segundo.
-Feche o programa.
+  Carregue as bibliotecas padrão do sistema.
+  Atribua "sprite sheet.png" para um nome do arquivo.
+  Crie uns sprites usando o nome do arquivo.
+  Pinte a tela usando a cor preta.
+  Itere.
+    Se a Tecla Esc estiver sendo pressionada, pare.
+    Se um sprite for inexistente, 
+      Atribua o primeiro sprite destes sprites ao sprite.
+    Pinte a caixa deste sprite usando a cor branca [na borda] e a cor branca [no preenchimento].
+    Pinte o sprite.
+    Atribua o próximo sprite destas sprites ao sprite.
+    Aguarde 100 milissegundos.
+    Atualize a tela.
+  Reitere.
+  Destrua os sprites.
+  Aguarde pela tecla Esc.
+  Feche o programa.
