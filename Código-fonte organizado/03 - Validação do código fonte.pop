@@ -579,9 +579,9 @@ Função para que se determine se uma string é algum ponteiro literal:
 Função para que se determine se uma string é algum valor numérico literal:
   Se a string estiver em branco, diga não.
   Se o conteúdo deste caractere inicial desta string não for algum indicador numérico, diga não.
-  Se a string é algum número inteiro, diga sim.
-  Se a string é algum fração literal, diga sim.
-  Se a string é algum numeral misto literal, diga sim.
+  Se a string for algum número inteiro, diga sim.
+  Se a string for alguma fração literal, diga sim.
+  Se a string for algum numeral misto literal, diga sim.
   Diga não.
 
 Função para que se determine se uma string é alguma string literal;
@@ -1480,6 +1480,7 @@ Rotina para que se examine uma variável global usando um percorredor (análise de
 
 Função para que se determine se uma string é algum termo de equivalência: \ igual a 
   Se a string for "a", diga sim. 
+  Se a string for "para", diga sim. 
   \Se a string for "que", diga sim.
   Diga não.
 

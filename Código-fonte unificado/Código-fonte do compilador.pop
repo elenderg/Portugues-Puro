@@ -1725,9 +1725,9 @@ Função para que se determine se uma string é algum ponteiro literal:
 Função para que se determine se uma string é algum valor numérico literal:
   Se a string estiver em branco, diga não.
   Se o conteúdo deste caractere inicial desta string não for algum indicador numérico, diga não.
-  Se a string é algum número inteiro, diga sim.
-  Se a string é algum fração literal, diga sim.
-  Se a string é algum numeral misto literal, diga sim.
+  Se a string for algum número inteiro, diga sim.
+  Se a string for alguma fração literal, diga sim.
+  Se a string for algum numeral misto literal, diga sim.
   Diga não.
 
 Função para que se determine se uma string é alguma string literal;
@@ -2626,6 +2626,7 @@ Rotina para que se examine uma variável global usando um percorredor (análise de
 
 Função para que se determine se uma string é algum termo de equivalência: \ igual a 
   Se a string for "a", diga sim. 
+  Se a string for "para", diga sim. 
   \Se a string for "que", diga sim.
   Diga não.
 
@@ -3778,11 +3779,18 @@ Função para que se determine se um percorredor está sobre alguma preposição cone
   Preserve o percorredor.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor for algum artigo, diga sim.
+  Se o segmento inicial deste percorredor for algum número literal, diga sim.
   Diga não.
 
 Função para que se determine se uma string é alguma preposição especial:
   Se a string for "a", diga sim.
   Se a string for "de", diga sim.
+  Diga não.
+
+Função para que se determine se uma string é algum número literal:
+  Se a string for algum valor numérico literal, diga sim.
+  Se a string for algum ponteiro literal, diga sim.
+  Se a string for algum valor hexadecimal literal, diga sim.
   Diga não.
 
 Rotina para que se compile umas unidades semânticas e uns parâmetros usando um percorredor (artigo indefinido):
