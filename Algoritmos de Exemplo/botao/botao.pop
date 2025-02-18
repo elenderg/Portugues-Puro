@@ -4,7 +4,6 @@ Rotina para que se execute o programa:
   Mostre a seta do mouse.
   Faça uma caixa 96 px por 48 px.
   Centralize a caixa sobre a tela.
-  \Faça xyz.
   Itere.
     Desenfileire um evento.
     Se o evento for inexistente, pare.
