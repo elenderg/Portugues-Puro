@@ -486,3 +486,8 @@ Rotina para que se destrinche um tipo (dados opcionais - tipos fracionários):
   Se a razão de escala deste tipo base for 0, retorne.
   Multiplique a razão de escala deste tipo pela razão de escala deste tipo base.
   Atribua o tipo base deste tipo base ao tipo base deste tipo.
+
+\------------------------------------------------------------------------------------------------------------------------------------
+
+
+

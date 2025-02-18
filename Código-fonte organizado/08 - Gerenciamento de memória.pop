@@ -223,3 +223,8 @@ Rotina para que se adicione a rotina de destruição para um tipo (ponteiros):
   Lance a cabeçalho de rotina desta rotina sobre a string do cabeçalho desta rotina.
   Lance as instruções desta rotina sobre a string do corpo desta rotina.
   Compile o cabeçalho próprio à rotina.
+
+\------------------------------------------------------------------------------------------------------------------------------------
+
+
+

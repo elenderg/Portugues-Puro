@@ -58,3 +58,6 @@ Rotina para que se alinhe as variáveis locais em uma rotina:
     Subtraia a quantidade de caracteres desde o deslocamento desta variável local.
     Adicione a quantidade de caracteres para o tamanho local desta rotina.
   Reitere.
+
+\------------------------------------------------------------------------------------------------------------------------------------
+

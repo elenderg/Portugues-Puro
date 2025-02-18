@@ -1632,3 +1632,8 @@ Função para que se determine se uma string termina com algum vogal e uma segunda
   Se o conteúdo deste caractere final deste subtexto não for algum vogal, diga não.
   Se a string não terminar com a segunda string, diga não.
   Diga sim.
+
+\------------------------------------------------------------------------------------------------------------------------------------
+
+
+

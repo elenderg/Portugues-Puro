@@ -247,3 +247,6 @@ Rotina para que se enderece um fragmento usando um endereço (registrador EAX):
     "Código de Erro #176. O tipo '" 
     junto com o nome deste tipo desta variável deste fragmento seguido de 
     "' possui um tamanho inválido. Apenas tipos de 8, 16 ou 32 bits são permitidos.".
+
+\------------------------------------------------------------------------------------------------------------------------------------
+

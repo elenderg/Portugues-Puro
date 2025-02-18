@@ -251,3 +251,8 @@ Rotina para que se compile um valor literal usando um percorredor (números ordin
   Mova o percorredor (usando diretrizes de compilação).
   \Atribua "número" ao nome do tipo deste valor literal.
   Destrinche o valor literal. \ 
+
+\------------------------------------------------------------------------------------------------------------------------------------
+
+
+

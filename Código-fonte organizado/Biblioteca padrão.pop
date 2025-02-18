@@ -21114,3 +21114,7 @@ Rotina para que se divida um número por um segundo número usando um quociente e 
   Decodifique $8903. \ mov [ebx],eax ; -> salva eax no endereço de ebx
   Decodifique $8B9D14000000. \ mov ebx,[ebp+20] ; ->salva o resto (ebp+20) no registrador ebx
   Decodifique $8913. \ mov [ebx],edx ; -> salva o conteúdo de edx no registrador ebx
+
+
+\------------------------------------------------------------------------------------------------------------------------------------
+

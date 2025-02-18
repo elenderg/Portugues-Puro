@@ -377,3 +377,8 @@ Função para que se determine se uma string é alguma contração de preposição com 
   Se a string for "dos", diga sim.
   Se a string for "das", diga sim.
   Diga não.
+
+\------------------------------------------------------------------------------------------------------------------------------------
+
+
+

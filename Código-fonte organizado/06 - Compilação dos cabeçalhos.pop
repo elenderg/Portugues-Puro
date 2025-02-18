@@ -529,3 +529,8 @@ Rotina para que se compile o cabeçalho próprio para uma rotina usando um percorr
       seguido de "' já foi definida anteriormente." e o endereço local desta rotinas;
     Retorne.
   Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
+
+\------------------------------------------------------------------------------------------------------------------------------------
+
+
+

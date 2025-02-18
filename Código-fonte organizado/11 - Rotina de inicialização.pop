@@ -38,3 +38,6 @@ Rotina para que se acrescente os finalizadores de variáveis globais para uma str
     Se o tipo desta variável global não deveria ser finalizado, reitere.
     Acrescente "~Finalize o " junto com o nome desta variável global seguido de ". " para a string.
   Reitere.
+
+\------------------------------------------------------------------------------------------------------------------------------------
+

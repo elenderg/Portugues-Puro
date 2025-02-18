@@ -235,3 +235,6 @@ Rotina para que se disponibilize um fragmento para um trecho:
   Se o código deste fragmento estiver em branco, retorne.
   Atribua o endereço deste fragmento menos o image base para um endereço.
   Disponibilize o código deste fragmento ao trecho sob o endereço.
+
+\------------------------------------------------------------------------------------------------------------------------------------
+

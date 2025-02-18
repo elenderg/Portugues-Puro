@@ -705,3 +705,7 @@ Rotina para que se execute um evento:
   Se a categoria deste evento for "pressionamento de tecla", 
     Renuncie ao controle; 
     Retorne.
+
+\------------------------------------------------------------------------------------------------------------------------------------
+
+
