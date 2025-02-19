@@ -1,0 +1,22 @@
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  Atribua "ABCDEFGHIJKLMNOPQRSTUVWXYZ" para uma string denominada mensagem.
+  Lance um percorredor sobre a mensagem.
+  Escreva "cópia da string original: " junto com a cópia da string original deste percorredor junto com o texto CRLF para StdOut.
+  Itere.
+    Escreva "segmento inicial: " junto com o segmento inicial deste percorredor junto com o texto CRLF para StdOut.
+    Escreva "segmento final: " junto com o segmento final deste percorredor junto com o texto CRLF para StdOut.
+    Avance o percorredor.
+    Se o segmento final deste percorredor estiver em branco, 
+      Escreva "segmento inicial: " junto com o segmento inicial deste percorredor junto com o texto CRLF para StdOut;
+      Escreva "segmento final: " junto com o segmento final deste percorredor junto com o texto CRLF para StdOut;
+      Pare.
+  Reitere.
+  Feche o programa.
+
+
+\Um percorredor é uma estrutura com \ Não se esqueça de alterar as rotinas "avance um percorredor" e "recue um percorredor" se você alterar isso aqui
+  \Um cópia da string original, \ usado para armazenar uma cópia da string original
+  \Um segmento final, \ inicialmente igual à string original, ele armazena a última parte da string (diminuindo, portanto, de tamanho a cada vez que o percorredor é movido)
+  \Um segmento inicial. \ inicialmente vazio, ele armazena a primeira/próxima palavra da string (quando o percorredor é movido)
+
