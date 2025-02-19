@@ -1,7 +1,0 @@
-Rotina para que se execute o programa:
-  Inicialize os componentes.
-  \Limpe a tela.
-  Aguarde 1 segundo.
-  \Aguarde pela Tecla Esc.
-  Desmanche todos os eventos.
-  Feche o programa.
