@@ -10,7 +10,7 @@ Repositório Oficial do Compilador da Linguagem de Programação Português Puro
 Não é necessário qualquer instalação, bastando invocar o compilador através da linha de comando.
 
 ## Uso
-Para compilar um projeto, abra o seu terminal seuindo o modelo constante no exemplo abaixo:
+Para compilar um projeto, abra o seu terminal seguindo o modelo constante no exemplo abaixo:
 
 ```
 C:\path_do_compilador.exe C:\path_do_projeto_a_ser_compilado\
