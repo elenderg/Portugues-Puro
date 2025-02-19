@@ -1,0 +1,41 @@
+O fatorial é um número.
+
+Rotina para que se calcule o fatorial de um número: 
+  Se o número for menor do que 0,
+    Escreva "Aviso. não existe fatorial de número negativo " junto com o texto CRLF para StdOut;
+    Retorne.
+  Atribua 1 para o fatorial.
+  Se o número for menor do que 2, 
+    Atribua 1 para o fatorial;
+    Retorne.
+  Atribua 2 para um número denominado contador.
+  Itere.
+    Multiplique o fatorial pelo contador.
+    Incremente o contador.
+    Se o contador for maior do que o número, pare.
+  Reitere.
+
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  \Calcule o fatorial de 10.
+  \Escreva o fatorial junto com o texto CRLF para Stdout.
+  Feche o programa.
+
+
+Função para que se determine se um número é primo:
+  Atribua 0 para um número denominado raiz quadrada.
+  Se o número for menor ou igual a 1,
+    Diga não.
+  Se o número for igual a 2,
+    Diga sim.
+  Se o número for uniformemente divisível por 2,
+    Diga não.
+  Atribua 3 para um número denominado contador.
+  Declare um número denominado raiz quadrada.
+  Encontre a raiz quadrada referente ao número.
+  Itere.
+    Se o contador for igual ou maior do que a raiz quadrada, pare.
+    Se o número for uniformemente divisível pelo contador, diga não.
+    Atribua o contador mais 2 para o contador.
+  Reitere.
+  Diga sim
