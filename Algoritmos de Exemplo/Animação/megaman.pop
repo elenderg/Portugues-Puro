@@ -17,7 +17,7 @@ Rotina para que se execute o programa:
     Atualize a tela.
   Reitere.
   Destrua os sprites.
-  Aguarde pela tecla Esc.
+  \Aguarde pela tecla Esc.
   Feche o programa.
 
 Rotina para que se crie uns sprites usando um nome do arquivo:

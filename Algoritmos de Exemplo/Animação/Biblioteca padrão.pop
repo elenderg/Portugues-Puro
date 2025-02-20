@@ -8664,8 +8664,9 @@ Rotina para que se obtenha uma largura usando um número e uns larguras de fonte:
 
 Rotina para que se obtenha uma largura usando uma string e um canvas:
   \ presume que a fonte já esteja selecionada no canvas
-  Processe "gdi32.dll" "GetTextExtentPoint32A" com \ Calcula a largura e a altura da seqüência de caracteres de texto especificada.
-  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-gettextextentpoint32a
+  Processe "gdi32.dll" "GetTextExtentPoint32A" com 
+  \ Calcula a largura e a altura de uma seqüência de caracteres.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-GetTextExtentPoint32A
     O canvas [hdc]
     e O caractere inicial desta string [lpString]
     e A quantidade de caracteres desta string [c]
