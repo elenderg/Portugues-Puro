@@ -3,47 +3,39 @@ Um sprite é uma imagem.
 Rotina para que se execute o programa:
   Carregue as bibliotecas padrão do sistema.
   Atribua "sprite sheet.png" para um nome do arquivo.
-  Crie uns sprites usando o nome do arquivo.
+  Crie uma lista de sprites usando o nome do arquivo.
   Pinte a tela usando a cor branca.
   Itere.
     Se a Tecla Esc estiver sendo pressionada, 
       Pare.
-    Pegue um sprite desses sprites.
+    Pegue um sprite dessa lista de sprites.
     Se o sprite for inexistente,
-      Atribua o primeiro sprite destes sprites ao sprite.
+      Atribua o primeiro sprite desta lista de sprites ao sprite.
     Pinte a caixa deste sprite usando a cor branca e a cor branca.
     Pinte o sprite.
     Aguarde 1/15 segundo.
     Atualize a tela.
   Reitere.
-  Destrua os sprites.
+  Destrua a lista de sprites.
   Feche o programa.
 
-Rotina para que se crie uns sprites usando um nome do arquivo:
+Rotina para que se crie uma lista de sprites usando um nome do arquivo:
   Atribua o endereço da pasta deste módulo junto com o nome do arquivo para um endereço completo.
   Leia o endereço completo em um trecho.
-  Crie uma imagem denominada sprite sheet usando o trecho.
-  Pinte o sprite sheet.
-  \Faça uma caixa denominada caixa grande 7+1/2 polegadas por 3 polegadas.
+  Crie uma imagem denominada folha de sprites usando o trecho.
+  Pinte a folha de sprites.
   Faça uma caixa denominada caixa grande 720 pixels por 288 pixels.
-  \Faça uma caixa 1+1/2 polegadas por 1+1/2 polegadas.
   Faça uma caixa denominada quadro 144 pixels por 144 pixels.
   Itere.
     Extraia uma imagem denominada sprite usando o quadro.
     Centralize o sprite no meio da tela.
-    \Escreva "centralizou" junto com o texto CRLF para StdOut.
-    Acrescente o sprite para os sprites.
+    Acrescente o sprite para a lista de sprites.
     Mova o quadro 144 pixels para a direita.
-    \Escreva "Moveu pra direita" junto com o texto CRLF para StdOut.
     Se o quadro estiver na caixa grande,
-      \Escreva "Reitere 1" junto com o texto CRLF para StdOut;
       Reitere.
     Mova o quadro para o lado esquerdo dessa caixa grande.
-    \Escreva "Moveu pra esquerda" junto com o texto CRLF para StdOut.
     Mova o quadro 144 pixels para baixo.
-    \Escreva "Moveu pra baixo" junto com o texto CRLF para StdOut.
     Se o quadro estiver na caixa grande,
-      \Escreva "Reitere 2" junto com o texto CRLF para StdOut;
       Reitere.
-  Destrua o sprite sheet.
+  Destrua a folha de sprites.
 
