@@ -9287,7 +9287,8 @@ Rotina para que se oculte o cursor:
   Reitere.
 
 Rotina para que se imagine uma caixa uns twips por uns outros twips;
-Rotina para que se faça uma caixa usando uns twips por uns outros twips:
+Rotina para que se faça uma caixa com uns twips por uns outros twips;
+\Rotina para que se faça uma caixa usando uns twips por uns outros twips;
 Rotina para que se faça uma caixa uns twips por uns outros twips:
   Atribua 0 à coordenada X1 desta caixa.
   Atribua 0 à coordenada Y1 desta caixa.

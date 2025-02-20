@@ -24,8 +24,8 @@ Rotina para que se crie uma lista de sprites usando um nome do arquivo:
   Coloque o endereço completo em um trecho.
   Crie uma imagem denominada folha de sprites usando o trecho.
   Pinte a folha de sprites.
-  Faça uma caixa denominada caixa grande 720 pixels por 288 pixels.
-  Faça uma caixa denominada quadro 144 pixels por 144 pixels.
+  Faça uma caixa denominada caixa grande com 720 pixels [de largura] por 288 pixels [de altura].
+  Faça uma caixa denominada quadro com 144 pixels  [de largura] por 144 pixels [de altura].
   Itere.
     Extraia uma imagem denominada sprite usando o quadro.
     Centralize o sprite no meio da tela.
