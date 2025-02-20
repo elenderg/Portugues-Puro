@@ -21,7 +21,7 @@ Rotina para que se execute o programa:
 
 Rotina para que se crie uma lista de sprites usando um nome do arquivo:
   Atribua o endereço da pasta deste módulo junto com o nome do arquivo para um endereço completo.
-  Leia o endereço completo em um trecho.
+  Coloque o endereço completo em um trecho.
   Crie uma imagem denominada folha de sprites usando o trecho.
   Pinte a folha de sprites.
   Faça uma caixa denominada caixa grande 720 pixels por 288 pixels.

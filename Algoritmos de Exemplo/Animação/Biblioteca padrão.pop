@@ -13905,6 +13905,7 @@ Rotina para que se atualize o cursor:
   Enfileire o evento.
 
 Rotina para que se atribua um endereço completo para um trecho;
+Rotina para que se coloque um endereço completo para um trecho;
 Rotina para que se carregue um endereço completo para um trecho;
 Rotina para que se leia um endereço completo para um trecho:
   Limpe o erro do fluxo de entrada/saída.
