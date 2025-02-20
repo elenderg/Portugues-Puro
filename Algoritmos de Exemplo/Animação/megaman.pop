@@ -10,10 +10,8 @@ Rotina para que se execute o programa:
       Pare.
     Obtenha um sprite desde os sprites.
     Se o sprite for inexistente,
-      \Escreva "sprite nulo" junto com o texto CRLF para StdOut;
       Atribua o primeiro sprite destes sprites ao sprite.
     Pinte a caixa deste sprite usando a cor branca e a cor branca.
-    \Atribua o próximo sprite destes sprites ao sprite.
     Pinte o sprite.
     Aguarde 1/15 segundo.
     Atualize a tela.

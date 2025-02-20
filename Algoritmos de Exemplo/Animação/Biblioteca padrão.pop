@@ -4970,12 +4970,12 @@ Rotina para que se de-sign um número:
   Se o número for menor do que 0, 
     Inverta o sinal desse número.
 
-Rotina para que se  remova o sinal desde um par de números;
+Rotina para que se remova o sinal desde um par de números;
 Rotina para que se de-sign um par de números:
   Remova o sinal desde o número X deste par de números.
   Remova o sinal desde o número Y deste par de números.
 
-Rotina para que se  remova o sinal desde uma string;
+Rotina para que se remova o sinal desde uma string;
 Rotina para que se de-sign uma string:
   Se a string estiver em branco, retorne.
   Se o conteúdo deste caractere inicial desta string for algum sinal aritmético, 
@@ -8613,16 +8613,16 @@ Rotina para que se obtenha uma string desde a área de transferência do Windows:
   Processe "user32.dll" "CloseClipboard".
 
 Rotina para que se obtenha uma lista desde umas listas:
-  Se  as listas estiverem vazias,
+  Se as listas estiverem vazias,
     Esvazie a lista;
     Retorne.
   Se a lista for inexistente,
     Atribua a lista inicial destas listas à lista;
     Retorne.
-  Atribua o lista posterior desta lista à lista.
+  Atribua a lista posterior desta lista à lista.
 
 Rotina para que se obtenha uma lista desde umas listas (regressivamente):
-  Se  as listas estiverem vazias,
+  Se as listas estiverem vazias,
     Esvazie a lista;
     Retorne.
   Se a lista for inexistente,
