@@ -8612,6 +8612,10 @@ Rotina para que se obtenha uma string desde a área de transferência do Windows:
     O número identificador. [hMem]
   Processe "user32.dll" "CloseClipboard".
 
+Rotina para que se obtenha uma lista a partir de umas listas;
+Rotina para que se pegue uma lista de umas listas;
+Rotina para que se pegue uma lista desde umas listas;
+Rotina para que se obtenha uma lista de umas listas;
 Rotina para que se obtenha uma lista desde umas listas:
   Se as listas estiverem vazias,
     Esvazie a lista;
