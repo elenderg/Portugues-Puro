@@ -101,7 +101,7 @@ Um px são 15 twips.
 \Uns pxs são 15 twips.
 \Um píxel são 15 twips.
 \Um inch são 1440 twips.
-Uma polegada é 1440 twips. \  56,7
+Uma polegada são 1440 twips. \  56,7
 
 Uma unidade numérica é um número.
 Um kilobyte são 1024 unidades numéricas.
@@ -3098,7 +3098,7 @@ Rotina para que se acrescente umas listas para umas outras listas:
     Atribua a lista inicial destas listas para uma lista.
     Se a lista for inexistente, retorne.
     Remova a lista desde as listas.
-    Acrescente a lista para a outras listas.
+    Acrescente a lista para as outras listas.
   Reitere.
 
 \acrescente
@@ -5161,10 +5161,10 @@ Função para que se determine se uma caixa é uma segunda caixa:
 
 Função para que se determine se uma caixa está em uma segunda caixa;
 Função para que se determine se uma caixa está dentro de uma segunda caixa:
-  Se a coordenada X1 desta caixa for menor que a coordenada X1 desta segunda caixa, diga não.
-  Se a coordenada Y1 desta caixa for menor que a coordenada Y1 desta segunda caixa, diga não.
-  Se a coordenada X2 desta caixa for maior que a coordenada X2 desta segunda caixa, diga não.
-  Se a coordenada Y2 desta caixa for maior que a coordenada Y2 desta segunda caixa, diga não.
+  Se a coordenada X1 desta caixa for menor do que a coordenada X1 desta segunda caixa, diga não.
+  Se a coordenada Y1 desta caixa for menor do que a coordenada Y1 desta segunda caixa, diga não.
+  Se a coordenada X2 desta caixa for maior do que a coordenada X2 desta segunda caixa, diga não.
+  Se a coordenada Y2 desta caixa for maior do que a coordenada Y2 desta segunda caixa, diga não.
   Diga sim.
 
 Função para que se determine se uma caixa está tocando uma segunda caixa:
@@ -6623,7 +6623,7 @@ Rotina para que se destrua uma requisição WinHTTP:
     O número identificador de requisição [hInternet] desta requisição WinHTTP.
   Processe "winhttp.dll" "WinHttpCloseHandle" com o número identificador de conexão [hInternet] desta requisição WinHTTP.
   Processe "winhttp.dll" "WinHttpCloseHandle" com o número identificador de sessão [hInternet] deste número identificador de requisição desta requisição WinHTTP.
-  Deallocate a requisição WinHTTP.
+  Desaloque a requisição WinHTTP.
 
 Rotina para que se divida uma fração por uma segunda fração:
   Preserve a segunda fração.
@@ -8619,7 +8619,7 @@ Rotina para que se obtenha uma lista desde umas listas:
   Se a lista for inexistente,
     Atribua a lista inicial destas listas à lista;
     Retorne.
-  Atribua o lista posterior desta lista à lista.
+  Atribua a lista posterior desta lista à lista.
 
 Rotina para que se obtenha uma lista desde umas listas (regressivamente):
   Se  as listas estiverem vazias,
@@ -9282,7 +9282,6 @@ Rotina para que se oculte o cursor:
   Reitere.
 
 Rotina para que se imagine uma caixa uns twips por uns outros twips;
-Rotina para que se faça uma caixa usando uns twips por uns outros twips:
 Rotina para que se faça uma caixa uns twips por uns outros twips:
   Atribua 0 à coordenada X1 desta caixa.
   Atribua 0 à coordenada Y1 desta caixa.
@@ -18070,7 +18069,6 @@ Rotina para que se mova uma caixa para a esquerda para uma coordenada:
 
 Rotina para que se mova uma caixa para o lado esquerdo de uma segunda caixa;
 Rotina para que se mova uma caixa para a esquerda de uma segunda caixa:
-  \ Move the box left the box's left minus the other box's left.
   Mova a caixa para a esquerda a coordenada X1 desta caixa menos a coordenada X1 desta segunda caixa.
 
 Rotina para que se mova uma caixa uns twips para a esquerda;
@@ -20940,7 +20938,6 @@ Função para que se determine se um número é um segundo número:
   Decodifique $C7C000000000. \ mov eax,0 \ now it is false
 
 Função para que se determine se um ponteiro é maior do que um segundo ponteiro;
-Função para que se determine se um número é maior que um segundo número;
 Função para que se determine se um número é maior do que um segundo número:
   Decodifique $C7C001000000. \ mov eax,1 \ presume que o número seja maior logo de começo
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o número
