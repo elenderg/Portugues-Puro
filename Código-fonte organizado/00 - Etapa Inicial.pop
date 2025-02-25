@@ -460,6 +460,7 @@ Rotina para que se execute o programa:
   Inicialize os componentes.
   \Inicialize o compilador.
   Faça tudo.
+  Se o tipo da aplicação for "debug", Liste tudo.
   Finalize o compilador.
   Escreva na próxima linha em StdOut.
   Escreva "Operação finalizada." junto com o texto CRLF para StdOut.

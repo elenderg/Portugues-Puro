@@ -687,8 +687,14 @@ Rotina para que se compile um termo usando um percorredor (cláusula de redirecio
     Retorne.
   Se o tipo do conteúdo deste tipo deste termo for inexistente,
     Apresente a mensagem de erro contendo 
-      "Código de Erro #103. O tipo do conteúdo do termo '" \ MODIFICADO - TESTAR
-      junto com a frase deste termo seguido de "' não foi encontrado."junto com o texto CRLF e o percorredor; 
+      "Código de Erro #103. O identificador '"
+      junto com a frase deste termo seguido de 
+      "' refere-se a um ponteiro que não possui um tipo de dado definido." junto com o texto CRLF junto com
+      "Certifique-se de que todos os ponteiros estejam associados a um tipo de dado válido antes de usá-los." junto com 
+      "Verifique a linha que contém a implementação deste ponteiro e atribua um tipo de dado para o qual ele aponta." junto com o texto CRLF junto com
+      "Um ponteiro deve apontar para um tipo específico, como um número. Exemplo: " junto com o texto CRLF junto com o texto CRLF 
+      junto com a frase deste termo junto com  " é um ponteiro [que aponta] PARA um <tipo de dado>."
+      junto com o texto CRLF  junto com o texto CRLF e o percorredor; 
     Retorne.
   Se a categoria deste termo for "variável temporária de compilação",
     Compile o termo usando o percorredor (redirecionamentos de endereços - campos de estruturas);
