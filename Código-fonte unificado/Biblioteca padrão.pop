@@ -6196,8 +6196,6 @@ Função para que se determine se uma string é algum numeral misto literal:
   Se a subtexto fracionário não for alguma fração literal, diga não.
   Diga sim.
 
-
-
 Função para que se determine se uma string é algum sinal aritmético:
   Se a quantidade de caracteres desta string não for 1, diga não.
   Se o conteúdo deste caractere inicial desta string for algum sinal aritmético, diga sim.
