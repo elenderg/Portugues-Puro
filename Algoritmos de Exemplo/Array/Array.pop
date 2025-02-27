@@ -1,0 +1,103 @@
+Rotina para que se execute o programa:
+  Defina "console" como o tipo da aplicação.
+  Crie um array de números com 100 elementos.
+  Atribua 2 para o índice 1 no array de números.
+  Atribua 1 no array de números para o índice 1.
+  Atribua 50 no array de números para o índice 50.
+  Atribua 99 no array de números para o índice 99.
+  Atribua 100 no array de números para o índice 100.  
+  Obtenha um segundo número desde o array de números para o índice 50.
+  Obtenha um terceiro número desde o array de números para o índice 100.
+  Atribua o último índice desde o array de números para um quarto número.
+  Atribua o primeiro índice desde o array de números para um quinto número.  
+  Escreva "índice 100: " junto com o terceiro número junto com o texto CRLF para StdOut.
+  Escreva "índice 50: " junto com o segundo número junto com o texto CRLF para StdOut.
+  Escreva "valor do último índice: " junto com o quarto número junto com o texto CRLF para StdOut.
+  Escreva "valor do primeiro índice: " junto com o quinto número junto com o texto CRLF para StdOut.
+  Destrua o array de números.
+  Feche o programa.
+
+\\\\\\\\\\\\\\\\\\ Implementação do Array \\\\\\\\\\\\\\\\\\\\
+
+Um array de números é uma estrutura com 
+  Um ponteiro denominado primeiro elemento e
+  Um número denominado tamanho.
+
+Uma posição é um número.
+
+Uma quantidade de elementos é um número.
+Uns elementos são 1 quantidade de elementos.
+
+Rotina para que se crie um array de números com uma quantidade de elementos:
+  Atribua a magnitude dum número vezes a quantidade de elementos para um tamanho.
+  \Adicione 4 para o tamanho.
+  Associe o primeiro elemento deste array de números usando o tamanho. \ alocar 
+  Atribua a quantidade de elementos  ao tamanho deste array de números.
+
+Rotina para que se destrua um array de números:
+  Desassocie o primeiro elemento deste array de números. \ liberar 
+
+Rotina para que se apresente a mensagem de erro:
+  Escreva "Erro: Índice Fora dos Limites." junto com o texto CRLF junto com 
+    "Parece que você tentou acessar um item que não está disponível." junto com o texto CRLF junto com 
+    " Isso pode ocorrer por um dos seguintes motivos:" 
+    junto com o texto CRLF  junto com o texto CRLF junto com 
+    " O índice que você inseriu é negativo ou igual a zero." junto com o texto CRLF junto com
+    " O índice excede o tamanho da lista ou array." 
+      junto com o texto CRLF junto com o texto CRLF junto com 
+    "Por favor, verifique o índice que você está tentando usar e tente novamente." junto com o texto CRLF para STDOUT.
+    
+
+Rotina para que se obtenha um número desde um array de números para o índice uma posição:
+  Se a posição for menor do que ou igual a 0,
+    Apresente a mensagem de erro;
+    Destrua o array de números;
+    Feche o programa.
+  Se a posição for maior do que o tamanho deste array de números,
+    Apresente a mensagem de erro;
+    Destrua o array de números;
+    Feche o programa.
+  Subtraia 1 desde a posição.
+  Atribua a posição vezes a magnitude deste número  para um número denominado deslocamento.
+  Atribua o primeiro elemento deste array de números para um endereço numérico denominado índice.
+  Adicione o deslocamento ao índice.
+  Atribua o conteúdo deste índice ao número.
+
+Rotina para que se atribua um número em um array de números para o índice uma posição:
+  Escreva "rotina 1. posição: " junto com a posição junto com ". valor: " junto com o número junto com o texto CRLF para StdOut.
+  Se a posição for menor do que ou igual a 0,
+    Apresente a mensagem de erro;
+    Destrua o array de números;
+    Feche o programa.
+  Se a posição for maior do que o tamanho deste array de números,
+    Apresente a mensagem de erro;
+    Destrua o array de números;
+    Feche o programa.
+  Subtraia 1 desde a posição.
+  Atribua a posição vezes a magnitude deste número para um número denominado deslocamento.
+  Atribua o primeiro elemento deste array de números para um endereço numérico denominado índice.
+  Adicione o deslocamento ao índice.
+  Atribua o número para o conteúdo deste índice.
+
+Rotina para que se atribua um número para o índice uma posição para um array de números:
+  Escreva "rotina 2. posição: " junto com a posição junto com ". valor: " junto com o número junto com o texto CRLF para StdOut.
+  Se a posição for menor do que ou igual a 0,
+    Apresente a mensagem de erro;
+    Destrua o array de números;
+    Feche o programa.
+  Se a posição for maior do que o tamanho deste array de números,
+    Apresente a mensagem de erro;
+    Destrua o array de números;
+    Feche o programa.
+  Subtraia 1 desde a posição.
+  Atribua a posição vezes a magnitude deste número para um número denominado deslocamento.
+  Atribua o primeiro elemento deste array de números para um endereço numérico denominado índice.
+  Adicione o deslocamento ao índice.
+  Atribua o número para o conteúdo deste índice.
+
+Rotina para que se atribua o último índice desde um array de números para um número:
+  Obtenha o número desde o array de números para o índice o tamanho deste array de números.
+
+Rotina para que se atribua o primeiro índice desde um array de números para um número:
+  Atribua o primeiro elemento deste array de números para um endereço numérico.
+  Atribua o conteúdo deste  endereço numérico para o número.
