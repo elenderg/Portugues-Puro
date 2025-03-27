@@ -2267,7 +2267,7 @@ A canetinha preto é uma canetinha.
 A canetinha rosa é uma canetinha.
 
 \CANETAS EXTRAS
-O tan canetinha é uma canetinha.
+A canetinha bege é uma canetinha.
 A canetinha púrpura é uma canetinha.
 A canetinha dourado é uma canetinha.
 
@@ -9612,8 +9612,7 @@ Rotina para que se inicialize as fontes:
     \e O endereçamento dum número [*pNumFonts]
   \Retornando o recurso de fonte Tahoma.
   \Atribua "Segoe UI" e 1/6 polegada à fonte padrão.
-  \Atribua "Osmosian" e 24 pixels à fonte padrão.
-  Atribua "Lexend" e 24 pixels à fonte padrão.
+  Atribua "Osmosian" e 24 pixels à fonte padrão.
   \Atribua "Tahoma" e 20 pixels à fonte padrão.
   \ stroked fontes abaixo
   Atribua 12 pixels ao tamanho de letra pequena.
@@ -9766,7 +9765,7 @@ Rotina para que se inicialize a janela do programa:
     0 [dwExStyle] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/winmsg/extended-window-styles
     e O caractere inicial deste nome deste módulo [lpClassName]
     e O caractere inicial deste nome deste módulo  [lpWindowName]
-    e -2147483648 \2147483648 [dwStyle]  [-2147483648 = WS_POPUP 0x80000000]
+    e 2147483648 \2147483648 [dwStyle]  [-2147483648 = WS_POPUP 0x80000000]
     [13565952  WS_OVERLAPPEDWINDOW 0x00CF0000]
     \ Consulte https://www.autoitscript.com/autoit3/docs/appendix/GUIStyles.htm
     \ https://www.magnumdb.com/ . Para uma janela padrão, use o valor 13565952
@@ -13707,6 +13706,7 @@ Rotina para que se pinte uma string com uma cor:
   Atribua a cor à cor deste contexto.
   Pinte a string.
 
+Rotina para que se escreva uma string com uma cor na parte inferior de uma caixa;
 Rotina para que se escreva uma string com uma cor sob a base de uma caixa;
 Rotina para que se pinte uma string com uma cor sob a base de uma caixa:
   Atribua a tamanho da letra deste contexto dividido por 4 para um tamanho do quadrado. \ ***
@@ -17792,7 +17792,6 @@ Rotina para que se escolha aleatoriamente uma localização em uma caixa uns twips
   Atribua a coordenada Y1 desta bounding caixa mais os outros twips à coordenada Y2 desta bounding caixa.
   Escolha aleatoriamente a localização na bounding caixa.
 
-Rotina para que se escolha aleatoriamente uma localização dentre uma distância de uma segunda localização;
 Rotina para que se escolha aleatoriamente uma localização dentre uma distância em uma segunda localização:
   Escolha aleatoriamente a coordenada X desta localização dentre a distância em a coordenada X desta segunda localização.
   Escolha aleatoriamente a coordenada Y desta localização dentre a distância em a coordenada Y desta segunda localização.
@@ -19732,7 +19731,7 @@ Rotina para que se inicialize as cores:
   Atribua a cor rosa muito escuro à canetinha rosa muito escuro.
   Atribua a cor rosa escuríssimo à canetinha rosa escuríssimo.
   \ special cor pincels
-  Atribua a cor de pele ao tan canetinha.
+  Atribua a cor de pele ao canetinha bege.
   Atribua a cor marrom à canetinha marrom.
   Atribua a cor marrom escuro à canetinha marrom escuro.
   Atribua a cor marrom muito escuro à canetinha marrom muito escuro.

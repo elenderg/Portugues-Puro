@@ -1,0 +1,208 @@
+\Os Tipos de Dados
+
+\Comecei definindo um tipo de registro vinculável para as células:
+
+Uma célula vazia é uma célula.
+
+Uma célula é uma lista com
+  Uma caixa,
+  Um número e 
+  Um sinalizador denominado sinalizador de preenchimento.
+
+\Variável Global do sudoku
+
+\Definimos uma variável global como uma âncora para minha lista vinculada de células:
+
+O sudoku é [composto de] umas células.
+
+\A Rotina “Principal”
+
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  Use letras de tamanho médio.
+  Limpe a tela usando a cor laranja claríssimo.
+  Crie o sudoku.
+  Preencha o sudoku com "004103800708000601030080040390050062005030900280090073010060080803000104007908300".
+  Pinte o sudoku.
+  Escreva "Pressione ENTER para solucionar o sudoku." com a cor preta na parte inferior dessa caixa desta tela.
+  Atualize a tela.
+  Aguarde a tecla Enter.
+  Limpe a tela usando a cor laranja claríssimo.
+  Solucione o sudoku.
+  Pinte o sudoku.
+  \Exiba a mensagem "Solucionado!".
+  Escreva "Solucionado!" com a cor preta na parte inferior dessa caixa desta tela.
+  Atualize a tela.
+  Aguarde a tecla Esc.
+  Destrua o sudoku.
+  Feche o programa.
+
+\As sub-rotinas de Criar e Preencher
+
+Rotina para que se crie o sudoku:
+  Faça uma caixa denominada caixa grande 9 polegadas por 9 polegadas.
+  Centralize a caixa grande na tela.
+  Faça uma caixa 1 polegada por 1 polegada.
+  Mova a caixa para o canto superior esquerdo desta caixa grande.
+  Itere.
+    Aloque memória para uma célula. 
+    Acrescente a célula ao sudoku.
+    Atribua a caixa à caixa desta célula.
+    Mova a caixa 1 polegada para a direita.
+    Se a caixa estiver na caixa grande, reitere.
+    Mova a caixa para o lado esquerdo dessa caixa grande.
+    Mova a caixa 1 polegada para baixo.
+    Se a caixa estiver na caixa grande, reitere.
+
+Rotina para que se preencha o sudoku com uma string:
+  Preserve a string.
+  Itere.
+    Se a string estiver em branco, pare.
+    Obtenha uma célula desde o sudoku.
+    Obtenha um byte desde a string.
+    Se o byte menos 48 não estiver entre 1 e 9, 
+      Atribua 0 para o número desta célula;
+      Reitere.
+    Se a célula for inexistente, pare.
+    Atribua o byte menos 48 ao número desta célula.
+    Ative o sinalizador de preenchimento desta célula.
+  Reitere.
+
+\As sub-rotinas de criação de caixa 
+
+\Para que se obtermos uma caixa para o sudoku inteiro, encontramos as menores coordenadas de cada uma das células:
+
+Rotina para que se atribua a caixa do sudoku para uma caixa:
+  Atribua o maior número para uma coordenada denominado esquerda.
+  Atribua o maior número para uma coordenada denominado topo.
+  Atribua o menor número para uma coordenada denominado direita.
+  Atribua o menor número para uma coordenada denominado base.
+  Itere.
+    Obtenha uma célula desde o sudoku.
+    Se a célula for inexistente, pare.
+    Se a coordenada X1 desta célula for menor do que a esquerda,
+      Atribua a coordenada X1 desta célula para a esquerda.
+    Se o coordenada Y1 desta célula for menor do que o topo,
+      Atribua o coordenada Y1 desta célula para o topo.
+    Se a coordenada X2 desta célula for maior do que a direita,
+      Atribua a coordenada X2 desta célula para a direita.
+    Se a coordenada Y2 desta célula for maior do que a base,
+      Atribua a coordenada Y2 desta célula para a base.
+  Reitere.
+  Faça a caixa usando a esquerda e o topo e a direita e a base.
+
+\Para obter uma caixa para a linha inteira de uma célula, fazemos isso:
+
+Rotina para que se atribua a linha duma célula para uma caixa:
+  Atribua a caixa desta célula à caixa.
+  Atribua a coordenada X1 desta caixa deste sudoku à coordenada X1 desta caixa.
+  Atribua a coordenada X2 desta caixa deste sudoku à coordenada X2 desta caixa.
+
+\Para obter uma caixa para a coluna inteira de uma célula, fazemos isso:
+
+Rotina para que se atribua a coluna duma célula para uma caixa:
+  Atribua a caixa desta célula para a caixa.
+  Atribua o coordenada Y1 desta caixa deste sudoku para o coordenada Y1 desta caixa.
+  Atribua a coordenada Y2 desta caixa deste sudoku para a coordenada Y2 desta caixa.
+
+\Para obter uma caixa para um bloco 9x9 de uma célula, fazemos isso:
+
+Rotina para que se atribua o bloco duma célula para uma caixa:
+  Atribua a caixa do sudoku para a caixa.
+  Atribua a coordenada X1 desta célula menos a coordenada X1 desta caixa dividido por 3 polegadas para um número denominado deslocamento.
+  Multiplique o deslocamento por 3 polegadas.
+  Adicione o deslocamento para a coordenada X1 desta caixa.
+  Atribua o coordenada Y1 desta célula menos o coordenada Y1 desta caixa dividido por 3 polegadas no deslocamento.
+  Multiplique o deslocamento por 3 polegadas.
+  Adicione o deslocamento para o coordenada Y1 desta caixa.
+  Atribua a coordenada X1 desta caixa mais 3 polegadas para a coordenada X2 desta caixa.
+  Atribua o coordenada Y1 desta caixa mais 3 polegadas para a coordenada Y2 desta caixa.
+
+\Subrotinas booleanas
+
+Rotina para que se determine se um número é válido em uma célula:
+  Se o número estiver na linha desta célula, diga não.
+  Se o número estiver na coluna desta célula, diga não.
+  Se o número estiver no bloco desta célula, diga não.
+  Diga sim.
+
+Rotina para que se determine se um número está em uma caixa:
+  [Itere.]
+    Obtenha uma célula desde o sudoku.
+    Se a célula for inexistente, diga não.
+    Se a caixa desta célula não estiver na caixa, reitere.
+    Se o número desta célula for o número, diga sim.
+  Reitere.
+
+Rotina para que se determine se uma célula está vazia:
+  Se o número desta célula for 0, diga sim.
+  Diga não.
+
+Rotina para que se determine se uma célula está cheia:
+  Se o número desta célula não for 0, diga sim.
+  Diga não.
+
+Rotina para que se determine se uma célula pode conter um número:
+  Se a célula estiver cheia, diga não.
+  Diga sim.
+
+Rotina para que se determine se o sudoku está solucionado:
+  [Itere.]
+    Obtenha uma célula desde o sudoku.
+    Se a célula for inexistente, diga sim. \ se não houver mais células
+    Se o número desta célula não estiver entre 1 e 9, diga não.
+  Reitere.
+
+\Rotinas de desenho
+
+Rotina para que se pinte o sudoku:
+  Use a canetinha grossa.
+  Itere.
+    Obtenha uma célula desde o sudoku.
+    Se a célula for inexistente, pare.
+    Pinte a célula.
+    Pinte o bloco desta célula com a canetinha marrom escuro.
+  Reitere.
+  Atualize a tela.
+
+Rotina para que se pinte uma célula:
+  Pinte a caixa desta célula com a canetinha laranja muito claro e a canetinha bege.
+  Se o número desta célula for 0, retorne.
+  Atribua "Brush Script MT" e 3/4 polegada para uma fonte.
+  Se o sinalizador de preenchimento desta célula estiver ativo,
+    Atribua "Arial Bold" e 3/4 polegada para a fonte.
+  Converta o número desta célula em uma string.
+  Pinte a string na caixa desta célula com a canetinha marrom e a fonte e "centralizado".
+
+\Rotinas auxiliares diversas
+
+Rotina para que se apague uma célula:
+  Atribua 0 para o número desta célula.
+
+Rotina para que se obtenha uma célula vazia:
+  [Itere.]
+    Obtenha uma célula desde o sudoku.
+    Se a célula for inexistente, pare.
+    Se o sinalizador de preenchimento desta célula estiver ativo, reitere.
+    Se o número desta célula não for 0, reitere.
+    Atribua a célula para a célula vazia.
+
+Rotina para que se atribua um número para uma célula:
+  Atribua o número para o número desta célula.
+
+\O solucionador do sudoku
+
+\Dada essa "infraestrutura", resolver o sudoku requer apenas uma rotina recursiva notavelmente curta e simples. Basta fazer o caminho inveso:
+
+Rotina para que se solucione o sudoku:
+  Obtenha uma célula vazia.
+  Se a célula vazia for inexistente, retorne. \ para abandonar a recursão
+  Itere.
+    Adicione 1 para um número. 
+    Se o número for maior do que 9, retorne.
+    Se o número não for válido na célula vazia, reitere.
+    Atribua o número para a célula vazia.
+    Solucione o sudoku. 
+    Se o sudoku estiver solucionado, pare.
+    Apague a célula vazia.
+  Reitere.

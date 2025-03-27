@@ -1,0 +1,196 @@
+\The Data Types
+
+\I started by defining a linkable record type for the cells:
+
+A cell is a thing with a box, a number and a given flag.
+
+\The Global Puzzle Variable
+
+\Then I defined a global variable as an anchor for my linked list of cells:
+
+The puzzle is some cells.
+
+\The “Main” Routine
+
+\After that, I wrote my “main” routine as an outline of what I wanted the program to do, along with some supporting subroutines:
+
+To run:
+  Start up.
+  Clear the screen using the tan color.
+  Create the puzzle.
+  Fill the puzzle with "004103800708000601030080040390050062005030900280090073010060080803000104007908300".
+  Draw the puzzle. 
+  Display message "Press ENTER to solve". 
+  Wait for the enter key.
+  Solve the puzzle.
+  Draw the puzzle. 
+  Display message "Solved!". 
+  Wait for the escape key.
+  Destroy the puzzle.
+  Shut down.
+
+\The Create and Fill Subroutines
+
+To create the puzzle:
+  Make a big box 9 inches by 9 inches.
+  Center the big box on the screen.
+  Make a box 1 inch by 1 inch.
+  Move the box to the big box's left-top.
+  Loop.
+    Allocate memory for a cell.
+    Append the cell to the puzzle.
+    Put the box into the cell's box.
+    Move the box right 1 inch. 
+    If the box is still in the big box, repeat.
+    Move the box to the left side of the big box.
+    Move the box down 1 inch. 
+    If the box is still in the big box, repeat.
+
+To fill the puzzle from a string:
+  Privatize the string.
+  Loop.
+    If the string is blank, break.
+    Get a cell from the puzzle.
+    Get a byte from the string.
+    If the byte minus 48 is not between 1 and 9, 
+      Put 0 into the cell's number;
+      Repeat.
+    If the cell is nil, break.
+    Put the byte minus 48 into the cell's number.
+    Set the cell's given flag.
+  Repeat.
+
+\The “Box Making” Function-Style Subroutines
+
+\To get a box for the whole puzzle, we find the smallest left, top, right and bottom coordinates in the cells:
+
+To put the puzzle's box into a box:
+  Put the largest number into a left.
+  Put the largest number into a top.
+  Put the smallest number into a right.
+  Put the smallest number into a bottom.
+  Loop.
+    Get a cell from the puzzle. 
+    If the cell is nil, break.
+    If the cell's left is less than the left,
+      Put the cell's left into the left.
+    If the cell's top is less than the top,
+      Put the cell's top into the top.
+    If the cell's right is greater than the right,
+      Put the cell's right into the right.
+    If the cell's bottom is greater than the bottom,
+      Put the cell's bottom into the bottom.
+  Repeat.
+  Make the box with the left and the top and the right and the bottom.
+
+\To get a box for a given cell’s whole row, we do this:
+
+To put a cell's row into a box:
+Put the cell's box into the box.
+Put the puzzle's box's left into the box's left.
+Put the puzzle's box's right into the box's right.
+
+\To get a box for a given cell’s whole column, we do this:
+
+To put a cell's column into a box:
+Put the cell's box into the box.
+Put the puzzle's box's top into the box's top.
+Put the puzzle's box's bottom into the box's bottom.
+
+\And the get a box for a given cell’s 9x9 block, we do this:
+
+To put a cell's block into a box:
+Put the puzzle's box into the box.
+Put the cell's left minus the box's left divided by 3 inches into an offset.
+Multiply the offset by 3 inches.
+Add the offset into the box's left.
+Put the cell's top minus the box's top divided by 3 inches into the offset.
+Multiply the offset by 3 inches.
+Add the offset into the box's top.
+Put the box's left plus 3 inches into the box's right.
+Put the box's top plus 3 inches into the box's bottom.
+
+\Decider-Style Subroutines
+
+To decide if a number is valid in a cell:
+  If the number is already in the cell's row, say no.
+  If the number is already in the cell's column, say no.
+  If the number is already in the cell's block, say no.
+  Say yes.
+
+To decide if a number is already in a box:
+    Get a cell from the puzzle.
+    If the cell is nil, say no.
+    If the cell's box is not in the box, repeat.
+    If the cell's number is the number, say yes.
+  Repeat.
+
+To decide if a cell is empty:
+  If the cell's number is 0, say yes.
+  Say no.
+
+To decide if a cell is full:
+  If the cell's number is not 0, say yes.
+  Say no.
+
+To decide if a cell can hold a number:
+  If the cell is full, say no.
+  Say yes.
+
+To decide if the puzzle is solved:
+    Get a cell from the puzzle.
+    If the cell is nil, say yes.
+    If the cell's number is not between 1 and 9, say no.
+  Repeat.
+
+\Drawing Routines
+
+To draw the puzzle:
+  Use the fat pen.
+  Loop.
+    Get a cell from the puzzle. 
+    If the cell is nil, break.
+    Draw the cell.
+    Draw the cell's block with the dark brown pen.
+    Repeat.
+  Refresh the screen.
+
+To draw a cell:
+  Draw the cell's box with the lighter orange pen and the tan pen.
+  If the cell's number is 0, exit.
+  Put "osmosian" and 3/4 inch into a font.
+  If the cell's given flag is set,
+    Put "arial bold" and 3/4 inch into the font.
+  Convert the cell's number to a string.
+  Draw the string in the cell's box with the brown pen and the font and "center".
+
+\Miscellaneous Helper Routines
+
+To erase a cell:
+Put 0 into the cell's number.
+
+To get a blank cell:
+  Get a cell from the puzzle. 
+  If the cell is nil, break.
+  If the cell's given flag is set, repeat.
+  If the cell's number is not 0, repeat.
+  Put the cell into the blank cell.
+
+To put a number into a cell:
+  Put the number into the cell's number.
+
+\The Puzzle Solver
+
+\Given that “infrastructure,” solving the puzzle requires only a remarkably short and simple recursive, backtracking routine:
+
+To solve the puzzle:
+  Get a blank cell. If the blank cell is nil, exit.
+  Loop.
+    Add 1 to a number.
+    If the number is greater than 9, exit.
+    If the number is not valid in the blank cell, repeat.
+    Put the number into the blank cell.
+    Solve the puzzle.
+    If the puzzle is solved, break.
+    Erase the blank cell.
+  Repeat.

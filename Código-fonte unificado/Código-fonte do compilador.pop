@@ -16,7 +16,7 @@ Um endereço base é um endereço.
 Uma zona é uma estrutura com
   Um endereço base,
   Uma quantidade de caracteres e
-  Um tamanho.
+  Um tamanho. 
 
 Um tipo primitivo é um tipo.
 Uma rotina alvo é uma rotina.
