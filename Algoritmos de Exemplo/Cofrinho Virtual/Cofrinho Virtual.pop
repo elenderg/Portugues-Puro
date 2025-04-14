@@ -22,6 +22,7 @@ Rotina para que se escreva o texto de introdução:
 
 Rotina para que se exiba as opções do cofrinho:
   Escreva o texto CRLF para StdOut.
+  Escreva "_____________________________________________________________" junto com o texto CRLF junto com o texto CRLF para StdOut.
   Escreva "Digite o número correspondente à opção desejada:" junto com o texto CRLF para StdOut.
   Escreva o texto CRLF para StdOut.
   Escreva "1 - Sacar" junto com o texto CRLF para StdOut.
@@ -70,6 +71,7 @@ Rotina para que se retire dinheiro do cofrinho:
     Exiba o saldo do cofrinho;
     Retorne.
   Subtraia o número desde o saldo deste cofrinho.
+  Escreva o texto CRLF para StdOut.
   Escreva "Fundos retirados com sucesso" junto com o texto CRLF para StdOut.
   Escreva o texto CRLF para StdOut.
   Exiba o saldo do cofrinho.
@@ -83,12 +85,13 @@ Rotina para que se deposite dinheiro no cofrinho:
     Escreva o texto CRLF para StdOut;
     Deposite dinheiro no cofrinho.
   Adicione o número ao saldo deste cofrinho.
+  Escreva o texto CRLF para StdOut.
   Escreva "Fundos adicionados com sucesso" junto com o texto CRLF para StdOut.
+  Escreva o texto CRLF para StdOut.
   Exiba o saldo do cofrinho.
 
 Rotina para que se exiba o saldo do cofrinho:
   Se o saldo deste cofrinho for menor do que 100,
-    Escreva o texto CRLF para StdOut;
     Escreva "O saldo do cofrinho é de " junto com o saldo deste cofrinho junto com " centavos." para StdOut;
     Escreva o texto CRLF para StdOut;
     Retorne.
@@ -96,9 +99,7 @@ Rotina para que se exiba o saldo do cofrinho:
   Atribua a quantidade de reais vezes 100 para um número denominado reais centavizados.
   Atribua o saldo deste cofrinho menos os reais centavizados para um número denominado quantidade de centavos.
   Se a quantidade de centavos for maior do que 9, 
-    Escreva o texto CRLF para StdOut;
     Escreva "O saldo do cofrinho é de R$ " junto com a quantidade de reais junto com "," junto com a quantidade de centavos para StdOut.
-  Se a quantidade de centavos for menor do que 10, 
-    Escreva o texto CRLF para StdOut;
+  Se a quantidade de centavos for menor do que 10,
     Escreva "O saldo do cofrinho é de R$ " junto com a quantidade de reais junto com ",0" junto com a quantidade de centavos para StdOut.
   Escreva o texto CRLF para StdOut.
