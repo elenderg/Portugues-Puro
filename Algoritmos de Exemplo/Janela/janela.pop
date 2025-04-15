@@ -1,7 +1,7 @@
 O painel esquerdo é uma caixa.
 O painel direito é uma caixa.
 O painel central é uma caixa.
-O painel de inferior é uma caixa.
+O painel inferior é uma caixa.
 O painel de abas é uma lista com umas abas.
 Uma aba é uma caixa.
 
@@ -11,6 +11,7 @@ Rotina para que se execute o programa:
   Instancie os painéis.
   Posicione os painéis.
   Mostre os painéis.
+  Aguarde a tecla Esc.
   Feche o programa.
 
 Rotina para que se instancie os painéis:
@@ -18,45 +19,84 @@ Rotina para que se instancie os painéis:
   Instancie o painel central.
   Instancie o painel direito.
   Instancie o painel inferior.
-  Instancie o painel de abas.
+  \Instancie o painel de abas.
 
 Rotina para que se posicione os painéis:
   Posicione o painel esquerdo.
   Posicione o painel central.
   Posicione o painel direito.
   Posicione o painel inferior.
-  Posicione o painel de abas.
+  \Posicione o painel de abas.
+
+Rotina para que se mostre os painéis:
+  Mostre o painel esquerdo.
+  Mostre o painel central.
+  Mostre o painel direito.
+  Mostre o painel inferior.
+  \Mostre o painel de abas.
+  Atualize a tela.
 
 Rotina para que se instancie o painel esquerdo:
-  Atribua a largura desta caixa desta tela dividido por 6 para um número denominado largura do painel esquerdo.
-  Atribua a altura desta caixa desta tela dividido por 2 para um número denominado altura do painel esquerdo.
-  Faça o painel esquerdo [usando] a largura do painel esquerdo e a altura do painel esquerdo.
+  Atribua a largura desta caixa desta tela dividido por 6 para um twip denominado largura do painel esquerdo.
+  Atribua a altura desta caixa desta tela dividido por 2 para um twip denominado altura do painel esquerdo.
+  Faça o painel esquerdo com a largura do painel esquerdo pela altura do painel esquerdo.
 
 Rotina para que se instancie o painel central:
-  Atribua a largura desta caixa desta tela dividido por 3 para um número denominado largura do painel central.
-  Atribua a altura desta caixa desta tela dividido por 2 para um número denominado altura do painel central.
-  Faça o painel central [usando] a largura do painel central e a altura do painel central.
+  Atribua a largura desta caixa desta tela dividido por 3 para um twip denominado largura do painel central.
+  Atribua a altura desta caixa desta tela dividido por 2 para um twip denominado altura do painel central.
+  Faça o painel central com a largura do painel central pela altura do painel central.
 
 Rotina para que se instancie o painel direito:
-  Atribua a largura desta caixa desta tela dividido por 6 para um número denominado largura do painel direito.
-  Atribua a altura desta caixa desta tela dividido por 2 para um número denominado altura do painel direito.
-  Faça o painel direito [usando] a largura do painel direito e a altura do painel direito.
+  Atribua a largura desta caixa desta tela dividido por 6 para um twip denominado largura do painel direito.
+  Atribua a altura desta caixa desta tela dividido por 2 para um twip denominado altura do painel direito.
+  Faça o painel direito com a largura do painel direito pela altura do painel direito.
 
 Rotina para que se instancie o painel inferior:
-  Atribua a largura desta caixa desta tela para um número denominado largura do painel inferior.
-  Atribua a altura desta caixa desta tela dividido por 8 para um número denominado altura do painel inferior.
-  Faça o painel inferior [usando] a largura do painel inferior e a altura do painel inferior.
+  Atribua a largura desta caixa desta tela para um twip denominado largura do painel inferior.
+  Atribua a altura desta caixa desta tela dividido por 8 para um twip denominado altura do painel inferior.
+  Faça o painel inferior com a largura do painel inferior pela altura do painel inferior.
 
-Rotina para que se instancie o painel de abas:
-  Atribua a largura desta caixa desta tela dividido por 10 para um número denominado largura do painel de abas.
-  Atribua a altura desta caixa desta tela dividido por 20 para um número denominado altura do painel de abas.
-  Faça o painel de abas [usando] a largura do painel de abas e a altura do painel de abas.
-
-Rotina para que se posicione o painel esquerdo:
-  Mova o painel esquerdo para o canto superior esquerdo dessa caixa desta tela.
+\ Rotina para que se instancie o painel de abas:
+  \ Atribua a largura desta caixa desta tela dividido por 10 para um número denominado largura do painel de abas.
+  \ Atribua a altura desta caixa desta tela dividido por 20 para um número denominado altura do painel de abas.
+  \ Faça o painel de abas usando a largura do painel de abas e a altura do painel de abas.
 
 Rotina para que se posicione o painel esquerdo:
-  Mova o painel esquerdo para o canto superior esquerdo dessa caixa desta tela.
+  Mova o painel esquerdo para o canto superior esquerdo da tela.
+
+Rotina para que se posicione o painel direito:
+  Mova o painel direito para o canto superior direito da tela.
+
+Rotina para que se posicione o painel central:
+  Mova o painel central para o canto superior esquerdo da tela.
+  Mova o painel central a largura deste painel esquerdo para a direita.
+
+Rotina para que se posicione o painel inferior:
+  Mova o painel inferior para o canto superior esquerdo da tela.
+  Mova o painel inferior a altura deste painel esquerdo para baixo.
+
+\ Rotina para que se posicione o painel de abas:
+  \ Mova o painel de abas para o canto superior esquerdo da tela.
+  \ Mova o painel de abas a altura deste painel esquerdo para baixo.
+  \ Mova o painel de abas a altura deste painel inferior para baixo.
+
+\----------------------------------
+
+Rotina para que se mostre o painel esquerdo:
+  Pinte o painel esquerdo com a cor preta e a cor azul.
+
+Rotina para que se mostre o painel direito:
+  Pinte o painel direito com a cor preta e a cor azul.
+
+Rotina para que se mostre o painel central:
+  Pinte o painel central com a cor preta e a cor azul.
+
+Rotina para que se mostre o painel inferior:
+  Pinte o painel inferior com a cor preta e a cor azul.
+
+Rotina para que se mostre o painel de abas:
+  Pinte o painel de abas com a cor preta e a cor azul.
+
 
 \Rotina para que se redimensione a janela
 \Atualize a janela.

@@ -9287,7 +9287,7 @@ Rotina para que se oculte o cursor:
   Reitere.
 
 Rotina para que se imagine uma caixa uns twips por uns outros twips;
-Rotina para que se faça uma caixa com uns twips por uns outros twips;
+Rotina para que se faça uma caixa usando uns twips por uns outros twips;
 \Rotina para que se faça uma caixa usando uns twips por uns outros twips;
 Rotina para que se faça uma caixa uns twips por uns outros twips:
   Atribua 0 à coordenada X1 desta caixa.
@@ -18099,8 +18099,11 @@ Rotina para que se mova uma caixa para o canto superior esquerdo de uma segunda 
   Mova a caixa para o canto superior esquerdo desta segunda caixa.
 
 Rotina para que se mova uma caixa para o canto superior direito da tela:
-  Atribua a largura da caixa desta tela menos a largura desta caixa para um número denominado posição.
-  Mova a caixa para a posição.
+  Atribua a largura desta caixa desta tela menos a largura desta caixa para uma localização.
+  Mova a caixa para a localização.
+
+Rotina para que se mova uma caixa para o canto superior esquerdo da tela:
+    Mova a caixa para o canto superior esquerdo desta caixa desta tela.
 
 Rotina para que se mova uma caixa para o topo de uma segunda caixa:
   Mova a caixa para cima a coordenada Y1 desta caixa menos a coordenada Y1 desta segunda caixa.
