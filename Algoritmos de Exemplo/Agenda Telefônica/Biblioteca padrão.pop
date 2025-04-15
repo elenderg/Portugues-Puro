@@ -18087,7 +18087,7 @@ Rotina para que se mova uma caixa para uma localização:
   Mova a caixa usando o valor da diferença.
 
 Rotina para que se mova uma caixa para o canto superior esquerdo de uma segunda caixa:
-  Mova a caixa para a coordenada X1 desta segunda caixa-top.
+  Mova a caixa para o canto superior esquerdo desta segunda caixa.
 
 Rotina para que se mova uma caixa para o topo de uma segunda caixa:
   Mova a caixa para cima a coordenada Y1 desta caixa menos a coordenada Y1 desta segunda caixa.

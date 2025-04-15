@@ -101,7 +101,7 @@ Um px são 15 twips.
 \Uns pxs são 15 twips.
 \Um píxel são 15 twips.
 \Um inch são 1440 twips.
-Uma polegada são 1440 twips. \  56,7
+Uma polegada é 1440 twips. \  56,7
 
 Uma unidade numérica é um número.
 Um kilobyte são 1024 unidades numéricas.
@@ -158,7 +158,7 @@ Uma caixa de texto é uma lista com
   Um sinalizador de alteração,
   Uma última operação,
   Umas caixas de texto denominadas restaurações, \reversões 
-  Umas caixas de texto denominadas alterações. \ ou modificações
+  Umas caixas de texto denominadas alterações. \ modificações
 
 Um número de linha é um número.
 
@@ -4970,12 +4970,12 @@ Rotina para que se de-sign um número:
   Se o número for menor do que 0, 
     Inverta o sinal desse número.
 
-Rotina para que se  remova o sinal desde um par de números;
+Rotina para que se remova o sinal desde um par de números;
 Rotina para que se de-sign um par de números:
   Remova o sinal desde o número X deste par de números.
   Remova o sinal desde o número Y deste par de números.
 
-Rotina para que se  remova o sinal desde uma string;
+Rotina para que se remova o sinal desde uma string;
 Rotina para que se de-sign uma string:
   Se a string estiver em branco, retorne.
   Se o conteúdo deste caractere inicial desta string for algum sinal aritmético, 
@@ -5161,10 +5161,10 @@ Função para que se determine se uma caixa é uma segunda caixa:
 
 Função para que se determine se uma caixa está em uma segunda caixa;
 Função para que se determine se uma caixa está dentro de uma segunda caixa:
-  Se a coordenada X1 desta caixa for menor do que a coordenada X1 desta segunda caixa, diga não.
-  Se a coordenada Y1 desta caixa for menor do que a coordenada Y1 desta segunda caixa, diga não.
-  Se a coordenada X2 desta caixa for maior do que a coordenada X2 desta segunda caixa, diga não.
-  Se a coordenada Y2 desta caixa for maior do que a coordenada Y2 desta segunda caixa, diga não.
+  Se a coordenada X1 desta caixa for menor que a coordenada X1 desta segunda caixa, diga não.
+  Se a coordenada Y1 desta caixa for menor que a coordenada Y1 desta segunda caixa, diga não.
+  Se a coordenada X2 desta caixa for maior que a coordenada X2 desta segunda caixa, diga não.
+  Se a coordenada Y2 desta caixa for maior que a coordenada Y2 desta segunda caixa, diga não.
   Diga sim.
 
 Função para que se determine se uma caixa está tocando uma segunda caixa:
@@ -6195,6 +6195,8 @@ Função para que se determine se uma string é algum numeral misto literal:
   Se o subtexto numérico não for algum número inteiro, diga não.
   Se a subtexto fracionário não for alguma fração literal, diga não.
   Diga sim.
+
+
 
 Função para que se determine se uma string é algum sinal aritmético:
   Se a quantidade de caracteres desta string não for 1, diga não.
@@ -8610,17 +8612,21 @@ Rotina para que se obtenha uma string desde a área de transferência do Windows:
     O número identificador. [hMem]
   Processe "user32.dll" "CloseClipboard".
 
+Rotina para que se obtenha uma lista a partir de umas listas;
+Rotina para que se pegue uma lista de umas listas;
+Rotina para que se pegue uma lista desde umas listas;
+Rotina para que se obtenha uma lista de umas listas;
 Rotina para que se obtenha uma lista desde umas listas:
-  Se  as listas estiverem vazias,
+  Se as listas estiverem vazias,
     Esvazie a lista;
     Retorne.
   Se a lista for inexistente,
     Atribua a lista inicial destas listas à lista;
     Retorne.
-  Atribua o lista posterior desta lista à lista.
+  Atribua a lista posterior desta lista à lista.
 
 Rotina para que se obtenha uma lista desde umas listas (regressivamente):
-  Se  as listas estiverem vazias,
+  Se as listas estiverem vazias,
     Esvazie a lista;
     Retorne.
   Se a lista for inexistente,
@@ -8662,8 +8668,9 @@ Rotina para que se obtenha uma largura usando um número e uns larguras de fonte:
 
 Rotina para que se obtenha uma largura usando uma string e um canvas:
   \ presume que a fonte já esteja selecionada no canvas
-  Processe "gdi32.dll" "GetTextExtentPoint32A" com \ Calcula a largura e a altura da seqüência de caracteres de texto especificada.
-  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-gettextextentpoint32a
+  Processe "gdi32.dll" "GetTextExtentPoint32A" com 
+  \ Calcula a largura e a altura de uma seqüência de caracteres.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-GetTextExtentPoint32A
     O canvas [hdc]
     e O caractere inicial desta string [lpString]
     e A quantidade de caracteres desta string [c]
@@ -9280,6 +9287,8 @@ Rotina para que se oculte o cursor:
   Reitere.
 
 Rotina para que se imagine uma caixa uns twips por uns outros twips;
+Rotina para que se faça uma caixa com uns twips por uns outros twips;
+\Rotina para que se faça uma caixa usando uns twips por uns outros twips;
 Rotina para que se faça uma caixa uns twips por uns outros twips:
   Atribua 0 à coordenada X1 desta caixa.
   Atribua 0 à coordenada Y1 desta caixa.
@@ -12883,8 +12892,8 @@ Rotina para que se carregue as bibliotecas padrão do sistema;
 Rotina para que se inicialize tudo;
 Rotina para que se inicialize os componentes:
   Inicialize o Component Object Model.
-  Inicialize a infraestrutura WinSock.
-  Inicialize gdi+.
+  Inicialize a Infraestrutura WinSock.
+  Inicialize GDI+.
   Inicialize o sintetizador de voz.
   Inicialize o módulo.
   Inicialize as cores.
@@ -13897,6 +13906,7 @@ Rotina para que se atualize o cursor:
   Enfileire o evento.
 
 Rotina para que se atribua um endereço completo para um trecho;
+Rotina para que se coloque um endereço completo para um trecho;
 Rotina para que se carregue um endereço completo para um trecho;
 Rotina para que se leia um endereço completo para um trecho:
   Limpe o erro do fluxo de entrada/saída.
@@ -18067,6 +18077,7 @@ Rotina para que se mova uma caixa para a esquerda para uma coordenada:
 
 Rotina para que se mova uma caixa para o lado esquerdo de uma segunda caixa;
 Rotina para que se mova uma caixa para a esquerda de uma segunda caixa:
+  \ Move the box left the box's left minus the other box's left.
   Mova a caixa para a esquerda a coordenada X1 desta caixa menos a coordenada X1 desta segunda caixa.
 
 Rotina para que se mova uma caixa uns twips para a esquerda;
@@ -18086,6 +18097,10 @@ Rotina para que se mova uma caixa para uma localização:
 
 Rotina para que se mova uma caixa para o canto superior esquerdo de uma segunda caixa:
   Mova a caixa para o canto superior esquerdo desta segunda caixa.
+
+Rotina para que se mova uma caixa para o canto superior direito da tela:
+  Atribua a largura da caixa desta tela menos a largura desta caixa para um número denominado posição.
+  Mova a caixa para a posição.
 
 Rotina para que se mova uma caixa para o topo de uma segunda caixa:
   Mova a caixa para cima a coordenada Y1 desta caixa menos a coordenada Y1 desta segunda caixa.
@@ -20936,6 +20951,7 @@ Função para que se determine se um número é um segundo número:
   Decodifique $C7C000000000. \ mov eax,0 \ now it is false
 
 Função para que se determine se um ponteiro é maior do que um segundo ponteiro;
+Função para que se determine se um número é maior que um segundo número;
 Função para que se determine se um número é maior do que um segundo número:
   Decodifique $C7C001000000. \ mov eax,1 \ presume que o número seja maior logo de começo
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o número
