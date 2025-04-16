@@ -241,6 +241,92 @@ Rotina para que se acrescente o sub menu Sobre no Menu Ajuda:
     retornando um número denominado status de erro.
   Se o status de erro for 0 [nulo],
     Escreva "Erro ao invocar função AppendMenuA  (ID_HELP_ABOUT)" junto com o texto CRLF para StdOut.
+\---------------------------------------------------------------
+Rotina para que se registre as teclas de atalho usando um identificador de janela:
+  Processe "user32.dll" "RegisterHotKey" com
+    o identificador da janela,
+    a ID_FILE_OPEN,
+    2 [MOD_CONTROL],
+    79 [Ord('O')].
+
+  Processe "user32.dll" "RegisterHotKey" com
+    o identificador da janela,
+    a ID_EDIT_COPY,
+    2 [MOD_CONTROL],
+    67 [Ord('C')].
+
+  Processe "user32.dll" "RegisterHotKey" com
+    o identificador da janela,
+    a ID_HELP_CONTENTS,
+    0,
+    112 [VK_F1].
+
+Rotina principal WinMain:
+  Atribua o número identificador retornado por GetModuleHandle com nulo à variável hInstance.
+
+  Atribua nulo a toda estrutura wc.
+  Atribua o ponteiro da rotina WndProc para wc.lpfnWndProc.
+  Atribua hInstance para wc.hInstance.
+  Atribua "MyWindowClass" para wc.lpszClassName.
+  Atribua o cursor padrão com IDC_ARROW para wc.hCursor.
+  Atribua COLOR_WINDOW + 1 para wc.hbrBackground.
+
+  Processe "user32.dll" "RegisterClassA" com wc.
+
+  Processe "user32.dll" "CreateWindowExA" com:
+    0,
+    "MyWindowClass",
+    "Exemplo com Menu Win32",
+    13565952 [WS_OVERLAPPEDWINDOW],
+    CW_USEDEFAULT,
+    CW_USEDEFAULT,
+    600,
+    400,
+    0,
+    0,
+    hInstance,
+    0
+    retornando um identificador de janela hWnd.
+
+  Processe a rotina que adiciona os menus com hWnd.
+  Processe a rotina que registra as teclas de atalho com hWnd.
+
+  Processe "user32.dll" "ShowWindow" com hWnd e SW_SHOW.
+  Processe "user32.dll" "UpdateWindow" com hWnd.
+
+  Enquanto GetMessage retornar diferente de 0:
+    Processe "user32.dll" "TranslateMessage" com a mensagem.
+    Processe "user32.dll" "DispatchMessageA" com a mensagem.
+
+  Retorne wParam da mensagem.
+
+Rotina para tratamento de mensagens WndProc:
+  Se Msg for WM_COMMAND:
+    Atribua LOWORD(wParam) à variável wmId.
+    Se wmId for ID_FILE_OPEN:
+      Processe MessageBoxA com hWnd, "Abrir arquivo...", "Arquivo", MB_OK.
+    Se wmId for ID_FILE_SAVE:
+      Processe MessageBoxA com hWnd, "Salvar arquivo...", "Arquivo", MB_OK.
+    Se wmId for ID_FILE_SAVEAS:
+      Processe MessageBoxA com hWnd, "Salvar como...", "Arquivo", MB_OK.
+    Se wmId for ID_FILE_EXIT:
+      Processe PostQuitMessage com 0.
+    Se wmId for ID_EDIT_COPY:
+      Processe MessageBoxA com hWnd, "Copiar...", "Editar", MB_OK.
+    Se wmId for ID_EDIT_CUT:
+      Processe MessageBoxA com hWnd, "Recortar...", "Editar", MB_OK.
+    Se wmId for ID_EDIT_PASTE:
+      Processe MessageBoxA com hWnd, "Colar...", "Editar", MB_OK.
+    Se wmId for ID_HELP_CONTENTS:
+      Processe MessageBoxA com hWnd, "Conteúdo de ajuda...", "Ajuda", MB_OK.
+    Se wmId for ID_HELP_ABOUT:
+      Processe a rotina que mostra o submenu About com hWnd.
+
+  Se Msg for WM_DESTROY:
+    Processe PostQuitMessage com 0.
+    Retorne 0.
+
+  Processe DefWindowProc com hWnd, Msg, wParam e lParam retornando o resultado.
 
 
 \ procedure RegisterHotkeys(hWnd: HWND);
