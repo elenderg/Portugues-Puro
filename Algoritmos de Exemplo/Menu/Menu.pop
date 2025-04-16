@@ -241,6 +241,113 @@ Rotina para que se acrescente o sub menu Sobre no Menu Ajuda:
     retornando um número denominado status de erro.
   Se o status de erro for 0 [nulo],
     Escreva "Erro ao invocar função AppendMenuA  (ID_HELP_ABOUT)" junto com o texto CRLF para StdOut.
+
+\----------------------------------------------------------------
+Rotina para que se registre as teclas de atalho usando um número identificador da janela:
+Processe "user32.dll" "RegisterHotKey" com
+  o número identificador da janela [hWnd],
+  o ID_FILE_OPEN [id],
+  2 [fsModifiers = MOD_CONTROL],
+  79 [vk = Ord('O')], retornando um número denominado status.
+
+Se o status for 0 [nulo],
+  Escreva "Erro ao invocar função RegisterHotKey (ID_FILE_OPEN)" junto com o texto CRLF para StdOut.
+
+Processe "user32.dll" "RegisterHotKey" com
+  o número identificador da janela [hWnd],
+  o ID_EDIT_COPY [id],
+  2 [fsModifiers = MOD_CONTROL],
+  67 [vk = Ord('C')], retornando um número denominado status.
+
+Se o status for 0 [nulo],
+  Escreva "Erro ao invocar função RegisterHotKey (ID_EDIT_COPY)" junto com o texto CRLF para StdOut.
+
+Processe "user32.dll" "RegisterHotKey" com
+  o número identificador da janela [hWnd],
+  o ID_HELP_CONTENTS [id],
+  0 [fsModifiers],
+  112 [vk = VK_F1], retornando um número denominado status.
+
+Se o status for 0 [nulo],
+  Escreva "Erro ao invocar função RegisterHotKey (ID_HELP_CONTENTS)" junto com o texto CRLF para StdOut.
+
+Rotina para que se processe as mensagens da janela com os parâmetros hWnd, Msg, wParam e lParam:
+  Se Msg for igual a 273 [WM_COMMAND],
+    Atribua o valor de wParam mod 65536 para uma variável denominada wmId.
+  Se wmId for igual a ID_FILE_OPEN,
+    Processe "user32.dll" "MessageBoxA" com
+    hWnd,
+    "Abrir arquivo..." com caractere nulo,
+    "Arquivo" com caractere nulo,
+    MB_OK, retornando um número denominado status.
+  Se o status for 0 [nulo],
+    Escreva "Erro ao invocar função MessageBoxA (ID_FILE_OPEN)" junto com o texto CRLF para StdOut.
+  Se wmId for igual a ID_FILE_SAVE,
+    Processe "user32.dll" "MessageBoxA" com
+    hWnd,
+    "Salvar arquivo..." com caractere nulo,
+    "Arquivo" com caractere nulo,0
+    MB_OK, retornando um número denominado status.
+  Se o status for 0 [nulo],
+    Escreva "Erro ao invocar função MessageBoxA (ID_FILE_SAVE)" junto com o texto CRLF para StdOut.
+  Se wmId for igual a ID_FILE_SAVEAS,
+    Processe "user32.dll" "MessageBoxA" com
+    hWnd,
+    "Salvar como..." com caractere nulo,
+    "Arquivo" com caractere nulo,
+    MB_OK, retornando um número denominado status.
+  Se o status for 0 [nulo],
+    Escreva "Erro ao invocar função MessageBoxA (ID_FILE_SAVEAS)" junto com o texto CRLF para StdOut.
+  Se wmId for igual a ID_FILE_EXIT,
+    Processe "user32.dll" "PostQuitMessage" com
+    0, retornando um número denominado status.
+  Se o status for diferente de 0 [não nulo],
+    Escreva "Erro ao invocar função PostQuitMessage" junto com o texto CRLF para StdOut.
+  Se wmId for igual a ID_EDIT_COPY,
+    Processe "user32.dll" "MessageBoxA" com
+    hWnd,
+    "Copiar..." com caractere nulo,
+    "Editar" com caractere nulo,
+    MB_OK, retornando um número denominado status.
+  Se o status for 0 [nulo],
+    Escreva "Erro ao invocar função MessageBoxA (ID_EDIT_COPY)" junto com o texto CRLF para StdOut.
+  Se wmId for igual a ID_EDIT_CUT,
+    Processe "user32.dll" "MessageBoxA" com
+    hWnd,
+    "Recortar..." com caractere nulo,
+    "Editar" com caractere nulo,
+    MB_OK, retornando um número denominado status.
+  Se o status for 0 [nulo],
+    Escreva "Erro ao invocar função MessageBoxA (ID_EDIT_CUT)" junto com o texto CRLF para StdOut.
+  Se wmId for igual a ID_EDIT_PASTE,
+    Processe "user32.dll" "MessageBoxA" com
+    hWnd,
+    "Colar..." com caractere nulo,
+    "Editar" com caractere nulo,
+    MB_OK, retornando um número denominado status.
+  Se o status for 0 [nulo],
+    Escreva "Erro ao invocar função MessageBoxA (ID_EDIT_PASTE)" junto com o texto CRLF para StdOut.
+  Se wmId for igual a ID_HELP_CONTENTS,
+    Processe "user32.dll" "MessageBoxA" com
+    hWnd,
+    "Conteúdo de ajuda..." com caractere nulo,
+    "Ajuda" com caractere nulo,
+    MB_OK, retornando um número denominado status.
+  Se o status for 0 [nulo],
+    Escreva "Erro ao invocar função MessageBoxA (ID_HELP_CONTENTS)" junto com o texto CRLF para StdOut.
+  Se wmId for igual a ID_HELP_ABOUT,
+    Processe a rotina para que se mostre o Submenu About usando hWnd.
+  Se Msg for igual a 2 [WM_DESTROY],
+    Processe "user32.dll" "PostQuitMessage" com
+    0, retornando um número denominado status.
+  Se o status for diferente de 0 [não nulo],
+    Escreva "Erro ao invocar função PostQuitMessage (WM_DESTROY)" junto com o texto CRLF para StdOut.
+  Processe "user32.dll" "DefWindowProcA" com
+    hWnd,
+    Msg,
+    wParam,
+    lParam, retornando um número denominado resultado.
+    Retorne resultado.
 \---------------------------------------------------------------
 Rotina para que se registre as teclas de atalho usando um identificador de janela:
   Processe "user32.dll" "RegisterHotKey" com
@@ -327,113 +434,7 @@ Rotina para tratamento de mensagens WndProc:
     Retorne 0.
 
   Processe DefWindowProc com hWnd, Msg, wParam e lParam retornando o resultado.
-\----------------------------------------------------------------Rotina para que se registre as teclas de atalho usando um número identificador da janela:
-
-Processe "user32.dll" "RegisterHotKey" com
-  o número identificador da janela [hWnd],
-  o ID_FILE_OPEN [id],
-  2 [fsModifiers = MOD_CONTROL],
-  79 [vk = Ord('O')], retornando um número denominado status.
-
-Se o status for 0 [nulo],
-  Escreva "Erro ao invocar função RegisterHotKey (ID_FILE_OPEN)" junto com o texto CRLF para StdOut.
-
-Processe "user32.dll" "RegisterHotKey" com
-  o número identificador da janela [hWnd],
-  o ID_EDIT_COPY [id],
-  2 [fsModifiers = MOD_CONTROL],
-  67 [vk = Ord('C')], retornando um número denominado status.
-
-Se o status for 0 [nulo],
-  Escreva "Erro ao invocar função RegisterHotKey (ID_EDIT_COPY)" junto com o texto CRLF para StdOut.
-
-Processe "user32.dll" "RegisterHotKey" com
-  o número identificador da janela [hWnd],
-  o ID_HELP_CONTENTS [id],
-  0 [fsModifiers],
-  112 [vk = VK_F1], retornando um número denominado status.
-
-Se o status for 0 [nulo],
-  Escreva "Erro ao invocar função RegisterHotKey (ID_HELP_CONTENTS)" junto com o texto CRLF para StdOut.
-
-Rotina para que se processe as mensagens da janela com os parâmetros hWnd, Msg, wParam e lParam:
-  Se Msg for igual a 273 [WM_COMMAND],
-  Atribua o valor de wParam mod 65536 para uma variável denominada wmId.
-  Se wmId for igual a ID_FILE_OPEN,
-    Processe "user32.dll" "MessageBoxA" com
-    hWnd,
-    "Abrir arquivo..." com caractere nulo,
-    "Arquivo" com caractere nulo,
-    MB_OK, retornando um número denominado status.
-  Se o status for 0 [nulo],
-    Escreva "Erro ao invocar função MessageBoxA (ID_FILE_OPEN)" junto com o texto CRLF para StdOut.
-  Se wmId for igual a ID_FILE_SAVE,
-    Processe "user32.dll" "MessageBoxA" com
-    hWnd,
-    "Salvar arquivo..." com caractere nulo,
-    "Arquivo" com caractere nulo,0
-    MB_OK, retornando um número denominado status.
-  Se o status for 0 [nulo],
-    Escreva "Erro ao invocar função MessageBoxA (ID_FILE_SAVE)" junto com o texto CRLF para StdOut.
-  Se wmId for igual a ID_FILE_SAVEAS,
-    Processe "user32.dll" "MessageBoxA" com
-    hWnd,
-    "Salvar como..." com caractere nulo,
-    "Arquivo" com caractere nulo,
-    MB_OK, retornando um número denominado status.
-  Se o status for 0 [nulo],
-    Escreva "Erro ao invocar função MessageBoxA (ID_FILE_SAVEAS)" junto com o texto CRLF para StdOut.
-  Se wmId for igual a ID_FILE_EXIT,
-    Processe "user32.dll" "PostQuitMessage" com
-    0, retornando um número denominado status.
-  Se o status for diferente de 0 [não nulo],
-    Escreva "Erro ao invocar função PostQuitMessage" junto com o texto CRLF para StdOut.
-  Se wmId for igual a ID_EDIT_COPY,
-    Processe "user32.dll" "MessageBoxA" com
-    hWnd,
-    "Copiar..." com caractere nulo,
-    "Editar" com caractere nulo,
-    MB_OK, retornando um número denominado status.
-  Se o status for 0 [nulo],
-    Escreva "Erro ao invocar função MessageBoxA (ID_EDIT_COPY)" junto com o texto CRLF para StdOut.
-  Se wmId for igual a ID_EDIT_CUT,
-    Processe "user32.dll" "MessageBoxA" com
-    hWnd,
-    "Recortar..." com caractere nulo,
-    "Editar" com caractere nulo,
-    MB_OK, retornando um número denominado status.
-  Se o status for 0 [nulo],
-    Escreva "Erro ao invocar função MessageBoxA (ID_EDIT_CUT)" junto com o texto CRLF para StdOut.
-  Se wmId for igual a ID_EDIT_PASTE,
-    Processe "user32.dll" "MessageBoxA" com
-    hWnd,
-    "Colar..." com caractere nulo,
-    "Editar" com caractere nulo,
-    MB_OK, retornando um número denominado status.
-  Se o status for 0 [nulo],
-    Escreva "Erro ao invocar função MessageBoxA (ID_EDIT_PASTE)" junto com o texto CRLF para StdOut.
-  Se wmId for igual a ID_HELP_CONTENTS,
-    Processe "user32.dll" "MessageBoxA" com
-    hWnd,
-    "Conteúdo de ajuda..." com caractere nulo,
-    "Ajuda" com caractere nulo,
-    MB_OK, retornando um número denominado status.
-  Se o status for 0 [nulo],
-    Escreva "Erro ao invocar função MessageBoxA (ID_HELP_CONTENTS)" junto com o texto CRLF para StdOut.
-  Se wmId for igual a ID_HELP_ABOUT,
-    Processe a rotina para que se mostre o Submenu About usando hWnd.
-  Se Msg for igual a 2 [WM_DESTROY],
-    Processe "user32.dll" "PostQuitMessage" com
-    0, retornando um número denominado status.
-  Se o status for diferente de 0 [não nulo],
-    Escreva "Erro ao invocar função PostQuitMessage (WM_DESTROY)" junto com o texto CRLF para StdOut.
-  Processe "user32.dll" "DefWindowProcA" com
-    hWnd,
-    Msg,
-    wParam,
-    lParam, retornando um número denominado resultado.
-    Retorne resultado.
-
+\-----------------------------------------------------------------
 \ procedure RegisterHotkeys(hWnd: HWND);
 \ begin
   \ RegisterHotKey(hWnd, ID_FILE_OPEN, MOD_CONTROL, Ord('O'));
