@@ -15,9 +15,10 @@ O hFileMenu é um número identificador.
 O hEditMenu é um número identificador.
 O hHelpMenu é um número identificador.
 
+
 Rotina para que se execute o programa:
-  \ Processe GetModuleHandle com nulo retornando um número identificador.
-  \Processe WinMain com o número identificador e 0 e CmdLine e SW_SHOW.
+  Processe GetModuleHandle com nulo retornando um número identificador.
+  Processe WinMain com o número identificador e 0 e CmdLine e SW_SHOW.
 
 Rotina para que se mostre o Submenu About usando um número identificador :
   Atribua "Empresa Desenvolvedora: ExemploTech Software Ltda." junto com o texto CRLF

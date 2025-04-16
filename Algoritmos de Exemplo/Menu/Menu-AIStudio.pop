@@ -16,28 +16,28 @@ O hEditMenu é um número identificador.
 O hHelpMenu é um número identificador.
 
 Rotina para que se execute o programa:
-Processe GetModuleHandle com nulo retornando um número identificador para hInstance.
-Declare uma estrutura de classe de janela denominada wc.
-Preencha wc com 0 [nulo].
-Atribua o endereço da Rotina WndProc para o membro lpfnWndProc de wc.
-Atribua hInstance para o membro hInstance de wc.
-Atribua 'MyWindowClass' para o membro lpszClassName de wc.
-Processe LoadCursor com 0 [nulo] e IDC_ARROW retornando um cursor para o membro hCursor de wc.
-Atribua COLOR_WINDOW + 1 para o membro hbrBackground de wc.
-Processe RegisterClass com wc.
-Processe CreateWindow com
-'MyWindowClass' [lpClassName],
-'Exemplo com Menu Win32' [lpWindowName],
-WS_OVERLAPPEDWINDOW [dwStyle],
-CW_USEDEFAULT [x],
-CW_USEDEFAULT [y],
-600 [nWidth],
-400 [nHeight],
-0 [hWndParent],
-0 [hMenu],
-hInstance [hInstance],
-nulo [lpParam]
-retornando um número identificador de janela para hWnd.
+  Processe GetModuleHandle com nulo retornando um número identificador para hInstance.
+  Declare uma estrutura de classe de janela denominada wc.
+  Preencha wc com 0 [nulo].
+  Atribua o endereço da Rotina WndProc para o membro lpfnWndProc de wc.
+  Atribua hInstance para o membro hInstance de wc.
+  Atribua 'MyWindowClass' para o membro lpszClassName de wc.
+  Processe LoadCursor com 0 [nulo] e IDC_ARROW retornando um cursor para o membro hCursor de wc.
+  Atribua COLOR_WINDOW + 1 para o membro hbrBackground de wc.
+  Processe RegisterClass com wc.
+  Processe CreateWindow com
+  'MyWindowClass' [lpClassName],
+  'Exemplo com Menu Win32' [lpWindowName],
+  WS_OVERLAPPEDWINDOW [dwStyle],
+  CW_USEDEFAULT [x],
+  CW_USEDEFAULT [y],
+  600 [nWidth],
+  400 [nHeight],
+  0 [hWndParent],
+  0 [hMenu],
+  hInstance [hInstance],
+  nulo [lpParam]
+  retornando um número identificador de janela para hWnd.
 Processe Rotina para que se adicione os menus usando hWnd.
 Processe Rotina RegisterHotkeys usando hWnd.
 Processe ShowWindow com hWnd e SW_SHOW.
@@ -50,245 +50,245 @@ Processe DispatchMessage com msg.
 Defina o resultado do programa como o membro wParam de msg.
 
 Rotina para que se mostre o Submenu About usando um número identificador :
-Atribua "Empresa Desenvolvedora: ExemploTech Software Ltda." junto com o texto CRLF
-junto com "Contato: contato@exemplotech.com.br"
-para uma string denominada detalhes.
-Atribua "Sobre" para uma string denominada título da janela.
-Anexe o caractere nulo após os detalhes.
-Anexe o caractere nulo após o título da janela.
-Processe "user32.dll" "MessageBoxA" com
-O número identificador e
-os detalhes e o título da janela e o
-MB_OK \ou MB_ICONINFORMATION
-retornando um número denominado status.
-Se o status for 0 [nulo],
-Escreva "Erro ao invocar função MessageBoxA" junto com o texto CRLF para StdOut.
+  Atribua "Empresa Desenvolvedora: ExemploTech Software Ltda." junto com o texto CRLF
+  junto com "Contato: contato@exemplotech.com.br"
+  para uma string denominada detalhes.
+  Atribua "Sobre" para uma string denominada título da janela.
+  Anexe o caractere nulo após os detalhes.
+  Anexe o caractere nulo após o título da janela.
+  Processe "user32.dll" "MessageBoxA" com
+  O número identificador e
+  os detalhes e o título da janela e o
+  MB_OK \ou MB_ICONINFORMATION
+  retornando um número denominado status.
+  Se o status for 0 [nulo],
+    Escreva "Erro ao invocar função MessageBoxA" junto com o texto CRLF para StdOut.
 
 Rotina para que se adicione os menus usando um número identificador:
-Crie a Barra de Menus
-Acrescente o Menu Arquivo na Barra de Menus.
-Acrescente o Menu Editar na Barra de Menus.
-Acrescente o Menu Ajuda na Barra de Menus.
-Monte o menu principal.
+  Crie a Barra de Menus
+  Acrescente o Menu Arquivo na Barra de Menus.
+  Acrescente o Menu Editar na Barra de Menus.
+  Acrescente o Menu Ajuda na Barra de Menus.
+  Monte o menu principal.
 
 Rotina para que se monte o menu principal:
-Acrescente o menu arquivo para a barra de menus.
-Acrescente o menu editar para a barra de menus.
-Acrescente o menu de ajuda para a barra de menus.
-Defina o menu principal.
+  Acrescente o menu arquivo para a barra de menus.
+  Acrescente o menu editar para a barra de menus.
+  Acrescente o menu de ajuda para a barra de menus.
+  Defina o menu principal.
 
 Rotina para que se acrescente o menu arquivo para a barra de menus:
-Atribua "Arquivo" para uma string denominada string Arquivo.
-Anexe o caractere nulo após a string Arquivo.
-Processe "user32.dll" "AppendMenuA" com
-o hMenu [hMenu] e
-16 [uFlags = MF_POPUP] e
-o endereçamento deste hFileMenu [uIDNewItem] e
-a string Arquivo [lpNewItem]
-retornando um número denominado status de erro.
-Se o status de erro for 0 [nulo],
-Escreva "Erro ao invocar função AppendMenuA (hFileMenu)" junto com o texto CRLF para StdOut.
+  Atribua "Arquivo" para uma string denominada string Arquivo.
+  Anexe o caractere nulo após a string Arquivo.
+  Processe "user32.dll" "AppendMenuA" com
+  o hMenu [hMenu] e
+  16 [uFlags = MF_POPUP] e
+  o endereçamento deste hFileMenu [uIDNewItem] e
+  a string Arquivo [lpNewItem]
+  retornando um número denominado status de erro.
+  Se o status de erro for 0 [nulo],
+  Escreva "Erro ao invocar função AppendMenuA (hFileMenu)" junto com o texto CRLF para StdOut.
 
 Rotina para que se acrescente o menu editar para a barra de menus:
-Atribua "Editar" para uma string denominada string Editar.
-Anexe o caractere nulo após a string Arquivo.
-Processe "user32.dll" "AppendMenuA" com
-o hMenu [hMenu] e
-16 [uFlags = MF_POPUP] e
-o endereçamento deste hEditMenu [uIDNewItem] e
-a string Editar [lpNewItem]
-retornando um número denominado status de erro.
-Se o status de erro for 0 [nulo],
-Escreva "Erro ao invocar função AppendMenuA (hEditMenu)" junto com o texto CRLF para StdOut.
+  Atribua "Editar" para uma string denominada string Editar.
+  Anexe o caractere nulo após a string Arquivo.
+  Processe "user32.dll" "AppendMenuA" com
+  o hMenu [hMenu] e
+  16 [uFlags = MF_POPUP] e
+  o endereçamento deste hEditMenu [uIDNewItem] e
+  a string Editar [lpNewItem]
+  retornando um número denominado status de erro.
+  Se o status de erro for 0 [nulo],
+  Escreva "Erro ao invocar função AppendMenuA (hEditMenu)" junto com o texto CRLF para StdOut.
 
 Rotina para que se acrescente o menu de ajuda para a barra de menus:
-Atribua "Ajuda" para uma string denominada string Ajuda.
-Anexe o caractere nulo após a string Arquivo.
-Processe "user32.dll" "AppendMenuA" com
-o hMenu [hMenu] e
-16 [uFlags = MF_POPUP] e
-o endereçamento deste hHelpMenu [uIDNewItem] e
-a string Ajuda [lpNewItem]
-retornando um número denominado status de erro.
-Se o status de erro for 0 [nulo],
-Escreva "Erro ao invocar função AppendMenuA (hHelpMenu)" junto com o texto CRLF para StdOut.
+  Atribua "Ajuda" para uma string denominada string Ajuda.
+  Anexe o caractere nulo após a string Arquivo.
+  Processe "user32.dll" "AppendMenuA" com
+  o hMenu [hMenu] e
+  16 [uFlags = MF_POPUP] e
+  o endereçamento deste hHelpMenu [uIDNewItem] e
+  a string Ajuda [lpNewItem]
+  retornando um número denominado status de erro.
+  Se o status de erro for 0 [nulo],
+  Escreva "Erro ao invocar função AppendMenuA (hHelpMenu)" junto com o texto CRLF para StdOut.
 
 Rotina para que se defina o menu principal:
-Processe "user32.dll" SetMenu com
-o número identificador da janela e
-o hMenu.
+  Processe "user32.dll" SetMenu com
+  o número identificador da janela e
+  o hMenu.
 
 Rotina para que se crie a barra de menus:
 \ Barra de Menus
-Processe "user32.dll" "CreateMenu"
-retornando um número identificador de menu denominado hMenu.
-Se o hMenu for 0 [nulo],
-Escreva "Erro ao invocar função CreateMenu"  junto com o texto CRLF para StdOut.
+  Processe "user32.dll" "CreateMenu"
+  retornando um número identificador de menu denominado hMenu.
+  Se o hMenu for 0 [nulo],
+  Escreva "Erro ao invocar função CreateMenu"  junto com o texto CRLF para StdOut.
 
 Rotina para que se crie o Menu Arquivo:
-Processe "user32.dll" "CreatePopupMenu"
-retornando o hFileMenu.
-Se o hFileMenu for 0 [nulo],
-Escreva "Erro ao invocar função CreatePopupMenu (hFileMenu)"  junto com o texto CRLF para StdOut.
+  Processe "user32.dll" "CreatePopupMenu"
+  retornando o hFileMenu.
+  Se o hFileMenu for 0 [nulo],
+  Escreva "Erro ao invocar função CreatePopupMenu (hFileMenu)"  junto com o texto CRLF para StdOut.
 
 Rotina para que se acrescente o SUBMENU ABRIR no Menu Arquivo:
-Atribua "Abrir" junto com a tabulação horizontal junto com "Ctrl+O" para uma string denominada string Abrir.
-Anexe o caractere nulo após a string Abrir.
-Processe "user32.dll" "AppendMenuA" com
-o hFileMenu [hMenu] e
-0 [uFlags = MF_STRING] e
-a ID_FILE_OPEN [uIDNewItem] e
-a string Abrir [lpNewItem]
-retornando um número denominado status de erro.
-Se o status de erro for 0 [nulo],
-Escreva "Erro ao invocar função AppendMenuA  (ID_FILE_OPEN)" junto com o texto CRLF para StdOut.
+  Atribua "Abrir" junto com a tabulação horizontal junto com "Ctrl+O" para uma string denominada string Abrir.
+  Anexe o caractere nulo após a string Abrir.
+  Processe "user32.dll" "AppendMenuA" com
+  o hFileMenu [hMenu] e
+  0 [uFlags = MF_STRING] e
+  a ID_FILE_OPEN [uIDNewItem] e
+  a string Abrir [lpNewItem]
+  retornando um número denominado status de erro.
+  Se o status de erro for 0 [nulo],
+  Escreva "Erro ao invocar função AppendMenuA  (ID_FILE_OPEN)" junto com o texto CRLF para StdOut.
 
 Rotina para que se acrescente o SUBMENU SALVAR no Menu Arquivo:
-Atribua "Salvar" junto com a tabulação horizontal junto com "Ctrl+O" para uma string denominada string Salvar.
-Anexe o caractere nulo após a string Salvar.
-Processe "user32.dll" "AppendMenuA" com
-o hFileMenu [hMenu] e
-0 [uFlags = MF_STRING] e
-a ID_FILE_SAVE [uIDNewItem] e
-a string Salvar [lpNewItem]
-retornando um número denominado status de erro.
-Se o status de erro for 0 [nulo],
-Escreva "Erro ao invocar função AppendMenuA  (ID_FILE_SAVE)" junto com o texto CRLF para StdOut.
+  Atribua "Salvar" junto com a tabulação horizontal junto com "Ctrl+O" para uma string denominada string Salvar.
+  Anexe o caractere nulo após a string Salvar.
+  Processe "user32.dll" "AppendMenuA" com
+  o hFileMenu [hMenu] e
+  0 [uFlags = MF_STRING] e
+  a ID_FILE_SAVE [uIDNewItem] e
+  a string Salvar [lpNewItem]
+  retornando um número denominado status de erro.
+  Se o status de erro for 0 [nulo],
+  Escreva "Erro ao invocar função AppendMenuA  (ID_FILE_SAVE)" junto com o texto CRLF para StdOut.
 
 Rotina para que se acrescente o SUBMENU SALVARCOMO no Menu Arquivo:
-Atribua "Salvar como..." para uma string denominada string SalvarComo.
-Anexe o caractere nulo após a string SalvarComo.
-Processe "user32.dll" "AppendMenuA" com
-o hFileMenu [hMenu] e
-0 [uFlags = MF_STRING] e
-a ID_FILE_SAVEAS [uIDNewItem] e
-a string SalvarComo [lpNewItem]
-retornando um número denominado status de erro.
-Se o status de erro for 0 [nulo],
-Escreva "Erro ao invocar função AppendMenuA  (ID_FILE_SAVEAS)" junto com o texto CRLF para StdOut.
+  Atribua "Salvar como..." para uma string denominada string SalvarComo.
+  Anexe o caractere nulo após a string SalvarComo.
+  Processe "user32.dll" "AppendMenuA" com
+  o hFileMenu [hMenu] e
+  0 [uFlags = MF_STRING] e
+  a ID_FILE_SAVEAS [uIDNewItem] e
+  a string SalvarComo [lpNewItem]
+  retornando um número denominado status de erro.
+  Se o status de erro for 0 [nulo],
+  Escreva "Erro ao invocar função AppendMenuA  (ID_FILE_SAVEAS)" junto com o texto CRLF para StdOut.
 
 Rotina para que se acrescente o SUBMENU SEPARADOR no Menu Arquivo:
-Atribua nulo para uma string denominada separador.
-Processe "user32.dll" "AppendMenuA" com
-o hFileMenu [hMenu] e
-2048 [uFlags = MF_SEPARATOR] e
-0 [uIDNewItem] e
-nulo [lpNewItem]
-retornando um número denominado status de erro.
-Se o status de erro for 0 [nulo],
-Escreva "Erro ao invocar função AppendMenuA (MF_SEPARATOR)" junto com o texto CRLF para StdOut.
+  Atribua nulo para uma string denominada separador.
+  Processe "user32.dll" "AppendMenuA" com
+  o hFileMenu [hMenu] e
+  2048 [uFlags = MF_SEPARATOR] e
+  0 [uIDNewItem] e
+  nulo [lpNewItem]
+  retornando um número denominado status de erro.
+  Se o status de erro for 0 [nulo],
+  Escreva "Erro ao invocar função AppendMenuA (MF_SEPARATOR)" junto com o texto CRLF para StdOut.
 
 Rotina para que se acrescente o SUBMENU FECHAR no Menu Arquivo:
-Atribua "Fechar" junto com a tabulação horizontal junto com "Alt+F4"  para uma string denominada string Fechar.
-Anexe o caractere nulo após a string Fechar.
-Processe "user32.dll" "AppendMenuA" com
-o hFileMenu [hMenu] e
-0 [uFlags = MF_STRING] e
-a ID_FILE_EXIT [uIDNewItem] e
-a string Fechar [lpNewItem]
-retornando um número denominado status de erro.
-Se o status de erro for 0 [nulo],
-Escreva "Erro ao invocar função AppendMenuA  (ID_FILE_EXIT)" junto com o texto CRLF para StdOut.
+  Atribua "Fechar" junto com a tabulação horizontal junto com "Alt+F4"  para uma string denominada string Fechar.
+  Anexe o caractere nulo após a string Fechar.
+  Processe "user32.dll" "AppendMenuA" com
+  o hFileMenu [hMenu] e
+  0 [uFlags = MF_STRING] e
+  a ID_FILE_EXIT [uIDNewItem] e
+  a string Fechar [lpNewItem]
+  retornando um número denominado status de erro.
+  Se o status de erro for 0 [nulo],
+  Escreva "Erro ao invocar função AppendMenuA  (ID_FILE_EXIT)" junto com o texto CRLF para StdOut.
 
 Rotina para que se crie o Menu Editar na Barra de Menus.
-Processe "user32.dll" "CreatePopupMenu"
-retornando o hEditMenu.
-Se o hEditMenu for 0 [nulo],
-Escreva "Erro ao invocar função CreatePopupMenu (hEditMenu)" junto com o texto CRLF para StdOut.
+  Processe "user32.dll" "CreatePopupMenu"
+  retornando o hEditMenu.
+  Se o hEditMenu for 0 [nulo],
+  Escreva "Erro ao invocar função CreatePopupMenu (hEditMenu)" junto com o texto CRLF para StdOut.
 
 Rotina para que se acrescente o sub menu COPIAR no Menu Editar:
-Atribua "Copiar" junto com a tabulação horizontal junto com "Ctrl+C" para uma string denominada string Copiar.
-Anexe o caractere nulo após a string Copiar.
-Processe "user32.dll" "AppendMenuA" com
-o hEditMenu [hMenu] e
-0 [uFlags = MF_STRING] e
-a ID_EDIT_COPY [uIDNewItem] e
-a string Copiar [lpNewItem]
-retornando um número denominado status de erro.
-Se o status de erro for 0 [nulo],
-Escreva "Erro ao invocar função AppendMenuA  (ID_EDIT_COPY)" junto com o texto CRLF para StdOut.
+  Atribua "Copiar" junto com a tabulação horizontal junto com "Ctrl+C" para uma string denominada string Copiar.
+  Anexe o caractere nulo após a string Copiar.
+  Processe "user32.dll" "AppendMenuA" com
+  o hEditMenu [hMenu] e
+  0 [uFlags = MF_STRING] e
+  a ID_EDIT_COPY [uIDNewItem] e
+  a string Copiar [lpNewItem]
+  retornando um número denominado status de erro.
+  Se o status de erro for 0 [nulo],
+  Escreva "Erro ao invocar função AppendMenuA  (ID_EDIT_COPY)" junto com o texto CRLF para StdOut.
 
 Rotina para que se acrescente o sub menu RECORTAR no Menu Editar:
-Atribua "Recortar" junto com a tabulação horizontal junto com "Ctrl+X" para uma string denominada string Recortar.
-Anexe o caractere nulo após a string Recortar.
-Processe "user32.dll" "AppendMenuA" com
-o hEditMenu [hMenu] e
-0 [uFlags = MF_STRING] e
-a ID_EDIT_CUT [uIDNewItem] e
-a string Recortar [lpNewItem]
-retornando um número denominado status de erro.
-Se o status de erro for 0 [nulo],
-Escreva "Erro ao invocar função AppendMenuA  (ID_EDIT_CUT)" junto com o texto CRLF para StdOut.
+  Atribua "Recortar" junto com a tabulação horizontal junto com "Ctrl+X" para uma string denominada string Recortar.
+  Anexe o caractere nulo após a string Recortar.
+  Processe "user32.dll" "AppendMenuA" com
+  o hEditMenu [hMenu] e
+  0 [uFlags = MF_STRING] e
+  a ID_EDIT_CUT [uIDNewItem] e
+  a string Recortar [lpNewItem]
+  retornando um número denominado status de erro.
+  Se o status de erro for 0 [nulo],
+  Escreva "Erro ao invocar função AppendMenuA  (ID_EDIT_CUT)" junto com o texto CRLF para StdOut.
 
 Rotina para que se acrescente o sub menu COLAR no Menu Editar:
-Atribua "Colar" junto com a tabulação horizontal junto com "Ctrl+V" para uma string denominada string Colar.
-Anexe o caractere nulo após a string Colar.
-Processe "user32.dll" "AppendMenuA" com
-o hEditMenu [hMenu] e
-0 [uFlags = MF_STRING] e
-a ID_EDIT_PASTE [uIDNewItem] e
-a string Colar [lpNewItem]
-retornando um número denominado status de erro.
-Se o status de erro for 0 [nulo],
-Escreva "Erro ao invocar função AppendMenuA  (ID_EDIT_PASTE)" junto com o texto CRLF para StdOut.
+  Atribua "Colar" junto com a tabulação horizontal junto com "Ctrl+V" para uma string denominada string Colar.
+  Anexe o caractere nulo após a string Colar.
+  Processe "user32.dll" "AppendMenuA" com
+  o hEditMenu [hMenu] e
+  0 [uFlags = MF_STRING] e
+  a ID_EDIT_PASTE [uIDNewItem] e
+  a string Colar [lpNewItem]
+  retornando um número denominado status de erro.
+  Se o status de erro for 0 [nulo],
+  Escreva "Erro ao invocar função AppendMenuA  (ID_EDIT_PASTE)" junto com o texto CRLF para StdOut.
 
 Rotina para que se acrescente o Menu Ajuda na Barra de Menus.
-Processe "user32.dll" "CreatePopupMenu"
-retornando o hHelpMenu.
-Se o hHelpMenu for 0 [nulo],
-Escreva "Erro ao invocar função CreatePopupMenu (hHelpMenu)" junto com o texto CRLF para StdOut.
+  Processe "user32.dll" "CreatePopupMenu"
+  retornando o hHelpMenu.
+  Se o hHelpMenu for 0 [nulo],
+  Escreva "Erro ao invocar função CreatePopupMenu (hHelpMenu)" junto com o texto CRLF para StdOut.
 
 Rotina para que se acrescente o sub menu Conteúdo no Menu Ajuda:
-Atribua "Conteúdo da Ajuda" junto com a tabulação horizontal junto com "F1" para uma string denominada string Conteúdo.
-Anexe o caractere nulo após a string Conteúdo.
-Processe "user32.dll" "AppendMenuA" com
-o hHelpMenu [hMenu] e
-0 [uFlags = MF_STRING] e
-a ID_HELP_CONTENTS [uIDNewItem] e
-a string Conteúdo [lpNewItem]
-retornando um número denominado status de erro.
-Se o status de erro for 0 [nulo],
-Escreva "Erro ao invocar função AppendMenuA  (ID_HELP_CONTENTS)" junto com o texto CRLF para StdOut.
+  Atribua "Conteúdo da Ajuda" junto com a tabulação horizontal junto com "F1" para uma string denominada string Conteúdo.
+  Anexe o caractere nulo após a string Conteúdo.
+  Processe "user32.dll" "AppendMenuA" com
+  o hHelpMenu [hMenu] e
+  0 [uFlags = MF_STRING] e
+  a ID_HELP_CONTENTS [uIDNewItem] e
+  a string Conteúdo [lpNewItem]
+  retornando um número denominado status de erro.
+  Se o status de erro for 0 [nulo],
+  Escreva "Erro ao invocar função AppendMenuA  (ID_HELP_CONTENTS)" junto com o texto CRLF para StdOut.
 
 Rotina para que se acrescente o sub menu Sobre no Menu Ajuda:
-Atribua "Sobre" para uma string denominada informações.
-Anexe o caractere nulo após a string about.
-Processe "user32.dll" "AppendMenuA" com
-o hHelpMenu [hMenu] e
-0 [uFlags = MF_STRING] e
-a ID_HELP_ABOUT [uIDNewItem] e
-as informações [lpNewItem]
-retornando um número denominado status de erro.
-Se o status de erro for 0 [nulo],
-Escreva "Erro ao invocar função AppendMenuA  (ID_HELP_ABOUT)" junto com o texto CRLF para StdOut.
-Rotina RegisterHotkeys usando um número identificador da janela:
-Processe RegisterHotKey com o número identificador da janela, ID_FILE_OPEN, MOD_CONTROL, Ordem do caractere 'O'.
-Processe RegisterHotKey com o número identificador da janela, ID_EDIT_COPY, MOD_CONTROL, Ordem do caractere 'C'.
-Processe RegisterHotKey com o número identificador da janela, ID_HELP_CONTENTS, 0, VK_F1.
-Rotina WndProc para processamento de mensagens da janela, recebendo número identificador da janela, Mensagem, wParam e lParam:
-Inicie uma estrutura de seleção com base na Mensagem:
-Caso a Mensagem seja WM_COMMAND:
-Inicie um bloco:
-Atribua a palavra de baixa ordem de wParam para wmId.
-Inicie uma estrutura de seleção com base em wmId:
-Caso wmId seja ID_FILE_OPEN: Processe "user32.dll" "MessageBoxA" com o número identificador da janela, 'Abrir arquivo...', 'Arquivo', MB_OK.
-Caso wmId seja ID_FILE_SAVE: Processe "user32.dll" "MessageBoxA" com o número identificador da janela, 'Salvar arquivo...', 'Arquivo', MB_OK.
-Caso wmId seja ID_FILE_SAVEAS: Processe "user32.dll" "MessageBoxA" com o número identificador da janela, 'Salvar como...', 'Arquivo', MB_OK.
-Caso wmId seja ID_FILE_EXIT: Processe PostQuitMessage com 0.
-Caso wmId seja ID_EDIT_COPY: Processe "user32.dll" "MessageBoxA" com o número identificador da janela, 'Copiar...', 'Editar', MB_OK.
-Caso wmId seja ID_EDIT_CUT: Processe "user32.dll" "MessageBoxA" com o número identificador da janela, 'Recortar...', 'Editar', MB_OK.
-Caso wmId seja ID_EDIT_PASTE: Processe "user32.dll" "MessageBoxA" com o número identificador da janela, 'Colar...', 'Editar', MB_OK.
-Caso wmId seja ID_HELP_CONTENTS: Processe "user32.dll" "MessageBoxA" com o número identificador da janela, 'Conteúdo de ajuda...', 'Ajuda', MB_OK.
-Caso wmId seja ID_HELP_ABOUT: Processe 
-Rotina para que se mostre o Submenu About usando o número identificador da janela.
-Fim da estrutura de seleção interna (wmId).
-Fim do bloco (WM_COMMAND).
-Caso a Mensagem seja WM_DESTROY:
-Inicie um bloco:
-Processe PostQuitMessage com 0.
-Defina o resultado como 0.
-Saia da Rotina WndProc.
-Fim do bloco (WM_DESTROY).
-Caso padrão (outras mensagens):
-Defina o resultado como o retorno de DefWindowProc com o número identificador da janela, Mensagem, wParam e lParam.
-Fim da estrutura de seleção principal (Mensagem).
+  Atribua "Sobre" para uma string denominada informações.
+  Anexe o caractere nulo após a string about.
+  Processe "user32.dll" "AppendMenuA" com
+  o hHelpMenu [hMenu] e
+  0 [uFlags = MF_STRING] e
+  a ID_HELP_ABOUT [uIDNewItem] e
+  as informações [lpNewItem]
+  retornando um número denominado status de erro.
+  Se o status de erro for 0 [nulo],
+  Escreva "Erro ao invocar função AppendMenuA  (ID_HELP_ABOUT)" junto com o texto CRLF para StdOut.
+  Rotina RegisterHotkeys usando um número identificador da janela:
+  Processe RegisterHotKey com o número identificador da janela, ID_FILE_OPEN, MOD_CONTROL, Ordem do caractere 'O'.
+  Processe RegisterHotKey com o número identificador da janela, ID_EDIT_COPY, MOD_CONTROL, Ordem do caractere 'C'.
+  Processe RegisterHotKey com o número identificador da janela, ID_HELP_CONTENTS, 0, VK_F1.
+  Rotina WndProc para processamento de mensagens da janela, recebendo número identificador da janela, Mensagem, wParam e lParam:
+  Inicie uma estrutura de seleção com base na Mensagem:
+  Caso a Mensagem seja WM_COMMAND:
+  Inicie um bloco:
+  Atribua a palavra de baixa ordem de wParam para wmId.
+  Inicie uma estrutura de seleção com base em wmId:
+  Caso wmId seja ID_FILE_OPEN: Processe "user32.dll" "MessageBoxA" com o número identificador da janela, 'Abrir arquivo...', 'Arquivo', MB_OK.
+  Caso wmId seja ID_FILE_SAVE: Processe "user32.dll" "MessageBoxA" com o número identificador da janela, 'Salvar arquivo...', 'Arquivo', MB_OK.
+  Caso wmId seja ID_FILE_SAVEAS: Processe "user32.dll" "MessageBoxA" com o número identificador da janela, 'Salvar como...', 'Arquivo', MB_OK.
+  Caso wmId seja ID_FILE_EXIT: Processe PostQuitMessage com 0.
+  Caso wmId seja ID_EDIT_COPY: Processe "user32.dll" "MessageBoxA" com o número identificador da janela, 'Copiar...', 'Editar', MB_OK.
+  Caso wmId seja ID_EDIT_CUT: Processe "user32.dll" "MessageBoxA" com o número identificador da janela, 'Recortar...', 'Editar', MB_OK.
+  Caso wmId seja ID_EDIT_PASTE: Processe "user32.dll" "MessageBoxA" com o número identificador da janela, 'Colar...', 'Editar', MB_OK.
+  Caso wmId seja ID_HELP_CONTENTS: Processe "user32.dll" "MessageBoxA" com o número identificador da janela, 'Conteúdo de ajuda...', 'Ajuda', MB_OK.
+  Caso wmId seja ID_HELP_ABOUT: Processe 
+  Rotina para que se mostre o Submenu About usando o número identificador da janela.
+  Fim da estrutura de seleção interna (wmId).
+  Fim do bloco (WM_COMMAND).
+  Caso a Mensagem seja WM_DESTROY:
+  Inicie um bloco:
+  Processe PostQuitMessage com 0.
+  Defina o resultado como 0.
+  Saia da Rotina WndProc.
+  Fim do bloco (WM_DESTROY).
+  Caso padrão (outras mensagens):
+  Defina o resultado como o retorno de DefWindowProc com o número identificador da janela, Mensagem, wParam e lParam.
+  Fim da estrutura de seleção principal (Mensagem).
