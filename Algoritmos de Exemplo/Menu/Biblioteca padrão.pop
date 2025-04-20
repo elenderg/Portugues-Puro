@@ -3675,6 +3675,11 @@ Rotina para que se compativelmente handle alguma mensagem com uma janela do prog
     Execute algum WM_SYSKEYDOWN com o wParam e o lParam;
     Atribua 0 para EAX;
     Retorne.
+  Se a mensagem for 273 [WM_COMMAND],
+    Execute algum WM_COMMAND com
+      O wParam;
+    Atribua 0 para EAX;
+    Retorne.
   [Caso o valor da mensagem seja outro:]
   Processe "user32.dll" "DefWindowProcA" com \Chama o procedimento de janela padrão para  processamento das mensagens de janela que um aplicativo não processa.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-defwindowproca
@@ -3682,6 +3687,29 @@ Rotina para que se compativelmente handle alguma mensagem com uma janela do prog
     e A mensagem [Msg]
     e O wParam [wParam]
     e O lParam. [lParam]
+
+Rotina para que se execute algum WM_COMMAND com um wParam:
+  Atribua o wParam para um número denominado wmId.
+  \Converta a word
+  Se a wmId for a ID_FILE_OPEN, 
+    Escreva "clicou no menu arquivo" junto com o texto CRLF para StdOut.
+  Se a wmId for a ID_FILE_SAVE, 
+    Escreva "clicou no menu arquivo" junto com o texto CRLF para StdOut.
+  Se a wmId for a ID_FILE_SAVEAS, 
+    Escreva "clicou no menu arquivo" junto com o texto CRLF para StdOut.
+  Se a wmId for a ID_FILE_EXIT, 
+    Feche o programa.
+  Se a wmId for a ID_EDIT_COPY, 
+    Escreva "clicou no menu arquivo" junto com o texto CRLF para StdOut.
+  Se a wmId for a ID_EDIT_CUT, 
+    Escreva "clicou no menu arquivo" junto com o texto CRLF para StdOut.
+  Se a wmId for a ID_EDIT_PASTE, 
+    Escreva "clicou no menu arquivo" junto com o texto CRLF para StdOut.
+  Se a wmId for a ID_HELP_CONTENTS, 
+    Escreva "clicou no menu arquivo" junto com o texto CRLF para StdOut.
+  Se a wmId for a ID_HELP_ABOUT, 
+    Mostre o Submenu About.
+
 
 Rotina para que se compativelmente aguarde por um ponteiro de processo:
   Processe "kernel32.dll" "WaitForSingleObject" com \ Espera até que o objeto esteja no estado sinalizado ou o intervalo de tempo delimite expire.
@@ -9784,6 +9812,12 @@ Rotina para que se inicialize a janela do programa:
     e 0 [hMenu]
     e O número identificador deste módulo [hInstance]
     e 0. [lpParam]
+  Adicione os menus na janela principal do programa.
+  Registre as teclas de atalho usando a janela principal do programa.
+  Processe "user32.dll" "UpdateWindow" com a janela principal do programa 
+    retornando um número denominado status de erro.
+  Se o status de erro for 0,
+    Escreva "Erro ao invocar UpdateWindow" junto com o texto CRLF para StdOut.
   Se o tipo da aplicação não for "console",
     Processe "user32.dll" "ShowWindow" com \ Define o estado de exibição da janela especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-showwindow
