@@ -16,7 +16,7 @@ Você deve receber uma resposta em até 24 horas. Se por algum motivo não receb
 
 Por favor, inclua as informações solicitadas listadas abaixo (na medida do possível) para nos ajudar a entender melhor a natureza e o escopo do possível problema:
 
-  * Tipo de problema (por exemplo, estouro de buffer, injeção de SQL, scripting entre sites, etc.)
+  * Tipo de problema (por exemplo, estouro de buffer, vazamento de memória, corrompimento de arquivos, etc.)
   * Caminhos completos dos arquivos de origem relacionados à manifestação do problema
   * A localização do código-fonte afetado (tag/branch/commit ou URL direta)
   * Qualquer configuração especial necessária para reproduzir o problema
