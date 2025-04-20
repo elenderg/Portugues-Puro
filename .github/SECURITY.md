@@ -29,6 +29,6 @@ Essas informações nos ajudarão a avaliar seu relatório mais rapidamente.
 
 ## Idiomas Preferidos
 
-Preferimos que todas as comunicações sejam no Idioma Português.
+Preferimos que todas as comunicações sejam realizadas no Idioma Português, sempre que for possível.
 
 <!-- FIM DO ARQUIVO SECURITY.MD -->
