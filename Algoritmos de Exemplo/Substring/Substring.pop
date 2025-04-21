@@ -16,7 +16,7 @@ Rotina para que se busque por uma string em um endereço completo:
     Subtraia 1 desde o caractere final deste segmento inicial deste percorredor.
     Atribua o segmento inicial deste percorredor para uma string denominada palavra.
     Se a palavra estiver em branco, pare.
-    Se a quantidade de caracteres desta palavra for menor do que 12, reitere.
+    Se a quantidade de caracteres desta palavra for menor do que 12, reitere. \ opcional - inserido por conta das exigências do Rosetta Code
     Se a string estiver na palavra,
       Escreva a palavra junto com o texto CRLF para StdOut.
    Reitere.
