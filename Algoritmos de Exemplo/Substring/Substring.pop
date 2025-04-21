@@ -1,0 +1,24 @@
+Rotina para que se execute o programa:
+  \Inicialize os componentes.
+  Defina "console" como o tipo da aplicação.
+  Atribua "C:\Portugues-Puro\Algoritmos de Exemplo\Substring\unixdict.txt" para um endereço completo.
+  Busque por "the" no endereço completo.
+  Feche o programa.
+
+Rotina para que se busque por uma string em um endereço completo:
+  Carregue o endereço completo em um trecho.
+  Lance um percorredor sobre o trecho.
+  Escreva "Encontrado as seguintes palavras com '" junto com a string
+    junto com "' no arquivo '" junto com o endereço completo junto com "'." junto com o texto CRLF para StdOut.
+  Escreva "----------------------------------------------------------------------------" junto com o texto CRLF para StdOut.
+  Itere.
+    Mova o percorredor (usando diretrizes de arquivos de texto).
+    Subtraia 1 desde o caractere final deste segmento inicial deste percorredor.
+    Atribua o segmento inicial deste percorredor para uma string denominada palavra.
+    Se a palavra estiver em branco, pare.
+    Se a quantidade de caracteres desta palavra for menor do que 12, reitere.
+    Se a string estiver na palavra,
+      Escreva a palavra junto com o texto CRLF para StdOut.
+   Reitere.
+   Escreva "----------------------------------------------------------------------------" junto com o texto CRLF para StdOut.
+   Escreva "Execução finalizada." para StdOut.
