@@ -1,0 +1,40 @@
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  Limpe a tela com a cor cinza.
+  Use a canetinha grossa.
+  Desenhe o símbolo Yin Yang no centro desta caixa desta tela.
+  Aguarde a tecla Esc.
+  Feche o programa.
+
+Rotina para que se desenhe o símbolo Yin Yang em uma localização:
+  Atribua 11520 para um twip denominado largura.
+  Atribua 11520 para um twip denominado altura.
+  Faça uma caixa [usando] a largura pela altura.
+  Faça uma elipse usando a caixa.
+  Centralize a elipse sobre a localização.
+  Cubra somente fora dessa elipse.
+  Faça uma caixa denominada metade esquerda usando 
+    A coordenada X1 desta caixa desta tela e
+    A coordenada Y1 desta caixa desta tela e
+    A coordenada X desta localização e
+    A coordenada Y2 desta caixa desta tela.
+  Pinte e preencha a metade esquerda com a cor branca.
+  Faça uma caixa denominada metade direita usando 
+    A coordenada X desta localização e
+    A coordenada X1 desta caixa desta tela e
+    A coordenada X2 desta caixa desta tela e
+    A coordenada Y2 desta caixa desta tela.
+  Pinte e preencha a metade direita com a cor preta.
+  Faça uma elipse denominada círculo usando a caixa.
+  Redimensione proporcionalmente o círculo usando 1/2.
+  Atribua a localização para uma localização denominada localização superior.
+  Mova a localização superior para cima a altura dividido por 4.
+  Atribua a localização para uma localização denominada localização inferior.
+  Mova a localização inferior para baixo a altura dividido por 4.
+  Pinte o círculo sobre a localização superior com a cor branca.
+  Pinte o círculo sobre a localização inferior com a cor preta.
+  Atribua o círculo para um ponto circular.
+  Redimensione proporcionalmente o ponto circular usando 1/4.
+  Pinte o ponto circular sobre a localização inferior com a cor branca.
+  Pinte o ponto circular sobre a localização superior com a cor preta.
+  Atualize a tela.
