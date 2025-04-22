@@ -1,0 +1,7 @@
+Rotina para que se execute o programa:
+  Defina "console" como o tipo da aplicação.
+  Atribua "Olá" para uma string.
+  Atribua a string junto com " Mundo!" para uma outra string.
+  Escreva a string junto com o texto CRLF para StdOut.
+  Escreva a outra string para StdOut.
+  Feche o programa.
