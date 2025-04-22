@@ -1,0 +1,21 @@
+To run:
+  Start up.
+  Write "working...".
+  Do sql stuff.
+  Write "done".
+  Read a string.
+  Shut down.
+
+To do sql stuff:
+  Open a database using "driver=SQL Server; server=danrzeppa.com,5050; database=testdb; uid=sa; pwd=12345678".
+  If the database is nil, write "OPEN ERROR: " then the i/o error; exit.
+  View the database using "select pkid, name from people".
+  If the i/o error is not blank, write "VIEW ERROR: " then the i/o error.
+  Loop.
+  Get the next row from the database.
+  If the database is out of rows, break.
+  Get a number from column 1 of the database.
+  Get a string from column 2 of the database.
+  Write "pkid=" then the number then ", name=" then the string.
+  Repeat.
+  Close the database.

@@ -1,18 +1,19 @@
 Rotina para que se execute o programa:
   Defina "console" como o tipo da aplicação.
-  Mostre a soma das potências cúbicas.
+  Mostre a soma das primeiras n potências cúbicas.
   Feche o programa.
 
-
-Rotina para que se mostre a soma das potências cúbicas:
-  Atribua 0 para um número denominado contador.
-  Atribua 49 para um número denominado n.
+Rotina para que se mostre a soma das primeiras n potências cúbicas:
+  Atribua -1 para um número denominado contador.
+  Atribua 49 para um número denominado potências.
   Itere.
-  Se o contador for maior do que 49, pare.
     Adicione 1 para o contador.
-    Atribua o contador vezes o contador para um número denominado resultado.
-    Divida o resultado por 2.
+    Se o contador for maior do que as potências, retorne.
+    Atribua o contador mais 1 vezes o contador para um número denominado resultado.
+    Corte o resultado pela metade.
     Eleve o resultado para 2.
     Escreva o resultado seguido de " " para StdOut.
-    Se o contador for uniformemente divisível por 5, escreva "" para StdOut.
+    Se o contador for uniformemente divisível por 5, 
+      Escreva o texto CRLF para StdOut.
   Reitere.
+

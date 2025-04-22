@@ -2546,11 +2546,21 @@ Rotina para que se eleve um número para um segundo número:
   Atribua 1 para um número resultante.
  Atribua 0 para um contador.
   Itere.
-    Se o contador for maior do que o segundo número, pare.
     Adicione 1 para o contador.
+    Se o contador for maior do que o segundo número, pare.
     Multiplique o número resultante pelo número.
   Reitere.
   Atribua o número resultante ao número.
+
+To raise a number to another number:
+  If the other number is 0, put 1 into the number; exit.
+  If the other number is less than 0, put 0 into the number; exit. \ should be 1/the raised result, but always comes out 0 with numbers
+  Put 1 into a result number.
+  Loop.
+    If a counter is past the other number, break.
+    Multiply the result by the number.
+  Repeat.
+  Put the result into the number.
 
 Rotina para que se atribua um par de números para um segundo par de números:
   Atribua o número X deste par de números ao número X deste segundo par de números.

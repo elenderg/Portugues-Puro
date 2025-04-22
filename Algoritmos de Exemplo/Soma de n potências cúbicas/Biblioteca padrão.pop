@@ -2544,10 +2544,8 @@ Rotina para que se eleve um número para um segundo número:
     Atribua 0 ao número; \ TODO: Atribua 1 dividido por o segundo número ao número.
     Retorne. 
   Atribua 1 para um número resultante.
- Atribua 0 para um contador.
   Itere.
-    Se o contador for maior do que o segundo número, pare.
-    Adicione 1 para o contador.
+    Se um contador estiver ultrapassando o segundo número, pare.
     Multiplique o número resultante pelo número.
   Reitere.
   Atribua o número resultante ao número.
