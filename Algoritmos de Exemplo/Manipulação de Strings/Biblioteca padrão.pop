@@ -20564,10 +20564,10 @@ Rotina para que se substitua um byte usando uma tabela de tradução:
 Rotina para que se posicione um subtexto sobre uma string:
   Decodifique $8B8508000000. \ mov eax,[ebp+8] \ o subtexto
   Decodifique $8B9D0C000000. \ mov ebx,[ebp+12] \ a string
-  \ atribua o caractere inicial desta string ao caractere inicial deste subtexto
+  \ atribui o caractere inicial desta string ao caractere inicial deste subtexto
   Decodifique $8B8B00000000. \ mov ecx,[ebx+0] \ o caractere inicial da string
   Decodifique $898800000000. \ mov [eax+0],ecx \ o caractere inicial do subtexto
-  \ atribua o caractere inicial desta string menos 1 ao caractere final deste subtexto
+  \ atribui o caractere inicial desta string menos 1 ao caractere final deste subtexto
   Decodifique $49. \ dec ecx
   Decodifique $898804000000. \ mov [eax+4],ecx \ o caractere final deste subtexto
 

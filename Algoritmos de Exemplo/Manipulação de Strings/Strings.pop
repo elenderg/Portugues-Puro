@@ -1,39 +1,47 @@
+Rotina para que se execute o programa:
+  Defina "console" como o tipo da aplicação.
+  Subdivida "gHHH5YY++///\" em uns conjuntos de texto para cada mudança de caractere.
+  Escreva os conjuntos de texto na saída padrão.
+  Destrua os conjuntos de texto.
+  Feche o programa.
 
 
+Rotina para que se subdivida uma string em uns conjuntos de texto para cada mudança de caractere:
+  Se a quantidade de caracteres desta string for menor que 2,
+    Adicione a string para os conjuntos de texto;
+    Retorne.
+  Lance um percorredor sobre a string.
+  Itere.
+    Mova o percorredor (cláusulas de mudanças de caracteres).
+    Adicione o segmento inicial deste percorredor para os conjuntos de texto.
+    Se o segmento final deste percorredor estiver em branco, 
+      retorne.
+  Reitere.
 
-To run:
-Start up.
-Split "gHHH5YY++///\" into some string things by change of character.
-Write the string things on the console.
-Destroy the string things.
-Wait for the escape key.
-Shut down.
+Rotina para que se mova um percorredor (cláusulas de mudanças de caracteres):
+  Posicione o segmento inicial deste percorredor sobre o segmento final deste percorredor.
+  Itere.
+    Se o segmento final deste percorredor estiver em branco, 
+      retorne.
+    Se o segmento inicial deste percorredor estiver em branco,
+      Avance o percorredor;
+      Reitere.
+    Atribua o caractere final deste segmento inicial deste percorredor mais 1 para um endereço de byte.
+    Se o conteúdo deste caractere final deste segmento inicial deste percorredor não for o conteúdo deste endereço de byte,
+      Retorne.
+    Se o conteúdo deste caractere final deste segmento inicial deste percorredor for o conteúdo deste endereço de byte,
+      Avance o percorredor.
+  Reitere.
 
-To split a string into some string things by change of character:
-If the string's length is less than 2, add the string to the string things; exit.
-Slap a rider on the string.
-Loop.
-Move the rider (change of character rules).
-Add the rider's token to the string things.
-If the rider's source is blank, exit.
-Repeat.
 
-To move a rider (change of character rules):
-Position the rider's token on the rider's source.
-Loop.
-If the rider's source is blank, exit.
-If the rider's token is blank, bump the rider; repeat.
-Put the rider's token's last plus 1 into a byte pointer.
-If the rider's token's last's target is not the byte pointer's target, exit.
-Bump the rider.
-Repeat.
-
-To write some string things to a console;
-To write some string things on a console:
-Get a string thing from the string things.
-Loop.
-If the string thing is nil, write "" on the console; exit.
-Write the string thing's string on the console without advancing.
-If the string thing's next is not nil, write ", " on the console without advancing.
-Put the string thing's next into the string thing.
-Repeat.
+Rotina para que se escreva uns conjuntos de texto na saída padrão:
+  
+  Itere.
+    Obtenha um conjunto de texto desde os conjuntos de texto.
+    Se o conjunto de texto for inexistente,
+      Atribua o primeiro conjunto de texto destes conjuntos de texto ao conjunto de texto;
+      Retorne.
+    Se o conjunto de texto não for o primeiro conjunto de texto destes conjuntos de texto,
+      Anteponha ", " para a string deste conjunto de texto.
+    Escreva a string deste conjunto de texto para StdOut.
+  Reitere.
