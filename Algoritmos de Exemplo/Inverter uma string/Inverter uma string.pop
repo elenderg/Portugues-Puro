@@ -1,0 +1,6 @@
+Rotina para que se execute o programa:
+  Defina "console" como o tipo da aplicação.
+  Atribua "asdf" para uma string.
+  Reverta a string.
+  Escreva a string para StdOut.
+  Feche o programa.
