@@ -11492,7 +11492,7 @@ Rotina para que se inverta um sinalizador:
     Retorne.
   Atribua 1 ao sinalizador.
 
-Rotina para que se inverta uma string:
+Rotina para que se inverta uma string;
 Rotina para que se reverta uma string:
   \ podia ser mais eficiente. Verificar se a quantidade de caracteres é menor do que 2, por exemplo.
   Preserve a string.
