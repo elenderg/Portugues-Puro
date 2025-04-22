@@ -1,0 +1,29 @@
+Rotina para que se execute o programa:
+  Defina "console" como o tipo da aplicação.
+  Remova o primeiro caractere de uma string.
+  Remova o último caractere dessa string.
+  Remova o primeiro e o último caractere dessa string.
+  Feche o programa.
+
+Rotina para que se remova o primeiro caractere de uma string:
+  Atribua "Rosetta Code" para a string.
+  Lance um subtexto sobre a string.
+  Subtraia 1 desde o caractere inicial deste subtexto.
+  Escreva o subtexto junto com o texto CRLF para StdOut.
+  Escreva a quantidade de caracteres deste subtexto junto com "caracteres" junto com o texto CRLF para StdOut.
+
+Rotina para que se remova o último caractere dessa string:
+  Atribua "Rosetta Code" para uma string. 
+  Lance um subtexto sobre a string.
+  Subtraia 1 desde o caractere final deste subtexto.
+  Escreva o subtexto junto com o texto CRLF para StdOut.
+  Escreva a quantidade de caracteres deste subtexto junto com "caracteres" junto com o texto CRLF para StdOut.
+
+Rotina para que se remova o primeiro e o último caractere dessa string:
+  Atribua "Rosetta Code" para uma string.
+  Lance um subtexto sobre a string.
+  Subtraia 1 desde o caractere inicial deste subtexto.
+  Subtraia 1 desde o caractere final deste subtexto.
+  Escreva o subtexto junto com o texto CRLF para StdOut.
+  Escreva a quantidade de caracteres deste subtexto junto com "caracteres" junto com o texto CRLF para StdOut.
+  
