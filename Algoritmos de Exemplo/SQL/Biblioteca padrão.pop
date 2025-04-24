@@ -9777,11 +9777,11 @@ Rotina para que se inicialize a janela do programa:
     e 0 [hMenu]
     e O número identificador deste módulo [hInstance]
     e 0. [lpParam]
-  Se o tipo da aplicação não for "console",
-    Processe "user32.dll" "ShowWindow" com \ Define o estado de exibição da janela especificada.
+  \Se o tipo da aplicação não for "console",
+    \Processe "user32.dll" "ShowWindow" com \ Define o estado de exibição da janela especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-showwindow
-      A janela principal do programa [hWnd]
-      e 1. [nCmdShow = SW_SHOWNORMAL]
+      \A janela principal do programa [hWnd]
+      \e 1. [nCmdShow = SW_SHOWNORMAL]
 
 Rotina para que se inicialize a infraestrutura WinSock:
   Processe "ws2_32.dll" "WSAStartup" com \ Inicia o uso da DLL Winsock por um processo.

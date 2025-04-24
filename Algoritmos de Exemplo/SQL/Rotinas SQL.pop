@@ -24,8 +24,7 @@ Rotina para que se efetue as operações do SQL:
   Reitere.
   Feche o banco de dados.
 
-
-\ Begin the routines that you actually use, the ones below this section are internal /
+\ Rotinas principais 
 
 Um string de conexão é uma string.
 
@@ -142,11 +141,15 @@ Um identificador da instrução é um identificador SQL.
 
 Um código de erro SQL é uma word.
 
+\ Observação. A documentação para as funções da DLL odbc32 pode ser encontrada no website abaixo: 
+\ https://learn.microsoft.com/pt-br/sql/odbc/reference/syntax/odbc-api-reference?view=sql-server-ver16
+\ https://learn.microsoft.com/pdf?url=https%3A%2F%2Flearn.microsoft.com%2Fpt-br%2Fsql%2Fconnect%2Ftoc.json%3Fview%3Dsql-server-ver16
 Rotina para que se crie um identificador do ambiente:
   Limpe o erro do fluxo de entrada/saída.
   Limpe o identificador do ambiente.
   Processe "odbc32.dll" "SQLAllocHandle" com 
-    1 [sql_handle_env] e 0 [sql_null_handle] e 
+    1 [SQL_HANDLE_ENV] e 
+    0 [SQL_NULL_HANDLE] e 
     O endereçamento deste identificador do ambiente 
   retornando uma word denominada resultado da operação.
   Se o identificador do ambiente for 0,
