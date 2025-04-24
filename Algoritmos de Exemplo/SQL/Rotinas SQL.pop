@@ -1,19 +1,22 @@
 Rotina para que se execute o programa:
   Inicialize os componentes.
-  Escreva "iniciando...".
+  Defina "console" como o tipo da aplicação.
+  Escreva "Iniciando operações, aguarde um momento..." junto com o texto CRLF para StdOut.
   Efetue as operações do SQL.
-  Escreva "concluído".
-  Leia uma string.
+  Escreva "Operações concluídas. Insira agora o comando desejado." junto com o texto CRLF para StdOut.
+  Leia o comando desde a StdIn.
   Feche o programa.
+
+O comando é um trecho.
 
 Rotina para que se efetue as operações do SQL:
   Abra um banco de dados usando "driver=SQL Server; server=danrzeppa.com,5050; database=testdb; uid=sa; pwd=12345678".
   Se o banco de dados for inexistente,
     Escreva "ERRO AO ABRIR: " junto com o erro do fluxo de entrada/saída junto com o texto CRLF para Stdout;
-    Retorne.
+    Feche o programa.
   Visualize o banco de dados usando "SELECT pkid, name FROM people".
   Se o erro do fluxo de entrada/saída não estiver em branco,
-    Retorne "ERRO AO VISUALIZAR: " junto com o erro do fluxo de entrada/saída junto com o texto CRLF para Stdout.
+    Escreva "ERRO AO VISUALIZAR: " junto com o erro do fluxo de entrada/saída junto com o texto CRLF para Stdout.
   Itere.
     Obtenha a próxima fileira desde o banco de dados.
     Se o banco de dados estiver sem fileiras,
@@ -193,14 +196,14 @@ Rotina para que se destrua um identificador da conexão:
 
 Rotina para que se conecte um identificador da conexão usando uma string de conexão:
   Limpe o erro do fluxo de entrada/saída.
-  Reassign o caractere inicial duma string denominada string de saída usando 1024
+  Reaponte o caractere inicial duma string denominada string de saída usando 1024.
   Processe "odbc32.dll" "SQLDriverConnect" com 
     O identificador da conexão e 
     0 e 
     O caractere inicial desta string de conexão e
     A quantidade de caracteres desta string de conexão e 
     O caractere inicial desta string de saída e 
-    A quantidade de caractere desta string de saída e 
+    A quantidade de caracteres desta string de saída e 
     O endereçamento duma quantidade de caracteres e 
     0 [SQL_DRIVER_NOPROMPT] 
   Retornando uma word denominada resultado da operação.
@@ -245,7 +248,7 @@ Rotina para que se execute uma string SQL usando um identificador da instrução r
   Atribua 0 para o número de linhas afetadas.
   Processe "odbc32.dll" "SQLExecDirect" com 
     O identificador da instrução e 
-    O caractere inicial desta SQL string e 
+    O caractere inicial desta string SQL e 
     A quantidade de caracteres desta string SQL
   Retornando uma word denominada resultado da operação.
   Atribua o resultado da operação para um número denominado resultado.
@@ -295,7 +298,7 @@ Rotina para que se obtenha uma string usando um identificador da instrução e um 
   Limpe a string.
   Limpe o sinalizador de nulidade.
   Atribua 1024 para um número denominado tamanho temporário.
-  Reassign o caractere inicial duma string denominada string temporária usando o tamanho temporário.
+  Reaponte o caractere inicial duma string denominada string temporária usando o tamanho temporário.
   Itere.
     Atribua 0 para um número denominado tamanho.
     Processe "odbc32.dll" "SQLGetData" com
@@ -353,8 +356,8 @@ Rotina para que se obtenha um erro de SQL usando um identificador SQL e um númer
  \ prepara as variáveis
   Atribua "00000" para um string de estado. 
   Anexe o caractere NULL após a string de estado.
-  Atribua 1024 para uma quantidade de caracteres da mensagem.
-  Reassign o caractere inicial duma mensagem usando a quantidade de caracteres da mensagem.
+  Atribua 1024 para um número denominado quantidade de caracteres da mensagem.
+  Reaponte o caractere inicial duma mensagem usando a quantidade de caracteres da mensagem.
   \ Obtém os dados
   Processe "odbc32.dll" "SQLGetDiagRec" com 
     O tipo do identificador e 
@@ -376,7 +379,7 @@ Rotina para que se obtenha um erro de SQL usando um identificador SQL e um númer
   Atribua a string de estado para a string de estado deste erro de SQL.
   Atribua a mensagem para a mensagem deste erro de SQL.
 
-Uma mensagem é uma string.
+\Uma mensagem é uma string.
 Um número de erro nativo é um número.
 Uma string de estado é uma string.
 Um erro de SQL é uma estrutura com

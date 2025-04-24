@@ -1489,7 +1489,7 @@ A zero linha reta é uma linha reta. \ tracer
 
 O zero localização é uma localização.
 
-O erro do fluxo de entrada/saída é uma string.
+O erro do fluxo de entrada/saída é uma string de erro.
 
 \O recurso de fonte osmosiana é uma identificador de fonte.
 O null número da fonte é um número da fonte.
