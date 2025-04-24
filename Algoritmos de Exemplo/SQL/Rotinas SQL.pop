@@ -160,21 +160,21 @@ Rotina para que se crie um identificador do ambiente:
     Retorne.
   Processe "odbc32.dll" "SQLSetEnvAttr" com 
     O identificador do ambiente e 
-    200 [sql_attr_odbc_version] e 
-    3 [sql_ov_odcb3] e 
+    200 [SQL_ATTR_ODBC_VERSION] e 
+    3 [SQL_OV_ODCB3] e 
     0. \ Define a versão do odbc
 
 Rotina para que se destrua um identificador do ambiente:
   Se o identificador do ambiente for inexistente, retorne.
   Processe "odbc32.dll" "SQLFreeHandle" com 
-    1 [sql_handle_env] e 
+    1 [SQL_HANDLE_ENV] e 
     O identificador do ambiente.
 
 Rotina para que se crie um identificador da conexão usando um identificador do ambiente:
   Limpe o erro do fluxo de entrada/saída.
   Limpe o identificador da conexão.
   Processe "odbc32.dll" "SQLAllocHandle" com 
-    2 [sql_handle_dbc] e 
+    2 [SQL_HANDLE_DBC] e 
     O identificador do ambiente e 
     O endereçamento deste identificador da conexão 
   Retornando uma word denominada resultado da operação.
@@ -188,7 +188,7 @@ Rotina para que se crie um identificador da conexão usando um identificador do a
 Rotina para que se destrua um identificador da conexão:
   Se o identificador da conexão for inexistente, retorne.
   Processe "odbc32.dll" "SQLFreeHandle" com 
-    2 [sql_handle_dbc] e 
+    2 [SQL_HANDLE_DBC] e 
     O identificador da conexão.
 
 Rotina para que se conecte um identificador da conexão usando uma string de conexão:
@@ -202,7 +202,7 @@ Rotina para que se conecte um identificador da conexão usando uma string de cone
     O caractere inicial desta string de saída e 
     A quantidade de caractere desta string de saída e 
     O endereçamento duma quantidade de caracteres e 
-    0 [sql_driver_noprompt] 
+    0 [SQL_DRIVER_NOPROMPT] 
   retornando uma word denominada resultado da operação.
   Se o identificador da conexão for 0,
     Obtenha o erro do fluxo de entrada/saída usando o identificador da conexão;
@@ -220,7 +220,7 @@ Rotina para que se crie um identificador da instrução usando um identificador da
   Limpe o erro do fluxo de entrada/saída.
   Limpe o identificador da instrução.
   Processe "odbc32.dll" "SQLAllocHandle" com 
-    3 [sql_handle_stmt] e 
+    3 [SQL_HANDLE_STMT] e 
     O identificador da conexão e 
     O endereçamento deste identificador da instrução 
   retornando uma word denominada resultado da operação.
@@ -235,7 +235,7 @@ Rotina para que se destrua um identificador da instrução:
   Se o identificador da instrução for inexistente,
     Retorne.
   Processe "odbc32.dll" "SQLFreeHandle" com 
-    3 [sql_handle_stmt] e 
+    3 [SQL_HANDLE_STMT] e 
     O identificador da instrução.
 
 Uma string SQL é uma string.
@@ -249,7 +249,7 @@ Rotina para que se execute uma string SQL usando um identificador da instrução r
     A quantidade de caracteres desta string SQL
   Retornando uma word denominada resultado da operação.
   Atribua o resultado da operação para um número denominado resultado.
-  Se o resultado for 100 [sql_no_data],
+  Se o resultado for 100 [SQL_NO_DATA],
     Retorne.
   Se o resultado da operação for um código de erro SQL,
     Obtenha o erro do fluxo de entrada/saída usando o identificador da instrução;
@@ -265,7 +265,7 @@ Rotina para que se disponibilize dados usando um identificador da instrução reto
     O identificador da instrução 
   Retornando uma word denominada resultado da operação.
   Atribua o resultado da operação para um número.
-  Se o número for 100 [sql_no_data],
+  Se o número for 100 [SQL_NO_DATA],
     Ative o sinalizador de conclusão;
     Retorne.
   Se o resultado da operação for um código de erro SQL,
@@ -279,7 +279,7 @@ Rotina para que se obtenha um número usando um identificador da instrução e um n
   Limpe o sinalizador de nulidade.
   Processe "odbc32.dll" "SQLGetData" com 
     O identificador da instrução e 
-    O número da coluna e 4 [sql_integer] e 
+    O número da coluna e 4 [SQL_INTEGER] e 
     O endereçamento deste número e 
     A magnitude deste número e 
     O endereçamento dum número denominado número indicador
@@ -287,7 +287,7 @@ Rotina para que se obtenha um número usando um identificador da instrução e um n
   Se o resultado da operação for um código de erro SQL,
     Obtenha o erro do fluxo de entrada/saída usando o identificador da instrução;
     Retorne.
-  Se o número indicador for -1 [sql_null_data],
+  Se o número indicador for -1 [SQL_NULL_DATA],
     Ative o sinalizador de nulidade.
 
 Rotina para que se obtenha uma string usando um identificador da instrução e um número da coluna retornando um sinalizador de nulidade:
@@ -301,28 +301,28 @@ Rotina para que se obtenha uma string usando um identificador da instrução e um 
     Processe "odbc32.dll" "SQLGetData" com
       O identificador da instrução e 
       O número da coluna e 
-      1 [sql_char] e 
+      1 [SQL_CHAR] e 
       O caractere inicial desta string temporária  e 
       O tamanho temporário e 
       O endereçamento deste tamanho
     Retornando uma word denominada resultado da operação.
     Atribua o resultado da operação para um número denominado resultado.
-    Se o resultado for -1 [sql_null_data],
+    Se o resultado for -1 [SQL_NULL_DATA],
       Ative o sinalizador de nulidade;
       Retorne. 
-    Se o tamanho for -1 [sql_null_data],
+    Se o tamanho for -1 [SQL_NULL_DATA],
       Ative o sinalizador de nulidade;
       Retorne. 
-    Se o resultado não for 0 [sql_success],
+    Se o resultado não for 0 [SQL_SUCCESS],
       Atribua o tamanho temporário menos 2 para o tamanho. \ Menos 2 para 2 bytes nulos
     Atribua o caractere inicial desta string temporária mais o tamanho menos 1 para o caractere final desta string temporária.
     Acrescente a string temporária para a string.
-    Se o resultado for 0 [sql_success],
+    Se o resultado for 0 [SQL_SUCCESS],
       Retorne.
-    Se o resultado não for 1 [sql_success_with_info],
+    Se o resultado não for 1 [SQL_SUCCESS_WITH_INFO],
       Obtenha o erro do fluxo de entrada/saída usando o identificador da instrução;
       Retorne.
-    Obtenha um erro de SQL usando o identificador da instrução e 3 [sql_handle_stmt]. 
+    Obtenha um erro de SQL usando o identificador da instrução e 3 [SQL_HANDLE_STMT]. 
     \ Precisamos apenas do código de erro. Dá pra otimizar isso ao se livrar da mensagem de erro
     Se a string de estado deste erro de SQL não for "01004",
       Obtenha o erro do fluxo de entrada/saída usando o identificador da instrução;
@@ -331,22 +331,22 @@ Rotina para que se obtenha uma string usando um identificador da instrução e um 
 
 Rotina para que se determine se uma word é um código de erro SQL:
   Atribua a word para um número.
-  Se o número for 0 [sql_success], diga não.
-  Se o número for 1 [sql_success_with_info], diga não.
+  Se o número for 0 [SQL_SUCCESS], diga não.
+  Se o número for 1 [SQL_SUCCESS_WITH_INFO], diga não.
   Diga sim.
 
 Uma string de erro é uma string.
 
 Rotina para que se obtenha uma string de erro usando um identificador da instrução:
-  Obtenha um erro de SQL usando o identificador da instrução e 3 [sql_handle_stmt].
+  Obtenha um erro de SQL usando o identificador da instrução e 3 [SQL_HANDLE_STMT].
   Atribua a mensagem deste erro de SQL para a string de erro.
 
 Rotina para que se obtenha uma string de erro usando um identificador do ambiente:
-  Obtenha um erro de SQL usando o identificador do ambiente e 1 [sql_handle_env].
+  Obtenha um erro de SQL usando o identificador do ambiente e 1 [SQL_HANDLE_ENV].
   Atribua a mensagem deste erro de SQL para a string de erro.
 
 Rotina para que se obtenha uma string de erro usando um identificador da conexão:
-  Obtenha um erro de SQL usando o identificador da conexão e 2 [sql_handle_dbc].
+  Obtenha um erro de SQL usando o identificador da conexão e 2 [SQL_HANDLE_DBC].
   Atribua a mensagem deste erro de SQL para a string de erro.
 
 Rotina para que se obtenha um erro de SQL usando um identificador SQL e um número denominado tipo do identificador:
@@ -368,7 +368,7 @@ Rotina para que se obtenha um erro de SQL usando um identificador SQL e um númer
   Retornando uma word denominada resultado da operação.
   Atribua o resultado da operação para um número denominado resultado. 
   \ |^|^|^| operação necessária pois não temos rotinas para ver se uma word é igual a um número
-  Se o resultado for 100 [sql_no_data],
+  Se o resultado for 100 [SQL_NO_DATA],
     Atribua 0 para a quantidade de caracteres da mensagem.
   Atribua o caractere inicial desta mensagem mais a quantidade de caracteres da mensagem menos 1 para o caractere final desta mensagem.
   \ Atribui os dados para nossa estrutura
