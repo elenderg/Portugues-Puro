@@ -1,0 +1,367 @@
+\ Begin the routines that you actually use, the ones below this section are internal /
+
+Um string de conexão é uma string.
+
+Um instrução SQL é uma string.
+
+Um número de linhas afetadas é um número.
+
+Um banco de dados é um lista com
+  Um número de linhas afetadas,
+  Um sinalizador denominado sinalizador de nulidade,
+  Um sinalizador denominado sinalizador de conclusão,
+  \ os itens abaixos são usados internamente
+  Um identificador do ambiente,
+  Um identificador da conexão,
+  Um identificador da instrução.
+
+Rotina para que se adicione para um banco de dados usando uma instrução SQL:
+  Se o banco de dados for inexistente,
+    Retorne.
+  Execute a instrução SQL usando o identificador da instrução deste banco de dados retornando o número de linhas afetadas do banco de dados.
+
+Rotina para que se adicione para um banco de dados usando uma instrução SQL retornando um número de linhas afetadas:
+  Se o banco de dados for inexistente,
+    Retorne.
+  Adicione para o banco de dados usando a instrução SQL.
+  Atribua o número de linhas afetadas deste banco de dados para o número de linhas afetadas.
+
+Rotina para que se feche um banco de dados:
+  Se o banco de dados for inexistente,
+    Retorne.
+  Destrua o identificador da instrução deste banco de dados.
+  Desconecte o identificador da conexão deste banco de dados.
+  Destrua o identificador da conexão deste banco de dados.
+  Destrua o identificador do ambiente deste banco de dados.
+  Destrua o banco de dados.
+
+Rotina para que se crie um banco de dados:
+  Aloque memória para o banco de dados.
+
+Rotina para que se determine se um banco de dados está sem fileiras:
+  Se o banco de dados for inexistente, diga sim.
+  Se o sinalizador de conclusão deste banco de dados estiver ativo, diga sim.
+  Diga não.
+
+Rotina para que se delete desde um banco de dados usando uma instrução SQL:
+  Se o banco de dados for inexistente, retorne.
+  Execute a instrução SQL usando o identificador da instrução deste banco de dados retornando o número de linhas afetadas deste banco de dados.
+
+Rotina para que se delete desde um banco de dados usando uma instrução SQL retornando um número de linhas afetadas:
+  Se o banco de dados for inexistente, retorne.
+  Delete desde o banco de dados usando a instrução SQL.
+  Atribua o número de linhas afetadas deste banco de dados para o número de linhas afetadas.
+
+Rotina para que se obtenha a próxima fileira desde um banco de dados:
+  Se o banco de dados for inexistente, retorne.
+  Disponibilize dados desde o identificador da instrução deste banco de dados retornando o sinalizador de conclusão deste banco de dados.
+
+Rotina para que se obtenha um número desde a coluna um número da coluna em um banco de dados:
+  Se o banco de dados for inexistente,
+    Limpe o número;
+    Retorne.
+  Obtenha o número usando o identificador da instrução deste banco de dados e o número da coluna retornando o sinalizador de nulidade deste banco de dados.
+
+Rotina para que se obtenha uma string desde a coluna um número da coluna em um banco de dados:
+  Se o banco de dados for inexistente,
+    Limpe a string;
+    Retorne.
+  Obtenha a string usando o identificador da instrução deste banco de dados e o número da coluna retornando o sinalizador de nulidade deste banco de dados.
+
+Rotina para que se abra um banco de dados usando uma string de conexão:
+  Limpe o erro do fluxo de entrada/saída.
+  Se o banco de dados não for inexistente,
+    Feche o banco de dados.
+  Crie o banco de dados.
+  Crie o identificador do ambiente deste banco de dados.
+  Se o identificador do ambiente deste banco de dados for inexistente,
+    Feche o banco de dados;
+    Retorne.
+  Crie o identificador da conexão deste banco de dados usando o identificador do ambiente deste banco de dados.
+  Se o identificador da conexão deste banco de dados for inexistente,
+    Feche o banco de dados;
+    Retorne.
+  Conecte o identificador da conexão deste banco de dados usando a string de conexão.
+  Se o erro do fluxo de entrada/saída não for "",
+    Feche o banco de dados;
+    Retorne.
+  Crie o identificador da instrução deste banco de dados usando o identificador da conexão deste banco de dados.
+  Se o identificador da instrução deste banco de dados for inexistente,
+    Feche o banco de dados;
+    Retorne.
+
+Rotina para que se atualize um banco de dados usando uma instrução SQL:
+  Se o banco de dados for inexistente,
+    Retorne.
+  Execute a instrução SQL usando o identificador da instrução deste banco de dados retornando o número de linhas afetadas deste banco de dados.
+
+Rotina para que se atualize um banco de dados usando uma instrução SQL retornando um número de linhas afetadas:
+  Se o banco de dados for inexistente,
+    Retorne.
+  Atualize o banco de dados usando a instrução SQL.
+  Atribua o número de linhas afetadas deste banco de dados para o número de linhas afetadas.
+
+Rotina para que se visualize um banco de dados usando uma instrução SQL:
+  Se o banco de dados for inexistente,
+    Retorne.
+  Execute a instrução SQL usando o identificador da instrução deste banco de dados retornando o número de linhas afetadas deste banco de dados.
+
+\ Rotinas internas
+
+Um identificador SQL é um ponteiro.
+Um identificador do ambiente é um identificador SQL.
+Um identificador da conexão é um identificador SQL.
+Um identificador da instrução é um identificador SQL.
+
+Um código de erro SQL é uma word.
+
+Rotina para que se crie um identificador do ambiente:
+  Limpe o erro do fluxo de entrada/saída.
+  Limpe o identificador do ambiente.
+  Processe "odbc32.dll" "SQLAllocHandle" com 
+    1 [sql_handle_env] e 0 [sql_null_handle] e 
+    O endereçamento deste identificador do ambiente 
+  retornando uma word denominada resultado da operação.
+  Se o identificador do ambiente for 0,
+    Atribua "Erro ao criar ambiente SQL." para o erro do fluxo de entrada/saída;
+    Retorne.
+  Se o resultado da operação for um código de erro SQL,
+    Atribua "Erro ao criar ambiente SQL." para o erro do fluxo de entrada/saída;
+    Retorne.
+  Processe "odbc32.dll" "SQLSetEnvAttr" com 
+    O identificador do ambiente e 
+    200 [sql_attr_odbc_version] e 
+    3 [sql_ov_odcb3] e 
+    0. \ Define a versão do odbc
+
+Rotina para que se destrua um identificador do ambiente:
+  Se o identificador do ambiente for inexistente, retorne.
+  Processe "odbc32.dll" "SQLFreeHandle" com 
+    1 [sql_handle_env] e 
+    O identificador do ambiente.
+
+Rotina para que se crie um identificador da conexão usando um identificador do ambiente:
+  Limpe o erro do fluxo de entrada/saída.
+  Limpe o identificador da conexão.
+  Processe "odbc32.dll" "SQLAllocHandle" com 
+    2 [sql_handle_dbc] e 
+    O identificador do ambiente e 
+    O endereçamento deste identificador da conexão 
+  Retornando uma word denominada resultado da operação.
+  Se o identificador da conexão for 0,
+    Obtenha o erro do fluxo de entrada/saída usando o identificador do ambiente;
+    Retorne.
+  Se o resultado da operação for um código de erro SQL,
+    Obtenha o erro do fluxo de entrada/saída usando o identificador do ambiente;
+    Retorne.
+
+Rotina para que se destrua um identificador da conexão:
+  Se o identificador da conexão for inexistente, retorne.
+  Processe "odbc32.dll" "SQLFreeHandle" com 
+    2 [sql_handle_dbc] e 
+    O identificador da conexão.
+
+Rotina para que se conecte um identificador da conexão usando uma string de conexão:
+  Limpe o erro do fluxo de entrada/saída.
+  Reassign o caractere inicial duma string denominada string de saída usando 1024
+  Processe "odbc32.dll" "SQLDriverConnect" com 
+    O identificador da conexão e 
+    0 e 
+    O caractere inicial desta string de conexão e
+    A quantidade de caracteres desta string de conexão e 
+    O caractere inicial desta string de saída e 
+    A quantidade de caractere desta string de saída e 
+    O endereçamento duma quantidade de caracteres e 
+    0 [sql_driver_noprompt] 
+  retornando uma word denominada resultado da operação.
+  Se o identificador da conexão for 0,
+    Obtenha o erro do fluxo de entrada/saída usando o identificador da conexão;
+    Retorne.
+  Se o resultado da operação for um código de erro SQL,
+    Obtenha o erro do fluxo de entrada/saída usando o identificador da conexão;
+    Retorne.
+
+Rotina para que se desconecte um identificador da conexão:
+  Se o identificador da conexão for inexistente,
+    Retorne.
+  Processe "odbc32.dll" "SQLDisconnect" com o identificador da conexão.
+
+Rotina para que se crie um identificador da instrução usando um identificador da conexão:
+  Limpe o erro do fluxo de entrada/saída.
+  Limpe o identificador da instrução.
+  Processe "odbc32.dll" "SQLAllocHandle" com 
+    3 [sql_handle_stmt] e 
+    O identificador da conexão e 
+    O endereçamento deste identificador da instrução 
+  retornando uma word denominada resultado da operação.
+  Se o identificador da instrução for 0,
+    Obtenha o erro do fluxo de entrada/saída usando o identificador da conexão;
+    Retorne.
+  Se o resultado da operação for um código de erro SQL,
+    Obtenha o erro do fluxo de entrada/saída usando o identificador da conexão;
+    Retorne.
+
+Rotina para que se destrua um identificador da instrução:
+  Se o identificador da instrução for inexistente,
+    Retorne.
+  Processe "odbc32.dll" "SQLFreeHandle" com 
+    3 [sql_handle_stmt] e 
+    O identificador da instrução.
+
+Uma string SQL é uma string.
+
+Rotina para que se execute uma string SQL usando um identificador da instrução retornando um número de linhas afetadas:
+  Limpe o erro do fluxo de entrada/saída.
+  Atribua 0 para o número de linhas afetadas.
+  Processe "odbc32.dll" "SQLExecDirect" com 
+    O identificador da instrução e 
+    O caractere inicial desta SQL string e 
+    A quantidade de caracteres desta string SQL
+  Retornando uma word denominada resultado da operação.
+  Atribua o resultado da operação para um número denominado resultado.
+  Se o resultado for 100 [sql_no_data],
+    Retorne.
+  Se o resultado da operação for um código de erro SQL,
+    Obtenha o erro do fluxo de entrada/saída usando o identificador da instrução;
+    Retorne.
+  Processe "odbc32.dll" "SQLRowCount" com 
+    O identificador da instrução e 
+    O endereçamento deste número de linhas afetadas.
+
+Rotina para que se disponibilize dados usando um identificador da instrução retornando um sinalizador de conclusão:
+  Limpe o erro do fluxo de entrada/saída.
+  Limpe o sinalizador de conclusão.
+  Processe "odbc32.dll" "SQLFetch" com 
+    O identificador da instrução 
+  Retornando uma word denominada resultado da operação.
+  Atribua o resultado da operação para um número.
+  Se o número for 100 [sql_no_data],
+    Ative o sinalizador de conclusão;
+    Retorne.
+  Se o resultado da operação for um código de erro SQL,
+    Obtenha o erro do fluxo de entrada/saída usando o identificador da instrução;
+    Ative o sinalizador de conclusão;
+    Retorne.
+
+Rotina para que se obtenha um número usando um identificador da instrução e um número da coluna retornando um sinalizador de nulidade:
+  Limpe o erro do fluxo de entrada/saída.
+  Limpe o número.
+  Limpe o sinalizador de nulidade.
+  Processe "odbc32.dll" "SQLGetData" com 
+    O identificador da instrução e 
+    O número da coluna e 4 [sql_integer] e 
+    O endereçamento deste número e 
+    A magnitude deste número e 
+    O endereçamento dum número denominado número indicador
+  Retornando uma word denominada resultado da operação.
+  Se o resultado da operação for um código de erro SQL,
+    Obtenha o erro do fluxo de entrada/saída usando o identificador da instrução;
+    Retorne.
+  Se o número indicador for -1 [sql_null_data],
+    Ative o sinalizador de nulidade.
+
+Rotina para que se obtenha uma string usando um identificador da instrução e um número da coluna retornando um sinalizador de nulidade:
+  Limpe o erro do fluxo de entrada/saída.
+  Limpe a string.
+  Limpe o sinalizador de nulidade.
+  Atribua 1024 para um número denominado tamanho temporário.
+  Reassign o caractere inicial duma string denominada string temporária usando o tamanho temporário.
+  Itere.
+    Atribua 0 para um número denominado tamanho.
+    Processe "odbc32.dll" "SQLGetData" com
+      O identificador da instrução e 
+      O número da coluna e 
+      1 [sql_char] e 
+      O caractere inicial desta string temporária  e 
+      O tamanho temporário e 
+      O endereçamento deste tamanho
+    Retornando uma word denominada resultado da operação.
+    Atribua o resultado da operação para um número denominado resultado.
+    Se o resultado for -1 [sql_null_data],
+      Ative o sinalizador de nulidade;
+      Retorne. 
+    Se o tamanho for -1 [sql_null_data],
+      Ative o sinalizador de nulidade;
+      Retorne. 
+    Se o resultado não for 0 [sql_success],
+      Atribua o tamanho temporário menos 2 para o tamanho. \ Menos 2 para 2 bytes nulos
+    Atribua o caractere inicial desta string temporária mais o tamanho menos 1 para o caractere final desta string temporária.
+    Acrescente a string temporária para a string.
+    Se o resultado for 0 [sql_success],
+      Retorne.
+    Se o resultado não for 1 [sql_success_with_info],
+      Obtenha o erro do fluxo de entrada/saída usando o identificador da instrução;
+      Retorne.
+    Obtenha um erro de SQL usando o identificador da instrução e 3 [sql_handle_stmt]. 
+    \ Precisamos apenas do código de erro. Dá pra otimizar isso ao se livrar da mensagem de erro
+    Se a string de estado deste erro de SQL não for "01004",
+      Obtenha o erro do fluxo de entrada/saída usando o identificador da instrução;
+      Retorne. \ Se o erro não for de "dados truncados", a gente nem perde tempo vendo o que é
+  Reitere.
+
+Rotina para que se determine se uma word é um código de erro SQL:
+  Atribua a word para um número.
+  Se o número for 0 [sql_success], diga não.
+  Se o número for 1 [sql_success_with_info], diga não.
+  Diga sim.
+
+Uma string de erro é uma string.
+
+Rotina para que se obtenha uma string de erro usando um identificador da instrução:
+  Obtenha um erro de SQL usando o identificador da instrução e 3 [sql_handle_stmt].
+  Atribua a mensagem deste erro de SQL para a string de erro.
+
+Rotina para que se obtenha uma string de erro usando um identificador do ambiente:
+  Obtenha um erro de SQL usando o identificador do ambiente e 1 [sql_handle_env].
+  Atribua a mensagem deste erro de SQL para a string de erro.
+
+Rotina para que se obtenha uma string de erro usando um identificador da conexão:
+  Obtenha um erro de SQL usando o identificador da conexão e 2 [sql_handle_dbc].
+  Atribua a mensagem deste erro de SQL para a string de erro.
+
+Rotina para que se obtenha um erro de SQL usando um identificador SQL e um número denominado tipo do identificador:
+ \ prepara as variáveis
+  Atribua "00000" para um string de estado. 
+  Anexe o caractere NULL após a string de estado.
+  Atribua 1024 para uma quantidade de caracteres da mensagem.
+  Reassign o caractere inicial duma mensagem usando a quantidade de caracteres da mensagem.
+  \ Obtém os dados
+  Processe "odbc32.dll" "SQLGetDiagRec" com 
+    O tipo do identificador e 
+    O identificador SQL e 
+    1 e 
+    O caractere inicial desta string de estado e 
+    O endereçamento dum número de erro nativo e 
+    O caractere inicial desta mensagem e 
+    A quantidade de caracteres da mensagem e 
+    O endereçamento desta quantidade de caracteres da mensagem
+  Retornando uma word denominada resultado da operação.
+  Atribua o resultado da operação para um número denominado resultado. 
+  \ |^|^|^| operação necessária pois não temos rotinas para ver se uma word é igual a um número
+  Se o resultado for 100 [sql_no_data],
+    Atribua 0 para a quantidade de caracteres da mensagem.
+  Atribua o caractere inicial desta mensagem mais a quantidade de caracteres da mensagem menos 1 para o caractere final desta mensagem.
+  \ Atribui os dados para nossa estrutura
+  Atribua o número de erro nativo para o número de erro nativo deste erro de SQL. 
+  Atribua a string de estado para a string de estado deste erro de SQL.
+  Atribua a mensagem para a mensagem deste erro de SQL.
+
+Uma mensagem é uma string.
+Um número de erro nativo é um número.
+Uma string de estado é uma string.
+Um erro de SQL é uma estrutura com
+  Um número de erro nativo,
+  Um string de estado,
+  Uma mensagem.
+
+\ NOODLE /
+
+Rotina para que se LIMPE um ponteiro:
+  Atribua inexistente para o ponteiro.
+
+Rotina para que se escreva um ponteiro:
+  Converta o ponteiro para uma string.
+  Escreva a string para StdOut.
+
+\ FIM  /
+
