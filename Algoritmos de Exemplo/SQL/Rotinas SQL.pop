@@ -151,7 +151,7 @@ Rotina para que se crie um identificador do ambiente:
     1 [SQL_HANDLE_ENV] e 
     0 [SQL_NULL_HANDLE] e 
     O endereçamento deste identificador do ambiente 
-  retornando uma word denominada resultado da operação.
+  Retornando uma word denominada resultado da operação.
   Se o identificador do ambiente for 0,
     Atribua "Erro ao criar ambiente SQL." para o erro do fluxo de entrada/saída;
     Retorne.
@@ -203,7 +203,7 @@ Rotina para que se conecte um identificador da conexão usando uma string de cone
     A quantidade de caractere desta string de saída e 
     O endereçamento duma quantidade de caracteres e 
     0 [SQL_DRIVER_NOPROMPT] 
-  retornando uma word denominada resultado da operação.
+  Retornando uma word denominada resultado da operação.
   Se o identificador da conexão for 0,
     Obtenha o erro do fluxo de entrada/saída usando o identificador da conexão;
     Retorne.
@@ -223,7 +223,7 @@ Rotina para que se crie um identificador da instrução usando um identificador da
     3 [SQL_HANDLE_STMT] e 
     O identificador da conexão e 
     O endereçamento deste identificador da instrução 
-  retornando uma word denominada resultado da operação.
+  Retornando uma word denominada resultado da operação.
   Se o identificador da instrução for 0,
     Obtenha o erro do fluxo de entrada/saída usando o identificador da conexão;
     Retorne.
@@ -384,14 +384,14 @@ Um erro de SQL é uma estrutura com
   Um string de estado,
   Uma mensagem.
 
-\ NOODLE /
+\ NOODLE
 
-Rotina para que se LIMPE um ponteiro:
+Rotina para que se limpe um ponteiro:
   Atribua inexistente para o ponteiro.
 
 Rotina para que se escreva um ponteiro:
   Converta o ponteiro para uma string.
   Escreva a string para StdOut.
 
-\ FIM  /
+\ FIM
 
