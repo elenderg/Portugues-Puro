@@ -3,20 +3,28 @@ Rotina para que se execute o programa:
   Defina "console" como o tipo da aplicação.
   Escreva "Iniciando operações, aguarde um momento..." junto com o texto CRLF para StdOut.
   Efetue as operações do SQL.
-  Escreva "Operações concluídas. Insira agora o comando desejado." junto com o texto CRLF para StdOut.
-  Leia o comando desde a StdIn.
+  Se o sinalizador de regularidade estiver ativo,
+    Escreva "Conexão estabelecida. Insira agora o comando desejado." junto com o texto CRLF para StdOut;
+    Leia o comando desde a StdIn.
+  Se o sinalizador de regularidade não estiver ativo, 
+    Feche o banco de dados.
+  Desmanche todos os eventos
   Feche o programa.
 
+O sinalizador de regularidade é um sinalizador.
 O comando é um trecho.
 
 Rotina para que se efetue as operações do SQL:
+  Ative o sinalizador de regularidade.
   Abra um banco de dados usando "driver=SQL Server; server=danrzeppa.com,5050; database=testdb; uid=sa; pwd=12345678".
   Se o banco de dados for inexistente,
     Escreva "ERRO AO ABRIR: " junto com o erro do fluxo de entrada/saída junto com o texto CRLF para Stdout;
-    Feche o programa.
+    Desative o sinalizador de regularidade;
+    Retorne.
   Visualize o banco de dados usando "SELECT pkid, name FROM people".
   Se o erro do fluxo de entrada/saída não estiver em branco,
-    Escreva "ERRO AO VISUALIZAR: " junto com o erro do fluxo de entrada/saída junto com o texto CRLF para Stdout.
+    Escreva "ERRO AO VISUALIZAR: " junto com o erro do fluxo de entrada/saída junto com o texto CRLF para Stdout;
+    Desative o sinalizador de regularidade.
   Itere.
     Obtenha a próxima fileira desde o banco de dados.
     Se o banco de dados estiver sem fileiras,
