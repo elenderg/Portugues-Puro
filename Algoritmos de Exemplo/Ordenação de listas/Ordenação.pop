@@ -1,0 +1,156 @@
+Um elemento é uma lista com 
+  Uma caixa e 
+  Uma cor.
+
+O array é uns elementos. 
+
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  Limpe a tela com a cor branca.
+  Crie o array.
+  Colorize os array (fileiras alternadas).
+  Atualize a tela.
+  Colorize os arrays.
+  Aguarde a tecla Esc.
+  Destrua o array.
+  Feche o programa.
+
+Rotina para que se colorize os arrays:
+  Itere.
+    Desenfileire um evento.
+    \Aguarde por uma tecla.
+    Se a tecla deste evento for a tecla hum do teclado numérico,
+      Limpe a tela com a cor branca;
+      Colorize o array (fileiras alternadas);
+      Atualize a tela.
+    Se a tecla deste evento for a tecla dois do teclado numérico,
+      Limpe a tela com a cor branca;
+      Colorize o array (colunas alternadas);
+      Atualize a tela.
+    Se a tecla deste evento for a tecla três do teclado numérico,
+      Limpe a tela com a cor branca;
+      Colorize o array (cores alternadas);
+      Atualize a tela.
+    Se a tecla deste evento for a tecla quatro do teclado numérico,
+      Limpe a tela com a cor branca;
+      Colorize o array (células alternadas);
+      Atualize a tela.
+   Se a tecla deste evento for a tecla Esc, retorne.
+  Reitere.
+   
+
+Rotina para que se mostre uns elementos:
+  Itere.
+    Obtenha um elemento desde o array.
+    Se o elemento for inexistente, pare.
+    Pinte e preencha a caixa deste elemento com a cor deste elemento.
+  Reitere.
+
+A caixa grande é uma caixa.
+
+Rotina para que se crie o array: 
+  Faça a caixa grande 270 pixels por 300 pixels. 
+  Centralize a caixa grande sobre a tela. 
+  Mova a caixa grande 300 pixels para a esquerda. 
+  Mova a caixa grande 96 pixels para baixo. 
+  Faça uma caixa 96 pixels por 96 pixels. 
+  Mova a caixa para o canto superior esquerdo desta caixa grande. 
+  Itere. 
+    Aloque memória para um elemento. 
+    Acrescente o elemento para o array. 
+    Atribua a caixa para a caixa deste elemento.
+    Mova a caixa 96 pixels para a direita.
+    Se a caixa estiver na caixa grande, 
+      Reitere. 
+    Mova a caixa para o lado esquerdo dessa caixa grande.
+    Mova a caixa 96 pixels para baixo. 
+    Se a caixa estiver na caixa grande, 
+      Reitere. 
+    Adicione 1 para uma contagem.
+    Se a contagem for 4, 
+      Pare. 
+    Mova a caixa grande 200 pixels para a direita.
+    Mova a caixa grande 50 pixels para cima. 
+    Mova a caixa para o canto superior esquerdo desta caixa grande. 
+  Reitere. 
+
+Rotina para que se colorize o array (fileiras alternadas): 
+  Atribua a cor azul para uma cor.
+  Atribua "azul" para uma string.
+  Itere.
+    Obtenha um elemento desde o array.
+    Se o elemento for inexistente, pare.
+    Atribua a cor para a cor deste elemento.
+    Inverta a string usando a cor.
+    Adicione 1 para uma contagem.
+    Se a contagem for par, 
+      Inverta a string usando a cor.
+    Se a string for "azul", atribua a cor azul para a cor.
+    Se a string for "vermelho", atribua a cor vermelha para a cor.
+    Pinte a caixa deste elemento com a cor preta e a cor.
+  Reitere. 
+  Atribua "                                                                                               " para a string.
+  Pinte a string junto com "Fileiras alternadas" sob o lado esquerdo dessa caixa desta tela.
+
+Rotina para que se colorize o array (colunas alternadas): 
+  Atribua a cor azul para uma cor.
+  Atribua "azul" para uma string.
+  Itere. 
+    Obtenha um elemento desde o array. 
+    Se o elemento for inexistente, pare.
+    Atribua a cor para a cor deste elemento.
+    Pinte a caixa deste elemento com a cor preta e a cor.
+    Adicione 1 para uma contagem.
+    Se a contagem for par,
+      Pinte a caixa deste elemento com a cor preta e a cor vermelha.
+  Reitere.
+  Atribua "                                                                                               " para a string.
+  Pinte a string junto com "Colunas alternadas" sob o lado esquerdo dessa caixa desta tela.
+
+
+Rotina para que se colorize o array (cores alternadas): 
+  Atribua a cor azul para uma cor.
+  Atribua "azul" para uma string.
+  Atribua -1 para uma contagem.
+  Itere.
+    Obtenha um elemento desde o array.
+    Se o elemento for inexistente, pare.
+    Adicione 1 para a contagem.
+    Se a contagem for uniformemente divisível por 6,
+      Inverta a string usando a cor.
+    Se a string for "azul",
+      Pinte a caixa deste elemento com a cor preta e a cor azul.
+    Se a string for "vermelho",
+      Pinte a caixa deste elemento com a cor preta e a cor vermelha.
+  Reitere.
+  Atribua "                                                                                               " para a string.
+  Pinte a string junto com "Cores alternadas" sob o lado esquerdo dessa caixa desta tela.
+
+Rotina para que se colorize o array (células alternadas): 
+  Atribua a cor azul para uma cor.
+  Atribua "azul" para uma string.
+  Itere.
+    Obtenha um elemento desde o array.
+    Se o elemento for inexistente, pare. 
+    Atribua a cor para a cor deste elemento.
+    Inverta a string usando a cor.
+    Se a string for "azul",
+      Pinte a caixa deste elemento com a cor preta e a cor azul.
+    Se a string for "vermelho",
+      Pinte a caixa deste elemento com a cor preta e a cor vermelha.
+    Adicione 1 para uma contagem.
+    Se a contagem for uniformemente divisível por 2,
+      Inverta a string usando a cor.
+    Se a contagem for uniformemente divisível por 6,
+      Inverta a string usando a cor.
+  Reitere.
+  Atribua "                                                                                               " para a string.
+  Pinte a string junto com "Células alternadas" sob o lado esquerdo dessa caixa desta tela.
+ 
+Rotina para que se inverta uma string usando uma cor:
+  Se a string for "azul",
+    Atribua "vermelho" para a string;
+    Retorne.
+  Se a string for "vermelho",
+    Atribua "azul" para a string;
+    Retorne.

@@ -7,8 +7,8 @@ Rotina para que se execute o programa:
     Escreva "Conexão estabelecida. Insira agora o comando desejado." junto com o texto CRLF para StdOut;
     Leia o comando desde a StdIn.
   Se o sinalizador de regularidade não estiver ativo, 
-    Feche o banco de dados.
-  Desmanche todos os eventos
+    \Feche o banco de dados.
+  Desmanche todos os eventos.
   Feche o programa.
 
 O sinalizador de regularidade é um sinalizador.
