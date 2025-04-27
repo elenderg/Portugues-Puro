@@ -34,16 +34,12 @@ Envie suas dúvidas [aqui](https://github.com/elenderg/Portugues-Puro/issues/new
 ## Código de Conduta
 Disponível [aqui](https://github.com/elenderg/Portugues-Puro/blob/main/CODE_OF_CONDUCT.md  )
 
-## Licença
-[Unlicense](https://github.com/elenderg/Portugues-Puro/blob/main/LICENSE)
-
 ## Autor
 [Elender Góis Gallas](https://www.linkedin.com/in/elender/)
 
-
 ## Licença
 
-Este projeto está licenciado sob a Unlicense - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
+Este projeto está licenciado sob a [Unlicense](https://github.com/elenderg/Portugues-Puro/blob/main/LICENSE) - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
 
 <hr>
 
