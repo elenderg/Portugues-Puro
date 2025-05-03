@@ -1,0 +1,24 @@
+Rotina para que se execute o programa:
+  Defina "console" como o tipo da aplicação.
+  Atribua "Português Puro" para uma string.
+  Remova o primeiro caractere dessa string.
+  Remova o último caractere dessa string.
+  Remova o primeiro e o último caractere dessa string.
+  Feche o programa.
+
+Rotina para que se remova o primeiro caractere de uma string:
+  Lance um subtexto sobre a string.
+  Adicione 1 para o caractere inicial deste subtexto.
+  Escreva o subtexto junto com o texto CRLF para StdOut.
+
+Rotina para que se remova o último caractere de uma string:
+  Lance um subtexto sobre a string.
+  Subtraia 1 desde o caractere final deste subtexto.
+  Escreva o subtexto junto com o texto CRLF para StdOut.
+
+Rotina para que se remova o primeiro e o último caractere de uma string:
+  Lance um subtexto sobre a string.
+  Adicione 1 para o caractere inicial deste subtexto.
+  Subtraia 1 desde o caractere final deste subtexto.
+  Escreva o subtexto junto com o texto CRLF para StdOut.
+
