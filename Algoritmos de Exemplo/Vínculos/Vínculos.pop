@@ -2,7 +2,7 @@ Um vínculo é uma lista com um nome.
 
 Rotina para que se execute o programa:
   Defina "console" como o tipo da aplicação.
-  Inicialize os componentes.
+  \Inicialize os componentes.
   Crie uns vínculos.
   Escreva os vínculos para StdOut.
   Destrua os vínculos.

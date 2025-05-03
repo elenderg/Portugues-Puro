@@ -1,0 +1,59 @@
+Uma lista de números é uma lista com um número.
+
+Rotina para que se execute o programa:
+  Defina "console" como o tipo da aplicação.
+  \Inicialize os componentes.
+  Crie umas listas de números usando 7.
+  Escreva as listas de números para StdOut.
+  Destrua as listas de números.
+  Feche o programa.
+
+Rotina para que se crie umas listas de números usando uma quantidade de números:
+  Atribua 0 para um número.
+  Itere.
+    Aloque memória para uma lista de números.
+    Acrescente a lista de números para as listas de números.
+    Adicione 1 para o número.
+    Atribua nulo para o número desta lista de números.
+    Se o número for a quantidade de números, pare.
+  Reitere.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rotina para que se escreva umas listas de números para StdOut:
+  Escreva "ENDEREÇO                          VALORES" junto com o texto CRLF para StdOut.
+  Escreva o endereçamento destas listas de números junto com " - " para StdOut.
+  Escreva 
+    "Primeira lista de números: " junto com o primeiro lista de números destas listas de números seguido de 
+    "  Última   lista de números: " junto com o último lista de números destas listas de números
+  junto com o texto CRLF para StdOut. 
+  Itere.
+    Obtenha uma lista de números desde as listas de números.
+    Se a lista de números for inexistente, pare.
+    Escreva a lista de números junto com " - " para StdOut.
+    Escreva "Próxima  lista de números: " junto com o próximo lista de números desta lista de números para StdOut.
+    Escreva "  Lista de números anterior: " junto com a lista de números anterior desta lista de números para StdOut.
+    Escreva " Ordem da lista de números: " junto com o número desta lista de números junto com o texto CRLF para StdOut.
+  Reitere.

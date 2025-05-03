@@ -1,63 +1,9 @@
-Rotina para que se escolha aleatoriamente um número aleatório entre um min número e um max número:
-  Atribua o endereçamento desta semente aleatória para EAX.
-  \ atribui address of randseed para ecx
-  Decodifique $8BC8. \ mov ecx,eax
-  \ calcule zero based max
-  Decodifique $8B8510000000. \ mov eax,[ebp+16] \ o max
-  Decodifique $8B00. \ mov eax,[eax]
-  Decodifique $8B9D0C000000. \ mov ebx,[ebp+12] \ o min
-  Decodifique $2B03. \ sub eax,[ebx]
-  Decodifique $40. \ inc eax
-  \ ajuste randseed
-  Decodifique $691105840808. \ imul edx,[ecx],134775813
-  Decodifique $42. \ inc edx
-  Decodifique $8911. \ mov [ecx],edx
-  \ mul adjusted randseed for the zero based max
-  Decodifique $F7E2. \ mul edx
-  \ adicione o min para um zero base o número
-  Decodifique $0313. \ adicione edx,[ebx] o min
-  \ store o result
-  Decodifique $8B9D08000000. \ mov ebx,[ebp+08] \ o número aleatório
-  Decodifique $8913. \ mov [ebx],edx
-  Atribua o número aleatório ao número deste contexto.
+Uma lista numérica é uma lista com um número.
 
-
-\Carrega o tamanho atual do vetor de candidatos
-  Decodifique  $8B8518000000. \mov eax, [ebp+18] ; eax = tam
-  Decodifique  $8B00. \mov eax, [eax]
-\Sorteia um índice de 0 até tam - 1
-\Ajuste randseed
-  Decodifique  $8B8D00000000. \mov ecx, [ebp+00]  ; endereço da randseed
-  Decodifique  $8B01. \mov eax, [ecx]
-  Decodifique  $69D0813A0208. \imul edx, eax, 134775813
-  Decodifique  $42. \inc edx
-  Decodifique  $8911. \mov [ecx], edx
-\Multiplica randseed pelo tamanho
-  Decodifique  $F7E2. \mul edx               ; edx: resultado
-\Divide pelo tam (eax = tam)
-  Decodifique  $8B8518000000. \mov eax, [ebp+18]
-  Decodifique  $8B00. \mov eax, [eax]
-  Decodifique  $99. \cdq
-  Decodifique  $F7F8. \idiv eax              ; eax = índice sorteado (edx: mod, eax: div)
-\Pega o número do índice sorteado
-  Decodifique  $8B9514000000. \mov edx, [ebp+14]     ; edx = vetor candidatos
-  Decodifique  $8B0C82. \mov ecx, [edx + eax*4] ; ecx = candidatos[eax]
-\Armazena o número sorteado no destino
-  Decodifique  $8B9D08000000. \mov ebx, [ebp+08]
-  Decodifique  $890B. \mov [ebx], ecx
-\Substitui candidatos[eax] com candidatos[tam-1]
-  Decodifique  $8B8518000000. \mov eax, [ebp+18]     ; eax = endereço de tam
-  Decodifique  $8B00. \mov eax, [eax]        ; eax = tam
-  Decodifique  $48. \dec eax               ; eax = tam - 1
-  Decodifique  $8B9514000000. \mov edx, [ebp+14]     ; edx = candidatos
-  Decodifique  $8B0C82. \mov ecx, [edx + eax*4]; ecx = candidatos[tam-1]
-\escreve ecx em candidatos[índice sorteado]
-  Decodifique  $8B8514000000. \mov edx, [ebp+14]
-  Decodifique  $8B9D00000000. \mov ebx, [ebp+00]     ; eax já tem índice
-  Decodifique  $890C82. \mov [edx + eax*4], ecx
-\Decrementa o tamanho do vetor de candidatos
-  Decodifique  $8B8518000000. \mov eax, [ebp+18]
-  Decodifique  $8B00. \mov eax, [eax]
-  Decodifique  $48. \dec eax
-  Decodifique  $8B8D18000000. \mov ecx, [ebp+18]     ; endereço de tam
-  Decodifique  $8901. \mov [ecx], eax
+Função para que se determine se um número está presente em umas listas numéricas:
+  Itere.
+    Obtenha uma lista numérica desde as lista numéricas.
+    Se a lista numérica for inexistente, pare.
+    Se o número for o número desta lista numérica, diga sim.
+  Reitere.
+  Diga não.
