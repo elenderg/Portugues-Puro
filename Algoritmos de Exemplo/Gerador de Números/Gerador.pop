@@ -1,69 +1,46 @@
-Uma lista numérica é uma lista com um número.
-As listas de números são umas listas numéricas.
 O comando é um trecho.
-\A lista de números sorteados é uma lista numérica.
+O limite inferior é um número.
+O limite superior é um número.
 
 Rotina para que se execute o programa:
   Defina "console" como o tipo da aplicação.
   Escreva o texto CRLF junto com "Gerador de números aleatórios." junto com o texto CRLF para StdOut.
-  \Escreva o texto CRLF junto com "Digite quantos números deseja gerar: " para StdOut.
-  \ Itere.
-    \ Escreva o texto CRLF junto com " > " para StdOut.
-    \ Leia o comando desde a StdIn.
-    \ Se o comando estiver em branco,
-      \ Reitere.
-    \ Se o comando não estiver em branco, pare.
-  \ Reitere.
-  \ Converta o comando para um número denominado quantidade de números.
-  \ Escreva o texto CRLF junto com "Digite o intervalo inferior: " para StdOut.
-  \ Itere.
-    \ Escreva o texto CRLF junto com " > " para StdOut.
-    \ Leia o comando desde a StdIn.
-    \ Se o comando estiver em branco,
-      \ Reitere.
-    \ Se o comando não estiver em branco, pare.
-  \ Reitere.
-  \ Converta o comando para um número denominado valor inicial.
-  \ Escreva o texto CRLF junto com "Digite o intervalo superior: " para StdOut.
-  \ Itere.
-    \ Escreva o texto CRLF junto com " > " para StdOut.
-    \ Leia o comando desde a StdIn.
-    \ Se o comando estiver em branco,
-      \ Reitere.
-    \ Se o comando não estiver em branco, pare.
-  \ Reitere.
-  \Converta o comando para um número denominado valor final.
-  Atribua 0 para um número denominado contador.
-  Atribua 1 para um número denominado valor inicial.
-  Atribua 60 para um número denominado valor final.
-  Aloque memória para umas lista numéricas.
-  Escolha aleatoriamente um número entre o valor inicial e o valor final.
-  Atribua o número para o número desta primeira lista numérica destas listas de números.
+  Escreva o texto CRLF junto com "Digite quantos números deseja gerar: " para StdOut.
   Itere.
-    Escolha aleatoriamente um número denominado número sorteado entre o valor inicial e o valor final.
-    Se o número sorteado não estiver presente nas listas de números,
-      Atribua o número sorteado para o número desta próxima lista numérica destas listas de números.
-    Adicione 1 ao contador.
-    Se o contador for maior do que 6,
-      Pare.
-  Reitere.
-  \Escreva os números das listas de números para StdOut.
-  Destrua as listas de números.
+    Escreva o texto CRLF junto com " > " para StdOut.
+    Leia o comando desde a StdIn.
+    Se o comando estiver em branco,
+      Reitere.
+  Converta o comando para um número denominado quantidade de números.
+  Escreva o texto CRLF junto com "Digite o intervalo inferior: " para StdOut.
+  Itere.
+    Escreva o texto CRLF junto com " > " para StdOut.
+    Leia o comando desde a StdIn.
+    Se o comando estiver em branco,
+      Reitere.
+  Converta o comando para o limite inferior.
+  Escreva o texto CRLF junto com "Digite o intervalo superior: " para StdOut.
+  Itere.
+    Escreva o texto CRLF junto com " > " para StdOut.
+    Leia o comando desde a StdIn.
+    Se o comando estiver em branco,
+      Reitere.
+  Converta o comando para o limite superior.
+  Sorteie os números usando a quantidade de números.
+  Escreva o texto CRLF junto com "Os números sorteados foram: " junto com o resultado do sorteio para StdOut.
   Feche o programa.
 
-Função para que se determine se um número está presente em umas listas numéricas:
-  Itere.
-    Obtenha uma lista numérica desde as listas de números.
-    Se a lista numérica for inexistente, pare.
-    Se o número for o número desta lista numérica, diga sim.
-  Reitere.
-  Diga não.
+O resultado do sorteio é uma string.
 
-\ Rotina para que se escreva os números das listas de números para StdOut:
-  \ Escreva o número desta primeira lista numérica destas listas de números para StdOut.
-  \ Itere.
-    \ Obtenha uma lista numérica desde as listas de números.
-    \ Se a lista numérica for inexistente, pare.
-    \ Escreva " - " junto com o número desta próxima lista numérica destas listas de números para StdOut.
-  \ Reitere.
-  
+Rotina para que se sorteie os números usando uma quantidade de números:
+  Escolha aleatoriamente um número entre o limite inferior e o limite superior.
+  Converta o número para o resultado do sorteio.
+  Atribua 2 para um contador.
+  Itere.
+    Se o contador for maior do que a quantidade de números, pare.
+    Escolha aleatoriamente o número entre o limite inferior e o limite superior.
+    Converta o número para uma string denominada número sorteado.
+    Se o número sorteado estiver no resultado do sorteio, reitere.
+    Acrescente "-" junto com o número sorteado para o resultado do sorteio.
+    Adicione 1 para o contador.
+  Reitere.

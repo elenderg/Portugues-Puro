@@ -1,9 +1,0 @@
-Uma lista numérica é uma lista com um número.
-
-Função para que se determine se um número está presente em umas listas numéricas:
-  Itere.
-    Obtenha uma lista numérica desde as lista numéricas.
-    Se a lista numérica for inexistente, pare.
-    Se o número for o número desta lista numérica, diga sim.
-  Reitere.
-  Diga não.
