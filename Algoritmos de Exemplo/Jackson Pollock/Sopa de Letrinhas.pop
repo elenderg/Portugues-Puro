@@ -1,0 +1,61 @@
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  Limpe a tela.
+  Faça uma caixa 960 pixels por 690 pixels.
+  Centralize a caixa sobre a tela.
+  Pinte a caixa com a cor preta e a cor verde claríssimo.
+  Cubra a parte de fora dessa caixa.
+  Pinte "Por favor, aguarde enquanto a pintura está sendo gerada..." sob o canto superior esquerdo desta caixa com a cor preta.
+  Atualize a tela.
+  Atribua 0 para um número denominado contador.
+  Itere.
+    \Pick a letter from "{ABCDEFGHIJKLMNOPQRSTUVWXYZ}".
+    Escolha aleatoriamente uma letra do alfabeto.
+    Escolha aleatoriamente uma localização dentre 480 pixels desse centro desta caixa desta tela.
+    Escolha aleatoriamente uma cor pollockiana.
+    Escolha aleatoriamente um tamanho entre 6 pixels e 192 pixels.
+    Atribua "Jellyka Saint-Andrew's Queen" e o tamanho para uma fonte.
+    Pinte a letra do alfabeto na localização com a cor pollockiana e a fonte (com tamanhos variados).
+    Adicione 1 para o contador.
+    Se o contador for maior do que 2500, pare.
+  Reitere.
+  Atualize a tela.
+  Aguarde pela tecla Esc.
+  Feche o programa.
+
+Uma cor pollockiana é uma cor.
+
+Rotina para que se escolha aleatoriamente uma cor pollockiana:
+  \If you feel like it, exit.
+  Escolha aleatoriamente um número entre 1 e 100.
+  Se o número for menor do que 35,
+    Atribua a cor amarelo escuríssimo para a cor pollockiana; 
+      Retorne.
+  Se o número for menor do que 50,
+    Atribua a cor preta para a cor pollockiana; 
+      Retorne.
+  Se o número for menor do que 80,
+    Atribua a cor laranja claríssimo para a cor pollockiana; 
+      Retorne.
+  Se o número for menor do que 85,
+    Atribua a cor vermelho claro para a cor pollockiana; 
+      Retorne.
+  Se o número for menor do que 94,
+    Atribua a cor laranja claro para a cor pollockiana; 
+      Retorne.
+  Se o número for menor do que 95,
+    Atribua a cor amarelo claríssimo para a cor pollockiana; 
+      Retorne.
+  Atribua a cor branca para a cor pollockiana.
+
+Rotina para que se pinte uma letra em uma localização com uma cor e uma fonte (com tamanhos variados):
+  Itere.
+    Atribua a letra para uma string.
+    Pinte a string sob a localização com a cor e a fonte.
+    Se estamos com sorte,
+      Mova a localização 1 pixel para a direita e 1 pixel para baixo;
+      Reitere.
+    Adicione 1 para um número denominado contador.
+    Se o contador for menor do que 3, reitere.
+    Se o contador for maior do que 2, pare.
+  Reitere.
