@@ -1,17 +1,17 @@
 Rotina para que se execute o programa:
   Inicialize os componentes.
   Limpe a tela.
-  Faça uma caixa 960 pixels por 690 pixels.
+  Faça uma caixa 1024 pixels por 768 pixels.
   Centralize a caixa sobre a tela.
-  Pinte a caixa com a cor preta e a cor verde claríssimo.
+  Pinte a caixa com a cor preta e a cor cinza escuríssimo.
   Cubra a parte de fora dessa caixa.
-  Pinte "Por favor, aguarde enquanto a pintura está sendo gerada..." sob o canto superior esquerdo desta caixa com a cor preta.
+  Pinte "                    Por favor, aguarde um momento até que a pintura seja gerada..." sob o canto superior esquerdo desta caixa com a cor branca.
   Atualize a tela.
   Atribua 0 para um número denominado contador.
   Itere.
     \Pick a letter from "{ABCDEFGHIJKLMNOPQRSTUVWXYZ}".
     Escolha aleatoriamente uma letra do alfabeto.
-    Escolha aleatoriamente uma localização dentre 480 pixels desse centro desta caixa desta tela.
+    Escolha aleatoriamente uma localização dentre 550 pixels no centro desta caixa desta tela.
     Escolha aleatoriamente uma cor pollockiana.
     Escolha aleatoriamente um tamanho entre 6 pixels e 192 pixels.
     Atribua "Jellyka Saint-Andrew's Queen" e o tamanho para uma fonte.
@@ -26,7 +26,7 @@ Rotina para que se execute o programa:
 Uma cor pollockiana é uma cor.
 
 Rotina para que se escolha aleatoriamente uma cor pollockiana:
-  \If you feel like it, exit.
+  \Se estamos com sorte, retorne.
   Escolha aleatoriamente um número entre 1 e 100.
   Se o número for menor do que 35,
     Atribua a cor amarelo escuríssimo para a cor pollockiana; 
