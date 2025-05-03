@@ -1,0 +1,21 @@
+O comando é um trecho.
+
+Rotina para que se execute o programa:
+  Defina "console" como o tipo da aplicação.
+  Escreva o texto CRLF junto com "Digite uma fração: " para StdOut.
+  Execute as paradinhas.
+  Feche o programa.
+
+Rotina para que se execute as paradinhas:
+  Itere.
+    Escreva o texto CRLF junto com " > " para StdOut.
+    Leia o comando desde a StdIn.
+    Se o comando estiver em branco,
+      Reitere.
+    Se o comando for "pare", pare.
+    Converta o comando para um fração.
+    Converta a fração para uma string usando 2.
+    Escreva a string para StdOut.
+    \Converta a fração para um texto hexadecimal.
+    \Escreva o texto hexadecimal tal como uma string para StdOut.
+  Reitere.

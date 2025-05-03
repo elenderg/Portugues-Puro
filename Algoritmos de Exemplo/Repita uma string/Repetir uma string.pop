@@ -17,6 +17,6 @@ Append the string to the original string given the number.
 
 Rotina para que se execute o programa:
   Defina "console" como o tipo da aplicação.
-  Atribua ha para uma string.
+  Atribua "ha" para uma string.
   Escreva a string para StdOut.
   
