@@ -1,0 +1,48 @@
+O comando é um trecho.
+
+Rotina para que se execute o programa:
+  Defina "console" como o tipo da aplicação.
+  \Escreva "Digite uma palavra: " junto com o texto CRLF para StdOut.
+  \Leia o comando desde a StdIn.
+  Atribua "EELLV" para uma string.
+  Escreva a string junto com o texto CRLF para StdOut.
+  Gere uns arranjos usando a string e a quantidade de caracteres desta string.
+  Remova as duplicatas desde os arranjos.
+  Ordene os arranjos.
+  Escreva os arranjos para StdOut.
+  Escreva todos os palíndromos presentes nos arranjos para StdOut.
+  Destrua os arranjos.
+  Feche o programa.
+
+Rotina para que se gere uns arranjos usando uma string e uma quantidade de caracteres:
+  Se a quantidade de caracteres for 1,
+    Adicione a string para os arranjos;
+    Retorne.
+  Atribua 0 para um número denominado deslocamento.
+  Itere.
+    Gere os arranjos usando a string e a quantidade de caracteres menos 1.
+    Se a quantidade de caracteres for par,
+      Permute os bytes dessa string usando o deslocamento e a quantidade de caracteres menos 1.
+    Se a quantidade de caracteres for ímpar,
+      Permute os bytes dessa string usando 0 e a quantidade de caracteres menos 1.
+    Adicione 1 para o deslocamento.
+    Se o deslocamento for menor do que a quantidade de caracteres, reitere.
+
+Rotina para que se permute os bytes de uma string usando um número e um segundo número:
+  Privatize a string.
+  Lance um percorredor sobre a string.
+  Avance o percorredor usando o deslocamento.
+
+Rotina para que se escreva todos os palíndromos presentes em uns arranjos para StdOut:
+  Escreva o texto CRLF para StdOut.
+  Itere.
+    Obtenha um arranjo desde os arranjos.
+    Se o arranjo for inexistente, pare.
+    Atribua a string deste arranjo para uma string.
+    Inverta a string.
+    Se a string deste arranjo não for a string, reitere.
+    Escreva a string deste arranjo junto com " " para StdOut.
+    Adicione 1 para uma contagem.
+  Reitere.
+  Escreva o texto CRLF para StdOut.
+  Escreva a contagem junto com " palíndromos encontrados." junto com o texto CRLF para StdOut.

@@ -1,0 +1,90 @@
+\ Rotina para que se permute um ponteiro com um segundo ponteiro:
+  \ Atribua o ponteiro para um ponteiro denominado ponteiro temporário.
+  \ Atribua o segundo ponteiro para o ponteiro.
+  \ Atribua o ponteiro temporário para o segundo ponteiro.
+
+Função para que se determine se uma string é um palíndromo:
+  Atribua uma string para uma string denominada segunda string.
+  Inverta a segunda string.
+  Se a string for a segunda string, diga sim.
+  Diga não.
+
+Um índice é um número.
+
+Rotina para que se substitua um byte em uma string por um segundo byte usando um índice:
+  Lance um percorredor sobre a string.
+  Avance o percorredor pelo índice.
+  Se o caractere inicial desde segmento final deste percorredor não for o byte, retorne.
+  Atribua o segundo byte para o caractere inicial desde segmento final deste percorredor.
+  Atribua o segmento inicial deste percorredor junto com segmento final deste percorredor para a string.
+  
+
+\ function EhPalindromo(inicio, fim: PChar): Boolean;
+\ begin
+  \ while inicio < fim do
+  \ begin
+    \ if inicio^ <> fim^ then
+    \ begin
+      \ EhPalindromo := False;
+      \ Exit;
+    \ end;
+    \ Inc(inicio);
+    \ Dec(fim);
+  \ end;
+  \ EhPalindromo := True;
+\ end;
+
+
+\ function PodeTrocar(base: PChar; inicioIdx, atualIdx: Integer): Boolean;
+\ var
+  \ k: Integer;
+\ begin
+  \ for k := inicioIdx to atualIdx - 1 do
+  \ begin
+    \ if (base + k)^ = (base + atualIdx)^ then
+    \ begin
+      \ PodeTrocar := False;
+      \ Exit;
+    \ end;
+  \ end;
+  \ PodeTrocar := True;
+\ end;
+
+\ procedure Permutar(base: PChar; fim: PChar; pos: Integer);
+\ var
+  \ i: Integer;
+  \ tam: Integer;
+\ begin
+  \ tam := (fim - base) + 1;
+  \ if pos >= tam then
+  \ begin
+    \ if EhPalindromo(base, fim) then
+      \ ImprimirString(base, fim);
+    \ Exit;
+  \ end;
+
+  \ for i := pos to tam - 1 do
+  \ begin
+    \ if PodeTrocar(base, pos, i) then
+    \ begin
+      \ Swap(base + pos, base + i);
+      \ Permutar(base, fim, pos + 1);
+      \ Swap(base + pos, base + i); // desfaz a troca (backtracking)
+    \ end;
+  \ end;
+\ end;
+
+\ procedure EncontrarPalindromos(var str: StringStruct);
+\ begin
+  \ Permutar(str.inicio, str.fim, 0);
+\ end;
+
+\ var
+  \ texto: array[0..3] of Char = ('A', 'A', 'B', 'B');
+  \ str: StringStruct;
+
+\ begin
+  \ str.inicio := @texto[0];
+  \ str.fim := @texto[3];
+  \ EncontrarPalindromos(str);
+\ end.

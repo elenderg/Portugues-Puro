@@ -1,0 +1,45 @@
+\O comando é um trecho.
+
+Rotina para que se execute o programa:
+  Defina "console" como o tipo da aplicação.
+  Escreva o texto CRLF junto com "Gerador de números para a Mega Sena." junto com o texto CRLF para StdOut.
+  \Escreva o texto CRLF junto com "Digite quantos números deseja gerar: " para StdOut.
+ \ Itere.
+    \Escreva o texto CRLF junto com " > " para StdOut.
+    \Leia o comando desde a StdIn.
+    \Se o comando estiver em branco,
+      \Reitere.  
+  Atribua 0 para um número denominado contador.
+  Atribua 1 para um número denominado valor inicial.
+  Atribua 10 para um número denominado valor final.
+  Itere.
+    Escolha aleatoriamente um número entre o valor inicial e o valor final.
+    Escreva o número para Stdout.
+    Adicione 1 ao contador.
+    Se o contador for menor que 6,
+      Escreva " - " para Stdout.
+    Se o contador for 6, pare.
+    Adicione 10 ao valor inicial.
+    Adicione 10 ao valor final.
+  Reitere.
+  Feche o programa.
+
+Uma lista de números é uma lista com
+  Um número.
+
+A lista de números sorteados é [composta de] umas listas de números.
+
+Função para que se determine se um número está repetido em uma lista de números:
+  Itere.
+    Se o número for o número desta lista de números, diga sim.
+    Se o número for o número desta lista de números, diga sim.    
+    \ Obtenha uma lista de números desde as listas de números.
+    \ Se a lista de números for inexistente,
+      \ Atribua a lista de números destas listas de números à lista de números;
+      \ Retorne.
+    \Se a lista de números não for a primeira lista de números destas listas de números,
+      \Anteponha ", " para a string deste conjunto de texto.
+    \Escreva a string deste conjunto de texto para StdOut.
+  Reitere.
+  
+\ DESISTO...

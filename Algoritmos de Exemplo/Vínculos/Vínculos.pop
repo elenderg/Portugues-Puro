@@ -1,0 +1,34 @@
+Um vínculo é uma lista com um nome.
+
+Rotina para que se execute o programa:
+  Defina "console" como o tipo da aplicação.
+  Inicialize os componentes.
+  Crie uns vínculos.
+  Escreva os vínculos para StdOut.
+  Destrua os vínculos.
+  Feche o programa.
+
+Rotina para que se crie uns vínculos:
+  Itere.
+    Aloque memória para um vínculo.
+    Acrescente o vínculo para os vínculos.
+    Adicione 1 para um número.
+    Atribua "Vínculo nº " junto com o número para o nome deste vínculo.
+    Se o número for 7, pare.
+  Reitere.
+
+Rotina para que se escreva uns vínculos para StdOut:
+  Escreva "ENDEREÇO                          VALORES" junto com o texto CRLF para StdOut.
+  Escreva o endereçamento destes vínculos junto com " - " para StdOut.
+  Escreva 
+    "Primeiro vínculo: " junto com o primeiro vínculo destes vínculos seguido de 
+    "  Último   vínculo: " junto com o último vínculo destes vínculos
+  junto com o texto CRLF para StdOut. 
+  Itere.
+    Obtenha um vínculo desde os vínculos.
+    Se o vínculo for inexistente, pare.
+    Escreva o vínculo junto com " - " para StdOut.
+    Escreva "Próximo  vínculo: " junto com o próximo vínculo deste vínculo para StdOut.
+    Escreva "  Vínculo anterior: " junto com o vínculo anterior deste vínculo para StdOut.
+    Escreva " Ordem do vínculo: " junto com o nome deste vínculo junto com o texto CRLF para StdOut.
+  Reitere.

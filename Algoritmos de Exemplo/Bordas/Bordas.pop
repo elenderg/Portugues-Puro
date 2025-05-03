@@ -1,0 +1,45 @@
+\ Uma caixa é uma estrutura com
+  \ Uma coordenada denominada coordenada X1, [left]
+  \ Uma coordenada denominada coordenada Y1, [top]
+  \ Uma coordenada denominada coordenada X2, [right]
+  \ Uma coordenada denominada coordenada Y2, [bottom]
+  \ Uma localização denominada canto superior esquerdo sob a coordenada X1, [left-top]
+  \ Uma localização denominada canto inferior direito sob a coordenada X2, [right-bottom]
+  \ Uma localização denominada canto esquerdo superior sob a coordenada X1, [top-left]
+  \ Uma localização denominada canto direito inferior sob a coordenada X2. [bottom-right]
+
+Um quadrado é uma estrutura com
+  Uma caixa arredondada denominada caixa superior esquerda,
+  Uma caixa arredondada denominada caixa superior direita,
+  Uma caixa arredondada denominada caixa inferior esquerda e
+  Uma caixa arredondada denominada caixa inferior direita.
+
+Rotina para que se defina as dimensões de um quadrado usando uns twips por uns outros twips:
+  \ 1ª
+  Faça a caixa superior esquerda deste quadrado usando os twips pelos outros twips.
+  \ 2ª
+  Faça a caixa superior direita deste quadrado usando 
+    os twips 
+    pelos 
+    outros twips.
+  Atribua a coordenada X2 desta caixa superior esquerda deste quadrado à coordenada X1 desta caixa superior direita deste quadrado.
+  Atribua 0 à coordenada Y1 desta caixa superior direita deste quadrado.
+  Atribua os twips à coordenada X2 desta caixa superior esquerda deste quadrado.
+  Atribua os outros twips à coordenada Y2 desta caixa superior esquerda deste quadrado.
+  \ 3ª
+  Atribua 0 à coordenada X1 desta caixa inferior esquerda deste quadrado.
+  Atribua 0 à coordenada Y1 desta caixa inferior esquerda deste quadrado.
+  Atribua os twips à coordenada X2 desta caixa inferior esquerda deste quadrado.
+  Atribua os outros twips à coordenada Y2 desta caixa inferior esquerda deste quadrado.
+  \ 4ª
+  Atribua 0 à coordenada X1 desta caixa inferior direita deste quadrado.
+  Atribua 0 à coordenada Y1 desta caixa inferior direita deste quadrado.
+  Atribua os twips à coordenada X2 desta caixa inferior direita deste quadrado.
+  Atribua os outros twips à coordenada Y2 desta caixa inferior direita deste quadrado.
+  
+
+Rotina para que se posicione um quadrado em uma localização:
+  Atribua a localização para o canto superior esquerdo desta caixa superior esquerda.
+  
+
+  

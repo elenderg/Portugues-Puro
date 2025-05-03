@@ -1,0 +1,193 @@
+# Tutorial Completo de Instalação e Configuração do Thor Patcher
+
+## ?? Introdução
+Neste tutorial, você aprenderá:
+- Como instalar o Thor Patcher em um servidor host
+- Passar arquivos para GRF criptografada
+- Configurar botões e interface
+- Gerenciar atualizações
+
+## ??? Pré-requisitos
+- Arquivos do Thor Patcher (disponíveis em [thor-patcher.ragnarok.com](https://thor-patcher.ragnarok.com))
+- Acesso FTP ao seu servidor web
+- Conhecimento básico de estrutura de pastas
+
+## ?? Estrutura de Pastas
+O Thor é organizado em 4 pastas principais:
+
+```
+thor/
++-- exe/          # Executáveis
++-- web/          # Arquivos para o host
++-- tools/        # Ferramentas auxiliares
++-- config/       # Arquivos de configuração
+```
+
+## ?? Configuração do Host
+1. **Crie uma pasta no seu servidor** (ex: `public_html/thor2`)
+2. **Configure o arquivo `config.ini`**:
+```ini
+[Config]
+url = http://seusite.com/thor2/
+main = main.php
+update = _update
+main_grf = data.grf
+execute = ragnarok.exe
+```
+
+3. **Teste a conexão** no Thor Patcher antes de prosseguir
+
+## ?? Criando Atualizações
+### Para arquivos comuns:
+1. Use o `Thor Generator`
+2. Selecione os arquivos para atualizar
+3. Defina o caminho de destino (ex: `data\texture\`)
+4. Salve como `update01.thor`
+
+### Para GRF criptografada:
+1. Crie uma GRF temporária com a MESMA SENHA da principal
+2. Adicione os arquivos mantendo a estrutura correta
+3. Salve como `update02.grf`
+
+## ?? Dicas Importantes
+1. **Nunca edite arquivos diretamente no servidor** durante atualizações
+2. **Sempre teste em ambiente local** antes de enviar para produção
+3. **Nomeie as atualizações sequencialmente** (update01, update02...)
+
+## ?? Personalizando a Interface
+### Posicionamento de Botões:
+1. Abra o background no Photoshop
+2. Ative as guias (F8)
+3. Marque a posição desejada com a ferramenta de seleção
+4. Anote as coordenadas X/Y
+5. Configure no `config.ini`:
+```ini
+[Button Start]
+x = 179
+y = 468
+image = btn_start.png
+```
+
+## ? Solução de Problemas
+- **Problema**: Atualização não aplicada  
+  **Solução**: Verifique se a barra "/" está no final da URL
+
+- **Problema**: GRF não atualiza  
+  **Solução**: Confira se a senha da GRF temporária está idêntica à principal
+
+## ?? Links Úteis
+- [Download Thor Patcher](https://thor-patcher.ragnarok.com)
+- [Tutorial GRF Editor](https://seusite.com/tutoriais/grf-editor)
+- [Fórum de Suporte](https://seusite.com/forum)
+
+# ?? Configuração Detalhada do Servidor e Aplicação de Atualizações no Thor Patcher
+
+## ?? Configuração do Servidor (Passo a Passo)
+
+### 1. **Estrutura de Diretórios no Host**
+Recomendo esta organização no seu servidor web:
+
+```
+public_html/
++-- thor_patches/
+    +-- data/               # Arquivos .thor e .grf
+    +-- _update/            # Pasta para arquivos de controle
+    +-- main.php            # Arquivo principal de configuração
+```
+
+### 2. **Configuração do Arquivo main.php**
+```php
+<?php
+header('Content-Type: text/plain');
+echo "version=1.0\n";
+echo "execute=ragnarok.exe\n";
+echo "grf=ragnarok.grf\n";
+// Lista de atualizações em ordem
+echo "patch1=thor01.thor\n"; 
+echo "patch2=thor02.grf\n";
+?>
+```
+
+### 3. **Permissões do Servidor**
+- Defina permissão **755** para pastas
+- Arquivos devem ter **644**
+- Pasta `_update` precisa de permissão **777** temporariamente durante atualizações
+
+## ?? Sistema de Atualizações (Fluxo Completo)
+
+### ?? Envio de Patches
+1. **Para arquivos simples**:
+   - Use o Thor Generator
+   - Selecione os arquivos modificados
+   - Defina o caminho relativo (ex: `data\texture\`)
+   - Gere como `patchXX.thor` (numeração sequencial)
+
+2. **Para GRF criptografada**:
+   ```mermaid
+   graph TD
+     A[Crie GRF temporária] --> B[Use a MESMA SENHA da principal]
+     B --> C[Adicione arquivos modificados]
+     C --> D[Salve como patchXX.grf]
+   ```
+
+### ?? Arquivo patchlist.txt
+Formato essencial para controle:
+```
+# Ordem CRÍTICA - executar na sequência
+thor01.thor
+thor02.grf
+thor03.thor
+```
+
+## ??? Boas Práticas de Atualização
+
+1. **Versionamento Seguro**:
+   - Nunca sobrescreva patches existentes
+   - Use sempre nova numeração (patch01, patch02...)
+   - Mantenha backups dos 3 últimos patches
+
+2. **Teste Antes de Publicar**:
+   ```bash
+   # Comando para verificar integridade
+   thor_verifier --check patchXX.thor
+   ```
+
+3. **Controle de Conflitos**:
+   - Use arquivos `.diff` para pequenas alterações
+   - Para grandes atualizações, prefira GRFs completas
+
+## ?? Troubleshooting Avançado
+
+### Problema: Atualização não é detectada
+**Solução**:
+1. Verifique se o arquivo `_update/thor.dat` no cliente foi deletado
+2. Confira o timestamp do arquivo no servidor
+3. Teste a URL diretamente no navegador
+
+### Problema: GRF não aplica as mudanças
+**Checklist**:
+- [ ] Senha idêntica à GRF principal
+- [ ] Estrutura interna de pastas idêntica
+- [ ] Nome do arquivo correto no patchlist.txt
+
+## ?? Fluxograma de Atualização
+```mermaid
+sequenceDiagram
+    Cliente->>Servidor: Verifica main.php
+    Servidor-->>Cliente: Retorna lista de patches
+    loop Para cada patch
+        Cliente->>Servidor: Baixa patchXX.thor/grf
+        Cliente->>Cliente: Aplica no diretório local
+    end
+    Cliente->>Servidor: Confirma sucesso (_update/thor.dat)
+```
+
+## ?? Dica Profissional
+Crie um script de deploy automático que:
+1. Valida os arquivos
+2. Gera a numeração sequencial automaticamente
+3. Faz backup da versão anterior
+4. Atualiza o patchlist.txt
+5. Notifica os clientes via Discord Webhook
+
+Este sistema evita 99% dos problemas comuns de atualização!
