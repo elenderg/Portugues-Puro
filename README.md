@@ -17,14 +17,16 @@ C:\path_do_compilador.exe C:\path_do_projeto_a_ser_compilado\
 ```
 ![Captura de tela expondo o processo de compilação](https://raw.githubusercontent.com/elenderg/Portugues-Puro/main/Algoritmos%20de%20Exemplo/Processo%20de%20Compilacao.png)
 
-Lembre-se de substuir `C:\path_do_compilador.exe` pelo caminho para o executável do seu compilador e `C:\path_do_projeto_a_ser_compilado\` pelo caminho para o diretório do projeto que você deseja compilar.
+Lembre-se de substuir `C:\path_do_compilador.exe` pelo caminho para o executável do seu compilador e `C:\path_do_projeto_a_ser_compilado\` pelo caminho para o diretório do projeto que você deseja compilar.  
+Certifique-se de rodar o prompt de comando com permissões de Administrador, caso contrário o codepage não poderá ser definido corretamente.
+Caso você esteja utilizando o Powershell, certifique-se de ajustar o PATH ao invocar o compilador.
 
 
 ## Observações
 Certifique-se de incluir o arquivo que contém a biblioteca padrão no mesmo diretório que o projeto a ser compilado. Assim como em outras linguagens de programação, é necessário incluir a biblioteca padrão para fazer uso completo das funcionalidades oferecidas pelo compilador.
 
 ## Contribuição
-Se você deseja contribuir para o desenvolvimento do Compilador, fique à vontade para reportar problemas (issues) e enviar suas contribuições (pull requests) neste repositório. Estamos ansiosos para receber seu feedback e [colaboração](https://github.com/elenderg/Portugues-Puro/blob/main/CONTRIBUTING.md) !
+Se você deseja contribuir para o desenvolvimento do Compilador, fique à vontade para reportar problemas (issues) e enviar suas contribuições (pull requests) neste repositório. Estamos ansiosos para receber seu feedback e [colaboração!](https://github.com/elenderg/Portugues-Puro/blob/main/CONTRIBUTING.md)  
 
 ## Suporte
 Envie suas dúvidas [aqui](https://github.com/elenderg/Portugues-Puro/issues/new/choose)
@@ -32,16 +34,12 @@ Envie suas dúvidas [aqui](https://github.com/elenderg/Portugues-Puro/issues/new
 ## Código de Conduta
 Disponível [aqui](https://github.com/elenderg/Portugues-Puro/blob/main/CODE_OF_CONDUCT.md  )
 
-## Licença
-[Unlicense](https://github.com/elenderg/Portugues-Puro/blob/main/LICENSE)
-
 ## Autor
 [Elender Góis Gallas](https://www.linkedin.com/in/elender/)
 
-
 ## Licença
 
-Este projeto está licenciado sob a Unlicense - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
+Este projeto está licenciado sob a [Unlicense](https://github.com/elenderg/Portugues-Puro/blob/main/LICENSE) - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
 
 <hr>
 
