@@ -31,7 +31,9 @@ Rotina para que se pinte o gradiente cromático:
     Adicione 1 para a coordenada Y desta localização final desta linha reta.
     \Adicione 1 para a coordenada X desta localização final desta linha reta.
     Adicione 1 para o contador.
-    Se o contador for maior do que 3600, pare.
+    Se a matiz desta cor deste contexto for 3600,
+      Atribua 0 para a matiz desta cor deste contexto.
+    Se o contador for maior do que 10800, pare.
   Reitere.
   Atualize a tela.
   Aguarde pela tecla Esc.
