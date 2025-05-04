@@ -101,7 +101,7 @@ Um px são 15 twips.
 \Uns pxs são 15 twips.
 \Um píxel são 15 twips.
 \Um inch são 1440 twips.
-Uma polegada é 1440 twips. \  56,7
+Uma polegada são 1440 twips. \  56,7
 
 Uma unidade numérica é um número.
 Um kilobyte são 1024 unidades numéricas.
@@ -2544,23 +2544,11 @@ Rotina para que se eleve um número para um segundo número:
     Atribua 0 ao número; \ TODO: Atribua 1 dividido por o segundo número ao número.
     Retorne. 
   Atribua 1 para um número resultante.
- Atribua 0 para um contador.
   Itere.
-    Adicione 1 para o contador.
-    Se o contador for maior do que o segundo número, pare.
+    Se um contador estiver ultrapassando o segundo número, pare.
     Multiplique o número resultante pelo número.
   Reitere.
   Atribua o número resultante ao número.
-
-To raise a number to another number:
-  If the other number is 0, put 1 into the number; exit.
-  If the other number is less than 0, put 0 into the number; exit. \ should be 1/the raised result, but always comes out 0 with numbers
-  Put 1 into a result number.
-  Loop.
-    If a counter is past the other number, break.
-    Multiply the result by the number.
-  Repeat.
-  Put the result into the number.
 
 Rotina para que se atribua um par de números para um segundo par de números:
   Atribua o número X deste par de números ao número X deste segundo par de números.
@@ -3108,7 +3096,7 @@ Rotina para que se acrescente umas listas para umas outras listas:
     Atribua a lista inicial destas listas para uma lista.
     Se a lista for inexistente, retorne.
     Remova a lista desde as listas.
-    Acrescente a lista para a outras listas.
+    Acrescente a lista para as outras listas.
   Reitere.
 
 \acrescente
@@ -3901,7 +3889,7 @@ Rotina para que se converta uma fração para uma string usando um número:
   Multiplique o valor numérico pela fração.
   Zero preencha o valor numérico usando o número e acrescente o mesmo para a string.
   Atribua a quantidade de caracteres desta string menos o número mais 1 para um byte#.
-  Insira "." para a string antes desse byte#. \ TODO: verificar se é necessário trocar para vírgula
+  Insira "," para a string antes desse byte#. \ TODO: verificar se é necessário trocar para vírgula
   Se o conteúdo deste caractere inicial desta string for o ponto final, 
     Anteponha "0" para a string.
   Se o sinalizador estiver ativo,
@@ -4980,12 +4968,12 @@ Rotina para que se de-sign um número:
   Se o número for menor do que 0, 
     Inverta o sinal desse número.
 
-Rotina para que se remova o sinal desde um par de números;
+Rotina para que se  remova o sinal desde um par de números;
 Rotina para que se de-sign um par de números:
   Remova o sinal desde o número X deste par de números.
   Remova o sinal desde o número Y deste par de números.
 
-Rotina para que se remova o sinal desde uma string;
+Rotina para que se  remova o sinal desde uma string;
 Rotina para que se de-sign uma string:
   Se a string estiver em branco, retorne.
   Se o conteúdo deste caractere inicial desta string for algum sinal aritmético, 
@@ -5171,10 +5159,10 @@ Função para que se determine se uma caixa é uma segunda caixa:
 
 Função para que se determine se uma caixa está em uma segunda caixa;
 Função para que se determine se uma caixa está dentro de uma segunda caixa:
-  Se a coordenada X1 desta caixa for menor que a coordenada X1 desta segunda caixa, diga não.
-  Se a coordenada Y1 desta caixa for menor que a coordenada Y1 desta segunda caixa, diga não.
-  Se a coordenada X2 desta caixa for maior que a coordenada X2 desta segunda caixa, diga não.
-  Se a coordenada Y2 desta caixa for maior que a coordenada Y2 desta segunda caixa, diga não.
+  Se a coordenada X1 desta caixa for menor do que a coordenada X1 desta segunda caixa, diga não.
+  Se a coordenada Y1 desta caixa for menor do que a coordenada Y1 desta segunda caixa, diga não.
+  Se a coordenada X2 desta caixa for maior do que a coordenada X2 desta segunda caixa, diga não.
+  Se a coordenada Y2 desta caixa for maior do que a coordenada Y2 desta segunda caixa, diga não.
   Diga sim.
 
 Função para que se determine se uma caixa está tocando uma segunda caixa:
@@ -6633,7 +6621,7 @@ Rotina para que se destrua uma requisição WinHTTP:
     O número identificador de requisição [hInternet] desta requisição WinHTTP.
   Processe "winhttp.dll" "WinHttpCloseHandle" com o número identificador de conexão [hInternet] desta requisição WinHTTP.
   Processe "winhttp.dll" "WinHttpCloseHandle" com o número identificador de sessão [hInternet] deste número identificador de requisição desta requisição WinHTTP.
-  Deallocate a requisição WinHTTP.
+  Desaloque a requisição WinHTTP.
 
 Rotina para que se divida uma fração por uma segunda fração:
   Preserve a segunda fração.
@@ -8627,7 +8615,7 @@ Rotina para que se pegue uma lista de umas listas;
 Rotina para que se pegue uma lista desde umas listas;
 Rotina para que se obtenha uma lista de umas listas;
 Rotina para que se obtenha uma lista desde umas listas:
-  Se as listas estiverem vazias,
+  Se  as listas estiverem vazias,
     Esvazie a lista;
     Retorne.
   Se a lista for inexistente,
@@ -8636,7 +8624,7 @@ Rotina para que se obtenha uma lista desde umas listas:
   Atribua a lista posterior desta lista à lista.
 
 Rotina para que se obtenha uma lista desde umas listas (regressivamente):
-  Se as listas estiverem vazias,
+  Se  as listas estiverem vazias,
     Esvazie a lista;
     Retorne.
   Se a lista for inexistente,
@@ -8680,7 +8668,7 @@ Rotina para que se obtenha uma largura usando uma string e um canvas:
   \ presume que a fonte já esteja selecionada no canvas
   Processe "gdi32.dll" "GetTextExtentPoint32A" com 
   \ Calcula a largura e a altura de uma seqüência de caracteres.
-  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-GetTextExtentPoint32A
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-gettextextentpoint32a
     O canvas [hdc]
     e O caractere inicial desta string [lpString]
     e A quantidade de caracteres desta string [c]
@@ -9297,8 +9285,6 @@ Rotina para que se oculte o cursor:
   Reitere.
 
 Rotina para que se imagine uma caixa uns twips por uns outros twips;
-Rotina para que se faça uma caixa com uns twips por uns outros twips;
-\Rotina para que se faça uma caixa usando uns twips por uns outros twips;
 Rotina para que se faça uma caixa uns twips por uns outros twips:
   Atribua 0 à coordenada X1 desta caixa.
   Atribua 0 à coordenada Y1 desta caixa.
@@ -11511,7 +11497,7 @@ Rotina para que se inverta um sinalizador:
     Retorne.
   Atribua 1 ao sinalizador.
 
-Rotina para que se inverta uma string:
+Rotina para que se inverta uma string;
 Rotina para que se reverta uma string:
   \ podia ser mais eficiente. Verificar se a quantidade de caracteres é menor do que 2, por exemplo.
   Preserve a string.
@@ -18087,7 +18073,6 @@ Rotina para que se mova uma caixa para a esquerda para uma coordenada:
 
 Rotina para que se mova uma caixa para o lado esquerdo de uma segunda caixa;
 Rotina para que se mova uma caixa para a esquerda de uma segunda caixa:
-  \ Move the box left the box's left minus the other box's left.
   Mova a caixa para a esquerda a coordenada X1 desta caixa menos a coordenada X1 desta segunda caixa.
 
 Rotina para que se mova uma caixa uns twips para a esquerda;
@@ -20583,10 +20568,10 @@ Rotina para que se substitua um byte usando uma tabela de tradução:
 Rotina para que se posicione um subtexto sobre uma string:
   Decodifique $8B8508000000. \ mov eax,[ebp+8] \ o subtexto
   Decodifique $8B9D0C000000. \ mov ebx,[ebp+12] \ a string
-  \ atribua o caractere inicial desta string ao caractere inicial deste subtexto
+  \ atribui o caractere inicial desta string ao caractere inicial deste subtexto
   Decodifique $8B8B00000000. \ mov ecx,[ebx+0] \ o caractere inicial da string
   Decodifique $898800000000. \ mov [eax+0],ecx \ o caractere inicial do subtexto
-  \ atribua o caractere inicial desta string menos 1 ao caractere final deste subtexto
+  \ atribui o caractere inicial desta string menos 1 ao caractere final deste subtexto
   Decodifique $49. \ dec ecx
   Decodifique $898804000000. \ mov [eax+4],ecx \ o caractere final deste subtexto
 
@@ -20957,7 +20942,6 @@ Função para que se determine se um número é um segundo número:
   Decodifique $C7C000000000. \ mov eax,0 \ now it is false
 
 Função para que se determine se um ponteiro é maior do que um segundo ponteiro;
-Função para que se determine se um número é maior que um segundo número;
 Função para que se determine se um número é maior do que um segundo número:
   Decodifique $C7C001000000. \ mov eax,1 \ presume que o número seja maior logo de começo
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o número

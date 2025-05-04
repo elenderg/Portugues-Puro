@@ -8610,6 +8610,10 @@ Rotina para que se obtenha uma string desde a área de transferência do Windows:
     O número identificador. [hMem]
   Processe "user32.dll" "CloseClipboard".
 
+Rotina para que se obtenha uma lista a partir de umas listas;
+Rotina para que se pegue uma lista de umas listas;
+Rotina para que se pegue uma lista desde umas listas;
+Rotina para que se obtenha uma lista de umas listas;
 Rotina para que se obtenha uma lista desde umas listas:
   Se  as listas estiverem vazias,
     Esvazie a lista;
@@ -8662,7 +8666,8 @@ Rotina para que se obtenha uma largura usando um número e uns larguras de fonte:
 
 Rotina para que se obtenha uma largura usando uma string e um canvas:
   \ presume que a fonte já esteja selecionada no canvas
-  Processe "gdi32.dll" "GetTextExtentPoint32A" com \ Calcula a largura e a altura da seqüência de caracteres de texto especificada.
+  Processe "gdi32.dll" "GetTextExtentPoint32A" com 
+  \ Calcula a largura e a altura de uma seqüência de caracteres.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-gettextextentpoint32a
     O canvas [hdc]
     e O caractere inicial desta string [lpString]
@@ -13897,6 +13902,7 @@ Rotina para que se atualize o cursor:
   Enfileire o evento.
 
 Rotina para que se atribua um endereço completo para um trecho;
+Rotina para que se coloque um endereço completo para um trecho;
 Rotina para que se carregue um endereço completo para um trecho;
 Rotina para que se leia um endereço completo para um trecho:
   Limpe o erro do fluxo de entrada/saída.

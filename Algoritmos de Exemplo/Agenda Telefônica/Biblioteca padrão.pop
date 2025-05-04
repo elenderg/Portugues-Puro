@@ -2544,10 +2544,8 @@ Rotina para que se eleve um número para um segundo número:
     Atribua 0 ao número; \ TODO: Atribua 1 dividido por o segundo número ao número.
     Retorne. 
   Atribua 1 para um número resultante.
- Atribua 0 para um contador.
   Itere.
-    Se o contador for maior do que o segundo número, pare.
-    Adicione 1 para o contador.
+    Se um contador estiver ultrapassando o segundo número, pare.
     Multiplique o número resultante pelo número.
   Reitere.
   Atribua o número resultante ao número.
@@ -3891,7 +3889,7 @@ Rotina para que se converta uma fração para uma string usando um número:
   Multiplique o valor numérico pela fração.
   Zero preencha o valor numérico usando o número e acrescente o mesmo para a string.
   Atribua a quantidade de caracteres desta string menos o número mais 1 para um byte#.
-  Insira "." para a string antes desse byte#. \ TODO: verificar se é necessário trocar para vírgula
+  Insira "," para a string antes desse byte#. \ TODO: verificar se é necessário trocar para vírgula
   Se o conteúdo deste caractere inicial desta string for o ponto final, 
     Anteponha "0" para a string.
   Se o sinalizador estiver ativo,
@@ -8612,6 +8610,10 @@ Rotina para que se obtenha uma string desde a área de transferência do Windows:
     O número identificador. [hMem]
   Processe "user32.dll" "CloseClipboard".
 
+Rotina para que se obtenha uma lista a partir de umas listas;
+Rotina para que se pegue uma lista de umas listas;
+Rotina para que se pegue uma lista desde umas listas;
+Rotina para que se obtenha uma lista de umas listas;
 Rotina para que se obtenha uma lista desde umas listas:
   Se  as listas estiverem vazias,
     Esvazie a lista;
@@ -8664,7 +8666,8 @@ Rotina para que se obtenha uma largura usando um número e uns larguras de fonte:
 
 Rotina para que se obtenha uma largura usando uma string e um canvas:
   \ presume que a fonte já esteja selecionada no canvas
-  Processe "gdi32.dll" "GetTextExtentPoint32A" com \ Calcula a largura e a altura da seqüência de caracteres de texto especificada.
+  Processe "gdi32.dll" "GetTextExtentPoint32A" com 
+  \ Calcula a largura e a altura de uma seqüência de caracteres.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-gettextextentpoint32a
     O canvas [hdc]
     e O caractere inicial desta string [lpString]
@@ -11494,7 +11497,7 @@ Rotina para que se inverta um sinalizador:
     Retorne.
   Atribua 1 ao sinalizador.
 
-Rotina para que se inverta uma string:
+Rotina para que se inverta uma string;
 Rotina para que se reverta uma string:
   \ podia ser mais eficiente. Verificar se a quantidade de caracteres é menor do que 2, por exemplo.
   Preserve a string.
@@ -13899,6 +13902,7 @@ Rotina para que se atualize o cursor:
   Enfileire o evento.
 
 Rotina para que se atribua um endereço completo para um trecho;
+Rotina para que se coloque um endereço completo para um trecho;
 Rotina para que se carregue um endereço completo para um trecho;
 Rotina para que se leia um endereço completo para um trecho:
   Limpe o erro do fluxo de entrada/saída.
@@ -20564,10 +20568,10 @@ Rotina para que se substitua um byte usando uma tabela de tradução:
 Rotina para que se posicione um subtexto sobre uma string:
   Decodifique $8B8508000000. \ mov eax,[ebp+8] \ o subtexto
   Decodifique $8B9D0C000000. \ mov ebx,[ebp+12] \ a string
-  \ atribua o caractere inicial desta string ao caractere inicial deste subtexto
+  \ atribui o caractere inicial desta string ao caractere inicial deste subtexto
   Decodifique $8B8B00000000. \ mov ecx,[ebx+0] \ o caractere inicial da string
   Decodifique $898800000000. \ mov [eax+0],ecx \ o caractere inicial do subtexto
-  \ atribua o caractere inicial desta string menos 1 ao caractere final deste subtexto
+  \ atribui o caractere inicial desta string menos 1 ao caractere final deste subtexto
   Decodifique $49. \ dec ecx
   Decodifique $898804000000. \ mov [eax+4],ecx \ o caractere final deste subtexto
 
