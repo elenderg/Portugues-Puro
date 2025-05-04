@@ -1,0 +1,38 @@
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  Pinte o Gradiente Cromático.
+  Feche o programa.
+
+Rotina para que se pinte o gradiente cromático:
+  Limpe a tela.
+  Faça uma caixa 768 pixels por 768 pixels.
+  Centralize a caixa sobre a tela.
+  Pinte a caixa com a cor preta e a cor cinza escuríssimo.
+  Cubra a parte de fora dessa caixa.
+  Pinte "                    Por favor, aguarde um momento.." sob o canto superior esquerdo desta caixa com a cor branca.
+  Atualize a tela.
+  Atribua 0 para um número denominado contador.
+  Atribua o canto superior direito desta caixa à localização deste contexto.
+  Comece com a cor vermelha.
+  Vire para a direita.
+  \Mova para o centro desta caixa.
+  Atribua 0 para um número denominado distância.
+  Mova para o canto superior esquerdo desta caixa.
+  Itere.
+    Faça uma linha reta a distância para cima desde a base dessa caixa.
+    \Faça uma segunda linha reta a distância mais 1 para cima desde a base dessa caixa.
+    Adicione 1 para a distância.
+    Pinte a linha reta com a cor deste contexto.
+    \Pinte a segunda linha reta com a cor deste contexto.
+    Atualize a tela.
+    Mude a matiz desta cor deste contexto por 1 pontos osmosianos.
+    Adicione 1 para a coordenada Y desta localização inicial desta linha reta.
+    \Adicione 1 para a coordenada X desta localização inicial desta linha reta.
+    Adicione 1 para a coordenada Y desta localização final desta linha reta.
+    \Adicione 1 para a coordenada X desta localização final desta linha reta.
+    Adicione 1 para o contador.
+    Se o contador for maior do que 3600, pare.
+  Reitere.
+  Atualize a tela.
+  Aguarde pela tecla Esc.
+
