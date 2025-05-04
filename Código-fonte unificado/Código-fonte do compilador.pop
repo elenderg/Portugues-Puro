@@ -612,27 +612,27 @@ Rotina para que se compile um endereço da pasta usando um nível de profundidade 
 Rotina para que se carregue uns arquivos fonte usando um nível de profundidade: \ Jasper
   Leia os arquivos fonte usando o endereço completo deste compilador e o nível de profundidade.
 
-Rotina para que se carregue uns arquivos fonte usando um endereço da pasta e um nível de profundidade: \Jasper
-  Atribua ".pop" a uma nova extensão.
-  Anexe o caractere NULL após a nova extensão.
-  Se o nível de profundidade for menor do que 1, retorne.
-  Preserve o nível de profundidade.
-  Atribua o nível de profundidade para um segundo nível de profundidade.
-  Subtraia 1 desde o segundo nível de profundidade.
-  Itere.
-    Se existir algum problema de compilação, retorne.
-    Obtenha um item desde o endereço da pasta.
-    Se o item não for encontrado, pare.
-    Se a categoria deste item for "endereço de pasta", 
-      Leia os arquivos fonte usando o endereço da pasta deste item e o segundo nível de profundidade;
-      Reitere.
-    Se a categoria deste item não for "arquivo", reitere.
-    Se a extensão deste  item não for a nova extensão, reitere.
-    Se o item parece ser encadernável, reitere.
-    Se o item parece ser lexical, reitere.
-    Adicione um arquivo fonte para os arquivos fontes usando o endereço completo deste item.
-    Carregue o arquivo fonte.
-  Reitere.
+\ Rotina para que se carregue uns arquivos fonte usando um endereço da pasta e um nível de profundidade: \Jasper
+  \ Atribua ".pop" a uma nova extensão.
+  \ Anexe o caractere NULL após a nova extensão.
+  \ Se o nível de profundidade for menor do que 1, retorne.
+  \ Preserve o nível de profundidade.
+  \ Atribua o nível de profundidade para um segundo nível de profundidade.
+  \ Subtraia 1 desde o segundo nível de profundidade.
+  \ Itere.
+    \ Se existir algum problema de compilação, retorne.
+    \ Obtenha um item desde o endereço da pasta.
+    \ Se o item não for encontrado, pare.
+    \ Se a categoria deste item for "endereço de pasta", 
+      \ Leia os arquivos fonte usando o endereço da pasta deste item e o segundo nível de profundidade;
+      \ Reitere.
+    \ Se a categoria deste item não for "arquivo", reitere.
+    \ Se a extensão deste  item não for a nova extensão, reitere.
+    \ Se o item parece ser encadernável, reitere.
+    \ Se o item parece ser lexical, reitere.
+    \ Adicione um arquivo fonte para os arquivos fontes usando o endereço completo deste item.
+    \ Carregue o arquivo fonte.
+  \ Reitere.
 
 Função para que se determine se uma variável global está causando conflitos: \ Jasper Paulsen
   Se o nome desta variável global não estiver no catálogo de variáveis globais, diga não.
