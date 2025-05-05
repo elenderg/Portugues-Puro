@@ -5,7 +5,7 @@ Rotina para que se execute o programa:
 
 Rotina para que se pinte o gradiente cromático:
   Limpe a tela.
-  Faça uma caixa 360 pixels por 360 pixels.
+  Faça uma caixa 1500 pixels por 725 pixels.
   Centralize a caixa sobre a tela.
   Pinte a caixa com a cor preta e a cor cinza escuríssimo.
   \Cubra a parte de fora dessa caixa.
@@ -14,13 +14,11 @@ Rotina para que se pinte o gradiente cromático:
   Atribua 0 para um número denominado contador.
   Atribua o canto superior direito desta caixa à localização deste contexto.
   Comece com a cor vermelha.
-  Vire para a direita.
-  Mova para o centro desta caixa.
-  Atribua 0 para um twip denominado distância.
+  \Vire para a direita.
+  \Mova para o centro desta caixa.
   Faça uma caixa denominada quadrado 3 pixels por 3 pixels.
   Mova o quadrado para o canto superior esquerdo desta caixa.
   Itere.
-    \Atribua 0 para um número denominado topo.
     Pinte e preencha o quadrado com a cor deste contexto.
     Atualize a tela.
     Mude a matiz desta cor deste contexto por 1 pontos osmosianos.
@@ -28,16 +26,12 @@ Rotina para que se pinte o gradiente cromático:
     Adicione 1 para o contador.
     Se a matiz desta cor deste contexto for 3600,
       Atribua 0 para a matiz desta cor deste contexto.
-    Se o contador for 2400,
-      Mova o quadrado 7200 twips para cima; \ valor tem que ser dinâmico
-      \Atribua 1 para a coordenada Y1 deste quadrado;
-      \Atribua 3 para a coordenada Y2 deste quadrado;
+    Se o contador for 3600,
+      Mova o quadrado 10800 twips para cima;
       Adicione 60 para a coordenada X1 deste quadrado;
       Adicione 60 para a coordenada X2 deste quadrado;
       Adicione 1 para a luminosidade desta cor deste contexto;
       Atribua 0 para a matiz deste contexto;
-      \Adicione 60 para um número denominado posição horizontal;
-      \Mova o quadrado a posição horizontal para a direita;
       Atribua 0 para o contador.
   Reitere.
   Atualize a tela.
