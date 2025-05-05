@@ -2423,6 +2423,8 @@ Rotina para que se defina o tipo da aplicação como uma string:
   Atribua a string para o tipo da aplicação.
   Se o tipo da aplicação for "console", 
     Prepare o Console.
+  Se o tipo da aplicação for "debug", 
+    Prepare o Console.
 
 Rotina para que se defina uma string como uma outra string;
 Rotina para que se coloque uma outra string em uma string;
@@ -3192,7 +3194,12 @@ Rotina para que se obtenha o modo do console:
     O endereçamento dum número denominado modo do console
     Retornando um status de erro.
   Se o status de erro for 0 [NULL], 
-     Escreva "Erro ao obter o modo do Console." junto com o texto CRLF para STDOUT.
+     Escreva "Erro ao obter o modo do Console. " 
+     junto com
+    "Verifique se você possui permissões de Administrador. "
+    junto com
+    "Se você estiver usando o console do NppExec, é seguro ignorar esta mensagem."
+     junto com o texto CRLF para STDOUT.
   \Se o status de erro não for 0 [NULL], 
      \Escreva "Modo do console: " junto com o modo do console junto com o texto CRLF para STDOUT.
 
@@ -8610,6 +8617,10 @@ Rotina para que se obtenha uma string desde a área de transferência do Windows:
     O número identificador. [hMem]
   Processe "user32.dll" "CloseClipboard".
 
+Rotina para que se obtenha uma lista a partir de umas listas;
+Rotina para que se pegue uma lista de umas listas;
+Rotina para que se pegue uma lista desde umas listas;
+Rotina para que se obtenha uma lista de umas listas;
 Rotina para que se obtenha uma lista desde umas listas:
   Se  as listas estiverem vazias,
     Esvazie a lista;
@@ -8662,7 +8673,8 @@ Rotina para que se obtenha uma largura usando um número e uns larguras de fonte:
 
 Rotina para que se obtenha uma largura usando uma string e um canvas:
   \ presume que a fonte já esteja selecionada no canvas
-  Processe "gdi32.dll" "GetTextExtentPoint32A" com \ Calcula a largura e a altura da seqüência de caracteres de texto especificada.
+  Processe "gdi32.dll" "GetTextExtentPoint32A" com 
+  \ Calcula a largura e a altura de uma seqüência de caracteres.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-gettextextentpoint32a
     O canvas [hdc]
     e O caractere inicial desta string [lpString]
@@ -9381,7 +9393,7 @@ Rotina para que se faça uma linha reta através de uma caixa uma fração no caminh
 
 Rotina para que se imagine uma linha reta através do topo de uma caixa;
 Rotina para que se faça uma linha reta através do topo de uma caixa:
-  Atribua a coordenada Y1 desta caixa linha reta à linha reta.
+  Atribua a coordenada Y1 desta caixa linha reta ao linha reta.
 
 Rotina para que se imagine uma linha reta no meio de uma caixa;
 Rotina para que se faça uma linha reta no meio de uma caixa;
@@ -13897,6 +13909,7 @@ Rotina para que se atualize o cursor:
   Enfileire o evento.
 
 Rotina para que se atribua um endereço completo para um trecho;
+Rotina para que se coloque um endereço completo para um trecho;
 Rotina para que se carregue um endereço completo para um trecho;
 Rotina para que se leia um endereço completo para um trecho:
   Limpe o erro do fluxo de entrada/saída.
