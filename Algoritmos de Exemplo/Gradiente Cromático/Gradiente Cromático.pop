@@ -16,7 +16,7 @@ Rotina para que se pinte o gradiente cromático:
   Comece com a cor vermelha.
   \Vire para a direita.
   \Mova para o centro desta caixa.
-  Faça uma caixa denominada quadrado 3 pixels por 3 pixels.
+  Faça uma caixa denominada quadrado 1 pixels por 3 pixels.
   Mova o quadrado para o canto superior esquerdo desta caixa.
   Itere.
     Pinte e preencha o quadrado com a cor deste contexto.
@@ -28,10 +28,11 @@ Rotina para que se pinte o gradiente cromático:
       Atribua 0 para a matiz desta cor deste contexto.
     Se o contador for 3600,
       Mova o quadrado 10800 twips para cima;
-      Mova o quadrado 60 twips para direita;
+      Mova o quadrado 30 twips para direita;
       Adicione 1 para a luminosidade desta cor deste contexto;
       Atribua 0 para a matiz deste contexto;
       Atribua 0 para o contador.
+    Se a luminosidade desta cor deste contexto for maior do que 1000, pare.
   Reitere.
   Atualize a tela.
   Aguarde pela tecla Esc.
