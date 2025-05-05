@@ -9775,7 +9775,7 @@ Rotina para que se inicialize a janela do programa:
     0 [dwExStyle] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/winmsg/extended-window-styles
     e O caractere inicial deste nome deste módulo [lpClassName]
     e O caractere inicial deste nome deste módulo  [lpWindowName]
-    e 13565952 \2147483648 [dwStyle]  [-2147483648 = WS_POPUP 0x80000000]
+    e 2147483648 \2147483648 [dwStyle]  [-2147483648 = WS_POPUP 0x80000000]
     [13565952  WS_OVERLAPPEDWINDOW 0x00CF0000]
     \ Consulte https://www.autoitscript.com/autoit3/docs/appendix/GUIStyles.htm
     \ https://www.magnumdb.com/ . Para uma janela padrão, use o valor 13565952

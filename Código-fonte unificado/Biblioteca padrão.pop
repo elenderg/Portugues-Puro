@@ -2423,6 +2423,8 @@ Rotina para que se defina o tipo da aplicação como uma string:
   Atribua a string para o tipo da aplicação.
   Se o tipo da aplicação for "console", 
     Prepare o Console.
+  Se o tipo da aplicação for "debug", 
+    Prepare o Console.
 
 Rotina para que se defina uma string como uma outra string;
 Rotina para que se coloque uma outra string em uma string;
@@ -3192,7 +3194,12 @@ Rotina para que se obtenha o modo do console:
     O endereçamento dum número denominado modo do console
     Retornando um status de erro.
   Se o status de erro for 0 [NULL], 
-     Escreva "Erro ao obter o modo do Console." junto com o texto CRLF para STDOUT.
+     Escreva "Erro ao obter o modo do Console. " 
+     junto com
+    "Verifique se você possui permissões de Administrador. "
+    junto com
+    "Se você estiver usando o console do NppExec, é seguro ignorar esta mensagem."
+     junto com o texto CRLF para STDOUT.
   \Se o status de erro não for 0 [NULL], 
      \Escreva "Modo do console: " junto com o modo do console junto com o texto CRLF para STDOUT.
 
