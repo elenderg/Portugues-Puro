@@ -20,7 +20,7 @@ Rotina para que se pinte o gradiente cromático:
   Mova o quadrado para o canto superior esquerdo desta caixa.
   Itere.
     Pinte e preencha o quadrado com a cor deste contexto.
-    \Atualize a tela.
+    Atualize a tela.
     Mude a matiz desta cor deste contexto por 1 pontos osmosianos.
     Mova o quadrado 3 twips para baixo.
     Adicione 1 para o contador.
@@ -28,8 +28,7 @@ Rotina para que se pinte o gradiente cromático:
       Atribua 0 para a matiz desta cor deste contexto.
     Se o contador for 3600,
       Mova o quadrado 10800 twips para cima;
-      Adicione 60 para a coordenada X1 deste quadrado;
-      Adicione 60 para a coordenada X2 deste quadrado;
+      Mova o quadrado 60 twips para direita;
       Adicione 1 para a luminosidade desta cor deste contexto;
       Atribua 0 para a matiz deste contexto;
       Atribua 0 para o contador.

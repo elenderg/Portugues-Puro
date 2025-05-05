@@ -18089,6 +18089,7 @@ Rotina para que se mova uma caixa para a esquerda uns twips:
 Rotina para que se mova uma caixa para o lado direito de uma segunda caixa:
   Mova a caixa para a direita a coordenada X2 desta segunda caixa menos a coordenada X2 desta caixa.
 
+Rotina para que se mova uma caixa uns twip para direita;
 Rotina para que se mova uma caixa uns twip para a direita;
 Rotina para que se mova uma caixa para a direita uns twips:
   Mova a caixa usando os twips e 0.
