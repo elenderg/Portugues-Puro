@@ -101,7 +101,7 @@ Um px são 15 twips.
 \Uns pxs são 15 twips.
 \Um píxel são 15 twips.
 \Um inch são 1440 twips.
-Uma polegada é 1440 twips. \  56,7
+Uma polegada são 1440 twips. \  56,7
 
 Uma unidade numérica é um número.
 Um kilobyte são 1024 unidades numéricas.
@@ -2267,7 +2267,7 @@ A canetinha preto é uma canetinha.
 A canetinha rosa é uma canetinha.
 
 \CANETAS EXTRAS
-O tan canetinha é uma canetinha.
+A canetinha bege é uma canetinha.
 A canetinha púrpura é uma canetinha.
 A canetinha dourado é uma canetinha.
 
@@ -2423,6 +2423,8 @@ Rotina para que se defina o tipo da aplicação como uma string:
   Atribua a string para o tipo da aplicação.
   Se o tipo da aplicação for "console", 
     Prepare o Console.
+  Se o tipo da aplicação for "debug", 
+    Prepare o Console.
 
 Rotina para que se defina uma string como uma outra string;
 Rotina para que se coloque uma outra string em uma string;
@@ -2544,10 +2546,8 @@ Rotina para que se eleve um número para um segundo número:
     Atribua 0 ao número; \ TODO: Atribua 1 dividido por o segundo número ao número.
     Retorne. 
   Atribua 1 para um número resultante.
- Atribua 0 para um contador.
   Itere.
-    Se o contador for maior do que o segundo número, pare.
-    Adicione 1 para o contador.
+    Se um contador estiver ultrapassando o segundo número, pare.
     Multiplique o número resultante pelo número.
   Reitere.
   Atribua o número resultante ao número.
@@ -3098,7 +3098,7 @@ Rotina para que se acrescente umas listas para umas outras listas:
     Atribua a lista inicial destas listas para uma lista.
     Se a lista for inexistente, retorne.
     Remova a lista desde as listas.
-    Acrescente a lista para a outras listas.
+    Acrescente a lista para as outras listas.
   Reitere.
 
 \acrescente
@@ -3194,7 +3194,12 @@ Rotina para que se obtenha o modo do console:
     O endereçamento dum número denominado modo do console
     Retornando um status de erro.
   Se o status de erro for 0 [NULL], 
-     Escreva "Erro ao obter o modo do Console." junto com o texto CRLF para STDOUT.
+     Escreva "Erro ao obter o modo do Console. " 
+     junto com
+    "Verifique se você possui permissões de Administrador. "
+    junto com
+    "Se você estiver usando o console do NppExec, é seguro ignorar esta mensagem."
+     junto com o texto CRLF para STDOUT.
   \Se o status de erro não for 0 [NULL], 
      \Escreva "Modo do console: " junto com o modo do console junto com o texto CRLF para STDOUT.
 
@@ -3891,7 +3896,7 @@ Rotina para que se converta uma fração para uma string usando um número:
   Multiplique o valor numérico pela fração.
   Zero preencha o valor numérico usando o número e acrescente o mesmo para a string.
   Atribua a quantidade de caracteres desta string menos o número mais 1 para um byte#.
-  Insira "." para a string antes desse byte#. \ TODO: verificar se é necessário trocar para vírgula
+  Insira "," para a string antes desse byte#. \ TODO: verificar se é necessário trocar para vírgula
   Se o conteúdo deste caractere inicial desta string for o ponto final, 
     Anteponha "0" para a string.
   Se o sinalizador estiver ativo,
@@ -5161,10 +5166,10 @@ Função para que se determine se uma caixa é uma segunda caixa:
 
 Função para que se determine se uma caixa está em uma segunda caixa;
 Função para que se determine se uma caixa está dentro de uma segunda caixa:
-  Se a coordenada X1 desta caixa for menor que a coordenada X1 desta segunda caixa, diga não.
-  Se a coordenada Y1 desta caixa for menor que a coordenada Y1 desta segunda caixa, diga não.
-  Se a coordenada X2 desta caixa for maior que a coordenada X2 desta segunda caixa, diga não.
-  Se a coordenada Y2 desta caixa for maior que a coordenada Y2 desta segunda caixa, diga não.
+  Se a coordenada X1 desta caixa for menor do que a coordenada X1 desta segunda caixa, diga não.
+  Se a coordenada Y1 desta caixa for menor do que a coordenada Y1 desta segunda caixa, diga não.
+  Se a coordenada X2 desta caixa for maior do que a coordenada X2 desta segunda caixa, diga não.
+  Se a coordenada Y2 desta caixa for maior do que a coordenada Y2 desta segunda caixa, diga não.
   Diga sim.
 
 Função para que se determine se uma caixa está tocando uma segunda caixa:
@@ -6623,7 +6628,7 @@ Rotina para que se destrua uma requisição WinHTTP:
     O número identificador de requisição [hInternet] desta requisição WinHTTP.
   Processe "winhttp.dll" "WinHttpCloseHandle" com o número identificador de conexão [hInternet] desta requisição WinHTTP.
   Processe "winhttp.dll" "WinHttpCloseHandle" com o número identificador de sessão [hInternet] deste número identificador de requisição desta requisição WinHTTP.
-  Deallocate a requisição WinHTTP.
+  Desaloque a requisição WinHTTP.
 
 Rotina para que se divida uma fração por uma segunda fração:
   Preserve a segunda fração.
@@ -8670,7 +8675,7 @@ Rotina para que se obtenha uma largura usando uma string e um canvas:
   \ presume que a fonte já esteja selecionada no canvas
   Processe "gdi32.dll" "GetTextExtentPoint32A" com 
   \ Calcula a largura e a altura de uma seqüência de caracteres.
-  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-GetTextExtentPoint32A
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-gettextextentpoint32a
     O canvas [hdc]
     e O caractere inicial desta string [lpString]
     e A quantidade de caracteres desta string [c]
@@ -11501,7 +11506,7 @@ Rotina para que se inverta um sinalizador:
     Retorne.
   Atribua 1 ao sinalizador.
 
-Rotina para que se inverta uma string:
+Rotina para que se inverta uma string;
 Rotina para que se reverta uma string:
   \ podia ser mais eficiente. Verificar se a quantidade de caracteres é menor do que 2, por exemplo.
   Preserve a string.
@@ -13518,10 +13523,12 @@ Rotina para que se mova um percorredor usando um separator byte:
     Avance o percorredor.
   Reitere.
 
+Uma letra do alfabeto é uma letra.
+
 Rotina para que se escolha aleatoriamente uma letra do alfabeto:
   \ atribua letra A contexto? ***
   Escolha aleatoriamente um número entre 65 e 90.
-  Atribua o número à letra.
+  Atribua o número à letra do alfabeto.
 
 Rotina para que se atribua um percorredor para um segundo percorredor:
   Copie bytes desde o endereçamento deste percorredor para o endereçamento deste segundo percorredor pela magnitude deste percorredor.
@@ -13713,6 +13720,7 @@ Rotina para que se pinte uma string com uma cor:
   Atribua a cor à cor deste contexto.
   Pinte a string.
 
+Rotina para que se escreva uma string com uma cor na parte inferior de uma caixa;
 Rotina para que se escreva uma string com uma cor sob a base de uma caixa;
 Rotina para que se pinte uma string com uma cor sob a base de uma caixa:
   Atribua a tamanho da letra deste contexto dividido por 4 para um tamanho do quadrado. \ ***
@@ -17799,6 +17807,7 @@ Rotina para que se escolha aleatoriamente uma localização em uma caixa uns twips
   Atribua a coordenada Y1 desta bounding caixa mais os outros twips à coordenada Y2 desta bounding caixa.
   Escolha aleatoriamente a localização na bounding caixa.
 
+Rotina para que se escolha aleatoriamente uma localização dentre uma distância de uma segunda localização:
 Rotina para que se escolha aleatoriamente uma localização dentre uma distância em uma segunda localização:
   Escolha aleatoriamente a coordenada X desta localização dentre a distância em a coordenada X desta segunda localização.
   Escolha aleatoriamente a coordenada Y desta localização dentre a distância em a coordenada Y desta segunda localização.
@@ -18087,6 +18096,7 @@ Rotina para que se mova uma caixa para a esquerda uns twips:
 Rotina para que se mova uma caixa para o lado direito de uma segunda caixa:
   Mova a caixa para a direita a coordenada X2 desta segunda caixa menos a coordenada X2 desta caixa.
 
+Rotina para que se mova uma caixa uns twip para direita;
 Rotina para que se mova uma caixa uns twip para a direita;
 Rotina para que se mova uma caixa para a direita uns twips:
   Mova a caixa usando os twips e 0.
@@ -19746,7 +19756,7 @@ Rotina para que se inicialize as cores:
   Atribua a cor rosa muito escuro à canetinha rosa muito escuro.
   Atribua a cor rosa escuríssimo à canetinha rosa escuríssimo.
   \ special cor pincels
-  Atribua a cor de pele ao tan canetinha.
+  Atribua a cor de pele ao canetinha bege.
   Atribua a cor marrom à canetinha marrom.
   Atribua a cor marrom escuro à canetinha marrom escuro.
   Atribua a cor marrom muito escuro à canetinha marrom muito escuro.
@@ -20580,10 +20590,10 @@ Rotina para que se substitua um byte usando uma tabela de tradução:
 Rotina para que se posicione um subtexto sobre uma string:
   Decodifique $8B8508000000. \ mov eax,[ebp+8] \ o subtexto
   Decodifique $8B9D0C000000. \ mov ebx,[ebp+12] \ a string
-  \ atribua o caractere inicial desta string ao caractere inicial deste subtexto
+  \ atribui o caractere inicial desta string ao caractere inicial deste subtexto
   Decodifique $8B8B00000000. \ mov ecx,[ebx+0] \ o caractere inicial da string
   Decodifique $898800000000. \ mov [eax+0],ecx \ o caractere inicial do subtexto
-  \ atribua o caractere inicial desta string menos 1 ao caractere final deste subtexto
+  \ atribui o caractere inicial desta string menos 1 ao caractere final deste subtexto
   Decodifique $49. \ dec ecx
   Decodifique $898804000000. \ mov [eax+4],ecx \ o caractere final deste subtexto
 
