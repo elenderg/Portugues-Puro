@@ -13521,10 +13521,12 @@ Rotina para que se mova um percorredor usando um separator byte:
     Avance o percorredor.
   Reitere.
 
+Uma letra do alfabeto é uma letra.
+
 Rotina para que se escolha aleatoriamente uma letra do alfabeto:
   \ atribua letra A contexto? ***
   Escolha aleatoriamente um número entre 65 e 90.
-  Atribua o número à letra.
+  Atribua o número à letra do alfabeto.
 
 Rotina para que se atribua um percorredor para um segundo percorredor:
   Copie bytes desde o endereçamento deste percorredor para o endereçamento deste segundo percorredor pela magnitude deste percorredor.
@@ -18090,6 +18092,7 @@ Rotina para que se mova uma caixa para a esquerda uns twips:
 Rotina para que se mova uma caixa para o lado direito de uma segunda caixa:
   Mova a caixa para a direita a coordenada X2 desta segunda caixa menos a coordenada X2 desta caixa.
 
+Rotina para que se mova uma caixa uns twip para direita;
 Rotina para que se mova uma caixa uns twip para a direita;
 Rotina para que se mova uma caixa para a direita uns twips:
   Mova a caixa usando os twips e 0.

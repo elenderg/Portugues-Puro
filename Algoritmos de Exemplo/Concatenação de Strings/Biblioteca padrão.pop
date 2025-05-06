@@ -2267,7 +2267,7 @@ A canetinha preto é uma canetinha.
 A canetinha rosa é uma canetinha.
 
 \CANETAS EXTRAS
-O tan canetinha é uma canetinha.
+A canetinha bege é uma canetinha.
 A canetinha púrpura é uma canetinha.
 A canetinha dourado é uma canetinha.
 
@@ -9775,7 +9775,7 @@ Rotina para que se inicialize a janela do programa:
     0 [dwExStyle] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/winmsg/extended-window-styles
     e O caractere inicial deste nome deste módulo [lpClassName]
     e O caractere inicial deste nome deste módulo  [lpWindowName]
-    e 13565952 \2147483648 [dwStyle]  [-2147483648 = WS_POPUP 0x80000000]
+    e 2147483648 \2147483648 [dwStyle]  [-2147483648 = WS_POPUP 0x80000000]
     [13565952  WS_OVERLAPPEDWINDOW 0x00CF0000]
     \ Consulte https://www.autoitscript.com/autoit3/docs/appendix/GUIStyles.htm
     \ https://www.magnumdb.com/ . Para uma janela padrão, use o valor 13565952
@@ -13521,10 +13521,12 @@ Rotina para que se mova um percorredor usando um separator byte:
     Avance o percorredor.
   Reitere.
 
+Uma letra do alfabeto é uma letra.
+
 Rotina para que se escolha aleatoriamente uma letra do alfabeto:
   \ atribua letra A contexto? ***
   Escolha aleatoriamente um número entre 65 e 90.
-  Atribua o número à letra.
+  Atribua o número à letra do alfabeto.
 
 Rotina para que se atribua um percorredor para um segundo percorredor:
   Copie bytes desde o endereçamento deste percorredor para o endereçamento deste segundo percorredor pela magnitude deste percorredor.
@@ -13716,6 +13718,7 @@ Rotina para que se pinte uma string com uma cor:
   Atribua a cor à cor deste contexto.
   Pinte a string.
 
+Rotina para que se escreva uma string com uma cor na parte inferior de uma caixa;
 Rotina para que se escreva uma string com uma cor sob a base de uma caixa;
 Rotina para que se pinte uma string com uma cor sob a base de uma caixa:
   Atribua a tamanho da letra deste contexto dividido por 4 para um tamanho do quadrado. \ ***
@@ -18089,6 +18092,7 @@ Rotina para que se mova uma caixa para a esquerda uns twips:
 Rotina para que se mova uma caixa para o lado direito de uma segunda caixa:
   Mova a caixa para a direita a coordenada X2 desta segunda caixa menos a coordenada X2 desta caixa.
 
+Rotina para que se mova uma caixa uns twip para direita;
 Rotina para que se mova uma caixa uns twip para a direita;
 Rotina para que se mova uma caixa para a direita uns twips:
   Mova a caixa usando os twips e 0.
@@ -19741,7 +19745,7 @@ Rotina para que se inicialize as cores:
   Atribua a cor rosa muito escuro à canetinha rosa muito escuro.
   Atribua a cor rosa escuríssimo à canetinha rosa escuríssimo.
   \ special cor pincels
-  Atribua a cor de pele ao tan canetinha.
+  Atribua a cor de pele ao canetinha bege.
   Atribua a cor marrom à canetinha marrom.
   Atribua a cor marrom escuro à canetinha marrom escuro.
   Atribua a cor marrom muito escuro à canetinha marrom muito escuro.
