@@ -17805,6 +17805,7 @@ Rotina para que se escolha aleatoriamente uma localização em uma caixa uns twips
   Atribua a coordenada Y1 desta bounding caixa mais os outros twips à coordenada Y2 desta bounding caixa.
   Escolha aleatoriamente a localização na bounding caixa.
 
+Rotina para que se escolha aleatoriamente uma localização dentre uma distância de uma segunda localização:
 Rotina para que se escolha aleatoriamente uma localização dentre uma distância em uma segunda localização:
   Escolha aleatoriamente a coordenada X desta localização dentre a distância em a coordenada X desta segunda localização.
   Escolha aleatoriamente a coordenada Y desta localização dentre a distância em a coordenada Y desta segunda localização.
