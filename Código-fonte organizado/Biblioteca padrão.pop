@@ -2543,7 +2543,7 @@ Rotina para que se eleve um número para um segundo número:
     Atribua 1 ao número;
     Retorne. \ Exemplo: 3^0 = 1
   Se o segundo número for menor do que 0,
-    Atribua 0 ao número; \ TODO: Atribua 1 dividido por o segundo número ao número.
+    Atribua 0 ao número; \ TODO: Atribua 1 dividido pelo segundo número ao número.
     Retorne. 
   Atribua 1 para um número resultante.
   Itere.
@@ -19755,7 +19755,7 @@ Rotina para que se inicialize as cores:
   Atribua a cor rosa muito escuro à canetinha rosa muito escuro.
   Atribua a cor rosa escuríssimo à canetinha rosa escuríssimo.
   \ special cor pincels
-  Atribua a cor de pele ao canetinha bege.
+  Atribua a cor de pele à canetinha bege.
   Atribua a cor marrom à canetinha marrom.
   Atribua a cor marrom escuro à canetinha marrom escuro.
   Atribua a cor marrom muito escuro à canetinha marrom muito escuro.
