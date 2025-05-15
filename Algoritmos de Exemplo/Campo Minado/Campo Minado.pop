@@ -1,0 +1,50 @@
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+
+  Feche o programa.
+
+O tamanho da célula é um número igual a 30.
+A quantidade de colunas é um número igual a 10.
+A quantidade de linhas é um número igual a 10.
+A quantidade de minas é um número igual a 10.
+
+
+
+Uma célula é uma estrutura com
+  Uma string denominado tipo de célula,
+  Uma string denominado estado da célula,
+  Um número denominado quantidade de vizinhos.
+
+Um array de células é uma array de números com 
+  Umas células.
+
+As células são um array de células
+
+
+
+
+
+
+
+
+
+
+
+
+
+  \ Defina "console" como o tipo da aplicação.
+  \ Crie um array de números com 100 elementos.
+  \ Atribua 2 para o índice 1 no array de números.
+  \ Atribua 1 no array de números para o índice 1.
+  \ Atribua 50 no array de números para o índice 50.
+  \ Atribua 99 no array de números para o índice 99.
+  \ Atribua 100 no array de números para o índice 100.  
+  \ Obtenha um segundo número desde o array de números para o índice 50.
+  \ Obtenha um terceiro número desde o array de números para o índice 100.
+  \ Atribua o último índice desde o array de números para um quarto número.
+  \ Atribua o primeiro índice desde o array de números para um quinto número.  
+  \ Escreva "índice 100: " junto com o terceiro número junto com o texto CRLF para StdOut.
+  \ Escreva "índice 50: " junto com o segundo número junto com o texto CRLF para StdOut.
+  \ Escreva "valor do último índice: " junto com o quarto número junto com o texto CRLF para StdOut.
+  \ Escreva "valor do primeiro índice: " junto com o quinto número junto com o texto CRLF para StdOut.
+  \ Destrua o array de números.

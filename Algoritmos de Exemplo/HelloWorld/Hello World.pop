@@ -1,0 +1,5 @@
+Rotina para que se execute o programa:
+  \Inicialize os componentes.
+  Defina "console" como o tipo da aplicação.
+  Escreva "Hello world!" para StdOut.
+  Feche o programa.
