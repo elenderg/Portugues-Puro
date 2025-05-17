@@ -34,7 +34,7 @@ A localização do botão de fechar é uma localização.
 
 Rotina para que se pinte os botões do painel lateral:
   Posicione o botão de fechar.
-  Faça o botão de fechar usando o localização do botão de fechar e " Fechar ".
+  Faça o botão de fechar usando a localização do botão de fechar e "  Fechar  ".
   Pinte o botão de fechar.
 
 
@@ -90,6 +90,12 @@ Rotina para que se execute um evento:
     Retorne.
 
 Rotina para que se execute um evento (movimentação de cursor):
+  Atribua a cor preta a uma cor.
+  Se a localização deste evento estiver na caixa deste botão de fechar, 
+    Atribua a cor azul celeste à cor.
+  Pinte a caixa deste botão de fechar com a cor preta e a cor.
+  Pinte o nome deste botão de fechar na caixa deste botão de fechar com a cor branca.
+  Atualize a tela.
   Mostre a seta do mouse.
 
 Rotina para que se execute um evento (atualização de tela):

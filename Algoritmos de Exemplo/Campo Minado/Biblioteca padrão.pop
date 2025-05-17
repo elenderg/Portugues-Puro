@@ -9624,7 +9624,8 @@ Rotina para que se inicialize as fontes:
     \e O endereçamento dum número [*pNumFonts]
   \Retornando o recurso de fonte Tahoma.
   \Atribua "Segoe UI" e 1/6 polegada à fonte padrão.
-  Atribua "Osmosian" e 24 pixels à fonte padrão.
+  \Atribua "Osmosian" e 24 pixels à fonte padrão.
+  Atribua "Lexend" e 24 pixels à fonte padrão.
   \Atribua "Tahoma" e 20 pixels à fonte padrão.
   \ stroked fontes abaixo
   Atribua 12 pixels ao tamanho de letra pequena.
