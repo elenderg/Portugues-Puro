@@ -1,5 +1,6 @@
 Rotina para que se execute o programa:
   Inicialize o jogo.
+  Aguarde pela Tecla Esc.
   Feche o programa.
 
 Rotina para que se inicialize o jogo:
@@ -9,20 +10,27 @@ Rotina para que se inicialize o jogo:
 Rotina para que se pinte o jogo:
   Limpe a tela com a cor cinza claríssimo.
   Pinte o painel lateral.
-  \Pinte o campo minado.
+  Pinte o campo minado.
 
 Rotina para que se pinte o painel lateral:
   Posicione o painel lateral.
-  \Pinte os botões do painel lateral.
+  Pinte os botões do painel lateral.
 
 Rotina para que se posicione o painel lateral:
-  Atribua 350 para um twip denominado largura.
-  Atribua a altura do pixel desta tela para um twip denominado altura.
+  Atribua 3600 para um twip denominado largura.
+  Atribua 16171 para um twip denominado altura.
   Faça uma caixa denominada painel lateral usando a largura pela altura.
   Mova o painel lateral para o lado direito dessa caixa desta tela.
-  Pinte o painel lateral usando a cor cinza claro.
+  Pinte o painel lateral usando a cor cinza escuro e a cor cinza escuro.
+  Atualize a tela.
+
+Um botão é uma caixa 
+
+Rotina para que se pinte os botões do painel lateral:
+  Atribua 
 
 
+Rotina para que se pinte o campo minado:
 
 \O tamanho da célula é um número igual a 30.
 \ A quantidade de colunas é um número igual a 10.
