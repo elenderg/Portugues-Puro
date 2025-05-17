@@ -2543,7 +2543,7 @@ Rotina para que se eleve um número para um segundo número:
     Atribua 1 ao número;
     Retorne. \ Exemplo: 3^0 = 1
   Se o segundo número for menor do que 0,
-    Atribua 0 ao número; \ TODO: Atribua 1 dividido por o segundo número ao número.
+    Atribua 0 ao número; \ TODO: Atribua 1 dividido pelo segundo número ao número.
     Retorne. 
   Atribua 1 para um número resultante.
   Itere.
@@ -9292,6 +9292,8 @@ Rotina para que se oculte o cursor:
   Reitere.
 
 Rotina para que se imagine uma caixa uns twips por uns outros twips;
+Rotina para que se faça uma caixa usando uns twips por uns outros twips;
+\Rotina para que se faça uma caixa usando uns twips por uns outros twips;
 Rotina para que se faça uma caixa uns twips por uns outros twips:
   Atribua 0 à coordenada X1 desta caixa.
   Atribua 0 à coordenada Y1 desta caixa.
@@ -12895,8 +12897,8 @@ Rotina para que se carregue as bibliotecas padrão do sistema;
 Rotina para que se inicialize tudo;
 Rotina para que se inicialize os componentes:
   Inicialize o Component Object Model.
-  Inicialize a infraestrutura WinSock.
-  Inicialize gdi+.
+  Inicialize a Infraestrutura WinSock.
+  Inicialize GDI+.
   Inicialize o sintetizador de voz.
   Inicialize o módulo.
   Inicialize as cores.
@@ -17805,6 +17807,7 @@ Rotina para que se escolha aleatoriamente uma localização em uma caixa uns twips
   Atribua a coordenada Y1 desta bounding caixa mais os outros twips à coordenada Y2 desta bounding caixa.
   Escolha aleatoriamente a localização na bounding caixa.
 
+Rotina para que se escolha aleatoriamente uma localização dentre uma distância de uma segunda localização:
 Rotina para que se escolha aleatoriamente uma localização dentre uma distância em uma segunda localização:
   Escolha aleatoriamente a coordenada X desta localização dentre a distância em a coordenada X desta segunda localização.
   Escolha aleatoriamente a coordenada Y desta localização dentre a distância em a coordenada Y desta segunda localização.
@@ -18103,6 +18106,13 @@ Rotina para que se mova uma caixa para uma localização:
 
 Rotina para que se mova uma caixa para o canto superior esquerdo de uma segunda caixa:
   Mova a caixa para o canto superior esquerdo desta segunda caixa.
+
+Rotina para que se mova uma caixa para o canto superior direito da tela:
+  Atribua a largura desta caixa desta tela menos a largura desta caixa para uma localização.
+  Mova a caixa para a localização.
+
+Rotina para que se mova uma caixa para o canto superior esquerdo da tela:
+    Mova a caixa para o canto superior esquerdo desta caixa desta tela.
 
 Rotina para que se mova uma caixa para o topo de uma segunda caixa:
   Mova a caixa para cima a coordenada Y1 desta caixa menos a coordenada Y1 desta segunda caixa.
@@ -19745,7 +19755,7 @@ Rotina para que se inicialize as cores:
   Atribua a cor rosa muito escuro à canetinha rosa muito escuro.
   Atribua a cor rosa escuríssimo à canetinha rosa escuríssimo.
   \ special cor pincels
-  Atribua a cor de pele ao canetinha bege.
+  Atribua a cor de pele à canetinha bege.
   Atribua a cor marrom à canetinha marrom.
   Atribua a cor marrom escuro à canetinha marrom escuro.
   Atribua a cor marrom muito escuro à canetinha marrom muito escuro.
@@ -20953,6 +20963,7 @@ Função para que se determine se um número é um segundo número:
   Decodifique $C7C000000000. \ mov eax,0 \ now it is false
 
 Função para que se determine se um ponteiro é maior do que um segundo ponteiro;
+Função para que se determine se um número é maior que um segundo número;
 Função para que se determine se um número é maior do que um segundo número:
   Decodifique $C7C001000000. \ mov eax,1 \ presume que o número seja maior logo de começo
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o número

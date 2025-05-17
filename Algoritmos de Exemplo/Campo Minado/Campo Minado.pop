@@ -1,26 +1,55 @@
 Rotina para que se execute o programa:
-  Inicialize os componentes.
-
+  Inicialize o jogo.
   Feche o programa.
 
-O tamanho da célula é um número igual a 30.
-A quantidade de colunas é um número igual a 10.
-A quantidade de linhas é um número igual a 10.
-A quantidade de minas é um número igual a 10.
+Rotina para que se inicialize o jogo:
+  Inicialize os componentes.
+  Pinte o jogo.
+
+Rotina para que se pinte o jogo:
+  Limpe a tela com a cor cinza claríssimo.
+  Pinte o painel lateral.
+  \Pinte o campo minado.
+
+Rotina para que se pinte o painel lateral:
+  Posicione o painel lateral.
+  \Pinte os botões do painel lateral.
+
+Rotina para que se posicione o painel lateral:
+  Atribua 350 para um twip denominado largura.
+  Atribua a altura do pixel desta tela para um twip denominado altura.
+  Faça uma caixa denominada painel lateral usando a largura pela altura.
+  Mova o painel lateral para o lado direito dessa caixa desta tela.
+  Pinte o painel lateral usando a cor cinza claro.
 
 
 
-Uma célula é uma estrutura com
-  Uma string denominado tipo de célula,
-  Uma string denominado estado da célula,
-  Um número denominado quantidade de vizinhos.
-
-Um array de células é uma array de números com 
-  Umas células.
-
-As células são um array de células
+\O tamanho da célula é um número igual a 30.
+\ A quantidade de colunas é um número igual a 10.
+\ A quantidade de linhas é um número igual a 10.
+\ A quantidade de minas é um número igual a 10.
 
 
+
+\ Uma célula é uma estrutura com
+  \ Uma string denominado tipo de célula,
+  \ Uma string denominado estado da célula,
+  \ Um número denominado quantidade de vizinhos.
+
+
+\ As células são um array de células
+
+\ Um array de células é uma array de números com 
+  \ Umas células.
+
+\ O indicador de Game Over é um sinalizador.
+
+
+
+
+  \Atribua 0 para um número denominado índice.
+  \Atribua 0 para um número denominado contagem.
+  \Atribua 0 para um número denominado quantidade de minas colocadas.
 
 
 
