@@ -54,9 +54,6 @@ Rotina para que se posicione o botão de fechar:
     menos 48 pixels para a coordenada X desta localização.
   Atribua a localização para a localização do botão de fechar.
 
-Rotina para que se pinte o campo minado:
-
-
 Rotina para que se exiba uma string em um botão: \ TODO: com uma cor
   Atribua a string para a string deste botão.
 

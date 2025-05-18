@@ -3,17 +3,54 @@ Rotina para que se execute o programa:
   Execute os eventos.
   Feche o programa.
 
+A área do campo é uma caixa.
+
+O campo minado é uma lista com umas células.
+
+Uma célula é uma estrutura com
+  Uma caixa,
+  Uma string denominada ícone,
+  Uma string denominado tipo de célula,
+  Uma string denominado estado da célula,
+  Um número denominado quantidade de células vizinhas,
+  Um número denominado quantidade de bombas próximas.
+
+
 
 \O tamanho da célula é um número igual a 30.
  A quantidade de colunas é um número igual a 10.
  A quantidade de linhas é um número igual a 10.
  A quantidade de minas é um número igual a 10.
 
-\ Uma célula é uma estrutura com
-  \ Uma string denominado tipo de célula,
-  \ Uma string denominado estado da célula,
-  \ Um número denominado quantidade de vizinhos.
+Rotina para que se pinte o campo minado:
+  Posicione o campo minado.
+  Posicione as células no campo minado.
 
+Rotina para que se posicione o campo minado:
+  Atribua 12000 para um twip denominado largura.
+  Atribua 12000 para um twip denominado altura.
+  Faça a área do campo usando a largura pela altura.
+  Mova a área do campo para o lado esquerdo dessa caixa desta tela.
+  Mova a área do campo 300 pixels para a direita.
+  Mova a área do campo 150 pixels para baixo.
+  Pinte a área do campo usando a cor preta e a cor cinza escuro.
+
+Rotina para que se posicione as células no campo minado:
+  Atribua 100 para um twip denominado largura.
+  Atribua 100 para um twip denominado altura.
+  Aloque memória para o campo minado.
+  Atribua 0 para um número denominado contador.
+  Itere.
+    Obtenha uma célula desde o campo minado.
+    Se a célula for inexistente, pare.
+    Faça a caixa desta célula usando a largura pela altura.
+    Mova a caixa desta célula para o lado esquerdo dessa caixa desta tela.
+    Pinte a caixa desta célula usando a cor preta e a cor cinza escuro.
+    Adicione 1 para o contador.
+    Se o contador for 1, reitere.
+    Mova a caixa desta célula 100 pixels para a direita.
+    Mova a área do campo 150 pixels para baixo.
+    Pinte a área do campo usando a cor preta e a cor cinza escuro.
 
 \ As células são um array de células
 
