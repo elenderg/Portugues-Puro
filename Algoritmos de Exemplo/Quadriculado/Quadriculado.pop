@@ -1,0 +1,66 @@
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  Limpe a tela.
+  \Desenhe uma grade com 10 botões na largura e 15 botões na altura.
+  Faça uma caixa denominada retângulo 21000 twips por 12000 twips.
+  Pinte o retângulo com a cor branca e a cor cinza.
+  Atualize a tela.
+  \Divida o retângulo em 10 e 10.
+  Feche o programa.
+
+Um número de colunas é um número.
+Um número de linhas é um número.
+
+Um protótipo é uma estrutura com uma caixa e uma string.
+
+\Um botão é 1 protótipo.
+\Um quadrado é 100 pixels. 
+\Umas partes são 100 pixels.
+
+Uma grade é uma caixa.
+
+\Rotina para que se desenhe uma grade com um número na largura e um segundo número na altura:
+
+Uma célula é uma caixa.
+
+A largura da célula é um número.
+A altura da célula é um número.
+
+Rotina para que se divida uma caixa em um número de colunas e um número de linhas:
+  Atribua a caixa para uma caixa denominada retângulo.
+  Atribua a largura deste retângulo dividido pelo número de colunas para a largura da célula.
+  Atribua a altura deste retângulo dividido pelo número de colunas para a altura da célula.
+  Atribua 0 para um número denominado contador de linhas.
+  Atribua 0 para um número denominado contador de colunas.
+  Itere.
+    Se o número de linhas for menor do que o contador de linhas,
+      Divida o retângulo no número de colunas.
+    Se o número de colunas for menor do que o contador de colunas,
+      Divida o retângulo no número de linhas.
+  Reitere.
+  Atualize a tela.
+
+Rotina para que se divida uma caixa em um número de colunas:
+  Atribua a caixa para uma caixa denominada retângulo.
+  Atribua 0 para um número denominado contador de colunas.  
+  Itere.
+    Se o contador de colunas for maior do que o número de colunas, pare.
+    Faça uma célula a largura da célula pela altura da célula.
+    Atribua a largura da célula vezes o contador de colunas para um número denominado incremento de posição horizontal.
+    Mova a célula para o canto superior esquerdo deste retângulo.
+    Mova a célula para a direita o incremento de posição horizontal.
+    Pinte a célula com a cor preta e a cor branca.
+    Adicione 1 para o contador de colunas.
+  Reitere.
+  
+  Rotina para que se divida um retângulo em um número de linhas:
+  Atribua 0 para um número denominado contador de linhas.
+  Itere.
+    Se o contador de linhas for maior do que o número de linhas, pare.
+      Faça uma célula a largura da célula pela altura da célula.
+      Atribua a altura da célula vezes o contador de linhas para um número denominado incremento de posição vertical.
+      Mova a célula para o canto superior esquerdo deste retângulo.
+      Mova a célula para baixo o incremento de posição vertical.
+      Pinte a célula com a cor preta e a cor branca.
+      Adicione 1 para o contador de linhas.
+    Reitere.

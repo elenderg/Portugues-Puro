@@ -72,8 +72,8 @@ Rotina para que se pinte a malha quadriculada:
     Se o quadrado estiver tocando a caixa desta tela, reitere.
 
 Rotina para que se pinte todas as caixas:
-  Escolha aleatoriamente uma cor escura.
-  Pinte o quadrado com a cor escura e a cor escura.
+  \Escolha aleatoriamente uma cor escura.
+  Pinte o quadrado com a cor verde e a cor preta.
   \ Pinte a listra vermelha com a cor vermelho claro e a cor vermelho claro.
   \ Pinte a listra amarela com a cor amarela e a cor amarela.
   \ Pinte a listra azul escuro com a cor azul celeste escuro e a cor azul celeste escuro.
