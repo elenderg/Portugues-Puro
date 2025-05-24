@@ -111,6 +111,14 @@ O seno de oitenta-e-sete graus é uma fração igual a 9986/10000.
 O seno de oitenta-e-oito graus é uma fração igual a 9994/10000.
 O seno de oitenta-e-nove graus é uma fração igual a 9998/10000.
 
+Rotina para que se atribua um número para um número natural:
+  Se o número for um número positivo,
+    Atribua o número ao segundo número.
+
+Função para que se determine se um número é um número natural:
+  Se o número for menor do que 0, diga não.
+  Diga sim.
+
 Rotina para que se calcule uma soma dos termos da progressão aritmética com um primeiro termo e um último termo e um número de termos:
   Atribua o primeiro termo mais o último termo para um número.
   Atribua o número vezes o número de termos para um segundo número.

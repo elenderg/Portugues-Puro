@@ -5774,9 +5774,6 @@ Função para que se determine se um número é positivo:
   Se o número for menor do que 0, diga não.
   Diga sim.
 
-Função para que se determine se um número é um número natural:
-  Se o número for menor do que 0, diga não.
-  Diga sim.
 
 Função para que se determine se um número é ímpar:
   Preserve o número.
@@ -10827,12 +10824,6 @@ Rotina para que se atribua um número sobre o stack:
 Rotina para que se atribua o módulo dum número para um segundo número:
   Atribua o número ao segundo número.
   Remova o sinal desde o segundo número.
-
-Rotina para que se atribua um número para um número natural:
-  Se o número for um número positivo,
-    Atribua o número ao segundo número.
-
-
 
 Rotina para que se atribua um OutlineTextmetric para uma segunda OutlineTextmetric:
   Copie bytes desde o endereçamento deste OutlineTextmetric para o endereçamento desta segunda OutlineTextmetric pela magnitude deste OutlineTextmetric.
