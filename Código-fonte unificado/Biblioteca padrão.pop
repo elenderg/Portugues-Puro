@@ -118,6 +118,8 @@ Uma raiz quadrada é um número.
 Um número fracionário é uma fração.
 Um lado é 1 unidade numérica.
 Um grau é um número [cujos valores vão de 0 até 3599. 3600 equivale a 0, obviamente].
+Um ângulo é uma grau.
+\Um grau é uma fração.
 Uma unidade é um número.
 Uma dezena são 10 unidades.
 Uma centena são 10 dezenas.
@@ -136,6 +138,19 @@ Um quociente é um número.
 Uma razão de escala é uma proporção. \ usado em formas geométricas
 Um fator de escala é uma fração. \ usado em caixas de texto
 Um raio é [composto de] uns twips.
+Um seno é uma fração.
+Um cosseno é uma fração.
+Uma tangente é uma fração.
+Uma cotangente é uma fração.
+Um cateto oposto é um número.
+Um cateto adjacente é um número.
+Uma hipotenusa é um número.
+Um número positivo é um número.
+Um número natural é um número.
+Um número negativo é um número.
+Um número inteiro é um número.
+Um número racional é uma fração.
+Um número real é um número.
 Um número aleatório é um número.
 Um par de números racionais é um par de números fracionários.
 Um múltiplo é um número.
@@ -258,7 +273,7 @@ Um alinhamento é uma string [centro, esquerda ou direita].
 Uma quantia é um número.
 Uma âncora é um posicionamento.
 Uma máscara de conjunção lógica é uma mask.
-Um ângulo é [composto de] uns graus. [cujos valores variam ente 0 e 3599]
+\Um ângulo é [composto de] uns graus. [cujos valores variam ente 0 e 3599]
 Um status de erro é um número.
 Um bipe é um número.
 Um título de índice remissivo é uma string.
@@ -1417,15 +1432,23 @@ Um cifra hexadecimal é uma string. \ Exemplo: $0010A0... O cifrão serve para ind
 Uma máscara de disjunção exclusiva é uma mask.
 
 \A raiz de dois é uma fração igual a 99/70.
-A raiz de dois é uma fração igual a 1414213562/1000000000.
-A raiz de três é uma fração igual a 1732050807/1000000000.
+\A raiz de dois é uma fração igual a 1414213562/1000000000.
+\A raiz de três é uma fração igual a 1732050807/1000000000.
 \A raiz de cinco é uma fração igual a 161/72.
-A raiz de cinco é uma fração igual a 2236067977/1000000000.
-A raiz de seis é uma fração igual a 2449489742/1000000000.
-A raiz de sete é uma fração igual a 2645751311/1000000000.
-A raiz de oito é uma fração igual a 2828427124/1000000000.
-A raiz de dez é uma fração igual a 3162277660/1000000000.
-A raiz de onze é uma fração igual a 3316624790/1000000000.
+\A raiz de cinco é uma fração igual a 2236067977/1000000000.
+\A raiz de seis é uma fração igual a 2449489742/1000000000.
+\A raiz de sete é uma fração igual a 2645751311/1000000000.
+\A raiz de oito é uma fração igual a 2828427124/1000000000.
+\A raiz de dez é uma fração igual a 3162277660/1000000000.
+\A raiz de onze é uma fração igual a 3316624790/1000000000.
+A raiz de dois é uma fração igual a 2147483647/1518500249.
+A raiz de três é uma fração igual a 2147483647/1239850262.
+A raiz de cinco é uma fração igual a 2147483647/960383883.
+A raiz de seis é uma fração igual a 2147483647/876706528.
+A raiz de sete é uma fração igual a 2147483647/811672525.
+A raiz de oito é uma fração igual a 2147483647/759250125.
+A raiz de dez é uma fração igual a 2147483647/679093956.
+A raiz de onze é uma fração igual a 2147483647/647490682.
 \2147483647 é o número máximo positivo em um processador de 32 bits / 4 bytes
 \O número pi é uma fração igual a 355/113. \número pi
 O número pi é uma fração igual a 3141592653/1000000000.
@@ -6629,6 +6652,30 @@ Rotina para que se destrua uma requisição WinHTTP:
   Processe "winhttp.dll" "WinHttpCloseHandle" com o número identificador de conexão [hInternet] desta requisição WinHTTP.
   Processe "winhttp.dll" "WinHttpCloseHandle" com o número identificador de sessão [hInternet] deste número identificador de requisição desta requisição WinHTTP.
   Desaloque a requisição WinHTTP.
+
+Rotina para que se obtenha um seno com um cateto oposto e uma hipotenusa:
+  Atribua o cateto oposto dividido pela hipotenusa para o seno.
+
+Rotina para que se obtenha um cosseno com um cateto oposto e uma hipotenusa:
+  Atribua o cateto adjacente dividido pela hipotenusa para o cosseno.
+
+Rotina para que se obtenha uma tangente com um cateto oposto e um cateto adjacente:
+  Atribua o cateto oposto dividido pelo cateto adjacente para a tangente.
+
+Rotina para que se obtenha uma tangente com um seno e um cosseno:
+  Atribua o seno dividido pelo cosseno para a tangente.
+
+Rotina para que se obtenha uma tangente com uma cotangente:
+  Atribua 1 dividido pela cotangente para a tangente.
+
+Rotina para que se obtenha uma cotangente com um cateto adjacente e um cateto oposto:
+  Atribua o cateto adjacente dividido pelo cateto oposto para a cotangente.
+
+Rotina para que se obtenha uma cotangente com um  cosseno e um seno:
+  Atribua o cosseno  dividido pelo seno para a cotangente.
+
+Rotina para que se obtenha uma cotangente com uma tangente:
+  Atribua 1 dividido pela tangente para a cotangente.
 
 Rotina para que se divida uma fração por uma segunda fração:
   Preserve a segunda fração.
@@ -19131,7 +19178,6 @@ Rotina para que se atribua uma matiz e uma saturação e uma luminosidade para uma
   Atribua a matiz à matiz desta cor. \ -> this.Color.Hue = Hue/
   Se a matiz desta cor não for -1,
     Delimite a matiz desta cor para 0 e 3599. \ -1 é transparente -> if (this.Color.Hue /= -1) then (Color.Hue.Limit(0,3599));
-    
   Atribua a saturação à saturação desta cor. \-> this.Color.Saturation = Saturation;
   Delimite a saturação desta cor para 0 e 1000. \-> (Color.Saturation.Limit(0,1000))
   Atribua a luminosidade à luminosidade desta cor. \-> this.Color.Brightness = Brightness;

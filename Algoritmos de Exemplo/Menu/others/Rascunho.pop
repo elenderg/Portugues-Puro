@@ -1,0 +1,78 @@
+Rotina para que se execute o programa:
+  Inicialize os componentes do programa.
+  Crie a janela principal.
+  Crie o botão sair.
+  Crie a barra de menus.
+  Itere.
+    Desenfileire um evento.
+    Se o evento for inexistente, pare.
+    Se a categoria deste evento for "clique" e o alvo deste evento for o botão sair, feche o programa.
+  Reitere.
+  Feche o programa.
+
+Rotina para que se crie a janela principal:
+  Crie uma janela redimensionável com o título "Minha Aplicação".
+  Atribua a janela para a janela principal do programa.
+
+Rotina para que se crie o botão sair:
+  Crie um botão com o texto "Sair".
+  Centralize o botão na janela principal.
+  Associe a ação de fechar o programa ao clicar no botão.
+
+Rotina para que se crie a barra de menus:
+  Crie um menu com o nome "Arquivo".
+  Adicione uma opção ao menu "Arquivo" com o nome "Novo" e o atalho "Control+N".
+  Adicione uma opção ao menu "Arquivo" com o nome "Salvar" e o atalho "Control+S".
+  Adicione uma opção ao menu "Arquivo" com o nome "Salvar Como" e o atalho "Control+Shift+S".
+  Adicione uma opção ao menu "Arquivo" com o nome "Sair" e o atalho "Alt+F4".
+  
+  Crie um menu com o nome "Editar".
+  Adicione uma opção ao menu "Editar" com o nome "Selecionar Tudo" e o atalho "Control+T".
+  Adicione uma opção ao menu "Editar" com o nome "Recortar" e o atalho "Control+X".
+  Adicione uma opção ao menu "Editar" com o nome "Copiar" e o atalho "Control+C".
+  Adicione uma opção ao menu "Editar" com o nome "Colar" e o atalho "Control+V".
+  
+  Crie um menu com o nome "Ajuda".
+  Adicione uma opção ao menu "Ajuda" com o nome "Documentação" e o atalho "F1".
+  Adicione uma opção ao menu "Ajuda" com o nome "Sobre".
+  Adicione uma opção ao menu "Ajuda" com o nome "Suporte".
+  Adicione uma opção ao menu "Ajuda" com o nome "Atualização".
+
+Rotina para que se crie uma janela redimensionável com o título uma string:
+  Crie uma janela.
+  Atribua a string ao título desta janela.
+  Ative o sinalizador de redimensionamento desta janela.
+  Exiba a janela.
+  Atribua a janela à janela principal.
+
+Rotina para que se crie um botão com o texto uma string:
+  Crie um botão.
+  Atribua a string ao texto deste botão.
+  Centralize o botão na janela principal.
+  Atribua o botão ao botão sair.
+
+Rotina para que se associe a ação de fechar o programa ao clicar no botão:
+  Associe a ação "fechar o programa" ao clique no botão sair.
+
+Rotina para que se crie um menu com o nome uma string:
+  Crie um menu.
+  Atribua a string ao nome deste menu.
+  Acrescente o menu à barra de menus.
+
+Rotina para que se adicione uma opção ao menu uma string com o nome uma string e o atalho uma string:
+  Encontre o menu com o nome a primeira string na barra de menus.
+  Se o menu for inexistente, retorne.
+  Crie uma opção de menu.
+  Atribua a segunda string ao nome desta opção de menu.
+  Atribua a terceira string ao atalho desta opção de menu.
+  Acrescente a opção de menu às opções deste menu.
+
+
+
+
+
+
+
+
+
+

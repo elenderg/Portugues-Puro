@@ -1,0 +1,359 @@
+\Como tava
+Uma célula é uma lista com
+  Uma caixa,
+  Um número, \ -1 para bomba, 0 a 8 para vizinhos
+  Um sinalizador denominado sinalizador de aberta,
+  Um sinalizador denominado sinalizador de marcada,
+  Um sinalizador denominado sinalizador de dúvida.
+
+O campo minado é [composto de] umas células.
+O estado do jogo é um estado do jogo.
+
+Um estado do jogo é uma estrutura com
+  Um número denominado quantidade de minas,
+  Um número denominado minas marcadas,
+  Um sinalizador denominado jogo_em_andamento,
+  Um sinalizador denominado primeiro clique,
+  Um número denominado células abertas,
+  Um número denominado quantidade de células.
+
+Um botão de reinício é uma lista com
+  Uma caixa arredondada,
+  Um nome.
+
+Um contador de minas é uma estrutura com
+  Uma caixa,
+  Um número.
+
+A grade de células é [composto de] umas células.
+O andamento do jogo é um estado do jogo.
+O botão de novo jogo é um botão de reinício.
+O indicador de minas é um contador de minas.
+
+Rotina para que se use letras de tamanho médio:
+  Configure a fonte padrão para 16 pontos.
+
+Rotina para que se inicialize as cores do tema:
+  Atribua a cor cinza claro para células fechadas.
+  Atribua a cor branca para células abertas.
+  Atribua a cor preta para bordas.
+  Atribua a cor azul para números.
+  Atribua a cor vermelha para bandeiras.
+  Atribua a cor preta para bombas e dúvidas.
+
+Rotina para que se inicialize o ambiente de trabalho:
+  Faça uma caixa 14 polegadas por 10 polegadas.
+  Atribua a caixa ao espaço de trabalho.
+  Atribua a cor branca ao fundo do espaço de trabalho.
+
+Rotina para que se pinte o ambiente de trabalho:
+  Pinte o espaço de trabalho com a canetinha preta e a cor branca.
+  Pinte a grade de células.
+  Pinte o botão de novo jogo.
+  Pinte o indicador de minas.
+  Atualize a tela.
+
+Rotina para que se execute os eventos enfileirados:
+  Itere.
+    Obtenha um evento desde a fila de eventos.
+    Se o evento for inexistente, pare.
+    Execute o evento.
+  Reitere.
+
+Rotina para que se execute um evento:
+  Se o evento for inexistente, retorne.
+  Se a categoria deste evento for "pressionamento de tecla",
+    Execute o evento (pressionamento de tecla);
+    Retorne.
+  Se a categoria deste evento for "clique do botão esquerdo",
+    Execute o evento (clique);
+    Retorne.
+  Se a categoria deste evento for "clique do botão direito",
+    Execute o evento (clique direito);
+    Retorne.
+  Se a categoria deste evento for "atualização de tela",
+    Pinte o ambiente de trabalho;
+    Retorne.
+
+Rotina para que se execute a caixa de diálogo:
+  Pinte a caixa de diálogo com a canetinha preta e a cor branca.
+  Pinte o texto de aviso da caixa de diálogo com a canetinha preta e a fonte padrão e "centralizado".
+  Pinte o botão da caixa de diálogo com a canetinha preta e a cor cinza claro.
+  Pinte o texto do botão com a canetinha preta e a fonte padrão e "centralizado".
+  Itere.
+    Obtenha um evento desde a fila de eventos.
+    Se o evento for inexistente, reitere.
+    Se a categoria deste evento for "clique do botão esquerdo",
+      Se a localização deste evento estiver no botão da caixa de diálogo,
+        Retorne.
+  Reitere.
+
+Rotina para que se execute o programa:
+  Use letras de tamanho médio.
+  Inicialize as cores do tema.
+  Inicialize o ambiente de trabalho.
+  Crie a grade de células.
+  Crie o botão de novo jogo.
+  Crie o indicador de minas.
+  Pinte o ambiente de trabalho.
+  Execute os eventos enfileirados.
+  Destrua a grade de células.
+  Destrua o botão de novo jogo.
+  Destrua o indicador de minas.
+  Feche o programa.
+
+Rotina para que se crie a grade de células:
+  Atribua 10 à quantidade de minas deste andamento do jogo.
+  Atribua 0 às minas marcadas deste andamento do jogo.
+  Atribua 81 à quantidade de células deste andamento do jogo.
+  Atribua 0 às células abertas deste andamento do jogo.
+  Atribua sim ao jogo_em_andamento deste andamento do jogo.
+  Atribua sim ao primeiro clique deste andamento do jogo.
+  Faça uma caixa denominada caixa grande 9 polegadas por 9 polegadas.
+  Centralize a caixa grande no espaço de trabalho.
+  Faça uma caixa 1 polegada por 1 polegada.
+  Mova a caixa para o canto superior esquerdo desta caixa grande.
+  Atribua 0 para uma contagem.
+  Itere.
+    Se a contagem for maior ou igual a 81, pare.
+    Aloque memória para uma célula.
+    Acrescente a célula à grade de células.
+    Atribua a caixa à caixa desta célula.
+    Atribua 0 ao número desta célula.
+    Desative o sinalizador de aberta desta célula.
+    Desative o sinalizador de marcada desta célula.
+    Desative o sinalizador de dúvida desta célula.
+    Mova a caixa 1 polegada para a direita.
+    Adicione 1 para a contagem.
+    Se a contagem for divisível por 9,
+      Mova a caixa para o lado esquerdo desta caixa grande;
+      Mova a caixa 1 polegada para baixo.
+  Reitere.
+
+Rotina para que se crie o botão de novo jogo:
+  Aloque memória para o botão de novo jogo.
+  Faça uma caixa arredondada 1 polegada por 1 polegada.
+  Atribua a coordenada X1 deste espaço de trabalho mais 10 polegadas à coordenada X1 desta caixa arredondada.
+  Atribua a coordenada Y1 deste espaço de trabalho mais 1 polegada à coordenada Y1 desta caixa arredondada.
+  Adicione 1 polegada à coordenada X1 desta caixa arredondada para a coordenada X2.
+  Adicione 1 polegada à coordenada Y1 desta caixa arredondada para a coordenada Y2.
+  Atribua a caixa arredondada à caixa arredondada do botão de novo jogo.
+  Atribua "Reiniciar" ao nome do botão de novo jogo.
+
+Rotina para que se crie o indicador de minas:
+  Faça uma caixa 2 polegadas por 1 polegada.
+  Atribua a coordenada X1 deste espaço de trabalho mais 10 polegadas à coordenada X1 desta caixa.
+  Atribua a coordenada Y1 deste espaço de trabalho mais 2,5 polegadas à coordenada Y1 desta caixa.
+  Adicione 2 polegadas à coordenada X1 desta caixa para a coordenada X2.
+  Adicione 1 polegada à coordenada Y1 desta caixa para a coordenada Y2.
+  Atribua a caixa à caixa deste indicador de minas.
+  Atribua a quantidade de minas deste andamento do jogo menos as minas marcadas deste andamento do jogo ao número deste indicador de minas.
+
+Rotina para que se coloque as minas com uma célula segura:
+  Atribua 0 para uma contagem.
+  Itere.
+    Se a contagem for maior ou igual à quantidade de minas deste andamento do jogo, pare.
+    Gere um número aleatório entre 0 e 80.
+    Atribua o número aleatório para um índice.
+    Obtenha uma célula desde a grade de células no índice.
+    Se a célula for a célula segura, reitere.
+    Se o número desta célula for -1, reitere.
+    Atribua -1 ao número desta célula.
+    Adicione 1 para a contagem.
+  Reitere.
+  Calcule os números de vizinhos.
+
+Rotina para que se calcule os números de vizinhos:
+  Atribua 0 para uma contagem.
+  Itere.
+    Se a contagem for maior ou igual a 81, pare.
+    Obtenha uma célula desde a grade de células no índice contagem.
+    Se o número desta célula for -1, reitere.
+    Atribua 0 para um número de vizinhos.
+    Calcule vizinhos para a célula e o número de vizinhos.
+    Atribua o número de vizinhos ao número desta célula.
+    Adicione 1 para a contagem.
+  Reitere.
+
+Rotina para que se calcule vizinhos para uma célula e um número:
+  Atribua a célula para uma célula atual.
+  Atribua o número para um número de vizinhos.
+  Itere.
+    Obtenha uma célula desde a grade de células.
+    Se a célula for inexistente, pare.
+    Se a célula for a célula atual, reitere.
+    Se a coordenada X1 desta célula for maior do que a coordenada X2 da célula atual mais 1 polegada, reitere.
+    Se a coordenada X2 desta célula for menor do que a coordenada X1 da célula atual menos 1 polegada, reitere.
+    Se a coordenada Y1 desta célula for maior do que a coordenada Y2 da célula atual mais 1 polegada, reitere.
+    Se a coordenada Y2 desta célula for menor do que a coordenada Y1 da célula atual menos 1 polegada, reitere.
+    Se o número desta célula for -1,
+      Adicione 1 para o número de vizinhos.
+  Reitere.
+  Atribua o número de vizinhos para o número.
+
+Rotina para que se abra uma célula:
+  Se o sinalizador de aberta desta célula estiver ativo, retorne.
+  Ative o sinalizador de aberta desta célula.
+  Adicione 1 para as células abertas deste andamento do jogo.
+  Se o número desta célula for maior do que 0, retorne.
+  Itere.
+    Obtenha uma célula vizinha desde a grade de células.
+    Se a célula vizinha for inexistente, pare.
+    Se a célula vizinha for a célula, reitere.
+    Se a coordenada X1 desta célula vizinha for maior do que a coordenada X2 da célula mais 1 polegada, reitere.
+    Se a coordenada X2 desta célula vizinha for menor do que a coordenada X1 da célula menos 1 polegada, reitere.
+    Se a coordenada Y1 desta célula vizinha for maior do que a coordenada Y2 da célula mais 1 polegada, reitere.
+    Se a coordenada Y2 desta célula vizinha for menor do que a coordenada Y1 da célula menos 1 polegada, reitere.
+    Abra a célula vizinha.
+  Reitere.
+
+Rotina para que se marque uma célula:
+  Se o sinalizador de aberta desta célula estiver ativo, retorne.
+  Se o sinalizador de marcada desta célula estiver ativo,
+    Desative o sinalizador de marcada desta célula;
+    Ative o sinalizador de dúvida desta célula;
+    Retorne.
+  Se o sinalizador de dúvida desta célula estiver ativo,
+    Desative o sinalizador de dúvida desta célula;
+    Retorne.
+  Ative o sinalizador de marcada desta célula.
+  Adicione 1 para as minas marcadas deste andamento do jogo.
+  Atualize o indicador de minas.
+
+Rotina para que se atualize o indicador de minas:
+  Atribua a quantidade de minas deste andamento do jogo menos as minas marcadas deste andamento do jogo ao número deste indicador de minas.
+
+Rotina para que se determine se o jogo foi vencido:
+  Se as células abertas deste andamento do jogo for igual à quantidade de células deste andamento do jogo menos a quantidade de minas deste andamento do jogo,
+    Diga sim.
+  Diga não.
+
+Rotina para que se pinte a grade de células:
+  Use a canetinha grossa.
+  Itere.
+    Obtenha uma célula desde a grade de células.
+    Se a célula for inexistente, pare.
+    Pinte a célula.
+  Reitere.
+
+Rotina para que se pinte uma célula:
+  Atribua a cor cinza claro para uma cor de preenchimento.
+  Se o sinalizador de marcada desta célula estiver ativo,
+    Pinte "X" na caixa desta célula com a canetinha vermelha e a fonte padrão e "centralizado";
+    Retorne.
+  Se o sinalizador de dúvida desta célula estiver ativo,
+    Pinte "?" na caixa desta célula com a canetinha preta e a fonte padrão e "centralizado";
+    Retorne.
+  Se o sinalizador de aberta desta célula não estiver ativo,
+    Pinte a caixa desta célula com a canetinha preta e a cor de preenchimento;
+    Retorne.
+  Atribua a cor branca para a cor de preenchimento.
+  Pinte a caixa desta célula com a canetinha preta e a cor de preenchimento.
+  Se o número desta célula for -1,
+    Pinte "-1" na caixa desta célula com a canetinha preta e a fonte padrão e "centralizado";
+    Retorne.
+  Se o número desta célula for maior que 0,
+    Converta o número desta célula em uma string;
+    Pinte a string na caixa desta célula com a canetinha azul e a fonte padrão e "centralizado".
+
+Rotina para que se pinte o botão de novo jogo:
+  Pinte a caixa arredondada do botão de novo jogo with a canetinha preta e a cor cinza claro.
+  Pinte o nome do botão de novo jogo na caixa arredondada do botão de novo jogo com a canetinha preta e a fonte padrão e "centralizado".
+
+Rotina para que se pinte o indicador de minas:
+  Pinte a caixa deste indicador de minas com a canetinha preta e a cor branca.
+  Converta o número deste indicador de minas em uma string.
+  Pinte a string na caixa deste indicador de minas com a canetinha preta e a fonte padrão e "centralizado".
+
+Rotina para que se execute um evento (pressionamento de tecla):
+  Se a tecla deste evento for a tecla R,
+    Reinicie o jogo;
+    Pinte o ambiente de trabalho;
+    Retorne.
+  Se a tecla deste evento for a tecla Esc,
+    Feche o programa.
+
+Rotina para que se execute um evento (clique):
+  Se o jogo_em_andamento deste andamento do jogo estiver desativado, retorne.
+  Encontre uma célula usando a localização deste evento.
+  Se a célula não for inexistente,
+    Processe clique esquerdo na célula;
+    Retorne.
+  Encontre o botão de novo jogo usando a localização deste evento.
+  Se o botão de novo jogo não for inexistente,
+    Reinicie o jogo;
+    Pinte o ambiente de trabalho.
+
+Rotina para que se execute um evento (clique direito):
+  Se o jogo_em_andamento deste andamento do jogo estiver desativado, retorne.
+  Encontre uma célula usando a localização deste evento.
+  Se a célula for inexistente, retorne.
+  Marque a célula.
+  Pinte o ambiente de trabalho.
+
+Rotina para que se processe clique esquerdo na célula:
+  Se o primeiro clique deste andamento do jogo estiver ativo,
+    Desative o primeiro clique deste andamento do jogo;
+    Coloque as minas com a célula.
+  Se o sinalizador de marcada desta célula estiver ativo, retorne.
+  Se o sinalizador de dúvida desta célula estiver ativo, retorne.
+  Abra a célula.
+  Se o número desta célula for -1,
+    Atribua não ao jogo_em_andamento deste andamento do jogo;
+    Mostre derrota;
+    Retorne.
+  Verifique vitória.
+  Se o jogo foi vencido,
+    Atribua não ao jogo_em_andamento deste andamento do jogo;
+    Mostre vitória.
+  Pinte o ambiente de trabalho.
+
+Rotina para que se encontre uma célula usando uma localização:
+  Esvazie a célula.
+  Itere.
+    Obtenha uma célula desde a grade de células.
+    Se a célula for inexistente, retorne.
+    Se a localização estiver na caixa desta célula, retorne.
+  Reitere.
+
+Rotina para que se encontre o botão de novo jogo usando uma localização:
+  Esvazie o botão de novo jogo.
+  Se a localização estiver na caixa arredondada do botão de novo jogo,
+    Retorne.
+
+Rotina para que se reinicie o jogo:
+  Destrua a grade de células.
+  Crie a grade de células.
+  Pinte o ambiente de trabalho.
+
+Rotina para que se mostre vitória:
+  Crie a caixa de diálogo.
+  Atribua "botão" à categoria desta caixa de diálogo.
+  Atribua "Você venceu!" ao texto de aviso desta caixa de diálogo.
+  Adicione um botão para a caixa de diálogo usando "OK".
+  Execute a caixa de diálogo.
+  Destrua a caixa de diálogo.
+  Pinte o ambiente de trabalho.
+
+Rotina para que se mostre derrota:
+  Crie a caixa de diálogo.
+  Atribua "botão" à categoria desta caixa de diálogo.
+  Atribua "Você perdeu!" ao texto de aviso desta caixa de diálogo.
+  Adicione um botão para a caixa de diálogo usando "OK".
+  Execute a caixa de diálogo.
+  Destrua a caixa de diálogo.
+  Pinte o ambiente de trabalho.
+
+Rotina para que se destrua a grade de células:
+  Itere.
+    Obtenha uma célula desde a grade de células.
+    Se a célula for inexistente, pare.
+    Destrua a célula.
+  Reitere.
+
+Rotina para que se destrua o botão de novo jogo:
+  Destrua a caixa arredondada do botão de novo jogo.
+  Destrua o botão de novo jogo.
+
+Rotina para que se destrua o indicador de minas:
+  Destrua a caixa deste indicador de minas.
