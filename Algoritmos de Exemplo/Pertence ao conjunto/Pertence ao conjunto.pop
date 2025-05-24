@@ -1,7 +1,3 @@
-O limite superior é um número.
-O limite inferior é um número.
-O número comparado é um número.
-
 Rotina para que se execute o programa:
   Prepare o Console.
   Valide números de conjuntos númericos.
@@ -10,31 +6,44 @@ Rotina para que se execute o programa:
 Rotina para que se valide números de conjuntos númericos:
   Escreva "Informe o número a ser comparado" junto com o texto CRLF para StdOut.
   Leia uma string desde a StdIn.
-  Converta a string para um número.
-  Atribua o número para o número comparado.
-  Escreva "Informe o limite superior" junto com o texto CRLF para StdOut.
-  Leia uma segunda string desde a StdIn.
-  Converta a string para um segundo número.
-  Atribua o segundo número para o limite superior.
+  Converta a string para um número denominado primeiro número.
+  Atribua o primeiro número para um número denominado número comparado.
   Escreva "Informe o limite inferior" junto com o texto CRLF para StdOut.
+  Leia uma segunda string desde a StdIn.
+  Converta a string para um número denominado segundo número.
+  Atribua o segundo número para um número denominado limite inferior.
+  Escreva "Informe o limite superior" junto com o texto CRLF para StdOut.
   Leia uma terceira string desde a StdIn.
-  Converta a string para um terceiro número.
-  Atribua o terceiro número para o limite inferior.
+  Converta a string para um número denominado terceiro número.
+  Atribua o terceiro número para um número denominado limite superior.
+  Se o número comparado for menor do que o limite inferior,
+    Escreva "Número menor do que" junto com o limite inferior junto com  o texto CRLF para StdOut;
+    Retorne.
   Se o número comparado for maior do que o limite superior,
-    Escreva "Número acima do intervalo" junto com o texto CRLF para StdOut.
-  Se o número comparado for maior do que o limite superior,
-    Escreva "Número abaixo do intervalo" junto com o texto CRLF para StdOut.
-  Se o número comparado for maior do que o limite superior e menor que o limite inferior,
-    Escreva "Número dentro do intervalo" junto com o texto CRLF para StdOut.
+    Escreva "Número maior do que " junto com o limite superior junto com o texto CRLF para StdOut;
+    Retorne.
+  Escreva "---------------------------------" junto com o texto CRLF para StdOut.
+  Escreva "O Número está dentro do conjunto." junto com o texto CRLF para StdOut.
 
-Função para que se determine se um número é maior do que um segundo número e menor que um terceiro número:
-  Decodifique $C7C001000000. \ mov eax,1 \ Presume que a condição é verdadeira
-  Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ Carrega o endereço do primeiro número
-  Decodifique $8B1B. \ mov ebx,[ebx] \ Carrega o valor do primeiro número em ebx
-  Decodifique $8B8D0C000000. \ mov ecx,[ebp+12] \ Carrega o endereço do segundo número
-  Decodifique $3B19. \ cmp ebx,[ecx] \ Compara o primeiro número com o segundo número
-  Decodifique $0F8E0E000000. \ jle 14 \ Se menor ou igual, salta para definir eax=0
-  Decodifique $8B9510000000. \ mov edx,[ebp+16] \ Carrega o endereço do terceiro número
-  Decodifique $3B1A. \ cmp ebx,[edx] \ Compara o primeiro número com o terceiro número
-  Decodifique $0F8C06000000. \ jl 6 \ Se menor, salta para o fim mantendo eax=1
-  Decodifique $C7C000000000. \ mov eax,0 \ Define eax=0 se não for menor
+\ Função para que se determine se um número é maior que um segundo número e menor que um terceiro número:
+\ Função para que se determine se um número é maior do que um segundo número e menor que um terceiro número:
+\ Função para que se determine se um número é maior que um segundo número e menor do que um terceiro número:
+\ Função para que se determine se um número é maior do que um segundo número e menor do que um terceiro número:
+\   Decodifique $8B9D08000000. \ mov ebx,[ebp+8]        ; Carrega o primeiro número (N1) em EBX
+\   Decodifique $8B1B.         \ mov ebx,[ebx]
+\   Decodifique $8B8D0C000000. \ mov ecx,[ebp+12]       ; Carrega o segundo número (N2) em ECX
+\   Decodifique $8B09.         \ mov ecx,[ecx]
+\   Decodifique $3B19.         \ cmp ebx,ecx            ; Compara N1 com N2 (ebx com ecx)
+\                                                  \ Se N1 <= N2 (não maior), então é falso
+\   Decodifique $0F8E1B000000. \ jle DigaNao            ; Pula para DigaNao se ebx <= ecx (Pula 27 bytes)
+\   Decodifique $8B8D10000000. \ mov ecx,[ebp+16]       ; Carrega o terceiro número (N3) em ECX (reutiliza ECX)
+\   Decodifique $8B09.         \ mov ecx,[ecx]
+\   Decodifique $3B19.         \ cmp ebx,ecx            ; Compara N1 com N3 (ebx com ecx)
+\                                                  \ Se N1 >= N3 (não menor), então é falso
+\   Decodifique $0F8D0B000000. \ jge DigaNao            ; Pula para DigaNao se ebx >= ecx (Pula 11 bytes)
+\ \ DigaSim:
+\   Decodifique $C7C001000000. \ mov eax,1              ; Define eax como 1 (verdadeiro)
+\   Decodifique $E906000000.   \ jmp FimDaFuncao        ; Pula para o fim (Pula 6 bytes)
+\ \ DigaNao:
+\   Decodifique $C7C000000000. \ mov eax,0              ; Define eax como 0 (falso)
+\ \ FimDaFuncao:                                         ; Rótulo para o fim da função
