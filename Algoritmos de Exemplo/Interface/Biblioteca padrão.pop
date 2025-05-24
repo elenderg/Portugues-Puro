@@ -3675,6 +3675,17 @@ Rotina para que se compativelmente handle alguma mensagem com uma janela do prog
     Execute algum WM_SYSKEYDOWN com o wParam e o lParam;
     Atribua 0 para EAX;
     Retorne.
+  Se a mensagem for 532, [WM_SIZING Hex 214]
+    Execute algum WM_SIZING com o wParam e o lParam [RECT];
+    Atribua 1 para EAX;
+    Retorne.
+  Se a mensagem for 5, [WM_SIZE Hex 5]
+    Execute algum WM_SIZE com o wParam [type of resizing] e o lParam [new dimension];
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 132 [WM_NCHITTEST Hex 84],
+    Execute algum WM_NCHITTEST com o lParam e o wParam e a mensagem e a janela do programa;
+    Retorne.
   [Caso o valor da mensagem seja outro:]
   Processe "user32.dll" "DefWindowProcA" com \Chama o procedimento de janela padrão para  processamento das mensagens de janela que um aplicativo não processa.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-defwindowproca
@@ -3683,6 +3694,85 @@ Rotina para que se compativelmente handle alguma mensagem com uma janela do prog
     e O wParam [wParam]
     e O lParam. [lParam]
 
+Rotina para que se execute algum WM_NCHITTEST com um lParam e um wParam e um número e uma janela do programa:
+  Processe "user32.dll" "DefWindowProcA" com
+    A janela do programa e
+    O número [WM_NCHITTEST] e
+    0 e \o wParam e
+    O lParam
+    Retornando um número denominado resultado.
+  Se o resultado for 10 [HTLEFT],
+    Processe "user32.dll" "LoadCursorA" com
+      0 [hInstance] e
+      32644 [IDC_SIZEWE]
+      Retornando um número identificador denominado cursor;
+    Processe "user32.dll" "SetCursor" com o cursor;
+    Retorne.
+  Se o resultado for 11 [HTRIGHT],
+    Processe "user32.dll" "LoadCursorA" com
+      0 [hInstance] e
+      32644 [IDC_SIZEWE]
+      Retornando o cursor;
+    Processe "user32.dll" "SetCursor" com o cursor;
+    Retorne.
+  Se o resultado for 12 [HTTOP],
+    Processe "user32.dll" "LoadCursorA" com
+      0 [hInstance] e
+      32645 [IDC_SIZENS]
+      Retornando o cursor;
+    Processe "user32.dll" "SetCursor" com o cursor;
+    Retorne.
+  Se o resultado for 13 [HTBOTTOM],
+    Processe "user32.dll" "LoadCursorA" com
+      0 [hInstance] e
+      32645 [IDC_SIZENS]
+      Retornando o cursor;
+    Processe "user32.dll" "SetCursor" com o cursor;
+    Retorne.
+  Se o resultado for 15 [HTTOPLEFT],
+    Processe "user32.dll" "LoadCursorA" com
+      0 [hInstance] e
+      32643 [IDC_SIZENWSE]
+      Retornando o cursor;
+    Processe "user32.dll" "SetCursor" com o cursor;
+    Retorne.
+  Se o resultado for 16 [HTTOPRIGHT],
+    Processe "user32.dll" "LoadCursorA" com
+      0 [hInstance] e
+      32642 [IDC_SIZENESW]
+      Retornando o cursor;
+    Processe "user32.dll" "SetCursor" com o cursor;
+    Retorne.
+  Se o resultado for 17 [HTBOTTOMLEFT],
+    Processe "user32.dll" "LoadCursorA" com
+      0 [hInstance] e
+      32642 [IDC_SIZENESW]
+      Retornando o cursor;
+    Processe "user32.dll" "SetCursor" com o cursor;
+    Retorne.
+  Se o resultado for 18 [HTBOTTOMRIGHT],
+    Processe "user32.dll" "LoadCursorA" com
+      0 [hInstance] e
+      32643 [IDC_SIZENWSE]
+      Retornando o cursor;
+    Processe "user32.dll" "SetCursor" com o cursor;
+    Retorne.
+  \ Processe "user32.dll" "LoadCursorA" com
+    \ 0 [hInstance] e
+    \ 32512 [IDC_ARROW]
+    \ Retornando o cursor.
+  \ Processe "user32.dll" "SetCursor" com o cursor.
+
+Rotina para que se execute algum WM_SIZING com um wParam e um lParam:
+  Atribua uma caixa para uma caixa denominada rect.
+  Atribua o lParam para o endereçamento deste rect.
+  Atribua a coordenada X2 deste rect menos a coordenada X1 deste rect para a largura do pixel desta tela.
+  Atribua a coordenada Y2 deste rect menos a coordenada Y1 deste rect para  a altura do pixel desta tela.
+
+Rotina para que se execute algum WM_SIZE com um wParam e um lParam:
+  Atribua a word de ordem inferior deste lParam para a largura do pixel desta tela.
+  Atribua a word de ordem superior deste lParam para a altura do pixel desta tela.
+  
 Rotina para que se compativelmente aguarde por um ponteiro de processo:
   Processe "kernel32.dll" "WaitForSingleObject" com \ Espera até que o objeto esteja no estado sinalizado ou o intervalo de tempo delimite expire.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/synchapi/nf-synchapi-waitforsingleobject
@@ -7830,6 +7920,9 @@ Rotina para que se desmanche todos os eventos:
   Desmanche a fila de eventos.
 
 Rotina para que se desmanche algumas mensagens:
+\https://community.progress.com/s/article/000035144
+\ https://community.progress.com/s/article/000036029
+\ Calling PeekMessage will not remove posted messages from the message queue
   Processe "user32.dll" "PeekMessageA" com
   \ Despacha mensagens de entrada não enfileiradas,
   \ Verifica a fila de mensagens de thread de uma mensagem postada,
@@ -9467,7 +9560,7 @@ Rotina para que se inicialize o terminal:
 
 Rotina para que se obtenha o ponto de entrada do aplicativo;
 Rotina para que se inicialize antes da execução:
-  Processe "user32.dll" "DisableProcessWindowsGhosting". \ Desativa o recurso de imagem fantasma da janela para o processo de chamada da GUI.
+  \Processe "user32.dll" "DisableProcessWindowsGhosting". \ Desativa o recurso de imagem fantasma da janela para o processo de chamada da GUI.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-disableprocesswindowsghosting
   Processe "kernel32.dll" "GetProcessHeap" \ Recupera um identificador para o heap padrão do processo de chamada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/heapapi/nf-heapapi-getprocessheap
@@ -12386,7 +12479,8 @@ Rotina para que se subdivida uma linha reta em uma segunda linha reta e uma terc
 Rotina para que se subdivida um número em uma word e uma segunda word:
   Preserve o número.
   Desloque o número 16 bits para a direita.
-  Atribua o número ao word.
+  Atribua o número à word.
+  \Se o número original for negativo, Atribua a word vezes -1 para a word.
   Atribua o número original à segunda word.
 
 Rotina para que se subdivida as linhas de texto de uma caixa de texto em umas linhas de texto e umas linhas de texto selecionadas e umas segundas linhas de texto:

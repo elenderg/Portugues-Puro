@@ -1,10 +1,9 @@
 Um comprimento é um número.
 
-A largura é um número.
 A distância é um número.
 O comprimento do quadrado é um número.
 O número da linha é um número.
-O quadrado é uma caixa arredondada.
+O quadrado é uma caixa.
 
 Rotina para que se execute o programa:
   Inicialize os componentes.
@@ -18,8 +17,6 @@ Rotina para que se exiba a distorção cromática:
   Pinte a malha quadriculada.
 
 Rotina para que se prepare o layout:
-  \Atribua 10 para o raio deste quadrado.
-  Atribua a largura desta tela para a largura.
   Atribua a largura dividido por 8 para a distância.
   Atribua a largura dividido por 16 para o comprimento do quadrado.
   Faça o quadrado [usando] o comprimento do quadrado pelo comprimento do quadrado.

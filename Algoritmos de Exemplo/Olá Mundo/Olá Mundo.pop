@@ -1,6 +1,6 @@
 Rotina para que se execute o programa:
 Carregue as bibliotecas padrão do sistema.
-Limpe a tela.
+Limpe a tela com a cor preta.
 Use letras de tamanho médio.  
 Use a canetinha grossa.
  Itere.
