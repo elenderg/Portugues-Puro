@@ -1,49 +1,30 @@
 Rotina para que se execute o programa:
-  Prepare o Console.
+  Defina "console" como o tipo da aplicação.
   Valide números de conjuntos númericos.
   Feche o programa.
 
 Rotina para que se valide números de conjuntos númericos:
   Escreva "Informe o número a ser comparado" junto com o texto CRLF para StdOut.
   Leia uma string desde a StdIn.
-  Converta a string para um número denominado primeiro número.
-  Atribua o primeiro número para um número denominado número comparado.
+  Converta a string para um número denominado número comparado.
   Escreva "Informe o limite inferior" junto com o texto CRLF para StdOut.
   Leia uma segunda string desde a StdIn.
-  Converta a string para um número denominado segundo número.
-  Atribua o segundo número para um número denominado limite inferior.
+  Converta a segunda string para um número denominado limite inferior.
   Escreva "Informe o limite superior" junto com o texto CRLF para StdOut.
   Leia uma terceira string desde a StdIn.
-  Converta a string para um número denominado terceiro número.
-  Atribua o terceiro número para um número denominado limite superior.
+  Converta a terceira string para um número denominado  limite superior.
   Se o número comparado for menor do que o limite inferior,
-    Escreva "Número menor do que" junto com o limite inferior junto com  o texto CRLF para StdOut;
+    Escreva "Número menor do que o limite inferior" junto com  o texto CRLF para StdOut;
     Retorne.
   Se o número comparado for maior do que o limite superior,
-    Escreva "Número maior do que " junto com o limite superior junto com o texto CRLF para StdOut;
+    Escreva "Número maior do que o limite superior" junto com o texto CRLF para StdOut;
     Retorne.
   Escreva "---------------------------------" junto com o texto CRLF para StdOut.
   Escreva "O Número está dentro do conjunto." junto com o texto CRLF para StdOut.
 
-\ Função para que se determine se um número é maior que um segundo número e menor que um terceiro número:
-\ Função para que se determine se um número é maior do que um segundo número e menor que um terceiro número:
-\ Função para que se determine se um número é maior que um segundo número e menor do que um terceiro número:
-\ Função para que se determine se um número é maior do que um segundo número e menor do que um terceiro número:
-\   Decodifique $8B9D08000000. \ mov ebx,[ebp+8]        ; Carrega o primeiro número (N1) em EBX
-\   Decodifique $8B1B.         \ mov ebx,[ebx]
-\   Decodifique $8B8D0C000000. \ mov ecx,[ebp+12]       ; Carrega o segundo número (N2) em ECX
-\   Decodifique $8B09.         \ mov ecx,[ecx]
-\   Decodifique $3B19.         \ cmp ebx,ecx            ; Compara N1 com N2 (ebx com ecx)
-\                                                  \ Se N1 <= N2 (não maior), então é falso
-\   Decodifique $0F8E1B000000. \ jle DigaNao            ; Pula para DigaNao se ebx <= ecx (Pula 27 bytes)
-\   Decodifique $8B8D10000000. \ mov ecx,[ebp+16]       ; Carrega o terceiro número (N3) em ECX (reutiliza ECX)
-\   Decodifique $8B09.         \ mov ecx,[ecx]
-\   Decodifique $3B19.         \ cmp ebx,ecx            ; Compara N1 com N3 (ebx com ecx)
-\                                                  \ Se N1 >= N3 (não menor), então é falso
-\   Decodifique $0F8D0B000000. \ jge DigaNao            ; Pula para DigaNao se ebx >= ecx (Pula 11 bytes)
-\ \ DigaSim:
-\   Decodifique $C7C001000000. \ mov eax,1              ; Define eax como 1 (verdadeiro)
-\   Decodifique $E906000000.   \ jmp FimDaFuncao        ; Pula para o fim (Pula 6 bytes)
-\ \ DigaNao:
-\   Decodifique $C7C000000000. \ mov eax,0              ; Define eax como 0 (falso)
-\ \ FimDaFuncao:                                         ; Rótulo para o fim da função
+
+
+Função para que se determine se um número está entre um segundo número e um terceiro número:
+  Se o número for menor do que o segundo número, diga não.
+  Se o número for maior do que o terceiro número, diga não.
+  Diga sim.

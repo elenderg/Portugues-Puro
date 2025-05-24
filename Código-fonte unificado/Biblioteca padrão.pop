@@ -6767,7 +6767,7 @@ Rotina para que se calcule uma soma dos termos da progressão geométrica com um p
     Atribua o primeiro termo vezes o fator para um número denominado numerador;
     Atribua a razão menos 1 para um número denominado denominador;
     Atribua o numerador dividido pelo denominador para a soma dos termos da progressão geométrica.
-  Se a razão for menor que 1,
+  Se a razão está entre 0 e 1:
     Atribuao o número de termos para um número denominado expoente;
     Atribua a razão elevada ao expoente para um número denominado subtraendo;
     Atribua 1 menos o subtraendo para um número denominado fator;
