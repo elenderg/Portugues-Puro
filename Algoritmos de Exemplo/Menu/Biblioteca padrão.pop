@@ -9513,7 +9513,7 @@ Rotina para que se inicialize antes da execução:
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/heapapi/nf-heapapi-getprocessheap
     Retornando o endereço heap.
   Atribua "kernel32.dll" para um nome da biblioteca.
-  Atribua "HeapSetInformation.dll" para um nome do processo.
+  Atribua "HeapSetInformation" para um nome do processo.
   Processe "kernel32.dll" "LoadLibraryA" com \ Carrega o módulo especificado no espaço de endereço do processo de chamada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibrarya
     O caractere inicial deste nome da biblioteca [lpLibFileName]
