@@ -1602,7 +1602,7 @@ O caractere GS [GS] é um byte igual a 29. \Group Separator
 O caractere separador de registros [RS] é um byte igual a 30. \Record Separator
 O caractere RS [RS] é um byte igual a 30. \Record Separator
 O caractere separador de unidades [US] é um byte igual a 31. \Unit Separator
-O caractere us [US] é um byte igual a 31. \Unit Separator
+O caractere US [US] é um byte igual a 31. \Unit Separator
 O caractere de espaço é um byte igual a 32. \
 O sinal de exclamação é um byte igual a 33. \
 O ponto de exclamação é um byte igual a 33. \
