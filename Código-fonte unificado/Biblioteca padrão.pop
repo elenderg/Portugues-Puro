@@ -4073,12 +4073,15 @@ Rotina para que se converta um texto de consulta para uma string:
   Itere.
     Se o subtexto estiver em branco, retorne.
     Se o conteúdo deste caractere inicial deste subtexto for o sinal de adição,
-    Acrescente " " para a string;
-    Adicione 1 para o caractere inicial deste subtexto; Reitere.
+      Acrescente " " para a string;
+      Adicione 1 para o caractere inicial deste subtexto; 
+      Reitere.
     Se o conteúdo deste caractere inicial deste subtexto não for o sinal de porcentagem,
-    Acrescente o conteúdo deste caractere inicial deste subtexto para a string;
-    Adicione 1 para o caractere inicial deste subtexto; Reitere.
-    Se a quantidade de caracteres deste subtexto for menor do que 3, retorne.
+      Acrescente o conteúdo deste caractere inicial deste subtexto para a string;
+      Adicione 1 para o caractere inicial deste subtexto; 
+      Reitere.
+    Se a quantidade de caracteres deste subtexto for menor do que 3, 
+      Retorne.
     Adicione 1 para o caractere inicial deste subtexto.
     Converta o conteúdo deste caractere inicial deste subtexto para uma cifra binária.
     Desloque a cifra binária 4 bits para a esquerda.
@@ -12417,7 +12420,8 @@ Rotina para que se subdivida um número em uma word e uma segunda word:
 Rotina para que se subdivida as linhas de texto de uma caixa de texto em umas linhas de texto e umas linhas de texto selecionadas e umas segundas linhas de texto:
   Se a caixa de texto for inexistente,
     Limpe as linhas de texto;
-    Limpe as linhas de texto selecionadas; limpe as segundas linhas de texto;
+    Limpe as linhas de texto selecionadas;
+    Limpe as segundas linhas de texto;
     Retorne.
   Itere.
     Atribua a primeira linha de texto destas linhas de texto desta caixa de texto para uma linha de texto.
@@ -14167,7 +14171,6 @@ Rotina para que se leia uma response string desde uma requisição WinHTTP:
     Se o número resultante for 0 [FALSE],
       Atribua "Erro. Não foi possível verificar a quantidade de dados disponíveis." ao erro do fluxo de entrada/saída;
       Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
-    
       Limpe a response string;
       Pare.
     Atribua a quantidade de caracteres desta response string para uma quantidade de caracteres armazenados.
@@ -14241,7 +14244,6 @@ Rotina para que se leia uma URL para um trecho:
     Se o número resultante for 0 [FALSE],
       Atribua "Ocorreu um erro ao ler a URL '" junto com a URL seguido de "'." ao erro do fluxo de entrada/saída;
       Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
-    
       Pare.
     Atribua o ponteiro mais a contagem menos 1 ao caractere final deste trecho.
     Se a contagem for 0, pare.
@@ -14287,7 +14289,6 @@ Rotina para que se receba um trecho desde um soquete:
     Se o último erro do windows sockets não for 10040 [WSAMSGSIZE],
       Atribua "Erro ao receber os dados. Função 'recv' da lib 'ws2_32.dll'." ao erro do fluxo de entrada/saída;
       Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
-    
       Limpe o trecho;
       Retorne.
   \Se o último winsock erro dum system não for 10040 [WSAMSGSIZE],  \ "dum" não é permitido aqui
