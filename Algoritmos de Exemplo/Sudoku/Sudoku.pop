@@ -192,7 +192,7 @@ Rotina para que se atribua um número para uma célula:
 
 \O solucionador do sudoku
 
-\Dada essa "infraestrutura", resolver o sudoku requer apenas uma rotina recursiva notavelmente curta e simples. Basta fazer o caminho inveso:
+\Dada essa "infraestrutura", resolver o sudoku requer apenas uma rotina recursiva notavelmente curta e simples. Basta fazer o caminho inverso:
 
 Rotina para que se solucione o sudoku:
   Obtenha uma célula vazia.
