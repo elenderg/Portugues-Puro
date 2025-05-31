@@ -2,6 +2,10 @@
 
 \I started by defining a linkable record type for the cells:
 
+
+
+
+
 A cell is a thing with a box, a number and a given flag.
 
 \The Global Puzzle Variable

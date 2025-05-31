@@ -72,11 +72,11 @@ Rotina para que se preencha o sudoku com uma string:
 
 \Para que se obtermos uma caixa para o sudoku inteiro, encontramos as menores coordenadas de cada uma das células:
 
-Rotina para que se atribua a caixa do sudoku para uma caixa:
-  Atribua o maior número para uma coordenada denominado esquerda.
-  Atribua o maior número para uma coordenada denominado topo.
-  Atribua o menor número para uma coordenada denominado direita.
-  Atribua o menor número para uma coordenada denominado base.
+Rotina para que se atribua a caixa deste sudoku para uma caixa:
+  Atribua o maior número para um twip denominado esquerda.
+  Atribua o maior número para um twip denominado topo.
+  Atribua o menor número para um twip denominado direita.
+  Atribua o menor número para um twip denominado base.
   Itere.
     Obtenha uma célula desde o sudoku.
     Se a célula for inexistente, pare.
@@ -108,7 +108,7 @@ Rotina para que se atribua a coluna duma célula para uma caixa:
 \Para obter uma caixa para um bloco 9x9 de uma célula, fazemos isso:
 
 Rotina para que se atribua o bloco duma célula para uma caixa:
-  Atribua a caixa do sudoku para a caixa.
+  Atribua a caixa deste sudoku para a caixa.
   Atribua a coordenada X1 desta célula menos a coordenada X1 desta caixa dividido por 3 polegadas para um número denominado deslocamento.
   Multiplique o deslocamento por 3 polegadas.
   Adicione o deslocamento para a coordenada X1 desta caixa.
