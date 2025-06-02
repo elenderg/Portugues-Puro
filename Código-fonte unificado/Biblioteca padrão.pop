@@ -65,8 +65,8 @@ Um twip é um número.
 Uma coordenada é [composta de] uns twips.
 
 Uma localização é um par de números com
-  Uma coordenada denominada coordenada X e
-  Uma coordenada denominada coordenada Y.\ e
+  Uma coordenada denominada coordenada X [left] e
+  Uma coordenada denominada coordenada Y. [top]\ e
   \Uma coordenada denominada coordenada esquerda sob a coordenada X e
   \Um coordenada denominada coordenada do topo sob a coordenada Y.
 
