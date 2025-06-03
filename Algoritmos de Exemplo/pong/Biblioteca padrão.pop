@@ -77,14 +77,6 @@ Um par de números é uma estrutura com
   Um número denominado número X e
   Um número denominado número Y.
 
-\Rotina para que se recue uma caixa uns twips; \ 
-Rotina para que se recue uma caixa uns twips; \DESLOCA PRA DIREITA e PRA BAIXO
-Rotina para que se recue uma caixa usando uns twips: \ outdent
-  Subtraia os twips desde a coordenada X1 desta caixa.
-  Subtraia os twips desde a coordenada Y1 desta caixa.
-  Adicione os twips para a coordenada X2 desta caixa.
-  Adicione os twips para a coordenada Y2 desta caixa.
-
 Uma caixa é uma estrutura com
   Uma coordenada denominada coordenada X1, [left]
   Uma coordenada denominada coordenada Y1, [top]
@@ -3282,7 +3274,6 @@ Rotina para que se role automaticamente uma caixa de texto usando uma localizaçã
 
 Rotina para que se toque um bipe;
 Rotina para que se reproduza um bipe;
-Rotina para que se bipe;
 Rotina para que se emita um bipe:
   Atribua 0 ao bipe.
   Processe "user32.dll" "MessageBeep" com \ Reproduz um som waveform
@@ -5942,15 +5933,15 @@ Função para que se determine se uma localização está acima de um linha reta hori
   Diga não.
 
 Função para que se determine se uma localização está em cima ou em baixo de uma caixa:
-  Se a localização estiver acima dessa caixa, diga sim.
-  Se a localização estiver debaixo dessa caixa, diga sim.
+  Se a localização está acima dessa caixa, diga sim.
+  Se a localização é debaixo dessa caixa, diga sim.
   Diga não.
 
-Função para que se determine se uma localização está debaixo de uma caixa:
+Função para que se determine se uma localização é debaixo de uma caixa:
   Se a coordenada Y desta localização for maior do que a coordenada Y2 desta caixa, diga sim.
   Diga não.
 
-Função para que se determine se uma localização está debaixo de um linha reta horizontal:
+Função para que se determine se uma localização é debaixo de um linha reta horizontal:
   Se a coordenada Y desta localização for maior do que o horizontal y desta localização inicial desta linha reta, diga sim.
   Diga não.
 
@@ -6052,8 +6043,8 @@ Função para que se determine se uma localização está para a direita ou para a es
 Função para que se determine se uma localização está para a esquerda ou para a direita de uma caixa;
 \Função para que se determine se uma localização está no lado esquerdo ou no lado direito de uma caixa;
 Função para que se determine se uma localização está no lado esquerdo ou no lado direito de uma caixa:
-  Se a localização estiver ao lado esquerdo dessa caixa, diga sim.
-  Se a localização estiver ao lado direito dessa caixa, diga sim.
+  Se a localização estiver para o lado esquerdo dessa caixa, diga sim.
+  Se a localização estiver para o lado direito dessa caixa, diga sim.
   Diga não.
 
 \Função para que se determine se uma localização está na parte de cima de uma caixa:
@@ -6128,11 +6119,11 @@ Função para que se determine se uma localização está fora de uma caixa:
   Se a localização é dentro dessa caixa, diga não.
   Diga sim.
 
-Função para que se determine se uma localização está para o lado direito de uma caixa:
+Função para que se determine se uma localização é para o lado direito de uma caixa:
   Se a coordenada X desta localização for maior do que a coordenada X2 desta caixa, diga sim.
   Diga não.
 
-Função para que se determine se uma localização está tocando uma caixa:
+Função para que se determine se uma localização é tocando uma caixa:
   Se a localização estiver na caixa, diga sim.
   Diga não.
 
@@ -12220,7 +12211,7 @@ Rotina para que se mostre um terminal:
   Atualize o tela usando a caixa deste terminal.
   Restaure o contexto do dispositivo atual.
 
-Rotina para que se encolha uma caixa por uns twips; \indent
+Rotina para que se encolha uma caixa por uns twips;
 Rotina para que se encolha uma caixa uns twips;
 Rotina para que se encolha uma caixa uns twips sobre cada lado;
 Rotina para que se encolha uma caixa usando uns twips:
@@ -12923,8 +12914,8 @@ Rotina para que se carregue as bibliotecas padrão do sistema;
 Rotina para que se inicialize tudo;
 Rotina para que se inicialize os componentes:
   Inicialize o Component Object Model.
-  Inicialize a Infraestrutura WinSock.
-  Inicialize GDI+.
+  Inicialize a infraestrutura WinSock.
+  Inicialize gdi+.
   Inicialize o sintetizador de voz.
   Inicialize o módulo.
   Inicialize as cores.
@@ -17838,6 +17829,14 @@ Rotina para que se escolha aleatoriamente uma localização dentre uma distância e
 Rotina para que se escolha aleatoriamente uma orientação:
   Escolha aleatoriamente a orientação entre 0 e 3839.
   Atribua a orientação à orientação deste contexto.
+
+\Rotina para que se recue uma caixa uns twips; \ 
+Rotina para que se recue uma caixa uns twips; \DESLOCA PRA DIREITA e PRA BAIXO
+Rotina para que se recue uma caixa usando uns twips:
+  Subtraia os twips desde a coordenada X1 desta caixa.
+  Subtraia os twips desde a coordenada Y1 desta caixa.
+  Adicione os twips para a coordenada X2 desta caixa.
+  Adicione os twips para a coordenada Y2 desta caixa.
 
 Rotina para que se mova um vértice uns twips para a esquerda;
 Rotina para que se mova um vértice para a esquerda uns twips:

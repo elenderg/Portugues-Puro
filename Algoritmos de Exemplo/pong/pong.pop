@@ -1,0 +1,142 @@
+Uma prancha é uma lista com uma caixa.
+
+Uma bola é uma lista com 
+  Uma localização e
+  Um par de números denominado velocidade.
+
+A prancha é uma prancha.
+
+As bolas são umas bolas.
+
+A quantidade de bolas é 1.
+
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  Crie a prancha.
+  Crie as bolas.
+  Itere.
+    Se a Tecla Esc estiver sendo pressionada, pare.
+    Limpe o canvas.
+    Mova a prancha.
+    Pinte a prancha.
+    Mova as bolas.
+    Pinte as bolas.
+    Atualize a tela.
+  Reitere.
+  Destrua as bolas.
+  Destrua a prancha.
+  Feche o programa.
+
+Rotina para que se limpe o canvas:
+  Pinte a caixa desta tela com a cor preta e a cor preta.
+
+Rotina para que se crie uma prancha:
+  Aloque memória para a prancha.
+  Faça a caixa desta prancha 48 pixels por 192 pixels.
+
+Rotina para que se crie umas bolas:
+  [Itere.]
+    Aloque memória para uma bola.
+    Acrescente a bola para as bolas.
+    Atribua a caixa desta tela para uma caixa.
+    Encolha a caixa 48 pixels.
+    Escolha aleatoriamente a localização desta bola no interior dessa caixa.
+    Escolha aleatoriamente um número denominado velocidade horizontal entre 2 pixels e 4 pixels.
+    Escolha aleatoriamente um número denominado velocidade vertical entre 2 pixels e 4 pixels.
+    Atribua a velocidade horizontal e a velocidade vertical para a velocidade desta bola.
+    Adicione 1 para uma contagem.
+    Se a contagem for menor do que a quantidade de bolas, reitere.
+
+Rotina para que se pinte uma prancha:
+  Atribua a localização deste mouse para uma localização.
+  Atribua a coordenada X2 desta caixa desta tela menos 40 pixels para a coordenada X desta localização.
+  Centralize a caixa desta prancha sobre a localização.
+  Pinte a caixa desta prancha com a cor verde e a cor branca.
+
+Rotina para que se pinte umas bolas:
+  [Itere.]
+    Obtenha uma bola desde as bolas.
+    Se a bola for inexistente, retorne.
+    Faça uma elipse 96 pixels por 96 pixels.
+    Centralize a elipse sobre a localização desta bola.
+    Pinte a elipse com a cor verde e a cor branca.
+  Reitere.
+
+Rotina para que se mova uma prancha:
+  Atribua a localização deste mouse para uma localização.
+  Atribua a coordenada X2 desta tela menos 48 pixels para a coordenada X desta localização.
+  Centralize a caixa desta prancha sobre a localização.
+
+Rotina para que se mova umas bolas:
+  [Itere.]
+    Obtenha uma bola desde as bolas.
+    Se a bola for inexistente, retorne.
+    Se a bola estiver tocando a caixa desta prancha,
+      \Bipe;
+      Inverta a velocidade desta bola.
+    Se a bola estiver tocando [uma] outra bola,
+      \Bipe;
+      Inverta a velocidade desta bola.
+    Se a bola estiver tocando o lado direito ou o lado esquerdo da tela,
+      \Bipe;
+      Inverta o número X desta velocidade desta bola.
+    Se a bola estiver tocando o lado superior ou o lado inferior da tela,
+      \Bipe;
+      Inverta o número Y desta velocidade desta bola.
+    Adicione a velocidade desta bola para a localização desta bola.
+  Reitere.
+
+Função para que se determine se uma bola está tocando uma caixa:
+  Preserve a caixa.
+  Recue a caixa 48 pixels.
+  Se a localização desta bola estiver na caixa, diga sim.
+  [Caso contrário, então] Diga não.
+
+Função para que se determine se uma bola está tocando o lado superior ou o lado inferior da tela:
+  Atribua a caixa desta tela para uma caixa.
+  Encolha a caixa 48 pixels.
+  Se a localização desta bola estiver em cima ou em baixo dessa caixa, diga sim.
+  [Caso contrário, então] Diga não.
+
+Função para que se determine se uma bola está tocando o lado direito ou o lado esquerdo da tela:
+  Atribua a caixa desta tela para uma caixa.
+  Encolha a caixa 48 pixels.
+  Se a localização desta bola estiver no lado esquerdo ou no lado direito dessa caixa, diga sim.
+  [Caso contrário, então] Diga não.
+
+Função para que se determine se uma bola está tocando outra bola:
+  [Itere.]
+    Obtenha uma segunda bola desde as bolas.
+    Se a segunda bola for inexistente, diga não.
+    Se a bola for a segunda bola, reitere.
+    Se a localização desta bola estiver dentre 96 pixels dessa localização desta segunda bola (método de quadrantes), diga sim.
+  Reitere.
+
+Função para que se determine se uma localização está dentre uns twips de uma segunda localização (método de quadrantes):
+  Preserve os twips.
+  Multiplique os twips pelos twips. \ Square os twips
+  Obtenha um quadrante dentre a localização e a segunda localização.
+  Se o quadrante for menor do que ou igual aos twips, diga sim.
+  [Caso contrário, então] Diga não.
+
+Um quadrante é um número.
+
+\ To square a number:
+\ Multiply the number by the number.
+
+
+Rotina para que se obtenha um quadrante dentre uma localização e uma segunda localização:
+  Atribua a coordenada X desta localização menos a coordenada X desta segunda localização para um número.
+  Multiplique o número pelo número.
+  Atribua a coordenada Y desta localização menos a coordenada Y desta segunda localização para um segundo número.
+  Multiplique o segundo número pelo segundo número.
+  Atribua o número mais o segundo número para o quadrante.
+
+Rotina para que se inverta um par de números:
+  Inverta o número X deste par de números.
+  Inverta o número Y deste par de números.
+
+
+\A bluish color is a color.
+
+
