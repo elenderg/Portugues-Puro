@@ -15,7 +15,7 @@ Para compilar um projeto, abra o seu terminal seguindo o modelo constante no exe
 ```
 C:\path_do_compilador.exe C:\path_do_projeto_a_ser_compilado\
 ```
-![Captura de tela expondo o processo de compilação](https://raw.githubusercontent.com/elenderg/Portugues-Puro/main/Algoritmos%20de%20Exemplo/Processo%20de%20Compilacao.png)
+![Captura de tela expondo o processo de compilação](https://raw.githubusercontent.com/elenderg/Portugues-Puro/refs/heads/main/Algoritmos%20de%20Exemplo/Processo%20de%20Compilacao.png)
 
 Lembre-se de substuir `C:\path_do_compilador.exe` pelo caminho para o executável do seu compilador e `C:\path_do_projeto_a_ser_compilado\` pelo caminho para o diretório do projeto que você deseja compilar.  
 Certifique-se de rodar o prompt de comando com permissões de Administrador, caso contrário o codepage não poderá ser definido corretamente.
