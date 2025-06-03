@@ -1281,7 +1281,7 @@ Rotina para que se apresente uma mensagem de erro contendo uma string e um ender
     junto com " Não foi possível compilar o arquivo '" 
     junto com o nome do arquivo seguido de "'. " 
     junto com o texto CRLF para a mensagem de erro deste compilador.
-  Faça xyz.
+  \Faça xyz.
 
 Rotina para que se encontre um endereço completo e um número da linha usando um endereço de byte:
   Limpe o endereço completo.
