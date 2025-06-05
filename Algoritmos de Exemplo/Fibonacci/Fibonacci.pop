@@ -1,0 +1,37 @@
+Rotina para que se execute o programma:
+  Defina "console" como o tipo da aplicação.
+  Escreva a sequência de Fibonacci até o termo 46.
+  Feche o programa.
+
+Rotina para que se escreva a sequência de Fibonacci até o termo um número:
+  Atribua 0 para um número denominado índice.
+  Atribua 0 para um número denominado termo anterior.
+  Atribua 0 para um número denominado termo atual.
+  Atribua 0 para um número denominado próximo termo.
+  Itere.
+    Se o índice for maior do que o número, pare.
+    Escreva o termo anterior para StdOut.
+    Atribua o termo atual mais o termo anterior para o próximo termo.
+    Atribua o termo atual para o termo anterior.
+    Atribua o próximo termo para o termo atual.
+    Adicione 1 ao índice.
+  Reitere.
+
+Rotina para que se obtenha uma string usando um primeiro número e um segundo número (iterativamente):
+  \Itere
+    Adicione o primeiro número ao segundo número retornando um terceiro número.
+    Se o terceiro número for maior que 100, retorne.
+    Acrescente o terceiro número junto com " " à string.
+    Atribua o segundo número ao primeiro número.
+    Atribua o terceiro número ao segundo número.
+  Reitere.
+
+\e aqui está um que faz isso recursivamente:
+
+Rotina para que se obtenha uma string usando um primeiro número e um segundo número (recursivamente):
+  Adicione o primeiro número ao segundo número retornando um terceiro número.
+  Se o terceiro número for maior que 100, retorne.
+  Acrescente o terceiro número junto com " " à string.
+  Atribua o segundo número ao primeiro número.
+  Atribua o terceiro número ao segundo número.
+  Obtenha a string usando o primeiro número e o segundo número (recursivamente).
