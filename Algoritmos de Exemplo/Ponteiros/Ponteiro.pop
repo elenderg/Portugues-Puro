@@ -1,0 +1,22 @@
+Rotina para que se execute o programa:
+  Defina "console" como o tipo da aplicação.
+  Atribua "0123456789" para uma string.
+  Escreva "String original: " junto com a string para StdOut.
+  Escreva o texto CRLF para StdOut.
+  Modifique a string.
+  Escreva "String modificada: " junto com a string para StdOut.
+  Feche o programa.
+
+Rotina para que se modifique uma string:
+  Atribua o número hum para um byte denominado índice.
+  Atribua o caractere inicial desta string para um endereço de byte.
+  Itere.
+    Se o caractere inicial desta string for inexistente, pare.
+    Se a string estiver em branco, pare.
+    Se o endereço de byte for o caractere final desta string, 
+      Atribua o índice para o conteúdo deste endereço de byte;
+      Pare.
+    Atribua o índice para o conteúdo deste endereço de byte.
+    Escreva a string junto com o texto CRLF para StdOut.
+    Adicione 1 para o endereço de byte.
+  Reitere.
