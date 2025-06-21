@@ -1,0 +1,14 @@
+Rotina para que se execute o programa:
+  Defina "console" como o tipo da aplicação.
+  Atribua "C:\Users\Desktop\Nome da Pasta" para uma string denominada texto.
+  Anexe o caractere NULL após o texto.
+  Lance um subtexto sobre o texto.
+  Lance um percorredor sobre o subtexto.
+  Itere.
+    Se o conteúdo deste caractere inicial deste segmento final deste percorredor for o caractere NULL, pare.
+    Avance o percorredor.
+    Escreva "Segmento Inicial: " junto com o segmento inicial deste percorredor 
+    junto com " Segmento Final: " junto com o segmento final deste percorredor 
+    junto com o texto CRLF para StdOut.
+  Reitere.
+  Feche o programa.
