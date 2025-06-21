@@ -1,0 +1,12 @@
+ Rotina para que se execute o programa:
+  Defina "console" como o tipo da aplicação.
+  Escreva o asterisco 10 vezes para StdOut.
+  Feche o programa.
+
+Rotina para que se escreva um byte umas vezes para StdOut:
+  Atribua 0 para um número.
+  Itere.
+    Escreva o byte para StdOut.
+    Adicione 1 para o número.
+    Se o número for as vezes, pare.
+  Reitere.
