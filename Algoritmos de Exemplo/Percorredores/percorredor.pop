@@ -1,6 +1,6 @@
 Rotina para que se execute o programa:
   Defina "console" como o tipo da aplicação.
-  Atribua "C:\Users\Desktop\Nome da Pasta" para uma string denominada texto.
+  Atribua "C:\Users\Usuario\Desktop\Nome da Pasta" para uma string denominada texto.
   Anexe o caractere NULL após o texto.
   Lance um subtexto sobre o texto.
   Lance um percorredor sobre o subtexto.
