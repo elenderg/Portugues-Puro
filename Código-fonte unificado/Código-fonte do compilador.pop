@@ -454,26 +454,6 @@ As variáveis globais predefinidas são umas variáveis globais.
 \ Para colocar e retirar coisas maiores da pilha, precisamos lidar diretamente com o registro ESP.
 \ Subtrair 16 do endereço no ESP, por exemplo, abre espaço para 16 bytes de dados locais no “topo” da pilha; adicionar 16 tira esses bytes da pilha.
 
-Rotina para que se escreva em verde uma string para StdOut;
-Rotina para que se escreva uma string em verde para StdOut:
-  Escreva o Esc junto com "[92m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
-
-Rotina para que se escreva em vermelho uma string para StdOut;
-Rotina para que se escreva uma string em vermelho para StdOut:
-  Escreva o Esc junto com "[31m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
-
-Rotina para que se escreva em azul uma string para StdOut;
-Rotina para que se escreva uma string em azul para StdOut:
-  Escreva o Esc junto com "[34m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
-
-Rotina para que se escreva em ciano uma string para StdOut;
-Rotina para que se escreva uma string em ciano para StdOut:
-  Escreva o Esc junto com "[36m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
-
-Rotina para que se escreva em amarelo claro uma string para StdOut;
-Rotina para que se escreva uma string em amarelo claro para StdOut:
-  Escreva o Esc junto com "[93m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
-
 Rotina para que se execute o programa:
   Atribua "console" para o tipo da aplicação.
   Inicialize os componentes.

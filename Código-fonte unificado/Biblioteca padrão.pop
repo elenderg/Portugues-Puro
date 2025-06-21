@@ -13270,6 +13270,26 @@ Rotina para que se escreva um byte para StdOut:
     e O endereçamento dum número [lpNumberOfBytesWritten]
     e nil. [lpOverlapped]
 
+Rotina para que se escreva em verde uma string para StdOut;
+Rotina para que se escreva uma string em verde para StdOut:
+  Escreva o Esc junto com "[92m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em vermelho uma string para StdOut;
+Rotina para que se escreva uma string em vermelho para StdOut:
+  Escreva o Esc junto com "[31m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em azul uma string para StdOut;
+Rotina para que se escreva uma string em azul para StdOut:
+  Escreva o Esc junto com "[34m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em ciano uma string para StdOut;
+Rotina para que se escreva uma string em ciano para StdOut:
+  Escreva o Esc junto com "[36m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em amarelo claro uma string para StdOut;
+Rotina para que se escreva uma string em amarelo claro para StdOut:
+  Escreva o Esc junto com "[93m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
 Rotina para que se use a próxima linha do console do NppExec;
 Rotina para que se use a próxima linha do console do Notepad++;
 Rotina para que se use a próxima linha na saída padrão;
