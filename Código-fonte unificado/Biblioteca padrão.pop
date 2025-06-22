@@ -13292,146 +13292,291 @@ Rotina para que se escreva uma string em amarelo claro para StdOut:
 
 Rotina para que se escreva em reset uma string para StdOut;
 Rotina para que se escreva uma string em reset para StdOut:
-  Escreva o Esc junto com "[0m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[0m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva em negrito uma string para StdOut;
 Rotina para que se escreva uma string em negrito para StdOut:
-  Escreva o Esc junto com "[1m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[1m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva com sublinhado uma string para StdOut;
 Rotina para que se escreva uma string com sublinhado para StdOut:
-  Escreva o Esc junto com "[4m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[4m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva com cores invertidas uma string para StdOut;
 Rotina para que se escreva uma string com cores invertidas para StdOut:
-  Escreva o Esc junto com "[7m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[7m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva em preto brilhante uma string para StdOut;
 Rotina para que se escreva uma string em preto brilhante  para StdOut:
-  Escreva o Esc junto com "[30m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[30m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva em vermelho brilhante uma string para StdOut;
 Rotina para que se escreva uma string em vermelho brilhante  para StdOut:
-  Escreva o Esc junto com "[31m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[31m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva em verde brilhante uma string para StdOut;
 Rotina para que se escreva uma string em verde brilhante  para StdOut:
-  Escreva o Esc junto com "[32m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[32m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva em amarelo brilhante uma string para StdOut;
 Rotina para que se escreva uma string em amarelo brilhante  para StdOut:
-  Escreva o Esc junto com "[33m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[33m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva em azul brilhante uma string para StdOut;
 Rotina para que se escreva uma string em azul brilhante  para StdOut:
-  Escreva o Esc junto com "[34m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[34m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva em magenta brilhante uma string para StdOut;
 Rotina para que se escreva uma string em magenta brilhante  para StdOut:
-  Escreva o Esc junto com "[35m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[35m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva em ciano brilhante uma string para StdOut;
 Rotina para que se escreva uma string em ciano brilhante  para StdOut:
-  Escreva o Esc junto com "[36m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[36m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva em branco brilhante uma string para StdOut;
 Rotina para que se escreva uma string em branco brilhante  para StdOut:
-  Escreva o Esc junto com "[37m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[37m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva com fundo preto brilhante uma string para StdOut;
 Rotina para que se escreva uma string com fundo preto brilhante  para StdOut:
-  Escreva o Esc junto com "[40m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[40m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva com fundo vermelho brilhante uma string para StdOut;
 Rotina para que se escreva uma string com fundo vermelho brilhante  para StdOut:
-  Escreva o Esc junto com "[41m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[41m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva com fundo verde brilhante uma string para StdOut;
 Rotina para que se escreva uma string com fundo verde brilhante  para StdOut:
-  Escreva o Esc junto com "[42m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[42m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva com fundo amarelo brilhante uma string para StdOut;
 Rotina para que se escreva uma string com fundo amarelo brilhante  para StdOut:
-  Escreva o Esc junto com "[43m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[43m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva com fundo azul brilhante uma string para StdOut;
 Rotina para que se escreva uma string com fundo azul brilhante  para StdOut:
-  Escreva o Esc junto com "[44m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[44m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva com fundo magenta brilhante uma string para StdOut;
 Rotina para que se escreva uma string com fundo magenta brilhante  para StdOut:
-  Escreva o Esc junto com "[45m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[45m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva com fundo ciano brilhante uma string para StdOut;
 Rotina para que se escreva uma string com fundo ciano brilhante  para StdOut:
-  Escreva o Esc junto com "[46m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[46m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva com fundo branco brilhante uma string para StdOut;
 Rotina para que se escreva uma string com fundo branco brilhante  para StdOut:
-  Escreva o Esc junto com "[47m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[47m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva em preto opaco uma string para StdOut;
 Rotina para que se escreva uma string em preto opaco  para StdOut:
-  Escreva o Esc junto com "[90m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[90m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva em vermelho opaco uma string para StdOut;
 Rotina para que se escreva uma string em vermelho opaco  para StdOut:
-  Escreva o Esc junto com "[91m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[91m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva em verde opaco uma string para StdOut;
 Rotina para que se escreva uma string em verde opaco  para StdOut:
-  Escreva o Esc junto com "[92m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[92m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva em amarelo opaco uma string para StdOut;
 Rotina para que se escreva uma string em amarelo opaco  para StdOut:
-  Escreva o Esc junto com "[93m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[93m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva em azul opaco uma string para StdOut;
 Rotina para que se escreva uma string em azul opaco  para StdOut:
-  Escreva o Esc junto com "[94m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[94m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva em magenta opaco uma string para StdOut;
 Rotina para que se escreva uma string em magenta opaco  para StdOut:
-  Escreva o Esc junto com "[95m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[95m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva em ciano opaco uma string para StdOut;
 Rotina para que se escreva uma string em ciano opaco  para StdOut:
-  Escreva o Esc junto com "[96m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[96m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva em branco opaco uma string para StdOut;
 Rotina para que se escreva uma string em branco opaco  para StdOut:
-  Escreva o Esc junto com "[97m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[97m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva com fundo preto opaco uma string para StdOut;
 Rotina para que se escreva uma string com fundo preto opaco  para StdOut:
-  Escreva o Esc junto com "[100m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[100m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva com fundo vermelho opaco uma string para StdOut;
 Rotina para que se escreva uma string com fundo vermelho opaco  para StdOut:
-  Escreva o Esc junto com "[101m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[101m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva com fundo verde opaco uma string para StdOut;
 Rotina para que se escreva uma string com fundo verde opaco  para StdOut:
-  Escreva o Esc junto com "[102m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[102m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva com fundo amarelo opaco uma string para StdOut;
 Rotina para que se escreva uma string com fundo amarelo opaco  para StdOut:
-  Escreva o Esc junto com "[103m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[103m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva com fundo azul opaco uma string para StdOut;
 Rotina para que se escreva uma string com fundo azul opaco  para StdOut:
-  Escreva o Esc junto com "[104m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[104m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva com fundo magenta opaco uma string para StdOut;
 Rotina para que se escreva uma string com fundo magenta opaco  para StdOut:
-  Escreva o Esc junto com "[105m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[105m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva com fundo ciano opaco uma string para StdOut;
 Rotina para que se escreva uma string com fundo ciano opaco  para StdOut:
-  Escreva o Esc junto com "[106m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+  Escreva o Esc junto com "[106m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
 Rotina para que se escreva com fundo branco opaco uma string para StdOut;
 Rotina para que se escreva uma string com fundo branco opaco  para StdOut:
+  Escreva o Esc junto com "[107m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+
+Rotina para que se escreva em reset uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em reset na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[0m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em negrito uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em negrito na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[1m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com sublinhado uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com sublinhado na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[4m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com cores invertidas uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com cores invertidas na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[7m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em preto brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em preto brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[30m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em vermelho brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em vermelho brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[31m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em verde brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em verde brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[32m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em amarelo brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em amarelo brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[33m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em azul brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em azul brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[34m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em magenta brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em magenta brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[35m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em ciano brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em ciano brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[36m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em branco brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em branco brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[37m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo preto brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo preto brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[40m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo vermelho brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo vermelho brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[41m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo verde brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo verde brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[42m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo amarelo brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo amarelo brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[43m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo azul brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo azul brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[44m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo magenta brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo magenta brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[45m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo ciano brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo ciano brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[46m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo branco brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo branco brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[47m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em preto opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em preto opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[90m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em vermelho opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em vermelho opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[91m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em verde opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em verde opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[92m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em amarelo opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em amarelo opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[93m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em azul opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em azul opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[94m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em magenta opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em magenta opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[95m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em ciano opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em ciano opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[96m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em branco opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em branco opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[97m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo preto opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo preto opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[100m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo vermelho opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo vermelho opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[101m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo verde opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo verde opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[102m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo amarelo opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo amarelo opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[103m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo azul opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo azul opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[104m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo magenta opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo magenta opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[105m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo ciano opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo ciano opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[106m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo branco opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo branco opaco  na nova linha de texto para StdOut:
   Escreva o Esc junto com "[107m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
 
 Rotina para que se use a próxima linha do console do NppExec;
