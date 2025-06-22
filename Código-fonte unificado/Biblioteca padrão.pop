@@ -13434,7 +13434,6 @@ Rotina para que se escreva com fundo branco opaco uma string para StdOut;
 Rotina para que se escreva uma string com fundo branco opaco  para StdOut:
   Escreva o Esc junto com "[107m" junto com a string junto com o Esc junto com "[0m" para StdOut.
 
-
 Rotina para que se escreva em reset uma string na nova linha de texto para StdOut;
 Rotina para que se escreva uma string em reset na nova linha de texto para StdOut:
   Escreva o Esc junto com "[0m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
