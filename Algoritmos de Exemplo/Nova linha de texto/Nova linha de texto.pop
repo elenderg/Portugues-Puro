@@ -1,0 +1,18 @@
+Uma nova linha de texto é uma string.
+A nova linha de texto  é uma nova linha de texto igual a $0D0A.
+
+Rotina para que se execute o programa:
+  Defina "console" como o tipo da aplicação.
+  Escreva "Linha de texto" para StdOut.
+  Atribua "Nova linha de texto" para uma string.
+  Escreva a string na nova linha de texto.
+  Feche o programa.
+
+Rotina para que se escreva uma string em uma nova linha de texto:
+  Escreva a nova linha de texto junto com a string para StdOut.
+
+Rotina para que se insira uma nova linha de texto;
+Rotina para que se adicione uma nova linha de texto;
+Rotina para que se acrescente uma nova linha de texto;
+Rotina para que se escreva uma nova linha de texto:
+  Escreva "" junto com a nova linha de texto para StdOut.
