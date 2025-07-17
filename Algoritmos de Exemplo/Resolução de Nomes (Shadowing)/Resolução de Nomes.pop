@@ -1,0 +1,12 @@
+O nome é uma string igual a "Global".
+
+Rotina para que se execute o programa:
+  Defina "console" como o tipo da aplicação.
+  Atribua "Local" para uma string denominada nome.
+  \Se uma variável local possuir o mesmo nome de uma variável global, 
+  \A versão local irá "ofuscar" (shadow) a global dentro do escopo da rotina.
+  \Se o programador quiser evitar isso, deve usar nomes distintos 
+  \ou evitar declarar variáveis locais com nomes iguais aos globais.
+  Escreva o nome para Stdout.\ Imprime "Local", não "Global"
+  Feche o programa.
+
