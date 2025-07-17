@@ -1418,8 +1418,8 @@ Um endereço numérico é um ponteiro [que aponta] para um número.
 Uma cifra binária é um byte. \ somente são válidos os 4 bits de ordem inferior. \ é um "low order nibble" ou uma sucessão de bytes de ordem inferior
 \ Exemplo: No byte 0101 1010 somente a parte "1010" é válida.
 
-Um cifra hexadecimal é uma string. \ Exemplo: $0010A0... O cifrão serve para indicar ao compilador que se trata de um valor hexadecimal.
- \Em outras linguagens costuma-se usar um # (como no css #a1b2e3; ou um 0x, por exemplo 0xA1B2FF...
+Um cifra hexadecimal é uma string. \ Exemplo: $0010A0… O cifrão serve para indicar ao compilador que se trata de um valor hexadecimal.
+ \Em outras linguagens costuma-se usar um # (como no css #a1b2e3; ou um 0x, por exemplo 0xA1B2FF…
 
 Uma máscara de disjunção exclusiva é uma mask.
 
@@ -1499,7 +1499,7 @@ O temp endereço completo é um endereço completo.
 
 O terminal é um terminal.
 
-O caixa de texto cutoff é um número igual a 500.
+O delimitação de corte textual é um número igual a 500.
 
 A zero linha reta é uma linha reta. \ tracer
 
@@ -8056,7 +8056,7 @@ Rotina para que se obtenha um número de coluna usando uma linha de texto e uma l
     Retorne.
   \ only happens sobre última linha de texto da caixa de texto
   Crie o número da fonte desse contexto de dispositivo de memória usando a fonte desta caixa de texto.
-  Obtenha um comece largura e um subtexto usando a linha de texto e a localização e a caixa de texto (for "get um número de coluna usando uma linha de texto...").
+  Obtenha uma largura inicial e um subtexto usando a linha de texto e a localização e a caixa de texto (para obter um número de coluna usando uma linha de texto").
   Itere.
     Se o caractere final deste subtexto é o caractere final desta string desta linha de texto, pare.
     Obtenha uma largura usando o subtexto e o contexto de dispositivo de memória.
@@ -8577,23 +8577,23 @@ Rotina para que se obtenha uma localização usando um posicionamento e uma caixa 
   Obtenha um deslocamento de coordenadas usando o working string desta linha de texto e a caixa e a fonte desta caixa de texto e o alinhamento desta caixa de texto.
   Adicione o número X deste deslocamento de coordenadas para a coordenada X desta localização.
 
-Rotina para que se obtenha um comece largura e um subtexto usando uma linha de texto e uma localização e uma caixa de texto (for "get um número de coluna usando uma linha de texto..."):
-  Limpe o comece largura.
+Rotina para que se obtenha uma largura inicial e um subtexto usando uma linha de texto e uma localização e uma caixa de texto (para obter um número de coluna usando uma linha de texto"):
+  Limpe a largura inicial.
   Limpe o subtexto.
   Se a caixa de texto for inexistente, retorne.
   Se a linha de texto for inexistente, retorne.
   Obtenha uma caixa usando a linha de texto e a caixa de texto.
   Lance o subtexto sobre o working string desta linha de texto.
   Obtenha um deslocamento de coordenadas usando o subtexto e a caixa e a fonte desta caixa de texto e o alinhamento desta caixa de texto (rapidamente).
-  Atribua a coordenada X desta globalized origem desta caixa de texto mais o número X deste deslocamento de coordenadas ao comece largura. \ calculated field
-  Atribua o caractere inicial deste subtexto mais a caixa de texto cutoff menos 1 ao caractere final deste subtexto.
+  Atribua a coordenada X desta globalized origem desta caixa de texto mais o número X deste deslocamento de coordenadas à largura inicial. \ calculated field
+  Atribua o caractere inicial deste subtexto mais a delimitação de corte textual menos 1 ao caractere final deste subtexto.
   Itere.
     Se o caractere final deste subtexto for maior do que ou igual ao caractere final desta string desta linha de texto, pare.
     Obtenha uma largura usando o subtexto e o contexto de dispositivo de memória.
-    Atribua o comece largura mais a largura para uma segunda largura.
+    Atribua a largura inicial mais a largura para uma segunda largura.
     Se a coordenada X desta localização for menor do que ou igual à segunda largura, pare.
-    Adicione a largura para o comece largura.
-    Mova o subtexto usando a caixa de texto cutoff.
+    Adicione a largura para a largura inicial.
+    Mova o subtexto usando a delimitação de corte textual.
   Reitere.
   Atribua o caractere inicial deste subtexto ao caractere final deste subtexto.
 
@@ -13271,6 +13271,7 @@ Rotina para que se escreva um byte para StdOut:
     e nil. [lpOverlapped]
 
 Rotina para que se escreva em verde uma string para StdOut;
+Rotina para que se escreva uma string para StdOut em verde;
 Rotina para que se escreva uma string em verde para StdOut:
   Escreva o Esc junto com "[92m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
 
@@ -18826,7 +18827,7 @@ Rotina para que se pinte uma string sob uma localização com uma cor e uma fonte:
   Crie o número da fonte desse contexto do dispositivo atual usando a fonte.
   Ajuste espaçamento  da fonte usando a string.
   Atribua o caractere inicial desta string ao caractere inicial dum subtexto.
-  Atribua o caractere inicial deste subtexto mais a caixa de texto cutoff menos 1 ao caractere final deste subtexto.
+  Atribua o caractere inicial deste subtexto mais a delimitação de corte textual menos 1 ao caractere final deste subtexto.
   Preserve a localização.
   Itere.
     Se o subtexto estiver em branco, pare.
@@ -18841,7 +18842,7 @@ Rotina para que se pinte uma string sob uma localização com uma cor e uma fonte:
       e A quantidade de caracteres deste subtexto. [c]
     Obtenha uma largura usando o subtexto e o contexto do dispositivo atual.
     Adicione a largura para a coordenada X desta localização.
-    Mova o subtexto usando a caixa de texto cutoff.
+    Mova o subtexto usando a delimitação de corte textual.
   Reitere.
   Destrua o número da fonte desse contexto do dispositivo atual.
 

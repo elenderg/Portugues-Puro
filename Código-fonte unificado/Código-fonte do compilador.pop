@@ -417,7 +417,7 @@ A Região de Código é um zona.
 As variáveis globais predefinidas são umas variáveis globais.
 
 \ firstparam=esp+4/ebp+8,
-\secondparam=esp+8/ebp+12, etc...
+\secondparam=esp+8/ebp+12, etc…
 
 \ Strings são implementadas como uma struct que contém 2 membros, a saber:
 \ O endereço do byte inicial e o endereço do byte final.
@@ -483,7 +483,7 @@ Rotina para que se faça tudo:
   Se a string não estiver no sistema de arquivos, 
     Escreva em vermelho "Código de Erro #002. O diretório '" junto com a string seguido de "' não foi encontrado." junto com o texto CRLF para StdOut;
     Retorne.
-  Escreva em verde "Compilando o diretório '" junto com a string seguido de "' ..." para StdOut. \ #0
+  Escreva em verde "Compilando o diretório '" junto com a string seguido de "' …" para StdOut. \ #0
   Escreva o texto CRLF para StdOut.
   Compile a string.
   Se existir algum problema de compilação, 
@@ -607,7 +607,7 @@ Rotina para que se defina uma variável global usando uma string:
 
 Rotina para que se compile um endereço da pasta usando um nível de profundidade (arquivos de código fonte): \#002
   Se existir algum problema de compilação, retorne.
-  Escreva em ciano "Carregando arquivos..." para StdOut.
+  Escreva em ciano "Carregando arquivos…" para StdOut.
   Comece o temporizador de operacionalização.
   Carregue os arquivos fontes usando o nível de profundidade.
   Suspenda o temporizador de operacionalização.
@@ -713,7 +713,7 @@ Rotina para que se execute um evento:
 
 
 Rotina para que se compile um endereço da pasta (inicialização): \#001
-  Escreva em ciano "Iniciando..." para StdOut.
+  Escreva em ciano "Iniciando…" para StdOut.
   Finalize o compilador.
   Comece o temporizador deste compilador.
   Inicialize o compilador usando o endereço da pasta.
@@ -765,7 +765,7 @@ Rotina para que se crie um tipo:
 
 Rotina para que se compile um endereço da pasta (arquivos de código fonte): \#002
   Se existir algum problema de compilação, retorne.
-  Escreva em ciano "Carregando arquivos..." para StdOut.
+  Escreva em ciano "Carregando arquivos…" para StdOut.
   Comece o temporizador de operacionalização.
   Carregue os arquivos fontes.
   Suspenda o temporizador de operacionalização.
@@ -1127,11 +1127,11 @@ Função para que se determine se uma string é algum operador de concatenação cont
   Diga não.
 
 Função para que se determine se uma string é algum operador de concatenação:
-  Se a string for "junto", diga sim. \ junto de ".., junto com o ...
-  Se a string for "juntamente", diga sim. \ juntamente com o...
-  Se a string for "seguido", diga sim. \ seguido de "....
-  Se a string for "seguida", diga sim. \ seguido de "....
-  Se a string for "acompanhado", diga sim. \ acompanhado de "...
+  Se a string for "junto", diga sim. \ junto de ".., junto com o …
+  Se a string for "juntamente", diga sim. \ juntamente com o…
+  Se a string for "seguido", diga sim. \ seguido de "….
+  Se a string for "seguida", diga sim. \ seguido de "….
+  Se a string for "acompanhado", diga sim. \ acompanhado de "…
   \Se a string for "em", diga sim.
   \Se a string for "&", diga sim.
   Diga não.
@@ -1149,7 +1149,7 @@ Função para que se determine se uma string é alguma contração de preposição com 
 
  Rotina para que se compile um endereço da pasta (análise dos arquivos fornecidos): \#003
   Se existir algum problema de compilação, retorne.
-  Escreva em ciano "Analisando código fonte dos arquivos..." para StdOut.
+  Escreva em ciano "Analisando código fonte dos arquivos…" para StdOut.
   Comece o temporizador de análise/verificação.
   Examine os arquivos fontes.
   Suspenda o temporizador de análise/verificação.
@@ -1261,7 +1261,6 @@ Rotina para que se apresente uma mensagem de erro contendo uma string e um ender
     junto com " Não foi possível compilar o arquivo '" 
     junto com o nome do arquivo seguido de "'. " 
     junto com o texto CRLF para a mensagem de erro deste compilador.
-  \Faça xyz.
 
 Rotina para que se encontre um endereço completo e um número da linha usando um endereço de byte:
   Limpe o endereço completo.
@@ -2177,7 +2176,7 @@ Rotina para que se pluralize uma string (terminada com "is" ou com "us"):
   Se a string termina com "ais",
     Remova os dois últimos caracteres desde a string;
     Acrescente "íses" para a string;
-    Retorne. \cais não varia....
+    Retorne. \cais não varia….
   Se a string termina com "aus",
     Remova os dois últimos caracteres desde a string;
     Acrescente "úses" para a string;
@@ -2796,7 +2795,7 @@ Função para que se determine se uma string termina com algum vogal e uma segunda
 
 Rotina para que se compile um endereço da pasta (identificação dos tipos das variáveis): \ #004
   Se existir algum problema de compilação, retorne.
-  Escreva em ciano "Identificando os tipos das variáveis..." para StdOut.
+  Escreva em ciano "Identificando os tipos das variáveis…" para StdOut.
   Comece o temporizador de resolução de tipos.
   Destrinche os tipos (expansão de listas).
   Destrinche os tipos (registro de plurais).
@@ -3289,7 +3288,7 @@ Rotina para que se destrinche um tipo (dados opcionais - tipos fracionários):
 
 Rotina para que se compile um endereço da pasta (identificação de variáveis globais): \ #005
   Se existir algum problema de compilação, retorne.
-  Escreva em ciano "Identificando variáveis globais..." para StdOut.
+  Escreva em ciano "Identificando variáveis globais…" para StdOut.
   Comece o temporizador de resolução de variáveis globais.
   Destrinche as variáveis globais.
   Suspenda o temporizador de resolução de variáveis globais.
@@ -3547,7 +3546,7 @@ Rotina para que se compile um valor literal usando um percorredor (números ordin
 
 Rotina para que se compile um endereço da pasta (cabeçalhos de rotinas): \ #006
   Se existir algum problema de compilação, retorne.
-  Escreva em ciano "Agrupando os nomes das rotinas..." para StdOut.
+  Escreva em ciano "Agrupando os nomes das rotinas…" para StdOut.
   Comece o temporizador de compilação de cabeçalhos de rotina.
   Compile os cabeçalhos apropriados para as rotinas.
   Suspenda o temporizador de compilação de cabeçalhos de rotina.
@@ -4090,7 +4089,7 @@ Rotina para que se compile o cabeçalho próprio para uma rotina usando um percorr
 
 Rotina para que se compile um endereço da pasta (cálculo de tamanhos e deslocamentos): \ #007
   Se existir algum problema de compilação, retorne.
-  Escreva em ciano "Calculando tamanhos de variáveis e deslocamentos de memória..." para StdOut.
+  Escreva em ciano "Calculando tamanhos de variáveis e deslocamentos de memória…" para StdOut.
   Comece o temporizador de etapas de cálculo.
   Calcule os comprimentos referentes aos tipos.
   Calcule os deslocamentos nos tipos.
@@ -4184,7 +4183,7 @@ Rotina para que se encontre uma variável usando um nome e umas variáveis:
 
 Rotina para que se compile um endereço da pasta (adição de rotinas de memória incorporadas): \ #008
   Se existir algum problema de compilação, retorne.
-  Escreva em ciano "Adicionando tarefas predefinidas na memória..." para StdOut.
+  Escreva em ciano "Adicionando tarefas predefinidas na memória…" para StdOut.
   Comece o temporizador de adição de rotinas pré-definidas de mémoria .
   Adicione as rotinas de alocação e desalocação e finalização e destruição.
   Suspenda o temporizador de adição de rotinas pré-definidas de mémoria.
@@ -4414,7 +4413,7 @@ Rotina para que se adicione a rotina de destruição para um tipo (ponteiros):
 
 Rotina para que se compile um endereço da pasta (catalogue as rotinas por utilização): \ #009
   Se existir algum problema de compilação, retorne.
-  Escreva em ciano "Catalogando tarefas..." para StdOut.
+  Escreva em ciano "Catalogando tarefas…" para StdOut.
   Comece o temporizador de ferramentas de catalogação.
   Catalogue as rotinas por utilização.
   Scrub o catálogo de rotinas úteis. \ higienizar? purificar? sanear?
@@ -4564,7 +4563,7 @@ Rotina para que se scrub umas referências:
 
 Rotina para que se compile um endereço da pasta (conteúdo das rotinas): \ #010
   Se existir algum problema de compilação, retorne.
-  Escreva em ciano "Agrupando o conteúdo das rotinas..." para StdOut.
+  Escreva em ciano "Agrupando o conteúdo das rotinas…" para StdOut.
   Comece o temporizador de compilação do conteúdo das rotinas.
   Compile os corpos referentes às rotinas.
   Suspenda o temporizador de compilação do conteúdo das rotinas.
@@ -6528,7 +6527,7 @@ Rotina para que se compile o corpo relacionado com uma rotina usando um percorre
 
 Rotina para que se compile um endereço da pasta (adição e compilação da rotina de inicialização): \ #011
   Se existir algum problema de compilação, retorne.
-  Escreva em ciano "Adicionando e agrupando as tarefas padrão de inicialização.." para StdOut.
+  Escreva em ciano "Adicionando e agrupando as tarefas padrão de inicialização…" para StdOut.
   Comece o temporizador de adição de rotinas pré-definidas de inicialização.
   Adicione e compile as rotinas de inicialização pré-execução e finalização pós-execução.
   Suspenda o temporizador de adição de rotinas pré-definidas de inicialização.
@@ -6571,7 +6570,7 @@ Rotina para que se acrescente os finalizadores de variáveis globais para uma str
 
 Rotina para que se compile um endereço da pasta (deslocamento de parâmetros e variáveis): \ #012
   Se existir algum problema de compilação, retorne.
-  Escreva em ciano "Deslocando parâmetros e variáveis..." para StdOut.
+  Escreva em ciano "Deslocando parâmetros e variáveis…" para StdOut.
   Comece o temporizador de deslocamentos.
   Alinhe os parâmetros na rotinas.
   Alinhe as variáveis locais na rotinas.
@@ -6634,7 +6633,7 @@ Rotina para que se alinhe as variáveis locais em uma rotina:
 
 Rotina para que se compile um endereço da pasta (endereço): \ #013
   Se existir algum problema de compilação, retorne.
-  Escreva em ciano "Obtendo endereço dos itens..." para StdOut.
+  Escreva em ciano "Obtendo endereço dos itens…" para StdOut.
   Comece o temporizador de endereçamento.
   Atribua 4096 para um endereço.
   Atribua o endereço ao endereço base desta Seção de DLLs.
@@ -6886,7 +6885,7 @@ Rotina para que se enderece um fragmento usando um endereço (registrador EAX):
 
 Rotina para que se compile um endereço da pasta (transmutação): \ #014
   Se existir algum problema de compilação, retorne.
-  Escreva em ciano "Convertendo código em instruções de máquina..." para StdOut.
+  Escreva em ciano "Convertendo código em instruções de máquina…" para StdOut.
   Comece o temporizador de transmutação.
   Transforme as rotinas em código hexadecimal.
   Suspenda o temporizador de transmutação.
@@ -7219,7 +7218,7 @@ Rotina para que se transforme um fragmento em código hexadecimal (empilhamento d
     Retorne. 
     \ movzxb edx, BYTE PTR [edx]; 
     \ push edx
-  \Se a quantidade de caracteres for outra, então...
+  \Se a quantidade de caracteres for outra, então…
     Apresente a mensagem de erro contendo 
     "Código de Erro #189. Tamanho do fragmento inválido" junto com o texto CRLF. \ Erro interno
 
@@ -7561,7 +7560,7 @@ Rotina para que se disponibilize um fragmento para um trecho:
 
 Rotina para que se compile um endereço da pasta (etapa final): \ #016
   Se existir algum problema de compilação, retorne.
-  Escreva em ciano "Gerando arquivo executável..." para StdOut.
+  Escreva em ciano "Gerando arquivo executável…" para StdOut.
   Comece o temporizador de escrita.
   Escreva o trecho EXE deste compilador para o endereço EXE completo deste compilador.
   \Se o erro do fluxo de entrada/saída não estiver em branco, 
