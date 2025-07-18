@@ -6838,8 +6838,8 @@ Rotina para que se pinte um figura geométrica com uns lados e uns twips usando u
   Atribua a cor à cor deste contexto.
   Pinte a figura geométrica com o lados e os twips.
 
-Rotina para que se pinte um half círculo aproximadamente uns twips em largura;
-Rotina para que se pinte um half círculo usando um tamanho:
+Rotina para que se pinte um semicírculo aproximadamente uns twips em largura;
+Rotina para que se pinte um semicírculo usando um tamanho:
   Atribua o tamanho vezes o número pi dividido por 48 para uma quantidade de caracteres do segmento.
   Adicione 1 para a quantidade de caracteres do segmento.
   Itere.
@@ -6849,8 +6849,8 @@ Rotina para que se pinte um half círculo usando um tamanho:
     Se a contagem for 24, retorne.
   Reitere.
 
-Rotina para que se pinte um half círculo usando um tamanho (regressivamente);
-Rotina para que se pinte um half círculo usando um tamanho (counterclockwise):
+Rotina para que se pinte um semicírculo usando um tamanho (regressivamente);
+Rotina para que se pinte um semicírculo usando um tamanho (counterclockwise):
   Atribua o tamanho vezes o número pi dividido por 48 para uma quantidade de caracteres do segmento.
   Adicione 1 para a quantidade de caracteres do segmento.
   Itere.
@@ -7079,12 +7079,14 @@ Rotina para que se pinte a caixa de seleção por uma linha de texto em uma caixa 
   Obtenha uma caixa de seleção usando a linha de texto e a caixa de texto.
   Pinte a caixa de seleção com o cor hilite e o cor hilite.
 
+Um semicírculo é uma figura geométrica.
+
 Rotina para que se pinte uma espiral regressivamente usando uns twips;
 Rotina para que se pinte uma espiral regressivamente começando com uns twips;
 Rotina para que se pinte uma espiral usando um tamanho (regressivamente):
   Preserve o tamanho.
   Itere.
-    Pinte um half círculo usando o tamanho (regressivamente).
+    Pinte um semicírculo usando o tamanho (regressivamente).
     Divida o tamanho por 2.
     Adicione 1 para uma contagem.
     Se a contagem for 5, pare.
@@ -7094,7 +7096,7 @@ Rotina para que se pinte um espiral começando com uns twips;
 Rotina para que se pinte um espiral usando um tamanho:
   Preserve o tamanho.
   Itere.
-    Pinte um half círculo usando o tamanho.
+    Pinte um semicírculo usando o tamanho.
     Divida o tamanho por 2.
     Adicione 1 para uma contagem.
     Se a contagem for 5, pare.
