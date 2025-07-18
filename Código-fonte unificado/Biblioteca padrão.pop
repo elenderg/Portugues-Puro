@@ -3907,15 +3907,15 @@ Rotina para que se converta uma fração para uma string usando um número:
   Eleve o valor numérico para o número.
   Preserve a fração.
   Se a fração for negativa,
-    Ative um sinalizador;
+    Ative um sinalizador denominado sinal negativo;
     Remova o sinal desde a fração.
   Multiplique o valor numérico pela fração.
   Zero preencha o valor numérico usando o número e acrescente o mesmo para a string.
   Atribua a quantidade de caracteres desta string menos o número mais 1 para um byte#.
-  Insira "," para a string antes desse byte#. \ TODO: verificar se é necessário trocar para vírgula
+  Insira "," para a string antes desse byte#.
   Se o conteúdo deste caractere inicial desta string for o ponto final, 
     Anteponha "0" para a string.
-  Se o sinalizador estiver ativo,
+  Se o sinal negativo estiver ativo,
     Anteponha "-" para a string.
 
 Rotina para que se converta um texto hexadecimal para uma fração:

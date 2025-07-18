@@ -1349,7 +1349,7 @@ Rotina para que se examine um tipo usando um percorredor:
   Se o artigo indefinido estiver ativo,
     Pluralize o nome plural deste tipo;
     Adicione 1 à contagem.
-  Se a contagem for igual ou maior do que 2,
+  Se a contagem for igual ou maior do que 2, \ OBSOLETO. TODO: REMOVER VERIFICAÇÃO.
     Apresente uma mensagem de erro contendo 
       "Código de Erro #011. não foi possível detectar o idioma desta variável" junto com o texto CRLF e o endereço local deste tipo;
     Retorne.
@@ -1367,7 +1367,7 @@ Rotina para que se examine um tipo usando um percorredor:
     Retorne.
   Se o segmento inicial deste percorredor não for algum artigo indefinido,
     Apresente a mensagem de erro contendo 
-      "Código de Erro #013. Esperado 'um/uma'. Encontrado '" 
+      "Código de Erro #013. Esperado encontrar 'um/uma'. Encontrado '" 
       junto com o segmento inicial deste percorredor seguido de "'." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
@@ -3429,8 +3429,9 @@ Função para que se determine se um percorredor está acompanhado por alguma unida
   Se o percorredor não estiver sobre algum indicador de início de variável, diga não.
   Examine um nome usando o percorredor.
   Encontre um tipo usando o nome e o catálogo de tipos.
-  Se o tipo for inexistente, diga não.
-  Se o nome não for algum operador de multiplicação, diga sim. \ TODO: substituir por "operador aritmético"
+  Se o tipo for inexistente, diga não. 
+  \Se o nome for "vezes", diga talvez. 
+  Se o nome não for algum operador de multiplicação, diga sim. \ para lidar com o vezes
   Se o segmento inicial deste percorredor for o início de alguma expressão matemática, diga não.
   Diga sim.
 
