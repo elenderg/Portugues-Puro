@@ -1575,6 +1575,7 @@ Função para que se determine se uma string é algum operador aritmético:
   Se a string for "mais", diga sim.
   Se a string for "menos", diga sim.
   Se a string for "vezes", diga sim.
+  Se a string for "multiplicado", diga sim.
   Se a string for "dividido", diga sim.
   \Se a string for "depois", diga sim.
   Se a string for "seguido", diga sim.
@@ -3437,6 +3438,7 @@ Função para que se determine se um percorredor está acompanhado por alguma unida
 
 Função para que se determine se uma string é algum operador de multiplicação:
   Se a string for "vezes", diga sim.
+  Se a string for "multiplicado", diga sim.
   Diga não.
 
 Função para que se determine se uma string é o início de alguma expressão matemática:
@@ -5802,8 +5804,15 @@ Rotina para que se converta um termo por concatenação usando um percorredor:
   Atribua a variável intermediária à variável deste termo.
   Limpe a frase deste termo.
 
+Função para que se determine se uma string é algum objeto indireto e um sinalizador está ativo:
+  Se a string não for "por", diga não.
+  Se o sinalizador não estiver ativo, diga não.
+  Diga sim.
+
 Rotina para que se compile uma expressão matemática usando um percorredor (operador de multiplicação):
   Se existir algum problema de compilação, retorne.
+  Se o segmento inicial deste percorredor for "multiplicado",
+    Mova o percorredor (usando diretrizes de compilação).
   Se a variável desta expressão matemática for inexistente,
     Apresente uma mensagem de erro contendo 
         "Código de Erro #129. Não é póssível multiplicar por '"

@@ -9749,7 +9749,7 @@ Rotina para que se inicialize a tela:
   Retornando a altura do pixel desta tela.
   Atribua 96 ao ppi.
   Atribua o tpi dividido pelo ppi à quantidade de twips/pixel .
-  Atribua a largura do pixel desta tela vezes a quantidade de twips/pixel para uma largura.
+  Atribua a largura do pixel desta tela multiplicado por a quantidade de twips/pixel para uma largura.
   Atribua a altura do pixel desta tela vezes a quantidade de twips/pixel para uma altura.
   Atribua 0 [coordenda X1] e 0 [coordenda Y1] e a largura e a altura à caixa desta tela.
   Subtraia a quantidade de twips/pixel desde o canto inferior direito desta tela.
