@@ -6864,7 +6864,8 @@ Rotina para que se pinte um hexágono usando uma lado quantidade de caracteres:
   [Comece.]
     Pinte a lado quantidade de caracteres.
     Vire para 1/6.
-    Adicione 1 para uma contagem. Se a contagem for 6, pare.
+    Adicione 1 para uma contagem. 
+    Se a contagem for 6, pare.
   Reitere.
 
 Rotina para que se pinte uma linha reta:
@@ -6875,10 +6876,12 @@ Rotina para que se pinte uma linha reta aproximadamente uns twips em comprimento
   Escolha aleatoriamente uns terceiro twips entre os twips menos os outros twips e os twips mais os outros twips.
   Pinte a linha reta o terceiro twips em comprimento.
 
+Rotina para que se pinte uma linha reta usando a altura de uma caixa com uma cor;
 Rotina para que se pinte uma linha reta tão alta quanto uma caixa com uma cor:
   Atribua a cor à cor deste contexto.
   Pinte a altura desta caixa.
 
+Rotina para que se pinte uma linha reta usando a largura de uma caixa com uma cor;
 Rotina para que se pinte uma linha reta tão comprida quanto uma caixa com uma cor:
   Atribua a cor à cor deste contexto.
   Pinte a largura desta caixa.
