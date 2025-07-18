@@ -215,7 +215,8 @@ Uma referência é uma lista com
 Um GpImageAttributes é um ponteiro. \ Referência: -> https://doxygen.reactos.org/d7/d6a/structGpImageAttributes.html
 
 Um evento é uma lista com
-  Uma categoria, [atualização de tela, exibir cursor, pressionamento de tecla, clique, clique duplo, clique direito, clique direito duplo, deactivate, activate, done]
+  Uma categoria, 
+  [atualização de tela, exibir cursor, pressionamento de tecla, clique (normal, duplo, direito, direito duplo, deactivate, activate, done]
   Um sinalizador de tecla Shift,
   Um sinalizador de tecla Ctrl,
   Um sinalizador de tecla Alt,
@@ -241,7 +242,7 @@ Um contexto é uma lista com
   Uma grossura da canetinha. \ check
 
 Um byte# é um número.
-Um canvas é um hDC. \ hDC = handle to a device context
+Um canvas é um hDC. \ hDC = handle to device context
 Um recipiente# é um número.
 Um bit é uma unidade.
 
@@ -7062,14 +7063,14 @@ Rotina para que se pinte uma linha de texto em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Se a linha de texto for inexistente, retorne.
   Obtenha uma caixa usando a linha de texto e a caixa de texto.
-  Pinte o working string desta linha de texto na caixa com a cor da canetinha desta caixa de texto e a fonte desta caixa de texto e o alinhamento desta caixa de texto.
+  Pinte a working string desta linha de texto na caixa com a cor da canetinha desta caixa de texto e a fonte desta caixa de texto e o alinhamento desta caixa de texto.
 
 Rotina para que se pinte uma linha de texto em uma caixa de texto (edição):
   Se a caixa de texto for inexistente, retorne.
   Se a linha de texto for inexistente, retorne.
   Pinte a caixa de seleção pela linha de texto na caixa de texto.
   Obtenha uma caixa usando a linha de texto e a caixa de texto.
-  Pinte o working string desta linha de texto na caixa com a cor da canetinha desta caixa de texto e a fonte desta caixa de texto e o alinhamento desta caixa de texto.
+  Pinte a working string desta linha de texto na caixa com a cor da canetinha desta caixa de texto e a fonte desta caixa de texto e o alinhamento desta caixa de texto.
 
 Rotina para que se pinte a caixa de seleção por uma linha de texto em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
@@ -8574,7 +8575,7 @@ Rotina para que se obtenha uma localização usando um posicionamento e uma caixa 
   Atribua o caractere inicial deste subtexto mais o número de coluna deste posicionamento menos 2 ao caractere final deste subtexto.
   Obtenha uma largura usando o subtexto e o contexto de dispositivo de memória e a fonte desta caixa de texto.
   Atribua a coordenada X1 desta caixa mais a largura à coordenada X desta localização.
-  Obtenha um deslocamento de coordenadas usando o working string desta linha de texto e a caixa e a fonte desta caixa de texto e o alinhamento desta caixa de texto.
+  Obtenha um deslocamento de coordenadas usando a working string desta linha de texto e a caixa e a fonte desta caixa de texto e o alinhamento desta caixa de texto.
   Adicione o número X deste deslocamento de coordenadas para a coordenada X desta localização.
 
 Rotina para que se obtenha uma largura inicial e um subtexto usando uma linha de texto e uma localização e uma caixa de texto (para obter um número de coluna usando uma linha de texto"):
@@ -8583,7 +8584,7 @@ Rotina para que se obtenha uma largura inicial e um subtexto usando uma linha de
   Se a caixa de texto for inexistente, retorne.
   Se a linha de texto for inexistente, retorne.
   Obtenha uma caixa usando a linha de texto e a caixa de texto.
-  Lance o subtexto sobre o working string desta linha de texto.
+  Lance o subtexto sobre a working string desta linha de texto.
   Obtenha um deslocamento de coordenadas usando o subtexto e a caixa e a fonte desta caixa de texto e o alinhamento desta caixa de texto (rapidamente).
   Atribua a coordenada X desta globalized origem desta caixa de texto mais o número X deste deslocamento de coordenadas à largura inicial. \ calculated field
   Atribua o caractere inicial deste subtexto mais a delimitação de corte textual menos 1 ao caractere final deste subtexto.
@@ -10836,7 +10837,7 @@ Rotina para que se centralize uma imagem sobre uma localização:
   Arredonde o valor da diferença usando o múltiplo imediato dessa quantidade de twips/pixel .
   Mova a imagem usando o valor da diferença.
 
-Rotina para que se atribua o working string duma linha de texto para um subtexto:
+Rotina para que se atribua a working string duma linha de texto para um subtexto:
   Se a linha de texto for inexistente,
     Limpe o subtexto;
     Retorne.
