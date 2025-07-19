@@ -174,7 +174,7 @@ Um número de linha é um número.
 
 Uma seleção é uma estrutura com
   Um número de coluna denominada âncora de coluna,
-  Uma número de linha denominada âncora de linha,
+  Um número de linha denominada âncora de linha,
   Uma âncora sob a âncora de coluna,
   Um número de coluna denominado cursor da coluna,
   Um número de linha denominado número de linhas do cursor,
@@ -531,6 +531,7 @@ Uma caixa arredondada é uma caixa com
   Um raio.
 
 Um número da linha é um número.
+Um número da coluna é um número.
 
 Um região da tela é um par de números com
   Uma coordenada X e
@@ -626,7 +627,7 @@ Um ponto osmosiano é um número. \cujos valores vão desde 1 até 3840;  servem par
   \ Perfazendo um total de 3840 pontos
 
 Um posicionamento é um par de números com
-  Uma número de coluna e
+  Um número de coluna e \\Sugestão: "um número da coluna"
   Um número da linha.
 
 Um hexágono é uma figura geométrica.
@@ -1419,7 +1420,7 @@ Um endereço numérico é um ponteiro [que aponta] para um número.
 Uma cifra binária é um byte. \ somente são válidos os 4 bits de ordem inferior. \ é um "low order nibble" ou uma sucessão de bytes de ordem inferior
 \ Exemplo: No byte 0101 1010 somente a parte "1010" é válida.
 
-Um cifra hexadecimal é uma string. \ Exemplo: $0010A0… O cifrão serve para indicar ao compilador que se trata de um valor hexadecimal.
+Uma cifra hexadecimal é uma string. \ Exemplo: $0010A0… O cifrão serve para indicar ao compilador que se trata de um valor hexadecimal.
  \Em outras linguagens costuma-se usar um # (como no css #a1b2e3; ou um 0x, por exemplo 0xA1B2FF…
 
 Uma máscara de disjunção exclusiva é uma mask.
@@ -4305,7 +4306,7 @@ Rotina para que se copie um gpBitmap Para um segundo gpBitmap: \verificar
 
 Rotina para que se copie as propriedades de uma caixa de texto para um segunda caixa de texto:
   Se a caixa de texto for inexistente, retorne.
-  Se o segunda caixa de texto for inexistente, retorne.
+  Se a segunda caixa de texto for inexistente, retorne.
   Atribua a caixa desta caixa de texto à caixa desta segunda caixa de texto.
   Atribua a origem desta caixa de texto à origem desta segunda caixa de texto.
   Atribua a cor da canetinha desta caixa de texto à cor da canetinha desta segunda caixa de texto.
@@ -4346,8 +4347,8 @@ Rotina para que se copie uma linha de texto Para uma segunda linha de texto:
   Se a linha de texto for inexistente,
     Esvazie a segunda linha de texto;
     Retorne.
-  Aloque memória para o segunda linha de texto.
-  Atribua a número da linha desta linha de texto ao número da linha desta segunda linha de texto.
+  Aloque memória para a segunda linha de texto.
+  Atribua o número da linha desta linha de texto ao número da linha desta segunda linha de texto.
   Atribua a string desta linha de texto à string desta segunda linha de texto.
 
 Rotina para que se copie umas linhas de texto Para umas segundas linhas de texto:
@@ -4361,10 +4362,10 @@ Rotina para que se copie umas linhas de texto Para umas segundas linhas de texto
 
 Rotina para que se copie uma caixa de texto Para um segunda caixa de texto:
   Se a caixa de texto for inexistente,
-    Esvazie o segunda caixa de texto;
+    Esvazie a segunda caixa de texto;
     Retorne.
-  Aloque memória para o segunda caixa de texto.
-  Copie as propriedades dessa caixa de texto para o segunda caixa de texto.
+  Aloque memória para a segunda caixa de texto.
+  Copie as propriedades dessa caixa de texto para a segunda caixa de texto.
 
 Rotina para que se copie um vértice Para um segundo vértice:
   Se o vértice for inexistente,
@@ -5878,7 +5879,7 @@ Função para que se determine se um texto retornado é parecido com um segundo tex
 Função para que se determine se um texto retornado é similar para um segundo texto retornado;
 Função para que se determine se um texto retornado é semelhante para um segundo texto retornado:
   Preserve o texto retornado.
-  Preserve a segundo texto retornado.
+  Preserve o segundo texto retornado.
   Simplifique o texto retornado.
   Simplifique o segundo texto retornado.
   Se o texto retornado for o segundo texto retornado, diga sim.
@@ -6060,7 +6061,7 @@ Função para que se determine se uma localização está sobre uma caixa: \ dentro d
   Atribua a caixa para um terceira caixa.
   Atribua 3 vezes a quantidade de twips/pixel para um segundo número.
   Encolha a terceira caixa usando o segundo número.
-  Se a localização estiver no terceira caixa, diga não.
+  Se a localização estiver na terceira caixa, diga não.
   Diga sim.
 
 Função para que se determine se uma localização está sobre uma elipse:
@@ -6068,10 +6069,10 @@ Função para que se determine se uma localização está sobre uma elipse:
   Atribua 2 vezes a quantidade de twips/pixel para um número.
   Recue a caixa desta segunda elipse usando o número.
   Se a localização não estiver na segunda elipse, diga não.
-  Atribua a elipse para uma terceiro elipse.
+  Atribua a elipse para uma terceira elipse.
   Atribua 3 vezes a quantidade de twips/pixel para um segundo número.
-  Encolha a caixa desta terceiro elipse usando o segundo número.
-  Se a localização estiver na terceiro elipse, diga não.
+  Encolha a caixa desta terceira elipse usando o segundo número.
+  Se a localização estiver na terceira elipse, diga não.
   Diga sim.
 
 Função para que se determine se uma localização está sobre uma linha reta:
@@ -6110,10 +6111,10 @@ Função para que se determine se uma localização está sobre uma caixa arredondada
   Atribua 2 vezes a quantidade de twips/pixel para um número.
   Recue a segunda caixa arredondada usando o número.
   Se a localização não estiver na segunda caixa arredondada, diga não.
-  Atribua a caixa arredondada para um terceiro caixa arredondada.
+  Atribua a caixa arredondada para uma terceira caixa arredondada.
   Atribua 3 vezes a quantidade de twips/pixel para um segundo número.
-  Encolha o terceiro caixa arredondada usando o segundo número.
-  Se a localização estiver no terceiro caixa arredondada, diga não.
+  Encolha a terceira caixa arredondada usando o segundo número.
+  Se a localização estiver na terceira caixa arredondada, diga não.
   Diga sim.
 
 Função para que se determine se uma localização está fora de uma caixa:
@@ -7235,7 +7236,7 @@ Rotina para que se duplique um endereço completo para uma segunda endereço compl
   Se o endereço completo for do tipo arquivo, 
     Duplique o endereço completo para a segunda endereço completo no sistema de arquivos (arquivo).
 
-Rotina para que se duplique um endereço completo para uma segundo endereço completo no sistema de arquivos (pasta)[endereço]:
+Rotina para que se duplique um endereço completo para um segundo endereço completo no sistema de arquivos (pasta)[endereço]:
   Se o endereço completo estiver no segundo endereço completo,
     Atribua "Erro ao duplicar a pasta: " junto com o endereço completo seguido de ". - erro de recursão inválida." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
@@ -8066,7 +8067,7 @@ Rotina para que se obtenha um número de coluna usando uma linha de texto e uma l
   Itere.
     Se o caractere final deste subtexto é o caractere final desta string desta linha de texto, pare.
     Obtenha uma largura usando o subtexto e o contexto de dispositivo de memória.
-    Adicione o comece largura para a largura.
+    Adicione a largura inicial para a largura.
     Obtenha uma segunda largura usando o conteúdo deste caractere final deste subtexto e o contexto de dispositivo de memória.
     Divida a segunda largura por 2.
     Subtraia a segunda largura desde a largura.
@@ -9255,7 +9256,7 @@ Rotina para que se refaça a ação usando uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Se a última caixa de texto destas alterações desta caixa de texto for inexistente, retorne.
   Copie a caixa de texto para um segunda caixa de texto.
-  Acrescente o segunda caixa de texto para as restaurações desta caixa de texto.
+  Acrescente a segunda caixa de texto para as restaurações desta caixa de texto.
   Atribua a última caixa de texto destas alterações desta caixa de texto para uma terceira caixa de texto.
   Remova a terceira caixa de texto desde as alterações desta caixa de texto.
   Copie as propriedades dessa terceira caixa de texto para a caixa de texto.
@@ -9286,7 +9287,7 @@ Rotina para que se desfaça a ação usando uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Se a última caixa de texto destas restaurações desta caixa de texto for inexistente, retorne.
   Copie a caixa de texto para um segunda caixa de texto.
-  Acrescente o segunda caixa de texto para as alterações desta caixa de texto.
+  Acrescente a segunda caixa de texto para as alterações desta caixa de texto.
   Atribua a última caixa de texto destas restaurações desta caixa de texto para uma terceira caixa de texto.
   Remova a terceira caixa de texto desde as restaurações desta caixa de texto.
   Copie as propriedades dessa terceira caixa de texto para a caixa de texto.
@@ -9749,7 +9750,7 @@ Rotina para que se inicialize a tela:
   Retornando a altura do pixel desta tela.
   Atribua 96 ao ppi.
   Atribua o tpi dividido pelo ppi à quantidade de twips/pixel .
-  Atribua a largura do pixel desta tela multiplicado pela quantidade de twips/pixel para uma largura.
+  Atribua a largura do pixel desta tela vezes a quantidade de twips/pixel para uma largura.
   Atribua a altura do pixel desta tela vezes a quantidade de twips/pixel para uma altura.
   Atribua 0 [coordenda X1] e 0 [coordenda Y1] e a largura e a altura à caixa desta tela.
   Subtraia a quantidade de twips/pixel desde o canto inferior direito desta tela.
@@ -9931,23 +9932,23 @@ Rotina para que se insira um vértice para um polígono antes de um segundo vértic
   Se o vértice for inexistente, retorne.
   Insira o vértice aos vértices deste polígono antes desse segundo vértice.
 
-Rotina para que se intersect uma caixa com uma segunda caixa usando um terceiro caixa:
+Rotina para que se intersect uma caixa com uma segunda caixa usando uma terceira caixa:
   \ caixas does not touch
-  Limpe o terceiro caixa.
+  Limpe a terceira caixa.
   Se a coordenada X1 desta caixa for maior do que a coordenada X2 desta segunda caixa, retorne.
   Se a coordenada Y1 desta caixa for maior do que a coordenada Y2 desta segunda caixa, retorne.
   Se a coordenada X2 desta caixa for menor do que a coordenada X1 desta segunda caixa, retorne.
   Se a coordenada Y2 desta caixa for menor do que a coordenada Y1 desta segunda caixa, retorne.
   \ caixas touch
-  Atribua a caixa ao terceiro caixa.
+  Atribua a caixa para a terceira caixa.
   Se a coordenada X1 desta caixa for menor do que a coordenada X1 desta segunda caixa, 
-    Atribua a coordenada X1 desta segunda caixa à coordenada X1 desta terceiro caixa.
+    Atribua a coordenada X1 desta segunda caixa à coordenada X1 desta terceira caixa.
   Se a coordenada Y1 desta caixa for menor do que a coordenada Y1 desta segunda caixa, 
-    Atribua a coordenada Y1 desta segunda caixa à coordenada Y1 desta terceiro caixa.
+    Atribua a coordenada Y1 desta segunda caixa à coordenada Y1 desta terceira caixa.
   Se a coordenada X2 desta caixa for maior do que a coordenada X2 desta segunda caixa, 
-    Atribua a coordenada X2 desta segunda caixa à coordenada X2 desta terceiro caixa.
+    Atribua a coordenada X2 desta segunda caixa à coordenada X2 desta terceira caixa.
   Se a coordenada Y2 desta caixa for maior do que a coordenada Y2 desta segunda caixa, 
-    Atribua a coordenada Y2 desta segunda caixa à coordenada Y2 desta terceiro caixa.
+    Atribua a coordenada Y2 desta segunda caixa à coordenada Y2 desta terceira caixa.
 
 Rotina para que se jump o cursor de texto para a esquerda em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
@@ -10757,7 +10758,7 @@ Rotina para que se atribua um grupo data-hora para uma segunda grupo data-hora:
   Atribua o número do mês deste grupo data-hora ao número do mês desta segunda grupo data-hora.
   Atribua o número do dia da semana deste grupo data-hora ao número do dia da semana desta segunda grupo data-hora.
   Atribua o número do dia deste grupo data-hora ao número do dia desta segunda grupo data-hora.
-  Atribua a número de horas deste grupo data-hora à número de horas desta segunda grupo data-hora.
+  Atribua o número de horas deste grupo data-hora à número de horas desta segunda grupo data-hora.
   Atribua o número de minutos deste grupo data-hora ao número de minutos desta segunda grupo data-hora.
   Atribua o número de segundos deste grupo data-hora ao número de segundos desta segunda grupo data-hora.
   Atribua o número de milissegundos deste grupo data-hora ao número de milissegundos desta segunda grupo data-hora.
@@ -10770,7 +10771,7 @@ Rotina para que se atribua a string dum grupo data-hora para uma string:
   Acrescente "/" para a string.
   Zero preencha o número do dia deste grupo data-hora usando 2 e acrescente o mesmo para a string.
   Acrescente " " para a string.
-  Zero preencha a número de horas deste grupo data-hora usando 2 e acrescente o mesmo para a string.
+  Zero preencha o número de horas deste grupo data-hora usando 2 e acrescente o mesmo para a string.
   Acrescente ":" para a string.
   Zero preencha o número de minutos deste grupo data-hora usando 2 e acrescente o mesmo para a string.
   Acrescente ":" para a string.
@@ -11119,7 +11120,7 @@ Rotina para que se relembre uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Destrua as alterações desta caixa de texto.
   Copie a caixa de texto para um segunda caixa de texto.
-  Redimensione proporcionalmente o segunda caixa de texto para 1/1.
+  Redimensione proporcionalmente a segunda caixa de texto para 1/1.
   Acrescente a segunda caixa de texto para as restaurações desta caixa de texto.
   Delimite as restaurações desta caixa de texto para o valor máximo de restaurações de caixa.
   Ative o sinalizador de alteração desta caixa de texto.
@@ -13162,7 +13163,7 @@ Rotina para que se selecione o texto em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Se o sinalizador de quebra de texto desta caixa de texto não estiver ativo, retorne.
   Converta a âncora desta seleção desta caixa de texto para um posicionamento absoluto usando a caixa de texto.
-  Converta o cursor de texto desta seleção desta caixa de texto para uma segundo posicionamento absoluto usando a caixa de texto.
+  Converta o cursor de texto desta seleção desta caixa de texto para um segundo posicionamento absoluto usando a caixa de texto.
   Atribua o fator de escala desta caixa de texto para uma fração.
   Redimensione proporcionalmente a caixa de texto para 1/1.
   Extraia uma string desde a caixa de texto.
@@ -18572,9 +18573,9 @@ Rotina para que se include uma fonte no current pdf:
   Acrescente "/FontDescriptor " junto com o número deste descriptor seguido de " 0 R" para a definition.
   Acrescente "/FirstChar 0" para a definition.
   Acrescente "/LastChar 255" para a definition.
-  Atribua as larguras de fonte desta definição da fonte para uma segundo trecho.
+  Atribua as larguras de fonte desta definição da fonte para um segundo trecho.
   Acrescente "/Widths [" para a definition.
-  Acrescente a segundo trecho seguido de "]" para a definition.
+  Acrescente o segundo trecho seguido de "]" para a definition.
   Acrescente ">>" para a definition.
   Acrescente "endobj" para a definition.
   Atribua a definição da fonte à definição da fonte desta definition.
@@ -21124,10 +21125,10 @@ Rotina para que se compare uma string para uma segunda string usando uma quantid
   Decodifique $8BB508000000. \ mov esi,[ebp+8] \ a string
   Decodifique $8B36. \ mov esi,[esi] \ o primeiro do string
   Decodifique $8BBD0C000000. \ mov edi,[ebp+12] \ a segunda string
-  Decodifique $8B3F. \ mov edi,[edi] \ o primeiro do segunda string
+  Decodifique $8B3F. \ mov edi,[edi] \ o primeiro da segunda string
   Decodifique $8B8510000000. \ mov eax,[ebp+16] \ a quantidade de caracteres do string
   Decodifique $8B00. \ mov eax,[eax]
-  Decodifique $8B9514000000. \ mov edx,[ebp+20] \ a quantidade de caracteres do segunda string
+  Decodifique $8B9514000000. \ mov edx,[ebp+20] \ a quantidade de caracteres da segunda string
   Decodifique $8B12. \ mov edx,[edx]
   Decodifique $8B9D18000000. \ mov ebx,[ebp+24] \ o tabela de tradução
   Decodifique $8B1B. \ mov ebx,[ebx] o primeiro da tabela de tradução
