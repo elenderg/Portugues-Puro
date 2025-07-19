@@ -452,7 +452,8 @@ Rotina para que se calcule um seno de um grau:
     Adicione 1 para o contador.
     Atribua o contador multiplicado por 2 mais 1 para um número denominado expoente.
     Calcule o fatorial desse expoente.
-    Atribua o x elevado ao expoente vezes o sinal dividido pelo fatorial para um número denominado termo.
+    Eleve x ao expoente.
+    Atribua o x vezes o sinal dividido pelo fatorial para um número denominado termo.
     Adicione o termo ao resultado.
     Inverta o sinal.
     Se o contador for igual a quantidade de termos, pare.
