@@ -1,6 +1,8 @@
+
+
 Rotina para que se compile um endereço da pasta (endereço): \ #013
   Se existir algum problema de compilação, retorne.
-  Escreva "Obtendo endereço dos itens..." junto com o texto CRLF para StdOut.
+  Escreva em ciano "Obtendo endereço dos itens…" para StdOut.
   Comece o temporizador de endereçamento.
   Atribua 4096 para um endereço.
   Atribua o endereço ao endereço base desta Seção de DLLs.
@@ -249,4 +251,3 @@ Rotina para que se enderece um fragmento usando um endereço (registrador EAX):
     "' possui um tamanho inválido. Apenas tipos de 8, 16 ou 32 bits são permitidos.".
 
 \------------------------------------------------------------------------------------------------------------------------------------
-

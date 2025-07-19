@@ -1,6 +1,10 @@
+
+
+
+
 Rotina para que se compile um endereço da pasta (catalogue as rotinas por utilização): \ #009
   Se existir algum problema de compilação, retorne.
-  Escreva "Catalogando tarefas..." junto com o texto CRLF para StdOut.
+  Escreva em ciano "Catalogando tarefas…" para StdOut.
   Comece o temporizador de ferramentas de catalogação.
   Catalogue as rotinas por utilização.
   Scrub o catálogo de rotinas úteis. \ higienizar? purificar? sanear?
@@ -145,6 +149,3 @@ Rotina para que se scrub umas referências:
   Reitere.
 
 \------------------------------------------------------------------------------------------------------------------------------------
-
-
-

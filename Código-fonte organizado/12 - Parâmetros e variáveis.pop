@@ -1,6 +1,8 @@
+
+
 Rotina para que se compile um endereço da pasta (deslocamento de parâmetros e variáveis): \ #012
   Se existir algum problema de compilação, retorne.
-  Escreva "Deslocando parâmetros e variáveis..." junto com o texto CRLF para StdOut.
+  Escreva em ciano "Deslocando parâmetros e variáveis…" para StdOut.
   Comece o temporizador de deslocamentos.
   Alinhe os parâmetros na rotinas.
   Alinhe as variáveis locais na rotinas.
@@ -60,4 +62,3 @@ Rotina para que se alinhe as variáveis locais em uma rotina:
   Reitere.
 
 \------------------------------------------------------------------------------------------------------------------------------------
-

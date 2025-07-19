@@ -1,6 +1,10 @@
+
+
+
+
 Rotina para que se compile um endereço da pasta (arquivos de código fonte): \#002
   Se existir algum problema de compilação, retorne.
-  Escreva "Carregando arquivos..." junto com o texto CRLF para StdOut.
+  Escreva em ciano "Carregando arquivos…" para StdOut.
   Comece o temporizador de operacionalização.
   Carregue os arquivos fontes.
   Suspenda o temporizador de operacionalização.
@@ -362,11 +366,11 @@ Função para que se determine se uma string é algum operador de concatenação cont
   Diga não.
 
 Função para que se determine se uma string é algum operador de concatenação:
-  Se a string for "junto", diga sim. \ junto de ".., junto com o ...
-  Se a string for "juntamente", diga sim. \ juntamente com o...
-  Se a string for "seguido", diga sim. \ seguido de "....
-  Se a string for "seguida", diga sim. \ seguido de "....
-  Se a string for "acompanhado", diga sim. \ acompanhado de "...
+  Se a string for "junto", diga sim. \ junto de ".., junto com o …
+  Se a string for "juntamente", diga sim. \ juntamente com o…
+  Se a string for "seguido", diga sim. \ seguido de "….
+  Se a string for "seguida", diga sim. \ seguido de "….
+  Se a string for "acompanhado", diga sim. \ acompanhado de "…
   \Se a string for "em", diga sim.
   \Se a string for "&", diga sim.
   Diga não.
@@ -379,6 +383,3 @@ Função para que se determine se uma string é alguma contração de preposição com 
   Diga não.
 
 \------------------------------------------------------------------------------------------------------------------------------------
-
-
-

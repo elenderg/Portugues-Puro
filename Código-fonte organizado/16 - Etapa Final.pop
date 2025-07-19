@@ -1,6 +1,8 @@
+
+
 Rotina para que se compile um endereço da pasta (etapa final): \ #016
   Se existir algum problema de compilação, retorne.
-  Escreva "Gerando arquivo executável..." junto com o texto CRLF para StdOut.
+  Escreva em ciano "Gerando arquivo executável…" para StdOut.
   Comece o temporizador de escrita.
   Escreva o trecho EXE deste compilador para o endereço EXE completo deste compilador.
   \Se o erro do fluxo de entrada/saída não estiver em branco, 
@@ -608,4 +610,3 @@ Rotina para que se mova um percorredor (símbolos):
 \finalmente  acabou
 
 \------------------------------------------------------------------------------------------------------------------------------------
-

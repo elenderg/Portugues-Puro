@@ -16,7 +16,7 @@ Um endereço base é um endereço.
 Uma zona é uma estrutura com
   Um endereço base,
   Uma quantidade de caracteres e
-  Um tamanho.
+  Um tamanho. 
 
 Um tipo primitivo é um tipo.
 Uma rotina alvo é uma rotina.
@@ -417,7 +417,7 @@ A Região de Código é um zona.
 As variáveis globais predefinidas são umas variáveis globais.
 
 \ firstparam=esp+4/ebp+8,
-\secondparam=esp+8/ebp+12, etc...
+\secondparam=esp+8/ebp+12, etc…
 
 \ Strings são implementadas como uma struct que contém 2 membros, a saber:
 \ O endereço do byte inicial e o endereço do byte final.
@@ -454,16 +454,14 @@ As variáveis globais predefinidas são umas variáveis globais.
 \ Para colocar e retirar coisas maiores da pilha, precisamos lidar diretamente com o registro ESP.
 \ Subtrair 16 do endereço no ESP, por exemplo, abre espaço para 16 bytes de dados locais no “topo” da pilha; adicionar 16 tira esses bytes da pilha.
 
-
 Rotina para que se execute o programa:
   Atribua "console" para o tipo da aplicação.
   Inicialize os componentes.
   \Inicialize o compilador.
   Faça tudo.
-  Se o tipo da aplicação for "debug", Liste tudo.
   Finalize o compilador.
   Escreva na próxima linha em StdOut.
-  Escreva "Operação finalizada." junto com o texto CRLF para StdOut.
+  Escreva em amarelo claro "Operação finalizada." para StdOut.
   \Execute os eventos.\
   Feche o programa.
 
@@ -471,7 +469,7 @@ Rotina para que se faça tudo:
   Atribua 1252 a um número denominado codepage.
   Processe "kernel32.dll" "SetConsoleOutputCP" com o codepage retornando um número denominado status de erro.
   Se o status de erro for 0 [NULL], 
-    Escreva "Código de Erro #001. Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT.
+    Escreva em vermelho "Código de Erro #001. Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT.
   Obtenha uma string desde os argumentos da linha de comando.
   Se a string estiver em branco, 
     Escreva "--------------------------------------------------------------------------------------------------------------- " junto com o texto CRLF para StdOut;
@@ -483,9 +481,9 @@ Rotina para que se faça tudo:
   Se o conteúdo deste caractere final desta string não for a barra invertida, 
     Acrescente a barra invertida para a string.
   Se a string não estiver no sistema de arquivos, 
-    Escreva "Código de Erro #002. O diretório '" junto com a string seguido de "' não foi encontrado." junto com o texto CRLF para StdOut;
+    Escreva em vermelho "Código de Erro #002. O diretório '" junto com a string seguido de "' não foi encontrado." junto com o texto CRLF para StdOut;
     Retorne.
-  Escreva "Compilando o diretório '" junto com a string seguido de "' ..." junto com o texto CRLF para StdOut. \ #0
+  Escreva em verde "Compilando o diretório '" junto com a string seguido de "' …" para StdOut. \ #0
   Escreva o texto CRLF para StdOut.
   Compile a string.
   Se existir algum problema de compilação, 
@@ -534,10 +532,14 @@ Rotina para que se exiba o erro de compilação:
     Retorne.
   Escreva 
     A mensagem de erro deste compilador seguido de "Arquivo: " 
+      junto com o Esc junto com "[96m"
       junto com o endereço do arquivo atual deste compilador 
+      junto com o Esc junto com "[0m"
       junto com o texto CRLF
+      junto com o Esc junto com "[97m" 
       seguido de "Linha: " 
       junto com o número da linha de erro deste compilador
+      junto com o Esc junto com "[0m"
     para StdOut.
   Escreva o texto CRLF para StdOut.
 
@@ -605,7 +607,7 @@ Rotina para que se defina uma variável global usando uma string:
 
 Rotina para que se compile um endereço da pasta usando um nível de profundidade (arquivos de código fonte): \#002
   Se existir algum problema de compilação, retorne.
-  Escreva "Carregando arquivos..." junto com o texto CRLF para StdOut.
+  Escreva em ciano "Carregando arquivos…" para StdOut.
   Comece o temporizador de operacionalização.
   Carregue os arquivos fontes usando o nível de profundidade.
   Suspenda o temporizador de operacionalização.
@@ -613,27 +615,27 @@ Rotina para que se compile um endereço da pasta usando um nível de profundidade 
 Rotina para que se carregue uns arquivos fonte usando um nível de profundidade: \ Jasper
   Leia os arquivos fonte usando o endereço completo deste compilador e o nível de profundidade.
 
-Rotina para que se carregue uns arquivos fonte usando um endereço da pasta e um nível de profundidade: \Jasper
-  Atribua ".pop" a uma nova extensão.
-  Anexe o caractere NULL após a nova extensão.
-  Se o nível de profundidade for menor do que 1, retorne.
-  Preserve o nível de profundidade.
-  Atribua o nível de profundidade para um segundo nível de profundidade.
-  Subtraia 1 desde o segundo nível de profundidade.
-  Itere.
-    Se existir algum problema de compilação, retorne.
-    Obtenha um item desde o endereço da pasta.
-    Se o item não for encontrado, pare.
-    Se a categoria deste item for "endereço de pasta", 
-      Leia os arquivos fonte usando o endereço da pasta deste item e o segundo nível de profundidade;
-      Reitere.
-    Se a categoria deste item não for "arquivo", reitere.
-    Se a extensão deste  item não for a nova extensão, reitere.
-    Se o item parece ser encadernável, reitere.
-    Se o item parece ser lexical, reitere.
-    Adicione um arquivo fonte para os arquivos fontes usando o endereço completo deste item.
-    Carregue o arquivo fonte.
-  Reitere.
+\ Rotina para que se carregue uns arquivos fonte usando um endereço da pasta e um nível de profundidade: \Jasper
+  \ Atribua ".pop" a uma nova extensão.
+  \ Anexe o caractere NULL após a nova extensão.
+  \ Se o nível de profundidade for menor do que 1, retorne.
+  \ Preserve o nível de profundidade.
+  \ Atribua o nível de profundidade para um segundo nível de profundidade.
+  \ Subtraia 1 desde o segundo nível de profundidade.
+  \ Itere.
+    \ Se existir algum problema de compilação, retorne.
+    \ Obtenha um item desde o endereço da pasta.
+    \ Se o item não for encontrado, pare.
+    \ Se a categoria deste item for "endereço de pasta", 
+      \ Leia os arquivos fonte usando o endereço da pasta deste item e o segundo nível de profundidade;
+      \ Reitere.
+    \ Se a categoria deste item não for "arquivo", reitere.
+    \ Se a extensão deste  item não for a nova extensão, reitere.
+    \ Se o item parece ser encadernável, reitere.
+    \ Se o item parece ser lexical, reitere.
+    \ Adicione um arquivo fonte para os arquivos fontes usando o endereço completo deste item.
+    \ Carregue o arquivo fonte.
+  \ Reitere.
 
 Função para que se determine se uma variável global está causando conflitos: \ Jasper Paulsen
   Se o nome desta variável global não estiver no catálogo de variáveis globais, diga não.
@@ -708,5 +710,3 @@ Rotina para que se execute um evento:
     Retorne.
 
 \------------------------------------------------------------------------------------------------------------------------------------
-
-

@@ -1,6 +1,10 @@
+
+
+
+
 Rotina para que se compile um endereço da pasta (cabeçalhos de rotinas): \ #006
   Se existir algum problema de compilação, retorne.
-  Escreva "Agrupando os nomes das rotinas..." junto com o texto CRLF para StdOut.
+  Escreva em ciano "Agrupando os nomes das rotinas…" para StdOut.
   Comece o temporizador de compilação de cabeçalhos de rotina.
   Compile os cabeçalhos apropriados para as rotinas.
   Suspenda o temporizador de compilação de cabeçalhos de rotina.
@@ -538,6 +542,3 @@ Rotina para que se compile o cabeçalho próprio para uma rotina usando um percorr
   Catalogue a rotina usando as unidades semânticas desta rotina e o catálogo geral de rotinas.
 
 \------------------------------------------------------------------------------------------------------------------------------------
-
-
-

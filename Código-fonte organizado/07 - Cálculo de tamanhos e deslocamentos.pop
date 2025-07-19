@@ -1,6 +1,10 @@
+
+
+
+
 Rotina para que se compile um endereço da pasta (cálculo de tamanhos e deslocamentos): \ #007
   Se existir algum problema de compilação, retorne.
-  Escreva "Calculando tamanhos de variáveis e deslocamentos de memória..." junto com o texto CRLF para StdOut.
+  Escreva em ciano "Calculando tamanhos de variáveis e deslocamentos de memória…" para StdOut.
   Comece o temporizador de etapas de cálculo.
   Calcule os comprimentos referentes aos tipos.
   Calcule os deslocamentos nos tipos.
@@ -89,6 +93,3 @@ Rotina para que se encontre uma variável usando um nome e umas variáveis:
   Reitere.
 
 \------------------------------------------------------------------------------------------------------------------------------------
-
-
-

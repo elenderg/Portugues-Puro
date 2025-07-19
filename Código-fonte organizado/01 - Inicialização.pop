@@ -1,5 +1,8 @@
+
+
+
 Rotina para que se compile um endereço da pasta (inicialização): \#001
-  Escreva "Iniciando..." junto com o texto CRLF para StdOut.
+  Escreva em ciano "Iniciando…" para StdOut.
   Finalize o compilador.
   Comece o temporizador deste compilador.
   Inicialize o compilador usando o endereço da pasta.
@@ -46,6 +49,3 @@ Rotina para que se crie um tipo:
   Atribua -1 à quantidade de caracteres deste tipo.
 
 \------------------------------------------------------------------------------------------------------------------------------------
-
-
-

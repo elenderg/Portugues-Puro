@@ -1,6 +1,10 @@
+
+
+
+
 Rotina para que se compile um endereço da pasta (identificação dos tipos das variáveis): \ #004
   Se existir algum problema de compilação, retorne.
-  Escreva "Identificando os tipos das variáveis..." junto com o texto CRLF para StdOut.
+  Escreva em ciano "Identificando os tipos das variáveis…" para StdOut.
   Comece o temporizador de resolução de tipos.
   Destrinche os tipos (expansão de listas).
   Destrinche os tipos (registro de plurais).
@@ -294,7 +298,7 @@ Rotina para que se verifique por informações opcionais inválidas em um tipo (con
   Se existir algum problema de compilação, retorne.
   Se o tipo não puder ser reduzido para "ponteiro",
     Apresente uma mensagem de erro contendo 
-      "Código de Erro #039. A palavra-chave 'para' só pode ser utilizada com variáveis do tipo ponteiro." 
+      "Código de Erro #039. A expressão 'Aponte para' só pode ser utilizada em variáveis do tipo ponteiro." 
       junto com o texto CRLF e o endereço local deste tipo;
     Retorne.
 
@@ -488,6 +492,3 @@ Rotina para que se destrinche um tipo (dados opcionais - tipos fracionários):
   Atribua o tipo base deste tipo base ao tipo base deste tipo.
 
 \------------------------------------------------------------------------------------------------------------------------------------
-
-
-

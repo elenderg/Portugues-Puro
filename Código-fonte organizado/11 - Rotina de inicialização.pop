@@ -1,6 +1,8 @@
+
+
 Rotina para que se compile um endereço da pasta (adição e compilação da rotina de inicialização): \ #011
   Se existir algum problema de compilação, retorne.
-  Escreva "Adicionando e agrupando as tarefas padrão de inicialização.." junto com o texto CRLF para StdOut.
+  Escreva em ciano "Adicionando e agrupando as tarefas padrão de inicialização…" para StdOut.
   Comece o temporizador de adição de rotinas pré-definidas de inicialização.
   Adicione e compile as rotinas de inicialização pré-execução e finalização pós-execução.
   Suspenda o temporizador de adição de rotinas pré-definidas de inicialização.
@@ -40,4 +42,3 @@ Rotina para que se acrescente os finalizadores de variáveis globais para uma str
   Reitere.
 
 \------------------------------------------------------------------------------------------------------------------------------------
-

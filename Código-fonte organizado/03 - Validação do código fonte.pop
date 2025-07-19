@@ -1,6 +1,10 @@
+
+
+
+
  Rotina para que se compile um endereço da pasta (análise dos arquivos fornecidos): \#003
   Se existir algum problema de compilação, retorne.
-  Escreva "Analisando código fonte dos arquivos..." junto com o texto CRLF para StdOut.
+  Escreva em ciano "Analisando código fonte dos arquivos…" para StdOut.
   Comece o temporizador de análise/verificação.
   Examine os arquivos fontes.
   Suspenda o temporizador de análise/verificação.
@@ -100,12 +104,18 @@ Rotina para que se apresente uma mensagem de erro contendo uma string e um ender
   Se existir algum problema de compilação,
     Retorne.
   Ative o sinalizador de erros deste compilador.
-  Atribua a string à mensagem de erro deste compilador.
+  Anteponha o Esc junto com "[33m" para a string.
+  Acrescente o Esc junto com "[0m" para a string.
+  Atribua a string à mensagem de erro deste compilador. \ aqui
   Encontre o endereço do arquivo atual deste compilador e o número da linha de erro deste compilador usando o endereço de byte .
   Se o endereço do arquivo atual deste compilador estiver em branco,
     Retorne.
   Extraia um nome do arquivo desde o endereço do arquivo atual deste compilador.
-  Anteponha "ALERTA: Não foi possível compilar o arquivo '" junto com o nome do arquivo seguido de "'. " junto com o texto CRLF para a mensagem de erro deste compilador.
+  Anteponha 
+    O Esc junto com "[31m" junto com "ALERTA:" junto com o Esc junto com "[0m" 
+    junto com " Não foi possível compilar o arquivo '" 
+    junto com o nome do arquivo seguido de "'. " 
+    junto com o texto CRLF para a mensagem de erro deste compilador.
 
 Rotina para que se encontre um endereço completo e um número da linha usando um endereço de byte:
   Limpe o endereço completo.
@@ -194,7 +204,7 @@ Rotina para que se examine um tipo usando um percorredor:
   Se o artigo indefinido estiver ativo,
     Pluralize o nome plural deste tipo;
     Adicione 1 à contagem.
-  Se a contagem for igual ou maior do que 2,
+  Se a contagem for igual ou maior do que 2, \ OBSOLETO. TODO: REMOVER VERIFICAÇÃO.
     Apresente uma mensagem de erro contendo 
       "Código de Erro #011. não foi possível detectar o idioma desta variável" junto com o texto CRLF e o endereço local deste tipo;
     Retorne.
@@ -212,7 +222,7 @@ Rotina para que se examine um tipo usando um percorredor:
     Retorne.
   Se o segmento inicial deste percorredor não for algum artigo indefinido,
     Apresente a mensagem de erro contendo 
-      "Código de Erro #013. Esperado 'um/uma'. Encontrado '" 
+      "Código de Erro #013. Esperado encontrar 'um/uma'. Encontrado '" 
       junto com o segmento inicial deste percorredor seguido de "'." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
@@ -420,6 +430,7 @@ Função para que se determine se uma string é algum operador aritmético:
   Se a string for "mais", diga sim.
   Se a string for "menos", diga sim.
   Se a string for "vezes", diga sim.
+  Se a string for "multiplicado", diga sim.
   Se a string for "dividido", diga sim.
   \Se a string for "depois", diga sim.
   Se a string for "seguido", diga sim.
@@ -1021,7 +1032,7 @@ Rotina para que se pluralize uma string (terminada com "is" ou com "us"):
   Se a string termina com "ais",
     Remova os dois últimos caracteres desde a string;
     Acrescente "íses" para a string;
-    Retorne. \cais não varia....
+    Retorne. \cais não varia….
   Se a string termina com "aus",
     Remova os dois últimos caracteres desde a string;
     Acrescente "úses" para a string;
@@ -1635,6 +1646,3 @@ Função para que se determine se uma string termina com algum vogal e uma segunda
   Diga sim.
 
 \------------------------------------------------------------------------------------------------------------------------------------
-
-
-

@@ -1,6 +1,10 @@
+
+
+
+
 Rotina para que se compile um endereço da pasta (conteúdo das rotinas): \ #010
   Se existir algum problema de compilação, retorne.
-  Escreva "Agrupando o conteúdo das rotinas..." junto com o texto CRLF para StdOut.
+  Escreva em ciano "Agrupando o conteúdo das rotinas…" para StdOut.
   Comece o temporizador de compilação do conteúdo das rotinas.
   Compile os corpos referentes às rotinas.
   Suspenda o temporizador de compilação do conteúdo das rotinas.
@@ -194,7 +198,10 @@ Rotina para que se compile uma expressão matemática usando um percorredor:
     Se o segmento inicial deste percorredor for algum operador de concatenação,
       Compile a expressão matemática usando o percorredor (operador de concatenação);
       Reitere.
-    Se o segmento inicial deste percorredor for algum operador de multiplicação,
+    Se o segmento inicial deste percorredor for "vezes",
+      Compile a expressão matemática usando o percorredor (operador de vezes);
+      Reitere.
+    Se o segmento inicial deste percorredor for "multiplicado",
       Compile a expressão matemática usando o percorredor (operador de multiplicação);
       Reitere.
     Se o segmento inicial deste percorredor for "junto",
@@ -1238,10 +1245,51 @@ Rotina para que se converta um termo por concatenação usando um percorredor:
   Atribua a variável intermediária à variável deste termo.
   Limpe a frase deste termo.
 
-Rotina para que se compile uma expressão matemática usando um percorredor (operador de multiplicação):
+Rotina para que se compile uma expressão matemática usando um percorredor (operador de vezes):
   Se existir algum problema de compilação, retorne.
   Se a variável desta expressão matemática for inexistente,
     Apresente uma mensagem de erro contendo 
+        "Código de Erro #129. Não é póssível multiplicar por '"
+      junto com a frase desta expressão matemática 
+      seguido de "'." junto com o texto CRLF e o percorredor;
+    Retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Compile um termo usando o percorredor.
+  Se existir algum problema de compilação, retorne.
+  Se a variável deste termo for inexistente,
+    Apresente a mensagem de erro contendo 
+      "Código de Erro #130. Não é póssível multiplicar por '" 
+      junto com a frase deste termo 
+      seguido de "'." junto com o texto CRLF e o percorredor;
+    Retorne.
+  Adicione uma variável intermediária usando 
+    o nome do tipo desta expressão matemática e 
+    o caractere inicial deste segmento inicial deste percorredor.
+  Adicione fragmentos diversos usando 
+    "Atribua" e 
+    a variável desta expressão matemática e 
+    "para" e 
+    a variável intermediária e 
+    o caractere inicial deste segmento inicial deste percorredor.
+  Adicione fragmentos diversos usando 
+    "Multiplique" e 
+    a variável intermediária e 
+    "por" e 
+    a variável deste termo e 
+    o caractere inicial deste segmento inicial deste percorredor.
+  Atribua a variável intermediária à variável desta expressão matemática.
+  Limpe a frase desta expressão matemática.
+
+Rotina para que se compile uma expressão matemática usando um percorredor (operador de multiplicação):
+  Se existir algum problema de compilação, retorne.
+  Mova o percorredor (usando diretrizes de compilação).
+  Se o segmento inicial deste percorredor não for "por",
+    Apresente uma mensagem de erro contendo 
+        "Erro. Você deve escrever multiplicado 'POR'."
+        junto com o texto CRLF e o percorredor;
+    Retorne.
+  Se a variável desta expressão matemática for inexistente,
+    Apresente a mensagem de erro contendo 
         "Código de Erro #129. Não é póssível multiplicar por '"
       junto com a frase desta expressão matemática 
       seguido de "'." junto com o texto CRLF e o percorredor;
@@ -1502,7 +1550,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
   Se o segmento inicial deste percorredor não for algum valor hexadecimal literal,
     Apresente uma mensagem de erro contendo 
       "Código de Erro #139. Encontrado '"junto com o segmento inicial deste percorredor 
-      seguido de "'. Esperado encontrar valor hexadecimal" junto com o texto CRLF e o percorredor;
+      seguido de "'. O compilador esperava encontrar um valor hexadecimal, por exemplo $DEADCODE ou &C0C0FEDE" junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione um fragmento usando a etiqueta de decodificação.
   Atribua o segmento inicial deste percorredor para um parte da cifra binária.
@@ -1961,4 +2009,3 @@ Rotina para que se compile o corpo relacionado com uma rotina usando um percorre
   Compile o corpo relacionado com a segunda rotina.
 
 \------------------------------------------------------------------------------------------------------------------------------------
-

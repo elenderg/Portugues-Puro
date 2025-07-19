@@ -1,6 +1,10 @@
+
+
+
+
 Rotina para que se compile um endereço da pasta (adição de rotinas de memória incorporadas): \ #008
   Se existir algum problema de compilação, retorne.
-  Escreva "Adicionando tarefas predefinidas na memória..." junto com o texto CRLF para StdOut.
+  Escreva em ciano "Adicionando tarefas predefinidas na memória…" para StdOut.
   Comece o temporizador de adição de rotinas pré-definidas de mémoria .
   Adicione as rotinas de alocação e desalocação e finalização e destruição.
   Suspenda o temporizador de adição de rotinas pré-definidas de mémoria.
@@ -225,6 +229,3 @@ Rotina para que se adicione a rotina de destruição para um tipo (ponteiros):
   Compile o cabeçalho próprio à rotina.
 
 \------------------------------------------------------------------------------------------------------------------------------------
-
-
-

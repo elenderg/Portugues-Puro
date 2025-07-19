@@ -1,6 +1,8 @@
+
+
 Rotina para que se compile um endereço da pasta (transmutação): \ #014
   Se existir algum problema de compilação, retorne.
-  Escreva "Convertendo código em instruções de máquina..." junto com o texto CRLF para StdOut.
+  Escreva em ciano "Convertendo código em instruções de máquina…" para StdOut.
   Comece o temporizador de transmutação.
   Transforme as rotinas em código hexadecimal.
   Suspenda o temporizador de transmutação.
@@ -333,7 +335,7 @@ Rotina para que se transforme um fragmento em código hexadecimal (empilhamento d
     Retorne. 
     \ movzxb edx, BYTE PTR [edx]; 
     \ push edx
-  \Se a quantidade de caracteres for outra, então...
+  \Se a quantidade de caracteres for outra, então…
     Apresente a mensagem de erro contendo 
     "Código de Erro #189. Tamanho do fragmento inválido" junto com o texto CRLF. \ Erro interno
 
@@ -432,4 +434,3 @@ Rotina para que se acrescente um texto hexadecimal e um número e um segundo text
   Acrescente o segundo texto hexadecimal para o terceiro texto hexadecimal.
 
 \------------------------------------------------------------------------------------------------------------------------------------
-

@@ -1,6 +1,8 @@
+
+
 Rotina para que se compile um endereço da pasta (vinculação): \ #015
   Se existir algum problema de compilação, retorne.
-  Escreva "Elencando arquivos.." junto com o texto CRLF para StdOut.
+  Escreva em ciano "Elencando arquivos.." para StdOut.
   Comece o temporizador de vinculação.
   Vincule.
   Suspenda o temporizador de vinculação.
@@ -237,4 +239,3 @@ Rotina para que se disponibilize um fragmento para um trecho:
   Disponibilize o código deste fragmento ao trecho sob o endereço.
 
 \------------------------------------------------------------------------------------------------------------------------------------
-
