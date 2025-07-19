@@ -1,7 +1,3 @@
-Um array é uma estrutura com
-  Um ponteiro denominado endereço,
-  Um número denominado tamanho.
-
 \O conteúdo deste arquivo foi originalmente extraído do arquivo "The noodle" do projeto "CAL-4700" 
 \Todos os direitos originais pertencem à "Osmosian Order of Plain Language Programmers"- Fundada em 2006
 \O conteúdo do arquivo atual, porém, possui autorização para divulgação, modificação e redistribuição no domínio público sem a necessidade de autorização prévia.
@@ -36,6 +32,10 @@ Uma string é uma estrutura com
   Um caractere inicial e
   Um caractere final.
 
+Um array é uma estrutura com
+  Um ponteiro denominado endereço,
+  Um número denominado tamanho.
+
 Uma lista é um ponteiro [que aponta] para uma lista estruturada.
 
 Uma lista estrutura é uma lista estruturada.
@@ -65,8 +65,8 @@ Um twip é um número.
 Uma coordenada é [composta de] uns twips.
 
 Uma localização é um par de números com
-  Uma coordenada denominada coordenada X e
-  Uma coordenada denominada coordenada Y.\ e
+  Uma coordenada denominada coordenada X [left] e
+  Uma coordenada denominada coordenada Y. [top]\ e
   \Uma coordenada denominada coordenada esquerda sob a coordenada X e
   \Um coordenada denominada coordenada do topo sob a coordenada Y.
 
@@ -76,6 +76,14 @@ Uma localização é um par de números com
 Um par de números é uma estrutura com
   Um número denominado número X e
   Um número denominado número Y.
+
+\Rotina para que se recue uma caixa uns twips; \ 
+Rotina para que se recue uma caixa uns twips; \DESLOCA PRA DIREITA e PRA BAIXO
+Rotina para que se recue uma caixa usando uns twips: \ outdent
+  Subtraia os twips desde a coordenada X1 desta caixa.
+  Subtraia os twips desde a coordenada Y1 desta caixa.
+  Adicione os twips para a coordenada X2 desta caixa.
+  Adicione os twips para a coordenada Y2 desta caixa.
 
 Uma caixa é uma estrutura com
   Uma coordenada denominada coordenada X1, [left]
@@ -118,6 +126,7 @@ Uma raiz quadrada é um número.
 Um número fracionário é uma fração.
 Um lado é 1 unidade numérica.
 Um grau é um número [cujos valores vão de 0 até 3599. 3600 equivale a 0, obviamente].
+
 Uma unidade é um número.
 Uma dezena são 10 unidades.
 Uma centena são 10 dezenas.
@@ -136,6 +145,7 @@ Um quociente é um número.
 Uma razão de escala é uma proporção. \ usado em formas geométricas
 Um fator de escala é uma fração. \ usado em caixas de texto
 Um raio é [composto de] uns twips.
+
 Um número aleatório é um número.
 Um par de números racionais é um par de números fracionários.
 Um múltiplo é um número.
@@ -164,7 +174,7 @@ Um número de linha é um número.
 
 Uma seleção é uma estrutura com
   Um número de coluna denominada âncora de coluna,
-  Uma número de linha denominada âncora de linha,
+  Um número de linha denominada âncora de linha,
   Uma âncora sob a âncora de coluna,
   Um número de coluna denominado cursor da coluna,
   Um número de linha denominado número de linhas do cursor,
@@ -205,7 +215,8 @@ Uma referência é uma lista com
 Um GpImageAttributes é um ponteiro. \ Referência: -> https://doxygen.reactos.org/d7/d6a/structGpImageAttributes.html
 
 Um evento é uma lista com
-  Uma categoria, [atualização de tela, exibir cursor, pressionamento de tecla, clique, clique duplo, clique direito, clique direito duplo, deactivate, activate, done]
+  Uma categoria, 
+  [atualização de tela, exibir cursor, pressionamento de tecla, clique (normal, duplo, direito, direito duplo, deactivate, activate, done]
   Um sinalizador de tecla Shift,
   Um sinalizador de tecla Ctrl,
   Um sinalizador de tecla Alt,
@@ -231,7 +242,7 @@ Um contexto é uma lista com
   Uma grossura da canetinha. \ check
 
 Um byte# é um número.
-Um canvas é um hDC. \ hDC = handle to a device context
+Um canvas é um hDC. \ hDC = handle to device context
 Um recipiente# é um número.
 Um bit é uma unidade.
 
@@ -241,7 +252,6 @@ Um percorredor é uma estrutura com
   Um segmento final, \ Armazena a última parte da string, porém inicialmente ele é igual à string original
   \ (Ele diminui de tamanho a cada vez que o percorredor é movido)
   Um segmento inicial. \ Armazena a primeira/próxima palavra da string (quando o percorredor é movido). Inicialmente vazio 
-
 
 Uma cópia da string original é um subtexto.
 Um segmento inicial é um subtexto.
@@ -422,7 +432,6 @@ Um nome da biblioteca é uma string.
 Um nome do processo é uma string.
 Um número identificador do processo é um número.
 
-
 Um Endereço IP é uma estrutura com
   Um número,
   Uma string.
@@ -522,6 +531,7 @@ Uma caixa arredondada é uma caixa com
   Um raio.
 
 Um número da linha é um número.
+Um número da coluna é um número.
 
 Um região da tela é um par de números com
   Uma coordenada X e
@@ -617,7 +627,7 @@ Um ponto osmosiano é um número. \cujos valores vão desde 1 até 3840;  servem par
   \ Perfazendo um total de 3840 pontos
 
 Um posicionamento é um par de números com
-  Uma número de coluna e
+  Um número de coluna e \\Sugestão: "um número da coluna"
   Um número da linha.
 
 Um hexágono é uma figura geométrica.
@@ -630,7 +640,6 @@ Um círculo é um figura geométrica.
 Um quadrante circular é um figura geométrica.
 Uma espiral é um figura geométrica.
 Uma estrela é uma lista.
-
 
 [DOCUMENTOS PDF]
 \ Documentação: -> https://www.adobe.com/technology/pdfs/presentations/KingPDFTutorial.pdf
@@ -1411,24 +1420,33 @@ Um endereço numérico é um ponteiro [que aponta] para um número.
 Uma cifra binária é um byte. \ somente são válidos os 4 bits de ordem inferior. \ é um "low order nibble" ou uma sucessão de bytes de ordem inferior
 \ Exemplo: No byte 0101 1010 somente a parte "1010" é válida.
 
-Um cifra hexadecimal é uma string. \ Exemplo: $0010A0... O cifrão serve para indicar ao compilador que se trata de um valor hexadecimal.
- \Em outras linguagens costuma-se usar um # (como no css #a1b2e3; ou um 0x, por exemplo 0xA1B2FF...
+Uma cifra hexadecimal é uma string. \ Exemplo: $0010A0… O cifrão serve para indicar ao compilador que se trata de um valor hexadecimal.
+ \Em outras linguagens costuma-se usar um # (como no css #a1b2e3; ou um 0x, por exemplo 0xA1B2FF…
 
 Uma máscara de disjunção exclusiva é uma mask.
 
 \A raiz de dois é uma fração igual a 99/70.
-A raiz de dois é uma fração igual a 1414213562/1000000000.
-A raiz de três é uma fração igual a 1732050807/1000000000.
+\A raiz de dois é uma fração igual a 1414213562/1000000000.
+\A raiz de três é uma fração igual a 1732050807/1000000000.
 \A raiz de cinco é uma fração igual a 161/72.
-A raiz de cinco é uma fração igual a 2236067977/1000000000.
-A raiz de seis é uma fração igual a 2449489742/1000000000.
-A raiz de sete é uma fração igual a 2645751311/1000000000.
-A raiz de oito é uma fração igual a 2828427124/1000000000.
-A raiz de dez é uma fração igual a 3162277660/1000000000.
-A raiz de onze é uma fração igual a 3316624790/1000000000.
+\A raiz de cinco é uma fração igual a 2236067977/1000000000.
+\A raiz de seis é uma fração igual a 2449489742/1000000000.
+\A raiz de sete é uma fração igual a 2645751311/1000000000.
+\A raiz de oito é uma fração igual a 2828427124/1000000000.
+\A raiz de dez é uma fração igual a 3162277660/1000000000.
+\A raiz de onze é uma fração igual a 3316624790/1000000000.
+A raiz de dois é uma fração igual a 2147483647/1518500249.
+A raiz de três é uma fração igual a 2147483647/1239850262.
+A raiz de cinco é uma fração igual a 2147483647/960383883.
+A raiz de seis é uma fração igual a 2147483647/876706528.
+A raiz de sete é uma fração igual a 2147483647/811672525.
+A raiz de oito é uma fração igual a 2147483647/759250125.
+A raiz de dez é uma fração igual a 2147483647/679093956.
+A raiz de onze é uma fração igual a 2147483647/647490682.
 \2147483647 é o número máximo positivo em um processador de 32 bits / 4 bytes
 \O número pi é uma fração igual a 355/113. \número pi
-O número pi é uma fração igual a 3141592653/1000000000.
+O número pi é uma fração igual a 2147483647/683565275.
+\O número pi é uma fração igual a 3141592653/1000000000.
 O número de Euler é uma fração igual a 271828182846/1000000000.
 O número neperiano é uma fração igual a 271828182846/1000000000.
 A proporção dourada é uma fração igual a 1618033988/1000000000.
@@ -1483,7 +1501,7 @@ O temp endereço completo é um endereço completo.
 
 O terminal é um terminal.
 
-O caixa de texto cutoff é um número igual a 500.
+O delimitação de corte textual é um número igual a 500.
 
 A zero linha reta é uma linha reta. \ tracer
 
@@ -2543,7 +2561,7 @@ Rotina para que se eleve um número para um segundo número:
     Atribua 1 ao número;
     Retorne. \ Exemplo: 3^0 = 1
   Se o segundo número for menor do que 0,
-    Atribua 0 ao número; \ TODO: Atribua 1 dividido pelo segundo número ao número.
+    Atribua 0 ao número; \ TODO: Atribua 1 dividido por o segundo número ao número.
     Retorne. 
   Atribua 1 para um número resultante.
   Itere.
@@ -3227,8 +3245,6 @@ Rotina para que se leia um trecho desde a STDIN:
   \Escreva "Bytes lidos: " junto com a string junto com o texto CRLF para Stdout.
 
 
-
-
 Rotina para que se role automaticamente uma caixa de texto usando uma localização e um sinalizador:
   Se a caixa de texto for inexistente,
     Desative o sinalizador;
@@ -3260,6 +3276,7 @@ Rotina para que se role automaticamente uma caixa de texto usando uma localizaçã
 
 Rotina para que se toque um bipe;
 Rotina para que se reproduza um bipe;
+Rotina para que se bipe;
 Rotina para que se emita um bipe:
   Atribua 0 ao bipe.
   Processe "user32.dll" "MessageBeep" com \ Reproduz um som waveform
@@ -3891,15 +3908,15 @@ Rotina para que se converta uma fração para uma string usando um número:
   Eleve o valor numérico para o número.
   Preserve a fração.
   Se a fração for negativa,
-    Ative um sinalizador;
+    Ative um sinalizador denominado sinal negativo;
     Remova o sinal desde a fração.
   Multiplique o valor numérico pela fração.
   Zero preencha o valor numérico usando o número e acrescente o mesmo para a string.
   Atribua a quantidade de caracteres desta string menos o número mais 1 para um byte#.
-  Insira "," para a string antes desse byte#. \ TODO: verificar se é necessário trocar para vírgula
+  Insira "," para a string antes desse byte#.
   Se o conteúdo deste caractere inicial desta string for o ponto final, 
     Anteponha "0" para a string.
-  Se o sinalizador estiver ativo,
+  Se o sinal negativo estiver ativo,
     Anteponha "-" para a string.
 
 Rotina para que se converta um texto hexadecimal para uma fração:
@@ -4059,12 +4076,15 @@ Rotina para que se converta um texto de consulta para uma string:
   Itere.
     Se o subtexto estiver em branco, retorne.
     Se o conteúdo deste caractere inicial deste subtexto for o sinal de adição,
-    Acrescente " " para a string;
-    Adicione 1 para o caractere inicial deste subtexto; Reitere.
+      Acrescente " " para a string;
+      Adicione 1 para o caractere inicial deste subtexto; 
+      Reitere.
     Se o conteúdo deste caractere inicial deste subtexto não for o sinal de porcentagem,
-    Acrescente o conteúdo deste caractere inicial deste subtexto para a string;
-    Adicione 1 para o caractere inicial deste subtexto; Reitere.
-    Se a quantidade de caracteres deste subtexto for menor do que 3, retorne.
+      Acrescente o conteúdo deste caractere inicial deste subtexto para a string;
+      Adicione 1 para o caractere inicial deste subtexto; 
+      Reitere.
+    Se a quantidade de caracteres deste subtexto for menor do que 3, 
+      Retorne.
     Adicione 1 para o caractere inicial deste subtexto.
     Converta o conteúdo deste caractere inicial deste subtexto para uma cifra binária.
     Desloque a cifra binária 4 bits para a esquerda.
@@ -4286,7 +4306,7 @@ Rotina para que se copie um gpBitmap Para um segundo gpBitmap: \verificar
 
 Rotina para que se copie as propriedades de uma caixa de texto para um segunda caixa de texto:
   Se a caixa de texto for inexistente, retorne.
-  Se o segunda caixa de texto for inexistente, retorne.
+  Se a segunda caixa de texto for inexistente, retorne.
   Atribua a caixa desta caixa de texto à caixa desta segunda caixa de texto.
   Atribua a origem desta caixa de texto à origem desta segunda caixa de texto.
   Atribua a cor da canetinha desta caixa de texto à cor da canetinha desta segunda caixa de texto.
@@ -4327,8 +4347,8 @@ Rotina para que se copie uma linha de texto Para uma segunda linha de texto:
   Se a linha de texto for inexistente,
     Esvazie a segunda linha de texto;
     Retorne.
-  Aloque memória para o segunda linha de texto.
-  Atribua a número da linha desta linha de texto ao número da linha desta segunda linha de texto.
+  Aloque memória para a segunda linha de texto.
+  Atribua o número da linha desta linha de texto ao número da linha desta segunda linha de texto.
   Atribua a string desta linha de texto à string desta segunda linha de texto.
 
 Rotina para que se copie umas linhas de texto Para umas segundas linhas de texto:
@@ -4342,10 +4362,10 @@ Rotina para que se copie umas linhas de texto Para umas segundas linhas de texto
 
 Rotina para que se copie uma caixa de texto Para um segunda caixa de texto:
   Se a caixa de texto for inexistente,
-    Esvazie o segunda caixa de texto;
+    Esvazie a segunda caixa de texto;
     Retorne.
-  Aloque memória para o segunda caixa de texto.
-  Copie as propriedades dessa caixa de texto para o segunda caixa de texto.
+  Aloque memória para a segunda caixa de texto.
+  Copie as propriedades dessa caixa de texto para a segunda caixa de texto.
 
 Rotina para que se copie um vértice Para um segundo vértice:
   Se o vértice for inexistente,
@@ -5756,14 +5776,14 @@ Função para que se determine se um número é negativo:
   Se o número for menor do que 0, diga sim.
   Diga não.
 
+Função para que se determine se um número é positivo:
+  Se o número for menor do que 0, diga não.
+  Diga sim.
+
 Função para que se determine se um número é ímpar:
   Preserve o número.
   Conjuncione logicamente o número com 1.
   Se o número for 0, diga não.
-  Diga sim.
-
-Função para que se determine se um número é positive:
-  Se o número for menor do que 0, diga não.
   Diga sim.
 
 Função para que se determine se um número é prime:
@@ -5859,7 +5879,7 @@ Função para que se determine se um texto retornado é parecido com um segundo tex
 Função para que se determine se um texto retornado é similar para um segundo texto retornado;
 Função para que se determine se um texto retornado é semelhante para um segundo texto retornado:
   Preserve o texto retornado.
-  Preserve a segundo texto retornado.
+  Preserve o segundo texto retornado.
   Simplifique o texto retornado.
   Simplifique o segundo texto retornado.
   Se o texto retornado for o segundo texto retornado, diga sim.
@@ -5915,15 +5935,15 @@ Função para que se determine se uma localização está acima de um linha reta hori
   Diga não.
 
 Função para que se determine se uma localização está em cima ou em baixo de uma caixa:
-  Se a localização está acima dessa caixa, diga sim.
-  Se a localização é debaixo dessa caixa, diga sim.
+  Se a localização estiver acima dessa caixa, diga sim.
+  Se a localização estiver debaixo dessa caixa, diga sim.
   Diga não.
 
-Função para que se determine se uma localização é debaixo de uma caixa:
+Função para que se determine se uma localização está debaixo de uma caixa:
   Se a coordenada Y desta localização for maior do que a coordenada Y2 desta caixa, diga sim.
   Diga não.
 
-Função para que se determine se uma localização é debaixo de um linha reta horizontal:
+Função para que se determine se uma localização está debaixo de um linha reta horizontal:
   Se a coordenada Y desta localização for maior do que o horizontal y desta localização inicial desta linha reta, diga sim.
   Diga não.
 
@@ -6025,8 +6045,8 @@ Função para que se determine se uma localização está para a direita ou para a es
 Função para que se determine se uma localização está para a esquerda ou para a direita de uma caixa;
 \Função para que se determine se uma localização está no lado esquerdo ou no lado direito de uma caixa;
 Função para que se determine se uma localização está no lado esquerdo ou no lado direito de uma caixa:
-  Se a localização estiver para o lado esquerdo dessa caixa, diga sim.
-  Se a localização estiver para o lado direito dessa caixa, diga sim.
+  Se a localização estiver ao lado esquerdo dessa caixa, diga sim.
+  Se a localização estiver ao lado direito dessa caixa, diga sim.
   Diga não.
 
 \Função para que se determine se uma localização está na parte de cima de uma caixa:
@@ -6041,7 +6061,7 @@ Função para que se determine se uma localização está sobre uma caixa: \ dentro d
   Atribua a caixa para um terceira caixa.
   Atribua 3 vezes a quantidade de twips/pixel para um segundo número.
   Encolha a terceira caixa usando o segundo número.
-  Se a localização estiver no terceira caixa, diga não.
+  Se a localização estiver na terceira caixa, diga não.
   Diga sim.
 
 Função para que se determine se uma localização está sobre uma elipse:
@@ -6049,10 +6069,10 @@ Função para que se determine se uma localização está sobre uma elipse:
   Atribua 2 vezes a quantidade de twips/pixel para um número.
   Recue a caixa desta segunda elipse usando o número.
   Se a localização não estiver na segunda elipse, diga não.
-  Atribua a elipse para uma terceiro elipse.
+  Atribua a elipse para uma terceira elipse.
   Atribua 3 vezes a quantidade de twips/pixel para um segundo número.
-  Encolha a caixa desta terceiro elipse usando o segundo número.
-  Se a localização estiver na terceiro elipse, diga não.
+  Encolha a caixa desta terceira elipse usando o segundo número.
+  Se a localização estiver na terceira elipse, diga não.
   Diga sim.
 
 Função para que se determine se uma localização está sobre uma linha reta:
@@ -6091,21 +6111,21 @@ Função para que se determine se uma localização está sobre uma caixa arredondada
   Atribua 2 vezes a quantidade de twips/pixel para um número.
   Recue a segunda caixa arredondada usando o número.
   Se a localização não estiver na segunda caixa arredondada, diga não.
-  Atribua a caixa arredondada para um terceiro caixa arredondada.
+  Atribua a caixa arredondada para uma terceira caixa arredondada.
   Atribua 3 vezes a quantidade de twips/pixel para um segundo número.
-  Encolha o terceiro caixa arredondada usando o segundo número.
-  Se a localização estiver no terceiro caixa arredondada, diga não.
+  Encolha a terceira caixa arredondada usando o segundo número.
+  Se a localização estiver na terceira caixa arredondada, diga não.
   Diga sim.
 
 Função para que se determine se uma localização está fora de uma caixa:
   Se a localização é dentro dessa caixa, diga não.
   Diga sim.
 
-Função para que se determine se uma localização é para o lado direito de uma caixa:
+Função para que se determine se uma localização está para o lado direito de uma caixa:
   Se a coordenada X desta localização for maior do que a coordenada X2 desta caixa, diga sim.
   Diga não.
 
-Função para que se determine se uma localização é tocando uma caixa:
+Função para que se determine se uma localização está tocando uma caixa:
   Se a localização estiver na caixa, diga sim.
   Diga não.
 
@@ -6200,8 +6220,6 @@ Função para que se determine se uma string é algum numeral misto literal:
   Se o subtexto numérico não for algum número inteiro, diga não.
   Se a subtexto fracionário não for alguma fração literal, diga não.
   Diga sim.
-
-
 
 Função para que se determine se uma string é algum sinal aritmético:
   Se a quantidade de caracteres desta string não for 1, diga não.
@@ -6821,8 +6839,8 @@ Rotina para que se pinte um figura geométrica com uns lados e uns twips usando u
   Atribua a cor à cor deste contexto.
   Pinte a figura geométrica com o lados e os twips.
 
-Rotina para que se pinte um half círculo aproximadamente uns twips em largura;
-Rotina para que se pinte um half círculo usando um tamanho:
+Rotina para que se pinte um semicírculo aproximadamente uns twips em largura;
+Rotina para que se pinte um semicírculo usando um tamanho:
   Atribua o tamanho vezes o número pi dividido por 48 para uma quantidade de caracteres do segmento.
   Adicione 1 para a quantidade de caracteres do segmento.
   Itere.
@@ -6832,8 +6850,8 @@ Rotina para que se pinte um half círculo usando um tamanho:
     Se a contagem for 24, retorne.
   Reitere.
 
-Rotina para que se pinte um half círculo usando um tamanho (regressivamente);
-Rotina para que se pinte um half círculo usando um tamanho (counterclockwise):
+Rotina para que se pinte um semicírculo usando um tamanho (regressivamente);
+Rotina para que se pinte um semicírculo usando um tamanho (counterclockwise):
   Atribua o tamanho vezes o número pi dividido por 48 para uma quantidade de caracteres do segmento.
   Adicione 1 para a quantidade de caracteres do segmento.
   Itere.
@@ -6847,7 +6865,8 @@ Rotina para que se pinte um hexágono usando uma lado quantidade de caracteres:
   [Comece.]
     Pinte a lado quantidade de caracteres.
     Vire para 1/6.
-    Adicione 1 para uma contagem. Se a contagem for 6, pare.
+    Adicione 1 para uma contagem. 
+    Se a contagem for 6, pare.
   Reitere.
 
 Rotina para que se pinte uma linha reta:
@@ -6858,10 +6877,12 @@ Rotina para que se pinte uma linha reta aproximadamente uns twips em comprimento
   Escolha aleatoriamente uns terceiro twips entre os twips menos os outros twips e os twips mais os outros twips.
   Pinte a linha reta o terceiro twips em comprimento.
 
+Rotina para que se pinte uma linha reta usando a altura de uma caixa com uma cor;
 Rotina para que se pinte uma linha reta tão alta quanto uma caixa com uma cor:
   Atribua a cor à cor deste contexto.
   Pinte a altura desta caixa.
 
+Rotina para que se pinte uma linha reta usando a largura de uma caixa com uma cor;
 Rotina para que se pinte uma linha reta tão comprida quanto uma caixa com uma cor:
   Atribua a cor à cor deste contexto.
   Pinte a largura desta caixa.
@@ -6881,7 +6902,7 @@ Rotina para que se pinte uma linha reta uns twips em comprimento:
   Adicione o deslocamento vertical vezes os twips dividido por 10000 para a coordenada Y desta localização final desta linha reta.
   Atribua a localização final desta linha reta à localização deste contexto.
   Pinte a linha reta com a cor deste contexto.
-  \Se o delay for positive, atualize o tela.
+  \Se o delay for positivo, atualize o tela.
 
 Rotina para que se pinte uma linha reta usando uns twips como a quantidade de caracteres;
 Rotina para que se pinte uma linha reta usando uns twips pelo quantidade de caracteres:
@@ -7046,14 +7067,14 @@ Rotina para que se pinte uma linha de texto em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Se a linha de texto for inexistente, retorne.
   Obtenha uma caixa usando a linha de texto e a caixa de texto.
-  Pinte o working string desta linha de texto na caixa com a cor da canetinha desta caixa de texto e a fonte desta caixa de texto e o alinhamento desta caixa de texto.
+  Pinte a working string desta linha de texto na caixa com a cor da canetinha desta caixa de texto e a fonte desta caixa de texto e o alinhamento desta caixa de texto.
 
 Rotina para que se pinte uma linha de texto em uma caixa de texto (edição):
   Se a caixa de texto for inexistente, retorne.
   Se a linha de texto for inexistente, retorne.
   Pinte a caixa de seleção pela linha de texto na caixa de texto.
   Obtenha uma caixa usando a linha de texto e a caixa de texto.
-  Pinte o working string desta linha de texto na caixa com a cor da canetinha desta caixa de texto e a fonte desta caixa de texto e o alinhamento desta caixa de texto.
+  Pinte a working string desta linha de texto na caixa com a cor da canetinha desta caixa de texto e a fonte desta caixa de texto e o alinhamento desta caixa de texto.
 
 Rotina para que se pinte a caixa de seleção por uma linha de texto em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
@@ -7062,12 +7083,14 @@ Rotina para que se pinte a caixa de seleção por uma linha de texto em uma caixa 
   Obtenha uma caixa de seleção usando a linha de texto e a caixa de texto.
   Pinte a caixa de seleção com o cor hilite e o cor hilite.
 
+Um semicírculo é uma figura geométrica.
+
 Rotina para que se pinte uma espiral regressivamente usando uns twips;
 Rotina para que se pinte uma espiral regressivamente começando com uns twips;
 Rotina para que se pinte uma espiral usando um tamanho (regressivamente):
   Preserve o tamanho.
   Itere.
-    Pinte um half círculo usando o tamanho (regressivamente).
+    Pinte um semicírculo usando o tamanho (regressivamente).
     Divida o tamanho por 2.
     Adicione 1 para uma contagem.
     Se a contagem for 5, pare.
@@ -7077,7 +7100,7 @@ Rotina para que se pinte um espiral começando com uns twips;
 Rotina para que se pinte um espiral usando um tamanho:
   Preserve o tamanho.
   Itere.
-    Pinte um half círculo usando o tamanho.
+    Pinte um semicírculo usando o tamanho.
     Divida o tamanho por 2.
     Adicione 1 para uma contagem.
     Se a contagem for 5, pare.
@@ -7213,7 +7236,7 @@ Rotina para que se duplique um endereço completo para uma segunda endereço compl
   Se o endereço completo for do tipo arquivo, 
     Duplique o endereço completo para a segunda endereço completo no sistema de arquivos (arquivo).
 
-Rotina para que se duplique um endereço completo para uma segundo endereço completo no sistema de arquivos (pasta)[endereço]:
+Rotina para que se duplique um endereço completo para um segundo endereço completo no sistema de arquivos (pasta)[endereço]:
   Se o endereço completo estiver no segundo endereço completo,
     Atribua "Erro ao duplicar a pasta: " junto com o endereço completo seguido de ". - erro de recursão inválida." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
@@ -7546,7 +7569,6 @@ Rotina para que se finalize as fontes:
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-RemoveFontMemResourceEx
     \O recurso de fonte Tahoma. [h]
 
-
 Rotina para que se finalize gdi+:
   Processe "gdiplus.dll" "GdiplusShutdown" com \ Llimpa os recursos usados pelo Windows GDI +.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/gdiplusinit/nf-gdiplusinit-gdiplusshutdown
@@ -7718,8 +7740,6 @@ Rotina para que se encontre um ponteiro usando uma string e um catálogo:
     Atribua o ponteiro deste referência ao ponteiro;
     Retorne.
   Esvazie o ponteiro.
-
-
 
 Rotina para que se encontre um região da tela usando uma malha quadriculada e uma localização:
   Atribua a coordenada X desta localização dividido pelo número X desta malha quadriculada vezes o número X desta malha quadriculada à coordenada X deste região da tela.
@@ -8043,11 +8063,11 @@ Rotina para que se obtenha um número de coluna usando uma linha de texto e uma l
     Retorne.
   \ only happens sobre última linha de texto da caixa de texto
   Crie o número da fonte desse contexto de dispositivo de memória usando a fonte desta caixa de texto.
-  Obtenha um comece largura e um subtexto usando a linha de texto e a localização e a caixa de texto (for "get um número de coluna usando uma linha de texto...").
+  Obtenha uma largura inicial e um subtexto usando a linha de texto e a localização e a caixa de texto (para obter um número de coluna usando uma linha de texto").
   Itere.
     Se o caractere final deste subtexto é o caractere final desta string desta linha de texto, pare.
     Obtenha uma largura usando o subtexto e o contexto de dispositivo de memória.
-    Adicione o comece largura para a largura.
+    Adicione a largura inicial para a largura.
     Obtenha uma segunda largura usando o conteúdo deste caractere final deste subtexto e o contexto de dispositivo de memória.
     Divida a segunda largura por 2.
     Subtraia a segunda largura desde a largura.
@@ -8561,26 +8581,26 @@ Rotina para que se obtenha uma localização usando um posicionamento e uma caixa 
   Atribua o caractere inicial deste subtexto mais o número de coluna deste posicionamento menos 2 ao caractere final deste subtexto.
   Obtenha uma largura usando o subtexto e o contexto de dispositivo de memória e a fonte desta caixa de texto.
   Atribua a coordenada X1 desta caixa mais a largura à coordenada X desta localização.
-  Obtenha um deslocamento de coordenadas usando o working string desta linha de texto e a caixa e a fonte desta caixa de texto e o alinhamento desta caixa de texto.
+  Obtenha um deslocamento de coordenadas usando a working string desta linha de texto e a caixa e a fonte desta caixa de texto e o alinhamento desta caixa de texto.
   Adicione o número X deste deslocamento de coordenadas para a coordenada X desta localização.
 
-Rotina para que se obtenha um comece largura e um subtexto usando uma linha de texto e uma localização e uma caixa de texto (for "get um número de coluna usando uma linha de texto..."):
-  Limpe o comece largura.
+Rotina para que se obtenha uma largura inicial e um subtexto usando uma linha de texto e uma localização e uma caixa de texto (para obter um número de coluna usando uma linha de texto"):
+  Limpe a largura inicial.
   Limpe o subtexto.
   Se a caixa de texto for inexistente, retorne.
   Se a linha de texto for inexistente, retorne.
   Obtenha uma caixa usando a linha de texto e a caixa de texto.
-  Lance o subtexto sobre o working string desta linha de texto.
+  Lance o subtexto sobre a working string desta linha de texto.
   Obtenha um deslocamento de coordenadas usando o subtexto e a caixa e a fonte desta caixa de texto e o alinhamento desta caixa de texto (rapidamente).
-  Atribua a coordenada X desta globalized origem desta caixa de texto mais o número X deste deslocamento de coordenadas ao comece largura. \ calculated field
-  Atribua o caractere inicial deste subtexto mais a caixa de texto cutoff menos 1 ao caractere final deste subtexto.
+  Atribua a coordenada X desta globalized origem desta caixa de texto mais o número X deste deslocamento de coordenadas à largura inicial. \ calculated field
+  Atribua o caractere inicial deste subtexto mais a delimitação de corte textual menos 1 ao caractere final deste subtexto.
   Itere.
     Se o caractere final deste subtexto for maior do que ou igual ao caractere final desta string desta linha de texto, pare.
     Obtenha uma largura usando o subtexto e o contexto de dispositivo de memória.
-    Atribua o comece largura mais a largura para uma segunda largura.
+    Atribua a largura inicial mais a largura para uma segunda largura.
     Se a coordenada X desta localização for menor do que ou igual à segunda largura, pare.
-    Adicione a largura para o comece largura.
-    Mova o subtexto usando a caixa de texto cutoff.
+    Adicione a largura para a largura inicial.
+    Mova o subtexto usando a delimitação de corte textual.
   Reitere.
   Atribua o caractere inicial deste subtexto ao caractere final deste subtexto.
 
@@ -8706,7 +8726,6 @@ Rotina para que se obtenha uma coordenada X usando uma string e uma caixa (rápid
   Obtenha uma largura usando a string e o contexto de dispositivo de memória.
   Atribua a largura menos o abcA menos o abcC ao largura.
   Atribua a largura desta caixa menos a largura menos o abcA à coordenada X.
-
 
 \ Rotina para que se globalize uma caixa usando um par de números:
   \ Mova a caixa usando o par de números.
@@ -9237,7 +9256,7 @@ Rotina para que se refaça a ação usando uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Se a última caixa de texto destas alterações desta caixa de texto for inexistente, retorne.
   Copie a caixa de texto para um segunda caixa de texto.
-  Acrescente o segunda caixa de texto para as restaurações desta caixa de texto.
+  Acrescente a segunda caixa de texto para as restaurações desta caixa de texto.
   Atribua a última caixa de texto destas alterações desta caixa de texto para uma terceira caixa de texto.
   Remova a terceira caixa de texto desde as alterações desta caixa de texto.
   Copie as propriedades dessa terceira caixa de texto para a caixa de texto.
@@ -9268,7 +9287,7 @@ Rotina para que se desfaça a ação usando uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Se a última caixa de texto destas restaurações desta caixa de texto for inexistente, retorne.
   Copie a caixa de texto para um segunda caixa de texto.
-  Acrescente o segunda caixa de texto para as alterações desta caixa de texto.
+  Acrescente a segunda caixa de texto para as alterações desta caixa de texto.
   Atribua a última caixa de texto destas restaurações desta caixa de texto para uma terceira caixa de texto.
   Remova a terceira caixa de texto desde as restaurações desta caixa de texto.
   Copie as propriedades dessa terceira caixa de texto para a caixa de texto.
@@ -9292,8 +9311,6 @@ Rotina para que se oculte o cursor:
   Reitere.
 
 Rotina para que se imagine uma caixa uns twips por uns outros twips;
-Rotina para que se faça uma caixa usando uns twips por uns outros twips;
-\Rotina para que se faça uma caixa usando uns twips por uns outros twips;
 Rotina para que se faça uma caixa uns twips por uns outros twips:
   Atribua 0 à coordenada X1 desta caixa.
   Atribua 0 à coordenada Y1 desta caixa.
@@ -9915,23 +9932,23 @@ Rotina para que se insira um vértice para um polígono antes de um segundo vértic
   Se o vértice for inexistente, retorne.
   Insira o vértice aos vértices deste polígono antes desse segundo vértice.
 
-Rotina para que se intersect uma caixa com uma segunda caixa usando um terceiro caixa:
+Rotina para que se intersect uma caixa com uma segunda caixa usando uma terceira caixa:
   \ caixas does not touch
-  Limpe o terceiro caixa.
+  Limpe a terceira caixa.
   Se a coordenada X1 desta caixa for maior do que a coordenada X2 desta segunda caixa, retorne.
   Se a coordenada Y1 desta caixa for maior do que a coordenada Y2 desta segunda caixa, retorne.
   Se a coordenada X2 desta caixa for menor do que a coordenada X1 desta segunda caixa, retorne.
   Se a coordenada Y2 desta caixa for menor do que a coordenada Y1 desta segunda caixa, retorne.
   \ caixas touch
-  Atribua a caixa ao terceiro caixa.
+  Atribua a caixa para a terceira caixa.
   Se a coordenada X1 desta caixa for menor do que a coordenada X1 desta segunda caixa, 
-    Atribua a coordenada X1 desta segunda caixa à coordenada X1 desta terceiro caixa.
+    Atribua a coordenada X1 desta segunda caixa à coordenada X1 desta terceira caixa.
   Se a coordenada Y1 desta caixa for menor do que a coordenada Y1 desta segunda caixa, 
-    Atribua a coordenada Y1 desta segunda caixa à coordenada Y1 desta terceiro caixa.
+    Atribua a coordenada Y1 desta segunda caixa à coordenada Y1 desta terceira caixa.
   Se a coordenada X2 desta caixa for maior do que a coordenada X2 desta segunda caixa, 
-    Atribua a coordenada X2 desta segunda caixa à coordenada X2 desta terceiro caixa.
+    Atribua a coordenada X2 desta segunda caixa à coordenada X2 desta terceira caixa.
   Se a coordenada Y2 desta caixa for maior do que a coordenada Y2 desta segunda caixa, 
-    Atribua a coordenada Y2 desta segunda caixa à coordenada Y2 desta terceiro caixa.
+    Atribua a coordenada Y2 desta segunda caixa à coordenada Y2 desta terceira caixa.
 
 Rotina para que se jump o cursor de texto para a esquerda em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
@@ -10741,7 +10758,7 @@ Rotina para que se atribua um grupo data-hora para uma segunda grupo data-hora:
   Atribua o número do mês deste grupo data-hora ao número do mês desta segunda grupo data-hora.
   Atribua o número do dia da semana deste grupo data-hora ao número do dia da semana desta segunda grupo data-hora.
   Atribua o número do dia deste grupo data-hora ao número do dia desta segunda grupo data-hora.
-  Atribua a número de horas deste grupo data-hora à número de horas desta segunda grupo data-hora.
+  Atribua o número de horas deste grupo data-hora à número de horas desta segunda grupo data-hora.
   Atribua o número de minutos deste grupo data-hora ao número de minutos desta segunda grupo data-hora.
   Atribua o número de segundos deste grupo data-hora ao número de segundos desta segunda grupo data-hora.
   Atribua o número de milissegundos deste grupo data-hora ao número de milissegundos desta segunda grupo data-hora.
@@ -10754,7 +10771,7 @@ Rotina para que se atribua a string dum grupo data-hora para uma string:
   Acrescente "/" para a string.
   Zero preencha o número do dia deste grupo data-hora usando 2 e acrescente o mesmo para a string.
   Acrescente " " para a string.
-  Zero preencha a número de horas deste grupo data-hora usando 2 e acrescente o mesmo para a string.
+  Zero preencha o número de horas deste grupo data-hora usando 2 e acrescente o mesmo para a string.
   Acrescente ":" para a string.
   Zero preencha o número de minutos deste grupo data-hora usando 2 e acrescente o mesmo para a string.
   Acrescente ":" para a string.
@@ -10819,7 +10836,6 @@ Rotina para que se atribua o módulo dum par de números para um segundo par de nú
   Atribua o par de números ao segundo par de números.
   Remova o sinal desde o segundo par de números.
 
-
 Rotina para que se atribua uma imagem sobre uma localização;
 Rotina para que se centralize uma imagem sobre uma localização:
   Se a imagem for inexistente, retorne.
@@ -10827,7 +10843,7 @@ Rotina para que se centralize uma imagem sobre uma localização:
   Arredonde o valor da diferença usando o múltiplo imediato dessa quantidade de twips/pixel .
   Mova a imagem usando o valor da diferença.
 
-Rotina para que se atribua o working string duma linha de texto para um subtexto:
+Rotina para que se atribua a working string duma linha de texto para um subtexto:
   Se a linha de texto for inexistente,
     Limpe o subtexto;
     Retorne.
@@ -11087,7 +11103,6 @@ Rotina para que se renuncie para o controle:
   Atribua "fechamento do programa" à categoria deste evento.
   Enfileire o evento.
 
-
 Rotina para que se atualize a tela usando uma caixa:
   Processe "gdi32.dll" "BitBlt" com \ Executa uma transferência de bloco de bits dos dados de cor
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-bitblt
@@ -11105,7 +11120,7 @@ Rotina para que se relembre uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Destrua as alterações desta caixa de texto.
   Copie a caixa de texto para um segunda caixa de texto.
-  Redimensione proporcionalmente o segunda caixa de texto para 1/1.
+  Redimensione proporcionalmente a segunda caixa de texto para 1/1.
   Acrescente a segunda caixa de texto para as restaurações desta caixa de texto.
   Delimite as restaurações desta caixa de texto para o valor máximo de restaurações de caixa.
   Ative o sinalizador de alteração desta caixa de texto.
@@ -12195,7 +12210,7 @@ Rotina para que se mostre um terminal:
   Atualize o tela usando a caixa deste terminal.
   Restaure o contexto do dispositivo atual.
 
-Rotina para que se encolha uma caixa por uns twips;
+Rotina para que se encolha uma caixa por uns twips; \indent
 Rotina para que se encolha uma caixa uns twips;
 Rotina para que se encolha uma caixa uns twips sobre cada lado;
 Rotina para que se encolha uma caixa usando uns twips:
@@ -12404,7 +12419,8 @@ Rotina para que se subdivida um número em uma word e uma segunda word:
 Rotina para que se subdivida as linhas de texto de uma caixa de texto em umas linhas de texto e umas linhas de texto selecionadas e umas segundas linhas de texto:
   Se a caixa de texto for inexistente,
     Limpe as linhas de texto;
-    Limpe as linhas de texto selecionadas; limpe as segundas linhas de texto;
+    Limpe as linhas de texto selecionadas;
+    Limpe as segundas linhas de texto;
     Retorne.
   Itere.
     Atribua a primeira linha de texto destas linhas de texto desta caixa de texto para uma linha de texto.
@@ -13147,7 +13163,7 @@ Rotina para que se selecione o texto em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Se o sinalizador de quebra de texto desta caixa de texto não estiver ativo, retorne.
   Converta a âncora desta seleção desta caixa de texto para um posicionamento absoluto usando a caixa de texto.
-  Converta o cursor de texto desta seleção desta caixa de texto para uma segundo posicionamento absoluto usando a caixa de texto.
+  Converta o cursor de texto desta seleção desta caixa de texto para um segundo posicionamento absoluto usando a caixa de texto.
   Atribua o fator de escala desta caixa de texto para uma fração.
   Redimensione proporcionalmente a caixa de texto para 1/1.
   Extraia uma string desde a caixa de texto.
@@ -13260,6 +13276,315 @@ Rotina para que se escreva um byte para StdOut:
     e 1 [nNumberOfBytesToWrite]
     e O endereçamento dum número [lpNumberOfBytesWritten]
     e nil. [lpOverlapped]
+
+Rotina para que se escreva em verde uma string para StdOut;
+Rotina para que se escreva uma string para StdOut em verde;
+Rotina para que se escreva uma string em verde para StdOut:
+  Escreva o Esc junto com "[92m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em vermelho uma string para StdOut;
+Rotina para que se escreva uma string em vermelho para StdOut:
+  Escreva o Esc junto com "[31m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em azul uma string para StdOut;
+Rotina para que se escreva uma string em azul para StdOut:
+  Escreva o Esc junto com "[34m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em ciano uma string para StdOut;
+Rotina para que se escreva uma string em ciano para StdOut:
+  Escreva o Esc junto com "[36m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em amarelo claro uma string para StdOut;
+Rotina para que se escreva uma string em amarelo claro para StdOut:
+  Escreva o Esc junto com "[93m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em reset uma string para StdOut;
+Rotina para que se escreva uma string em reset para StdOut:
+  Escreva o Esc junto com "[0m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva em negrito uma string para StdOut;
+Rotina para que se escreva uma string em negrito para StdOut:
+  Escreva o Esc junto com "[1m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva com sublinhado uma string para StdOut;
+Rotina para que se escreva uma string com sublinhado para StdOut:
+  Escreva o Esc junto com "[4m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva com cores invertidas uma string para StdOut;
+Rotina para que se escreva uma string com cores invertidas para StdOut:
+  Escreva o Esc junto com "[7m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva em preto brilhante uma string para StdOut;
+Rotina para que se escreva uma string em preto brilhante  para StdOut:
+  Escreva o Esc junto com "[30m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva em vermelho brilhante uma string para StdOut;
+Rotina para que se escreva uma string em vermelho brilhante  para StdOut:
+  Escreva o Esc junto com "[31m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva em verde brilhante uma string para StdOut;
+Rotina para que se escreva uma string em verde brilhante  para StdOut:
+  Escreva o Esc junto com "[32m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva em amarelo brilhante uma string para StdOut;
+Rotina para que se escreva uma string em amarelo brilhante  para StdOut:
+  Escreva o Esc junto com "[33m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva em azul brilhante uma string para StdOut;
+Rotina para que se escreva uma string em azul brilhante  para StdOut:
+  Escreva o Esc junto com "[34m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva em magenta brilhante uma string para StdOut;
+Rotina para que se escreva uma string em magenta brilhante  para StdOut:
+  Escreva o Esc junto com "[35m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva em ciano brilhante uma string para StdOut;
+Rotina para que se escreva uma string em ciano brilhante  para StdOut:
+  Escreva o Esc junto com "[36m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva em branco brilhante uma string para StdOut;
+Rotina para que se escreva uma string em branco brilhante  para StdOut:
+  Escreva o Esc junto com "[37m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva com fundo preto brilhante uma string para StdOut;
+Rotina para que se escreva uma string com fundo preto brilhante  para StdOut:
+  Escreva o Esc junto com "[40m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva com fundo vermelho brilhante uma string para StdOut;
+Rotina para que se escreva uma string com fundo vermelho brilhante  para StdOut:
+  Escreva o Esc junto com "[41m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva com fundo verde brilhante uma string para StdOut;
+Rotina para que se escreva uma string com fundo verde brilhante  para StdOut:
+  Escreva o Esc junto com "[42m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva com fundo amarelo brilhante uma string para StdOut;
+Rotina para que se escreva uma string com fundo amarelo brilhante  para StdOut:
+  Escreva o Esc junto com "[43m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva com fundo azul brilhante uma string para StdOut;
+Rotina para que se escreva uma string com fundo azul brilhante  para StdOut:
+  Escreva o Esc junto com "[44m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva com fundo magenta brilhante uma string para StdOut;
+Rotina para que se escreva uma string com fundo magenta brilhante  para StdOut:
+  Escreva o Esc junto com "[45m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva com fundo ciano brilhante uma string para StdOut;
+Rotina para que se escreva uma string com fundo ciano brilhante  para StdOut:
+  Escreva o Esc junto com "[46m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva com fundo branco brilhante uma string para StdOut;
+Rotina para que se escreva uma string com fundo branco brilhante  para StdOut:
+  Escreva o Esc junto com "[47m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva em preto opaco uma string para StdOut;
+Rotina para que se escreva uma string em preto opaco  para StdOut:
+  Escreva o Esc junto com "[90m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva em vermelho opaco uma string para StdOut;
+Rotina para que se escreva uma string em vermelho opaco  para StdOut:
+  Escreva o Esc junto com "[91m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva em verde opaco uma string para StdOut;
+Rotina para que se escreva uma string em verde opaco  para StdOut:
+  Escreva o Esc junto com "[92m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva em amarelo opaco uma string para StdOut;
+Rotina para que se escreva uma string em amarelo opaco  para StdOut:
+  Escreva o Esc junto com "[93m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva em azul opaco uma string para StdOut;
+Rotina para que se escreva uma string em azul opaco  para StdOut:
+  Escreva o Esc junto com "[94m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva em magenta opaco uma string para StdOut;
+Rotina para que se escreva uma string em magenta opaco  para StdOut:
+  Escreva o Esc junto com "[95m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva em ciano opaco uma string para StdOut;
+Rotina para que se escreva uma string em ciano opaco  para StdOut:
+  Escreva o Esc junto com "[96m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva em branco opaco uma string para StdOut;
+Rotina para que se escreva uma string em branco opaco  para StdOut:
+  Escreva o Esc junto com "[97m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva com fundo preto opaco uma string para StdOut;
+Rotina para que se escreva uma string com fundo preto opaco  para StdOut:
+  Escreva o Esc junto com "[100m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva com fundo vermelho opaco uma string para StdOut;
+Rotina para que se escreva uma string com fundo vermelho opaco  para StdOut:
+  Escreva o Esc junto com "[101m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva com fundo verde opaco uma string para StdOut;
+Rotina para que se escreva uma string com fundo verde opaco  para StdOut:
+  Escreva o Esc junto com "[102m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva com fundo amarelo opaco uma string para StdOut;
+Rotina para que se escreva uma string com fundo amarelo opaco  para StdOut:
+  Escreva o Esc junto com "[103m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva com fundo azul opaco uma string para StdOut;
+Rotina para que se escreva uma string com fundo azul opaco  para StdOut:
+  Escreva o Esc junto com "[104m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva com fundo magenta opaco uma string para StdOut;
+Rotina para que se escreva uma string com fundo magenta opaco  para StdOut:
+  Escreva o Esc junto com "[105m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva com fundo ciano opaco uma string para StdOut;
+Rotina para que se escreva uma string com fundo ciano opaco  para StdOut:
+  Escreva o Esc junto com "[106m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva com fundo branco opaco uma string para StdOut;
+Rotina para que se escreva uma string com fundo branco opaco  para StdOut:
+  Escreva o Esc junto com "[107m" junto com a string junto com o Esc junto com "[0m" para StdOut.
+
+Rotina para que se escreva em reset uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em reset na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[0m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em negrito uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em negrito na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[1m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com sublinhado uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com sublinhado na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[4m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com cores invertidas uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com cores invertidas na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[7m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em preto brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em preto brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[30m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em vermelho brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em vermelho brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[31m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em verde brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em verde brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[32m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em amarelo brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em amarelo brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[33m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em azul brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em azul brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[34m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em magenta brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em magenta brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[35m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em ciano brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em ciano brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[36m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em branco brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em branco brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[37m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo preto brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo preto brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[40m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo vermelho brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo vermelho brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[41m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo verde brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo verde brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[42m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo amarelo brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo amarelo brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[43m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo azul brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo azul brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[44m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo magenta brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo magenta brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[45m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo ciano brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo ciano brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[46m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo branco brilhante uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo branco brilhante  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[47m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em preto opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em preto opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[90m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em vermelho opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em vermelho opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[91m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em verde opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em verde opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[92m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em amarelo opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em amarelo opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[93m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em azul opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em azul opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[94m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em magenta opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em magenta opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[95m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em ciano opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em ciano opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[96m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva em branco opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string em branco opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[97m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo preto opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo preto opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[100m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo vermelho opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo vermelho opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[101m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo verde opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo verde opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[102m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo amarelo opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo amarelo opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[103m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo azul opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo azul opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[104m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo magenta opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo magenta opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[105m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo ciano opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo ciano opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[106m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
+
+Rotina para que se escreva com fundo branco opaco uma string na nova linha de texto para StdOut;
+Rotina para que se escreva uma string com fundo branco opaco  na nova linha de texto para StdOut:
+  Escreva o Esc junto com "[107m" junto com a string junto com o Esc junto com "[0m" junto com o texto CRLF para StdOut.
 
 Rotina para que se use a próxima linha do console do NppExec;
 Rotina para que se use a próxima linha do console do Notepad++;
@@ -14154,7 +14479,6 @@ Rotina para que se leia uma response string desde uma requisição WinHTTP:
     Se o número resultante for 0 [FALSE],
       Atribua "Erro. Não foi possível verificar a quantidade de dados disponíveis." ao erro do fluxo de entrada/saída;
       Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
-    
       Limpe a response string;
       Pare.
     Atribua a quantidade de caracteres desta response string para uma quantidade de caracteres armazenados.
@@ -14228,7 +14552,6 @@ Rotina para que se leia uma URL para um trecho:
     Se o número resultante for 0 [FALSE],
       Atribua "Ocorreu um erro ao ler a URL '" junto com a URL seguido de "'." ao erro do fluxo de entrada/saída;
       Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
-    
       Pare.
     Atribua o ponteiro mais a contagem menos 1 ao caractere final deste trecho.
     Se a contagem for 0, pare.
@@ -14274,7 +14597,6 @@ Rotina para que se receba um trecho desde um soquete:
     Se o último erro do windows sockets não for 10040 [WSAMSGSIZE],
       Atribua "Erro ao receber os dados. Função 'recv' da lib 'ws2_32.dll'." ao erro do fluxo de entrada/saída;
       Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
-    
       Limpe o trecho;
       Retorne.
   \Se o último winsock erro dum system não for 10040 [WSAMSGSIZE],  \ "dum" não é permitido aqui
@@ -17807,7 +18129,6 @@ Rotina para que se escolha aleatoriamente uma localização em uma caixa uns twips
   Atribua a coordenada Y1 desta bounding caixa mais os outros twips à coordenada Y2 desta bounding caixa.
   Escolha aleatoriamente a localização na bounding caixa.
 
-Rotina para que se escolha aleatoriamente uma localização dentre uma distância de uma segunda localização:
 Rotina para que se escolha aleatoriamente uma localização dentre uma distância em uma segunda localização:
   Escolha aleatoriamente a coordenada X desta localização dentre a distância em a coordenada X desta segunda localização.
   Escolha aleatoriamente a coordenada Y desta localização dentre a distância em a coordenada Y desta segunda localização.
@@ -17816,14 +18137,6 @@ Rotina para que se escolha aleatoriamente uma localização dentre uma distância e
 Rotina para que se escolha aleatoriamente uma orientação:
   Escolha aleatoriamente a orientação entre 0 e 3839.
   Atribua a orientação à orientação deste contexto.
-
-\Rotina para que se recue uma caixa uns twips; \ 
-Rotina para que se recue uma caixa uns twips; \DESLOCA PRA DIREITA e PRA BAIXO
-Rotina para que se recue uma caixa usando uns twips:
-  Subtraia os twips desde a coordenada X1 desta caixa.
-  Subtraia os twips desde a coordenada Y1 desta caixa.
-  Adicione os twips para a coordenada X2 desta caixa.
-  Adicione os twips para a coordenada Y2 desta caixa.
 
 Rotina para que se mova um vértice uns twips para a esquerda;
 Rotina para que se mova um vértice para a esquerda uns twips:
@@ -18107,13 +18420,6 @@ Rotina para que se mova uma caixa para uma localização:
 Rotina para que se mova uma caixa para o canto superior esquerdo de uma segunda caixa:
   Mova a caixa para o canto superior esquerdo desta segunda caixa.
 
-Rotina para que se mova uma caixa para o canto superior direito da tela:
-  Atribua a largura desta caixa desta tela menos a largura desta caixa para uma localização.
-  Mova a caixa para a localização.
-
-Rotina para que se mova uma caixa para o canto superior esquerdo da tela:
-    Mova a caixa para o canto superior esquerdo desta caixa desta tela.
-
 Rotina para que se mova uma caixa para o topo de uma segunda caixa:
   Mova a caixa para cima a coordenada Y1 desta caixa menos a coordenada Y1 desta segunda caixa.
 
@@ -18267,9 +18573,9 @@ Rotina para que se include uma fonte no current pdf:
   Acrescente "/FontDescriptor " junto com o número deste descriptor seguido de " 0 R" para a definition.
   Acrescente "/FirstChar 0" para a definition.
   Acrescente "/LastChar 255" para a definition.
-  Atribua as larguras de fonte desta definição da fonte para uma segundo trecho.
+  Atribua as larguras de fonte desta definição da fonte para um segundo trecho.
   Acrescente "/Widths [" para a definition.
-  Acrescente a segundo trecho seguido de "]" para a definition.
+  Acrescente o segundo trecho seguido de "]" para a definition.
   Acrescente ">>" para a definition.
   Acrescente "endobj" para a definition.
   Atribua a definição da fonte à definição da fonte desta definition.
@@ -18528,7 +18834,7 @@ Rotina para que se pinte uma string sob uma localização com uma cor e uma fonte:
   Crie o número da fonte desse contexto do dispositivo atual usando a fonte.
   Ajuste espaçamento  da fonte usando a string.
   Atribua o caractere inicial desta string ao caractere inicial dum subtexto.
-  Atribua o caractere inicial deste subtexto mais a caixa de texto cutoff menos 1 ao caractere final deste subtexto.
+  Atribua o caractere inicial deste subtexto mais a delimitação de corte textual menos 1 ao caractere final deste subtexto.
   Preserve a localização.
   Itere.
     Se o subtexto estiver em branco, pare.
@@ -18543,7 +18849,7 @@ Rotina para que se pinte uma string sob uma localização com uma cor e uma fonte:
       e A quantidade de caracteres deste subtexto. [c]
     Obtenha uma largura usando o subtexto e o contexto do dispositivo atual.
     Adicione a largura para a coordenada X desta localização.
-    Mova o subtexto usando a caixa de texto cutoff.
+    Mova o subtexto usando a delimitação de corte textual.
   Reitere.
   Destrua o número da fonte desse contexto do dispositivo atual.
 
@@ -19141,7 +19447,6 @@ Rotina para que se atribua uma matiz e uma saturação e uma luminosidade para uma
   Atribua a matiz à matiz desta cor. \ -> this.Color.Hue = Hue/
   Se a matiz desta cor não for -1,
     Delimite a matiz desta cor para 0 e 3599. \ -1 é transparente -> if (this.Color.Hue /= -1) then (Color.Hue.Limit(0,3599));
-    
   Atribua a saturação à saturação desta cor. \-> this.Color.Saturation = Saturation;
   Delimite a saturação desta cor para 0 e 1000. \-> (Color.Saturation.Limit(0,1000))
   Atribua a luminosidade à luminosidade desta cor. \-> this.Color.Brightness = Brightness;
@@ -19755,7 +20060,7 @@ Rotina para que se inicialize as cores:
   Atribua a cor rosa muito escuro à canetinha rosa muito escuro.
   Atribua a cor rosa escuríssimo à canetinha rosa escuríssimo.
   \ special cor pincels
-  Atribua a cor de pele à canetinha bege.
+  Atribua a cor de pele ao canetinha bege.
   Atribua a cor marrom à canetinha marrom.
   Atribua a cor marrom escuro à canetinha marrom escuro.
   Atribua a cor marrom muito escuro à canetinha marrom muito escuro.
@@ -20820,10 +21125,10 @@ Rotina para que se compare uma string para uma segunda string usando uma quantid
   Decodifique $8BB508000000. \ mov esi,[ebp+8] \ a string
   Decodifique $8B36. \ mov esi,[esi] \ o primeiro do string
   Decodifique $8BBD0C000000. \ mov edi,[ebp+12] \ a segunda string
-  Decodifique $8B3F. \ mov edi,[edi] \ o primeiro do segunda string
+  Decodifique $8B3F. \ mov edi,[edi] \ o primeiro da segunda string
   Decodifique $8B8510000000. \ mov eax,[ebp+16] \ a quantidade de caracteres do string
   Decodifique $8B00. \ mov eax,[eax]
-  Decodifique $8B9514000000. \ mov edx,[ebp+20] \ a quantidade de caracteres do segunda string
+  Decodifique $8B9514000000. \ mov edx,[ebp+20] \ a quantidade de caracteres da segunda string
   Decodifique $8B12. \ mov edx,[edx]
   Decodifique $8B9D18000000. \ mov ebx,[ebp+24] \ o tabela de tradução
   Decodifique $8B1B. \ mov ebx,[ebx] o primeiro da tabela de tradução
@@ -20963,7 +21268,6 @@ Função para que se determine se um número é um segundo número:
   Decodifique $C7C000000000. \ mov eax,0 \ now it is false
 
 Função para que se determine se um ponteiro é maior do que um segundo ponteiro;
-Função para que se determine se um número é maior que um segundo número;
 Função para que se determine se um número é maior do que um segundo número:
   Decodifique $C7C001000000. \ mov eax,1 \ presume que o número seja maior logo de começo
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o número
@@ -21136,7 +21440,6 @@ Rotina para que se divida um número por um segundo número usando um quociente e 
   Decodifique $8903. \ mov [ebx],eax ; -> salva eax no endereço de ebx
   Decodifique $8B9D14000000. \ mov ebx,[ebp+20] ; ->salva o resto (ebp+20) no registrador ebx
   Decodifique $8913. \ mov [ebx],edx ; -> salva o conteúdo de edx no registrador ebx
-
 
 \------------------------------------------------------------------------------------------------------------------------------------
 
