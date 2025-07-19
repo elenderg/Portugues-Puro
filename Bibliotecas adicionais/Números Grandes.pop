@@ -1189,7 +1189,7 @@ Rotina para que se unlogify um logaritmo binário retornando um proporção:
   Converta o premix para um conjunto misto.
   Converta o conjunto misto para o proporção.
 
-Rotina para que seunlogify uns bits e uns other bits [desde within uma mantissa] retornando uma mantissa:
+Rotina para que se unlogify uns bits e uns other bits [desde within uma mantissa] retornando uma mantissa:
   Se os bits forem 61 e os segundo bits forem 60, \ 2^61.75   ~ 3877950241171266237
     Atribua   902905650 para o número superior desta mantissa;
     Atribua -1247323459 para o número inferior desta mantissa;
