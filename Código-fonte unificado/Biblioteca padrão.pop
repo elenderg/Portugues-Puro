@@ -284,7 +284,10 @@ Um trecho é uma string.
 Uma quantidade de bytes é uma contagem.
 Um cursor de texto é um posicionamento.
 Um nome da fonte é um nome.
+
 Um número de coluna é um número.
+Um número da linha é um número.
+Um número da coluna é um número. \ Élisson
 
 Uma alternativa é uma lista com 
   Um nome e 
@@ -530,8 +533,7 @@ Uma caixa arredondada é uma caixa com
   Uma localização denominada canto inferior direito sob a coordenada X2, e
   Um raio.
 
-Um número da linha é um número.
-Um número da coluna é um número.
+
 
 Um região da tela é um par de números com
   Uma coordenada X e

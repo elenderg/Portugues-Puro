@@ -472,11 +472,15 @@ Rotina para que se faça tudo:
     Escreva em vermelho "Código de Erro #001. Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT.
   Obtenha uma string desde os argumentos da linha de comando.
   Se a string estiver em branco, 
-    Escreva "--------------------------------------------------------------------------------------------------------------- " junto com o texto CRLF para StdOut;
-    Escreva "Aviso. Para utilizar este compilador, você deve invocá-lo através da linha de comando. " junto com o texto CRLF para StdOut;
-    Escreva "Para fazer isso, abra o Prompt de Comando (cmd.exe), navegue até a pasta do compilador e digite:" junto com o texto CRLF para StdOut;
-    Escreva " " junto com o texto CRLF para StdOut;
-    Escreva " c:\endereço_do_compilador.exe\  c:\pasta_do_projeto_atual\ " junto com o texto CRLF para StdOut;
+    Escreva "|-----------------------------------------------------------------------------------------------------------------------|" junto com o texto CRLF para StdOut;
+    Escreva "| "junto com o Esc junto com "[33m" 
+    junto com "Aviso. Para utilizar este compilador, você deve informar o PATH do projeto através da linha de comando." 
+    junto com o Esc junto com "[0m" junto com "               |" junto com o texto CRLF para StdOut;
+    Escreva "| Para fazer isso, abra o Prompt de Comando (cmd.exe), navegue até a pasta do compilador e digite:                      |" junto com o texto CRLF para StdOut;
+    Escreva "|                                                                                                                       |" junto com o texto CRLF para StdOut;
+    Escreva "|                       Compilador.exe   D:\pasta_do_projeto_atual\                                                     |" junto com o texto CRLF para StdOut;
+    Escreva "|                                                                                                                       |" junto com o texto CRLF para StdOut;
+    Escreva "|-----------------------------------------------------------------------------------------------------------------------|" junto com o texto CRLF para StdOut;
   Retorne.
   Se o conteúdo deste caractere final desta string não for a barra invertida, 
     Acrescente a barra invertida para a string.
@@ -1262,6 +1266,8 @@ Rotina para que se apresente uma mensagem de erro contendo uma string e um ender
     junto com o nome do arquivo seguido de "'. " 
     junto com o texto CRLF para a mensagem de erro deste compilador.
 
+Um número da linha de erro é um número da linha.
+
 Rotina para que se encontre um endereço completo e um número da linha usando um endereço de byte:
   Limpe o endereço completo.
   Atribua 0 ao número da linha.
@@ -1279,7 +1285,7 @@ Rotina para que se encontre um número da linha usando um arquivo fonte e um ende
   Itere.
     Se o subtexto estiver em branco, retorne.
     Se o caractere inicial deste subtexto for o endereço de byte , retorne.
-    Se o conteúdo deste caractere inicial deste subtexto for o retorno de carro, 
+    Se o conteúdo deste caractere inicial deste subtexto for o retorno de carro, \ poderia ser alterado para LF em vez de CR
       Adicione 1 para o número da linha.
   Adicione 1 para o caractere inicial deste subtexto.
   Reitere.
