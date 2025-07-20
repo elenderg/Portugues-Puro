@@ -18,8 +18,8 @@ C:\path_do_compilador.exe C:\path_do_projeto_a_ser_compilado\
 ![Captura de tela expondo o processo de compilação](https://raw.githubusercontent.com/elenderg/Portugues-Puro/refs/heads/main/Algoritmos%20de%20Exemplo/Processo%20de%20Compilacao.png)
 
 Lembre-se de substuir `C:\path_do_compilador.exe` pelo caminho para o executável do seu compilador e `C:\path_do_projeto_a_ser_compilado\` pelo caminho para o diretório do projeto que você deseja compilar.  
-Certifique-se de rodar o prompt de comando com permissões de Administrador, caso contrário o codepage não poderá ser definido corretamente.
-Caso você esteja utilizando o Powershell, certifique-se de ajustar o PATH ao invocar o compilador.
+Caso esteja utilizando o Windows 8 e anteriores, certifique-se de rodar o prompt de comando com permissões de Administrador, caso contrário o codepage não poderá ser definido corretamente e caracteres estranhos aparecerão nas mensagens de erro.
+Caso você esteja utilizando o Powershell, certifique-se de ajustar corretamente o PATH do projeto ao invocar o compilador.
 
 
 ## Observações
