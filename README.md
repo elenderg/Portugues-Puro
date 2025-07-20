@@ -1,4 +1,4 @@
-# Portugues-Puro
+# Português-Puro
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![Contribuidores](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contribuidores-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
