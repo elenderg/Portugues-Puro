@@ -472,11 +472,15 @@ Rotina para que se faça tudo:
     Escreva em vermelho "Código de Erro #001. Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT.
   Obtenha uma string desde os argumentos da linha de comando.
   Se a string estiver em branco, 
-    Escreva "--------------------------------------------------------------------------------------------------------------- " junto com o texto CRLF para StdOut;
-    Escreva "Aviso. Para utilizar este compilador, você deve invocá-lo através da linha de comando. " junto com o texto CRLF para StdOut;
-    Escreva "Para fazer isso, abra o Prompt de Comando (cmd.exe), navegue até a pasta do compilador e digite:" junto com o texto CRLF para StdOut;
-    Escreva " " junto com o texto CRLF para StdOut;
-    Escreva " c:\endereço_do_compilador.exe\  c:\pasta_do_projeto_atual\ " junto com o texto CRLF para StdOut;
+    Escreva "|-----------------------------------------------------------------------------------------------------------------------|" junto com o texto CRLF para StdOut;
+    Escreva "| "junto com o Esc junto com "[33m" 
+    junto com "Aviso. Para utilizar este compilador, você deve informar o PATH do projeto através da linha de comando." 
+    junto com o Esc junto com "[0m" junto com "               |" junto com o texto CRLF para StdOut;
+    Escreva "| Para fazer isso, abra o Prompt de Comando (cmd.exe), navegue até a pasta do compilador e digite:                      |" junto com o texto CRLF para StdOut;
+    Escreva "|                                                                                                                       |" junto com o texto CRLF para StdOut;
+    Escreva "|                       Compilador.exe   D:\pasta_do_projeto_atual\                                                     |" junto com o texto CRLF para StdOut;
+    Escreva "|                                                                                                                       |" junto com o texto CRLF para StdOut;
+    Escreva "|-----------------------------------------------------------------------------------------------------------------------|" junto com o texto CRLF para StdOut;
   Retorne.
   Se o conteúdo deste caractere final desta string não for a barra invertida, 
     Acrescente a barra invertida para a string.
