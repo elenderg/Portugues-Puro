@@ -2374,7 +2374,7 @@ A canetinha vermelho muito escuro é uma canetinha.
 A canetinha cinza muito escuro é uma canetinha.
 
 \CANETAS ESCURÍSSIMAS
-O  canetinha verde escuríssimo é uma canetinha.
+A canetinha verde escuríssimo é uma canetinha.
 A canetinha amarelo escuríssimo  é uma canetinha.
 A canetinha azul celeste escuríssimo é uma canetinha.
 A canetinha azul céu escuríssimo é uma canetinha.
@@ -21094,13 +21094,13 @@ Rotina para que se compare uma string para uma segunda string usando uma quantid
   Decodifique $8B9514000000. \ mov edx,[ebp+20] \ a quantidade de caracteres desta segunda string
   Decodifique $8B12. \ mov edx,[edx]
   Decodifique $3BD0. \ cmp eax,edx \ if o differ do quantidade de caracteres, diga não.
-  Decodifique $0F852B000000. \ jne sayno \ ************************************ was 2C
+  Decodifique $0F852B000000. \ jne DIGA NÃO \ ************************************ was 2C
   Decodifique $8BC8. \ mov ecx,eax \ atribua quantidade de caracteres A ecx
   Decodifique $8B9D18000000. \ mov ebx,[ebp+24] \ o tabela de tradução
   Decodifique $8B1B. \ mov ebx,[ebx] o primeiro da tabela de tradução
   \ loop:
   Decodifique $85C9. \ test ecx,ecx
-  Decodifique $0F8424000000. \ jz say yes \ ************************************ was 25
+  Decodifique $0F8424000000. \ jz DIGA SIM \ ************************************ was 25
    \ fetch e substitui o current byte na segunda string
   Decodifique $8A07. \ mov al,[edi]
   Decodifique $D7. \ xlat al,[ebx]
@@ -21108,7 +21108,7 @@ Rotina para que se compare uma string para uma segunda string usando uma quantid
   \ fetch e substitui o current byte no string
   Decodifique $8A06. \ mov al,[esi]
   Decodifique $D7. \ xlat al,[ebx]
-   \ compare o two translated bytes
+   \ compare os two translated bytes
   Decodifique $38E0. \ cmp al,ah
   Decodifique $0F8508000000. \ jne  Diga não. \ ************************************
   Decodifique $46. \ inc esi
