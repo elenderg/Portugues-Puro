@@ -5357,13 +5357,15 @@ Função para que se determine se um byte é semelhante para um segundo byte:
 
 Função para que se determine se um byte é irrelevante:
   Se o byte for menor do que ou igual ao caractere de espaço, diga sim.
-  Se o byte for o [ANTIGO] símbolo DEL [O descontinuado], diga sim.
+  Se o byte for o [ANTIGO] símbolo DEL [descontinuado], diga sim.
   Se o byte for o espaço rígido, diga sim.
-  Se o byte for 129, diga sim. \ Unused
-  Se o byte for 141, diga sim. \ Unused
-  Se o byte for 143, diga sim. \ Unused
-  Se o byte for 144, diga sim. \ Unused
-  Se o byte for 157, diga sim. \ Unused
+  Se o byte for 129, diga sim. \ Inutilizado
+  Se o byte for 141, diga sim. \ Inutilizado
+  Se o byte for 143, diga sim. \ Inutilizado
+  Se o byte for 144, diga sim. \ Inutilizado
+  Se o byte for 157, diga sim. \ Inutilizado
+  Se o byte for o indicador ordinal masculino, diga sim.
+  Se o byte for o indicador ordinal feminino, diga sim.
   Diga não.
 
 Função para que se determine se um byte é igual a um número ou para um segundo número;

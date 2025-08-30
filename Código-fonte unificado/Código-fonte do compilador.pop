@@ -141,25 +141,25 @@ Um valor literal é uma variável.
 Uma variável local é uma variável.
 Um endereço local é um endereço de byte .
 Uma representação interna da rotina é uma string.  \ moniker
-\ https://learn.microsoft.com/pt-br/windows/win32/com/monikers
 \ Trata-se de uma representação interna de um nome de rotina, sendo que
 \ • Não há artigos precedendo os tipos dos parâmetros. 
 \ • Os tipos dos parâmetros estão rodeados por colchetes. 
 \ • As preposições são expandidas para incluir seus sinônimos.
 \ Cada pedaço de um moniker é uma unidade semântica. Por exemplo:
 \ Nome da rotina: Rotina para que se adicione um número para uma contagem:
-\ Moniker: adicione [número] em/para [contagem]
+\ Moniker: adicione [número] para [contagem]
 \ Monikettes: 
 \ 1º: adicione 
 \ 2º [número] 
-\ 3º em/para 
+\ 3º para 
 \ 4º [contagem]
 \ Essa representação interna é necessária porque
 \ • quando o compilador busca a rotina a ser chamada, 
-\   a representação interna faz com que seja fácil detectar o tipo base do tipo atual
-\   (por exemplo, [contagem] é um tipo derivado de [número])  when looking for an appropriate routine to call;
-\ • tampém faz com que seja fácil expandir as preposições
-\ • Nos ajuda a entender como o compilador entendeu a invoação da rotina, pois ele exibe a representação nas suas mensagens de erro.
+\   a representação interna faz com que seja fácil detectar o tipo base do tipo atual ao buscar a rotina correta a ser chamada
+\   (por exemplo, [contagem] é um tipo derivado de [número]) 
+\ • também faz com que seja fácil expandir as preposições
+\ • E nos ajuda a entender como o compilador entendeu a invocação da rotina, 
+\ • Já que esta representação é exibida nas suas mensagens de erro.
 
 Uma unidade semântica é uma lista com
   Uma string,
@@ -3476,7 +3476,7 @@ Rotina para que se compile um valor literal usando um percorredor (valor numéric
   \Se a razão de escala deste tipo não for 0,
     Multiplique a proporção fixa pelo proporção.
   Reduza a proporção fixa.
-  Se o denominador deste proporção fixa for 0,
+  Se o denominador desta proporção fixa for 0,
     Apresente a mensagem de erro contendo 
       "Código de Erro #055. Proporção com denominador igual a 0. Unidade de medida inválida."
       [junto com o nome deste tipo seguido de "'."] e o endereço local deste valor literal.
@@ -4649,6 +4649,8 @@ Rotina para que se crie um fragmento usando uma etiqueta:
 
 Rotina para que se compile a próxima instrução usando um percorredor:
   Se existir algum problema de compilação, retorne.
+  \Se o segmento inicial deste percorredor for algum número ordinal, 
+    \Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor for algum comando condicional,
     Compile a próxima instrução usando o percorredor (cláusula de condicional);
     Retorne.
@@ -4666,7 +4668,8 @@ Rotina para que se compile a próxima instrução usando um percorredor:
   Compile a próxima instrução usando o percorredor (demais cláusulas).
   Se o segmento inicial deste percorredor não for o ponto final,
     Apresente a mensagem de erro contendo 
-      "Código de Erro #080. Invocação de rotina inexistente (ou uso de palavra-chave reservada)." junto com o texto CRLF e o percorredor;
+      "Código de Erro #080. Invocação de rotina inexistente (ou uso de palavra-chave reservada) no segmento '"
+      junto com o segmento inicial deste percorredor junto com "'" junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
 
