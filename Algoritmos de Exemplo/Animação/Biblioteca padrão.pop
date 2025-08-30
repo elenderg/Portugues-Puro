@@ -4279,7 +4279,8 @@ Rotina para que se copie um gpBitmap Para um segundo gpBitmap: \verificar
     e 0 [y] \ A coordenada y do canto superior esquerdo do retângulo deste bitmap
     e A largura deste gpBitmap [width] \ A largura do retângulo deste bitmap
     e A altura deste gpBitmap [height] \ A altura do retângulo
-    e 0 [format = PixelFormatDontCare]  \O formato de pixel do novo bitmap. O valor 0 não especifica o formato do pixel.
+    e 2498570 [format = PixelFormat32bppARGB]
+    \e 0 [format = PixelFormatDontCare]  \O formato de pixel do novo bitmap. O valor 0 não especifica o formato do pixel.
     \ Consulte https://learn.microsoft.com/pt-br/windows/win32/gdiplus/-gdiplus-constant-image-pixel-format-constants
     e O gpBitmap [*srcBitmap] \ objeto Bitmap de origem.
     e O endereçamento deste segundo gpBitmap. [**dstBitmap] \ O objeto Bitmap clonado.
@@ -6926,7 +6927,8 @@ Rotina para que se pinte uma imagem sobre um gpGraphic sob uma coordenada X e um
   Se a imagem for inexistente, retorne.
   Se o sinalizador de escala de cinza desta imagem estiver ativo, 
     Crie um GpImageAttributes (escala de cinza).
-  Processe "gdiplus.dll" "GdipDrawImageRectRectI" com \ Usada para desenhar imagens com cores ou faixas de cores transparentes.
+  Processe "gdiplus.dll" "GdipDrawImageRectRectI" com 
+  \ Usada para desenhar imagens com cores ou faixas de cores transparentes.
   \Observações: a parte da imagem de origem a ser desenhada é redimensionada para caber no retângulo.
     O gpGraphic [*graphics]
     e O gpBitmap desta imagem [*image]
@@ -7415,7 +7417,8 @@ Rotina para que se extraia uma imagem usando uma caixa:
     A largura [width]
     e A altura [height]
     e 0 [stride]
-    e 137224 [0x21808 format = PixelFormat24bppRGB]
+    e 2498570 [format = PixelFormat32bppARGB]
+    \e 137224 [0x21808 format = PixelFormat24bppRGB]
     e 0 [scan0]
     e O endereçamento dum gpBitmap. [*bitmap]
   Processe "gdiplus.dll" "GdipGetImageGraphicsContext" com \ Usada para criar um objeto Graphics associado para um objeto de imagem.
@@ -10093,7 +10096,8 @@ Rotina para que se lock um gpBitmap usando um BitmapData (espaço de cor RGB de 2
    e o endereçamento deste GpRect [*rect]
    e 3 [flags = ImageLockModeRead + ImageLockModeWrite]
    \ Consulte https://learn.microsoft.com/pt-br/windows/desktop/api/gdiplusimaging/ne-gdiplusimaging-imagelockmode
-   e 137224 [format = PixelFormat24bppRGB]
+   \ e 137224 [format = PixelFormat24bppRGB]
+   e 2498570 [format = PixelFormat32bppARGB]
    e o endereçamento deste BitmapData. [lockedBitmapData]
 
 Rotina para que se lowercase qualquer trecho selecionado em uma caixa de texto:
@@ -11390,7 +11394,8 @@ Rotina para que se redimensione uma imagem para uma largura por uma altura:
     A largura do pixel [width] e 
     A altura do pixel [height]
     e 0 [stride]
-    e 137224 [0x21808 = format = PixelFormat24bppRGB] \ Consulte https://learn.microsoft.com/pt-br/windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants
+    e 2498570 [format = PixelFormat32bppARGB]
+    \e 137224 [0x21808 = format = PixelFormat24bppRGB] \ Consulte https://learn.microsoft.com/pt-br/windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants
     e 0 [*scan0] \
     e O endereçamento dum gpBitmap. [*bitmap] \
   Processe "gdiplus.dll" "GdipGetImageGraphicsContext" com \ Cria um objeto Graphics associado para um objeto Image.
@@ -18628,7 +18633,8 @@ Rotina para que se pinte uma imagem (modo pdf):
     A largura [width]
     e A altura [height]
     e 0 [stride]
-    e 137224 [format = PixelFormat24bppRGB]
+    e 2498570 [format = PixelFormat32bppARGB]
+    \e 137224 [format = PixelFormat24bppRGB]
     e 0 [scan0]
     e O endereçamento dum gpBitmap. [*bitmap]
   Processe "gdiplus.dll" "GdipGetImageGraphicsContext" com \ INSERIR Documentação
@@ -18698,8 +18704,8 @@ Rotina para que se pinte uma imagem:
   Pinte a imagem sobre o gpGraphic sob a coordenada X1 desta caixa intacta desta imagem e a coordenada Y1 desta caixa intacta desta imagem.
   Processe "gdiplus.dll" "GdipDeleteGraphics" com
   \ Exclui o objeto Graphics especificado.
-    O gpGraphic [*graphics] \ponteito do número identificador do objeto Graphics.
-   \Valor de retorno da funlção: Retorna o valor GpStatus, sendo que o valor 0 significa que a função foi bem sucedida.
+    O gpGraphic [*graphics] \ponteiro para o número identificador do objeto Graphics.
+   \Retorna o valor GpStatus. O valor 0 significa que a função foi bem sucedida.
     retornando o status.
   \Se o status for 0,
     \Escreva "Função GdipDeleteGraphics invocada com sucesso." junto com o texto CRLF junto com o texto CRLF para StdOut.

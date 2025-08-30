@@ -8,6 +8,30 @@ O comando é um trecho.
 
 Rotina para que se execute o programa:
   Defina "console" como o tipo da aplicação.
+  Escreva 
+    "Este programa permite que você gerencie sua agenda de contatos de forma simples e rápida diretamente pelo terminal." junto com o texto CRLF junto com 
+    "Digite um dos comandos abaixo para interagir com a agenda:"  junto com o texto CRLF para Stdout.
+    Escreva com sublinhado "Adicionar" para Stdout.
+    Escreva "   -> " para Stdout.
+    Escreva "Insere um novo contato." junto com o texto CRLF para Stdout.
+    Escreva com sublinhado "Alterar" para Stdout.
+    Escreva "     -> " para Stdout.
+    Escreva "Modifica os dados de um contato existente." junto com o texto CRLF para Stdout.
+    Escreva com sublinhado "Ajuda" para Stdout.
+    Escreva "       -> " para Stdout.
+    Escreva "Mostra a lista de comandos e instruções." junto com o texto CRLF para Stdout.
+    Escreva com sublinhado "Excluir" para Stdout.
+    Escreva "     -> " para Stdout.
+    Escreva "Remove um contato da agenda." junto com o texto CRLF para Stdout.
+    Escreva com sublinhado "Encontrar" para Stdout.
+    Escreva "   -> " para Stdout.
+    Escreva "Busca contatos pelo nome ou telefone." junto com o texto CRLF para Stdout.
+    Escreva com sublinhado "Listar" para Stdout.
+    Escreva "      -> " para Stdout.
+    Escreva "Exibe todos os contatos cadastrados." junto com o texto CRLF para Stdout.
+    Escreva com sublinhado "Sair" para Stdout.
+    Escreva "        -> " para Stdout.
+    Escreva "Encerra o programa." junto com o texto CRLF para StdOut.
   Escreva o texto CRLF junto com "Digite um comando: " para StdOut.
   Itere.
     Escreva o texto CRLF junto com " > " para StdOut.
@@ -44,6 +68,8 @@ Rotina para que se execute o programa:
     Se o comando for "sair",
       Destrua a agenda telefônica;
       Pare.
+    \Se o comando não for nenhum desses, então
+      Escreva em vermelho "Erro. Comando inválido." para StdOut.
   Reitere.
   Feche o nosso programa.
 
@@ -61,11 +87,11 @@ Rotina para que se adicione o contato:
   Aloque memória para um contato.
   Acrescente o contato na agenda telefônica.
   Escreva "Digite o nome do contato: " junto com o texto CRLF para StdOut.
-  Leia uma string desde a StdIn.
-  Atribua a string para o nome deste contato.
+  Leia uma string denominada nome desde a StdIn.
+  Atribua o nome para o nome deste contato.
   Escreva "Digite o telefone do contato: " junto com o texto CRLF para StdOut.
-  Leia uma nova string desde a StdIn.
-  Atribua a nova string para o número de telefone deste contato.
+  Leia uma string denominada telefone desde a StdIn.
+  Atribua o telefone para o número de telefone deste contato.
   Escreva "Contato adicionado." junto com o texto CRLF para StdOut.
 
 Rotina para que se altere o contato:
@@ -97,13 +123,17 @@ Rotina para que se encontre o contato:
   Se o contato for inexistente,
     Escreva "Contato não encontrado." junto com o texto CRLF para StdOut;
     Retorne.  
-  Escreva o nome deste contato junto com a tabulação horizontal junto com "            " junto com o número de telefone deste contato junto com o texto CRLF para StdOut.
+  Escreva o nome deste contato junto com a tabulação horizontal 
+    junto com "            " junto com o número de telefone deste contato 
+    junto com o texto CRLF para StdOut.
 
 Rotina para que se liste os contatos:
   Itere.
     Obtenha um contato desde a agenda telefônica.
     Se o contato for inexistente, pare.
-    Escreva o nome deste contato junto com a tabulação horizontal junto com "            " junto com o número de telefone deste contato junto com o texto CRLF para StdOut.
+    Escreva o nome deste contato junto com a tabulação horizontal 
+      junto com "            " junto com o número de telefone deste contato 
+      junto com o texto CRLF para StdOut.
   Reitere.
   Se a contagem desta agenda telefônica for igual a 1,
     Atribua a contagem desta agenda telefônica junto com " contato." para uma string.

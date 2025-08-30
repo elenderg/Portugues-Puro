@@ -36,19 +36,26 @@ Um array é uma estrutura com
   Um ponteiro denominado endereço,
   Um número denominado tamanho.
 
+\A thing is a pointer to a thing record.
 Uma lista é um ponteiro [que aponta] para uma lista estruturada.
 
-Uma lista estrutura é uma lista estruturada.
-
+\A thing record has a next thing and a previous thing.
 Uma lista estruturada é uma estrutura com
   Uma lista denominada lista posterior e
   Uma lista denominada lista anterior.
 
-\Um conjunto de texto é uma lista com uma string.
-
+\Some things are a record with a first thing and a last thing.
 Umas listas são uma estrutura com
   Uma lista denominada lista inicial e
   Uma lista denominada lista final.
+
+Uma lista estrutura é uma lista estruturada.
+
+
+
+\Um conjunto de texto é uma lista com uma string.
+
+
 
 Um twip é um número. 
 \ Twips são unidades de medida independentes de tela, 
@@ -2649,7 +2656,8 @@ Rotina para que se multiplique um número por uma fração;
 Rotina para que se redimensione proporcionalmente um número usando uma proporção;
 Rotina para que se redimensione proporcionalmente um número usando uma fração:
   Se o denominador desta fração for 0, retorne.
-  Processe "kernel32.dll" "MulDiv" com \ Multiplica dois valores de 32 bits e, em seguida, divide o resultado de 64 bits por um terceiro valor de 32 bits.
+  Processe "kernel32.dll" "MulDiv" com
+  \ Multiplica dois valores de 32 bits e, em seguida, divide o resultado de 64 bits por um terceiro valor de 32 bits.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-muldiv
     O número [nNumber]
     e O numerador desta fração [nNumerator]
@@ -2785,7 +2793,8 @@ Rotina para que se ajuste uma imagem (extraindo as caixas do gpBitmap):
 
 Rotina para que se ajuste espaçamento da fonte usando uma string:
   Se o contexto do dispositivo atual não for a área de impressão, retorne.
-  Processe "gdi32.dll" "SetTextCharacterExtra" com \ Define o espaçamento entre caracteres
+  Processe "gdi32.dll" "SetTextCharacterExtra" com
+  \ Define o espaçamento entre caracteres
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-settextcharacterextra
     A área de impressão [hDC]
     e 0 [extra]
@@ -2793,15 +2802,19 @@ Rotina para que se ajuste espaçamento da fonte usando uma string:
   Se o status de erro for 2147483648 [0x80000000],
     Escreva "Erro ao invocar a Função SetTextCharacterExtra (gdi32.dll)" junto com o texto CRLF para StdOut;
     Retorne.
-  Processe "gdi32.dll" "GetCurrentObject" com \ Retorna um identificador para o objeto
+  Processe "gdi32.dll" "GetCurrentObject" com
+  \ Retorna um identificador para o objeto
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-getcurrentobject
     A área de impressão [hDC]
     e 6 [tipo OBJ_FONT] \ OBJ_FONT -> Retorna a fonte selecionada no momento.
   Retornando um número identificador. [h]
   Se o número identificador for 0 [NULL],
-    Escreva "Falha ao obter o identificador da fonte atual. A Função GetCurrentObject (gdi32.dll) retornou NULL." junto com o texto CRLF para StdOut;
+    Escreva "Falha ao obter o identificador da fonte atual." junto com
+    " A Função GetCurrentObject (gdi32.dll) retornou NULL." 
+    junto com o texto CRLF para StdOut;
     Retorne.
-  Processe "gdi32.dll" "SelectObject" com \ Seleciona um objeto no contexto de dispositivo (DC) especificado.
+  Processe "gdi32.dll" "SelectObject" com
+  \ Seleciona um objeto no contexto de dispositivo (DC) especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-selectobject
     O contexto de dispositivo de memória [hDC]
     e O número identificador [h]
@@ -2864,7 +2877,8 @@ Rotina para que se inclua um trecho no final de um arquivo;
 \posponha
 Rotina para que se posponha um trecho para um arquivo:
   Limpe o erro do fluxo de entrada/saída.
-  Processe "kernel32.dll" "SetFilePointer" com \ Armazena o ponteiro do arquivo em dois valores LONG.
+  Processe "kernel32.dll" "SetFilePointer" com
+  \ Armazena o ponteiro do arquivo em dois valores LONG.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-setfilepointer
   O arquivo [hFile]
     e 0 [lDistanceToMove]
@@ -2875,7 +2889,8 @@ Rotina para que se posponha um trecho para um arquivo:
     Atribua "Erro na função 'SetFilePointer'. Ocorreu um erro na hora de posicionar o ponteiro do arquivo." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
-  Processe "kernel32.dll" "WriteFile" com \ Grava dados no arquivo ou dispositivo de entrada / saída (E/S) especificado.
+  Processe "kernel32.dll" "WriteFile" com
+  \ Grava dados no arquivo ou dispositivo de entrada / saída (E/S) especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-writefile
     O arquivo [hFile]
     e O caractere inicial deste trecho [lpBuffer]
@@ -3171,7 +3186,8 @@ Rotina para que se associe um ponteiro usando um quantidade de bytes:\ Aloque me
     Retorne.
   Preserve a quantidade de bytes.
   Arredonde a quantidade de bytes para cima usando a próxima potência de dois.
-  Processe "kernel32.dll" "HeapAlloc" com \ Aloca um bloco de memória de um heap.
+  Processe "kernel32.dll" "HeapAlloc" com
+  \ Aloca um bloco de memória de um heap.
   \ Documentação: ->  https://learn.microsoft.com/pt-br/windows/win32/api/heapapi/nf-heapapi-heapalloc
     O endereço heap [hHeap]
     e 8 [dwFlags ]
@@ -3281,7 +3297,8 @@ Rotina para que se reproduza um bipe;
 Rotina para que se bipe;
 Rotina para que se emita um bipe:
   Atribua 0 ao bipe.
-  Processe "user32.dll" "MessageBeep" com \ Reproduz um som waveform
+  Processe "user32.dll" "MessageBeep" com
+  \ Reproduz um som waveform
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-messagebeep
   O bipe [uType]\O valor 0 é o som especificado como o som Beep padrão do Windows.
   retornando um número.
@@ -3306,7 +3323,8 @@ Rotina para que se inicie a impressão:
   Inicialize a área de impressão.
   Atribua a magnitude dum DOCINFO ao cbSize deste DOCINFO.
   Atribua o caractere inicial deste nome deste módulo ao lpszDocName deste DOCINFO.
-  Processe "gdi32.dll" "StartDocA" com \ Inicia uma nova impressão.
+  Processe "gdi32.dll" "StartDocA" com
+  \ Inicia uma nova impressão.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-startdoca
     A área de impressão [hDC]
     e O endereçamento deste DOCINFO. [*lpdi]
@@ -3339,7 +3357,8 @@ Rotina para que se avance um percorredor por um número:
   Adicione o número para o caractere inicial deste segmento final deste percorredor.
 
 Rotina para que se assobie:
-  Processe "kernel32.dll" "Beep" com \ Gera tons simples no alto-falante.
+  Processe "kernel32.dll" "Beep" com
+  \ Gera tons simples no alto-falante.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/utilapiset/nf-utilapiset-beep
     220 [dwFreq]
     e 200. [dwDuration]
@@ -3627,7 +3646,8 @@ Rotina para que se limpe uma word:
   Atribua 0 ao word.
 
 Rotina para que se feche um arquivo:
-  Processe "kernel32.dll" "CloseHandle" com \ Invalida um identificador de um objeto aberto.
+  Processe "kernel32.dll" "CloseHandle" com
+  \ Invalida um identificador de um objeto aberto.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/handleapi/nf-handleapi-closehandle
   O arquivo. [hObject]
 
@@ -3700,7 +3720,8 @@ Rotina para que se compativelmente handle alguma mensagem com uma janela do prog
     Atribua 0 para EAX;
     Retorne.
   [Caso o valor da mensagem seja outro:]
-  Processe "user32.dll" "DefWindowProcA" com \Chama o procedimento de janela padrão para  processamento das mensagens de janela que um aplicativo não processa.
+  Processe "user32.dll" "DefWindowProcA" com
+  \Chama o procedimento de janela padrão para  processamento das mensagens de janela que um aplicativo não processa.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-defwindowproca
     A janela do programa [hWnd]
     e A mensagem [Msg]
@@ -3708,11 +3729,13 @@ Rotina para que se compativelmente handle alguma mensagem com uma janela do prog
     e O lParam. [lParam]
 
 Rotina para que se compativelmente aguarde por um ponteiro de processo:
-  Processe "kernel32.dll" "WaitForSingleObject" com \ Espera até que o objeto esteja no estado sinalizado ou o intervalo de tempo delimite expire.
+  Processe "kernel32.dll" "WaitForSingleObject" com
+  \ Espera até que o objeto esteja no estado sinalizado ou o intervalo de tempo delimite expire.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/synchapi/nf-synchapi-waitforsingleobject
     O conteúdo deste ponteiro de processo [hHandle]
     e -1. [dwMilliseconds]
-  Processe "kernel32.dll" "CloseHandle" com \ Fecha um identificador de objeto aberto.
+  Processe "kernel32.dll" "CloseHandle" com
+  \ Fecha um identificador de objeto aberto.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/handleapi/nf-handleapi-closehandle
     O conteúdo deste ponteiro de processo. [hObject]
   Atribua 0 ao conteúdo deste ponteiro de processo.
@@ -3722,7 +3745,8 @@ Rotina para que se compativelmente aguarde por um ponteiro de processo:
   Se a janela do programa for a janela principal do programa,
     Atribua 0 para EAX;
     Retorne.
-  Processe "user32.dll" "ShowWindow" com \ Define o estado de exibição da janela especificada.
+  Processe "user32.dll" "ShowWindow" com
+  \ Define o estado de exibição da janela especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-showwindow
     A janela principal do programa [hWnd]
     e 6 [nCmdShow SW_MINIMIZE].
@@ -3808,7 +3832,8 @@ Rotina para que se converta uma cor para um código da cor:
   Delimite a luminosidade desta cor para 1 e 239.
   Redimensione proporcionalmente a matiz desta cor usando 240/3600.
   Delimite a matiz desta cor para 1 e 239.
-  Processe "shlwapi.dll" "ColorHLSToRGB" com \ Converte cores HLS para o formato RGB.
+  Processe "shlwapi.dll" "ColorHLSToRGB" com
+  \ Converte cores HLS para o formato RGB.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/shlwapi/nf-shlwapi-colorhlstorgb
     A matiz desta cor [wHue]
     e A luminosidade desta cor  [wLuminance]
@@ -3820,7 +3845,8 @@ Rotina para que se converta uma cor para um espaço de cor RGB:
   Converta o código da cor para o espaço de cor RGB.
 
 Rotina para que se converta um código da cor para uma cor:
-  Processe "shlwapi.dll" "ColorRGBToHLS" com \ Convert RGB p/ HSL
+  Processe "shlwapi.dll" "ColorRGBToHLS" com
+  \ Convert RGB p/ HSL
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/shlwapi/nf-shlwapi-colorrgbtohls
     O código da cor e [clrRGB]
     O endereçamento dum word [*pwHue]
@@ -3847,7 +3873,8 @@ Rotina para que se converta um código da cor para um espaço de cor RGB:
 
 Rotina para que se converta um filetime para uma string:
   Limpe a string.
-  Processe "kernel32.dll" "FileTimeToSystemTime" com \ Converte a hora do arquivo em formato de hora do sistema. (UTC).
+  Processe "kernel32.dll" "FileTimeToSystemTime" com
+  \ Converte a hora do arquivo em formato de hora do sistema. (UTC).
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/timezoneapi/nf-timezoneapi-filetimetosystemtime
     O endereçamento deste filetime [*lpFileTime]
     e O endereçamento dum SYSTEMTIME [lpSystemTime]
@@ -3871,7 +3898,8 @@ Rotina para que se converta um sinalizador para um texto hexadecimal:
 Rotina para que se converta uma fonte para um número da fonte:
   Preserve a fonte.
   Anexe o caractere NULL após o nome desta fonte.
-  Processe "gdi32.dll" "CreateFontA" com \ Cria uma fonte lógica com as características especificadas.
+  Processe "gdi32.dll" "CreateFontA" com
+  \ Cria uma fonte lógica com as características especificadas.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-createfonta
    - A altura desta fonte vezes 3 dividido por 4 [cHeight]
     e 0 [cWidth]
@@ -3939,7 +3967,8 @@ Rotina para que se converta um lParam para uma tecla:
   Desloque a tecla 16 bits para a direita .
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/virtual-key-codes
   Conjuncione logicamente a tecla com 255. \11111111 ou FF
-  Processe "user32.dll" "MapVirtualKeyA" com \ Mapeia um código de tecla virtual em um código de varredura e vice-versa
+  Processe "user32.dll" "MapVirtualKeyA" com
+  \ Mapeia um código de tecla virtual em um código de varredura e vice-versa
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-mapvirtualkeya
     A tecla [uCode]
     e 1 [uMapType MAPVK_VSC_TO_VK]
@@ -4232,7 +4261,8 @@ Rotina para que se converta uma string para umas linhas de texto:
 
 Rotina para que se converta uma string para um UUID:
   Converta a string para uma string de caracteres amplos e anexe o caractere NULL nela.
-  Processe "ole32.dll" "CLSIDFromString" com \Converte uma string gerada pela função StringFromCLSID de volta pro CLSID original.
+  Processe "ole32.dll" "CLSIDFromString" com
+  \Converte uma string gerada pela função StringFromCLSID de volta pro CLSID original.
   \ Documentação https://learn.microsoft.com/pt-br/windows/win32/api/combaseapi/nf-combaseapi-clsidfromstring
     O caractere inicial desta string de caracteres amplos [lpsz] \A representação da seqüência de caracteres do CLSID.
     e O endereçamento deste UUID. [pclsid]
@@ -4259,7 +4289,8 @@ Rotina para que se converta uma URL para uma URL simplificada:
   Atribua 1 ao dwHostNameLength destes URL_COMPONENTS.
   Atribua 1 ao dwUrlPathLength destes URL_COMPONENTS.
   Atribua 1 ao dwExtraInfoLength destes URL_COMPONENTS.
-  Processe "wininet.dll" "InternetCrackUrlA" com \ Divide uma URL em suas partes componentes.
+  Processe "wininet.dll" "InternetCrackUrlA" com
+  \ Divide uma URL em suas partes componentes.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wininet/nf-wininet-internetcrackurla
     O caractere inicial desta URL [lpszUrl]
     e 0 [dwUrlLength]
@@ -4295,14 +4326,16 @@ Rotina para que se copie um gpBitmap Para um segundo gpBitmap: \verificar
   Se o gpBitmap for inexistente,
     Esvazie o segundo gpBitmap;
     Retorne.
-  Processe "gdiplus.dll" "GdipCloneBitmapAreaI" com \ Cria um clone de um objeto Bitmap a partir das coordenadas e formato especificados
+  Processe "gdiplus.dll" "GdipCloneBitmapAreaI" com
+  \ Cria um clone de um objeto Bitmap a partir das coordenadas e formato especificados
   \ Documentação: ->https://learn.microsoft.com/pt-br/windows/win32/api/gdiplusheaders/nf-gdiplusheaders-bitmap-clone(int_int_int_int_pixelformat)
-    0 [x] \ A coordenada x do canto superior esquerdo do retângulo  deste bitmap
+    0 [x] \ A coordenada x do canto superior esquerdo do retângulo deste bitmap
     e 0 [y] \ A coordenada y do canto superior esquerdo do retângulo deste bitmap
     e A largura deste gpBitmap [width] \ A largura do retângulo deste bitmap
     e A altura deste gpBitmap [height] \ A altura do retângulo
     e 0 [format = PixelFormatDontCare]  \O formato de pixel do novo bitmap. O valor 0 não especifica o formato do pixel.
     \ Consulte https://learn.microsoft.com/pt-br/windows/win32/gdiplus/-gdiplus-constant-image-pixel-format-constants
+    \ 2498570 = PixelFormat32bppARGB e 925707 = PixelFormat32bppPARGB
     e O gpBitmap [*srcBitmap] \ objeto Bitmap de origem.
     e O endereçamento deste segundo gpBitmap. [**dstBitmap] \ O objeto Bitmap clonado.
 
@@ -4389,7 +4422,8 @@ Rotina para que se copie uns vértices Para uns segundo vértices:
 Rotina para que se crie o identificador de conexão de uma requisição WinHTTP usando uma URL simplificada:
   Se a requisição WinHTTP for inexistente, retorne.
   Converta o nome de host desta URL simplificada para uma string de caracteres amplos denominada nome amplificado do host e anexe o caractere NULL nela.
-  Processe "winhttp.dll" "WinHttpConnect" com \ Especifica o servidor de uma solicitação HTTP e retorna um identificador HINTERNET de uma sessão HTTP do destino inicial
+  Processe "winhttp.dll" "WinHttpConnect" com
+  \ Especifica o servidor de uma solicitação HTTP e retorna um identificador HINTERNET de uma sessão HTTP do destino inicial
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/WinHTTP/nf-WinHTTP-winhttpconnect
     O número identificador de sessão deste número identificador de requisição desta requisição WinHTTP [hSession]
     e O caractere inicial deste nome amplificado do host [pswzServerName]
@@ -4427,7 +4461,8 @@ Rotina para que se crie uma sessão criptografada com uma palavra-passe:
   Aloque memória para a Sessão Criptografada.
   Atribua "Microsoft Enhanced Cryptographic Provider v1.0" ao nome do provedor criptográfico. [MS_ENHANCED_PROV]
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/seccertenroll/cryptoapi-cryptographic-service-providers
-  Processe "advapi32.dll" "CryptAcquireContextA" com \ Adquire um contêiner de chave específica a partir do provedor de serviços criptográficos (CSP).
+  Processe "advapi32.dll" "CryptAcquireContextA" com
+  \ Adquire um contêiner de chave específica a partir do provedor de serviços criptográficos (CSP).
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wincrypt/nf-wincrypt-cryptacquirecontexta
     O endereçamento deste hCryptProv desta Sessão Criptografada [*phProv]
     e 0 [szContainer]
@@ -4440,7 +4475,8 @@ Rotina para que se crie uma sessão criptografada com uma palavra-passe:
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Destrua a Sessão Criptografada;
     Retorne.
-  Processe "advapi32.dll" "CryptCreateHash" com \ Inicializa o hash de um fluxo de dados.
+  Processe "advapi32.dll" "CryptCreateHash" com
+  \ Inicializa o hash de um fluxo de dados.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wincrypt/nf-wincrypt-cryptcreatehash
     O hCryptProv desta Sessão Criptografada [hProv]
     e 32771 [Algid CALG_MD5]
@@ -4453,7 +4489,8 @@ Rotina para que se crie uma sessão criptografada com uma palavra-passe:
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Destrua a Sessão Criptografada;
     Retorne.
-  Processe "advapi32.dll" "CryptHashData" com \ Adiciona dados para um hash.
+  Processe "advapi32.dll" "CryptHashData" com
+  \ Adiciona dados para um hash.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wincrypt/nf-wincrypt-crypthashdata
     O hCryptHash desta Sessão Criptografada [hHash]
     e O caractere inicial desta palavra-passe [*pbData]
@@ -4465,7 +4502,8 @@ Rotina para que se crie uma sessão criptografada com uma palavra-passe:
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Destrua a Sessão Criptografada;
     Retorne.
-  Processe "advapi32.dll" "CryptDeriveKey" com \ Gera chaves de sessão criptográficas
+  Processe "advapi32.dll" "CryptDeriveKey" com
+  \ Gera chaves de sessão criptográficas
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wincrypt/nf-wincrypt-cryptderivekey
     O hCryptProv desta Sessão Criptografada [hProv]
     e 26625 [CALG_RC4  Stream Cipher Algid]
@@ -4515,7 +4553,8 @@ Rotina para que se crie umas larguras de fonte usando uma fonte:
   Associe o data destas larguras de fonte usando a contagem destas larguras de fonte vezes a magnitude dum número.
   Crie o número da fonte desse contexto de dispositivo de memória usando a fonte.
   Associe um original endereço do ABC usando 256 vezes a magnitude dum ABC.
-  Processe "gdi32.dll" "GetCharABCWidthsA" com \ Recupera as larguras de caracteres de uma fonte
+  Processe "gdi32.dll" "GetCharABCWidthsA" com
+  \ Recupera as larguras de caracteres de uma fonte
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-getcharabcwidthsa
     O contexto de dispositivo de memória [hDC]
     e 0 [wFirst]
@@ -4545,7 +4584,8 @@ Rotina para que se crie umas larguras de fonte usando uma fonte e uma string:
   Atribua a quantidade de caracteres desta string ao nglyphs destes GcpResults.
   Associe o lpDX destes GcpResults usando a quantidade de caracteres desta string vezes a magnitude dum número.
   Crie o número da fonte desse contexto de dispositivo de memória usando a fonte.
-  Processe "gdi32.dll" "GetCharacterPlacementA" com \ Recupera informações sobre uma string ASCII
+  Processe "gdi32.dll" "GetCharacterPlacementA" com
+  \ Recupera informações sobre uma string ASCII
   \ https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-getcharacterplacementa
   \ Função substituída pela funcionalidade do módulo Uniscribe. Consulte https://learn.microsoft.com/pt-br/windows/desktop/Intl/uniscribe
     O contexto de dispositivo de memória [hDC]
@@ -4559,12 +4599,14 @@ Rotina para que se crie umas larguras de fonte usando uma fonte e uma string:
 
 Rotina para que se crie um gpBitmap usando um trecho:
   Limpe o erro do fluxo de entrada/saída.
-  Processe "kernel32.dll" "GlobalAlloc" com \ Aloca a partir do heap um número especificado de bytes
+  Processe "kernel32.dll" "GlobalAlloc" com
+  \ Aloca a partir do heap um número especificado de bytes
  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-globalalloc
     2 [uFlags GMEM_MOVEABLE]
     e A quantidade de caracteres deste trecho [dwBytes]
   Retornando um número identificador.
-  Processe "kernel32.dll" "GlobalLock" com \ Bloqueia um objeto de memória global
+  Processe "kernel32.dll" "GlobalLock" com
+  \ Bloqueia um objeto de memória global
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-globallock
     O número identificador [hMem]
   Retornando um ponteiro.
@@ -4572,12 +4614,14 @@ Rotina para que se crie um gpBitmap usando um trecho:
   Processe "kernel32.dll" "GlobalUnlock" com  \Diminui a contagem de bloqueios associada para um objeto de memória
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-globalunlock
     O número identificador. [hMem]
-  Processe "ole32.dll" "CreateStreamOnHGlobal" com \A função CreateStreamOnHGlobal cria um objeto de fluxo
+  Processe "ole32.dll" "CreateStreamOnHGlobal" com
+  \A função CreateStreamOnHGlobal cria um objeto de fluxo
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/combaseapi/nf-combaseapi-createstreamonhglobal
     O número identificador [hGlobal]
     e 1 [fDeleteOnRelease = TRUE]
     e O endereçamento dum istream. [*ppstm]
-  Processe "gdiplus.dll" "GdipCreateBitmapFromStream" com \Cria um objeto Bitmapbaseado em um um stream.
+  Processe "gdiplus.dll" "GdipCreateBitmapFromStream" com
+  \Cria um objeto Bitmapbaseado em um um stream.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/objidl/nn-objidl-istream
   \ https://learn.microsoft.com/pt-br/windows/win32/api/gdiplusheaders/nf-gdiplusheaders-bitmap-bitmap(istream_bool)
     O istream [stream]
@@ -4590,7 +4634,8 @@ Rotina para que se crie um gpBitmap usando um trecho:
   Processe o release deste VTable deste istream com o istream. \ monet
 
 Rotina para que se crie um GpImageAttributes (escala de cinza):
-  Processe "gdiplus.dll" "GdipCreateImageAttributes" com \ Contém informações sobre como as cores de bitmap e metarquivo são manipuladas durante a renderização.
+  Processe "gdiplus.dll" "GdipCreateImageAttributes" com
+  \ Contém informações sobre como as cores de bitmap e metarquivo são manipuladas durante a renderização.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/gdiplus/-gdiplus-imageattributes-flat
   \ https://learn.microsoft.com/pt-br/windows/win32/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes
     O endereçamento destes GpImageAttributes. [**imageattr]
@@ -4609,7 +4654,8 @@ Rotina para que se crie o hBrush de um canvas usando uma cor:
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-createsolidbrush
     O código da cor [color]
   Retornando o hBrush.
-  Processe "gdi32.dll" "SelectObject" com \ Seleciona um objeto no contexto de dispositivo (DC) especificado.
+  Processe "gdi32.dll" "SelectObject" com
+  \ Seleciona um objeto no contexto de dispositivo (DC) especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-selectobject
     O canvas [hDC]
     e O hBrush. [h]
@@ -4625,7 +4671,8 @@ Rotina para que se crie o hPen de um canvas usando uma cor:
   Se a cor estiver clear, atribua o null hPen para um hPen.
   Atribua a quantidade de twips/pixel vezes o grossura da canetinha para um número.
   Se o canvas for a área de impressão, atribua 1 pixel vezes o grossura da canetinha ao número.
-  Se a cor não estiver clear, Processe "gdi32.dll" "CreatePen" com \A função CreatePen cria uma caneta
+  Se a cor não estiver clear, Processe "gdi32.dll" "CreatePen" com
+  \A função CreatePen cria uma caneta
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-createpen
     0 [iStyle = PS_SOLID]
     e O número [cWidth]
@@ -4639,20 +4686,24 @@ Rotina para que se crie uma hRgn usando uma caixa:
   \ hRgn = número identificador da região que será desenhada na tela
   Preserve a caixa.
   Adicione a quantidade de twips/pixel para o canto inferior direito desta caixa.
-  Processe "gdi32.dll" "BeginPath" com \ Começa um caminho no contexto de dispositivo especificado.
+  Processe "gdi32.dll" "BeginPath" com
+  \ Começa um caminho no contexto de dispositivo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-beginpath
     O contexto do dispositivo atual.[hDC]
-  Processe "gdi32.dll" "Rectangle" com \ Desenha um retângulo.
+  Processe "gdi32.dll" "Rectangle" com
+  \ Desenha um retângulo.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-rectangle
     O contexto do dispositivo atual [hDC]
     e A coordenada X1 desta caixa
     e A coordenada Y1 desta caixa
     e A coordenada X2 desta caixa
     e A coordenada Y2 desta caixa.
-  Processe "gdi32.dll" "EndPath" com \ Termina caminho e seleciona o caminho definido pelo suporte no contexto de dispositivo especificado.
+  Processe "gdi32.dll" "EndPath" com
+  \ Termina caminho e seleciona o caminho definido pelo suporte no contexto de dispositivo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-endpath
     O contexto do dispositivo atual. [hDC]
-  Processe "gdi32.dll" "PathToRegion" com \ Cria uma região do caminho que é selecionado no contexto de dispositivo especificado.
+  Processe "gdi32.dll" "PathToRegion" com
+  \ Cria uma região do caminho que é selecionado no contexto de dispositivo especificado.
   \ Documentação: ->  https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-pathtoregion
     O contexto do dispositivo atual [hDC]
    Retornando o hRgn.
@@ -4661,7 +4712,8 @@ Rotina para que se crie uma hRgn usando uma elipse:
   Atribua a caixa desta elipse para uma caixa.
   Processe "gdi32.dll" "BeginPath" com
     O contexto do dispositivo atual.[hDC]
-  Processe "gdi32.dll" "Ellipse" com \ Desenha uma elipse.
+  Processe "gdi32.dll" "Ellipse" com
+  \ Desenha uma elipse.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-ellipse
     O contexto do dispositivo atual [hDC]
     e A coordenada X1 desta caixa
@@ -4680,12 +4732,14 @@ Rotina para que se crie uma hRgn usando um polígono:
     Retorne.
   [Caso o polígono exista, então:]
   Crie uma série de vértices usando os vértices deste polígono.
-  Processe "gdi32.dll" "LPtoDP" com \ Converte coordenadas lógicas em coordenadas de dispositivo.
+  Processe "gdi32.dll" "LPtoDP" com
+  \ Converte coordenadas lógicas em coordenadas de dispositivo.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-lptodp
     O contexto do dispositivo atual [hDC]
     e O ponteiro da localização desta série de vértices [lppt]
     e A quantidade de vértices desta série de vértices. [c]
-  Processe "gdi32.dll" "CreatePolygonRgn" com \ Cria uma região poligonal.
+  Processe "gdi32.dll" "CreatePolygonRgn" com
+  \ Cria uma região poligonal.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-createpolypolygonrgn
     O ponteiro da localização desta série de vértices  [*pptl]
     e A quantidade de vértices desta série de vértices [cPoint]
@@ -4701,7 +4755,8 @@ Rotina para que se crie uma hRgn usando uma caixa arredondada:
   Atribua o raio desta caixa arredondada vezes 2 para um diâmetro.
   Processe "gdi32.dll" "BeginPath" com
     O contexto do dispositivo atual.[hDC]
-  Processe "gdi32.dll" "RoundRect" com \ Desenha um retângulo com cantos arredondados.
+  Processe "gdi32.dll" "RoundRect" com
+  \ Desenha um retângulo com cantos arredondados.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-roundrect
     O contexto do dispositivo atual [hDC]
     e A coordenada X1 desta caixa
@@ -4731,7 +4786,8 @@ Rotina para que se crie o dicionário léxico:
 Rotina para que se crie o número identificador de abertura de uma requisição WinHTTP:
   Se a requisição WinHTTP for inexistente, retorne.
   Converta o nome deste módulo para uma string de caracteres amplos denominada nome amplificado e anexe o caractere NULL nela.
-  Processe "winhttp.dll" "WinHttpOpen" com \ Inicializao uso de funções WinHTTP
+  Processe "winhttp.dll" "WinHttpOpen" com
+  \ Inicializao uso de funções WinHTTP
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winhttp/nf-winhttp-winhttpopen
     O caractere inicial deste nome amplificado [pszAgentW]
     e 0 [dwAccessType = WINHTTP_ACCESS_TYPE_DEFAULT_PROXY]
@@ -4771,7 +4827,8 @@ Rotina para que se crie um endereço completo no sistema de arquivos (pasta)[ende
 Rotina para que se crie um endereço completo no sistema de arquivos (arquivo):
   Preserve o endereço completo.
   Anexe o caractere NULL após o endereço completo.
-  Processe "kernel32.dll" "CreateFileA" com \Cria ou abre um arquivo ou dispositivo de E/S.
+  Processe "kernel32.dll" "CreateFileA" com
+  \Cria ou abre um arquivo ou dispositivo de E/S.
   \ https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-createfilea
     O caractere inicial deste endereço completo [lpFileName]
     e 1073741824 [dwDesiredAccess = GENERIC_WRITE]
@@ -4788,7 +4845,8 @@ Rotina para que se crie um endereço completo no sistema de arquivos (arquivo):
     \  https://learn.microsoft.com/pt-br/windows/desktop/FileIO/file-attribute-constants
     e 0 [hTemplateFile]
   Retornando um número identificador.
-  Processe "kernel32.dll" "CloseHandle" com \Fecha um identificador de objeto
+  Processe "kernel32.dll" "CloseHandle" com
+  \Fecha um identificador de objeto
   \ https://learn.microsoft.com/pt-br/windows/win32/api/handleapi/nf-handleapi-closehandle
     O número identificador. [hObject]
   Limpe o erro do fluxo de entrada/saída.
@@ -4836,7 +4894,8 @@ Rotina para que se crie o número identificador da requisição de uma requisição W
   Converta "POST" para uma string de caracteres amplos denominado comando POST e anexe o caractere NULL nela.
   Se o nome do protocolo desta URL simplificada for "https", 
     Atribua 8388608 [WINHTTP_FLAG_SECURE] para um número denominado número seguro.
-  Processe "winhttp.dll" "WinHttpOpenRequest" com \ Cria uma solicitação HTTP.
+  Processe "winhttp.dll" "WinHttpOpenRequest" com
+  \ Cria uma solicitação HTTP.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winhttp/nf-winhttp-winhttpopenrequest
     O número identificador de conexão desta requisição WinHTTP [hConnect]
     \Para detalhes consulte https://learn.microsoft.com/pt-br/windows/desktop/WinHttp/hinternet-handles-in-winhttp
@@ -4868,7 +4927,8 @@ Rotina para que se crie um soquete [ipv4] usando uma host string e um número de 
   Se o erro do fluxo de entrada/saída não estiver em branco, retorne.
   Atribua 2 [AF_INET ] ao SIn_Family deste SOCKADDR.
   Atribua o port ao SIn_Port deste SOCKADDR.
-  Processe "ws2_32.dll" "socket" com \ Cria um soquete (encaixe/tomada) vinculado para um provedor de serviços de transporte específico.
+  Processe "ws2_32.dll" "socket" com
+  \ Cria um soquete (encaixe/tomada) vinculado para um provedor de serviços de transporte específico.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winsock2/nf-winsock2-socket
     2 [af = AF_INET ]
     e 1 [tipo = SOCK_STREAM ]
@@ -4878,7 +4938,8 @@ Rotina para que se crie um soquete [ipv4] usando uma host string e um número de 
     Atribua "Erro na função socket (ws2_32.dll). O soquete retornado é inválido." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
-  Processe "ws2_32.dll" "connect" com \ Estabelece uma conexão com um soquete especificado.
+  Processe "ws2_32.dll" "connect" com
+  \ Estabelece uma conexão com um soquete especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winsock2/nf-winsock2-connect
     O soquete [s]
     e O endereçamento deste SOCKADDR [*name] \ Consulte https://learn.microsoft.com/pt-br/windows/desktop/WinSock/sockaddr-2
@@ -4889,7 +4950,8 @@ Rotina para que se crie um soquete [ipv4] usando uma host string e um número de 
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Atribua 30 segundos para um tempo limite de envio. \ timeout
-  Processe "ws2_32.dll" "setsockopt" com \ Define as opções do soquete.
+  Processe "ws2_32.dll" "setsockopt" com
+  \ Define as opções do soquete.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winsock/nf-winsock-setsockopt
     O soquete [s]
     e 65535 [0xFFFF = level]
@@ -5153,7 +5215,8 @@ Rotina para que se produza o relatório de informações usando um relatório:
   Preserve o relatório.
   Anexe o caractere NULL após o relatório.
   Atribua "Detalhes: " para um relatório de erros.
-  Processe "user32.dll" "MessageBoxA" com \Exibe uma caixa de diálogo com uma mensagem
+  Processe "user32.dll" "MessageBoxA" com
+  \Exibe uma caixa de diálogo com uma mensagem
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-messageboxa
     0 [hWnd]
     e O caractere inicial deste relatório [lpText]
@@ -5648,7 +5711,8 @@ Função para que se determine se uma tecla está sendo pressionado; [ou botão do m
 Função para que se determine se uma tecla [específica] está sendo pressionada:
 \Se a tecla não estiver sendo pressionada, reitere.
 \If the key is not down, repeat.
-  Processe "user32.dll" "GetAsyncKeyState" com \ Determina se uma tecla está ativada ou desativada no momento em que a função é chamada e se a tecla foi pressionada após uma chamada anterior para GetAsyncKeyState.
+  Processe "user32.dll" "GetAsyncKeyState" com
+  \ Determina se uma tecla está ativada ou desativada no momento em que a função é chamada e se a tecla foi pressionada após uma chamada anterior para GetAsyncKeyState.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getasynckeystate
     A tecla [vKey] \ Consulte https://learn.microsoft.com/pt-br/windows/desktop/inputdev/virtual-key-codes
   Retornando uma word.
@@ -5677,7 +5741,8 @@ Rotina para que se aguarde sobre that there tecla com o ESC sobre it:
 \ To decide if a key was down:
 Função para que se determine se uma tecla está para baixo:
 \ foi pressionada \ estava pra baixo
-  Processe "user32.dll" "GetKeyState" com \Recupera o status da tecla virtual especificada.
+  Processe "user32.dll" "GetKeyState" com
+  \Recupera o status da tecla virtual especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getkeystate
     A tecla [nVirtKey]
   Retornando um word.
@@ -5842,7 +5907,8 @@ Função para que se determine se um endereço completo é do tipo arquivo:
 Função para que se determine se um endereço completo está no sistema de arquivos:
   Preserve o endereço completo.
   Anexe o caractere NULL após o endereço completo.
-  Processe "kernel32.dll" "GetFileAttributesA" com \Obtém atributos do sistema de arquivos para um arquivo ou diretório especificado.
+  Processe "kernel32.dll" "GetFileAttributesA" com
+  \Obtém atributos do sistema de arquivos para um arquivo ou diretório especificado.
   \ https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-getfileattributesa
     O caractere inicial deste endereço completo [lpFileName] \ Consulte https://learn.microsoft.com/pt-br/windows/desktop/FileIO/naming-a-file
   Retornando um número. \ Consulte https://learn.microsoft.com/pt-br/windows/desktop/FileIO/file-attribute-constants
@@ -5953,7 +6019,8 @@ Função para que se determine se uma localização está em uma elipse:
   Crie uma hRgn usando a elipse.
   Preserve a localização.
   Divida a localização pelo quantidade de twips/pixel .
-  Processe "gdi32.dll" "PtInRegion" com \ Determina se o ponto especificado está dentro da região especificada.
+  Processe "gdi32.dll" "PtInRegion" com
+  \ Determina se o ponto especificado está dentro da região especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-ptinregion
     O hRgn [hrgn]
     e A coordenada X desta localização [x]
@@ -5971,13 +6038,15 @@ Função para que se determine se uma localização está em uma imagem:
 Função para que se determine se uma localização está em um polígono:
   Se o polígono for inexistente, diga não.
   Crie uma série de vértices usando os vértices deste polígono.
-  Processe "gdi32.dll" "CreatePolygonRgn" com \ Cria uma região poligonal.
+  Processe "gdi32.dll" "CreatePolygonRgn" com
+  \ Cria uma região poligonal.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-createpolypolygonrgn
     O ponteiro da localização desta série de vértices  [*pptl]
     e A quantidade de vértices desta série de vértices [cPoint]
     e 2 [iMode = WINDING] \ -> https://learn.microsoft.com/pt-br/windows/win32/gdi/images/csrgn-03.png
   Retornando uma hRgn.
-  Processe "gdi32.dll" "PtInRegion" com \Determina se o ponto especificado está dentro da região especificada.
+  Processe "gdi32.dll" "PtInRegion" com
+  \Determina se o ponto especificado está dentro da região especificada.
   \ Documentação: ->  https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-ptinregion
     O hRgn [hrgn]
     e A coordenada X desta localização [x]
@@ -6002,7 +6071,8 @@ Função para que se determine se uma localização está em uma caixa arredondada:
   Atribua o raio desta caixa arredondada vezes 2 para um diâmetro.
   Atribua o diâmetro para uma largura.
   Atribua o diâmetro para uma altura.
-  Processe "gdi32.dll" "CreateRoundRectRgn" com \ Cria uma região retangular com cantos arredondados.
+  Processe "gdi32.dll" "CreateRoundRectRgn" com
+  \ Cria uma região retangular com cantos arredondados.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-createroundrectrgn
     A coordenada X1 desta caixa arredondada [x1]
     e A coordenada Y1 desta caixa arredondada [y2]
@@ -6011,13 +6081,15 @@ Função para que se determine se uma localização está em uma caixa arredondada:
     e A largura [w]
     e A altura [h]
   Retornando uma hRgn.
-  Processe "gdi32.dll" "PtInRegion" com \ Determina se um ponto está dentro de uma região
+  Processe "gdi32.dll" "PtInRegion" com
+  \ Determina se um ponto está dentro de uma região
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-ptinregion
     O hRgn [hrgn]
     e A coordenada X desta localização [x]
     e A coordenada Y desta localização [y]
   Retornando um número.
-  Processe "gdi32.dll" "DeleteObject" com \ Exclui a região
+  Processe "gdi32.dll" "DeleteObject" com
+  \ Exclui a região
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-deleteobject
     O hRgn. [ho]
   Se o número for 0, diga não.
@@ -6375,7 +6447,8 @@ Função para que se determine se existe something para remover em uma caixa de te
 
 Função para que se determine se há caixa de texto na área de transferência do Windows;
 Função para que se determine se existe caixa de texto sobre a área de transferência do Windows:
-  Processe "user32.dll" "IsClipboardFormatAvailable" com \Determina se a área de transferência contém dados com o formato especificado.
+  Processe "user32.dll" "IsClipboardFormatAvailable" com
+  \Determina se a área de transferência contém dados com o formato especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-isclipboardformatavailable
   1 [format = CF_TEXT]  \ Consulte https://learn.microsoft.com/pt-br/windows/win32/dataxchg/standard-clipboard-formats
   Retornando um número.
@@ -6503,7 +6576,8 @@ Rotina para que se decifre um trecho usando uma palavra-passe:
   Se a Sessão Criptografada for inexistente, retorne.
   Converta o trecho tal como uma cifra hexadecimal para um texto hexadecimal.
   Atribua a quantidade de caracteres deste texto hexadecimal para uma quantidade de caracteres.
-  Processe "advapi32.dll" "CryptDecrypt" com \ Descriptografa os dados criptografados anteriormente usando a função CryptEncrypt.
+  Processe "advapi32.dll" "CryptDecrypt" com
+  \ Descriptografa os dados criptografados anteriormente usando a função CryptEncrypt.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wincrypt/nf-wincrypt-cryptdecrypt Importante: Esta API está obsoleta.
     A hCryptKey desta Sessão Criptografada [hKey]  \ Consulte:
     \ https://learn.microsoft.com/pt-br/windows/desktop/api/wincrypt/nf-wincrypt-cryptgenkey
@@ -6532,13 +6606,16 @@ Rotina para que se solte uma caixa de texto:
 
 Rotina para que se destrua um Sessão Criptografada:
   Se a Sessão Criptografada for inexistente, retorne.
-  Processe "advapi32.dll" "CryptDestroyKey" com \ Libera a chave criptográfica de uma sessão criptografada
+  Processe "advapi32.dll" "CryptDestroyKey" com
+  \ Libera a chave criptográfica de uma sessão criptografada
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wincrypt/nf-wincrypt-cryptdestroykey
     A hCryptKey desta Sessão Criptografada.[hKey]
-  Processe "advapi32.dll" "CryptDestroyHash" com \ Destrói o objeto hash referenciado pelo parâmetro hHash.
+  Processe "advapi32.dll" "CryptDestroyHash" com
+  \ Destrói o objeto hash referenciado pelo parâmetro hHash.
   \\ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wincrypt/nf-wincrypt-cryptdestroyhash
     O hCryptHash desta Sessão Criptografada. [hHash]
-  Processe "advapi32.dll" "CryptReleaseContext" com \ Libera o identificador de um provedor de serviços criptográficos (CSP) e um contêiner de chave.
+  Processe "advapi32.dll" "CryptReleaseContext" com
+  \ Libera o identificador de um provedor de serviços criptográficos (CSP) e um contêiner de chave.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wincrypt/nf-wincrypt-cryptreleasecontext
   \Importante: Esta API está obsoleta. O softwares deveriam começar a usar APIs de criptografia de última geração. A Microsoft pode remover esta API em versões futuras.
     O hCryptProv desta Sessão Criptografada [hProv]
@@ -6561,7 +6638,8 @@ Rotina para que se destrua o hBrush de um canvas:
     O canvas [hDC]
     e O null hBrush  [h]
   Retornando um hBrush.
-  Processe "gdi32.dll" "DeleteObject" com \ Exclui o hBrush
+  Processe "gdi32.dll" "DeleteObject" com
+  \ Exclui o hBrush
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-deleteobject
     O hBrush.
 
@@ -6604,7 +6682,8 @@ Rotina para que se destrua um endereço completo no sistema de arquivos (pasta)[e
   Reitere.
   Preserve o endereço completo.
   Anexe o caractere NULL após o endereço completo.
-  Processe "kernel32.dll" "RemoveDirectoryA" com \ Exclui um diretório vazio.
+  Processe "kernel32.dll" "RemoveDirectoryA" com
+  \ Exclui um diretório vazio.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-removedirectorya
     O caractere inicial deste endereço completo [lpPathName]
   Retornando um número.
@@ -6615,7 +6694,8 @@ Rotina para que se destrua um endereço completo no sistema de arquivos (pasta)[e
 Rotina para que se destrua uma endereço completo no sistema de arquivos (arquivo):
   Preserve o endereço completo.
   Anexe o caractere NULL após o endereço completo.
-  Processe "kernel32.dll" "DeleteFileA" com \ Exclui um arquivo
+  Processe "kernel32.dll" "DeleteFileA" com
+  \ Exclui um arquivo
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-deletefilea
     O caractere inicial deste endereço completo [lpFileName]
   Retornando um número.
@@ -6629,7 +6709,8 @@ Rotina para que se destrua uma imagem:
   Desaloque a imagem.
 
 Rotina para que se destrua um soquete:
-  Processe "ws2_32.dll" "closesocket" com \ Fecha um soquete existente.
+  Processe "ws2_32.dll" "closesocket" com
+  \ Fecha um soquete existente.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winsock/nf-winsock-closesocket
     O soquete.[s]
 
@@ -6642,7 +6723,8 @@ Rotina para que se destrua um vértice usando um polígono:
 
 Rotina para que se destrua uma requisição WinHTTP:
   Se a requisição WinHTTP for inexistente, retorne.
-  Processe "winhttp.dll" "WinHttpCloseHandle" com \Fecha um identificador HINTERNET.
+  Processe "winhttp.dll" "WinHttpCloseHandle" com
+  \Fecha um identificador HINTERNET.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winhttp/nf-winhttp-winhttpclosehandle
   \Para mais detalhes, consulte https://learn.microsoft.com/pt-br/windows/win32/winhttp/hinternet-handles-in-winhttp
     O número identificador de requisição [hInternet] desta requisição WinHTTP.
@@ -6710,26 +6792,31 @@ Rotina para que se pinte uma caixa:
 Rotina para que se pinte uma caixa (focus style):
   Preserve a caixa.
   Adicione a quantidade de twips/pixel para o canto inferior direito desta caixa.
-  Processe "gdi32.dll" "LPtoDP" com \ Converte coordenadas lógicas em coordenadas de dispositivo.
+  Processe "gdi32.dll" "LPtoDP" com
+  \ Converte coordenadas lógicas em coordenadas de dispositivo.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-lptodp
     O contexto do dispositivo atual [hdc]
     e O endereçamento desta caixa [lppt] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/api/windef/ns-windef-point
     e 2. [c]
   Converta a cor branca para um código da cor. \ sugestão de termo: código de tonalidade
-  Processe "gdi32.dll" "SetBkColor" com \ Define a cor de fundo atual para o valor da cor especificada
+  Processe "gdi32.dll" "SetBkColor" com
+  \ Define a cor de fundo atual para o valor da cor especificada
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setbkcolor
     O contexto do dispositivo atual [hdc]
     e O código da cor. [color] \ Para criar um valor COLORREF, use a macro RGB.
   Converta a cor preta para um segundo código da cor.
-  Processe "gdi32.dll" "SetTextColor" com \ Define a cor do texto para o contexto de dispositivo especificado para a cor especificada.
+  Processe "gdi32.dll" "SetTextColor" com
+  \ Define a cor do texto para o contexto de dispositivo especificado para a cor especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-settextcolor
     O contexto do dispositivo atual [hdc]
     e O segundo código da cor. [color]
-  Processe "gdi32.dll" "SetMapMode" com \ Define o modo de mapeamento do contexto de dispositivo especificado.
+  Processe "gdi32.dll" "SetMapMode" com
+  \ Define o modo de mapeamento do contexto de dispositivo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setmapmode
     O contexto do dispositivo atual [hdc]
     e 1 [iMode = MM_TEXT].
-  Processe "user32.dll" "DrawFocusRect" com \ Desenha um retângulo estilizado.
+  Processe "user32.dll" "DrawFocusRect" com
+  \ Desenha um retângulo estilizado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-drawfocusrect
     O contexto do dispositivo atual [hdc]
     e O endereçamento desta caixa.[*lprc] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/api/windef/ns-windef-rect
@@ -6949,7 +7036,8 @@ Rotina para que se pinte uma imagem sobre um gpGraphic sob uma coordenada X e um
   Se a imagem for inexistente, retorne.
   Se o sinalizador de escala de cinza desta imagem estiver ativo, 
     Crie um GpImageAttributes (escala de cinza).
-  Processe "gdiplus.dll" "GdipDrawImageRectRectI" com \ Usada para desenhar imagens com cores ou faixas de cores transparentes.
+  Processe "gdiplus.dll" "GdipDrawImageRectRectI" com
+  \ Usada para desenhar imagens com cores ou faixas de cores transparentes.
   \Observações: a parte da imagem de origem a ser desenhada é redimensionada para caber no retângulo.
     O gpGraphic [*graphics]
     e O gpBitmap desta imagem [*image]
@@ -6980,7 +7068,8 @@ Rotina para que se pinte um polígono com uma cor (apenas na borda):
   Crie o hPen desse contexto do dispositivo atual usando a cor.
   Obtenha um vértice desde os vértices deste polígono.
   Se o vértice for inexistente, retorne.
-  Processe "gdi32.dll" "MoveToEx" com \ Atualiza a posição atual para o ponto especificado e, opcionalmente, retorna a posição anterior.
+  Processe "gdi32.dll" "MoveToEx" com
+  \ Atualiza a posição atual para o ponto especificado e, opcionalmente, retorna a posição anterior.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-movetoex
     O contexto do dispositivo atual [hdc]
     e A coordenada X deste vértice [x]
@@ -6989,7 +7078,8 @@ Rotina para que se pinte um polígono com uma cor (apenas na borda):
   Itere.
     Obtenha o vértice desde os vértices deste polígono.
     Se o vértice for inexistente, pare.
-    Processe "gdi32.dll" "LineTo" com \ Desenha uma linha da posição atual até, mas não incluindo, o ponto especificado.
+    Processe "gdi32.dll" "LineTo" com
+  \ Desenha uma linha da posição atual até, mas não incluindo, o ponto especificado.
     \ Documentação: -> \https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-lineto
       O contexto do dispositivo atual [hdc]
       e A coordenada X deste vértice [x]
@@ -7010,12 +7100,14 @@ Rotina para que se pinte um polígono com uma cor (apenas no interior):
   Se a cor estiver clear, retorne.
   Crie o hPen desse contexto do dispositivo atual usando a cor preta.
   Crie o hBrush desse contexto do dispositivo atual usando a cor.
-  Processe "gdi32.dll" "SetPolyFillMode" com \Define o modo de preenchimento do polígono para funções que preenchem polígonos.
+  Processe "gdi32.dll" "SetPolyFillMode" com
+  \Define o modo de preenchimento do polígono para funções que preenchem polígonos.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setpolyfillmode
     O contexto do dispositivo atual [hdc]
     e 2 [mode = WINDING].
   Crie uma série de vértices usando os vértices deste polígono.
-  Processe "gdi32.dll" "Polygon" com \ Desenha um polígono que consiste em dois ou mais vértices conectados por linhas retas.
+  Processe "gdi32.dll" "Polygon" com
+  \ Desenha um polígono que consiste em dois ou mais vértices conectados por linhas retas.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-polygon
     O contexto do dispositivo atual [hdc]
     e O ponteiro da localização desta série de vértices [*apt] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/api/windef/ns-windef-point
@@ -7113,7 +7205,8 @@ Rotina para que se pinte uma localização:
 
 Rotina para que se pinte uma localização com uma cor:
   Converta a cor para um código da cor.
-  Processe "gdi32.dll" "SetPixelV" com \ Define o pixel nas coordenadas especificadas para a aproximação mais próxima da cor especificada.
+  Processe "gdi32.dll" "SetPixelV" com
+  \ Define o pixel nas coordenadas especificadas para a aproximação mais próxima da cor especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setpixelv
     O contexto do dispositivo atual [hdc]
     e A coordenada X desta localização [x]
@@ -7264,7 +7357,8 @@ Rotina para que se duplique um endereço completo para um segundo endereço comple
   Anexe o caractere NULL após o endereço completo.
   Preserve o segundo endereço completo.
   Anexe o caractere NULL após o segundo endereço completo.
-  Processe "kernel32.dll" "CopyFileA" com \ Copia um arquivo existente para um novo arquivo.
+  Processe "kernel32.dll" "CopyFileA" com
+  \ Copia um arquivo existente para um novo arquivo.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-copyfilea
     O caractere inicial deste endereço completo [lpExistingFileName]
     e O caractere inicial deste segundo endereço completo [lpNewFileName]
@@ -7283,7 +7377,8 @@ Rotina para que se encrypt um trecho usando um palavra-passe:
   Se a Sessão Criptografada for inexistente, retorne.
   Atribua o trecho para um temp trecho.
   Atribua a quantidade de caracteres deste temp trecho para uma quantidade de caracteres.
-  Processe "advapi32.dll" "CryptEncrypt" com \ Criptografa os dados.
+  Processe "advapi32.dll" "CryptEncrypt" com
+  \ Criptografa os dados.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wincrypt/nf-wincrypt-cryptencrypt
   \Importante Esta API está obsoleta.
   \A Microsoft pode remover esta API em versões futuras.
@@ -7435,7 +7530,8 @@ Rotina para que se extraia um nome do arquivo s/ extensão desde um endereço comp
 Rotina para que se extraia uma imagem usando uma caixa:
   Atribua a largura desta caixa dividido pelo quantidade de twips/pixel para uma largura.
   Atribua a altura desta caixa dividido pelo quantidade de twips/pixel para uma altura.
-  Processe "gdiplus.dll" "GdipCreateBitmapFromScan0" com \ Cria um objeto Bitmap com base em uma matriz de bytes junto com informações de tamanho e formato.
+  Processe "gdiplus.dll" "GdipCreateBitmapFromScan0" com
+  \ Cria um objeto Bitmap com base em uma matriz de bytes junto com informações de tamanho e formato.
   \ Documentação: -> https://learn.microsoft.com/en-us/windows/win32/gdiplus/-gdiplus-bitmap-flat
     A largura [width]
     e A altura [height]
@@ -7443,14 +7539,17 @@ Rotina para que se extraia uma imagem usando uma caixa:
     e 137224 [0x21808 format = PixelFormat24bppRGB]
     e 0 [scan0]
     e O endereçamento dum gpBitmap. [*bitmap]
-  Processe "gdiplus.dll" "GdipGetImageGraphicsContext" com \ Usada para criar um objeto Graphics associado para um objeto de imagem.
+  Processe "gdiplus.dll" "GdipGetImageGraphicsContext" com
+  \ Usada para criar um objeto Graphics associado para um objeto de imagem.
     O gpBitmap [*image]
     e O endereçamento dum gpGraphic. [**graphics]
-  Processe "gdiplus.dll" "GdipGetDC" com \ Usada para encontrar o identificador do contexto do dispositivo associado ao gráfico.
+  Processe "gdiplus.dll" "GdipGetDC" com
+  \ Usada para encontrar o identificador do contexto do dispositivo associado ao gráfico.
     O gpGraphic [graphics]
     e O endereçamento dum bitmap canvas.[hdc]
   Normalize o bitmap canvas.
-  Processe "gdi32.dll" "BitBlt" com \ Executa uma transferência de bloco de bits dos dados de cor
+  Processe "gdi32.dll" "BitBlt" com
+  \ Executa uma transferência de bloco de bits dos dados de cor
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-bitblt
     O bitmap canvas [hdc]
     e 0 [x]
@@ -7461,10 +7560,12 @@ Rotina para que se extraia uma imagem usando uma caixa:
     e a coordenada X1 desta caixa [x1]
     e a coordenada Y1 desta caixa [y1]
     e 13369376 [0xCC0020 rop = SRCCOPY].
-  Processe "gdiplus.dll" "GdipReleaseDC" com \ Libera o identificador de contexto de dispositivo
+  Processe "gdiplus.dll" "GdipReleaseDC" com
+  \ Libera o identificador de contexto de dispositivo
     O gpGraphic [graphics]
     e O bitmap canvas. [hdc]
-  Processe "gdiplus.dll" "GdipDeleteGraphics" com \ Exclui o objeto Graphics especificado.
+  Processe "gdiplus.dll" "GdipDeleteGraphics" com
+  \ Exclui o objeto Graphics especificado.
     O gpGraphic. [*graphics]
   Crie a imagem usando o gpBitmap.
   Atribua a caixa à caixa desta imagem.
@@ -7556,7 +7657,8 @@ Rotina para que se finalize um contexto:
   Destrua o contexto.
 
 Rotina para que se finalize os cursors:
-  Processe "user32.dll" "DestroyCursor" com \A função DestroyCursor destrói um cursor e libera qualquer memória ocupada por ele.
+  Processe "user32.dll" "DestroyCursor" com
+  \A função DestroyCursor destrói um cursor e libera qualquer memória ocupada por ele.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-destroycursor
     O cursor de digitação. [hCursor] \ O identificador do cursor a ser destruída.
   Processe "user32.dll" "DestroyCursor" com
@@ -7567,25 +7669,30 @@ Rotina para que se finalize os cursors:
 Rotina para que se finalize as fontes:
   Processe "gdi32.dll" "RemoveFontMemResourceEx" com o recurso de fonte osmosiana.
   \Processe "gdi32.dll" "RemoveFontMemResourceEx" com o Segoe UI resource.
-  \Processe "gdi32.dll" "RemoveFontMemResourceEx" com \Remove as fontes que foram adicionadas a partir de um arquivo de imagem de memória.
+  \Processe "gdi32.dll" "RemoveFontMemResourceEx" com
+  \Remove as fontes que foram adicionadas a partir de um arquivo de imagem de memória.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-RemoveFontMemResourceEx
     \O recurso de fonte Tahoma. [h]
 
 Rotina para que se finalize gdi+:
-  Processe "gdiplus.dll" "GdiplusShutdown" com \ Llimpa os recursos usados pelo Windows GDI +.
+  Processe "gdiplus.dll" "GdiplusShutdown" com
+  \ Llimpa os recursos usados pelo Windows GDI +.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/gdiplusinit/nf-gdiplusinit-gdiplusshutdown
     O gpToken. [token]
 
 Rotina para que se finalize o contexto de dispositivo de memória:
-  Processe "gdi32.dll" "SelectObject" com \A função SelectObject seleciona um objeto no contexto de dispositivo (Device Context) especificado.
+  Processe "gdi32.dll" "SelectObject" com
+  \A função SelectObject seleciona um objeto no contexto de dispositivo (Device Context) especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-selectobject
     O contexto de dispositivo de memória [HDC]
     e O identificador do objeto BitMap [hGdiObj ]
   Retornando um hBitMap. [hGdiObj]
-  Processe "gdi32.dll" "DeleteObject" com \ Exclui o canvas, liberando todos os recursos do sistema associados ao objeto.
+  Processe "gdi32.dll" "DeleteObject" com
+  \ Exclui o canvas, liberando todos os recursos do sistema associados ao objeto.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-deleteobject
     O hBitMap. [hGdiObj ]
-  Processe "gdi32.dll" "DeleteDC" com \ Exclui o contexto de dispositivo especificado (DC).
+  Processe "gdi32.dll" "DeleteDC" com
+  \ Exclui o contexto de dispositivo especificado (DC).
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-deletedc
     O contexto de dispositivo de memória. [hdc]
 
@@ -7594,7 +7701,8 @@ Rotina para que se finalize o contexto de dispositivo de memória:
 \Rotina para que se finalize o mouse: \ vazio
 
 Rotina para que se finalize a área de impressão:
-  Processe "kernel32.dll" "GlobalFree" com \ Libera um objeto de memória global e invalida seu identificador.
+  Processe "kernel32.dll" "GlobalFree" com
+  \ Libera um objeto de memória global e invalida seu identificador.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-globalfree
     O número identificador do modo de dispositivo da impressora.[hMem]
   Atribua 0 à área de impressão.
@@ -7608,11 +7716,13 @@ Rotina para que se finalize um sintetizador de voz:
   Atribua nil ao sintetizador de voz.
 
 Rotina para que se finalize o janela do programa:
-  Processe "user32.dll" "DestroyWindow" com \ Destrói a janela especificada.
+  Processe "user32.dll" "DestroyWindow" com
+  \ Destrói a janela especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-destroywindow
     A janela principal do programa. [hWnd]
   Itere.
-    Processe "user32.dll" "GetMessageA" com \ Obtém uma mensagem da fila de mensagens do thread de chamada.
+    Processe "user32.dll" "GetMessageA" com
+  \ Obtém uma mensagem da fila de mensagens do thread de chamada.
       \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getmessagea
       O endereçamento duma MSG [lpMsg] \ Consulte https://learn.microsoft.com/pt-br/windows/desktop/api/winuser/ns-winuser-MSG
       e 0 [hWnd]
@@ -7620,10 +7730,12 @@ Rotina para que se finalize o janela do programa:
       e 0 [wMsgFilterMax]
       Retornando um número.
     Se o número for menor do que 1, pare.
-    Processe "user32.dll" "TranslateMessage" com \ Traduz mensagens de teclas virtuais em mensagens de caracteres.
+    Processe "user32.dll" "TranslateMessage" com
+  \ Traduz mensagens de teclas virtuais em mensagens de caracteres.
     \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-translatemessage
       O endereçamento desta MSG. [*lpMsg]
-    Processe "user32.dll" "DispatchMessageA" com \ Usado para despachar uma mensagem obtida pela função GetMessage.
+    Processe "user32.dll" "DispatchMessageA" com
+  \ Usado para despachar uma mensagem obtida pela função GetMessage.
     \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-dispatchmessagea
       O endereçamento desta MSG.[*lpMsg]
   Reitere.
@@ -7808,7 +7920,8 @@ Rotina para que se encontre um valor da díade usando as variáveis de ambiente e 
   Anexe o caractere NULL após o nome.
   Atribua 32767 para uma quantidade de caracteres. \ tamanho máximo da variável de ambiente
   Reaponte o caractere inicial deste valor da díade usando a quantidade de caracteres.
-  Processe "kernel32.dll" "GetEnvironmentVariableA" com \ Recupera o conteúdo da variável especificada do bloco de ambiente do processo de chamada.
+  Processe "kernel32.dll" "GetEnvironmentVariableA" com
+  \ Recupera o conteúdo da variável especificada do bloco de ambiente do processo de chamada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/processenv/nf-processenv-getenvironmentvariablea
     O caractere inicial deste nome [lpName]
     e O caractere inicial deste valor da díade [lpBuffer]
@@ -7827,7 +7940,8 @@ Rotina para que se inverta verticalmente o gpBitmap em uma imagem:
   Inverta verticalmente o gpBitmap desta imagem.
 
 Rotina para que se inverta verticalmente um GpImage:
-  Processe "gdiplus.dll" "GdipImageRotateFlip" com \Gira e/ou inverte uma imagem.
+  Processe "gdiplus.dll" "GdipImageRotateFlip" com
+  \Gira e/ou inverte uma imagem.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/gdiplusheaders/nf-gdiplusheaders-image-rotateflip
     O GpImage [*image]
     e 6 [rfType = RotateNoneFlipY ou Rotate180FlipX]. \ faz rotação de 180 graus seguida por uma inversão horizontal.  é 4 na rotina "inverta horizontalmente um GpImage"
@@ -7870,7 +7984,8 @@ Rotina para que se desmanche algumas mensagens:
   Retornando um número.
   Se o número for 0, retorne.
   Se a mensagem desta MSG for 15 [WM_PAINT],
-    Processe "user32.dll" "ValidateRect" com \ Valida a área do cliente dentro de um retângulo removendo o retângulo da região de atualização da janela especificada.
+    Processe "user32.dll" "ValidateRect" com
+  \ Valida a área do cliente dentro de um retângulo removendo o retângulo da região de atualização da janela especificada.
     \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-validaterect
       A janela principal do programa [hWnd]
       e 0.  [*lpRect]
@@ -7924,7 +8039,8 @@ Rotina para que se obtenha um abcA usando uma string e um canvas:
 Rotina para que se obtenha umas rotinas da função AddrInfo:
   Limpe o erro do fluxo de entrada/saída.
   Atribua "ws2_32.dll" para uma nome de dll.
-  Processe "kernel32.dll" "LoadLibraryA" com \ Carrega o módulo especificado no espaço de endereço do processo de chamada.
+  Processe "kernel32.dll" "LoadLibraryA" com
+  \ Carrega o módulo especificado no espaço de endereço do processo de chamada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibrarya
     O caractere inicial desta nome de dll [lpLibFileName]
   Retornando um número identificador.
@@ -7933,7 +8049,8 @@ Rotina para que se obtenha umas rotinas da função AddrInfo:
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Atribua "getaddrinfo" para uma nome de função.
-  Processe "kernel32.dll" "GetProcAddress" com \ Recupera o endereço de uma função ou variável exportada da biblioteca de vínculo dinâmico (DLL) especificada.
+  Processe "kernel32.dll" "GetProcAddress" com
+  \ Recupera o endereço de uma função ou variável exportada da biblioteca de vínculo dinâmico (DLL) especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/libloaderapi/nf-libloaderapi-getprocaddress
     O número identificador [hModule]
     e o caractere inicial deste nome de função [lpProcName]
@@ -8047,7 +8164,8 @@ Rotina para que se obtenha um centro localização usando uma localização e uma se
   Atribua o centro desta linha reta ao centro. \ calculated field
 
 Rotina para que se obtenha uma cor usando uma localização:
-  Processe "gdi32.dll" "GetPixel" com \ Recupera o valor COLORREF do pixel nas coordenadas especificadas.
+  Processe "gdi32.dll" "GetPixel" com
+  \ Recupera o valor COLORREF do pixel nas coordenadas especificadas.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-getpixel
     O contexto do dispositivo atual [hdc]
     e A coordenada X desta localização [x]
@@ -8130,7 +8248,8 @@ Rotina para que se obtenha uma distância entre uma localização e uma segunda loc
 Rotina para que se obtenha um categoria da unidade de disco por um endereço completo:
   Preserve o endereço completo.
   Anexe o caractere NULL após o endereço completo.
-  Processe "kernel32.dll" "GetDriveTypeA" com \ Determina se uma unidade de disco é removível, fixa, CD-ROM, disco RAM ou unidade de rede.
+  Processe "kernel32.dll" "GetDriveTypeA" com
+  \ Determina se uma unidade de disco é removível, fixa, CD-ROM, disco RAM ou unidade de rede.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-getdrivetypea
     O caractere inicial deste endereço completo [lpRootPathName]
   Retornando um número.
@@ -8156,7 +8275,8 @@ Rotina para que se obtenha um nome da unidade de disco por um endereço completo:
   Anexe o caractere NULL após o endereço completo.
   Atribua 512 para uma quantidade de caracteres.
   Reaponte o caractere inicial dum trecho usando a quantidade de caracteres.
-  Processe "kernel32.dll" "GetVolumeInformationA" com \ Recupera informações sobre o sistema de arquivos e o volume associado ao diretório raiz especificado.
+  Processe "kernel32.dll" "GetVolumeInformationA" com
+  \ Recupera informações sobre o sistema de arquivos e o volume associado ao diretório raiz especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-getvolumeinformationa
     O caractere inicial deste endereço completo [lpRootPathName]
     e O caractere inicial deste trecho [lpVolumeNameBuffer]
@@ -8209,7 +8329,8 @@ Rotina para que se obtenha um Endereço IP usando um host string:
   Obtenha um SOCKADDR usando o host string.
   Se o erro do fluxo de entrada/saída não estiver em branco, retorne.
   Atribua o S_Addr deste SIn_Addr deste SOCKADDR ao número deste Endereço IP.
-  Processe "ws2_32.dll" "inet_ntoa" com \ Converte um endereço de rede da Internet (Ipv4) em uma string ASCII no formato decimal com pontos padrão da Internet.
+  Processe "ws2_32.dll" "inet_ntoa" com
+  \ Converte um endereço de rede da Internet (Ipv4) em uma string ASCII no formato decimal com pontos padrão da Internet.
   \ INet_NtoA => INet Number to ASCII
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winsock/nf-winsock-inet_ntoa
     O número deste Endereço IP [internet_addres]
@@ -8218,7 +8339,8 @@ Rotina para que se obtenha um Endereço IP usando um host string:
 
 Rotina para que se obtenha um item (novamente):
   Limpe o erro do fluxo de entrada/saída.
-  Processe "kernel32.dll" "FindNextFileA" com \ Continua uma pesquisa de arquivo
+  Processe "kernel32.dll" "FindNextFileA" com
+  \ Continua uma pesquisa de arquivo
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-findsubsequentefilea
     O número identificador deste item [hFindFile]
     e O endereçamento deste WIN32FINDDATA deste item [lpFindFileData]
@@ -8227,7 +8349,8 @@ Rotina para que se obtenha um item (novamente):
     Ajuste o item;
     Retorne.
   Limpe a categoria deste item.
-  Processe "kernel32.dll" "FindClose" com \Fecha um identificador de pesquisa de arquivo
+  Processe "kernel32.dll" "FindClose" com
+  \Fecha um identificador de pesquisa de arquivo
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-findclose
     O número identificador deste item. [hFindFile]
 
@@ -8245,7 +8368,8 @@ Rotina para que se obtenha um item desde um endereço completo (pela primeira vez
   Acrescente "*.*" para o endereço completo.
   Anexe o caractere NULL após o endereço completo.
   Limpe a categoria deste item.
-  Processe "kernel32.dll" "FindFirstFileA" com \ Pesquisa um diretório por um arquivo ou subdiretório
+  Processe "kernel32.dll" "FindFirstFileA" com
+  \ Pesquisa um diretório por um arquivo ou subdiretório
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-findfirstfilea
     O caractere inicial deste endereço completo [lpFileName]
     e O endereçamento deste WIN32FINDDATA deste item [lpFindFileData]
@@ -8255,7 +8379,8 @@ Rotina para que se obtenha um item desde um endereço completo (pela primeira vez
 
 Rotina para que se obtenha um mínimo múltiplo comum usando um número e um segundo número:
   Obtenha um máximo divisor comum usando o número e o segundo número.
-  Processe "kernel32.dll" "MulDiv" com \ Multiplica dois valores de 32 bits e, em seguida, divide o resultado de 64 bits por um terceiro valor de 32 bits.
+  Processe "kernel32.dll" "MulDiv" com
+  \ Multiplica dois valores de 32 bits e, em seguida, divide o resultado de 64 bits por um terceiro valor de 32 bits.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-muldiv
     O número [nNumber]
     e O segundo número [nNumerator]
@@ -8289,7 +8414,8 @@ Rotina para que se obtenha um deslocamento de coordenadas usando uma string e um
     Obtenha o número X deste deslocamento de coordenadas usando a string e a caixa (rápido - direita).
   Se o alinhamento for "centralizado", 
     Obtenha o número X deste deslocamento de coordenadas usando a string e a caixa (rápido - centralizado).
-  Processe "gdi32.dll" "GetTextMetricsA" com \ Preenche o buffer especificado com as métricas para a fonte atualmente selecionada.
+  Processe "gdi32.dll" "GetTextMetricsA" com
+  \ Preenche o buffer especificado com as métricas para a fonte atualmente selecionada.
   \https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-gettextmetricsa
     O contexto de dispositivo de memória [hdc]
     e O endereçamento dum TEXTMETRIC. [lptm]
@@ -8536,7 +8662,8 @@ Rotina para que se obtenha um tamanho usando um endereço completo no sistema de 
 Rotina para que se obtenha um tamanho usando um endereço completo no sistema de arquivos (arquivo):
   Preserve o endereço completo.
   Anexe o caractere NULL após o endereço completo.
-  Processe "kernel32.dll" "GetFileAttributesExA" com \ Recupera atributos de um arquivo ou de um diretório especificado.
+  Processe "kernel32.dll" "GetFileAttributesExA" com
+  \ Recupera atributos de um arquivo ou de um diretório especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-getfileattributesexa
     O caractere inicial deste endereço completo [lpFileName]
     e 0 [fInfoLevelId] \ Consulte https://learn.microsoft.com/pt-br/windows/desktop/api/minwinbase/ne-minwinbase-get_fileex_info_levels
@@ -8618,10 +8745,12 @@ Rotina para que se obtenha uma string desde o stack:
 
 Rotina para que se obtenha uma string desde a área de transferência do Windows:
   Limpe a string.
-  Processe "user32.dll" "OpenClipboard" com \ Abre a área de transferência para exame e impede que outros aplicativos modifiquem o conteúdo da área de transferência.
+  Processe "user32.dll" "OpenClipboard" com
+  \ Abre a área de transferência para exame e impede que outros aplicativos modifiquem o conteúdo da área de transferência.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-openclipboard
     A janela principal do programa. [hWndNewOwner]
-  Processe "user32.dll" "GetClipboardData" com \ Pega os dados da área de transferência
+  Processe "user32.dll" "GetClipboardData" com
+  \ Pega os dados da área de transferência
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getclipboarddata
   1 [uFormat = CF_TEXT] \ Consulte https://learn.microsoft.com/pt-br/windows/desktop/dataxchg/clipboard-formats
   Retornando um número identificador.
@@ -8629,12 +8758,14 @@ Rotina para que se obtenha uma string desde a área de transferência do Windows:
     Processe "user32.dll" "CloseClipboard"; \ Fecha a área de transferência.
     \ Documentação: -> https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-closeclipboard
     Retorne.
-  Processe "kernel32.dll" "GlobalLock" com \ Bloqueia um objeto de memória global e retorna um ponteiro para o primeiro byte do bloco de memória do objeto.
+  Processe "kernel32.dll" "GlobalLock" com
+  \ Bloqueia um objeto de memória global e retorna um ponteiro para o primeiro byte do bloco de memória do objeto.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-globallock
     O número identificador [hMem]
   Retornando um endereço do caractere.
   Converta o endereço do caractere para a string.
-  Processe "kernel32.dll" "GlobalUnlock" com \ Diminui a contagem de bloqueios associada para um objeto de memória que foi alocado com GMEM_MOVEABLE.
+  Processe "kernel32.dll" "GlobalUnlock" com
+  \ Diminui a contagem de bloqueios associada para um objeto de memória que foi alocado com GMEM_MOVEABLE.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-globalunlock
     O número identificador. [hMem]
   Processe "user32.dll" "CloseClipboard".
@@ -8672,7 +8803,8 @@ Rotina para que se obtenha um segmento inicial desde um texto retornado:
   Reitere.
 
 Rotina para que se obtenha uma largura usando um byte e um canvas:
-  Processe "gdi32.dll" "GetTextExtentPoint32A" com \ Calcula a largura e a altura da seqüência de caracteres de texto especificada.
+  Processe "gdi32.dll" "GetTextExtentPoint32A" com
+  \ Calcula a largura e a altura da seqüência de caracteres de texto especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-gettextextentpoint32a
     O canvas [hdc]
     e O endereçamento deste byte [lpString]
@@ -8759,10 +8891,12 @@ Rotina para que se execute algum WM_ACTIVATE com um wParam:
   Execute algum WM_ACTIVATE com o wParam (activate).
 
 Rotina para que se execute algum WM_ACTIVATE com um wParam (activate):
-  Processe "user32.dll" "SetFocus" com \ Define o foco do teclado para a janela especificada.
+  Processe "user32.dll" "SetFocus" com
+  \ Define o foco do teclado para a janela especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-setfocus
     A janela principal do programa.[hWnd]
-  Processe "user32.dll" "ClipCursor" com \ Limita o cursor para uma área retangular na tela.
+  Processe "user32.dll" "ClipCursor" com
+  \ Limita o cursor para uma área retangular na tela.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-clipcursor
   0. [*lpRect]
   \ SetErrorMode(SEM_FAILCRITICALERRORS) \ Faz com que o sistema não exibe a caixa de mensagem de certos erros de disco
@@ -8770,7 +8904,8 @@ Rotina para que se execute algum WM_ACTIVATE com um wParam (activate):
   Crie um evento.
   Atribua "activate" à categoria deste evento.
   Enfileire o evento.
-  Processe "user32.dll" "PostMessageA" com \ Coloca uma mensagem na fila de mensagens
+  Processe "user32.dll" "PostMessageA" com
+  \ Coloca uma mensagem na fila de mensagens
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-postmessagea
     A janela principal do programa [hWnd]
     e 0 [Msg = WM_NULL]
@@ -8781,7 +8916,8 @@ Rotina para que se execute algum WM_ACTIVATE com um wParam (deactivate):
   Crie um evento.
   Atribua "deactivate" à categoria deste evento.
   Enfileire o evento.
-  Processe "user32.dll" "PostMessageA" com \ Consulte https://learn.microsoft.com/pt-br/windows/win32/winmsg/about-messages-and-message-queues
+  Processe "user32.dll" "PostMessageA" com
+  \ Consulte https://learn.microsoft.com/pt-br/windows/win32/winmsg/about-messages-and-message-queues
     A janela principal do programa [hWnd]
     e 0 [Msg = WM_NULL]
     e 0 [wParam]
@@ -8804,7 +8940,8 @@ Rotina para que se execute algum WM_CREATE com uma janela do programa:
   Atribua a janela do programa à janela principal do programa.
 
 Rotina para que se execute algum WM_DESTROY:
-  Processe "user32.dll" "PostQuitMessage" com \ Indica ao sistema que uma thread fez uma solicitação para encerrar (sair).
+  Processe "user32.dll" "PostQuitMessage" com
+  \ Indica ao sistema que uma thread fez uma solicitação para encerrar (sair).
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-postquitmessage
   \ Usado em questão para uma mensagem WM_DESTROY.
   0. [nExitCode] \ parâmetro wParam da mensagem WM_QUIT.
@@ -8834,11 +8971,13 @@ Rotina para que se execute algum WM_LBUTTONDOWN com um lParam:
   Enfileire o evento.
 
 Rotina para que se execute algum WM_PAINT com uma janela do programa:
-  Processe "user32.dll" "BeginPaint" com \ Prepara uma janela para pintura e preenche uma estrutura PAINTSTRUCT com informações sobre a pintura.
+  Processe "user32.dll" "BeginPaint" com
+  \ Prepara uma janela para pintura e preenche uma estrutura PAINTSTRUCT com informações sobre a pintura.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-beginpaint
     A janela do programa [hWnd]
     e O endereçamento dum PAINTSTRUCT.[lpPaint] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/api/winuser/ns-winuser-PAINTSTRUCT
-  Processe "user32.dll" "EndPaint" com \ Marca o fim da pintura na janela especificada.
+  Processe "user32.dll" "EndPaint" com
+  \ Marca o fim da pintura na janela especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-endpaint
     A janela do programa [hWnd]
     e O endereçamento desta PAINTSTRUCT. [*lpPaint]
@@ -9305,7 +9444,8 @@ Rotina para que se mude o texto selecionado para maiúsculas usando uma caixa de 
 
 Rotina para que se oculte o cursor:
   [Itere.]
-    Processe "user32.dll" "ShowCursor" com \ Exibe (ou oculta) o cursor.
+    Processe "user32.dll" "ShowCursor" com
+  \ Exibe (ou oculta) o cursor.
       \ https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-showcursor
       0 [bShow]
       Retornando um número.
@@ -9505,12 +9645,14 @@ Rotina para que se inicialize antes da execução:
     Retornando o endereço heap.
   Atribua "kernel32.dll" para um nome da biblioteca.
   Atribua "HeapSetInformation" para um nome do processo.
-  Processe "kernel32.dll" "LoadLibraryA" com \ Carrega o módulo especificado no espaço de endereço do processo de chamada.
+  Processe "kernel32.dll" "LoadLibraryA" com
+  \ Carrega o módulo especificado no espaço de endereço do processo de chamada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibrarya
     O caractere inicial deste nome da biblioteca [lpLibFileName]
   Retornando um número identificador do processo.
   Se o número identificador do processo não for 0,
-    Processe "kernel32.dll" "GetProcAddress" com \ Recupera o endereço de uma função ou variável exportada da biblioteca de vínculo dinâmico (DLL) especificada.
+    Processe "kernel32.dll" "GetProcAddress" com
+  \ Recupera o endereço de uma função ou variável exportada da biblioteca de vínculo dinâmico (DLL) especificada.
     \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/libloaderapi/nf-libloaderapi-getprocaddress
       O número identificador do processo [hModule]
       e o caractere inicial deste nome do processo [lpProcName]
@@ -9532,7 +9674,8 @@ Rotina para que se inicialize os contextos de dispositivo:
 Rotina para que se inicialize o CGI:
   Processe "kernel32.dll" "AllocConsole". \ Aloca um novo console para o processo de chamada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/console/allocconsole
-  Processe "kernel32.dll" "GetStdHandle" com \ Recupera um identificador para o dispositivo padrão especificado (entrada padrão, saída padrão ou erro padrão).
+  Processe "kernel32.dll" "GetStdHandle" com
+  \ Recupera um identificador para o dispositivo padrão especificado (entrada padrão, saída padrão ou erro padrão).
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/console/getstdhandle
   -10 [nStdHandle = STD_INPUT_HANDLE]
   Retornando o número identificador do fluxo de entrada padrão.
@@ -9541,7 +9684,8 @@ Rotina para que se inicialize o CGI:
   Retornando o número identificador do fluxo de saída padrão.
 
 Rotina para que se inicialize o Component Object Model:
-  Processe "ole32.dll" "CoInitializeEx" com \ Inicializa a biblioteca COM
+  Processe "ole32.dll" "CoInitializeEx" com
+  \ Inicializa a biblioteca COM
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/combaseapi/nf-combaseapi-coinitializeex
     0 [pvReserved]
     e 2. [dwCoInit = COINIT_APARTMENTTHREADED] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/api/objbase/ne-objbase-coinit
@@ -9574,7 +9718,8 @@ Rotina para que se inicialize os cursores (seta do mouse):
   Acrescente $10FFFFFF30FFFFFF787FFFFFF87FFFFF para a máscara de conjunção lógica.
   Acrescente $FC3FFFFFFC3FFFFFFE7FFFFFFFFFFFFF para a máscara de conjunção lógica.
   Acrescente $FF para a máscara de conjunção lógica usando 48.
-  Processe "user32.dll" "CreateCursor" com \ Cria um cursor com o tamanho, padrões de bits e ponto de acesso especificados.
+  Processe "user32.dll" "CreateCursor" com
+  \ Cria um cursor com o tamanho, padrões de bits e ponto de acesso especificados.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-createcursor
     O número identificador deste módulo [hInst]
     e 0 [xHotSpot]
@@ -9624,7 +9769,8 @@ Rotina para que se inicialize os cursores (cursor de digitação):
   Retornando o cursor de digitação.
 
 Rotina para que se inicialize as fontes:
-  Processe "gdi32.dll" "GetStockObject" com \ Recupera um identificador para uma das canetas, pincéis, fontes ou paletas de estoque.
+  Processe "gdi32.dll" "GetStockObject" com
+  \ Recupera um identificador para uma das canetas, pincéis, fontes ou paletas de estoque.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-getstockobject
   11 [i = ANSI_FIXED_FONT 0x0000000B]
   Retornando o null número da fonte.
@@ -9635,7 +9781,8 @@ Rotina para que se inicialize as fontes:
   e o endereçamento dum número 
   retornando o recurso de fonte osmosiana.
   \Processe "gdi32.dll" "AddFontMemResourceEx" com o caractere inicial desta fonte Segoe UI e a quantidade de caracteres desta fonte Segoe UI e 0 e o endereçamento dum número retornando o Segoe UI resource.
-  \Processe "gdi32.dll" "AddFontMemResourceEx" com \ Adiciona o recurso de fonte de uma imagem de memória ao sistema.
+  \Processe "gdi32.dll" "AddFontMemResourceEx" com
+  \ Adiciona o recurso de fonte de uma imagem de memória ao sistema.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-addfontmemresourceex
     \O caractere inicial desta fonte Tahoma [pFileView]
     \e A quantidade de caracteres desta fonte Tahoma [cjSize]
@@ -9652,29 +9799,34 @@ Rotina para que se inicialize as fontes:
 
 Rotina para que se inicialize gdi+:
   Atribua 1 ao GdiplusVersion dum GdiplusStartupInput.
-  Processe "gdiplus.dll" "GdiplusStartup" com \ Inicializa o Windows GDI +.
+  Processe "gdiplus.dll" "GdiplusStartup" com
+  \ Inicializa o Windows GDI +.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/gdiplusinit/nf-gdiplusinit-gdiplusstartup
     O endereçamento deste gpToken [*token] \ Consulte https://learn.microsoft.com/pt-br/windows/desktop/api/gdiplusinit/nf-gdiplusinit-gdiplusshutdown
     e O endereçamento deste GdiplusStartupInput [*input] \ https://learn.microsoft.com/pt-br/windows/win32/api/gdiplusinit/ns-gdiplusinit-gdiplusstartupinput
     e 0. [*output] \ https://learn.microsoft.com/pt-br/windows/win32/api/gdiplusinit/ns-gdiplusinit-gdiplusstartupoutput
 
 Rotina para que se inicialize o contexto de dispositivo de memória:
-  Processe "gdi32.dll" "CreateCompatibleDC" com \ Cria um contexto de dispositivo de memória (DC) compatível com o dispositivo especificado.
+  Processe "gdi32.dll" "CreateCompatibleDC" com
+  \ Cria um contexto de dispositivo de memória (DC) compatível com o dispositivo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-createcompatibledc
     O canvas da tela [hdc]
   Retornando o contexto de dispositivo de memória.
-  Processe "gdi32.dll" "GetCurrentObject" com \ Retorna um identificador do objeto atual
+  Processe "gdi32.dll" "GetCurrentObject" com
+  \ Retorna um identificador do objeto atual
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-getcurrentobject
     O contexto de dispositivo de memória [hDC]
     e 7 [OBJ_BITMAP]
   Retornando o identificador do objeto BitMap. [h]
-  Processe "gdi32.dll" "CreateCompatibleBitmap" com \ Cria um bitmap compatível com o dispositivo que está associado ao contexto de dispositivo especificado.
+  Processe "gdi32.dll" "CreateCompatibleBitmap" com
+  \ Cria um bitmap compatível com o dispositivo que está associado ao contexto de dispositivo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-createcompatiblebitmap
     O canvas da tela [hdc]
     e A largura do pixel desta tela [cx]
     e A altura do pixel desta tela [xy]
   Retornando um hBitMap.
-  Processe "gdi32.dll" "SelectObject" com \ Seleciona um objeto no contexto de dispositivo (DC) especificado.
+  Processe "gdi32.dll" "SelectObject" com
+  \ Seleciona um objeto no contexto de dispositivo (DC) especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-selectobject
     O contexto de dispositivo de memória [hdc]
     e O hBitMap. [h]
@@ -9683,20 +9835,23 @@ Rotina para que se inicialize o contexto de dispositivo de memória:
 Rotina para que se inicialize o módulo:
   Atribua 512 para uma quantidade de caracteres.
   Reaponte o caractere inicial deste temp endereço completo usando a quantidade de caracteres.
-  Processe "kernel32.dll" "GetTempPathA" com \ Recupera o caminho do diretório designado para arquivos temporários.
+  Processe "kernel32.dll" "GetTempPathA" com
+  \ Recupera o caminho do diretório designado para arquivos temporários.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-gettemppatha
     A quantidade de caracteres [nBufferLength]
     e O caractere inicial deste temp endereço completo [lpBuffer]
   Retornando a quantidade de caracteres.
   Atribua o caractere inicial deste temp endereço completo mais a quantidade de caracteres menos 1 ao caractere final deste temp endereço completo.
   Anexe o caractere NULL após o temp endereço completo.
-  Processe "kernel32.dll" "GetModuleHandleA" com \Recupera um identificador de módulo para o módulo especificado.
+  Processe "kernel32.dll" "GetModuleHandleA" com
+  \Recupera um identificador de módulo para o módulo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulehandlea
   0 [lpModuleName]
   Retornando o número identificador deste módulo.
   Atribua 512 à quantidade de caracteres.
   Reaponte o caractere inicial deste endereço completo deste módulo usando a quantidade de caracteres.
-  Processe "kernel32.dll" "GetModuleFileNameA" com \ Recupera o caminho totalmente qualificado para o arquivo que contém o módulo especificado.
+  Processe "kernel32.dll" "GetModuleFileNameA" com
+  \ Recupera o caminho totalmente qualificado para o arquivo que contém o módulo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulefilenamea
     O número identificador deste módulo [hModule]
     e O caractere inicial deste endereço completo deste módulo [lpFilename]
@@ -9716,7 +9871,8 @@ Rotina para que se inicialize o módulo:
 Rotina para que se inicialize o mouse:
   Atribua 1 ao botão esquerdo deste mouse.
   Atribua 2 ao botão direito deste mouse.
-  Processe "user32.dll" "GetSystemMetrics" com \Recupera a métrica do sistema especificada ou a definição de configuração do sistema.
+  Processe "user32.dll" "GetSystemMetrics" com
+  \Recupera a métrica do sistema especificada ou a definição de configuração do sistema.
   \ https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getsystemmetrics
   23 [nIndex = SM_SWAPBUTTON]
   Retornando um número.
@@ -9733,17 +9889,20 @@ Rotina para que se inicialize a área de impressão:
   \ O significado de cada valor está descrito em: https://learn.microsoft.com/pt-br/windows/win32/api/commdlg/ns-commdlg-printdlga
  Aos Flags deste PrintDlgEx.
   Atribua -1 [START_PAGE_GENERAL] ao nStartPage deste PrintDlgEx.
-  Processe "comdlg32.dll" "PrintDlgExA" com \ Exibe a folha de propriedades de impressão
+  Processe "comdlg32.dll" "PrintDlgExA" com
+  \ Exibe a folha de propriedades de impressão
   \ Documentação: -> https://learn.microsoft.com/pt-br/previous-versions/windows/desktop/legacy/ms646942(v=vs.85)
     O endereçamento deste PrintDlgEx. [lppd]
-  Processe "kernel32.dll" "GlobalFree" com \A função GlobalFree libera o objeto de memória global especificado e invalida seu identificador
+  Processe "kernel32.dll" "GlobalFree" com
+  \A função GlobalFree libera o objeto de memória global especificado e invalida seu identificador
   \ Documentação https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-globalfree
     O hDevNames deste PrintDlgEx.[hMem]
   Atribua o hDevMode deste PrintDlgEx ao número identificador do modo de dispositivo da impressora.
   Atribua o hDC deste PrintDlgEx à área de impressão.
 
 Rotina para que se inicialize a tela:
-  Processe "user32.dll" "GetSystemMetrics" com \ Obtém o tamanho da tela, em pixels
+  Processe "user32.dll" "GetSystemMetrics" com
+  \ Obtém o tamanho da tela, em pixels
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getsystemmetrics
   0 [nIndex = SM_CXSCREEN]
   Retornando a largura do pixel desta tela.
@@ -9758,7 +9917,8 @@ Rotina para que se inicialize a tela:
   Subtraia a quantidade de twips/pixel desde o canto inferior direito desta tela.
 
 Rotina para que se inicialize o canvas da tela:
-  Processe "user32.dll" "GetDC" com \ Retorna o identificador do "contexto de dispositivo" (DC) de uma janela da tela inteira.
+  Processe "user32.dll" "GetDC" com
+  \ Retorna o identificador do "contexto de dispositivo" (DC) de uma janela da tela inteira.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getdc
     A janela principal do programa [hWnd]
   Retornando o canvas da tela.
@@ -9767,7 +9927,8 @@ Rotina para que se inicialize o canvas da tela:
 Rotina para que se inicialize um sintetizador de voz:
   Converta "{96749377-3391-11D2-9EE3-00C04F797396}" [CLSID_SpVoice] para um CLSID.
   Converta "{6C44DF74-72B9-4992-A1EC-EF996E0422D4}" [IID_ISpVoice] para um IID.
-  Processe "ole32.dll" "CoCreateInstance" com \ Cria e inicializa um objeto da classe associada para um CLSID especificado
+  Processe "ole32.dll" "CoCreateInstance" com
+  \ Cria e inicializa um objeto da classe associada para um CLSID especificado
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/combaseapi/nf-combaseapi-cocreateinstance
     O endereçamento deste CLSID [rclsid]
     e 0 [pUnkOuter]
@@ -9790,7 +9951,8 @@ Rotina para que se inicialize a janela do programa:
   Processe "user32.dll" "RegisterClassExA" \ Registra uma classe de janela.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-registerclassexa
   Com o endereçamento desta classe da janela. [*unnamedParam1]
-  Processe "user32.dll" "CreateWindowExA" com \ Cria a janela
+  Processe "user32.dll" "CreateWindowExA" com
+  \ Cria a janela
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-createwindowexa
   \https://learn.microsoft.com/pt-br/windows/desktop/api/winuser/nf-winuser-createwindowa
     0 [dwExStyle] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/winmsg/extended-window-styles
@@ -9809,13 +9971,15 @@ Rotina para que se inicialize a janela do programa:
     e O número identificador deste módulo [hInstance]
     e 0. [lpParam]
   Se o tipo da aplicação não for "console",
-    Processe "user32.dll" "ShowWindow" com \ Define o estado de exibição da janela especificada.
+    Processe "user32.dll" "ShowWindow" com
+  \ Define o estado de exibição da janela especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-showwindow
       A janela principal do programa [hWnd]
       e 1. [nCmdShow = SW_SHOWNORMAL]
 
 Rotina para que se inicialize a infraestrutura WinSock:
-  Processe "ws2_32.dll" "WSAStartup" com \ Inicia o uso da DLL Winsock por um processo.
+  Processe "ws2_32.dll" "WSAStartup" com
+  \ Inicia o uso da DLL Winsock por um processo.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winsock/nf-winsock-wsastartup
     2 [wVersionRequired]
     e O endereçamento dum WSADATA. [lpWSAData]
@@ -10108,7 +10272,8 @@ Rotina para que se localize uma localização usando um par de números:
 
 Rotina para que se lock um gpBitmap usando um BitmapData (espaço de cor RGB de 24 bits):
   Atribua o GpRect deste gpBitmap para um GpRect.
-  Processe "gdiplus.dll" "GdipBitmapLockBits" com \ Bloqueia uma parte retangular dum bitmap e fornece um buffer temporário que você pode usar para ler ou gravar dados de pixel em um formato especificado.
+  Processe "gdiplus.dll" "GdipBitmapLockBits" com
+  \ Bloqueia uma parte retangular dum bitmap e fornece um buffer temporário que você pode usar para ler ou gravar dados de pixel em um formato especificado.
   \ Documentação: -. https://learn.microsoft.com/pt-br/windows/win32/api/gdiplusheaders/nf-gdiplusheaders-bitmap-lockbits
    O gpBitmap [bitmap]
    e o endereçamento deste GpRect [*rect]
@@ -10176,7 +10341,8 @@ Rotina para que se cubra internamente uma elipse:
   Destrua o hRgn.
 
 Rotina para que se cubra internamente uma hRgn:
-  Processe "gdi32.dll" "ExtSelectClipRgn" com \ Combina umaa região especificada com a região de recorte atual usando o modo especificado.
+  Processe "gdi32.dll" "ExtSelectClipRgn" com
+  \ Combina umaa região especificada com a região de recorte atual usando o modo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-extselectcliprgn
     O contexto do dispositivo atual [hdc]
     e O hRgn [hrgn]
@@ -10251,7 +10417,8 @@ Rotina para que se cubra externamente uma caixa arredondada:
   Destrua o hRgn.
 
 Rotina para que se minimize um janela do programa:
-  Processe "user32.dll" "ShowWindow" com \Define o estado de exibição da janela especificada.
+  Processe "user32.dll" "ShowWindow" com
+  \Define o estado de exibição da janela especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-showwindow
     A janela do programa [hWnd]
     e 6. [nCmdShow = SW_MINIMIZE]
@@ -10262,7 +10429,8 @@ Rotina para que se inverta horizontalmente o gpBitmap em uma imagem:
   Inverta horizontalmente o gpBitmap desta imagem.
 
 Rotina para que se inverta horizontalmente um GpImage:
-  Processe "gdiplus.dll" "GdipImageRotateFlip" com \ Gira e vira a imagem.
+  Processe "gdiplus.dll" "GdipImageRotateFlip" com
+  \ Gira e vira a imagem.
   \ https://learn.microsoft.com/pt-br/windows/win32/api/gdiplusheaders/nf-gdiplusheaders-image-rotateflip
     O GpImage [*image]
     e 4 [rotateFlipType = RotateNoneFlipX]. \ Inverte a imagem horizontalmente.  é 6 na rotina "inverta verticalmente um GpImage"
@@ -10452,12 +10620,14 @@ Rotina para que se mova umas listas para umas outras listas:
 
 Rotina para que se mova para a esquerda uma janela do programa;
 Rotina para que se mova uma janela do programa para a esquerda:
-  Processe "user32.dll" "GetWindowRect" com \ Recupera as dimensões do retângulo delimitador da janela especificada.
+  Processe "user32.dll" "GetWindowRect" com
+  \ Recupera as dimensões do retângulo delimitador da janela especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getwindowrect
     A janela principal do programa [hWnd]
     e O endereçamento duma caixa. [lpRect] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/api/windef/ns-windef-rect
   Subtraia a largura do pixel desta tela desde a coordenada X1 desta caixa.
-  Processe "user32.dll" "MoveWindow" com \ Altera a posição e as dimensões da janela especificada.
+  Processe "user32.dll" "MoveWindow" com
+  \ Altera a posição e as dimensões da janela especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-movewindow
     A janela do programa [hWnd]
     e A coordenada X1 desta caixa [X]
@@ -10508,25 +10678,30 @@ Rotina para que se normalize uma caixa:
     Permute a coordenada Y1 desta caixa com a coordenada Y2 desta caixa.
 
 Rotina para que se normalize um canvas:
-  Processe "gdi32.dll" "SetGraphicsMode" com \ Define o modo gráfico para o contexto de dispositivo especificado.
+  Processe "gdi32.dll" "SetGraphicsMode" com
+  \ Define o modo gráfico para o contexto de dispositivo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setgraphicsmode
     O canvas [hdc]
     e 2. [iMode = GM_ADVANCED]
-  Processe "gdi32.dll" "SetBkMode" com \ Define o modo de mistura de plano de fundo do contexto de dispositivo especificado.
+  Processe "gdi32.dll" "SetBkMode" com
+  \ Define o modo de mistura de plano de fundo do contexto de dispositivo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setbkmode
     O canvas [hdc]
     e 1. [mode = TRANSPARENT]
-  Processe "gdi32.dll" "SetMapMode" com \ Define o modo de mapeamento do contexto de dispositivo especificado.
+  Processe "gdi32.dll" "SetMapMode" com
+  \ Define o modo de mapeamento do contexto de dispositivo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setmapmode
     O canvas [hdc]
     e 8. [iMode = MM_ANISOTROPIC ]
-  Processe "gdi32.dll" "SetViewportOrgEx" com \ Especifica qual ponto do dispositivo mapeia para a origem da janela (0,0).
+  Processe "gdi32.dll" "SetViewportOrgEx" com
+  \ Especifica qual ponto do dispositivo mapeia para a origem da janela (0,0).
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setviewportorgex
     O canvas [hdc]
     e 0 [x]
     e 0 [y]
     e nil. [lppt] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/api/windef/ns-windef-point
-  Processe "gdi32.dll" "SetViewportExtEx" com \ Define a extensão horizontal e vertical da janela de visualização de um contexto de dispositivo
+  Processe "gdi32.dll" "SetViewportExtEx" com
+  \ Define a extensão horizontal e vertical da janela de visualização de um contexto de dispositivo
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setviewportextex
     O canvas [hdc]
     e O ppi [x]
@@ -10537,7 +10712,8 @@ Rotina para que se normalize um canvas:
     e 0 [x]
     e 0 [y]
     e nil. [lppt]
-  Processe "gdi32.dll" "SetWindowExtEx" com \ Define a extensão horizontal e vertical da janela de um contexto de dispositivo
+  Processe "gdi32.dll" "SetWindowExtEx" com
+  \ Define a extensão horizontal e vertical da janela de um contexto de dispositivo
   \ https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setwindowextex
     O canvas [hdc]
     e O tpi [x]
@@ -10701,7 +10877,8 @@ Rotina para que se escolha aleatoriamente um número dentre uma quantia em um seg
   Atribua o número ao número deste contexto.
 
 Rotina para que se toque um wave:
-  Processe "winmm.dll" "PlaySound" com \ Reproduz um som especificado pelo nome de arquivo, recurso ou evento do sistema fornecido.
+  Processe "winmm.dll" "PlaySound" com
+  \ Reproduz um som especificado pelo nome de arquivo, recurso ou evento do sistema fornecido.
   \ Documentação: -> https://learn.microsoft.com/pt-br/previous-versions//dd743680(v=vs.85)
     O caractere inicial desta wave [pszSound]
     e 0 [hmod]
@@ -10875,13 +11052,15 @@ Rotina para que se atribua uma string para uma caixa de texto:
 
 Rotina para que se envie uma string para a área de transferência do Windows;
 Rotina para que se atribua uma string sobre a área de transferência do Windows:
-  Processe "user32.dll" "OpenClipboard" com \ Abre a área de transferência para exame e impede que outros aplicativos modifiquem o conteúdo da área de transferência.
+  Processe "user32.dll" "OpenClipboard" com
+  \ Abre a área de transferência para exame e impede que outros aplicativos modifiquem o conteúdo da área de transferência.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-openclipboard
     A janela principal do programa. [hWndNewOwner]
   Processe "user32.dll" "EmptyClipboard". \ Esvazia a área de transferência e libera identificadores para os dados da área de transferência.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-emptyclipboard
   Atribua a quantidade de caracteres desta string mais 1 para um número.
-  Processe "kernel32.dll" "GlobalAlloc" com \ Aloca o número especificado de bytes do heap.
+  Processe "kernel32.dll" "GlobalAlloc" com
+  \ Aloca o número especificado de bytes do heap.
   \ Documentação: ->  https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-globalalloc
   66 [uFlags = GHND - 0x0042 - unifica GMEM_MOVEABLE e GMEM_ZEROINIT.]
     e O número [dwBytes]
@@ -10891,10 +11070,12 @@ Rotina para que se atribua uma string sobre a área de transferência do Windows:
     O número identificador [hMem]
   Retornando um ponteiro.
   Copie bytes desde o caractere inicial desta string para o ponteiro pelo quantidade de caracteres desta string.
-  Processe "kernel32.dll" "GlobalUnlock" com \ Diminui a contagem de bloqueios associada para um objeto de memória que foi alocado com GMEM_MOVEABLE.
+  Processe "kernel32.dll" "GlobalUnlock" com
+  \ Diminui a contagem de bloqueios associada para um objeto de memória que foi alocado com GMEM_MOVEABLE.
   \ Documentação: ->  https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-globalunlock
     O número identificador. [hMem] \Um identificador para o objeto de memória global
-  Processe "user32.dll" "SetClipboardData" com \ Coloca dados na área de transferência em um formato de área de transferência especificado.
+  Processe "user32.dll" "SetClipboardData" com
+  \ Coloca dados na área de transferência em um formato de área de transferência especificado.
   \ https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-setclipboarddata
     1 [uFormat = CF_TEXT]
     \Para obter mais informações, consulte https://learn.microsoft.com/pt-br/windows/desktop/dataxchg/clipboard-formats
@@ -10911,7 +11092,8 @@ Rotina para que se atribua um subtexto para um segundo subtexto:
   Copie bytes desde o endereçamento deste subtexto para o endereçamento deste segundo subtexto pela magnitude deste subtexto.
 
 Rotina para que se atribua o grupo data-hora do system para um grupo data-hora:
-  Processe "kernel32.dll" "GetLocalTime" com \ Recupera a data e hora atuais no horário local.
+  Processe "kernel32.dll" "GetLocalTime" com
+  \ Recupera a data e hora atuais no horário local.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/sysinfoapi/nf-sysinfoapi-getlocaltime
     O endereçamento dum SYSTEMTIME. [lpSystemTime]
   Atribua o wYear deste SYSTEMTIME ao número do ano deste grupo data-hora.
@@ -11106,7 +11288,8 @@ Rotina para que se renuncie para o controle:
   Enfileire o evento.
 
 Rotina para que se atualize a tela usando uma caixa:
-  Processe "gdi32.dll" "BitBlt" com \ Executa uma transferência de bloco de bits dos dados de cor
+  Processe "gdi32.dll" "BitBlt" com
+  \ Executa uma transferência de bloco de bits dos dados de cor
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-bitblt
     O canvas da tela [hdc]
     e A coordenada X1 desta caixa [x]
@@ -11298,7 +11481,8 @@ Rotina para que se rename um endereço completo para um segundo endereço completo
   Preserve o segundo endereço completo.
   Remova alguma barra invertida final desde o segundo endereço completo.
   Anexe o caractere NULL após o segundo endereço completo.
-  Processe "kernel32.dll" "MoveFileA" com \ Move um arquivo ou um diretório existente
+  Processe "kernel32.dll" "MoveFileA" com
+  \ Move um arquivo ou um diretório existente
   \ Documentação: ->  https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-movefilea
     O caractere inicial deste endereço completo [lpExistingFileName]
     e O caractere inicial deste segundo endereço completo [lpNewFileName]
@@ -11412,10 +11596,12 @@ Rotina para que se redimensione uma imagem para uma largura por uma altura:
     e 137224 [0x21808 = format = PixelFormat24bppRGB] \ Consulte https://learn.microsoft.com/pt-br/windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants
     e 0 [*scan0] \
     e O endereçamento dum gpBitmap. [*bitmap] \
-  Processe "gdiplus.dll" "GdipGetImageGraphicsContext" com \ Cria um objeto Graphics associado para um objeto Image.
+  Processe "gdiplus.dll" "GdipGetImageGraphicsContext" com
+  \ Cria um objeto Graphics associado para um objeto Image.
     O gpBitmap [*image] \ Consulte https://learn.microsoft.com/pt-br/windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image
     e O endereçamento dum gpGraphic. [**graphics]
-  Processe "gdiplus.dll" "GdipDrawImageRectRectI" com \ Desenha uma imagem em um local especificado.
+  Processe "gdiplus.dll" "GdipDrawImageRectRectI" com
+  \ Desenha uma imagem em um local especificado.
    O gpGraphic [*graphics]
    e O gpBitmap desta imagem [*image] \ https://learn.microsoft.com/pt-br/windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image
    [*destPoints] \ https://learn.microsoft.com/pt-br/windows/desktop/api/gdiplustypes/nl-gdiplustypes-point
@@ -11428,7 +11614,8 @@ Rotina para que se redimensione uma imagem para uma largura por uma altura:
    e 2 [srcUnit = UnitPixel]
    e nil [*imageAttributes]  \ https://learn.microsoft.com/pt-br/windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes
    e nil [callback] e 0. [*callbackData]
-  Processe "gdiplus.dll" "GdipDeleteGraphics" com \ Exclui o objeto Graphics especificado.
+  Processe "gdiplus.dll" "GdipDeleteGraphics" com
+  \ Exclui o objeto Graphics especificado.
    O gpGraphic. [*graphics]
   Destrua o gpBitmap desta imagem.
   Atribua o gpBitmap ao gpBitmap desta imagem.
@@ -11472,7 +11659,8 @@ Rotina para que se reinicie um temporizador:
   Atribua a contagem de intervalos do sistema aos intervalos iniciais deste temporizador. \ a intervalo contagem deste system
 
 Rotina para que se restaure um canvas:
-  Processe "gdi32.dll" "RestoreDC" com \ Restaura um contexto de dispositivo (DC) para o estado especificado.
+  Processe "gdi32.dll" "RestoreDC" com
+  \ Restaura um contexto de dispositivo (DC) para o estado especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-restoredc
     O canvas [hDC]
     e -1. [nSavedDC]
@@ -11489,7 +11677,8 @@ Rotina para que se restaure um contexto:
   Destrua o novo contexto.
 
 Rotina para que se restaure uma janela do programa:
-  Processe "user32.dll" "ShowWindow" com \ Define o estado de exibição de uma janela
+  Processe "user32.dll" "ShowWindow" com
+  \ Define o estado de exibição de uma janela
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-showwindow
     A janela do programa [hWnd] e 9. [nCmdShow = SW_RESTORE]
 
@@ -11556,7 +11745,8 @@ Rotina para que se rotacione uma elipse:
 
 Rotina para que se rotacione um GpImage:
   Se o GpImage for inexistente, retorne.
-  Processe "gdiplus.dll" "GdipImageRotateFlip" com \ Gira e/ou inverte a imagem.
+  Processe "gdiplus.dll" "GdipImageRotateFlip" com
+  \ Gira e/ou inverte a imagem.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/gdiplusheaders/nf-gdiplusheaders-image-rotateflip
     O GpImage  [*image] e 1 [Rotate90FlipNone]. \ Consulte https://learn.microsoft.com/pt-br/windows/win32/api/gdiplusimaging/ne-gdiplusimaging-rotatefliptype
 
@@ -11667,7 +11857,8 @@ Rotina para que se arredonde um par de números usando o múltiplo imediato de um 
   Arredonde o número Y deste par de números usando o múltiplo imediato desse número.
 
 Rotina para que se salve um canvas:
-  Processe "gdi32.dll" "SaveDC" com \ Salva o estado atual do contexto de dispositivo especificado (DC)
+  Processe "gdi32.dll" "SaveDC" com
+  \ Salva o estado atual do contexto de dispositivo especificado (DC)
   \ Documentação: ->  https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-savedc
     O canvas. [hdc]
 
@@ -11966,7 +12157,8 @@ Rotina para que se envie um trecho para um soquete:
   Atribua a quantidade de caracteres deste trecho para uma quantidade de caracteres.
   Itere.
     Se a quantidade de caracteres for 0, pare.
-    Processe "ws2_32.dll" "send" com \ Envia dados para um soquete conectado.
+    Processe "ws2_32.dll" "send" com
+  \ Envia dados para um soquete conectado.
     \ https://learn.microsoft.com/pt-br/windows/win32/api/winsock2/nf-winsock2-envie
       O soquete [s]
       e O ponteiro [*buf]
@@ -11984,7 +12176,8 @@ Rotina para que se envie um trecho para um soquete:
 
 Rotina para que se envie uma data string para uma requisição WinHTTP:
   Se a requisição WinHTTP for inexistente, retorne.
-  Processe "winhttp.dll" "WinHttpSendRequest" com \ Envia uma solicitação para um servidor HTTP.
+  Processe "winhttp.dll" "WinHttpSendRequest" com
+  \ Envia uma solicitação para um servidor HTTP.
   \ https://learn.microsoft.com/pt-br/windows/win32/api/winhttp/nf-winhttp-winhttpsendrequest
     O número identificador de requisição desta requisição WinHTTP [hRequest]
     \ https://learn.microsoft.com/pt-br/windows/win32/winhttp/hinternet-handles-in-winhttp
@@ -12134,13 +12327,15 @@ Rotina para que se envie uma string para um soquete e receba um response string:
 
 Rotina para que se defina o código da cor de um canvas usando uma cor:
   Converta a cor para um código da cor.
-  Processe "gdi32.dll" "SetTextColor" com \ Define a cor do texto para o contexto de dispositivo especificado para a cor especificada.
+  Processe "gdi32.dll" "SetTextColor" com
+  \ Define a cor do texto para o contexto de dispositivo especificado para a cor especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-settextcolor
     O canvas [hdc]
     e O código da cor.
 
 Rotina para que se defina o drawing origem para uma localização:
-  Processe "gdi32.dll" "GetDeviceCaps" com \ Recupera informações específicas do dispositivo para o dispositivo especificado.
+  Processe "gdi32.dll" "GetDeviceCaps" com
+  \ Recupera informações específicas do dispositivo para o dispositivo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-getdevicecaps
     O contexto do dispositivo atual [hdc]
     e 112 [index = PhysicalOffsetX]
@@ -12152,14 +12347,16 @@ Rotina para que se defina o drawing origem para uma localização:
   Inverta o sinal desse par de números.
   Se o contexto do dispositivo atual não for a área de impressão, 
     Limpe o par de números.
-  Processe "gdi32.dll" "SetViewportOrgEx" com \ Especifica qual ponto do dispositivo mapeia para a origem da janela (0,0).
+  Processe "gdi32.dll" "SetViewportOrgEx" com
+  \ Especifica qual ponto do dispositivo mapeia para a origem da janela (0,0).
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setviewportorgex
     O contexto do dispositivo atual [hdc]
     e O número X deste par de números [x]
     e O número Y deste par de números  [y]
     e nil. [lppt] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/api/windef/ns-windef-point
   Preserve a localização.
-  Processe "gdi32.dll" "LPtoDP" com \ Converte coordenadas lógicas em coordenadas de dispositivo.
+  Processe "gdi32.dll" "LPtoDP" com
+  \ Converte coordenadas lógicas em coordenadas de dispositivo.
   \ https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-lptodp
     O contexto do dispositivo atual [hDC]
     e O endereçamento desta localização [lppt]
@@ -12177,12 +12374,14 @@ Rotina para que se ligue um sinalizador:
 Rotina para que se defina um endereço completo para modo de leitura&gravação:
   Preserve o endereço completo.
   Anexe o caractere NULL após o endereço completo.
-  Processe "kernel32.dll" "GetFileAttributesA" com \ Obtém os atributos de um arquivo ou pasta presente no sistema de arquivos
+  Processe "kernel32.dll" "GetFileAttributesA" com
+  \ Obtém os atributos de um arquivo ou pasta presente no sistema de arquivos
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-getfileattributesavo.
     O caractere inicial deste endereço completo [lpFileName]
   Retornando um número.\ Consulte https://learn.microsoft.com/pt-br/windows/desktop/FileIO/file-attribute-constants
   Conjuncione logicamente o número com -2 [todos os atributos com exceção de FILE_ATTRIBUTE_READONLY].
-  Processe "kernel32.dll" "SetFileAttributesA" com \ Define os atributos de um arquivo ou diretório.
+  Processe "kernel32.dll" "SetFileAttributesA" com
+  \ Define os atributos de um arquivo ou diretório.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-setfileattributesa
     O caractere inicial deste endereço completo [lpFileName]
     e O número. [dwFileAttributes]
@@ -12195,10 +12394,12 @@ Rotina para que se mostre um console:
   Restaure o contexto do dispositivo atual.
 
 Rotina para que se mostre um cursor:
-  Processe "user32.dll" "SetCursor" com \ Define o formato do cursor.
+  Processe "user32.dll" "SetCursor" com
+  \ Define o formato do cursor.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-setcursor
     O cursor. [hCursor]
-  Processe "user32.dll" "ShowCursor" com \ Exibe ou oculta o cursor.
+  Processe "user32.dll" "ShowCursor" com
+  \ Exibe ou oculta o cursor.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-showcursor
     1 [bShow]
   Retornando um número.
@@ -12818,7 +13019,8 @@ Rotina para que se comece um processo usando um endereço completo:
   Extraia um endereço da pasta desde o endereço completo.
   Anexe o caractere NULL após o endereço da pasta.
   Preserve o endereço completo. Anexe o caractere NULL após o endereço completo.
-  Processe "kernel32.dll" "CreateProcessA" com \ Cria um novo processo e seu thread principal.
+  Processe "kernel32.dll" "CreateProcessA" com
+  \ Cria um novo processo e seu thread principal.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessa
     O caractere inicial deste endereço completo [lpApplicationName]
     e 0 [lpCommandLine]
@@ -12842,7 +13044,8 @@ Rotina para que se comece um processo usando um endereço completo:
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Atribua o hprocess deste PROCESS_INFORMATION ao processo.
-  Processe "kernel32.dll" "CloseHandle" com \ Fecha um identificador de objeto aberto.
+  Processe "kernel32.dll" "CloseHandle" com
+  \ Fecha um identificador de objeto aberto.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/handleapi/nf-handleapi-closehandle
     O hthread deste PROCESS_INFORMATION. [hObject]
   Direcione um ponteiro para a rotina Aguarde por um ponteiro de processo.
@@ -12856,7 +13059,8 @@ Rotina para que se comece um processo usando um endereço completo:
     e 0 [dwCreationFlags]
     e O endereçamento dum segundo número [lpThreadId]
   Retornando um número identificador.
-  Processe "kernel32.dll" "CloseHandle" com \ Fecha um identificador de objeto aberto.
+  Processe "kernel32.dll" "CloseHandle" com
+  \ Fecha um identificador de objeto aberto.
   \ https://learn.microsoft.com/pt-br/windows/win32/api/handleapi/nf-handleapi-closehandle
     O número identificador. [hObject]\ não finaliza a thread, apenas devolve o número
 
@@ -12943,7 +13147,8 @@ Rotina para que se comece com nada em um ponteiro:
 
 Rotina para que se suspenda um processo:
   Se o processo for 0, retorne.
-  Processe "kernel32.dll" "TerminateProcess" com \ Encerra o processo especificado e todos os seus threads.
+  Processe "kernel32.dll" "TerminateProcess" com
+  \ Encerra o processo especificado e todos os seus threads.
   \ Documentação: ->  https://learn.microsoft.com/pt-br/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess
     O processo [hProcess] \ Consulte https://learn.microsoft.com/pt-br/windows/desktop/ProcThread/process-security-and-access-rights
     e 0. [uExitCode]
@@ -13043,7 +13248,8 @@ Rotina para que se vire para a direita uns pontos osmosianos:
   Vire para a fração.
 
 Rotina para que se exponha tudo:
-  Processe "gdi32.dll" "SelectClipRgn" com \ Seleciona uma região como a região de recorte atual para um contexto de dispositivo
+  Processe "gdi32.dll" "SelectClipRgn" com
+  \ Seleciona uma região como a região de recorte atual para um contexto de dispositivo
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-selectcliprgn
     O contexto do dispositivo atual [hdc]
     e 0. [hrgn]
@@ -13059,7 +13265,8 @@ Rotina para que se exponha conteúdo de uma elipse:
   Destrua o hRgn.
 
 Rotina para que se exponha conteúdo de uma hRgn:
-  Processe "gdi32.dll" "ExtSelectClipRgn" com \ Combina a região especificada com a região de recorte atual usando o modo especificado.
+  Processe "gdi32.dll" "ExtSelectClipRgn" com
+  \ Combina a região especificada com a região de recorte atual usando o modo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-extselectcliprgn
     O contexto do dispositivo atual e [hdc]
     O hRgn [hrgn]
@@ -13087,18 +13294,21 @@ Rotina para que se exponha exterior de uma elipse:
 
 Rotina para que se exponha exterior de uma hRgn:
   Crie uma old hRgn usando o retângulo abstrato.
-  Processe "gdi32.dll" "GetClipRgn" com \ Recupera um identificador que identifica a região de recorte definida pelo aplicativo atual para o contexto de dispositivo especificado.
+  Processe "gdi32.dll" "GetClipRgn" com
+  \ Recupera um identificador que identifica a região de recorte definida pelo aplicativo atual para o contexto de dispositivo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-getcliprgn
     O contexto do dispositivo atual e [hdc]
     A old hRgn [hrgn]
   Retornando um número.
   Se o número não for 1, 
     Limpe a old hRgn.
-  Processe "gdi32.dll" "SelectClipRgn" com \ Seleciona uma região como a região de recorte atual para o contexto de dispositivo especificado.
+  Processe "gdi32.dll" "SelectClipRgn" com
+  \ Seleciona uma região como a região de recorte atual para o contexto de dispositivo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-selectcliprgn
     O contexto do dispositivo atual [hdc]
     e 0. [hrgn]
-  Processe "gdi32.dll" "ExtSelectClipRgn" com \ Combina a região especificada com a região de recorte atual usando o modo especificado.
+  Processe "gdi32.dll" "ExtSelectClipRgn" com
+  \ Combina a região especificada com a região de recorte atual usando o modo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-extselectcliprgn
     O contexto do dispositivo atual e [hdc]
     e O hRgn [hrgn]
@@ -13150,7 +13360,8 @@ Rotina para que se espere por uns milissegundos;
 Rotina para que se pause por uns milissegundos;
 Rotina para que se aguarde por uns milissegundos:
   Se os milissegundos forem menor do que ou igual a 0, retorne.
-  Processe "kernel32.dll" "Sleep" com \ Suspende a execução do thread atual até que o intervalo de tempo delimite expire.
+  Processe "kernel32.dll" "Sleep" com
+  \ Suspende a execução do thread atual até que o intervalo de tempo delimite expire.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/synchapi/nf-synchapi-sleep
     Os milissegundos. [dwMilliseconds]
 
@@ -13191,7 +13402,8 @@ Rotina para que se armazene um trecho em um arquivo;
 Rotina para que se grave um trecho em um arquivo;
 Rotina para que se escreva um trecho para um arquivo:
   Limpe o erro do fluxo de entrada/saída.
-  Processe "kernel32.dll" "SetFilePointer" com \ Move o ponteiro de arquivo do arquivo especificado.
+  Processe "kernel32.dll" "SetFilePointer" com
+  \ Move o ponteiro de arquivo do arquivo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-setfilepointer
     O arquivo [hFile]
     e 0 [lDistanceToMove]
@@ -13202,7 +13414,8 @@ Rotina para que se escreva um trecho para um arquivo:
     Atribua "Erro na função SetFilePointer. Não foi possível posicionar o ponteiro no início do arquivo solicitado." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
-  Processe "kernel32.dll" "WriteFile" com \ Serve pra gravar dados no arquivo
+  Processe "kernel32.dll" "WriteFile" com
+  \ Serve pra gravar dados no arquivo
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-writefile
     O arquivo [hFile]
     e O caractere inicial deste trecho [lpBuffer]
@@ -13228,7 +13441,8 @@ Rotina para que se escreva um trecho para um endereço completo:
   Defina o endereço completo para modo de leitura&gravação.
   Preserve o endereço completo.
   Anexe o caractere NULL após o endereço completo.
-  Processe "kernel32.dll" "CreateFileA" com \Cria ou abre um arquivo ou dispositivo de E/S.
+  Processe "kernel32.dll" "CreateFileA" com
+  \Cria ou abre um arquivo ou dispositivo de E/S.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-createfilea
     O caractere inicial deste endereço completo [lpFileName]
     e 1073741824 [0x40000000 = dwDesiredAccess = GENERIC_WRITE]
@@ -13247,7 +13461,8 @@ Rotina para que se escreva um trecho para um endereço completo:
     Atribua "Erro ao tentar abrir o arquivo: " junto com o endereço completo seguido de "." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
-  Processe "kernel32.dll" "WriteFile" com \ Grava dados no arquivo ou dispositivo de entrada / saída (E/S) especificada
+  Processe "kernel32.dll" "WriteFile" com
+  \ Grava dados no arquivo ou dispositivo de entrada / saída (E/S) especificada
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-writefile
     O número identificador [hFile]
     e O caractere inicial deste trecho [lpBuffer]
@@ -13255,7 +13470,8 @@ Rotina para que se escreva um trecho para um endereço completo:
     e O endereçamento dum número [lpNumberOfBytesWritten]
     e 0 [lpOverlapped]
   Retornando o número.
-  Processe "kernel32.dll" "CloseHandle" com \Fecha um identificador de objeto aberto.
+  Processe "kernel32.dll" "CloseHandle" com
+  \Fecha um identificador de objeto aberto.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/handleapi/nf-handleapi-closehandle
     O número identificador. [hObject]
   Se o número não for 0, retorne.
@@ -13672,7 +13888,8 @@ Rotina para que se escreva uns quoras em uma caixa:
 
 Rotina para que se Solicite o evento para o Windows:
   Se a fila de eventos não estiver vazia, retorne.
-  Processe "user32.dll" "GetMessageA" com \ Obtém uma mensagem da fila de mensagens do thread de chamada.
+  Processe "user32.dll" "GetMessageA" com
+  \ Obtém uma mensagem da fila de mensagens do thread de chamada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getmessagea
     O endereçamento duma MSG [lpMsg]
       e 0 [hWnd]
@@ -13716,7 +13933,8 @@ Rotina para que se atribua a adjusted altura duma fonte para uma altura:
 Rotina para que se atribua o actual data de uma fonte para um trecho:
   \ só funciona com fontes true tipo e open tipo
   Crie o número da fonte desse contexto de dispositivo de memória usando a fonte.
-  Processe "gdi32.dll" "GetFontData" com \ Recupera dados métricos de fonte para uma fonte TrueType.
+  Processe "gdi32.dll" "GetFontData" com
+  \ Recupera dados métricos de fonte para uma fonte TrueType.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-getfontdata
     O contexto de dispositivo de memória [hDC]
     e 0 [dwTable]
@@ -13736,7 +13954,8 @@ Rotina para que se atribua o actual data de uma fonte para um trecho:
 
 Rotina para que se obtenha um OutlineTextmetric usando uma fonte:
   Crie o número da fonte desse contexto de dispositivo de memória usando a fonte.
-  Processe "gdi32.dll" "GetOutlineTextMetricsA" com \A função GetOutlineTextMetrics recupera métricas de texto para fontes TrueType.
+  Processe "gdi32.dll" "GetOutlineTextMetricsA" com
+  \A função GetOutlineTextMetrics recupera métricas de texto para fontes TrueType.
   \ Documentação> -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-getoutlinetextmetricsa
     O contexto de dispositivo de memória [hDC]
     e 0 [cjCopy]
@@ -14210,7 +14429,8 @@ Rotina para que se atribua stdin para um trecho:
   Converta o valor da díade para uma quantidade de caracteres.
   Se a quantidade de caracteres for 0, retorne.
   Reaponte o caractere inicial deste trecho usando a quantidade de caracteres.
-  Processe "kernel32.dll" "ReadFile" com \Lê dados do arquivo especificado ou dispositivo de entrada / saída (E / S).
+  Processe "kernel32.dll" "ReadFile" com
+  \Lê dados do arquivo especificado ou dispositivo de entrada / saída (E / S).
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-readfile
     O número identificador do fluxo de entrada padrão [hFile]
     e O caractere inicial deste trecho [lpBuffer] \ os dados a serem lidos de um arquivo ou dispositivo.
@@ -14255,7 +14475,8 @@ Rotina para que se leia um endereço completo para um trecho:
     Avise o usuário;
     Retorne.
   \ coloca o endereço no modo de leitura/gravação.
-  Processe "kernel32.dll" "CreateFileA" com \Cria ou abre um arquivo ou dispositivo de E/S.
+  Processe "kernel32.dll" "CreateFileA" com
+  \Cria ou abre um arquivo ou dispositivo de E/S.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-createfilea
     O caractere inicial deste endereço completo [lpFileName]
     e -2147483648 [dwDesiredAccess = GENERIC_READ]
@@ -14270,14 +14491,16 @@ Rotina para que se leia um endereço completo para um trecho:
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Avise o usuário;
     Retorne.
-  Processe "kernel32.dll" "GetFileSize" com \ Recupera o tamanho do arquivo especificado, em bytes.
+  Processe "kernel32.dll" "GetFileSize" com
+  \ Recupera o tamanho do arquivo especificado, em bytes.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-getfilesize
     O número identificador [hFile]
     e nil [lpFileSizeHigh]
   Retornando um tamanho.
   Reaponte o caractere inicial deste trecho usando o tamanho.
   Atribua o caractere inicial deste trecho mais o tamanho menos 1 ao caractere final deste trecho.
-  Processe "kernel32.dll" "ReadFile" com \Lê dados do arquivo especificado ou dispositivo de entrada / saída (E / S).
+  Processe "kernel32.dll" "ReadFile" com
+  \Lê dados do arquivo especificado ou dispositivo de entrada / saída (E / S).
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-readfile
     O número identificador [hFile]
     e O caractere inicial deste trecho [lpBuffer]
@@ -14285,7 +14508,8 @@ Rotina para que se leia um endereço completo para um trecho:
     e O endereçamento dum número [lpNumberOfBytesRead]
     e 0 [lpOverlapped]
   Retornando o número.
-  Processe "kernel32.dll" "CloseHandle" com \Fecha um identificador de objeto aberto.
+  Processe "kernel32.dll" "CloseHandle" com
+  \Fecha um identificador de objeto aberto.
   \Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/handleapi/nf-handleapi-closehandle
     O número identificador.[hObject]
   Se o número não for 0,
@@ -14347,14 +14571,16 @@ Rotina para que se carregue um arquivo para um trecho;
 Rotina para que se atribua um arquivo para um trecho;
 Rotina para que se leia um arquivo para um trecho:
   Limpe o erro do fluxo de entrada/saída.
-  Processe "kernel32.dll" "GetFileSize" com \ Recupera o tamanho do arquivo especificado, em bytes.
+  Processe "kernel32.dll" "GetFileSize" com
+  \ Recupera o tamanho do arquivo especificado, em bytes.
   \ Documentação: -. https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-getfilesize
     O arquivo [hFile]
     e nil [lpFileSizeHigh] \ o tamanho do arquivo. Pode ser NULL
   Retornando um tamanho. \ o valor de retorno é o tamanho do arquivo
   Reaponte o caractere inicial deste trecho usando o tamanho.
   Atribua o caractere inicial deste trecho mais o tamanho menos 1 ao caractere final deste trecho.
-  Processe "kernel32.dll" "ReadFile" com \ Lê dados do arquivo especificado ou dispositivo de entrada/saída (E/S).
+  Processe "kernel32.dll" "ReadFile" com
+  \ Lê dados do arquivo especificado ou dispositivo de entrada/saída (E/S).
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-readfile
     O arquivo [hFile]
     e O caractere inicial deste trecho [lpBuffer] \ a string que vai armazenar o conteúdo do arquivo
@@ -14421,15 +14647,18 @@ Rotina para que se leia um console para uma string:
   Atualize o cursor.
 
 Rotina para que se atribua a localização deste mouse para uma localização:
-  Processe "user32.dll" "GetCursorPos" com \ Recupera a posição do cursor do mouse, retornando as coordenadas da tela.
+  Processe "user32.dll" "GetCursorPos" com
+  \ Recupera a posição do cursor do mouse, retornando as coordenadas da tela.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getcursorpos
     O endereçamento desta localização. [lpPoint] \ Uma estrutura POINT que contém as coordenadas da tela do cursor.
     \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/windef/ns-windef-point
-  Processe "user32.dll" "ScreenToClient" com \ Converte as coordenadas de um ponto na tela  em coordenadas da área do cliente.
+  Processe "user32.dll" "ScreenToClient" com
+  \ Converte as coordenadas de um ponto na tela  em coordenadas da área do cliente.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-screentoclient
     A janela principal do programa [hWnd] \ A janela cuja área do cliente será usada para a conversão.
     e O endereçamento desta localização. \ Necessário caso a janela esteja em um segundo monitor.
-  Processe "gdi32.dll" "DPtoLP" com \ Converte as coordenadas do dispositivo em coordenadas lógicas.
+  Processe "gdi32.dll" "DPtoLP" com
+  \ Converte as coordenadas do dispositivo em coordenadas lógicas.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-dptolp
     O canvas da tela [hdc] \ Um identificador para o contexto do dispositivo.
     e O endereçamento desta localização [lppt]
@@ -14440,7 +14669,7 @@ Rotina para que se abra um arquivo usando um endereço completo e uns milissegund
   Itere.
     Abra o arquivo usando o endereço completo.
     Se o erro do fluxo de entrada/saída estiver em branco, retorne.
-    Se os intervalos deste temporizador forem greater do que os milissegundos, retorne.
+    Se os intervalos deste temporizador forem maior do que os milissegundos, retorne.
   Reitere.
 
 Rotina para que se abra um arquivo usando um endereço completo:
@@ -14453,7 +14682,8 @@ Rotina para que se abra um arquivo usando um endereço completo:
   Ative o endereço completo para modo de leitura&gravação.
   Preserve o endereço completo.
   Anexe o caractere NULL após o endereço completo.
-  Processe "kernel32.dll" "CreateFileA" com \ Também serve pra abrir um arquivo
+  Processe "kernel32.dll" "CreateFileA" com
+  \ Também serve pra abrir um arquivo
     O caractere inicial deste endereço completo  [lpFileName]
     e -1073741824 [dwDesiredAccess = GENERIC_READ+GENERIC_WRITE]
     e 0 [dwShareMode]
@@ -14473,7 +14703,8 @@ Rotina para que se leia uma response string desde uma requisição WinHTTP:
   Atribua 8 kilobytes para um trecho tamanho.
   Itere.
     Atribua 0 para um tamanho.
-    Processe "winhttp.dll" "WinHttpqueryDataAvailable" com \Retorna a quantidade de dados, em bytes, disponíveis para serem lidos pela função WinHttpReadData.
+    Processe "winhttp.dll" "WinHttpqueryDataAvailable" com
+  \Retorna a quantidade de dados, em bytes, disponíveis para serem lidos pela função WinHttpReadData.
     \ Documentação> -> https://learn.microsoft.com/pt-br/windows/win32/api/winhttp/nf-winhttp-winhttpquerydataavailable
       O número identificador de requisição desta requisição WinHTTP [hRequest] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/winhttp/hinternet-handles-in-winhttp
       e O endereçamento deste tamanho [lpdwNumberOfBytesAvailable]
@@ -14486,7 +14717,8 @@ Rotina para que se leia uma response string desde uma requisição WinHTTP:
     Atribua a quantidade de caracteres desta response string para uma quantidade de caracteres armazenados.
     Reaponte o caractere inicial desta response string usando a quantidade de caracteres armazenados mais o trecho tamanho.
     Atribua o caractere inicial desta response string mais a quantidade de caracteres armazenados para um ponteiro.
-    Processe "winhttp.dll" "WinHttpReadData" com \ Lê dados de um identificador aberto pela função WinHttpOpenRequest.
+    Processe "winhttp.dll" "WinHttpReadData" com
+  \ Lê dados de um identificador aberto pela função WinHttpOpenRequest.
     \ Documentação> -> https://learn.microsoft.com/pt-br/windows/win32/api/winhttp/nf-winhttp-winhttpreaddata
       O número identificador de requisição desta requisição WinHTTP [hRequest]
       e O ponteiro [lpBuffer]
@@ -14506,7 +14738,8 @@ Rotina para que se leia uma response string desde uma requisição WinHTTP:
 Rotina para que se leia uma URL para um trecho:
   Limpe o trecho.
   Limpe o erro do fluxo de entrada/saída.
-  Processe "wininet.dll" "InternetOpenA" com \ Inicializa o uso das funções WinINet de um aplicativo.
+  Processe "wininet.dll" "InternetOpenA" com
+  \ Inicializa o uso das funções WinINet de um aplicativo.
   \ Documentação> -> https://learn.microsoft.com/pt-br/windows/win32/api/wininet/nf-wininet-internetopena
     O caractere inicial deste nome deste módulo [lpszAgent]
     e 0 [dwAccessType = INTERNET_OPEN_TYPE_PRECONFIG]
@@ -14521,7 +14754,8 @@ Rotina para que se leia uma URL para um trecho:
     Retorne.
   Preserve a URL.
   Anexe o caractere NULL após a URL.
-  Processe "wininet.dll" "InternetOpenUrlA" com \ Abre um recurso especificado por uma URL FTP/HTTP completa.
+  Processe "wininet.dll" "InternetOpenUrlA" com
+  \ Abre um recurso especificado por uma URL FTP/HTTP completa.
   \ Documentação> -> https://learn.microsoft.com/pt-br/windows/win32/api/wininet/nf-wininet-internetopenurla
     O número identificador da conexão de internet [hInternet]
     e O caractere inicial desta URL [lpszUrl]
@@ -14534,7 +14768,8 @@ Rotina para que se leia uma URL para um trecho:
     Avise o usuário;
     Atribua "Erro. Não foi possível abrir a seguinte URL: " junto com a URL seguido de "." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
-    Processe "wininet.dll" "InternetCloseHandle" com \Fecha um identificador de Internet único.
+    Processe "wininet.dll" "InternetCloseHandle" com
+  \Fecha um identificador de Internet único.
     \ Documentação> -> https://learn.microsoft.com/pt-br/windows/win32/api/wininet/nf-wininet-internetclosehandle
       O número identificador da conexão de internet; [hInternet]
     Retorne.
@@ -14544,7 +14779,8 @@ Rotina para que se leia uma URL para um trecho:
     Atribua a quantidade de caracteres deste trecho para uma quantidade de caracteres armazenados.
     Reaponte o caractere inicial deste trecho usando a quantidade de caracteres armazenados mais o trecho tamanho.
     Atribua o caractere inicial deste trecho mais a quantidade de caracteres armazenados para um ponteiro.
-    Processe "wininet.dll" "InternetReadFile" com \ Lê dados de um identificador aberto pela função InternetOpenUrl, FtpOpenFile ou HttpOpenRequest.
+    Processe "wininet.dll" "InternetReadFile" com
+  \ Lê dados de um identificador aberto pela função InternetOpenUrl, FtpOpenFile ou HttpOpenRequest.
     \ Documentação -> https://learn.microsoft.com/pt-br/windows/win32/api/wininet/nf-wininet-internetreadfile
       O número identificador da URL [hFile]
       e O ponteiro [lpBuffer]
@@ -14559,14 +14795,16 @@ Rotina para que se leia uma URL para um trecho:
     Se a contagem for 0, pare.
   Reitere.
   \ clean up
-  Processe "wininet.dll" "InternetCloseHandle" com \Fecha um identificador de Internet único.
+  Processe "wininet.dll" "InternetCloseHandle" com
+  \Fecha um identificador de Internet único.
   \ Documentação -> https://learn.microsoft.com/pt-br/windows/win32/api/wininet/nf-wininet-internetclosehandle
     O número identificador da URL. [hInternet]
   Processe "wininet.dll" "InternetCloseHandle" com o número identificador da conexão de internet.
 
 Rotina para que se receba o response string desde uma requisição WinHTTP:
   Se a requisição WinHTTP for inexistente, retorne.
-  Processe "winhttp.dll" "WinHttpReceiveResponse" com \ Recebe a questão para uma solicitação HTTP iniciada por WinHttpSendRequest.
+  Processe "winhttp.dll" "WinHttpReceiveResponse" com
+  \ Recebe a questão para uma solicitação HTTP iniciada por WinHttpSendRequest.
   \ Documentação -> https://learn.microsoft.com/pt-br/windows/win32/api/winhttp/nf-winhttp-winhttpreceiveresponse
     O número identificador de requisição desta requisição WinHTTP [hRequest]
     e 0 [lpReserved]
@@ -14585,7 +14823,8 @@ Rotina para que se receba um trecho desde um soquete:
     Atribua a quantidade de caracteres deste trecho para uma quantidade de caracteres armazenados.
     Reaponte o caractere inicial deste trecho usando a quantidade de caracteres armazenados mais o trecho tamanho.
     Atribua o caractere inicial deste trecho mais a quantidade de caracteres armazenados para um ponteiro.
-    Processe "ws2_32.dll" "recv" com \ Recebe dados de um soquete conectado ou um soquete vinculado sem conexão.
+    Processe "ws2_32.dll" "recv" com
+  \ Recebe dados de um soquete conectado ou um soquete vinculado sem conexão.
     \ Documentação -> https://learn.microsoft.com/pt-br/windows/win32/api/winsock/nf-winsock-recv
     \ Usado para ler dados de entrada em soquetes orientados à conexão ou soquetes sem conexão.
       O soquete [s]
@@ -18664,7 +18903,8 @@ Rotina para que se acabe de imprimir:
   Se o sinalizador de documentos deste pdf state estiver ativo,
     Acabe de imprimir (modo pdf);
     Retorne.
-  Processe "gdi32.dll" "EndDoc" com \ Termina um trabalho de impressão.
+  Processe "gdi32.dll" "EndDoc" com
+  \ Termina um trabalho de impressão.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-enddoc
     A área de impressão. [hdc]
   Finalize a área de impressão.
@@ -18842,7 +19082,8 @@ Rotina para que se pinte uma string sob uma localização com uma cor e uma fonte:
     Se o subtexto estiver em branco, pare.
     Se o caractere final deste subtexto for maior do que o caractere final desta string, 
       Atribua o caractere final desta string ao caractere final deste subtexto.
-    Processe "gdi32.dll" "TextOutA" com \ Grava uma sequência de caracteres no DC especificado, usando a fonte, a cor de fundo e a cor do texto atualmente selecionadas.
+    Processe "gdi32.dll" "TextOutA" com
+  \ Grava uma sequência de caracteres no DC especificado, usando a fonte, a cor de fundo e a cor do texto atualmente selecionadas.
     \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-textouta
       O contexto do dispositivo atual [hdc]
       e A coordenada X desta localização [x]
@@ -18895,7 +19136,8 @@ Rotina para que se pinte uma caixa arredondada com uma cor da borda e uma cor de
   Se a cor da borda estiver clear, 
     Adicione a quantidade de twips/pixel para o canto superior esquerdo desta caixa arredondada.
   Atribua o raio desta caixa arredondada vezes 2 para um diâmetro.
-  Processe "gdi32.dll" "RoundRect" com \ Desenha um retângulo com cantos arredondados.
+  Processe "gdi32.dll" "RoundRect" com
+  \ Desenha um retângulo com cantos arredondados.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-roundrect
     O contexto do dispositivo atual [hDC]
     e A coordenada X1 desta caixa arredondada
@@ -18942,19 +19184,22 @@ Rotina para que se pinte uma imagem (modo pdf):
     Dividido pelo quantidade de twips/pixel para um número Y.
   Atribua a largura desta caixa desta imagem dividido pela quantidade de twips/pixel para uma largura.
   Atribua a altura desta caixa desta imagem dividido pela quantidade de twips/pixel para uma altura.
-  Processe "gdiplus.dll" "GdipCreateBitmapFromScan0" com \ Cria um objeto Bitmap com base em uma matriz de bytes junto com informações de tamanho e formato.
+  Processe "gdiplus.dll" "GdipCreateBitmapFromScan0" com
+  \ Cria um objeto Bitmap com base em uma matriz de bytes junto com informações de tamanho e formato.
     A largura [width]
     e A altura [height]
     e 0 [stride]
     e 137224 [format = PixelFormat24bppRGB]
     e 0 [scan0]
     e O endereçamento dum gpBitmap. [*bitmap]
-  Processe "gdiplus.dll" "GdipGetImageGraphicsContext" com \ INSERIR Documentação
+  Processe "gdiplus.dll" "GdipGetImageGraphicsContext" com
+  \ INSERIR Documentação
     O gpBitmap
     e O endereçamento dum gpGraphic.
   Se o sinalizador de escala de cinza desta imagem estiver ativo, 
     Crie um GpImageAttributes (escala de cinza).
-  Processe "gdiplus.dll" "GdipDrawImageRectRectI" com \Desenha uma imagem em um local especificado.
+  Processe "gdiplus.dll" "GdipDrawImageRectRectI" com
+  \Desenha uma imagem em um local especificado.
     O gpGraphic [*graphics]
     e O gpBitmap desta imagem [*image] \ https://learn.microsoft.com/pt-br/windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image
     [*destPoints] \ https://learn.microsoft.com/pt-br/windows/desktop/api/gdiplustypes/nl-gdiplustypes-point
@@ -18975,10 +19220,12 @@ Rotina para que se pinte uma imagem (modo pdf):
     e 0. [*callbackData]
   Se o GpImageAttributes não for inexistente, 
     Destrua o GpImageAttributes.
-  Processe "gdiplus.dll" "GdipDeleteGraphics" com \Exclui o objeto Graphics especificado.
+  Processe "gdiplus.dll" "GdipDeleteGraphics" com
+  \Exclui o objeto Graphics especificado.
    O gpGraphic. [*graphics]
   Pinte o gpBitmap sob o canto superior esquerdo desta caixa desta imagem (modo pdf).
-  Processe "gdiplus.dll" "GdipDisposeImage" com \Descarta o objeto Image especificado.
+  Processe "gdiplus.dll" "GdipDisposeImage" com
+  \Descarta o objeto Image especificado.
     O gpBitmap. [*image]
 
 Rotina para que se pinte uma imagem:
@@ -19038,19 +19285,22 @@ Rotina para que se pinte uma linha reta com uma cor:
     Pinte a linha reta com a cor (modo pdf);
     Retorne.
   Crie o hPen desse contexto do dispositivo atual usando a cor.
-  Processe "gdi32.dll" "MoveToEx" com \ Atualiza a posição atual para o ponto especificado e, opcionalmente, retorna a posição anterior.
+  Processe "gdi32.dll" "MoveToEx" com
+  \ Atualiza a posição atual para o ponto especificado e, opcionalmente, retorna a posição anterior.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-movetoex
     O contexto do dispositivo atual [hdc]
     e A coordenada X desta localização inicial desta linha reta [x]
     e A coordenada Y desta localização inicial desta linha reta [y]
     e nil. [lppt] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/api/windef/ns-windef-point
-  Processe "gdi32.dll" "LineTo" com \ Desenha uma linha da posição atual até, mas não incluindo, o ponto especificado.
+  Processe "gdi32.dll" "LineTo" com
+  \ Desenha uma linha da posição atual até, mas não incluindo, o ponto especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-lineto
     O contexto do dispositivo atual [hdc]
     e A coordenada X desta localização final desta linha reta [x]
     e A coordenada Y desta localização final desta linha reta. [y]
   Converta a cor para um código da cor.
-  Processe "gdi32.dll" "SetPixelV" com \ Define o pixel nas coordenadas especificadas para a aproximação mais próxima da cor especificada.
+  Processe "gdi32.dll" "SetPixelV" com
+  \ Define o pixel nas coordenadas especificadas para a aproximação mais próxima da cor especificada.
   \https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setpixelv
     O contexto do dispositivo atual [hdc]
     e A coordenada X desta localização final desta linha reta [x]
@@ -19116,7 +19366,8 @@ Rotina para que se pinte uma elipse com uma cor da borda e uma cor de preenchime
   Crie o hBrush desse contexto do dispositivo atual usando a cor de preenchimento.
   Se a cor da borda estiver clear, 
     Adicione a quantidade de twips/pixel para o canto superior esquerdo desta elipse.
-  Processe "gdi32.dll" "Ellipse" com \ Desenha uma elipse
+  Processe "gdi32.dll" "Ellipse" com
+  \ Desenha uma elipse
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-ellipse
     O contexto do dispositivo atual [hDC]
     e A coordenada X1 [do retângulo delimitador] desta elipse [left]
@@ -19303,7 +19554,8 @@ Rotina para que se inicie uma folha usando uma caixa:
   Se o sinalizador de documentos deste pdf state estiver ativo,
     Inicie a folha usando a caixa (modo pdf);
     Retorne.
-  Processe "kernel32.dll" "GlobalLock" com \ Bloqueia um objeto de memória global e aumenta a contagem de bloqueios em um.
+  Processe "kernel32.dll" "GlobalLock" com
+  \ Bloqueia um objeto de memória global e aumenta a contagem de bloqueios em um.
   \ https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-globallock
     O número identificador do modo de dispositivo da impressora [hMem]
   Retornando um pDevMode. \ Consulte https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/ns-wingdi-devmodea
@@ -19312,26 +19564,32 @@ Rotina para que se inicie uma folha usando uma caixa:
   Atribua 1 [DMORIENT_PORTRAIT] ao dmOrientation deste pDevMode .
   Se a largura desta caixa for maior do que a altura desta caixa, 
     Atribua 2 [DMORIENT_LANDSCAPE] ao dmOrientation deste pDevMode .
-  Processe "gdi32.dll" "ResetDCA" com \ Atualiza a impressora especificada ou contexto de dispositivo (DC) usando as informações especificadas.
+  Processe "gdi32.dll" "ResetDCA" com
+  \ Atualiza a impressora especificada ou contexto de dispositivo (DC) usando as informações especificadas.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-resetdca
     A área de impressão [hdc]
     e O pDevMode. [*lpdm]
-  Processe "kernel32.dll" "GlobalUnlock" com \ Diminui a contagem de bloqueios associada para um objeto de memória
+  Processe "kernel32.dll" "GlobalUnlock" com
+  \ Diminui a contagem de bloqueios associada para um objeto de memória
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-globalunlock
     O número identificador do modo de dispositivo da impressora. [hMem]
-  Processe "gdi32.dll" "SetGraphicsMode" com \ Define o modo gráfico para o contexto de dispositivo especificado.
+  Processe "gdi32.dll" "SetGraphicsMode" com
+  \ Define o modo gráfico para o contexto de dispositivo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setgraphicsmode
     A área de impressão [hdc]
     e 2. [iMode = GM_ADVANCED]
-  Processe "gdi32.dll" "SetBkMode" com \ Define o modo de mistura de plano de fundo dum contexto de dispositivo
+  Processe "gdi32.dll" "SetBkMode" com
+  \ Define o modo de mistura de plano de fundo dum contexto de dispositivo
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setbkmode
     A área de impressão [hdc]
     e 1. [mode = TRANSPARENT]
-  Processe "gdi32.dll" "SetMapMode" com \ Define o modo de mapeamento dum contexto de dispositivo
+  Processe "gdi32.dll" "SetMapMode" com
+  \ Define o modo de mapeamento dum contexto de dispositivo
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setmapmode
     A área de impressão [hdc]
     e 8. [iMode = MM_ANISOTROPIC ]
-  Processe "gdi32.dll" "GetDeviceCaps" com \ Recupera informações específicas do dispositivo para o dispositivo especificado.
+  Processe "gdi32.dll" "GetDeviceCaps" com
+  \ Recupera informações específicas do dispositivo para o dispositivo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-getdevicecaps
     A área de impressão [hdc]
     e 112 [index = PhysicalOffsetX]
@@ -19341,7 +19599,8 @@ Rotina para que se inicie uma folha usando uma caixa:
     e 113 [PhysicalOffsetY ]
   Retornando o número Y deste par de números.
   Inverta o sinal desse par de números.
-  Processe "gdi32.dll" "SetViewportOrgEx" com \ Especifica qual ponto DO DISPOSITIVO mapeia para a origem da janela (0,0).
+  Processe "gdi32.dll" "SetViewportOrgEx" com
+  \ Especifica qual ponto DO DISPOSITIVO mapeia para a origem da janela (0,0).
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setviewportorgex
     A área de impressão [hdc]
     e O número X deste par de números [x]
@@ -19355,25 +19614,29 @@ Rotina para que se inicie uma folha usando uma caixa:
     A área de impressão
     e 90 [index = LOGPIXELSY]
   Retornando o número Y deste par de números.
-  Processe "gdi32.dll" "SetViewportExtEx" com \ Define as extensões horizontal e vertical do viewport para um contexto de dispositivo
+  Processe "gdi32.dll" "SetViewportExtEx" com
+  \ Define as extensões horizontal e vertical do viewport para um contexto de dispositivo
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setviewportextex
     A área de impressão [hdc]
     e O número X deste par de números [x]
     e O número Y deste par de números [y]
     e nil. [lpsz]
-  Processe "gdi32.dll" "SetWindowOrgEx" com \ Especifica qual ponto DA JANELA mapeia para a origem da janela de visualização (0,0).
+  Processe "gdi32.dll" "SetWindowOrgEx" com
+  \ Especifica qual ponto DA JANELA mapeia para a origem da janela de visualização (0,0).
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setwindoworgex
     A área de impressão [hdc]
     e 0 [x]
     e 0 [y]
     e nil. [lppt]
-  Processe "gdi32.dll" "SetWindowExtEx" com \ define as extensões horizontal e vertical da janela para um contexto de dispositivo
+  Processe "gdi32.dll" "SetWindowExtEx" com
+  \ define as extensões horizontal e vertical da janela para um contexto de dispositivo
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setwindowextex
     A área de impressão [hdc]
     e O tpi [x]
     e O tpi [y]
     e nil. [lpsz]
-  Processe "gdi32.dll" "StartPage" com \ Prepara o driver da impressora para aceitar dados.
+  Processe "gdi32.dll" "StartPage" com
+  \ Prepara o driver da impressora para aceitar dados.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-startpage
     A área de impressão. [hdc] \ O identificador do contexto do dispositivo para o trabalho de impressão.
   Atribua a área de impressão ao contexto do dispositivo atual.
@@ -19439,7 +19702,8 @@ Rotina para que se end uma folha:
   Se o sinalizador de documentos deste pdf state estiver ativo,
     End a folha (modo pdf);
     Retorne.
-  Processe "gdi32.dll" "EndPage" com \ Notifica o dispositivo que o aplicativo terminou a gravação em uma página.
+  Processe "gdi32.dll" "EndPage" com
+  \ Notifica o dispositivo que o aplicativo terminou a gravação em uma página.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-endpage
     A área de impressão. [hdc]
   Atribua o contexto de dispositivo de memória ao contexto do dispositivo atual.
@@ -19456,7 +19720,8 @@ Rotina para que se atribua uma matiz e uma saturação e uma luminosidade para uma
 
 Rotina para que se inicialize as cores:
   Atribua 1 à grossura da canetinha.
-  Processe "gdi32.dll" "GetStockObject" com \ Recupera um identificador para uma das canetas, pincéis, fontes ou paletas de estoque.
+  Processe "gdi32.dll" "GetStockObject" com
+  \ Recupera um identificador para uma das canetas, pincéis, fontes ou paletas de estoque.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-getstockobject
   8 [i = NULL_PEN]
   Retornando o null hPen.
@@ -20971,7 +21236,8 @@ Rotina para que se reaponte um ponteiro usando um quantidade de bytes:
     Retorne.
   Preserve a quantidade de bytes.
   Arredonde para cima a quantidade de bytes usando a potência de dois.
-  Processe "kernel32.dll" "HeapReAlloc" com \Realoca um bloco de memória de um heap.
+  Processe "kernel32.dll" "HeapReAlloc" com
+  \Realoca um bloco de memória de um heap.
  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/heapapi/nf-heapapi-heaprealloc
     O endereço heap [hHeap]
     e 8 [8 = HEAP_ZERO_MEMORY]  [dwFlags]

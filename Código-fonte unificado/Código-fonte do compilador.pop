@@ -5944,7 +5944,6 @@ Rotina para que se compile a próxima instrução usando um percorredor (demais clá
   Se existir algum problema de compilação, retorne.
   Se o segmento inicial deste percorredor estiver em branco, retorne.
   Se o segmento inicial deste percorredor for algum comando de retorno de rotina, 
-  \parei aqui
     Compile a próxima instrução usando o percorredor (cláusula de retorno);
     Retorne.
   Se o segmento inicial deste percorredor for algum comando de repetição,
@@ -6002,7 +6001,7 @@ Função para que se determine se uma string é algum comando de retorno de rotina:
 Rotina para que se compile a próxima instrução usando um percorredor (cláusula de retorno):
   Se o sinalizador de deliberação desta rotina utilizada atualmente estiver ativo,
     Apresente uma mensagem de erro contendo 
-      "Código de Erro #135. Funções booleanas devem retornar apenas 'sim' ou 'não'" junto com o texto CRLF e o percorredor;
+      "Código de Erro #135. Funções booleanas devem retornar 'sim' ou 'não'" junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione um fragmento usando a etiqueta de retorno.
   Mova o percorredor (usando diretrizes de compilação).
@@ -6052,6 +6051,7 @@ Função para que se determine se uma string é algum comando de confirmação ou neg
 Rotina para que se compile a próxima instrução usando um percorredor (palavra-chave 'diga'):
   Se o sinalizador de deliberação desta rotina utilizada atualmente não estiver ativo,
     Compile a próxima instrução usando o percorredor (palavra-chave 'processe' - chamada interna);
+    \ Exemplo: Diga a string.
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum comando de deliberação literal,
