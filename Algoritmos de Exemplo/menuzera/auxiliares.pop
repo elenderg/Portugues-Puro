@@ -1,0 +1,448 @@
+Rotina para que se acrescente um texto hexadecimal para um segundo texto hexadecimal;
+Rotina para que se acrescente uma string para uma segunda string:
+  Se a string estiver em branco, retorne.
+  Atribua a quantidade de caracteres desta string para um número denominado quantidade de caracteres agrupados.
+  Atribua a quantidade de caracteres desta segunda string para um número denominado quantidade de caracteres armazenados.
+  Adicione a quantidade de caracteres armazenados para a quantidade de caracteres agrupados.
+  Reaponte o caractere inicial desta segunda string usando a quantidade de caracteres agrupados.
+  Atribua o caractere inicial desta segunda string mais a quantidade de caracteres armazenados para um ponteiro.
+  Copie bytes desde o caractere inicial desta string para o ponteiro pelo quantidade de caracteres desta string.
+  Atribua o caractere inicial desta segunda string mais a quantidade de caracteres agrupados menos 1 ao caractere final desta segunda string.
+
+Rotina para que se acrescente uma string para uma segunda string usando uma contagem:
+  Preserve a contagem.
+  Itere.
+    Se a contagem for menor do que 1, retorne.
+    Acrescente a string para a segunda string.
+    Subtraia 1 desde a contagem.
+  Reitere.
+
+Rotina para que se remova o sinal desde um número;
+Rotina para que se de-sign um número:
+  Se o número for o menor número,
+    Atribua o maior número ao número;
+    Retorne.
+  Se o número for menor do que 0, 
+    Inverta o sinal desse número.
+
+Rotina para que se limpe uma string:
+  Desassocie o caractere inicial desta string.
+  Esvazie o caractere final desta string.
+
+Rotina para que se anteponha um byte para uma string:
+  Atribua a quantidade de caracteres desta string para um número denominado quantidade de caracteres armazenados.
+  Reaponte o caractere inicial desta string usando a quantidade de caracteres desta string mais 1.
+  Copie bytes desde o caractere inicial desta string para o caractere inicial desta string mais 1 pelo quantidade de caracteres armazenados.
+  Atribua o caractere inicial desta string mais a quantidade de caracteres armazenados ao caractere final desta string.
+  Atribua o byte ao conteúdo deste caractere inicial desta string.
+
+Rotina para que se atribua um número para uma string;
+Rotina para que se converta um número para uma string:
+  Limpe a string.
+  Preserve o número.
+  Remova o sinal desde o número.
+  Itere.
+    Divida o número por 10 retornando um quociente e um resto.
+    Adicione 48 para o resto.
+    Atribua o resto para um byte.
+    Anteponha o byte para a string.
+    Se o quociente for 0, pare.
+    Atribua o quociente ao número.
+  Reitere.
+  Se o número original for menor do que 0, 
+    Anteponha o hífen para a string.
+
+Rotina para que se anexe o caractere NULL após uma string:
+  Atribua a quantidade de caracteres desta string para um número denominado quantidade de caracteres armazenados.
+  Reaponte o caractere inicial desta string usando a quantidade de caracteres armazenados mais 1.
+  Atribua o caractere inicial desta string mais a quantidade de caracteres armazenados menos 1 ao caractere final desta string.
+  Atribua o caractere final desta string mais 1 para um endereço de byte .
+  Atribua o caractere NULL ao conteúdo deste endereço de byte.
+
+
+
+Função para que se determine se uma string é igual a uma segunda string;
+Função para que se determine se uma string é uma segunda string:
+  Compare a string para a segunda string usando 
+    A quantidade de caracteres desta string e 
+    A quantidade de caracteres desta segunda string e 
+    A tabela de caracteres minúsculos ascii (iguais somente).
+
+Função para que se determine se uma string começa com uma segunda string:
+  Se a quantidade de caracteres desta segunda string for maior do que a quantidade de caracteres desta string, diga não.
+  Lance um subtexto sobre a string.
+  Atribua o caractere inicial deste subtexto mais a quantidade de caracteres desta segunda string menos 1 ao caractere final deste subtexto.
+  Se o subtexto é a segunda string, diga sim.
+  Diga não.
+
+Rotina para que se lance um subtexto sobre o primeiro caractere de uma string:
+  Lance o subtexto sobre a string.
+  Se a string estiver em branco, retorne.
+  Atribua o caractere inicial desta string ao caractere final deste subtexto.
+
+Uma contagem é um número.
+
+Rotina para que se lowercase um byte:
+  \Para letras não acentuadas basta que se
+  \adicione 32 para cada letra entre "A" and "Z" da string.
+  Substitua o byte usando o tabela de caracteres minúsculos ASCII .
+
+Rotina para que se lowercase uma string:
+  Lance um subtexto sobre a string.
+  Itere.
+    Se o subtexto estiver em branco, retorne.
+    Lowercase o conteúdo deste caractere inicial deste subtexto.
+    Adicione 1 para o caractere inicial deste subtexto.
+  Reitere.
+
+
+Rotina para que se extraia um designador desde um endereço completo:
+  Limpe o designador.
+  Extraia uma unidade de disco desde o endereço completo.
+  Lance um endereço completo subtexto sobre o endereço completo.
+  Adicione a quantidade de caracteres desta unidade de disco para o caractere inicial deste endereço completo subtexto.
+  Se o endereço completo subtexto estiver em branco,
+    Atribua o unidade de disco ao designador;
+    Retorne.
+  Lance um subtexto sobre o último caractere desse endereço completo subtexto.
+  Se o conteúdo deste caractere inicial deste subtexto for a barra invertida, 
+    Subtraia 1 desde o caractere inicial deste subtexto.
+  Itere.
+    Se o caractere inicial deste subtexto for menor do que o caractere inicial deste endereço completo subtexto, pare.
+    Se o conteúdo deste caractere inicial deste subtexto for a barra invertida, pare.
+    Subtraia 1 desde o caractere inicial deste subtexto.
+  Reitere.
+  Adicione 1 para o caractere inicial deste subtexto.
+  Atribua o subtexto ao designador.
+
+Rotina para que se extraia um endereço da pasta desde um endereço completo:
+  Limpe o endereço da pasta.
+  Extraia uma unidade de disco desde o endereço completo.
+  Se o unidade de disco estiver em branco, retorne.
+  Lance um subtexto sobre o endereço completo.
+  Adicione a quantidade de caracteres desta unidade de disco para o caractere inicial deste subtexto.
+  Se o subtexto estiver em branco, retorne.
+  Se o conteúdo deste caractere final deste subtexto for a barra invertida, 
+    Subtraia 1 desde o caractere final deste subtexto.
+  Itere.
+    Se o subtexto estiver em branco, pare.
+    Se o conteúdo deste caractere final deste subtexto for a barra invertida, pare.
+    Subtraia 1 desde o caractere final deste subtexto.
+  Reitere.
+  Atribua a unidade de disco junto com o subtexto ao endereço da pasta.
+
+Rotina para que se extraia um nome do diretório desde um endereço completo:
+  Limpe o nome do diretório.
+  Se o endereço completo não for do tipo pasta, retorne.
+  Extraia o nome do diretório tal como um designador desde o endereço completo.
+
+Rotina para que se extraia um nome da pasta desde um endereço completo:
+  Extraia o nome da pasta tal como um nome do diretório desde o endereço completo.
+  Se o nome da pasta estiver em branco, retorne.
+  Remova o último caractere desde o nome da pasta.
+
+\ IMPORTANTE
+Rotina para que se extraia uma unidade de disco desde um endereço completo:
+  Limpe o unidade de disco.
+  Se a quantidade de caracteres deste endereço completo for menor do que 3, retorne.
+  Lance um subtexto sobre o primeiro caractere desse endereço completo.
+  Adicione 2 para o caractere final deste subtexto.
+  Se o subtexto termina com ":\",
+    Atribua o subtexto ao unidade de disco;
+    Retorne.
+  Se o subtexto não começa com "\\", retorne.
+  Lance o subtexto sobre o primeiro caractere desse endereço completo.
+  Itere.
+    Se o caractere final deste subtexto for maior do que o caractere final deste endereço completo, retorne.
+    Se o conteúdo deste caractere final deste subtexto for a barra invertida, 
+      Adicione 1 para uma contagem.
+    Se a contagem for 4, pare. \ "\\computer\share\"
+    Adicione 1 para o caractere final deste subtexto.
+  Reitere.
+  Atribua o subtexto ao unidade de disco.
+
+Função para que se determine se uma string termina com uma segunda string:
+  Se a quantidade de caracteres desta segunda string for maior do que a quantidade de caracteres desta string, diga não.
+  Lance um subtexto sobre a string.
+  Atribua o caractere final deste subtexto menos a quantidade de caracteres desta segunda string mais 1 ao caractere inicial deste subtexto.
+  Se o subtexto for a segunda string, diga sim.
+  Diga não.
+
+Rotina para que se lance um subtexto sobre o último caractere de uma string:
+  Lance o subtexto sobre a string.
+  Se a string estiver em branco, retorne.
+  Atribua o caractere final desta string ao caractere inicial deste subtexto.
+
+Rotina para que se remova os caracteres finais desde uma string usando uma contagem;
+Rotina para que se remova os bytes finais desde uma string usando uma contagem:
+  Preserve a contagem.
+  Se a contagem for maior do que a quantidade de caracteres desta string,
+    Limpe a string;
+    Retorne.
+  Lance um subtexto sobre o último caractere dessa string.
+  Atribua o caractere final deste subtexto menos a contagem mais 1 ao caractere inicial deste subtexto.
+  Remova bytes dessa string usando o subtexto.
+
+Função para que se determine se um endereço completo é do tipo arquivo:
+  Se o endereço completo estiver em branco, diga não.
+  Se o conteúdo deste caractere final deste endereço completo for o sinal de dois pontos, diga não.
+  Se o conteúdo deste caractere final deste endereço completo for a barra invertida, diga não.
+  Diga sim.
+
+Rotina para que se extraia um extensão desde um endereço completo:
+  Limpe o extensão.
+  Se o endereço completo estiver em branco, retorne.
+  Lance um subtexto sobre o último caractere desse endereço completo.
+  Itere.
+    Se o caractere inicial deste subtexto for menor do que o caractere inicial deste endereço completo, retorne.
+    Se o conteúdo deste caractere inicial deste subtexto for o sinal de dois pontos, retorne.
+    Se o conteúdo deste caractere inicial deste subtexto for a barra invertida, retorne.
+    Se o conteúdo deste caractere inicial deste subtexto for o ponto final, pare.
+    Subtraia 1 desde o caractere inicial deste subtexto.
+  Reitere.
+  Atribua o subtexto ao extensão.
+
+Rotina para que se extraia um nome do arquivo desde um endereço completo:
+  Limpe o nome do arquivo.
+  Se o endereço completo não for do tipo arquivo, retorne.
+  Extraia o nome do arquivo tal como um designador desde o endereço completo.
+
+Rotina para que se extraia um nome do arquivo s/ extensão desde um endereço completo:
+  Extraia o nome do arquivo s/ extensão tal como um nome do arquivo desde o endereço completo.
+  Extraia um extensão desde o endereço completo.
+  Remova os bytes finais desde o nome do arquivo s/ extensão usando a quantidade de caracteres desta extensão.
+
+Rotina para que se remova bytes de uma string usando um subtexto:
+  Se a string estiver em branco, retorne.
+  Se o subtexto estiver em branco, retorne.
+  Atribua o caractere final desta string menos o caractere final deste subtexto para uma quantidade de caracteres.
+  Atribua o caractere final deste subtexto mais 1 para um ponteiro.
+  Copie bytes desde o ponteiro para o caractere inicial deste subtexto pela quantidade de caracteres.
+  Atribua a quantidade de caracteres desta string menos a quantidade de caracteres deste subtexto para uma nova quantidade de caracteres.
+  Reaponte o caractere inicial desta string usando a nova quantidade de caracteres.
+  Atribua o caractere inicial desta string mais a nova quantidade de caracteres menos 1 ao caractere final desta string.
+
+Rotina para que se remova os caracteres iniciais desde uma string usando uma contagem;
+Rotina para que se remova os bytes iniciais desde uma string usando uma contagem:
+  Preserve a contagem.
+  Se a contagem for maior do que a quantidade de caracteres desta string,
+    Limpe a string;
+    Retorne.
+  Lance um subtexto sobre o primeiro caractere dessa string.
+  Atribua o caractere inicial deste subtexto mais a contagem menos 1 ao caractere final deste subtexto.
+  Remova bytes dessa string usando o subtexto.
+
+
+Rotina para que se subtraia um número desde um par de números:
+  Subtraia o número desde o número X deste par de números.
+  Subtraia o número desde o número Y deste par de números.
+
+Rotina para que se atribua uma coordenada X1 e uma coordenada Y1 e uma coordenada X2 e uma coordenada Y2 para uma caixa:
+  Atribua a coordenada X1 à coordenada X1 desta caixa.
+  Atribua a coordenada Y1 à coordenada Y1 desta caixa.
+  Atribua a coordenada X2 à coordenada X2 desta caixa.
+  Atribua a coordenada Y2 à coordenada Y2 desta caixa.
+
+Rotina para que se subdivida um número em uma word e uma segunda word:
+  Preserve o número.
+  Desloque o número 16 bits para a direita.
+  Atribua o número ao word.
+  Atribua o número original à segunda word.
+
+Rotina para que se crie um evento:
+  Aloque memória para o evento.
+
+Rotina para que se enfileire um evento:
+  Acrescente o evento para a fila de eventos.
+
+\Rotina para que se coloque uma lista no fim de umas listas;
+Rotina para que se acrescente uma lista para umas listas:
+  Se a lista for inexistente, retorne.
+  Atribua a lista final destas listas à lista anterior desta lista.
+  Se as listas não estiverem vazias, 
+    Atribua a lista à lista posterior desta lista final destas listas.
+  Se as listas estiverem vazias, 
+    Atribua a lista à lista inicial destas listas.
+  Atribua a lista à lista final destas listas.
+
+Função para que se determine se umas listas estão vazios;
+Função para que se determine se umas listas estão vazias;
+Função para que se determine se umas listas estão vazia;
+Função para que se determine se umas listas estão vazio:
+  Se a lista inicial destas listas for inexistente, diga sim.
+  Diga não.
+
+Função para que se determine se um byte é imprimível:
+  Se o byte for menor do que o caractere de espaço, diga não.
+  Se o byte for o símbolo DEL [que agora está descontinuado], diga não.
+  Se o byte for 129, diga não.
+  Se o byte for 141, diga não.
+  Se o byte for 143, diga não.
+  Se o byte for 144, diga não.
+  Se o byte for 157, diga não.
+  Diga sim.
+
+Função para que se determine se um sinalizador está ligado; \foi ligado também funciona
+Função para que se determine se um sinalizador está ativo;
+Função para que se determine se um sinalizador está ativado:
+  Se o sinalizador for 1, diga sim.
+  Diga não.
+
+Rotina para que se ative um sinalizador;
+Rotina para que se dispare um sinalizador; \ era "dispare um alarme"
+Rotina para que se ligue um sinalizador:
+  Atribua 1 ao sinalizador. 
+
+Rotina para que se atualize o cursor:
+  Crie um evento.
+  Atribua "movimentação de cursor" à categoria deste evento.
+  Se a tecla Alt estiver sendo pressionada, 
+    Ative o sinalizador de tecla Alt deste evento.
+  Se a tecla Ctrl estiver sendo pressionada, 
+    Ative o sinalizador de tecla Ctrl deste evento.
+  Se a tecla Shift estiver sendo pressionada, 
+    Ative o sinalizador de tecla Shift deste evento.
+  Atribua a localização deste mouse à localização deste evento.
+  Enfileire o evento.
+
+
+Função para que se determine se uma tecla é algum tecla modificadora:
+  Se a tecla for a tecla Alt, diga sim.
+  Se a tecla for a tecla Ctrl, diga sim.
+  Se a tecla for a tecla Shift, diga sim.
+  Diga não.
+
+Função para que se determine se uma tecla é alguma tecla imprimível:
+  Se a tecla for a barra de espaço, diga sim.
+  Se a tecla for alguma tecla de dígito, diga sim.
+  Se a tecla for alguma tecla de letra, diga sim.
+  Se a tecla for alguma tecla do teclado numérico, diga sim.
+  Se a tecla for alguma tecla de símbolo, diga sim.
+  Diga não.
+
+Função para que se determine se uma tecla é alguma tecla de dígito:
+  Se a tecla estiver entre 48 e 57, diga sim.
+  Diga não.
+
+Função para que se determine se um número está entre um segundo número e um terceiro número:
+  Se o número for menor do que o segundo número, diga não.
+  Se o número for maior do que o terceiro número, diga não.
+  Diga sim.
+
+Função para que se determine se uma tecla é alguma tecla de letra:
+  Se a tecla estiver entre 65 e 90, diga sim.
+  Diga não.
+
+Função para que se determine se uma tecla é alguma tecla do teclado numérico:
+  Se a tecla estiver entre 96 e 111, diga sim.
+  Diga não.
+
+Função para que se determine se uma tecla é alguma tecla de símbolo:
+  Se a tecla estiver entre 186 e 192, diga sim.
+  Se a tecla estiver entre 219 e 222, diga sim.
+  Diga não.
+
+Rotina para que se multiplique um par de números por um número:
+  Multiplique o número X deste par de números pelo número.
+  Multiplique o número Y deste par de números pelo número.
+
+Rotina para que se atribua um nome e uma altura para uma fonte:
+  Atribua o nome ao nome desta fonte.
+  Atribua a altura à altura desta fonte.
+
+Rotina para que se permute um ponteiro com um segundo ponteiro;
+Rotina para que se permute um número com um segundo número:
+  Atribua o número para um terceiro número.
+  Atribua o segundo número ao número.
+  Atribua o terceiro número ao segundo número.
+
+Rotina para que se atribua o centro duma caixa para uma localização:
+  Atribua a coordenada X1 desta caixa mais a coordenada X2 desta caixa à coordenada X desta localização.
+  Atribua a coordenada Y1 desta caixa mais a coordenada Y2 desta caixa à coordenada Y desta localização.
+  Divida a localização por 2.
+
+Rotina para que se divida um par de números por um número:
+  Divida o número X deste par de números pelo número.
+  Divida o número Y deste par de números pelo número.
+
+Rotina para que se atribua uma cor para uma segunda cor:
+  Atribua a matiz desta cor à matiz desta segunda cor.
+  Atribua a saturação desta cor à saturação desta segunda cor.
+  Atribua a luminosidade desta cor à luminosidade desta segunda cor.
+
+Rotina para que se obtenha novos números aleatórios;
+Rotina para que se semeie o gerador de números aleatórios:
+  Atribua a contagem de intervalos do sistema à semente aleatória.
+
+Rotina para que se remova uma lista desde umas listas:
+  Se a lista for inexistente, retorne.
+  Se a lista for a lista inicial destas listas, 
+    Atribua a lista posterior desta lista à lista inicial destas listas.
+  Se a lista for a lista final destas listas, 
+    Atribua a lista anterior desta lista à lista final destas listas.
+  Se o lista posterior desta lista não for inexistente, 
+    Atribua a lista anterior desta lista à lista anterior desta lista posterior desta lista.
+  Se o lista anterior desta lista não for inexistente, 
+    Atribua o lista posterior desta lista à lista posterior desta lista anterior desta lista.
+  Esvazie a lista posterior desta lista.
+  Esvazie a lista anterior desta lista.
+
+Rotina para que se finalize um contexto:
+  \Destrua as alternativas.
+  \Destrua as figuras geométricas.
+  \Destrua a pilha de contextos.
+  Destrua o contexto.
+
+Rotina para que se finalize os contextos de dispositivo:
+  Finalize o contexto de dispositivo de memória.
+  \Finalize o canvas da tela. -> Rotina ainda não criada.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

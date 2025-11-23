@@ -1,0 +1,25 @@
+Rotina para que se execute o programa:
+  Defina "console" como o tipo da aplicação.
+  Pinte os primos.
+  Feche o programa.
+
+Rotina para que se pinte os primos:
+  Atribua 0 para um número denominado contador.
+  Itere.
+    Se o contador for 10000, pare.
+    Adicione 1 para o contador.
+    Se o contador não for primo,
+      Escreva o contador junto com " " em StdOut.
+    Se o contador for primo,
+      Escreva em verde o contador junto com " " para Stdout.
+  Reitere.
+
+Função para que se determine se um número é primo:
+  Se o número for menor do que 2, diga não.
+  Atribua 2 para um número denominado contador.
+  Itere.
+    Se o contador for maior ou igual ao número, pare.
+    Se o número for uniformemente divisível pelo contador, diga não.
+    Adicione 1 para o contador.
+  Reitere.
+  Diga sim.

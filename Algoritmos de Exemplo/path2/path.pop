@@ -1,0 +1,18 @@
+Rotina para que se execute o programa:
+  Defina "console" como o tipo da aplicação.
+  Obtenha um endereço da pasta denominado caminho usando o diretório de trabalho atual.
+  Escreva o caminho para Stdout.
+  Feche o programa.
+
+Rotina para que se obtenha um endereço da pasta usando o diretório de trabalho atual:
+  Atribua 260 para um número denominado tamanho máximo do buffer. \ (MAX_PATH).
+  Preencha o endereço da pasta com o caractere NULL usando o tamanho máximo do buffer.
+  Processe "kernel32.dll" "GetCurrentDirectoryA" com
+    O tamanho máximo do buffer [nBufferLength] e
+    O caractere inicial deste endereço da pasta [lpBuffer]
+    Retornando um número denominado comprimento do endereço.
+  Se o comprimento do endereço for 0,
+    Escreva "Erro: Não foi possível obter o diretório de trabalho atual." junto com o texto CRLF para StdOut;
+    Limpe o endereço da pasta;
+    Retorne.
+

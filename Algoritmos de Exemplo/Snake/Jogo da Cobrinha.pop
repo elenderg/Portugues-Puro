@@ -1,0 +1,207 @@
+Um pedaço é uma caixa.
+A cobrinha é um pedaço.
+Um mapa é uma caixa.
+O mapa é um mapa.
+A distância é [um pixel igual a] 40 pixels.
+A fruta é uma caixa.
+
+A cobrona é uma lista com uns pedaços.
+
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  Exiba o mapa.
+  Aloque memória para a cobrona.
+  Mostre a cobrinha.
+  \Mostre a fruta.
+  Inicie o jogo.
+  Destrua a cobrona.
+  Feche o programa.
+
+Rotina para que se aumente um pedaço:
+  \Adicione 40 para a coordenada x1 deste pedaço.
+  \Adicione 40 para a coordenada x2 deste pedaço.
+  \Adicione 40 para a coordenada y1 deste pedaço.
+  \Adicione 40 para a coordenada y2 deste pedaço.
+
+
+Rotina para que se exiba um mapa:
+  Limpe a tela. \ usando a cor verde escuríssimo.
+
+Rotina para que se mostre um pedaço:
+  Faça o pedaço 40 pixels por 40 pixels.
+  Centralize o pedaço na caixa desta tela.
+  Pinte e preencha o pedaço com a cor verde.
+  \Comece no centro da tela.
+
+Rotina para que se comece no centro da tela:
+  Comece no centro desta caixa desta tela.
+
+Rotina para que se inicie o jogo:  
+  Itere.
+    Desenfileire um evento.
+    Se o evento for inexistente, retorne.
+    Execute o evento.
+  Reitere.
+
+Rotina para que se execute um evento:
+  Se a categoria deste evento for "atualização de tela",
+    Atualize a tela usando a caixa desta tela;
+    Retorne.
+  Se a categoria deste evento for "movimentação de cursor",
+    Execute o evento (movimentação de cursor);
+    Retorne.
+  Se a categoria deste evento for "clique do botão esquerdo",
+    Execute o evento usando a localização deste evento (clique do botão esquerdo);
+    Retorne.
+  \Se a categoria deste evento for "clique do botão direito",
+    \Execute o evento (clique do botão direito);
+    \Retorne.
+  Se a categoria deste evento for "pressionamento de tecla",
+    Execute o evento (pressionamento de tecla);
+    Retorne.
+
+Rotina para que se execute um evento (movimentação de cursor):
+  \Atribua a cor branca para uma cor.
+  Se a localização deste mouse estiver na cobrinha,
+    \Atribua a cor verde escuro para a cor.
+  \Pinte e preencha o pedaço com a cor.
+  Atualize a tela.
+  Mostre a seta do mouse.
+
+Rotina para que se repinte a tela:
+  \Aguarde por 15 milisegundos.
+  Atribua a cor verde para uma cor.
+  Se a localização deste mouse estiver na cobrinha,
+    Atribua a cor verde escuro para a cor.
+  Pinte e preencha a cobrinha com a cor.
+  Atualize a tela usando a caixa desta tela.
+
+Rotina para que se execute um evento usando uma localização (clique do botão esquerdo):
+  \Atribua a localização deste mouse para uma localização.
+  Itere.
+    Se a coordenada X1 desta cobrinha for menor do que a coordenada X desta localização,
+      Mova a cobrinha para a direita a distância;
+      Limpe a tela.
+      Repinte a tela.
+    Se a coordenada X1 desta cobrinha for maior do que a coordenada X desta localização,
+      Mova a cobrinha para a esquerda a distância;
+      Limpe a tela.
+      Repinte a tela.
+    Se a coordenada Y1 desta cobrinha for menor do que a coordenada Y desta localização,
+      Mova a cobrinha para baixo a distância;
+      Limpe a tela.
+      Repinte a tela.
+    Se a coordenada Y1 desta cobrinha for maior do que a coordenada Y desta localização,
+      Mova a cobrinha para cima a distância;
+      Limpe a tela.
+      Repinte a tela.
+    Se a localização estiver na cobrinha, retorne.
+    \Se a localização estiver tocando na cobrinha, retorne.
+  Reitere.
+
+Rotina para que se execute um evento (pressionamento de tecla):
+  Se a tecla deste evento for a tecla Esc, 
+      Delegue o controle;
+      Retorne.
+  Se a tecla deste evento for a seta pra cima, 
+      Mova a cobrinha (para cima);
+      Retorne.
+  Se a tecla deste evento for a seta pra baixo, 
+      Mova a cobrinha (para baixo);
+      Retorne.
+  Se a tecla deste evento for a seta pra esquerda, 
+      Mova a cobrinha (para esquerda);
+      Retorne.
+  Se a tecla deste evento for a seta pra direita, 
+      Mova a cobrinha (para direita);
+      Retorne.
+  Se a tecla deste evento for a tecla dois do teclado numérico, 
+      Mova a cobrinha (para cima);
+      Retorne.
+  Se a tecla deste evento for a tecla oito do teclado numérico, 
+      Mova a cobrinha (para baixo);
+      Retorne.
+  Se a tecla deste evento for a tecla quatro do teclado numérico, 
+      Mova a cobrinha (para esquerda);
+      Retorne.
+  Se a tecla deste evento for a tecla seis do teclado numérico, 
+      Mova a cobrinha (para direita);
+      Retorne.
+
+A orientação é uma string.
+
+
+Função para que se determine se um pedaço está indo pra baixo:
+  Se a orientação for "baixo", diga sim.
+  Diga não.
+
+Função para que se determine se um pedaço está indo pra cima:
+  Se a orientação for "cima", diga sim.
+  Diga não.
+
+Função para que se determine se um pedaço está indo pra esquerda:
+  Se a orientação for "esquerda", diga sim.
+  Diga não.
+
+Função para que se determine se um pedaço está indo pra direita:
+  Se a orientação for "direita", diga sim.
+  Diga não.
+
+
+Rotina para que se mova um pedaço (para cima):
+  \Se o pedaço estiver indo pra baixo, retorne.
+  Se o canto superior esquerdo deste pedaço estiver acima dessa caixa desta tela, retorne.
+  Atribua "cima" para a orientação.
+  Mova a cobrinha para cima a distância.
+  \Se o pedaço estiver tocando na fruta, 
+    \Aumente o pedaço.
+  Limpe a tela.
+  Repinte a tela.
+
+Rotina para que se mova um pedaço (para direita):
+  \Se o pedaço estiver indo pra esquerda, retorne.
+  Se o canto superior esquerdo deste pedaço estiver ao lado direito dessa caixa desta tela,
+    \TODO: IMPLEMENTAR A LÓGICA DE GAME OVER AQUI
+    Retorne.
+  Atribua "direita" para a orientação.
+  Mova a cobrinha para a direita a distância.
+  Aumente o pedaço.
+  Limpe a tela.
+  Repinte a tela.
+
+Rotina para que se mova um pedaço (para esquerda):
+  \Se o pedaço estiver indo pra direita, retorne.
+  Se o canto superior esquerdo deste pedaço estiver ao lado esquerdo dessa caixa desta tela,
+    \TODO: IMPLEMENTAR A LÓGICA DE GAME OVER AQUI
+    Retorne.
+  Atribua "esquerda" para a orientação.
+  Mova a cobrinha para a esquerda a distância.
+  Aumente o pedaço.
+  Limpe a tela.
+  Repinte a tela.
+
+Rotina para que se mova um pedaço (para baixo):
+  \Se o pedaço estiver indo pra cima, retorne.
+  Se o canto superior esquerdo deste pedaço estiver debaixo dessa caixa desta tela,
+    \TODO: IMPLEMENTAR A LÓGICA DE GAME OVER AQUI
+    Retorne.
+  Atribua "baixo" para a orientação.
+  Mova a cobrinha para baixo a distância.
+  Aumente o pedaço.
+  Limpe a tela.
+  Repinte a tela.
+
+\ Uma localização é um par de números com
+  \ Uma coordenada denominada coordenada X [left] e
+  \ Uma coordenada denominada coordenada Y. [top]
+
+
+\ Uma caixa é uma estrutura com
+  \ Uma coordenada denominada coordenada X1, [left]
+  \ Uma coordenada denominada coordenada Y1, [top]
+  \ Uma coordenada denominada coordenada X2, [right]
+  \ Uma coordenada denominada coordenada Y2, [bottom]
+  \ Uma localização denominada canto superior esquerdo sob a coordenada X1, [left-top]
+  \ Uma localização denominada canto inferior direito sob a coordenada X2, [right-bottom]
+  \ Uma localização denominada canto esquerdo superior sob a coordenada X1, [top-left]
+  \ Uma localização denominada canto direito inferior sob a coordenada X2. [bottom-right]

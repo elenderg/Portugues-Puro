@@ -465,23 +465,38 @@ Rotina para que se execute o programa:
   \Execute os eventos.\
   Feche o programa.
 
+Rotina para que se obtenha um endereço da pasta usando o diretório de trabalho atual:
+  Atribua 260 para um número denominado tamanho máximo do buffer. \ (MAX_PATH).
+  Preencha o endereço da pasta com o caractere NULL usando o tamanho máximo do buffer.
+  Processe "kernel32.dll" "GetCurrentDirectoryA" com
+    O tamanho máximo do buffer [nBufferLength] e
+    O caractere inicial deste endereço da pasta [lpBuffer]
+    Retornando um número denominado comprimento do endereço.
+  Se o comprimento do endereço for 0,
+    Escreva "Erro: Não foi possível obter o diretório de trabalho atual." junto com o texto CRLF para StdOut;
+    Limpe o endereço da pasta;
+    Retorne.
+
 Rotina para que se faça tudo:
   Atribua 1252 a um número denominado codepage.
   Processe "kernel32.dll" "SetConsoleOutputCP" com o codepage retornando um número denominado status de erro.
   Se o status de erro for 0 [NULL], 
     Escreva em vermelho "Código de Erro #001. Erro ao definir o CodePage do Console para STDOUT." junto com o texto CRLF para STDOUT.
   Obtenha uma string desde os argumentos da linha de comando.
-  Se a string estiver em branco, 
-    Escreva "|-----------------------------------------------------------------------------------------------------------------------|" junto com o texto CRLF para StdOut;
-    Escreva "| "junto com o Esc junto com "[33m" 
-    junto com "Aviso. Para utilizar este compilador, você deve informar o PATH do projeto através da linha de comando." 
-    junto com o Esc junto com "[0m" junto com "               |" junto com o texto CRLF para StdOut;
-    Escreva "| Para fazer isso, abra o Prompt de Comando (cmd.exe), navegue até a pasta do compilador e digite:                      |" junto com o texto CRLF para StdOut;
-    Escreva "|                                                                                                                       |" junto com o texto CRLF para StdOut;
-    Escreva "|                       Compilador.exe   D:\pasta_do_projeto_atual\                                                     |" junto com o texto CRLF para StdOut;
-    Escreva "|                                                                                                                       |" junto com o texto CRLF para StdOut;
-    Escreva "|-----------------------------------------------------------------------------------------------------------------------|" junto com o texto CRLF para StdOut;
-  Retorne.
+  Se a string estiver em branco,
+    Obtenha um endereço da pasta usando o diretório de trabalho atual;
+    Atribua o endereço da pasta para a string;
+    Elimine os resíduos na string.
+    \ Escreva "|-----------------------------------------------------------------------------------------------------------------------|" junto com o texto CRLF para StdOut;
+    \ Escreva "| "junto com o Esc junto com "[33m" 
+    \ junto com "Aviso. Para utilizar este compilador, você deve informar o PATH do projeto através da linha de comando." 
+    \ junto com o Esc junto com "[0m" junto com "               |" junto com o texto CRLF para StdOut;
+    \ Escreva "| Para fazer isso, abra o Prompt de Comando (cmd.exe), navegue até a pasta do compilador e digite:                      |" junto com o texto CRLF para StdOut;
+    \ Escreva "|                                                                                                                       |" junto com o texto CRLF para StdOut;
+    \ Escreva "|                       Compilador.exe   D:\pasta_do_projeto_atual\                                                     |" junto com o texto CRLF para StdOut;
+    \ Escreva "|                                                                                                                       |" junto com o texto CRLF para StdOut;
+    \ Escreva "|-----------------------------------------------------------------------------------------------------------------------|" junto com o texto CRLF para StdOut;
+    \ Retorne.
   Se o conteúdo deste caractere final desta string não for a barra invertida, 
     Acrescente a barra invertida para a string.
   Se a string não estiver no sistema de arquivos, 
@@ -489,7 +504,7 @@ Rotina para que se faça tudo:
     Retorne.
   Escreva em verde "Compilando o diretório '" junto com a string seguido de "' …" para StdOut. \ #0
   Escreva o texto CRLF para StdOut.
-  Compile a string.
+  Compile a string. \ tratar aqui
   Se existir algum problema de compilação, 
     Exiba o erro de compilação; 
     Retorne.
@@ -499,6 +514,7 @@ Rotina para que se obtenha uma string desde os argumentos da linha de comando:
   Processe "kernel32.dll" "GetCommandLineA" 
     Retornando um endereço do caractere.
   Converta o endereço do caractere para uma string denominada argumentos.
+  Escreva "Argumentos: " junto com os argumentos junto com o texto CRLF para StdOut.
   Lance um subtexto sobre os argumentos.
   Itere.
     Se o subtexto estiver em branco, 
@@ -4775,18 +4791,18 @@ Rotina para que se compile uma expressão matemática usando um percorredor:
     Se o segmento inicial deste percorredor for "multiplicado",
       Compile a expressão matemática usando o percorredor (operador de multiplicação);
       Reitere.
-    Se o segmento inicial deste percorredor for "junto",
-      Compile a expressão matemática usando o percorredor (operador de concatenação);
-      Reitere.
-    Se o segmento inicial deste percorredor for "juntamente",
-      Compile a expressão matemática usando o percorredor (operador de concatenação);
-      Reitere.
-    Se o segmento inicial deste percorredor for "seguido",
-      Compile a expressão matemática usando o percorredor (operador de concatenação);
-      Reitere.
-    Se o segmento inicial deste percorredor for "acompanhado",
-      Compile a expressão matemática usando o percorredor (operador de concatenação);
-      Reitere.
+    \ Se o segmento inicial deste percorredor for "junto",
+      \ Compile a expressão matemática usando o percorredor (operador de concatenação);
+      \ Reitere.
+    \ Se o segmento inicial deste percorredor for "juntamente",
+      \ Compile a expressão matemática usando o percorredor (operador de concatenação);
+      \ Reitere.
+    \ Se o segmento inicial deste percorredor for "seguido",
+      \ Compile a expressão matemática usando o percorredor (operador de concatenação);
+      \ Reitere.
+    \ Se o segmento inicial deste percorredor for "acompanhado",
+      \ Compile a expressão matemática usando o percorredor (operador de concatenação);
+      \ Reitere.
 
 O número de comparação é um número igual a 0.
 

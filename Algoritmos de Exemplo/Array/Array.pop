@@ -2,7 +2,7 @@ Rotina para que se execute o programa:
   Defina "console" como o tipo da aplicação.
   Crie um array de números com 100 elementos.
   Atribua 2 para 1º elemento no array de números.
-  Atribua 1 no array de números para o índice 1.
+  Atribua 1 no array de números para o índice 1º.
   Atribua 50 no array de números para o índice 50.
   Atribua 99 no array de números para o índice 99.
   Atribua 100 no array de números para o índice 100.  
@@ -16,8 +16,6 @@ Rotina para que se execute o programa:
   Escreva "Valor do primeiro índice: " junto com o quinto número junto com o texto CRLF para StdOut.
   Destrua o array de números.
   Feche o programa.
-
-
 
 \\\\\\\\\\\\\\\\\\ Implementação do Array \\\\\\\\\\\\\\\\\\\\
 
@@ -67,7 +65,6 @@ Rotina para que se obtenha um número desde um array de números para o índice uma
   Adicione o deslocamento ao índice.
   Atribua o conteúdo deste índice ao número.
 
-
 Rotina para que se atribua um número para o índice uma posição para um array de números;
 Rotina para que se atribua um número em um array de números para o índice uma posição:
   Escreva "Índice: " junto com a posição junto com ". Valor: " junto com o número junto com o texto CRLF para StdOut.
@@ -86,8 +83,7 @@ Rotina para que se atribua um número em um array de números para o índice uma po
   Atribua o número para o conteúdo deste índice.
 
 Rotina para que se atribua um número para um elemento em um array de números:
-  Atribua o elemento para uma posição.
-   Atribua o número no array de números para o índice a posição.
+  Atribua o número no array de números para o índice o elemento tal como uma posição.
 
 Rotina para que se atribua o último índice desde um array de números para um número:
   Obtenha o número desde o array de números para o índice o tamanho deste array de números.

@@ -1,0 +1,168 @@
+Uma IA é uma lista com
+  Uma categoria,
+  Uma cor e
+  Uma localização.
+
+As IAs são umas IAs.
+
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  Crie as IAs.
+  Itere.
+    Pinte a tela de preto. \ MUDOU AQUI
+    Pinte o usuário sob a localização deste mouse.
+    Mova as IAs.
+    Se o botão esquerdo deste mouse estiver sendo pressionado,
+      Disperse as IAs.
+    Pinte as IAs.
+    Atualize a tela.
+    Se a tecla Esc não estiver sendo pressionada, 
+  Reitere.
+  Destrua as IAs.
+  Feche o programa.
+
+Rotina para que se disperse umas IAS:
+  [Itere.]
+    Obtenha uma IA desde as IAs.
+    Se a IA for inexistente, retorne.
+    \ Se a categoria desta IA não for "uma IA agressiva", reitere.
+    Disperse a IA.
+  Reitere.
+
+Rotina para que se disperse uma IA:
+  Faça uma caixa 768 pixels por 768 pixels.
+  Centralize a caixa sobre a localização deste mouse.
+  Escolha aleatoriamente uma localização no interior dessa caixa.
+  Atribua a localização à localização desta IA.
+
+Rotina para que se crie umas IAs:
+  Faça surgir "uma IA covarde".
+  Faça surgir "uma IA covarde".
+  Faça surgir "uma IA covarde".
+  Faça surgir "uma IA covarde".
+  Faça surgir "uma IA indecisa".
+  Faça surgir "uma IA agressiva".
+  Faça surgir "uma IA agressiva".
+  Faça surgir "uma IA agressiva".
+  Faça surgir "uma IA agressiva".
+
+Rotina para que se faça surgir uma categoria:
+  Aloque memória para uma IA.
+  Acrescente a IA para as IAs.
+  Atribua a categoria para a categoria desta IA.
+  Se a categoria desta IA for "uma IA agressiva",
+    Atribua a cor vermelha para a cor desta IA.
+  Se a categoria desta IA for "uma IA covarde",
+    Atribua a cor amarela para a cor desta IA.
+  Se a categoria desta IA for "uma IA indecisa",
+    Atribua a cor violeta para a cor desta IA.
+  Escolha aleatoriamente uma localização no interior dessa caixa desta tela.
+  Atribua a localização à localização desta IA.
+
+Rotina para que se mova as IAs:
+  [Itere.]
+    Obtenha uma IA desde as IAs.
+    Se a IA for inexistente, retorne.
+    Mova a IA.
+  Reitere.
+
+Rotina para que se mova uma IA:
+  Se a categoria desta IA for "uma IA agressiva",
+    Mova a IA (de forma agressiva);
+    Retorne.
+  Se a categoria desta IA for "uma IA covarde",
+    Mova a IA (de forma covarde);
+    Retorne.
+  Se a categoria desta IA for "uma IA indecisa",
+    Mova a IA (de forma indecisa);
+    Retorne.
+
+Rotina para que se mova uma IA (de forma agressiva):
+  Se estamos com sorte, retorne.
+  Se a localização desta IA estiver acima dessa localização deste mouse,
+    Adicione 3/2 pixels para a coordenada Y desta localização desta IA.
+  Se a localização desta IA estiver abaixo dessa localização deste mouse,
+    Subtraia 3/2 pixels desde a coordenada Y desta localização desta IA.
+  Se a localização desta IA estiver à esquerda dessa localização deste mouse,
+    Adicione 3/2 pixels para a coordenada X desta localização desta IA.
+  Se a localização desta IA estiver à direita dessa localização deste mouse,
+    Subtraia 3/2 pixels desde a coordenada X desta localização desta IA.
+
+Rotina para que se mova uma IA (de forma covarde):
+  Se estamos com sorte, retorne.
+  Se a localização desta IA estiver acima dessa localização deste mouse,
+    Subtraia 3/2 pixels desde a coordenada Y desta localização desta IA.
+  Se a localização desta IA estiver abaixo dessa localização deste mouse,
+    Adicione 3/2 pixels para a coordenada Y desta localização desta IA.
+  Se a localização desta IA estiver à esquerda dessa localização deste mouse,
+    Subtraia 3/2 pixels desde a coordenada X desta localização desta IA.
+  Se a localização desta IA estiver à direita dessa localização deste mouse,
+    Adicione 3/2 pixels para a coordenada X desta localização desta IA.
+  Garanta a presença dessa IA dentro da tela.
+
+Rotina para que se mova uma IA (de forma indecisa):
+  Se estamos com sorte,
+    Mova a localização desta IA 6 pixels para a esquerda.
+  Se estamos com sorte,
+    Mova a localização desta IA 6 pixels para a direita.
+  Se estamos com sorte,
+    Mova a localização desta IA 6 pixels para cima.
+  Se estamos com sorte,
+    Mova a localização desta IA 6 pixels para baixo.
+  Garanta a presença dessa IA dentro da tela.
+
+Rotina para que se garanta a presença de uma IA dentro da tela:
+  Se a localização desta IA estiver debaixo dessa caixa desta tela,
+    Mova a localização desta IA 12 pixels para cima.
+  Se a localização desta IA estiver acima dessa caixa desta tela,
+    Mova a localização desta IA 12 pixels para baixo.
+  Se a localização desta IA estiver à esquerda dessa caixa desta tela,
+    Mova a localização desta IA 12 pixels para a direita.
+  Se a localização desta IA estiver à direita dessa caixa desta tela,
+    Mova a localização desta IA 12 pixels para a esquerda.
+
+Rotina para que se pinte umas IAs:
+  [Itere.]
+    Obtenha uma IA desde as IAs.
+    Se a IA for inexistente, retorne.
+    Pinte a IA.
+  Reitere.
+
+Rotina para que se pinte uma IA:
+  Faça uma elipse 24 pixels por 24 pixels.
+  Mova a elipse para a localização desta IA.
+  Pinte a elipse com a cor desta IA e a cor desta IA.
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+Rotina para que se pinte a tela de preto:
+  Pinte a caixa desta tela com a cor preta e a cor preta.
+
+Rotina para que se pinte o usuário sob uma localização:
+  Faça uma elipse 24 pixels por 24 pixels.
+  Mova a elipse para a localização.
+  Pinte a elipse com a cor verde e a cor verde.
+
+Função para que se determine se uma localização está acima de uma segunda localização:
+  Se a coordenada Y desta localização for menor do que a coordenada Y desta segunda localização, diga sim.
+  Diga não.
+
+Função para que se determine se uma localização está abaixo de uma segunda localização:
+  Se a coordenada Y desta localização for maior do que a coordenada Y desta segunda localização, diga sim.
+  Diga não.
+
+Função para que se determine se uma localização está para a esquerda de uma segunda localização:
+  Se a coordenada X desta localização for menor do que a coordenada X desta segunda localização, diga sim.
+  Diga não.
+
+Função para que se determine se uma localização está para a direita de uma segunda localização:
+  Se a coordenada X desta localização for maior do que a coordenada X desta segunda localização, diga sim.
+  Diga não.
+
+\ Função para que se determine se uma localização está para a esquerda de uma caixa:
+  \ Se a coordenada X desta localização for menor do que a coordenada X1 desta caixa, diga sim.
+  \ Diga não.
+
+Função para que se determine se uma localização está para a direita de uma caixa:
+  Se a coordenada X desta localização for maior do que a coordenada X2 desta caixa, diga sim.
+  Diga não.

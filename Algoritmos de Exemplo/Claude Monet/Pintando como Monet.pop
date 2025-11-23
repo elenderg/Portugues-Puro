@@ -51,11 +51,11 @@ Rotina para que se crie o plano de fundo:
     Se o contador for uniformemente divisível por 10000, 
       Atualize a tela.
   Reitere.
-  Extraia o plano de fundo usando a caixa desta tela. \ou Crie o plano de fundo desde a tela.
+  Extraia o plano de fundo usando a caixa desta tela. \ou Crie o plano de fundo usando a tela.
 
 Rotina para que se pincele uma cor sobre uma localização:
-  Escolha aleatoriamente o canto superior esquerdo duma elipse dentre 6 pixels dessa localização.
-  Escolha aleatoriamente o canto inferior direito desta elipse dentre 6 pixels dessa localização.
+  Escolha aleatoriamente o canto superior esquerdo duma elipse dentre 6 pixels nesta localização.
+  Escolha aleatoriamente o canto inferior direito desta elipse dentre 6 pixels nesta localização.
   Pinte a elipse com a cor.
 
 Rotina para que se inicialize a caixa de status:
@@ -96,7 +96,7 @@ Rotina para que se exiba os componentes e atualize a tela:
   Pinte o botão de fechar.
   Pinte o campo de texto.
   Pinte a obra de arte atual.
-  Atualize o tela.
+  Atualize a tela.
 
 Rotina para que se pinte a caixa de status:
   Pinte a caixa desta caixa de status com a cor preta e a cor cinza claro.
@@ -369,4 +369,4 @@ Rotina para que se execute um evento (Tecla Page Up):
 
 Rotina para que se libere os recursos alocados na memória:
   Destrua o plano de fundo.
-  Destrua o obras de arte.
+  Destrua as obras de arte.

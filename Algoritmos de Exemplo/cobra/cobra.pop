@@ -1,0 +1,36 @@
+Um menu do jogo é uma caixa.
+O menu do jogo é uma caixa.
+Um mapa é uma caixa.
+O mapa é um mapa.
+
+Uma pedaço é uma lista com
+  Uma caixa.
+
+A cobra são uns pedaços.
+
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  Exiba o mapa.
+  Exiba o menu do jogo.
+
+Rotina para que se exiba um mapa:
+  Atribua a largura desta caixa desta tela dividido por 10 vezes 8 para um número denominado largura do mapa.
+  Faça o mapa [com] a largura do mapa e a altura desta caixa desta tela.
+
+Rotina para que se crie a cobra:
+  Aloque memória para um pedaço.
+  Acrescente o pedaço para a cobra.
+
+Rotina para que se pinte a cobra:
+  Itere.
+    Obtenha um pedaço dessa cobra.
+    Se o pedaço for inexistente, retorne.
+    Pinte a caixa deste pedaço com a cor verde.
+  Reitere.
+
+Rotina para que se estabeleça a posição inicial da cobra:
+  Obtenha um pedaço dessa cobra.
+  Se o pedaço for inexistente, retorne.
+  Centralize a caixa deste pedaço na caixa desta tela.
+
+

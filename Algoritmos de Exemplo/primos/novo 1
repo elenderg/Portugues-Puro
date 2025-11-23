@@ -1,0 +1,10 @@
+Função para que se determine se um número é primo:
+  Atribua 2 para um número denominado contador.
+  Se o número for menor do que 2, diga não.
+  Itere.
+    Se o contador for maior do que o número, pare.
+    Multiplique o contador pelo contador.
+    Se o número for uniformemente divisível pelo contador, diga não.
+    Adicione 1 para o contador.
+  Reitere.
+  Diga sim.

@@ -1,0 +1,134 @@
+Rotina para que se inicialize o módulo:
+  Atribua 512 para um número denominado quantidade de caracteres.
+  Reaponte o caractere inicial deste temp endereço completo usando a quantidade de caracteres.
+  Processe "kernel32.dll" "GetTempPathA" com 
+    \ Recupera o caminho do diretório designado para arquivos temporários.
+    \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-gettemppatha
+    A quantidade de caracteres [nBufferLength] e
+    O caractere inicial deste temp endereço completo [lpBuffer]
+    Retornando a quantidade de caracteres.
+  Atribua o caractere inicial deste temp endereço completo mais a quantidade de caracteres menos 1 ao caractere final deste temp endereço completo.
+  Anexe o caractere NULL após o temp endereço completo.
+  Processe "kernel32.dll" "GetModuleHandleA" com 
+    \Recupera um identificador de módulo para o módulo especificado.
+    \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulehandlea
+    0 [lpModuleName]
+  Retornando o número identificador deste módulo.
+  Atribua 512 à quantidade de caracteres.
+  Reaponte o caractere inicial deste endereço completo deste módulo usando a quantidade de caracteres.
+  Processe "kernel32.dll" "GetModuleFileNameA" com 
+    \ Recupera o caminho totalmente qualificado para o arquivo que contém o módulo especificado.
+    \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulefilenamea
+    O número identificador deste módulo [hModule] e
+    O caractere inicial deste endereço completo deste módulo [lpFilename] e
+    A quantidade de caracteres[nSize]
+    Retornando a quantidade de caracteres.
+  Atribua o caractere inicial deste endereço completo deste módulo mais a quantidade de caracteres menos 1 ao caractere final deste endereço completo deste módulo.
+  Se o endereço completo deste módulo começa com "\\?\", 
+    Remova os caracteres iniciais desde o endereço completo deste módulo usando 4.
+  Lowercase o endereço completo deste módulo.
+  Anexe o caractere NULL após o endereço completo deste módulo.
+  Extraia o nome deste módulo desde o endereço completo deste módulo.
+  Anexe o caractere NULL após o nome deste módulo.
+  Extraia o endereço da pasta deste módulo desde o endereço completo deste módulo.
+  Anexe o caractere NULL após o endereço da pasta deste módulo.
+  Extraia o root endereço da pasta deste módulo desde o endereço da pasta deste módulo.
+  Anexe o caractere NULL após o root endereço da pasta deste módulo.
+
+Rotina para que se inicialize a tela:
+  Processe "user32.dll" "GetSystemMetrics" com 
+  \ Obtém o tamanho da tela, em pixels
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getsystemmetrics
+    0 [nIndex = SM_CXSCREEN]
+    Retornando a largura do pixel desta tela.
+  Processe "user32.dll" "GetSystemMetrics" com
+    1 [nIndex = SM_CYSCREEN]
+    Retornando a altura do pixel desta tela.
+  Atribua 96 ao ppi.
+  Atribua o tpi dividido pelo ppi à quantidade de twips/pixel .
+  Atribua a largura do pixel desta tela vezes a quantidade de twips/pixel para uma largura.
+  Atribua a altura do pixel desta tela vezes a quantidade de twips/pixel para uma altura.
+  Atribua 0 [coordenda X1] e 0 [coordenda Y1] e a largura e a altura à caixa desta tela.
+  Subtraia a quantidade de twips/pixel desde o canto inferior direito desta caixa desta tela.
+
+Rotina para que se inicialize a janela do programa:
+  Atribua a magnitude [tamanho em bytes] duma WNDCLASS [estrutura] ao cbSize desta classe da janela.
+  Atribua 40 [CS_OWNDC + CS_DBLCLKS] ao style desta classe da janela.
+  \ Consulte https://learn.microsoft.com/pt-br/windows/win32/winmsg/window-class-styles
+  Redirecione o lpfnWndProc desta classe da janela para a rotina Handle alguma mensagem com uma janela do programa e um número e um wParam e um lParam.
+  \ Define o procedimento da classe da janela como sendo WndProc
+  Atribua o número identificador deste módulo ao hInstance desta classe da janela.
+  Atribua o caractere inicial deste nome deste módulo ao lpszClassName desta classe da janela.
+  Processe "user32.dll" "RegisterClassExA" \ Registra uma classe de janela.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-registerclassexa
+  Com o endereçamento desta classe da janela. [*unnamedParam1]
+  Processe "user32.dll" "CreateWindowExA" com \ Cria a janela
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-createwindowexa
+  \https://learn.microsoft.com/pt-br/windows/desktop/api/winuser/nf-winuser-createwindowa
+    0 [dwExStyle] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/winmsg/extended-window-styles
+    e O caractere inicial deste nome deste módulo [lpClassName]
+    e O caractere inicial deste nome deste módulo  [lpWindowName]
+    e 2147483648 \2147483648 [dwStyle]  [-2147483648 = WS_POPUP 0x80000000]
+    [13565952  WS_OVERLAPPEDWINDOW 0x00CF0000]
+    \ Consulte https://www.autoitscript.com/autoit3/docs/appendix/GUIStyles.htm
+    \ https://www.magnumdb.com/ . Para uma janela padrão, use o valor 13565952
+    e 0 [x]
+    e 0 [y]
+    e A largura do pixel desta tela [nWidth]
+    e A altura do pixel desta tela  [nHeight]
+    e 0 [hWndParent]
+    e 0 [hMenu]
+    e O número identificador deste módulo [hInstance]
+    e 0. [lpParam]
+  \Se o tipo da aplicação não for "console",
+    Processe "user32.dll" "ShowWindow" com \ Define o estado de exibição da janela especificada.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-showwindow
+      A janela principal do programa [hWnd]
+      e 1. [nCmdShow = SW_SHOWNORMAL]
+
+Rotina para que se carregue tudo;
+Rotina para que se carregue as bibliotecas;
+Rotina para que se carregue as bibliotecas padrão;
+Rotina para que se carregue as bibliotecas padrão do sistema;
+Rotina para que se inicialize tudo;
+Rotina para que se inicialize os componentes:
+  Inicialize o Component Object Model.
+  Inicialize a infraestrutura WinSock.
+  Inicialize o GDI+.
+  \ Inicialize o sintetizador de voz.
+  Inicialize o módulo.
+  \ Inicialize as cores.
+  Inicialize a tela.
+  Inicialize a janela do programa.
+  Inicialize as fontes.
+  Inicialize os cursores.
+  Inicialize o mouse.
+  Inicialize os contextos de dispositivo.
+  Inicialize o contexto.
+  \ Inicialize o terminal.
+  \ Crie o console.
+
+\ Rotina para que se execute o programa:
+  \ Inicialize os componentes.
+  \ Feche o programa.
+
+
+Rotina para que se finalize os componentes;
+Rotina para que se feche este programa;
+Rotina para que se feche o nosso programa;
+Rotina para que se feche nosso programa;
+Rotina para que se feche tudo;
+Rotina para que se desligue:
+  \ Destrua a Bíblia.
+  Destrua o stack.
+  \ Destrua o dicionário léxico.
+  \ Destrua o console.
+  \ Destrua o terminal.
+  Finalize o contexto.
+  Finalize os contextos de dispositivo.  
+  Finalize os cursores.
+  Finalize as fontes.
+  Finalize a janela do programa.
+  Finalize o GDI+.
+  Finalize winsock.
+  Finalize o Component Object Model.

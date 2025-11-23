@@ -1,0 +1,209 @@
+\ DEFINIÇÃO DE TIPOS.
+
+Um tabuleiro é uma lista com
+  Uma caixa e 
+  Umas células.
+
+Uma célula é uma lista com
+  Um número da linha,
+  Um número da coluna,
+  Um local,
+  Uma caixa e
+  Um símbolo.
+
+Uma área de mensagens é uma lista com
+  Uma caixa e
+  Uma mensagem.
+
+Um jogador é uma lista com 
+  Um símbolo.
+
+Um local é uma string. \ "centro" "canto" "lateral"
+Um símbolo é uma string. \ "X" ou "0"
+
+\ DECLARAÇÃO DE VARIÁVEIS GLOBAIS
+
+As instruções são uma área de mensagens.
+O tabuleiro é um tabuleiro.
+O painel de estado é uma área de mensagens.
+O humano é um jogador.
+A máquina é um jogador.
+A bandeira é um sinalizador.
+
+\ ROTINAS PRINCIPAIS
+
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  Inicialize o jogo.
+  Execute os comandos do jogo.
+  Finalize o jogo.
+  Feche o programa.
+
+Rotina para que se inicialize o jogo:
+  Crie o tabuleiro.
+  Crie as instruções.
+  Crie o painel de estado.
+  Crie o humano usando "X".
+  Crie a máquina usando "O".
+
+Rotina paara que se execute os comandos do jogo:
+  \Itere.
+    Desenfileire um evento denominado comando.
+    Se o comando for inexistente, retorne.
+    Execute o comando.
+  Reitere.
+
+Rotina para que se finalize o jogo:
+  Destrua a máquina.
+  Destrua o humano.
+  Destrua o painel de estado.
+  Destrua as instruções.
+  Destrua o tabuleiro.
+
+\ ROTINAS DE ALOCAÇÃO DE MEMÓRIA
+
+Rotina para que se crie um tabuleiro:
+  Aloque memória para o tabuleiro.
+  Faça a caixa deste tabuleiro 288 pixels por 288 pixels.
+  Centralize a caixa deste tabuleiro na caixa desta tela.
+  Mova a caixa para o canto superior esquerdo deste tabuleiro.
+  Atribua 1 para um número denominado número da linha.
+  Atribua 1 para um número denominado número da coluna.
+  Itere.
+    Aloque memória para uma célula.
+    Acrescente a célula para as células deste tabuleiro.
+    Atribua a caixa para a caixa desta célula.
+    Atribua o número da linha para o número da linha desta célula.
+    Atribua o número da coluna para o número da linha desta coluna.
+    Obtenha o local desta célula usando o número da linha e o número da coluna.
+    Mova a caixa 96 pixels para a direita.
+    Adicione 1 para o número da coluna.
+    Se a caixa estiver dentro da caixa deste tabuleiro, reitere.
+    Mova a caixa para a esquerda dessa caixa deste tabuleiro.
+    Atribua 1 para o número da coluna.
+    Mova a caixa 96 pixels para baixo.
+    Adicione 1 para o número da linha.
+    Se a caixa estiver dentro da caixa deste tabuleiro, 
+  Reitere.
+
+Rotina para que se obtenha um local usando um número da linha e um número da coluna:
+  Se o número da linha junto com o número da coluna for "11",
+    Atribua "canto" para o local.
+  Se o número da linha junto com o número da coluna for "12",
+    Atribua "lateral" para o local.
+  Se o número da linha junto com o número da coluna for "13",
+    Atribua "canto" para o local.
+  Se o número da linha junto com o número da coluna for "21",
+    Atribua "lateral" para o local.
+  Se o número da linha junto com o número da coluna for "22",
+    Atribua "centro" para o local.
+  Se o número da linha junto com o número da coluna for "23",
+    Atribua "lateral" para o local.
+  Se o número da linha junto com o número da coluna for "31",
+    Atribua "canto" para o local.
+  Se o número da linha junto com o número da coluna for "32",
+    Atribua "lateral" para o local.
+  Se o número da linha junto com o número da coluna for "33",
+    Atribua "canto" para o local.
+
+Rotina para que se crie as instruções:
+  Aloque memória para as instruções.
+  Atribua a coordenada X1 desta tela para a coordenada X1 destas instruções.
+  Atribua a coordenada Y1 deste tabuleiro menos 72 pixels para a coordenada Y1 destas instruções.
+  Atribua a coordenada Y1 deste tabuleiro menos 48 pixels para a coordenada Y2 destas instruções.
+  Atribua a coordenada X2 desta tela para a coordenada X2 destas instruções.
+  Atribua "Clique fora do tabuleiro para iniciar um novo jogo. Pressione a tecla Esc para sair." para a mensagem destas instruções.
+
+Rotina para que se crie o painel de estado:
+  Aloque memória para o painel de estado.
+  Atribua a coordenada X1 desta tela para a coordenada X1 deste painel de estado.
+  Atribua a coordenada Y2 deste tabuleiro mais 48 pixels para a coordenada Y1 deste painel de estado.
+  Atribua a coordenada Y2 deste tabuleiro mais 72 pixels para a coordenada Y2 deste painel de estado.
+  Atribua a coordenada X2 desta tela para a coordenada X2 deste painel de estado.
+  Atribua "Agora é a sua vez." para a mensagem deste painel de estado.
+
+Rotina para que se crie um jogador usando um símbolo:
+  Aloque memória para o jogador.
+  Atribua o símbolo para o símbolo deste jogador.
+
+\ ROTINAS DE GERENCIAMENTO DE EVENTOS.
+
+Rotina para que se execute um evento:
+  Se a categoria deste evento for "atualização de tela",
+    Mostre tudo;
+    Retorne.
+  Se a categoria deste evento for "movimentação de cursor",
+    Execute o evento (movimentação de cursor).
+  Se a categoria deste evento for "pressionamento de tecla",
+    Execute o evento (pressionamento de tecla).
+  Se a categoria deste evento for "clique do botão esquerdo",
+    Execute o evento (clique do botão esquerdo).
+
+Rotina para que se execute um evento (pressionamento de tecla):
+  Se a tecla deste evento for a tecla Esc,
+    Renuncie ao controle;
+    Retorne.
+  Se a tecla deste evento for a tecla N/n,
+    Comece de novo.
+
+Rotina para que se execute um evento (clique do botão esquerdo):
+  Encontre uma célula usando a localização deste evento.
+  Se a célula for inexistente,
+    Comece de novo;
+    Retorne.
+  Se o jogo estiver terminado,
+    Avise o usuário;
+    Retorne.
+  Se a céluna não estiver em branco,
+    Avise o usuário;
+    Retorne.
+  Atribua o símbolo deste humano para a célula.
+  Se o jogo não estiver terminado,
+    Reaja à jogada do usuário.
+  Atualize o painel de status.
+  Mostre tudo.
+  Descarte todos os inputs.
+
+Rotina para que se execute um evento (movimentação de cursor):
+  Mostre a seta do mouse.
+
+\ AÇÕES DA MÁQUINA
+
+Rotina para que se reaja para a jogada do usuário:
+  Mostre "Aguarde...".
+  \Aguarde 500 milissegundos.
+  Limpe a bandeira.
+  Tente usar a estratégia vencedora.
+  Se a bandeira estiver ativo, retorne.
+  Tente usar a estratégia vencedora.
+  Se a bandeira estiver ativo, retorne.
+  Tente usar a estratégia vencedora.
+  Se a bandeira estiver ativo, retorne.
+  Tente usar a estratégia vencedora.
+  Se a bandeira estiver ativo, retorne.
+  Tente usar a estratégia vencedora.
+  Se a bandeira estiver ativo, retorne.
+  Tente usar a estratégia vencedora.
+  Se a bandeira estiver ativo, retorne.
+  Tente usar a estratégia vencedora.
+  Se a bandeira estiver ativo, retorne.
+  Tente usar a estratégia vencedora.
+  Se a bandeira estiver ativo, retorne.
+  Tente usar a estratégia vencedora.
+  Se a bandeira estiver ativo, retorne.
+  Tente usar a estratégia vencedora.
+  Se a bandeira estiver ativo, retorne.
+  Tente usar a estratégia vencedora.
+  Se a bandeira estiver ativo, retorne.
+
+
+
+\ Uma caixa é uma estrutura com
+  \ Uma coordenada denominada coordenada X1, [left]
+  \ Uma coordenada denominada coordenada Y1, [top]
+  \ Uma coordenada denominada coordenada X2, [right]
+  \ Uma coordenada denominada coordenada Y2, [bottom]
+  \ Uma localização denominada canto superior esquerdo sob a coordenada X1, [left-top]
+  \ Uma localização denominada canto inferior direito sob a coordenada X2, [right-bottom]
+  \ Uma localização denominada canto esquerdo superior sob a coordenada X1, [top-left]
+  \ Uma localização denominada canto direito inferior sob a coordenada X2. [bottom-right]

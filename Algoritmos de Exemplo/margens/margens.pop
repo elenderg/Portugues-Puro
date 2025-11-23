@@ -1,0 +1,42 @@
+\Uma margem é uns twips.
+
+A margem esquerda da tela é uma margem.
+A margem direita da tela é uma margem.
+A margem superior da tela é uma margem.
+A margem inferior da tela é uma margem.
+
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  Faça uma caixa usando as proporções dessa tela.
+  Atualize a tela.
+  Aguarde a tecla Esc.
+  Feche o programa.
+
+Rotina para que se faça uma caixa usando as proporções de uma tela:
+  Calcule as margens da tela.
+  Faça a caixa com
+    A margem esquerda da tela e
+    A margem superior da tela e
+    A margem direita da tela e
+    A margem inferior da tela.
+  Pinte e preencha a caixa com a cor transparente.
+
+Rotina para que se calcule as margens da tela:
+  Atribua a margem esquerda desta tela para a margem esquerda da tela.
+  Atribua a margem direita desta tela para a margem direita da tela.
+  Atribua a margem superior desta tela para a margem superior da tela.
+  Atribua a margem inferior desta tela para a margem inferior da tela.
+
+Rotina para que se atribua a margem esquerda duma tela para uma margem:
+  Atribua a largura desta caixa desta tela dividido por 40 para a margem.
+
+Rotina para que se atribua a margem direita duma tela para uma margem:
+  Atribua a largura desta caixa desta tela menos a margem esquerda da tela para a margem.
+
+Rotina para que se atribua a margem superior duma tela para uma margem:
+  Atribua a altura desta caixa desta tela dividido por 20 para a margem.
+
+Rotina para que se atribua a margem inferior duma tela para uma margem:
+  Atribua a altura desta caixa desta tela menos a margem superior da tela para a margem.
+
+

@@ -1,0 +1,5 @@
+Rotina para que se finalize após execução:
+  Se a contagem do heap for 0, retorne.
+  Atribua a contagem do heap para um número denominado contagem.
+  Atribua "Aviso: Você esqueceu de destruir " junto com a contagem seguido de " elemento(s) no heap." para uma string.
+  Produza o relatório de informações usando a string.

@@ -1,0 +1,223 @@
+[Jogo da Cobrinha]
+
+A largura do campo é um número igual a 40. [Largura]
+A altura do campo é um número igual a 30. [Altura]
+O tamanho de cada bloco é um número igual a 15. [TamanhoBloco]
+A velocidade da cobra é um número igual a 100. \ em milissegundos [Velocidade]
+O tamanho máximo da cobra é um número igual a 200. [MaxTamanho]
+
+A cobra é uma lista com umas localizações.
+O tamanho da cobra é um número igual a 5.
+A direção é um número igual a 39.
+A fruta é uma localização.
+O sinalizador de jogo terminado é um sinalizador igual 0. [GameOver]
+
+Rotina para que se desenhe uma caixa com uma cor:
+  Processe "user32.dll" "FillRect" com
+    O contexto do dispositivo atual e
+    A caixa e
+    A cor.
+
+Rotina para que se desenhe uma caixa em uma localização e uma cor:
+  Atribua a coordenada x desta localização vezes o tamanho de cada bloco para uma coordenada denominada x1.
+  Atribua a coordenada y desta localização vezes o tamanho de cada bloco para uma coordenada denominada y1.
+  Atribua a x1 mais o tamanho de cada bloco menos 1 para uma coordenada denominada x2.
+  Atribua a y1 mais o tamanho de cada bloco menos 1 para uma coordenada denominada y2.
+  Faça uma caixa usando a x1 e a y1 e a x2 e a y2.  
+  Desenhe a caixa com a cor.
+  
+
+Rotina para que se posicione a fruta:
+  Escolha aleatoriamente um número denominado coordenada x entre 0 e a largura do campo.
+  Escolha aleatoriamente um número denominado coordenada y entre 0 e a altura do campo.
+  Atribua a coordenada x para a coordenada x desta fruta.
+  Atribua a coordenada y para a coordenada y desta fruta.
+
+Rotina para que se atualize a posição da cobra:
+  \Obtenha a primeira localização desde a cobra.
+  Atribua a coordenada x desta localização desta cobra para um número denominado nova cabeça x [nx].
+  Atribua a coordenada y desta localização desta cobra para um número denominado nova cabeça y [ny].
+  Se a direção for a tecla esquerda, subtraia 1 desde a nova cabeça x.
+  Se a direção for a tecla direita, adicione 1 para a nova cabeça x.
+  Se a direção for a tecla de cima, subtraia 1 desde a nova cabeça y.
+  Se a direção for a tecla de baixo, adicione 1 para a nova cabeça y.
+  Se nova cabeça x for menor que 0,
+     Ative o sinalizador de jogo terminado;
+     Retorne.
+  Se nova cabeça y for menor que 0, 
+     Ative o sinalizador de jogo terminado;
+     Retorne.
+  Se nova cabeça x for maior ou igual à largura do campo,
+     Ative o sinalizador de jogo terminado;
+     Retorne.
+  Se nova cabeça y for maior ou igual à altura do campo,
+     Ative o sinalizador de jogo terminado;
+     Retorne.
+  Se nova cabeça x for menor que 0,
+    Ative o sinalizador de jogo terminado;
+    Retorne.
+  Se nova cabeça y for menor que 0,
+    Ative o sinalizador de jogo terminado;
+    Retorne.
+  Se nova cabeça x for maior ou igual à largura do campo,
+    Ative o sinalizador de jogo terminado;
+    Retorne.
+  Se nova cabeça y for maior ou igual à altura do campo,
+    Ative o sinalizador de jogo terminado;
+    Retorne.  
+  Atribua nova cabeça x para a coordenada x desta nova localização.
+  Atribua nova cabeça y para a coordenada y desta nova localização.
+  Anteponha a nova localização para a cobra.
+  Obtenha a primeira localização desde a cobra.
+  Se a localização for a fruta,
+  \ Se a coordenada x desta localização for igual à coordenada x desta fruta, e se a coordenada y desta localização for igual à coordenada y desta fruta,
+    Adicione 1 para o tamanho da cobra;
+    Crie uma nova fruta.
+  Se a localização não for a fruta,
+    Obtenha a última localização desde a cobra;
+    Remova a última localização desde a cobra;
+    Destrua a última localização.
+
+Rotina para que se desenhe tudo em um contexto de dispositivo [handleDC]:
+  \ Fundo
+  Faça uma caixa usando 
+    0 e 
+    0 e 
+    A largura do campo vezes o tamanho de cada bloco e 
+    A altura do campo vezes o tamanho de cada bloco.
+  Processe "gdi32.dll" "CreateSolidBrush" com a cor preta retornando um pincel [hBrush].
+  Processe "user32.dll" "FillRect" com o contexto de dispositivo e a caixa e o pincel.
+  Processe "gdi32.dll" "DeleteObject" com o pincel.
+  \ Fruta
+  Desenhe o retângulo no contexto de dispositivo usando
+    a coordenada x desta localização desta fruta e 
+    a coordenada y desta localização desta fruta e 
+    a cor vermelha.
+  \ Corpo da cobra
+  Itere.
+    Obtenha uma localização desde a localização desta cobra.
+    Se a localização for inexistente, pare.
+    Desenhe o retângulo no contexto de dispositivo usando 
+      A coordenada x desta localização e 
+      A coordenada y desta localização e 
+      A cor verde.
+  Reitere.
+
+Rotina para que se reinicie o jogo:
+  Processe "kernel32.dll" "GetTickCount" retornando uma semente para aleatoriedade.
+  Atribua 5 para o tamanho da cobra.
+  Atribua a tecla direita para a direção do movimento.
+  Destrua a cobra.
+  Aloque memória para a cobra.
+  Atribua 1 para um contador [i].
+  Itere.
+    Se o contador for maior que o tamanho da cobra, pare.
+    Aloque memória para uma localização.
+    Atribua 10 menos o contador para a coordenada x desta localização.
+    Atribua 10 para a coordenada y desta localização.
+    Acrescente a localização para a cobra.
+    Adicione 1 para o contador.
+  Reitere.
+  Crie uma nova fruta.
+  Desative o sinalizador de jogo terminado.
+
+Rotina para que se manipule a tecla esquerda:
+  Se a direção não for igual à tecla direita,
+    Atribua a tecla esquerda para a direção.
+
+Rotina para que se manipule a tecla direita:
+  Se a direção não for igual à tecla esquerda,
+    Atribua a tecla direita para a direção.
+
+Rotina para que se manipule a tecla de cima:
+  Se a direção não for igual à tecla de baixo,
+    Atribua a tecla de cima para a direção.
+
+Rotina para que se manipule a tecla de baixo:
+  Se a direção não for igual à tecla de cima,
+    Atribua a tecla de baixo para a direção.
+
+Rotina para que se manipule a tecla Esc:
+  Processe "user32.dll" "PostQuitMessage" com 0.
+
+Rotina para que se obtenha o temporizador do jogo:
+  Se o sinalizador de jogo terminado estiver desativado,
+    Atualize a posição da cobra;
+    Processe "user32.dll" "InvalidateRect" com a janela do programa e 0 e 1;
+    Retorne.
+  Se o sinalizador de jogo terminado estiver ativado,
+    Processe "user32.dll" "KillTimer" com a janela do programa e o identificador do timer;
+    Processe "user32.dll" "MessageBoxA" com a janela do programa e "Fim de jogo!" e "Snake" e 64; \ MB_OK or MB_ICONINFORMATION
+    Reinicie o jogo;
+    Processe "user32.dll" "SetTimer" com a janela do programa e 1 e a velocidade da cobra e 0 retornando o identificador do timer.
+
+Rotina para que se manipule o teclado com uma tecla [tecla]:
+  Se a tecla for igual à tecla esquerda,
+    Manipule a tecla esquerda;
+    Retorne.
+  Se a tecla for igual à tecla direita,
+    Manipule a tecla direita;
+    Retorne.
+  Se a tecla for igual à tecla de cima,
+    Manipule a tecla de cima;
+    Retorne.
+  Se a tecla for igual à tecla de baixo,
+    Manipule a tecla de baixo;
+    Retorne.
+  Se a tecla for igual à tecla Esc,
+    Manipule a tecla Esc;
+    Retorne.
+
+\ Rotina para que se compativelmente manipule uma janela do programa [hWnd] com uma mensagem do sistema [mensagem], um parametro w [wParam] e um parametro l [lParam], retornando um resultado da mensagem [Result]:
+  \ Se a mensagem do sistema for igual a WM_CREATE,
+    \ Reinicie o jogo;
+    \ Processe "user32.dll" "SetTimer" com a janela do programa e 1 e a velocidade da cobra e 0 retornando o identificador do timer;
+    \ Atribua 0 para o resultado da mensagem;
+    \ Retorne.
+  \ Se a mensagem do sistema for igual a WM_TIMER,
+    \ Obtenha o temporizador do jogo;
+    \ Atribua 0 para o resultado da mensagem;
+    \ Retorne.
+  \ Se a mensagem do sistema for igual a WM_KEYDOWN,
+    \ Manipule o teclado com o parametro w;
+    \ Atribua 0 para o resultado da mensagem;
+    \ Retorne.
+  \ Se a mensagem do sistema for igual a WM_PAINT,
+    \ Processe "user32.dll" "BeginPaint" com a janela do programa e o endereço de uma estrutura de pintura [ps] retornando um contexto de dispositivo [handleDC];
+    \ Desenhe tudo no contexto de dispositivo;
+    \ Processe "user32.dll" "EndPaint" com a janela do programa e o endereço da estrutura de pintura;
+    \ Atribua 0 para o resultado da mensagem;
+    \ Retorne.
+  \ Se a mensagem do sistema for igual a WM_DESTROY,
+    \ Processe "user32.dll" "KillTimer" com a janela do programa e o identificador do timer;
+    \ Processe "user32.dll" "PostQuitMessage" com 0;
+    \ Atribua 0 para o resultado da mensagem;
+    \ Retorne.
+  \ Processe "user32.dll" "DefWindowProcA" com a janela do programa e a mensagem do sistema e o parametro w e o parametro l retornando o resultado da mensagem.
+
+\ Rotina para que se crie a janela:
+  \ Zere uma WNDCLASS denominada classe da janela [wc].
+  \ Aponte um ponteiro para a rotina manipule uma janela do programa com uma mensagem do sistema, um parametro w e um parametro l, retornando um resultado da mensagem.
+  \ Atribua o ponteiro para o lpfnWndProc desta classe da janela.
+  \ Processe "kernel32.dll" "GetModuleHandleA" com 0 retornando um handle da instância [hInstance].
+  \ Atribua o handle da instância para o hInstance desta classe da janela.
+  \ Atribua "SnakeWin32" para o lpszClassName desta classe da janela.
+  \ Atribua a cor da janela mais 1 para o hbrBackground desta classe da janela.
+  \ Processe "user32.dll" "LoadCursorA" com 0 e 32512 retornando um cursor do mouse [cursor]. \ IDC_ARROW
+  \ Atribua o cursor do mouse para o hCursor desta classe da janela.
+  \ Processe "user32.dll" "RegisterClassA" com o endereço da classe da janela.
+  \ Atribua a largura do campo vezes o tamanho de cada bloco mais 16 para uma largura total da janela.
+  \ Atribua a altura do campo vezes o tamanho de cada bloco mais 39 para uma altura total da janela.
+  \ Processe "user32.dll" "CreateWindowExA" com 0 e "SnakeWin32" e "Snake (Win32 GDI)" e 13107200 e -2147483648 e -2147483648 e a largura total da janela e a altura total da janela e 0 e 0 e o handle da instância e 0 retornando a janela principal.
+  \ Processe "user32.dll" "ShowWindow" com a janela principal e 5. \ SW_SHOW
+  \ Processe "user32.dll" "UpdateWindow" com a janela principal.
+
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  \ Crie a janela.
+  \ Itere.
+    \ Processe "user32.dll" "GetMessageA" com o endereço de uma estrutura de mensagem [MSG] e 0 e 0 e 0 retornando um resultado.
+    \ Se o resultado for igual a 0, pare.
+    \ Processe "user32.dll" "TranslateMessage" com o endereço da estrutura de mensagem.
+    \ Processe "user32.dll" "DispatchMessageA" com o endereço da estrutura de mensagem.
+  \ Reitere.

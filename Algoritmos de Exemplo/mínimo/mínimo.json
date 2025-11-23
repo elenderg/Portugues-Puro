@@ -1,0 +1,491 @@
+{
+  "TIPOS": [
+    {
+      "Nome" : "byte",
+      "Plural" : "bytes",
+      "Tamanho" : "00000001",
+      "Tipo" : "byte",
+      "Tipo base" : "byte",
+      "Nome do conteúdo" : "",
+      "Tipo do conteúdo" : "(tipo não inicializado)",
+      "Razão de escala": "0"
+    },
+    {
+      "Nome" : "estrutura",
+      "Plural" : "estruturas",
+      "Tamanho" : "00000000",
+      "Tipo" : "estrutura",
+      "Tipo base" : "estrutura",
+      "Nome do conteúdo" : "",
+      "Tipo do conteúdo" : "(tipo não inicializado)",
+      "Razão de escala": "0"
+    },
+    {
+      "Nome" : "número",
+      "Plural" : "números",
+      "Tamanho" : "00000004",
+      "Tipo" : "estrutura",
+      "Tipo base" : "estrutura",
+      "Nome do conteúdo" : "",
+      "Tipo do conteúdo" : "(tipo não inicializado)",
+      "Razão de escala": "0",
+      "CAMPOS": [
+        {
+          "Categoria" : "campo",
+          "Compilada" : "NÃO",
+          "Nome completo" : "primeiro byte",
+          "Nome resumido" : "",
+          "Nome do tipo" : "byte",
+          "Tipo" : "byte",
+          "Endereço (deslocamento)" : "00000000",
+          "Passagem por valor" : "NÃO",
+          "Contagem" : "1",
+          "Referência" : "NÃO",
+          "Redefinição" : "",
+          "Literal referenciado" : "(variável não inicializada)",
+          "Conteúdo hexadecimal" : ""
+        },
+        {
+          "Categoria" : "campo",
+          "Compilada" : "NÃO",
+          "Nome completo" : "segundo byte",
+          "Nome resumido" : "",
+          "Nome do tipo" : "byte",
+          "Tipo" : "byte",
+          "Endereço (deslocamento)" : "00000001",
+          "Passagem por valor" : "NÃO",
+          "Contagem" : "1",
+          "Referência" : "NÃO",
+          "Redefinição" : "",
+          "Literal referenciado" : "(variável não inicializada)",
+          "Conteúdo hexadecimal" : ""
+        },
+        {
+          "Categoria" : "campo",
+          "Compilada" : "NÃO",
+          "Nome completo" : "terceiro byte",
+          "Nome resumido" : "",
+          "Nome do tipo" : "byte",
+          "Tipo" : "byte",
+          "Endereço (deslocamento)" : "00000002",
+          "Passagem por valor" : "NÃO",
+          "Contagem" : "1",
+          "Referência" : "NÃO",
+          "Redefinição" : "",
+          "Literal referenciado" : "(variável não inicializada)",
+          "Conteúdo hexadecimal" : ""
+        },
+        {
+          "Categoria" : "campo",
+          "Compilada" : "NÃO",
+          "Nome completo" : "quarto byte",
+          "Nome resumido" : "",
+          "Nome do tipo" : "byte",
+          "Tipo" : "byte",
+          "Endereço (deslocamento)" : "00000003",
+          "Passagem por valor" : "NÃO",
+          "Contagem" : "1",
+          "Referência" : "NÃO",
+          "Redefinição" : "",
+          "Literal referenciado" : "(variável não inicializada)",
+          "Conteúdo hexadecimal" : ""
+        }
+      ]
+    },
+],
+  "VARIÁVEIS GLOBAIS": [],
+  "VALORES LITERAIS": [
+    {
+      "Categoria" : "valor literal",
+      "Compilada" : "SIM",
+      "Nome completo" : "~L1",
+      "Nome resumido" : "",
+      "Nome do tipo" : "número",
+      "Tipo" : "número",
+      "Endereço (deslocamento)" : "00402000",
+      "Passagem por valor" : "NÃO",
+      "Contagem" : "1",
+      "Referência" : "NÃO",
+      "Redefinição" : "",
+      "Literal referenciado" : "(variável não inicializada)",
+      "Conteúdo hexadecimal" : "00000000"
+    },
+],
+  "ROTINAS": [    {
+      "ROTINA" : "inicialize antes da execução",
+      "compilada" : "SIM",
+      "callback" : "NÃO",
+      "decisora" : "NÃO",
+      "função" : "NÃO",
+      "Employs utilizados" : "",
+      "Tamanho dos parâmetros" : "0",
+      "Tamanho das variáveis" : "0",
+      "Endereço da Rotina" : "00403000",
+      "PARÂMETROS": ],
+       "VARIÁVEIS LOCAIS": [   ],
+  {
+    "FRAGMENTO" : "Prólogo",
+    "Variável principal" : "(variável não inicializada)",
+    "Variável secundária" : "(variável não inicializada)",
+    "Rotina" : "(rotina inexistente)",
+    "Entrada" : "(entrada não inicializada)",
+    "Número hexadecimal" : "00000000",
+    "Endereço" : "00403000",
+    "Código compilado" : "558BEC"
+  },
+  {
+    "FRAGMENTO" : "Loop",
+    "Variável principal" : "(variável não inicializada)",
+    "Variável secundária" : "(variável não inicializada)",
+    "Rotina" : "(rotina inexistente)",
+    "Entrada" : "(entrada não inicializada)",
+    "Número hexadecimal" : "00000000",
+    "Endereço" : "00403003",
+    "Código compilado" : ""
+   },
+  {
+    "FRAGMENTO" : "Finalização",
+    "Variável principal" : "(variável não inicializada)",
+    "Variável secundária" : "(variável não inicializada)",
+    "Rotina" : "(rotina inexistente)",
+    "Entrada" : "(entrada não inicializada)",
+    "Número hexadecimal" : "00000000",
+    "Endereço" : "00403003",
+    "Código compilado" : ""
+   },
+  {
+    "FRAGMENTO" : "Epílogo",
+    "Variável principal" : "(variável não inicializada)",
+    "Variável secundária" : "(variável não inicializada)",
+    "Rotina" : "(rotina inexistente)",
+    "Entrada" : "(entrada não inicializada)",
+  "Número hexadecimal" : "00000000",
+    "Endereço" : "00403003",
+    "Código compilado" : "8BE55DC200000000"
+  },
+},
+  {
+      "ROTINA" : "finalize após execução",
+      "compilada" : "SIM",
+      "callback" : "NÃO",
+      "decisora" : "NÃO",
+      "função" : "NÃO",
+      "Employs utilizados" : "",
+      "Tamanho dos parâmetros" : "0",
+      "Tamanho das variáveis" : "0",
+      "Endereço da Rotina" : "0040300C",
+      "PARÂMETROS": ],
+          "VARIÁVEIS LOCAIS": [   ],
+{"FRAGMENTO" : "Prólogo",
+  "Variável principal" : "(variável não inicializada)",
+  "Variável secundária" : "(variável não inicializada)",
+  "Rotina" : "(rotina inexistente)",
+  "Entrada" : "(entrada não inicializada)",
+  "Número hexadecimal" : "00000000",
+  "Endereço" : "0040300C",
+  "Código compilado" : "558BEC"},
+  
+{"FRAGMENTO" : "Loop",
+  "Variável principal" : "(variável não inicializada)",
+  "Variável secundária" : "(variável não inicializada)",
+  "Rotina" : "(rotina inexistente)",
+  "Entrada" : "(entrada não inicializada)",
+  "Número hexadecimal" : "00000000",
+  "Endereço" : "0040300F",
+  "Código compilado" : ""},
+  
+{"FRAGMENTO" : "Finalização",
+  "Variável principal" : "(variável não inicializada)",
+  "Variável secundária" : "(variável não inicializada)",
+  "Rotina" : "(rotina inexistente)",
+  "Entrada" : "(entrada não inicializada)",
+  "Número hexadecimal" : "00000000",
+  "Endereço" : "0040300F",
+  "Código compilado" : ""},
+  
+{"FRAGMENTO" : "Epílogo",
+  "Variável principal" : "(variável não inicializada)",
+  "Variável secundária" : "(variável não inicializada)",
+  "Rotina" : "(rotina inexistente)",
+  "Entrada" : "(entrada não inicializada)",
+  "Número hexadecimal" : "00000000",
+  "Endereço" : "0040300F",
+  "Código compilado" : "8BE55DC200000000"},
+  },
+    {
+      "ROTINA" : "execute o programa",
+      "compilada" : "SIM",
+      "callback" : "NÃO",
+      "decisora" : "NÃO",
+      "função" : "NÃO",
+      "Employs utilizados" : "",
+      "Tamanho dos parâmetros" : "0",
+      "Tamanho das variáveis" : "0",
+      "Endereço da Rotina" : "00403018",
+      "PARÂMETROS": ],
+          "VARIÁVEIS LOCAIS": [   ],
+{"FRAGMENTO" : "Prólogo",
+  "Variável principal" : "(variável não inicializada)",
+  "Variável secundária" : "(variável não inicializada)",
+  "Rotina" : "(rotina inexistente)",
+  "Entrada" : "(entrada não inicializada)",
+  "Número hexadecimal" : "00000000",
+  "Endereço" : "00403018",
+  "Código compilado" : "558BEC"},
+  
+{"FRAGMENTO" : "Loop",
+  "Variável principal" : "(variável não inicializada)",
+  "Variável secundária" : "(variável não inicializada)",
+  "Rotina" : "(rotina inexistente)",
+  "Entrada" : "(entrada não inicializada)",
+  "Número hexadecimal" : "00000000",
+  "Endereço" : "0040301B",
+  "Código compilado" : ""},
+  
+{"FRAGMENTO" : "Finalização",
+  "Variável principal" : "(variável não inicializada)",
+  "Variável secundária" : "(variável não inicializada)",
+  "Rotina" : "(rotina inexistente)",
+  "Entrada" : "(entrada não inicializada)",
+  "Número hexadecimal" : "00000000",
+  "Endereço" : "0040301B",
+  "Código compilado" : ""},
+  
+{"FRAGMENTO" : "Epílogo",
+  "Variável principal" : "(variável não inicializada)",
+  "Variável secundária" : "(variável não inicializada)",
+  "Rotina" : "(rotina inexistente)",
+  "Entrada" : "(entrada não inicializada)",
+  "Número hexadecimal" : "00000000",
+  "Endereço" : "0040301B",
+  "Código compilado" : "8BE55DC200000000"},
+  },
+    {
+      "ROTINA" : "~Inicialize antes da execução e Execute o programa e Finalize após execução",
+      "compilada" : "SIM",
+      "callback" : "NÃO",
+      "decisora" : "NÃO",
+      "função" : "NÃO",
+      "Employs utilizados" : "",
+      "Tamanho dos parâmetros" : "0",
+      "Tamanho das variáveis" : "0",
+      "Endereço da Rotina" : "00403024",
+      "PARÂMETROS": ],
+          "VARIÁVEIS LOCAIS": [   ],
+{"FRAGMENTO" : "Prólogo",
+  "Variável principal" : "(variável não inicializada)",
+  "Variável secundária" : "(variável não inicializada)",
+  "Rotina" : "(rotina inexistente)",
+  "Entrada" : "(entrada não inicializada)",
+  
+  "Número hexadecimal" : "00000000",
+  "Endereço" : "00403024",
+  "Código compilado" : "558BEC"},
+  
+{"FRAGMENTO" : "Loop",
+  "Variável principal" : "(variável não inicializada)",
+  "Variável secundária" : "(variável não inicializada)",
+  "Rotina" : "(rotina inexistente)",
+  "Entrada" : "(entrada não inicializada)",
+  
+  "Número hexadecimal" : "00000000",
+  "Endereço" : "00403027",
+  "Código compilado" : ""},
+  
+{"FRAGMENTO" : "Demanda Interna",
+  "Variável principal" : "(variável não inicializada)",
+  "Variável secundária" : "(variável não inicializada)",
+  "Rotina" : "inicialize antes da execução",
+  "Entrada" : "(entrada não inicializada)",
+  
+  "Número hexadecimal" : "00000000",
+  "Endereço" : "00403027",
+  "Código compilado" : "E8D4FFFFFF"},
+  
+{"FRAGMENTO" : "Demanda Interna",
+  "Variável principal" : "(variável não inicializada)",
+  "Variável secundária" : "(variável não inicializada)",
+  "Rotina" : "execute o programa",
+  "Entrada" : "(entrada não inicializada)",
+  
+  "Número hexadecimal" : "00000000",
+  "Endereço" : "0040302C",
+  "Código compilado" : "E8E7FFFFFF"},
+  
+{"FRAGMENTO" : "Demanda Interna",
+  "Variável principal" : "(variável não inicializada)",
+  "Variável secundária" : "(variável não inicializada)",
+  "Rotina" : "finalize após execução",
+  "Entrada" : "(entrada não inicializada)",
+  
+  "Número hexadecimal" : "00000000",
+  "Endereço" : "00403031",
+  "Código compilado" : "E8D6FFFFFF"},
+  
+{"FRAGMENTO" : "Empilhamento de valor",
+  "Variável principal" : "~L1",
+  "Variável secundária" : "(variável não inicializada)",
+  "Rotina" : "(rotina inexistente)",
+  "Entrada" : "(entrada não inicializada)",
+  
+  "Número hexadecimal" : "00000000",
+  "Endereço" : "00403036",
+  "Código compilado" : "C7C200204000FF32"},
+  
+{"FRAGMENTO" : "Demanda Externa",
+  "Variável principal" : "(variável não inicializada)",
+  "Variável secundária" : "(variável não inicializada)",
+  "Rotina" : "(rotina inexistente)",
+  "Entrada" : "ExitProcess",
+  
+  "Número hexadecimal" : "00000000",
+  "Endereço" : "0040303E",
+  "Código compilado" : "FF1528104000"},
+  
+{"FRAGMENTO" : "Finalização",
+  "Variável principal" : "(variável não inicializada)",
+  "Variável secundária" : "(variável não inicializada)",
+  "Rotina" : "(rotina inexistente)",
+  "Entrada" : "(entrada não inicializada)",
+  
+  "Número hexadecimal" : "00000000",
+  "Endereço" : "00403044",
+  "Código compilado" : ""},
+  
+{"FRAGMENTO" : "Epílogo",
+  "Variável principal" : "(variável não inicializada)",
+  "Variável secundária" : "(variável não inicializada)",
+  "Rotina" : "(rotina inexistente)",
+  "Entrada" : "(entrada não inicializada)",
+  
+  "Número hexadecimal" : "00000000",
+  "Endereço" : "00403044",
+  "Código compilado" : "8BE55DC200000000"},
+  },
+],
+  "ÍNDICE DE TIPOS": [
+
+{"Quantidade de Recipientes" : "6",
+"Quantidade de Referências" : "6"},
+{"1ª ENTRADA" : [ 
+{"Endereço" : "028BC050", "REFERÊNCIA" : "byte"}
+]},
+{"2ª ENTRADA" : [ 
+{"Endereço" : "028BC050", "REFERÊNCIA" : "bytes"}
+]},
+{"3ª ENTRADA" : [ 
+{"Endereço" : "028BCC00", "REFERÊNCIA" : "número"}
+]},
+{"4ª ENTRADA" : [ 
+{"Endereço" : "028BC848", "REFERÊNCIA" : "estrutura"}
+]},
+{"5ª ENTRADA" : [ 
+{"Endereço" : "028BC848", "REFERÊNCIA" : "estruturas"}
+]},
+{"6ª ENTRADA" : [ 
+{"Endereço" : "028BCC00", "REFERÊNCIA" : "números"}
+]},
+],
+  "ÍNDICE GLOBAL": [
+
+],
+  "ÍNDICE DE VALORES LITERAIS": [
+
+],
+  "ÍNDICE DE ROTINAS": [
+
+{"Quantidade de Recipientes" : "20",
+"Quantidade de Referências" : "20"},
+{"7ª ENTRADA" : [ 
+{"Endereço" : "028BC0D8", "REFERÊNCIA" : "finalize após execução"}
+]},
+{"8ª ENTRADA" : [ 
+{"Endereço" : "(ponteiro nulo)", "REFERÊNCIA" : "~Inicialize antes da execução e Execute o programa e"}
+]},
+{"9ª ENTRADA" : [ 
+{"Endereço" : "(ponteiro nulo)", "REFERÊNCIA" : "execute"}
+]},
+{"10ª ENTRADA" : [ 
+{"Endereço" : "(ponteiro nulo)", "REFERÊNCIA" : "~Inicialize antes da execução e"}
+]},
+{"11ª ENTRADA" : [ 
+{"Endereço" : "028BC380", "REFERÊNCIA" : "inicialize antes da execução"}
+]},
+{"12ª ENTRADA" : [ 
+{"Endereço" : "(ponteiro nulo)", "REFERÊNCIA" : "inicialize antes da"}
+]},
+{"13ª ENTRADA" : [ 
+{"Endereço" : "(ponteiro nulo)", "REFERÊNCIA" : "~Inicialize"}
+]},
+{"14ª ENTRADA" : [ 
+{"Endereço" : "028BC958", "REFERÊNCIA" : "execute o programa"}
+]},
+{"15ª ENTRADA" : [ 
+{"Endereço" : "(ponteiro nulo)", "REFERÊNCIA" : "~Inicialize antes da execução e Execute o programa e Finalize após"}
+]},
+{"16ª ENTRADA" : [ 
+{"Endereço" : "(ponteiro nulo)", "REFERÊNCIA" : "inicialize antes"}
+]},
+{"17ª ENTRADA" : [ 
+{"Endereço" : "028BC9E0", "REFERÊNCIA" : "~Inicialize antes da execução e Execute o programa e Finalize após execução"}
+]},
+{"18ª ENTRADA" : [ 
+{"Endereço" : "(ponteiro nulo)", "REFERÊNCIA" : "~Inicialize antes da execução e Execute o programa e Finalize"}
+]},
+{"19ª ENTRADA" : [ 
+{"Endereço" : "(ponteiro nulo)", "REFERÊNCIA" : "~Inicialize antes da"}
+]},
+{"20ª ENTRADA" : [ 
+{"Endereço" : "(ponteiro nulo)", "REFERÊNCIA" : "inicialize"}
+]},
+{"21ª ENTRADA" : [ 
+{"Endereço" : "(ponteiro nulo)", "REFERÊNCIA" : "~Inicialize antes"}
+]},
+{"22ª ENTRADA" : [ 
+{"Endereço" : "(ponteiro nulo)", "REFERÊNCIA" : "finalize após"}
+]},
+{"23ª ENTRADA" : [ 
+{"Endereço" : "(ponteiro nulo)", "REFERÊNCIA" : "~Inicialize antes da execução e Execute"}
+]},
+{"24ª ENTRADA" : [ 
+{"Endereço" : "(ponteiro nulo)", "REFERÊNCIA" : "~Inicialize antes da execução e Execute o programa"}
+]},
+{"25ª ENTRADA" : [ 
+{"Endereço" : "(ponteiro nulo)", "REFERÊNCIA" : "finalize"}
+]},
+{"26ª ENTRADA" : [ 
+{"Endereço" : "(ponteiro nulo)", "REFERÊNCIA" : "~Inicialize antes da execução"}
+]},
+],
+  "Catálogo de Rotinas Úteis": [
+
+],
+  "DLL's:": [
+
+{"DLL" : "kernel32.dll",
+"FUNÇÕES UTILIZADAS": [
+{"Nome da função" : "ExitProcess","Endereço da função" : "00401028"},]},
+],
+  "ARQUIVOS FONTE": [
+
+{"ARQUIVO FONTE" : "exemplo mínimo.pop"},
+
+],
+  "TEMPORIZADORES": [
+
+{"NOME DO TEMPORIZADOR" : "Tempo de carregamento: ""TEMPO" : 0" milissegundos"},
+{"NOME DO TEMPORIZADOR" : "Tempo de verificação: ""TEMPO" : 0" milissegundos"},
+{"NOME DO TEMPORIZADOR" : "Resolução de tipos: ""TEMPO" : 0" milissegundos"},
+{"NOME DO TEMPORIZADOR" : "Resolução de variáveis globais: ""TEMPO" : 0" milissegundos"},
+{"NOME DO TEMPORIZADOR" : "Compilação de cabeçalhos de rotinas: ""TEMPO" : 0" milissegundos"},
+{"NOME DO TEMPORIZADOR" : "Cálculos matemáticos: ""TEMPO" : 0" milissegundos"},
+{"NOME DO TEMPORIZADOR" : "Inclusão de rotinas pré-definidas: ""TEMPO" : 0" milissegundos"},
+{"NOME DO TEMPORIZADOR" : "Catalogação de ferramentas: ""TEMPO" : 0" milissegundos"},
+{"NOME DO TEMPORIZADOR" : "Compilação de rotinas: ""TEMPO" : 0" milissegundos"},
+{"NOME DO TEMPORIZADOR" : "Inserção rotina de inicialização:""TEMPO" : 0" milissegundos"},
+{"NOME DO TEMPORIZADOR" : "Alinhamento de bytes na memória: ""TEMPO" : 0" milissegundos"},
+{"NOME DO TEMPORIZADOR" : "Endereçamento: ""TEMPO" : 0" milissegundos"},
+{"NOME DO TEMPORIZADOR" : "Conversão em binário""TEMPO" : 0" milissegundos"},
+{"NOME DO TEMPORIZADOR" : "Vinculação: ""TEMPO" : 0" milissegundos"},
+{"NOME DO TEMPORIZADOR" : "Escrita e gravação no SO: ""TEMPO" : 0" milissegundos"},
+{"NOME DO TEMPORIZADOR" : "Tempo total: ""TEMPO" : 16" milissegundos"}}

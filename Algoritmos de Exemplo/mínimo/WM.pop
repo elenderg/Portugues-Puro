@@ -1,0 +1,207 @@
+
+Rotina para que se execute algum WM_ACTIVATE com um wParam:
+  Subdivida o wParam em uma word e uma segunda word. \ Reparta/Seccione o wParam em duas words
+  Atribua a segunda word para um número.
+  Se o número for 0,
+    Execute algum WM_ACTIVATE com o wParam (deactivate);
+    Retorne.
+  Execute algum WM_ACTIVATE com o wParam (activate).
+
+Rotina para que se execute algum WM_ACTIVATE com um wParam (activate):
+  Processe "user32.dll" "SetFocus" com \ Define o foco do teclado para a janela especificada.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-setfocus
+    A janela principal do programa.[hWnd]
+  Processe "user32.dll" "ClipCursor" com \ Limita o cursor para uma área retangular na tela.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-clipcursor
+  0. [*lpRect]
+  \ SetErrorMode(SEM_FAILCRITICALERRORS) \ Faz com que o sistema não exibe a caixa de mensagem de certos erros de disco
+  \ https://learn.microsoft.com/pt-br/windows/win32/api/errhandlingapi/nf-errhandlingapi-seterrormode
+  Crie um evento.
+  Atribua "activate" à categoria deste evento.
+  Enfileire o evento.
+  Processe "user32.dll" "PostMessageA" com \ Coloca uma mensagem na fila de mensagens
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-postmessagea
+    A janela principal do programa [hWnd]
+    e 0 [Msg = WM_NULL]
+    e 0 [wParam]
+    e 0. [lParam]
+
+Rotina para que se execute algum WM_ACTIVATE com um wParam (deactivate):
+  Crie um evento.
+  Atribua "deactivate" à categoria deste evento.
+  Enfileire o evento.
+  Processe "user32.dll" "PostMessageA" com \ Consulte https://learn.microsoft.com/pt-br/windows/win32/winmsg/about-messages-and-message-queues
+    A janela principal do programa [hWnd]
+    e 0 [Msg = WM_NULL]
+    e 0 [wParam]
+    e 0. [lParam]
+
+Rotina para que se execute algum WM_CHAR com um wParam e um lParam:
+  \Se a tecla Alt estiver para baixo, retorne. \ removed for Spanish teclado AltGr e ctrl+alt characters
+  \Se a tecla Ctrl estiver para baixo, retorne. \ removed for Spanish teclado AltGr e ctrl+alt characters
+  Atribua o wParam para um byte.
+  Se o byte não for imprimível, retorne.
+  Crie um evento.
+  Atribua "pressionamento de tecla" à categoria deste evento.
+  Se a tecla Shift está para baixo, 
+    Ative o sinalizador de tecla Shift deste evento.
+  Atribua o byte ao byte deste evento.
+  Converta o lParam para a tecla deste evento.
+  Enfileire o evento.
+
+Rotina para que se execute algum WM_CREATE com uma janela do programa:
+  Atribua a janela do programa à janela principal do programa.
+
+Rotina para que se execute algum WM_DESTROY:
+  Processe "user32.dll" "PostQuitMessage" com \ Indica ao sistema que uma thread fez uma solicitação para encerrar (sair).
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-postquitmessage
+  \ Usado em questão para uma mensagem WM_DESTROY.
+  0. [nExitCode] \ parâmetro wParam da mensagem WM_QUIT.
+
+Rotina para que se execute algum WM_LBUTTONDBLCLK com um lParam:
+  Crie um evento.
+  Atribua "clique duplo" à categoria deste evento. \traduzido
+  Se a tecla Alt estiver para baixo, 
+    Ative o sinalizador de tecla Alt deste evento.
+  Se a tecla Ctrl estiver para baixo, 
+    Ative o sinalizador de tecla Ctrl deste evento.
+  Se a tecla Shift estiver para baixo, 
+    Ative o sinalizador de tecla Shift deste evento.
+  Converta o lParam para a localização deste evento.
+  Enfileire o evento.
+
+Rotina para que se execute algum WM_LBUTTONDOWN com um lParam:
+  Crie um evento.
+  Atribua "clique do botão esquerdo" à categoria deste evento.
+  Se a tecla Alt estiver para baixo, 
+    Ative o sinalizador de tecla Alt deste evento.
+  Se a tecla Ctrl estiver para baixo, 
+    Ative o sinalizador de tecla Ctrl deste evento.
+  Se a tecla Shift estiver para baixo, 
+    Ative o sinalizador de tecla Shift deste evento.
+  Converta o lParam para a localização deste evento.
+  Enfileire o evento.
+
+Rotina para que se execute algum WM_PAINT com uma janela do programa:
+  Processe "user32.dll" "BeginPaint" com \ Prepara uma janela para pintura e preenche uma estrutura PAINTSTRUCT com informações sobre a pintura.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-beginpaint
+    A janela do programa [hWnd]
+    e O endereçamento dum PAINTSTRUCT.[lpPaint] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/api/winuser/ns-winuser-PAINTSTRUCT
+  Processe "user32.dll" "EndPaint" com \ Marca o fim da pintura na janela especificada.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-endpaint
+    A janela do programa [hWnd]
+    e O endereçamento desta PAINTSTRUCT. [*lpPaint]
+  Crie um evento.
+  Atribua "atualização de tela" à categoria deste evento.
+  Enfileire o evento.
+
+Rotina para que se execute algum WM_RBUTTONDBLCLK com um lParam:
+  Crie um evento.
+  Atribua "clique direito duplo" à categoria deste evento.
+  Se a tecla Alt está para baixo, 
+    Ative o sinalizador de tecla Alt deste evento.
+  Se a tecla Ctrl está para baixo, 
+    Ative o sinalizador de tecla Ctrl deste evento.
+  Se a tecla Shift está para baixo, 
+    Ative o sinalizador de tecla Shift deste evento.
+  Converta o lParam para a localização deste evento.
+  Enfileire o evento.
+
+Rotina para que se execute algum WM_RBUTTONDOWN com um lParam:
+  Crie um evento.
+  Atribua "clique do botão direito" à categoria deste evento.
+  Se a tecla Alt está para baixo, 
+    Ative o sinalizador de tecla Alt deste evento.
+  Se a tecla Ctrl está para baixo, 
+    Ative o sinalizador de tecla Ctrl deste evento.
+  Se a tecla Shift está para baixo, 
+    Ative o sinalizador de tecla Shift deste evento.
+  Converta o lParam para a localização deste evento.
+  Enfileire o evento.
+
+Rotina para que se execute algum WM_SETCURSOR:
+  Atualize o cursor.
+
+Rotina para que se execute algum WM_SYSKEYDOWN com um wParam e um lParam;
+Rotina para que se execute algum WM_KEYDOWN com um wParam e um lParam:
+  Atribua o wParam para uma tecla.
+  Se a tecla com o lParam é alguma tecla de cancelamento ou tecla modificadora, retorne.
+  Se a tecla for alguma tecla do tipo WM_CHAR, retorne.
+  Crie um evento.
+  Atribua "pressionamento de tecla" à categoria deste evento.
+  Se a tecla Alt está para baixo, 
+    Ative o sinalizador de tecla Alt deste evento.
+  Se a tecla Ctrl está para baixo, 
+    Ative o sinalizador de tecla Ctrl deste evento.
+  Se a tecla Shift está para baixo, 
+    Ative o sinalizador de tecla Shift deste evento.
+  Atribua a tecla à tecla deste evento.
+  Enfileire o evento.
+
+Rotina para que se compativelmente handle alguma mensagem com uma janela do programa e um número denominado mensagem e um wParam e um lParam:
+  Se a mensagem for 006 [WM_ACTIVATE], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/wm-activate
+    Execute algum WM_ACTIVATE com
+      O wParam; [Ativada/Desativa a janela]
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 258 [WM_CHAR hex 102], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/wm-char
+    Execute algum WM_CHAR com
+      O wParam e [O código do caractere da tecla.]
+      O lParam;
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 001 [WM_CREATE], \ Documentação: ->https://learn.microsoft.com/pt-br/windows/win32/winmsg/wm-create
+    Execute algum WM_CREATE com \ menus aqui
+      A janela do programa;
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 002 [WM_DESTROY], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/winmsg/wm-destroy
+    Execute algum WM_DESTROY;
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 256 [WM_KEYDOWN Hex 100], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/wm-keydown
+    Execute algum WM_KEYDOWN com
+      O wParam e \ Consulte também -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/virtual-key-codes
+      O lParam;
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 513 [WM_LBUTTONDOWN Hex 201], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/wm-lbuttondown
+    Execute algum WM_LBUTTONDOWN com
+      O lParam;
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 515 [WM_LBUTTONDBLCLK Hex 203], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/wm-lbuttondblclk
+    Execute algum WM_LBUTTONDBLCLK com
+      O lParam;
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 015 [WM_PAINT Hex 0000000F], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/gdi/wm-paint
+    Execute algum WM_PAINT com
+      A janela do programa;
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 516 [WM_RBUTTONDOWN Hex 204], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/wm-rbuttondown
+    Execute algum WM_RBUTTONDOWN com
+      O lParam;
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 518 [WM_RBUTTONDBLCLK Hex 206], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/wm-rbuttondblclk
+    Execute algum WM_RBUTTONDBLCLK com
+      O lParam;
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 032 [WM_SETCURSOR Hex 20], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/menurc/wm-setcursor
+    Execute algum WM_SETCURSOR;
+    Atribua 1 para EAX;
+    Retorne.
+  Se a mensagem for 260 [WM_SYSKEYDOWN Hex 104], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/wm-syskeydown
+    Execute algum WM_SYSKEYDOWN com o wParam e o lParam;
+    Atribua 0 para EAX;
+    Retorne.
+  [Caso o valor da mensagem seja outro:]
+  Processe "user32.dll" "DefWindowProcA" com \Chama o procedimento de janela padrão para  processamento das mensagens de janela que um aplicativo não processa.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-defwindowproca
+    A janela do programa [hWnd]
+    e A mensagem [Msg]
+    e O wParam [wParam]
+    e O lParam. [lParam]

@@ -1,0 +1,152 @@
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  \Limpe a tela.
+  Aguarde a tecla Esc.
+  Feche o programa.
+
+Rotina para que se inicialize a janela do programa:
+  Atribua a magnitude [tamanho em bytes] duma WNDCLASS [estrutura] ao cbSize desta classe da janela.
+  Atribua 11 [CS_OWNDC + CS_DBLCLKS] ao style desta classe da janela.
+  \ Consulte https://learn.microsoft.com/pt-br/windows/win32/winmsg/window-class-styles
+  Redirecione o lpfnWndProc desta classe da janela para a rotina handle alguma mensagem com uma janela do programa e um número e um wParam e um lParam.
+  \ Define o procedimento da classe da janela como sendo WndProc
+  Atribua o número identificador deste módulo ao hInstance desta classe da janela.  
+  Atribua 0 ao hIcon desta classe da janela.
+  Atribua 0 ao hCursor desta classe da janela.
+  Atribua 0 ao hbrBackground desta classe da janela.
+  Atribua 0 ao lpszMenuName desta classe da janela.
+  Atribua o caractere inicial deste nome deste módulo ao lpszClassName desta classe da janela.
+  Processe "user32.dll" "RegisterClassExA" com
+    \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-registerclassexa
+    O endereçamento desta classe da janela. [*unnamedParam1]
+  Processe "user32.dll" "CreateWindowExA" com
+    \ Cria a janela
+    \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-createwindowexa
+    \https://learn.microsoft.com/pt-br/windows/desktop/api/winuser/nf-winuser-createwindowa
+    0 [dwExStyle] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/winmsg/extended-window-styles
+    e O caractere inicial deste nome deste módulo [lpClassName]
+    e O caractere inicial deste nome deste módulo  [lpWindowName]
+    e 13565952 \2147483648 [dwStyle]  [-2147483648 = WS_POPUP 0x80000000]
+    [13565952  WS_OVERLAPPEDWINDOW 0x00CF0000]
+    \ Consulte https://www.autoitscript.com/autoit3/docs/appendix/GUIStyles.htm
+    \ https://www.magnumdb.com/ . Para uma janela padrão, use o valor 13565952
+    e 100 [x]
+    e 100 [y]
+    e 640 [nWidth]
+    e 480 [nHeight]
+    e 0 [hWndParent]
+    e 0 [hMenu] \ IMPORTANTE por o handle do menu aqui
+    e O número identificador deste módulo [hInstance]
+    e 0 [lpParam]
+    retornando a janela principal do programa.
+  Processe "user32.dll" "ShowWindow" com
+  \ Define o estado de exibição da janela especificada.
+    A janela principal do programa [hWnd] E
+    1. [nCmdShow = SW_SHOWNORMAL]
+   Processe "user32.dll" "UpdateWindow" com
+    A janela principal do programa.
+
+Rotina para que se carregue tudo;
+Rotina para que se carregue as bibliotecas;
+Rotina para que se carregue as bibliotecas padrão;
+Rotina para que se carregue as bibliotecas padrão do sistema;
+Rotina para que se inicialize tudo;
+Rotina para que se inicialize os componentes:
+  Inicialize o Component Object Model. \ ok
+  \Inicialize a Infraestrutura WinSock.
+  \Inicialize GDI+.
+  \Inicialize o sintetizador de voz.
+ Inicialize o módulo.
+  \Inicialize as cores.
+  \Inicialize a tela.
+  Inicialize a janela do programa.
+  \Inicialize as fontes.
+  \Inicialize os cursores.
+  \Inicialize o mouse.
+  \Inicialize os contextos de dispositivo.
+  \Inicialize o contexto.
+  \Inicialize o terminal.
+  \Crie o console.
+
+Função para que se determine se um primeiro número é um segundo número e um terceiro número é um quarto número:
+  Se o primeiro número não for o segundo número, diga não.
+  Se o terceiro número não for o quarto número, diga não.
+  Diga sim.
+
+
+Rotina para que se compativelmente handle alguma mensagem com uma janela do programa e um número denominado mensagem e um wParam e um lParam:
+  Se a mensagem for 006 [WM_ACTIVATE], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/wm-activate
+    \Execute algum WM_ACTIVATE com
+      \O wParam; [Ativada/Desativa a janela]
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 258 [WM_CHAR hex 102], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/wm-char
+    \Execute algum WM_CHAR com
+      \O wParam e [O código do caractere da tecla.]
+      \O lParam;
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 001 [WM_CREATE], \ Documentação: ->https://learn.microsoft.com/pt-br/windows/win32/winmsg/wm-create
+    \Execute algum WM_CREATE com \ menus aqui
+      \A janela do programa;
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 002 [WM_DESTROY], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/winmsg/wm-destroy
+    \Execute algum WM_DESTROY;
+    Processe "user32.dll" "PostQuitMessage" com 0;
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 256 [WM_KEYDOWN Hex 100], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/wm-keydown
+    \Execute algum WM_KEYDOWN com
+      \O wParam e \ Consulte também -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/virtual-key-codes
+      \O lParam;
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 513 [WM_LBUTTONDOWN Hex 201], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/wm-lbuttondown
+    \Execute algum WM_LBUTTONDOWN com
+      \O lParam;
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 515 [WM_LBUTTONDBLCLK Hex 203], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/wm-lbuttondblclk
+    \Execute algum WM_LBUTTONDBLCLK com O lParam;
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 015 [WM_PAINT Hex 0000000F], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/gdi/wm-paint
+    \Execute algum WM_PAINT com
+      \A janela do programa;
+     Processe "user32.dll" "BeginPaint" com
+      A janela do programa
+      e o endereçamento duma PAINTSTRUCT;
+      Processe "user32.dll" "EndPaint" com
+      A janela do programa
+      e o endereçamento desta PAINTSTRUCT;
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 516 [WM_RBUTTONDOWN Hex 204], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/wm-rbuttondown
+    \Execute algum WM_RBUTTONDOWN com
+      \O lParam;
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 518 [WM_RBUTTONDBLCLK Hex 206], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/wm-rbuttondblclk
+    \Execute algum WM_RBUTTONDBLCLK com
+      \O lParam;
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for 032 [WM_SETCURSOR Hex 20], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/menurc/wm-setcursor
+    \Execute algum WM_SETCURSOR;
+    Atribua 1 para EAX;
+    Retorne.
+  Se a mensagem for 260 [WM_SYSKEYDOWN Hex 104], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/wm-syskeydown
+    \Execute algum WM_SYSKEYDOWN com o wParam e o lParam;
+    Atribua 0 para EAX;
+    Retorne.
+  [Caso o valor da mensagem seja outro:]
+  Processe "user32.dll" "DefWindowProcA" com
+  \Chama o procedimento de janela padrão para  processamento das mensagens de janela que um aplicativo não processa.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-defwindowproca
+    A janela do programa [hWnd]
+    e A mensagem [Msg]
+    e O wParam [wParam]
+    e O lParam [lParam]
+    retornando um número.
+  Atribua o número para EAX.

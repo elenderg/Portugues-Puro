@@ -1,0 +1,467 @@
+Rotina para que se atribua um sinalizador para um segundo sinalizador;
+Rotina para que se atribua um sinalizador para um número;
+Rotina para que se atribua um ponteiro para um número;
+Rotina para que se atribua um ponteiro para um segundo ponteiro;
+Rotina para que se atribua um número para um sinalizador;
+Rotina para que se atribua um número para um ponteiro;
+Rotina para que se atribua um número para um segundo número:
+  \ -> salva o 1º valor (ebp+8) no registrador eax
+  Decodifique $8B8508000000. \ mov eax,[ebp+8];
+  Decodifique $8B00. \ mov eax,[eax];
+  \  -> salva o 2º valor (ebp+12) no registrador ebx
+  Decodifique $8B9D0C000000. \ mov ebx,[ebp+12];
+  \  -> salva eax em ebx
+  Decodifique $8903. \ mov [ebx],eax ;
+
+Rotina para que se redefina um ponteiro;
+Rotina para que se esvazie um ponteiro:
+  \  -> salva o ponteiro (ebp+8) no registrador eax
+  Decodifique $8B8508000000. \ mov eax,[ebp+8] ;
+  \ -> zera o registrador eax
+  Decodifique $C70000000000. \ mov [eax],0 ;
+
+Rotina para que se arredonde para cima um número usando a potência imediata de dois;
+Rotina para que se arredonde para cima um número usando a potência significativa de dois;
+Rotina para que se arredonde para cima um número usando a potência próxima de dois;
+Rotina para que se arredonde para cima um número usando a próxima potência de dois;
+Rotina para que se arredonde para cima um número usando a potência de dois;
+Rotina para que se arredonde um número para cima usando a potência imediata de dois;
+Rotina para que se arredonde um número para cima usando a potência significativa de dois;
+Rotina para que se arredonde um número para cima usando o potência próxima de dois;
+Rotina para que se arredonde um número para cima usando o próxima potência de dois;
+Rotina para que se arredonde um número para cima usando o potência de dois:
+  \ -> salva o número (ebp+8) no registrador ecx
+  Decodifique $8B8D08000000. \ mov ecx,[ebp+8] ;
+  Decodifique $8B09. \ mov ecx,[ecx]
+  \  -> diminui o valor de ecx
+  Decodifique $49. \ dec ecx ;
+  \  ->Bit scan reverse- Pesquisa no operando de origem (segundo operando) pelo conjunto de bits mais significativo (1 bit)
+  Decodifique $0FBDC9. \ bsr ecx,ecx ;
+  \Se encontrar, o índice de bit é armazenado no operando de destino (primeiro operando).
+  \  -> aumenta o valor de ecx
+  Decodifique $41. \ inc ecx ;
+  \  -> compara o valor de ecx
+  Decodifique $81F904000000. \ cmp ecx,4 ;
+  Decodifique $0F8F05000000. \ jg sobre a próxima declaração 1  (Jump short if greater)
+  Decodifique $B904000000. \ mov ecx,4
+  \  \ o número
+  Decodifique $8B8508000000. \ mov eax,[ebp+8]
+  Decodifique $C70001000000. \ mov [eax],1
+  Decodifique $D320. \ shl [eax],ecx
+
+Função para que se determine se um sinalizador é um número;
+Função para que se determine se um sinalizador é um segundo sinalizador;
+Função para que se determine se um ponteiro é um número;
+Função para que se determine se um ponteiro é um segunda ponteiro;
+Função para que se determine se um número é igual a um segundo número;
+Função para que se determine se um número é um segundo número:
+  Decodifique $C7C001000000. \ mov eax,1 \ assume true
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o número
+  Decodifique $8B1B. \ mov ebx,[ebx]
+  Decodifique $8B8D0C000000. \ mov ecx,[ebp+12] \ o segundo número
+  Decodifique $3B19. \ cmp ebx,[ecx]
+  Decodifique $0F8406000000. \ je sobre o próximo 1 statement
+  Decodifique $C7C000000000. \ mov eax,0 \ now it is false
+
+Rotina para que se adicione um número para um ponteiro;
+Rotina para que se adicione um número para um segundo número:
+  \ Decodifique $8B85080000008B008B9D0C0000000103.
+  \  -> salva o  1º argumento (ebp + 8) no registrador eax
+  Decodifique $8B8508000000. \ mov eax,[ebp+8] ;
+  \->  carrega o conteúdo do endereço contido em EAX
+  Decodifique $8B00. \ mov eax,[eax] ;
+  \ -> salva o 2º argumento (ebp + 12) no registrador ebx
+  Decodifique $8B9D0C000000. \ mov ebx,[ebp+12] ;
+  \->adiciona os dois valores
+  Decodifique $0103. \ add [ebx],eax ;
+
+Rotina para que se atribua a quantidade de caracteres duma string para um número:
+  \  -> salva a string (ebp+8) no registrador eax
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8] ;
+  \ Carrega o resultado padrão
+  \  -> zera o registrador ecx
+  Decodifique $B900000000. \ mov ecx,0 ;  
+  \ -> compara a string com 0.
+  Decodifique $833B00. \ cmp [ebx],0 ;
+  \ Se primeiro for 0, armazena 0
+  Decodifique $0F8414000000. \ je store it
+  \ Se último for menor do que primeiro, armazena 0
+  Decodifique $8B5304. \ mov edx,[ebx+4] ;
+  \-> atribui o último ponteiro ao registrador edx
+  \ -> compara edc com ebx
+  Decodifique $3B13. \ cmp edx,[ebx] ;
+  Decodifique $0F8C09000000. \ jl store it
+  \ calcula a  quantidade de caracteres
+  \ ->atribui o último ponteiro ao registrador ecx
+  Decodifique $8B8B04000000. \ mov ecx,[ebx+4] ;
+   \ subtrai o registrador ebx do ecx
+  Decodifique $2B0B. \ sub ecx,[ebx]
+   \ adiciona 1 ao registrador ecx
+  Decodifique $41. \ inc ecx
+  \ Armazena:
+  \ Atribui a quantidade de caracteres (ebp+12) ao registrador edx
+  Decodifique $8B950C000000. \ mov edx,[ebp+12]
+  \-> atribui o valor de ecx ao registrador edx
+  Decodifique $890A. \ mov [edx],ecx ;
+
+\Rotina para que se copie um número de bytes desde um ponteiro para um segundo ponteiro;
+Rotina para que se copie bytes desde um ponteiro para um segundo ponteiro por um número;
+Rotina para que se copie bytes desde um ponteiro para um segundo ponteiro usando um número:
+  \ copy handling overlap with 1 byte moves
+  \ Salva o ponteiro em EAX
+  Decodifique $8BB508000000. \ mov esi,[ebp+8]
+  Decodifique $8B36. \ mov esi,[esi]
+  \ Salva o segundo ponteiro em EDI
+  Decodifique $8BBD0C000000. \ mov edi,[ebp+12]
+  Decodifique $8B3F. \ mov edi,[edi]
+  \ Salva o número em ECX
+  Decodifique $8B8D10000000. \ mov ecx,[ebp+16]
+  Decodifique $8B09. \ mov ecx,[ecx]
+  \ verifica se há algo para copiar
+  Decodifique $81F900000000. \ cmp ecx,0
+  Decodifique $0F8E39000000. \ jle end
+  \ verifica se há algo para copiar
+  Decodifique $3BF7. \ cmp esi,edi
+  Decodifique $0F8D24000000. \ jge para a frente
+  Decodifique $8BC6. \ mov eax,esi
+  Decodifique $03C1. \ add eax,ecx
+  Decodifique $3BC7. \ cmp eax,edi
+  Decodifique $0F8E18000000. \ jle -> frente
+  \ copia ao contrário
+  Decodifique $03F1. \ add esi,ecx
+  Decodifique $4E. \ dec esi
+  Decodifique $03F9. \ add edi,ecx
+  Decodifique $4F. \ dec esi
+  \ trás
+  Decodifique $8A16. \ mov dl,[esi]
+  Decodifique $8817. \ mov [edi],dl
+  Decodifique $4E. \ dec esi
+  Decodifique $4F. \ dec edi
+  Decodifique $49. \ dec ecx
+  Decodifique $0F85F3FFFFFF. \ jnz -> trás
+  Decodifique $E90D000000. \ jmp end
+  \ frente: copia para a frente
+  Decodifique $8A16. \ mov dl,[esi]
+  Decodifique $8817. \ mov [edi],dl
+  Decodifique $46. \ inc esi
+  Decodifique $47. \ inc edi
+  Decodifique $49. \ dec ecx
+  Decodifique $0F85F3FFFFFF. \ jnz -> frente
+
+Rotina para que se subtraia um ponteiro desde um segundo ponteiro;
+Rotina para que se subtraia um número desde um ponteiro;
+Rotina para que se subtraia um número desde um segundo número:
+  Decodifique $8B8508000000. \ mov eax,[ebp+8] ;
+  Decodifique $8B00. \ mov eax,[eax] ;
+  Decodifique $8B9D0C000000. \ mov ebx,[ebp+12] ;
+  Decodifique $2903. \ sub [ebx],eax ;
+
+Função para que se determine se uma string está em branco:
+  \ A função começa presumindo veracidade
+  Decodifique $B801000000. \ mov eax, 1
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8]
+    \ Se o caractere inicial for 0, retorna
+  Decodifique $833B00. \ cmp [ebx],0
+  Decodifique $0F8410000000. \ je end
+  \ Se o caractere final for menor do que o inicial, retorna
+  Decodifique $8B5304. \ mov edx,[ebx+4] \ caractere final
+  Decodifique $3B13. \ cmp edx,[ebx]
+  Decodifique $0F8C05000000. \ jl end
+  \ Retorna falso.
+  Decodifique $B800000000. \ mov eax,0
+
+Função para que se determine se um ponteiro é menor do que um segundo ponteiro;
+Função para que se determine se um ponteiro é menor que um segundo ponteiro;
+Função para que se determine se um número é menor que um segundo número;
+Função para que se determine se um número é menor do que um segundo número:
+  Decodifique $C7C001000000. \ mov eax,1 \ assume true
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o número
+  Decodifique $8B1B. \ mov ebx,[ebx]
+  Decodifique $8B8D0C000000. \ mov ecx,[ebp+12] \ o segundo número
+  Decodifique $3B19. \ cmp ebx,[ecx]
+  Decodifique $0F8C06000000. \ jl sobre o próximo 1 statement
+  Decodifique $C7C000000000. \ mov eax,0 \ now it is false
+
+Rotina para que se negate um número;
+Rotina para que se inverta o sinal de um número:
+  Decodifique $8B8508000000. \ mov eax,[ebp+8] \ o número
+  Decodifique $F718.\ neg [eax]
+
+Rotina para que se divida um ponteiro por um número retornando um quociente e um resto;
+Rotina para que se divida um número por um segundo número retornando um quociente e um resto:
+  Se o segundo número for 0,
+    Atribua o maior número ao quociente;
+    Atribua 0 ao resto;
+    Retorne.
+  Decodifique $8B8508000000. \ mov eax,[ebp+8] ; -> salva o 1º número (epb+8) no registrador eax
+  Decodifique $8B9D0C000000. \ mov ebx,[ebp+12] ; -> salva o 2º número (epb+12) no registrador ebx
+  Decodifique $8B00. \ mov eax,[eax]
+  Decodifique $99. \ cdq
+  Decodifique $F73B. \ idiv [ebx] ; -> é a mesma lista que idiv eax,[ebx] mas está num formato estranho
+  Decodifique $8B9D10000000. \ mov ebx,[ebp+16] ; ->salva o quociente (ebp+16) no registrador ebx
+  Decodifique $8903. \ mov [ebx],eax ; -> salva eax no endereço de ebx
+  Decodifique $8B9D14000000. \ mov ebx,[ebp+20] ; ->salva o resto (ebp+20) no registrador ebx
+  Decodifique $8913. \ mov [ebx],edx ; -> salva o conteúdo de edx no registrador ebx
+
+Rotina para que se atribua um número para um byte:
+  Decodifique $8B8508000000. \ mov eax,[ebp+8] ; -> atribui o número (ebp+8) ao registrador eax
+  Decodifique $8B00. \ mov eax,[eax] ; -> ebp+8 representa o primeiro argumento da função (o número).
+  Decodifique $8B9D0C000000. \ mov ebx,[ebp+12] ; -> atribui o byte (ebp+12) ao registrador ebx
+  Decodifique $8803. \ mov [ebx],al
+
+Rotina para que se atribua um byte para um segundo byte:
+  Decodifique $8B8508000000. \ mov eax,[ebp+8] ; -> salva o 1º byte (ebp+8) no registrador eax
+  Decodifique $8A00. \ mov al,[eax]
+  Decodifique $8B9D0C000000. \ mov ebx,[ebp+12] ; -> salva o 2º byte (ebp+12) no registrador ebx
+  Decodifique $8803. \ mov [ebx],al
+
+Função para que se determine se um ponteiro é maior do que um segundo ponteiro;
+Função para que se determine se um número é maior do que um segundo número:
+  \ presume que o número seja maior logo de começo
+  Decodifique $C7C001000000. \ mov eax,1;
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8];
+  Decodifique $8B1B. \ mov ebx,[ebx];
+  Decodifique $8B8D0C000000. \ mov ecx,[ebp+12];
+  Decodifique $3B19. \ cmp ebx,[ecx];
+  Decodifique $0F8F06000000. \ jg 0xc;
+  Decodifique $C7C000000000. \ mov eax,0;
+
+Rotina para que se lance um subtexto sobre uma string:
+  Decodifique $8B8508000000. \ mov eax,[ebp+8];
+  Decodifique $8B9D0C000000. \ mov ebx,[ebp+12];
+  \ atribui o caractere inicial desta string ao caractere inicial do subtexto
+  Decodifique $8B8B00000000. \ mov ecx,[ebx+0];
+  Decodifique $898800000000. \ mov [eax+0],ecx;
+  \ atribui o caractere final desta string ao caractere final deste subtexto
+  Decodifique $8B8B04000000. \ mov ecx,[ebx+4];
+  Decodifique $898804000000. \ mov [eax+4],ecx;
+
+Rotina para que se compare uma string para uma segunda string usando uma quantidade de caracteres e uma segunda quantidade de caracteres e uma tabela de tradução (iguais somente):
+  Decodifique $8BB508000000. \ mov esi,[ebp+8];
+  Decodifique $8B36. \ mov esi,[esi];
+  Decodifique $8BBD0C000000. \ mov edi,[ebp+12];
+  Decodifique $8B3F. \ mov edi,[edi];
+  Decodifique $8B8510000000. \ mov eax,[ebp+16];
+  Decodifique $8B00. \ mov eax,[eax];
+  Decodifique $8B9514000000. \ mov edx,[ebp+20];
+  Decodifique $8B12. \ mov edx,[edx];
+  Decodifique $3BD0. \ cmp eax,edx;
+  Decodifique $0F852B000000. \ jne sayno; \ era 2C
+  Decodifique $8BC8. \ mov ecx,eax;
+  Decodifique $8B9D18000000. \ mov ebx,[ebp+24];
+  Decodifique $8B1B. \ mov ebx,[ebx];
+  \ loop:
+  Decodifique $85C9. \ test ecx,ecx;
+  Decodifique $0F8424000000. \ jz sayyes; \ era 25
+   \ fetch e substitui o current byte na segunda string
+  Decodifique $8A07. \ mov al,[edi];
+  Decodifique $D7. \ xlat al,[ebx];
+  Decodifique $C1E008. \ shl eax,8 C1 E0 08;
+  \ fetch e substitui o current byte no string
+  Decodifique $8A06. \ mov al,[esi];
+  Decodifique $D7. \ xlat al,[ebx];
+   \ compare o two translated bytes
+  Decodifique $38E0. \ cmp al,ah;
+  Decodifique $0F8508000000. \ jne sayno;
+  Decodifique $46. \ inc esi;
+  Decodifique $47. \ inc edi;
+  Decodifique $49. \ dec ecx;
+  Decodifique $E9DFFFFFFF. \ jmp loop; \ era DE
+  \ sayno:
+  Decodifique $C7C000000000. \ mov eax,0;
+  Decodifique $E906000000. \ jmp end;
+  \sayyes
+  Decodifique $C7C001000000. \ mov eax,1;
+
+Função para que se determine se um byte é um segundo byte:
+  Decodifique $C7C001000000. \ mov eax,1 \ assume true
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o byte
+  Decodifique $8A1B. \ mov bl,[ebx]
+  Decodifique $8B8D0C000000. \ mov ecx,[ebp+12] \ o outro byte
+  Decodifique $3A19. \ cmp bl,[ecx]
+  Decodifique $0F8406000000. \ je sobre o próximo 1 statement
+  Decodifique $C7C000000000. \ mov eax,0 \ now it is false
+
+Função para que se determine se um byte é maior que um segundo byte;
+Função para que se determine se um byte é maior do que um segundo byte:
+  Decodifique $C7C001000000. \ mov eax,1;
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8];
+  Decodifique $8A1B. \ mov bl,[ebx]
+  Decodifique $8B8D0C000000. \ mov ecx,[ebp+12];
+  Decodifique $3A19. \ cmp bl,[ecx];
+  Decodifique $0F8706000000. \ ja 0xc;
+  Decodifique $C7C000000000. \ mov eax,0;
+
+Rotina para que se substitua um byte usando uma tabela de tradução:
+  Decodifique $8B8D08000000. \ mov ecx,[ebp+8]  ; -> salva o endereço do byte (ebp+8) no registrador ecx
+  Decodifique $8B01. \ mov eax,[ecx] \ salva o caractere em EAX
+  Decodifique $8B9D0C000000. \ mov ebx,[ebp+12] salva o endereço da tabela (ebp+12) no registrador ebx
+  Decodifique $8B1B. \ mov ebx,[ebx] o primeiro byte da tabela de tradução
+  Decodifique $D7. \ xlat al,[ebx]
+  Decodifique $8901. \ mov [ecx],eax
+
+Rotina para que se divida um ponteiro por um número;
+Rotina para que se divida um número por um segundo número:
+  Se o segundo número for 0,
+    Atribua o maior número ao número;
+    Retorne.
+  Decodifique $8B8508000000. \ mov eax,[ebp+8];
+  Decodifique $8B9D0C000000. \ mov ebx,[ebp+12];
+  Decodifique $8B00. \ mov eax,[eax];
+  Decodifique $99. \ cdq;
+  Decodifique $F73B. \ div [ebx] \ div eax,[ebx];
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8];
+  Decodifique $8903. \ mov [ebx],eax;
+
+Rotina para que se multiplique um ponteiro por um número;
+Rotina para que se multiplique um número por um segundo número:
+  Decodifique $8B8508000000. \ mov eax,[ebp+8];
+  Decodifique $8B00. \ mov eax,[eax];
+  Decodifique $8B9D0C000000. \ mov ebx,[ebp+12];
+  Decodifique $F72B.\ mul [ebx] \ mul eax,[ebx];
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8];
+  Decodifique $8903. \ mov [ebx],eax;
+
+Rotina para que se atribua um número para uma word:
+  Decodifique $8B8508000000. \ mov eax,[ebp+8] ; -> atribui o número (ebp+8) ao registrador eax
+  Decodifique $8B00. \ mov eax,[eax] ; -> ebp+8 representa o primeiro argumento da função (o número).
+  Decodifique $8B9D0C000000. \ mov ebx,[ebp+12] ; -> atribui a word (ebp+12) ao registrador ebx
+  Decodifique $668903. \ mov [ebx],ax
+
+Rotina para que se desloque um byte uns bits para a esquerda;
+Rotina para que se desloque um byte para a esquerda uns bits:
+  Decodifique $8B8D0C000000. \ mov ecx,[ebp+12] ; -> salva a quantidade de bits informada (ebp+12) no registrador ecx
+  Decodifique $8B09. \ mov ecx,[ecx] ; -> ebp+12 é é o local onde o processador armazena o valor do o 2º argumento da função
+  \ebp+8 é o local onde o processador armazena o valor do 1º argumento da função.
+  Decodifique $8B8508000000. \ mov eax,[ebp+8] ; -> salva o byte (ebp+8) no registrador eax
+  Decodifique $D220. \ shl ptr [eax],ecx ; -> efetua o deslocamento dos bits para a esquerda (comando shl)
+
+Rotina para que se desloque para a direita uns bits em um byte;
+Rotina para que se desloque uns bits em um byte para a direita:
+  Desloque o byte para a direita os bits.
+
+Rotina para que se desloque um byte para a direita uns bits;
+Rotina para que se desloque um byte uns bits para a direita:
+  Decodifique $8B8D0C000000. \ mov ecx,[ebp+12] ; -> salva a quantidade de bits informada (ebp+12) no registrador ecx
+  \ ebp+12 é é o local onde o processador armazena o valor do o 2º argumento da função.
+  Decodifique $8B09. \ mov ecx,[ecx] ; -> Nessa rotina os "bits" são considerados como um argumento, por isso precisamos do valor do 2º argumento
+  Decodifique $8B8508000000. \ mov eax,[ebp+8] ; -> salva o byte (ebp+8) no registrador eax
+   \ebp+8 é o local onde o processador armazena o valor do 1º argumento da função.
+  Decodifique $D228. \ shr ptr [eax],ecx ; -> efetua o deslocamento dos bits para a direita (comando shr)
+
+Rotina para que se desloque um número uns bits para a esquerda;
+Rotina para que se desloque um número para a esquerda uns bits:
+  Decodifique $8B8D0C000000. \ mov ecx,[ebp+12] ; -> salva a quantidade de bits informada (ebp+12) no registrador ecx
+  Decodifique $8B09. \ mov ecx,[ecx] ; -> ebp-12 é o 2º parâmetro de uma função. ebp+8 é o 1º parâmetro
+  Decodifique $8B8508000000. \ mov eax,[ebp+8] ; -> salva o número (ebp+8) no registrador eax
+  Decodifique $D320. \ shl [eax],ecx ; -> efetua o deslocamento do número para a esquerda (comando shl)
+
+Rotina para que se desloque um número  para a direita uns bits;
+Rotina para que se desloque um número uns bits para a direita:
+  Decodifique $8B8D0C000000. \ mov ecx,[ebp+12] ; -> salva a quantidade de bits informada (ebp+12) no registrador ecx
+  Decodifique $8B09. \ mov ecx,[ecx] ; -> ebp-12 é o 2º parâmetro de uma função. ebp+8 é o 1º parâmetro
+  Decodifique $8B8508000000. \ mov eax,[ebp+8] ; -> salva o número (ebp+8) no registrador eax
+  Decodifique $D328. \ shr [eax],ecx ; -> efetua o deslocamento do número para a direita (comando shr)
+
+Rotina para que se desloque um word uns bits para a esquerda;
+Rotina para que se desloque um word para a esquerda uns bits:
+  Decodifique $8B8D0C000000. \ mov ecx,[ebp+12] ; -> salva a quantidade de bits informada (ebp+12) no registrador ecx
+  Decodifique $8B09. \ mov ecx,[ecx] ; -> ebp-12 é o 2º parâmetro de uma função. ebp+8 é o 1º parâmetro
+  Decodifique $8B8508000000. \ mov eax,[ebp+8] \ salva a word (ebp+8) no registrador eax
+  Decodifique $66D320. \ shl word ptr [eax],ecx \ shr word ptr [eax],ecx ; -> efetua o deslocamento dos bits para a esquerda (comando shl)
+
+Rotina para que se desloque uma word  para a direita uns bits;
+Rotina para que se desloque uma word uns bits para a direita:
+  Decodifique $8B8D0C000000. \ mov ecx,[ebp+12] ; -> salva a quantidade de bits informada (ebp+12) no registrador ecx
+  Decodifique $8B09. \ mov ecx,[ecx] ; -> ebp-12 é o 2º parâmetro de uma função. ebp+8 é o 1º parâmetro
+  Decodifique $8B8508000000. \ mov eax,[ebp+8] \ salva a word (ebp+8) no registrador eax
+  Decodifique $66D328. \ shr word ptr [eax],ecx ; -> efetua o deslocamento dos bits  para a direita (comando shr)
+
+Rotina para que se atribua uma word para um número:
+  Decodifique $8B8508000000. \ mov eax,[ebp+8] ; -> salva a word (ebp+8) no registrador eax
+  Decodifique $0FBF00. \ movsx eax,word ptr [eax] ; -> ebp+8 é o 1º parâmetro da função. ebp+12 é o 2º parâmetro
+  Decodifique $8B9D0C000000. \ mov ebx,[ebp+12] ; -> salva o número (ebp+12) no registrador ebx
+  Decodifique $8903. \ mov [ebx],eax ; -> atribui a word ao número
+
+Rotina para que se atribua um sinalizador para eax;
+Rotina para que se atribua um ponteiro para eax;
+Rotina para que se atribua um número para eax:
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8] ; -> salva o número (ebp+8) no registrador ebx
+  Decodifique $8B03. \ mov eax,[ebx] ; -> salva ebx em eax
+
+Função para que se determine se um byte é menor que um segundo byte;
+Função para que se determine se um byte é menor do que um segundo byte:
+  Decodifique $C7C001000000. \ mov eax,1 \ assume true
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o byte
+  Decodifique $8A1B. \ mov bl,[ebx]
+  Decodifique $8B8D0C000000. \ mov ecx,[ebp+12] \ a segunda byte
+  Decodifique $3A19. \ cmp bl,[ecx]
+  Decodifique $0F8206000000. \ jb sobre o próximo 1 statement
+  Decodifique $C7C000000000. \ mov eax,0 \ now it is false
+
+Função para que se determine se um byte é igual a um número;
+Função para que se determine se um byte é um número:
+  Decodifique $C7C001000000. \ mov eax,1 \ assume true
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o byte
+  Decodifique $0FB61B. \ movzx ebx,byte ptr [ebx]
+  Decodifique $8B8D0C000000. \ mov ecx,[ebp+12] \ o número
+  Decodifique $3B19. \ cmp ebx,[ecx]
+  Decodifique $0F8406000000. \ je sobre o próximo 1 statement
+  Decodifique $C7C000000000. \ mov eax,0 \ now it is false
+
+
+Rotina para que se conjuncione logicamente um byte com um segundo byte:
+  Decodifique $8B850C000000. \ mov eax,[ebp+12] \ o segundo byte
+  Decodifique $8A00. \ mov al,[eax]
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o byte
+  Decodifique $2003. \ e [ebx],al
+
+Rotina para que se conjuncione logicamente um byte com um número:
+  Decodifique $8B850C000000. \ mov eax,[ebp+12] \ o número
+  Decodifique $8B00. \ mov eax,[eax]
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o byte
+  Decodifique $2003. \ e [ebx],al
+
+Rotina para que se conjuncione logicamente um número com um segundo número:
+  Decodifique $8B850C000000. \ mov eax,[ebp+12] \ o segundo número
+  Decodifique $8B00. \ mov eax,[eax]
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o número
+  Decodifique $2103. \ e [ebx],eax
+
+Rotina para que se disjuncione logicamente um byte com um segundo byte:
+  Decodifique $8B850C000000. \ mov eax,[ebp+12] \ o segundo byte
+  Decodifique $8A00. \ mov al,[eax]
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o byte
+  Decodifique $0803. \ ou [ebx],al
+
+Rotina para que se disjuncione logicamente um byte com um número:
+  Decodifique $8B850C000000. \ mov eax,[ebp+12] \ o número
+  Decodifique $8B00. \ mov eax,[eax]
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o byte
+  Decodifique $0803. \ ou [ebx],al
+
+Rotina para que se disjuncione logicamente um número com um segundo número:
+  Decodifique $8B850C000000. \ mov eax,[ebp+12] \ o segundo número
+  Decodifique $8B00. \ mov eax,[eax]
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o número
+  Decodifique $0903. \ ou [ebx],eax
+
+Rotina para que se disjuncione seletivamente um byte com um segundo byte:
+  Decodifique $8B850C000000. \ mov eax,[ebp+12] \ a segunda byte
+  Decodifique $8A00. \ mov al,[eax]
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o byte
+  Decodifique $3003. \ xor [ebx],al
+
+Rotina para que se disjuncione seletivamente um byte com um número:
+  Decodifique $8B850C000000. \ mov eax,[ebp+12] \ o número
+  Decodifique $8B00. \ mov eax,[eax]
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o byte
+  Decodifique $3003. \ ou [ebx],al
+
+Rotina para que se disjuncione seletivamente um número com um segundo número:
+  Decodifique $8B850C000000. \ mov eax,[ebp+12] \ o segundo número
+  Decodifique $8B00. \ mov eax,[eax]
+  Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o número
+  Decodifique $3103. \ xor [ebx],eax
+
+

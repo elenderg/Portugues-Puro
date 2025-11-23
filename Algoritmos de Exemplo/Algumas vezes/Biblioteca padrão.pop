@@ -7325,7 +7325,7 @@ Rotina para que se extraia um designador desde um endereço completo:
   Lance um endereço completo subtexto sobre o endereço completo.
   Adicione a quantidade de caracteres desta unidade de disco para o caractere inicial deste endereço completo subtexto.
   Se o endereço completo subtexto estiver em branco,
-    Atribua o unidade de disco ao designador;
+    Atribua a unidade de disco ao designador;
     Retorne.
   Lance um subtexto sobre o último caractere desse endereço completo subtexto.
   Se o conteúdo deste caractere inicial deste subtexto for a barra invertida, 

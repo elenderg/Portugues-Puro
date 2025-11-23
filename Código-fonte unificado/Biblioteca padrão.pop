@@ -419,7 +419,7 @@ Um número identificador é um número.
 Um hBitMap é um número identificador.
 Um hBrush é um número identificador.
 Um hDC é um número identificador.
-Um orientação é [composta de] uns pontos osmosianos.
+Uma orientação é [composta de] uns pontos osmosianos.
 A contagem do heap é um número.
 O endereço heap é um ponteiro.
 Um altura é [composta de] uns twips.
@@ -880,7 +880,7 @@ Um OUTLINETEXTMETRIC é uma estrutura com \ Descreve uma fonte TrueType.
   Um TEXTMETRIC denominado otmTextMetrics,
   3 bytes,
   Um byte denominado otmFiller,
-  Um panose denominado otmPanoseNumber,
+  Um PANOSE denominado otmPanoseNumber,
   1 byte,
   Um número denominado otmfsSelection,
   Um número denominado otmfsType,
@@ -2570,7 +2570,7 @@ Rotina para que se eleve um número para um segundo número:
     Atribua 1 ao número;
     Retorne. \ Exemplo: 3^0 = 1
   Se o segundo número for menor do que 0,
-    Atribua 0 ao número; \ TODO: Atribua 1 dividido por o segundo número ao número.
+    Atribua 0 ao número; \ TODO: Atribua 1 dividido pelo segundo número ao número.
     Retorne. 
   Atribua 1 para um número resultante.
   Itere.
@@ -2892,12 +2892,12 @@ Rotina para que se posponha um trecho para um arquivo:
   Processe "kernel32.dll" "WriteFile" com
   \ Grava dados no arquivo ou dispositivo de entrada / saída (E/S) especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/fileapi/nf-fileapi-writefile
-    O arquivo [hFile]
-    e O caractere inicial deste trecho [lpBuffer]
-    e A quantidade de caracteres deste trecho [nNumberOfBytesToWrite]
+    O arquivo [hFile] e
+    O caractere inicial deste trecho [lpBuffer] e
+    A quantidade de caracteres deste trecho [nNumberOfBytesToWrite] e
     [Creio que seja preciso corrigir o texto abaixo]
-    e o [um] endereçamento dum número [lpNumberOfBytesWritten] \ TESTAR AQUI
-    e 0 [lpOverlapped]
+    O [um] endereçamento dum número [lpNumberOfBytesWritten] e \ TESTAR AQUI
+    0 [lpOverlapped]
   Retornando o número resultante.
   Se o número resultante for 0,
     Atribua "Erro ao salvar o arquivo. Função: 'WriteFile' (kernel32.dll)." ao erro do fluxo de entrada/saída;
@@ -3239,6 +3239,8 @@ Rotina para que se obtenha o modo do console:
   \Se o status de erro não for 0 [NULL], 
      \Escreva "Modo do console: " junto com o modo do console junto com o texto CRLF para STDOUT.
 
+Rotina para que se leia um trecho a partir da STDIN;
+Rotina para que se leia um trecho da STDIN;
 Rotina para que se leia um trecho desde a STDIN:
   Atribua 0 para um número denominado lpNumberOfBytesRead.
   Atribua 0 para um número denominado quantidade de caracteres NULL restantes.
@@ -10039,14 +10041,15 @@ Rotina para que se insira uma string Para uma caixa de texto:
   Atribua a quantidade de caracteres desta string desta segunda linha de texto menos o número ao cursor da coluna desta seleção desta caixa de texto.
   Solte a caixa de texto.
 
-Rotina para que se insira uma lista para umas listas após uma segunda lista:
+Rotina para que se insira uma lista em umas listas depois de uma segunda lista;
+Rotina para que se insira uma lista em umas listas após uma segunda lista:
   Se a lista for inexistente, retorne.
   Se a segunda lista for inexistente,
     Anteponha a lista para as listas;
     Retorne.
   Insira a lista a as listas antes dessa lista posterior desta segunda lista.
 
-Rotina para que se insira uma lista para umas listas antes de uma segunda lista:
+Rotina para que se insira uma lista em umas listas antes de uma segunda lista:
   Se a lista for inexistente, retorne.
   Se as listas estiverem vazias,
     Acrescente a lista para as listas;
@@ -10064,13 +10067,14 @@ Rotina para que se insira uma lista para umas listas antes de uma segunda lista:
   Atribua a lista anterior desta lista anterior à lista anterior desta nova lista.
   Atribua a nova lista à lista anterior desta lista anterior.
 
-Rotina para que se insira umas listas para umas outras listas após uma lista:
+Rotina para que se insira umas listas em umas outras listas depois de uma lista;
+Rotina para que se insira umas listas em umas outras listas após uma lista:
   Se a lista for inexistente,
     Anteponha as listas para a outras listas;
     Retorne.
   Insira  as listas ao outras listas antes dessa lista posterior desta lista.
 
-Rotina para que se insira umas listas para umas outras listas antes de um lista:
+Rotina para que se insira umas listas em umas outras listas antes de um lista:
   Preserve a lista.
   Itere.
     Atribua a lista inicial destas listas para uma segunda lista.
@@ -10912,7 +10916,7 @@ Rotina para que se toque um arquivo de som e espere:
     e 0 [hmod]
     e 131072. [fdwSound = SND_FILENAME+SND_SYNC]
 
-Rotina para que se anteponha uma lista para umas listas:
+Rotina para que se anteponha uma lista em umas listas:
   Se a lista for inexistente, retorne.
   Atribua a lista inicial destas listas à lista posterior desta lista.
   Se as listas não estiverem vazias, 
@@ -11062,15 +11066,16 @@ Rotina para que se atribua uma string sobre a área de transferência do Windows:
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-emptyclipboard
   Atribua a quantidade de caracteres desta string mais 1 para um número.
   Processe "kernel32.dll" "GlobalAlloc" com
-  \ Aloca o número especificado de bytes do heap.
-  \ Documentação: ->  https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-globalalloc
-  66 [uFlags = GHND - 0x0042 - unifica GMEM_MOVEABLE e GMEM_ZEROINIT.]
+    \ Aloca o número especificado de bytes do heap.
+    \ Documentação: ->  https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-globalalloc
+    66 [uFlags = GHND - 0x0042 - unifica GMEM_MOVEABLE e GMEM_ZEROINIT.]
     e O número [dwBytes]
-  Retornando um número identificador.
+    Retornando um número identificador.
   Processe "kernel32.dll" "GlobalLock" com
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-globallock
     O número identificador [hMem]
-  Retornando um ponteiro.
+    Retornando um ponteiro.
+  \Copie os bytes contidos desde [intervalo inicial] até o [intervalo final] para o [endereço de destino] .
   Copie bytes desde o caractere inicial desta string para o ponteiro pelo quantidade de caracteres desta string.
   Processe "kernel32.dll" "GlobalUnlock" com
   \ Diminui a contagem de bloqueios associada para um objeto de memória que foi alocado com GMEM_MOVEABLE.
@@ -11238,7 +11243,7 @@ Rotina para que se atribua o painel de informações string duma caixa de texto pa
   Acrescente o cursor da coluna desta seleção desta caixa de texto para a string.
 
 \Rotina para que se coloque uma lista no fim de umas listas;
-Rotina para que se acrescente uma lista para umas listas:
+Rotina para que se acrescente uma lista em umas listas:
   Se a lista for inexistente, retorne.
   Atribua a lista final destas listas à lista anterior desta lista.
   Se as listas não estiverem vazias, 
@@ -11251,6 +11256,7 @@ Rotina para que se atribua umas listas para umas outras listas:
   Atribua a lista inicial destas listas à lista inicial destas outras listas.
   Atribua a lista final destas listas à lista final destas outras listas.
 
+Rotina para que se atribua a quantidade dumas listas para uma contagem;
 Rotina para que se atribua a contagem dumas listas para uma contagem:
   Atribua 0 à contagem.
   Itere.
@@ -11446,6 +11452,7 @@ Rotina para que se remova as linhas de texto de uma caixa de texto entre uma lin
   Reitere.
   Enumere novamente as linhas de texto desta caixa de texto.
 
+Rotina para que se remova uma lista de umas listas;
 Rotina para que se remova uma lista desde umas listas:
   Se a lista for inexistente, retorne.
   Se a lista for a lista inicial destas listas, 
@@ -12681,7 +12688,7 @@ Rotina para que se subdivida umas listas em umas listas anteriores e umas listas
     Reitere.
     Subdivida as listas em as listas anteriores e as listas posteriores sob a lista.
 
-Rotina para que se subdivida umas listas em umas listas anteriores e umas listas posteriores sob um lista:
+Rotina para que se subdivida umas listas em umas listas anteriores e umas listas posteriores sob uma lista:
   Limpe as listas anteriores.
   Limpe as listas posteriores.
   Se a lista for inexistente,
@@ -20949,8 +20956,11 @@ Rotina para que se subtraia um número desde um byte:
   Decodifique $2BC8. \ sub ecx,eax ; -> subtrai o número do byte
   Decodifique $880B. \ mov [ebx],cl ; -> salva o valor no ponteiro salvo no registrador ebx
 
+Rotina para que se subtraia um ponteiro de um segundo ponteiro;
 Rotina para que se subtraia um ponteiro desde um segundo ponteiro;
+Rotina para que se subtraia um número de um ponteiro;
 Rotina para que se subtraia um número desde um ponteiro;
+Rotina para que se subtraia um número de um segundo número;
 Rotina para que se subtraia um número desde um segundo número:
   Decodifique $8B8508000000. \ mov eax,[ebp+8] ; -> Salva o 1º número/endereço (ebp+8) no registrador eax
   Decodifique $8B00. \ mov eax,[eax] ; -> ebp+8 é o local onde o processador armazena o valor do 1º argumento da função.
@@ -21695,7 +21705,7 @@ Rotina para que se divida um número por um segundo número:
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] \ o número
   Decodifique $8903. \ mov [ebx],eax
 
-Rotina para que se divida um ponteiro por um número usando um quociente e um resto;
+Rotina para que se divida um ponteiro por um segundo número usando um quociente e um resto;
 Rotina para que se divida um número por um segundo número usando um quociente e um resto:
   Se o segundo número for 0,
     Atribua o maior número ao quociente;

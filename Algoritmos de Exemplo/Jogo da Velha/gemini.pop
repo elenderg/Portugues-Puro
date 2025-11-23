@@ -1,0 +1,651 @@
+\ TIPOS
+
+Um tabuleiro é uma lista com
+  Uma caixa e
+  Umas células.
+
+Uma célula é uma lista com
+  Um número de linha,
+  Um número de coluna,
+  Uma localização,
+  Uma caixa e
+  Uma marca.
+
+Uma área de mensagem é uma lista com
+  Uma caixa e
+  Uma mensagem.
+
+Um jogador é uma lista com
+  Uma marca.
+
+Uma localização é uma string ["centro" ou "canto" ou "lado"].
+Uma marca é uma string ["X" ou "O"].
+
+\ VARIÁVEIS GLOBAIS
+
+As instruções são uma área de mensagem.
+O tabuleiro é um tabuleiro.
+O status é uma área de mensagem.
+O humano é um jogador.
+A máquina é um jogador.
+O sinalizador é um sinalizador.
+
+\ ROTINAS DE INFRAESTRUTURA
+
+Rotina para que se execute o programa:
+  Inicialize os componentes.
+  Inicialize.
+  Lide com os eventos.
+  Finalize.
+  Feche o programa.
+
+Rotina para que se inicialize:
+  Crie o tabuleiro.
+  Crie as instruções.
+  Crie o status.
+  Crie o humano usando "X".
+  Crie a máquina usando "O".
+
+Rotina para que se lide com os eventos:
+  Itere.
+    Desenfileire um evento.
+    Se o evento for nulo, retorne.
+    Lide com o evento.
+  Reitere.
+
+Rotina para que se finalize:
+  Destrua a máquina.
+  Destrua o humano.
+  Destrua o status.
+  Destrua as instruções.
+  Destrua o tabuleiro.
+
+\ ROTINAS DE CRIAÇÃO
+
+Rotina para que se crie um tabuleiro:
+  Aloque memória para o tabuleiro.
+  Faça a caixa do tabuleiro de 3 polegadas por 3 polegadas.
+  Centralize a caixa do tabuleiro na caixa da tela.
+  Faça uma caixa de 1 polegada por 1 polegada.
+  Mova a caixa para o canto superior esquerdo do tabuleiro.
+  Atribua 1 para um número de linha. Atribua 1 para um número de coluna.
+  Itere.
+    Aloque memória para uma célula. Acrescente a célula às células do tabuleiro.
+    Atribua a caixa para a caixa da célula.
+    Atribua o número de linha para o número de linha da célula. Atribua o número de coluna para o número de coluna da célula.
+    Obtenha a localização da célula usando o número de linha e o número de coluna.
+    Mova a caixa para a direita 1 polegada. Adicione 1 ao número de coluna.
+    Se a caixa ainda estiver na caixa do tabuleiro,
+      Reitere.
+    Mova a caixa para a esquerda da caixa do tabuleiro.
+    Atribua 1 para o número de coluna.
+    Mova a caixa para baixo 1 polegada. Adicione 1 ao número de linha.
+    Se a caixa ainda estiver na caixa do tabuleiro,
+  Reitere.
+
+Rotina para que se obtenha uma localização usando um número de linha e um número de coluna:
+  Se o número de linha junto com o número de coluna for "11",
+    Atribua "canto" para a localização.
+  Se o número de linha junto com o número de coluna for "12",
+    Atribua "lado" para a localização.
+  Se o número de linha junto com o número de coluna for "13",
+    Atribua "canto" para a localização.
+  Se o número de linha junto com o número de coluna for "21",
+    Atribua "lado" para a localização.
+  Se o número de linha junto com o número de coluna for "22",
+    Atribua "centro" para a localização.
+  Se o número de linha junto com o número de coluna for "23",
+    Atribua "lado" para a localização.
+  Se o número de linha junto com o número de coluna for "31",
+    Atribua "canto" para a localização.
+  Se o número de linha junto com o número de coluna for "32",
+    Atribua "lado" para a localização.
+  Se o número de linha junto com o número de coluna for "33",
+    Atribua "canto" para a localização.
+
+Rotina para que se crie as instruções:
+  Aloque memória para as instruções.
+  Atribua a esquerda da tela para a esquerda das instruções.
+  Atribua o topo do tabuleiro menos 3/4 de polegada para o topo das instruções.
+  Atribua o topo do tabuleiro menos 1/2 polegada para a base das instruções.
+  Atribua a direita da tela para a direita das instruções.
+  Atribua "Clique fora da grade para um novo jogo. Pressione ESC para sair." para a mensagem das instruções.
+
+Rotina para que se crie o status:
+  Aloque memória para o status.
+  Atribua a esquerda da tela para a esquerda do status.
+  Atribua a base do tabuleiro mais 1/2 polegada para o topo do status.
+  Atribua a base do tabuleiro mais 3/4 de polegada para a base do status.
+  Atribua a direita da tela para a direita do status.
+  Atribua "Pronto para um novo jogo. Sua vez." para a mensagem do status.
+
+Rotina para que se crie um jogador usando uma marca:
+  Aloque memória para o jogador.
+  Atribua a marca para a marca do jogador.
+
+\ ROTINAS DE MANIPULAÇÃO DE EVENTOS
+
+Rotina para que se lide com um evento:
+  Se o tipo do evento for "atualizar",
+    Mostre tudo;
+    Retorne.
+  Se o tipo do evento for "definir cursor",
+    Lide com o evento (definir cursor).
+  Se o tipo do evento for "tecla pressionada",
+    Lide com o evento (tecla pressionada).
+  Se o tipo do evento for "clique esquerdo",
+    Lide com o evento (clique esquerdo).
+
+Rotina para que se lide com um evento (tecla pressionada):
+  Se a tecla do evento for a tecla Esc,
+    Saia;
+    Retorne.
+  Se a tecla do evento for a tecla N,
+    Comece de novo.
+
+Rotina para que se lide com um evento (clique esquerdo):
+  Encontre uma célula usando a localização do evento.
+  Se a célula for nula,
+    Comece de novo;
+    Retorne.
+  Se o jogo acabou,
+    Cluck;
+    Retorne.
+  Se a célula não estiver em branco,
+    Cluck;
+    Retorne.
+  Coloque a marca do humano na célula.
+  Se o jogo não acabou,
+    Responda.
+  Atualize o status.
+  Mostre tudo.
+  Libere todas as entradas.
+
+Rotina para que se lide com um evento (definir cursor):
+  Mostre o cursor de seta.
+
+\ ROTINAS DE RESPOSTA APARENTEMENTE INTELIGENTES (IA©)
+
+Rotina para que se responda:
+  Mostre "Pensando...".
+  Aguarde 1/2 segundo.
+  Limpe o sinalizador.
+  Responda ganhando.
+  Se o sinalizador estiver ativo,
+    Retorne.
+  Responda bloqueando.
+  Se o sinalizador estiver ativo,
+    Retorne.
+  Responda à abertura de começar em um canto.
+   Se o sinalizador estiver ativo,
+    Retorne.
+  Responda à abertura de começar no centro.
+  Se o sinalizador estiver ativo,
+    Retorne.
+  Responda à abertura de começar em um lado.
+  Se o sinalizador estiver ativo,
+    Retorne.
+  Responda ao gambito de cantos opostos.
+  Se o sinalizador estiver ativo,
+    Retorne. 
+  Responda ao gambito de canto-lado.
+  Se o sinalizador estiver ativo,
+    Retorne.
+  Responda ao gambito de centro-canto.
+  Se o sinalizador estiver ativo,
+    Retorne.
+  Coloque a marca da máquina em qualquer célula em branco.
+
+Rotina para que se responda ganhando:
+  Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula,
+      Retorne.
+    Se a célula não estiver em branco,
+      Reitere.
+    Se a máquina puder usar a célula para vencer,
+      Pare.
+  Reitere.
+  Coloque a marca da máquina na célula.
+  Ative o sinalizador.
+
+Rotina para que se responda bloqueando:
+  Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula,
+      Retorne.
+    Se a célula não estiver em branco,
+      Reitere.
+    Se o humano puder usar a célula para vencer,
+      Pare.
+  Reitere.
+  Coloque a marca da máquina na célula.
+  Ative o sinalizador.
+
+Rotina para que se responda à abertura de começar em um canto:
+  Obtenha uma célula com a marca do humano.
+  Se a célula for nula,
+    Retorne.
+  Se a célula não for a única célula com a marca do humano,
+    Retorne.
+  Se a localização da célula não for "canto",
+    Retorne.
+  Coloque a marca da máquina na célula central.
+  Ative o sinalizador.
+
+Rotina para que se responda à abertura de começar no centro:
+  Obtenha uma célula com a marca do humano.
+  Se a célula for nula,
+    Retorne.
+  Se a célula não for a única célula com a marca do humano,
+    Retorne.
+  Se a localização da célula não for "centro",
+    Retorne.
+  Coloque a marca da máquina em qualquer célula de canto.
+  Ative o sinalizador.
+
+Rotina para que se responda à abertura de começar em um lado:
+  Obtenha uma célula com a marca do humano.
+  Se a célula for nula,
+    Retorne.
+  Se a célula não for a única célula com a marca do humano,
+    Retorne.
+  Se a localização da célula não for "lado",
+    Retorne.
+  Coloque a marca da máquina em qualquer célula de canto que esteja tocando a célula.
+  Ative o sinalizador.
+
+Rotina para que se responda ao gambito de canto-lado:
+  Obtenha uma célula central em 2 e 2.
+  Se a célula central estiver em branco,
+    Coloque a marca da máquina na célula central;
+    Ative o sinalizador;
+    Retorne.
+  Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula,
+      Retorne.
+    Se a célula não estiver em branco,
+      Reitere.
+    Se a localização da célula não for "canto",
+      Reitere.
+    Se a marca do humano não estiver na linha da célula,
+      Reitere.
+    Se a marca do humano não estiver na coluna da célula,
+  Reitere.
+  Coloque a marca da máquina na célula.
+  Ative o sinalizador.
+
+Rotina para que se responda ao gambito de cantos opostos:
+  Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula,
+      Retorne.
+    Se a célula estiver em branco,
+      Reitere.
+    If a localização da célula não for "canto",
+      Reitere.
+    Se a marca do humano não for a marca da célula,
+      Reitere.
+    Encontre outra célula na diagonal oposta da célula.
+    Se a marca do humano não for a marca da outra célula,
+  Reitere.
+  Se todas as células laterais estiverem em uso,
+    Retorne.
+  Coloque a marca da máquina em qualquer célula lateral.
+  Ative o sinalizador.
+
+Rotina para que se responda ao gambito de centro-canto:
+  Itere.
+    Obtenha uma célula central em 2 e 2.
+    Se a marca da célula central não for a marca do humano,
+      Retorne.
+    Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula,
+      Retorne.
+    Se a célula estiver em branco,
+      Reitere.
+    Se a localização da célula não for "canto",
+      Reitere.
+    Se a marca do humano não for a marca da célula,
+  Reitere.
+  Se todas as células de canto estiverem em uso,
+    Retorne.
+  Coloque a marca da máquina em qualquer célula de canto.
+  Ative o sinalizador.
+
+Rotina para que se atualize o status:
+  Se o humano venceu,
+    Atribua "O humano venceu. Sorte de principiante, provavelmente." para a mensagem do status;
+    Retorne.
+  Se a máquina venceu,
+    Atribua "A máquina venceu. A máquina é mais inteligente que o humano. Mas não mais inteligente que o humano que a programou." para a mensagem do status;
+    Retorne.
+  Se o jogo acabou,
+    Atribua "Fim de jogo. Ninguém venceu." para a mensagem do status;
+    Retorne.
+  Atribua "Sua vez." para a mensagem do status.
+
+\ ROTINAS DE EXIBIÇÃO
+
+Rotina para que se mostre uma string:
+  Atribua a string para a mensagem do status.
+  Mostre tudo.
+
+Rotina para que se mostre tudo:
+  Desenhe a caixa da tela com a cor preta e a cor preta.
+  Desenhe as instruções.
+  Desenhe o tabuleiro.
+  Desenhe o status.
+  Atualize a tela.
+
+Rotina para que se desenhe o tabuleiro:
+  Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula,
+      Pare.
+    Desenhe a célula.
+  Reitere.
+  Desenhe a caixa do tabuleiro com a caneta preta.
+
+Rotina para que se desenhe uma célula:
+  Contorne a caixa da célula com a caneta verde escura.
+  Atribua "osmosian" e 1 polegada para uma fonte.
+  Desenhe a marca da célula no centro da caixa da célula com a caneta verde mais escura e a fonte.
+
+Rotina para que se desenhe as instruções:
+  Atribua "osmosian" e 1/4 de polegada para uma fonte.
+  Desenhe a caixa das instruções com a cor preta e a cor preta.
+  Desenhe a mensagem das instruções no centro da caixa das instruções com a caneta verde escura e a fonte.
+
+Rotina para que se desenhe o status:
+  Atribua "osmosian" e 1/4 de polegada para uma fonte.
+  Desenhe a caixa do status com a cor preta e a cor preta.
+  Desenhe a mensagem do status no centro da caixa do status com a caneta verde escura e a fonte. \ era preto
+
+\ ROTINAS AUXILIARES
+
+Rotina para que se comece de novo:
+  Limpe o tabuleiro.
+  Atribua "Pronto para um novo jogo. Sua vez." para a mensagem do status.
+  Mostre tudo.
+  Libere todas as entradas.
+  Mostre tudo.
+
+Rotina para que se limpe o tabuleiro:
+  Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula,
+      Retorne.
+    Limpe a marca da célula.
+  Reitere.
+
+\ ROTINAS DE BUSCA
+
+Rotina para que se encontre uma célula usando uma localização:
+  Esvazie a célula.
+  Itere.
+    Obtenha a célula das células do tabuleiro.
+    Se a célula for nula,
+      Retorne.
+    Se a localização estiver na caixa da célula,
+      Retorne.
+  Reitere.
+
+Rotina para que se encontre outra célula na diagonal oposta de uma célula:
+  Se o número da linha da célula junto com o número da coluna da célula for "11",
+    Obtenha a outra célula em 3 e 3.
+  Se o número da linha da célula junto com o número da coluna da célula for "13",
+    Obtenha a outra célula em 3 e 1.
+  Se o número da linha da célula junto com o número da coluna da célula for "33",
+    Obtenha a outra célula em 1 e 1.
+  Se o número da linha da célula junto com o número da coluna da célula for "31",
+    Obtenha a outra célula em 1 e 3.
+
+\ DECISORES
+
+Função para que se determine se uma célula está em branco:
+  Se a marca da célula estiver em branco, diga sim.
+  Diga não.
+
+Função para que se determine se uma célula está tocando uma célula lateral:
+  Se o número da linha da célula for o número da linha da célula lateral, diga sim.
+  Se o número da coluna da célula for o número da coluna da célula lateral, diga sim.
+  Diga não.
+
+Função para que se determine se uma célula é a única célula com uma marca:
+  Itere.
+    Obtenha outra célula das células do tabuleiro.
+    Se a outra célula for nula, diga sim.
+    Se a outra célula for a célula, reitere.
+    Se a marca da outra célula for a marca, diga não.
+  Reitere.
+
+Função para que se determine se uma marca está em um número de linha:
+  Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula, diga não.
+    Se o número da linha da célula não for o número da linha, reitere.
+    Se a marca da célula for a marca, diga sim.
+  Reitere.
+
+Função para que se determine se uma marca está em um número de coluna:
+  Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula, diga não.
+    Se o número da coluna da célula não for o número da coluna, reitere.
+    Se a marca da célula for a marca, diga sim.
+  Reitere.
+
+Função para que se determine se um jogador pode usar uma célula para vencer:
+  Se a célula não estiver em branco, diga não.
+  Se o jogador puder completar a linha da célula, diga sim.
+  Se o jogador puder completar a coluna da célula, diga sim.
+  Se o jogador puder completar a diagonal de barra invertida usando a célula, diga sim.
+  Se o jogador puder completar a diagonal de barra usando a célula, diga sim.
+  Diga não.
+
+Função para que se determine se o jogo acabou:
+  Se o humano venceu, diga sim.
+  Se a máquina venceu, diga sim.
+  Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula, diga sim.
+    Se a célula estiver em branco, diga não.
+  Reitere.
+
+Função para que se determine se um jogador venceu:
+  Se o jogador completou alguma linha, diga sim.
+  Se o jogador completou alguma coluna, diga sim.
+  Se o jogador completou alguma diagonal, diga sim.
+  Diga não.
+
+Função para que se determine se um jogador completou alguma linha:
+  Atribua 1 para um número de linha.
+  Itere.
+    Se o jogador completou o número da linha, diga sim.
+    Adicione 1 ao número da linha.
+    Se o número da linha for menor ou igual a 3, reitere.
+  Diga não.
+
+Função para que se determine se um jogador completou alguma coluna:
+  Atribua 1 para um número de coluna.
+  Itere.
+    Se o jogador completou o número da coluna, diga sim.
+    Adicione 1 ao número da coluna.
+    Se o número da coluna for menor ou igual a 3, reitere.
+  Diga não.
+
+Função para que se determine se um jogador completou um número de linha:
+  Obtenha uma célula das células do tabuleiro.
+  Se a célula for nula, diga não.
+  Se o número da linha da célula não for o número da linha, reitere.
+  Se a marca da célula não for a marca do jogador, reitere.
+  Adicione 1 a uma contagem.
+  Se a contagem for 3, diga sim.
+  Reitere.
+
+Função para que se determine se um jogador completou um número de coluna:
+  Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula, diga não.
+    Se o número da coluna da célula não for o número da coluna, reitere.
+    Se a marca da célula não for a marca do jogador, reitere.
+    Adicione 1 a uma contagem.
+    Se a contagem for 3, diga sim.
+  Reitere.
+
+Função para que se determine se um jogador completou alguma diagonal:
+  Se o jogador completou a diagonal de barra invertida, diga sim.
+  Se o jogador completou a diagonal de barra, diga sim.
+  Diga não.
+
+Função para que se determine se um jogador completou a diagonal de barra invertida:
+  Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula, diga não.
+    Se a célula não fizer parte da diagonal de barra invertida, reitere.
+    Se a marca da célula não for a marca do jogador, diga não.
+    Adicione 1 a uma contagem.
+    Se a contagem for 3, diga sim.
+  Reitere.
+
+Função para que se determine se um jogador completou a diagonal de barra:
+  Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula, diga não.
+    Se a célula não fizer parte da diagonal de barra, reitere.
+    Se a marca da célula não for a marca do jogador, diga não.
+    Adicione 1 a uma contagem.
+    Se a contagem for 3, diga sim.
+  Reitere.
+
+Função para que se determine se um jogador pode completar um número de linha:
+  Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula, pare.
+    Se o número da linha da célula não for o número da linha, reitere.
+    Se a marca da célula for a marca do jogador,
+      Adicione 1 a uma contagem.
+  Reitere.
+  Se a contagem for 2, diga sim.
+  Diga não.
+
+Função para que se determine se um jogador pode completar um número de coluna:
+  Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula, pare.
+    Se o número da coluna da célula não for o número da coluna, reitere.
+    Se a marca da célula for a marca do jogador,
+      Adicione 1 a uma contagem.
+  Reitere.
+  Se a contagem for 2, diga sim.
+  Diga não.
+
+Função para que se determine se um jogador pode completar a diagonal de barra invertida usando uma célula:
+  Se a célula não fizer parte da diagonal de barra invertida, diga não.
+  Itere.
+    Obtenha outra célula das células do tabuleiro.
+    Se a outra célula for nula, pare.
+    Se a outra célula não fizer parte da diagonal de barra invertida, reitere.
+    Se a marca da outra célula for a marca do jogador,
+      Adicione 1 a uma contagem.
+  Reitere.
+  Se a contagem for 2, diga sim.
+  Diga não.
+
+Função para que se determine se um jogador pode completar a diagonal de barra usando uma célula:
+  Se a célula não fizer parte da diagonal de barra, diga não.
+  Itere.
+    Obtenha outra célula das células do tabuleiro.
+    Se a outra célula for nula, pare.
+    Se a outra célula não fizer parte da diagonal de barra, reitere.
+    Se a marca da outra célula for a marca do jogador,
+      Adicione 1 a uma contagem.
+  Reitere.
+  Se a contagem for 2, diga sim.
+  Diga não.
+
+Função para que se determine se todas as células de canto estão em uso:
+  Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula, diga sim.
+    Se a localização da célula não for "canto", reitere.
+    Se a célula estiver em branco, diga não.
+  Reitere.
+
+Função para que se determine se todas as células laterais estão em uso:
+  Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula, diga sim.
+    Se a localização da célula não for "lado", reitere.
+    Se a célula estiver em branco, diga não.
+  Reitere.
+
+Função para que se determine se uma célula faz parte da diagonal de barra invertida:
+  Se o número da linha da célula for o número da coluna da célula, diga sim.
+  Diga não.
+
+Função para que se determine se uma célula faz parte da diagonal de barra:
+  Se o número da linha da célula mais o número da coluna da célula for 4, diga sim.
+  Diga não.
+
+\ ROTINAS AUXILIARES DE OBTER E COLOCAR
+
+Rotina para que se obtenha uma célula com uma marca:
+  Esvazie a célula.
+  Itere.
+    Obtenha a célula das células do tabuleiro.
+    Se a célula for nula, pare.
+    Se a célula estiver em branco, reitere.
+    Se a marca da célula for a marca, retorne.
+  Reitere.
+
+Rotina para que se obtenha uma célula em um número de linha e um número de coluna:
+  Esvazie a célula.
+  Itere.
+    Obtenha a célula das células do tabuleiro.
+    Se a célula for nula, retorne.
+    Se o número da linha da célula não for o número da linha, reitere.
+    Se o número da coluna da célula não for o número da coluna,
+  Reitere.
+
+Rotina para que se coloque uma marca em uma célula:
+  Coloque a marca na marca da célula.
+
+Rotina para que se coloque uma marca na célula central:
+  Obtenha uma célula em 2 e 2.
+  Coloque a marca na célula.
+
+Rotina para que se coloque uma marca em qualquer célula de canto:
+  Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula, retorne.
+    Se a célula não estiver em branco, reitere.
+    Se a localização da célula não for "canto", reitere.
+  Coloque a marca na célula.
+
+Rotina para que se coloque uma marca em qualquer célula de canto que esteja tocando uma célula lateral:
+  Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula, retorne.
+    Se a célula não estiver em branco, reitere.
+    Se a localização da célula não for "canto", reitere.
+    Se a célula não estiver tocando a célula lateral, reitere.
+  Coloque a marca na célula.
+
+Rotina para que se coloque uma marca em qualquer célula lateral:
+  Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula, retorne.
+    Se a célula não estiver em branco, reitere.
+    Se a localização da célula não for "lado", reitere.
+  Coloque a marca na célula.
+
+Rotina para que se coloque uma marca em qualquer célula em branco:
+  Itere.
+    Obtenha uma célula das células do tabuleiro.
+    Se a célula for nula, retorne.
+    Se a célula não estiver em branco, reitere.
+  Coloque a marca na célula.

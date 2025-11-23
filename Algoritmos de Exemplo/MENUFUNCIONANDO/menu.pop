@@ -1,0 +1,408 @@
+\\ JanelaComMenu.pop - Versão Final Corrigida
+\\ Definições de IDs para os itens de menu
+O IDM_ARQUIVO é um número igual a 1000.
+O IDM_NOVO_ARQUIVO é um número igual a 1001.
+O IDM_ABRIR é um número igual a 1002.
+O IDM_SALVAR é um número igual a 1003.
+O IDM_FECHAR é um número igual a 1004.
+
+O IDM_EDITAR é um número igual a 2000.
+O IDM_SELECIONAR_TUDO é um número igual a 2001.
+O IDM_RECORTAR é um número igual a 2002.
+O IDM_COPIAR é um número igual a 2003.
+O IDM_COLAR é um número igual a 2004.
+
+O IDM_AJUDA é um número igual a 3000.
+O IDM_DOCUMENTACAO é um número igual a 3001.
+O IDM_SOBRE é um número igual a 3002.
+
+\\ Constantes para mensagens do Windows
+O WM_COMMAND é um número igual a 273.
+O WM_DESTROY é um número igual a 2.
+O WM_CREATE é um número igual a 1.
+O WM_PAINT é um número igual a 15.
+O WM_CLOSE é um número igual a 16.
+
+\\ Constantes para estilos de menu
+O MF_STRING é um número igual a 0.
+O MF_POPUP é um número igual a 16.
+O MF_SEPARATOR é um número igual a 2048. \\ 0x800
+
+\\ Constantes para exibição de janela
+O SW_SHOWNORMAL é um número igual a 1.
+
+\\ Variáveis globais
+A janela do programa é uma janela do programa.
+Um menu do programa é um número.
+Um hMenuPrincipal é um menu do programa.
+O número identificador do módulo é um número.
+
+\\ Estruturas (definidas corretamente conforme sintaxe de Português Puro)
+\ Uma WNDCLASS é uma estrutura com
+\   Um número denominado cbSize e
+\   Um número denominado style e
+\   Um ponteiro denominado lpfnWndProc e
+\   Um número denominado cbClsExtra e
+\   Um número denominado cbWndExtra e
+\   Um número denominado hInstance e
+\   Um número denominado hIcon e
+\   Um número denominado hCursor e
+\   Um número denominado hbrBackground e
+\   Um ponteiro denominado lpszMenuName e
+\   Um ponteiro denominado lpszClassName.
+
+\ Uma MSG é uma estrutura com
+\   Um número denominado hwnd e
+\   Um número denominado message e
+\   Um número denominado wParam e
+\   Um número denominado lParam e
+\   Um número denominado time e
+\   Um número denominado ptX e
+\   Um número denominado ptY.
+
+\ Uma PAINTSTRUCT é uma estrutura com
+\   Um número denominado hdc e
+\   Um sinalizador denominado fErase e
+\   Um número denominado rcPaint e
+\   Um sinalizador denominado fRestore e
+\   Um sinalizador denominado fIncUpdate e
+\   Um número denominado rgbReserved.
+
+\\ Rotina principal do programa
+Rotina para que se execute o programa:
+  Inicialize os novos componentes.
+  \ A rotina abaixo não está causando erro, mas também não está gerando o menu.
+  Inicialize a nova interface retornando um número.
+  Inicialize a janela do novo programa com o número.
+  Execute os novos eventos.
+  Feche o novo programa.
+
+\\ Rotina para inicialização dos componentes
+Rotina para que se inicialize os novos componentes:
+  Processe "kernel32.dll" "GetModuleHandleA" com
+    0
+    Retornando o número identificador do módulo.
+
+\\ Rotina para inicialização da interface
+Rotina para que se inicialize a nova interface retornando um número denominado hMenuPrincipal:
+  Crie o menu principal retornando o hMenuPrincipal.
+  \Talvez aqui eu deva atribuir o hMenuPrincipal para o parâmetro número, embora o compilador normalmente já faz isso.
+  \Atribua o hMenuPrincipal para o número.
+  \\ Aqui você pode adicionar outras inicializações de interface, se necessário.
+\Uma MSG é uma MSG.
+\\ Rotina para execução do loop de mensagens
+
+
+Rotina para que se execute os novos eventos:
+  Itere.
+    Processe "user32.dll" "GetMessageA" com
+      O endereçamento duma MSG e
+      0 e
+      0 e
+      0
+      Retornando um número.
+    Se o número for 0, pare. \\ WM_QUIT
+    Processe "user32.dll" "TranslateMessage" com
+      O endereçamento desta MSG.
+    Processe "user32.dll" "DispatchMessageA" com
+      O endereçamento desta MSG.
+  Reitere.
+
+\\ Rotina para finalização do programa
+Rotina para que se feche o novo programa:
+  Processe "user32.dll" "DestroyWindow" com
+    A janela do programa.
+  Atribua "MinhaJanela" para uma string.
+  Anexe o caractere null após a string.
+  Processe "user32.dll" "UnregisterClassA" com
+    O caractere inicial desta string e
+    O número identificador do módulo.
+  \\ Limpeza de recursos, se houver.
+
+\\ Rotina para criação da janela principal
+Rotina para que se inicialize a janela do novo programa com um número denominado hMenuPrincipal:
+  \\ Declaração de variável local com tipo estruturado
+  \ Uma classe da janela é uma WNDCLASS.
+  Atribua a magnitude duma WNDCLASS ao cbSize desta classe da janela.
+  Atribua 8 ao style desta classe da janela. \\ CS_DBLCLKS
+  Redirecione o lpfnWndProc desta classe da janela para a rotina handle alguma MSG com uma janela do programa e um número e um wParam e um lParam.
+  Atribua o número identificador do módulo ao hInstance desta classe da janela.
+  Atribua 0 ao hIcon desta classe da janela.
+  Atribua 0 ao hCursor desta classe da janela.
+  Atribua 0 ao hbrBackground desta classe da janela.
+  Atribua 0 ao lpszMenuName desta classe da janela.
+  Atribua "MinhaJanela" para uma string denominada classe de janela.
+  Anexe o caractere null após a classe de janela.
+  Atribua o caractere inicial desta classe de janela ao lpszClassName desta classe da janela.
+  Processe "user32.dll" "RegisterClassExA" com
+    O endereçamento desta classe da janela.
+  Processe "user32.dll" "CreateWindowExA" com
+    0 e \\ dwExStyle 
+    O caractere inicial desta classe de janela e \\ lpClassName
+    O caractere inicial desta classe de janela e \\ lpWindowName
+    13565952 e \\ WS_OVERLAPPEDWINDOW
+    100 e \\ x
+    100 e \\ y
+    1024 [nWidth] e
+    768  [nHeight] e
+    0 e \\ hWndParent
+    O hMenuPrincipal e\\ hMenu - AQUI PASSAMOS O HANDLE DO MENU
+    O número identificador do módulo e \\ hInstance
+    0 \\ lpParam
+    Retornando a janela do programa.
+  Processe "user32.dll" "ShowWindow" com
+    A janela do programa e 
+    O SW_SHOWNORMAL. \\ SW_SHOWNORMAL
+  Processe "user32.dll" "UpdateWindow" com
+    A janela do programa.
+
+\\ Função para comparação de números (simplificada)
+Função para que se determine se um primeiro número é um segundo número e um terceiro número é um quarto número:
+  Se o primeiro número não for o segundo número, diga não.
+  Se o terceiro número não for o quarto número, diga não.
+  Diga sim.
+
+A mensagem de confirmação é uma string igual a "menu clicado!".
+O rótulo do menu é uma string igual a "rótulo".
+
+\\ Rotina principal para tratamento de mensagens da janela
+Rotina para que se compativelmente handle alguma MSG com uma janela do programa e um número denominado mensagem e um wParam e um lParam:
+  Anexe o caractere null após a mensagem de confirmação.
+  Anexe o caractere null após o rótulo do menu.
+  Se a mensagem for o WM_COMMAND, \e o wParam for o IDM_NOVO_ARQUIVO,
+    Processe "user32.dll" "MessageBoxA" com
+      A janela do programa e
+      O caractere inicial desta mensagem de confirmação e
+      O caractere inicial deste rótulo do menu e
+      0;
+    Atribua 0 para EAX;
+    Retorne.
+  \ Se a mensagem for o WM_COMMAND e o wParam for o IDM_ABRIR,
+    \ Processe "user32.dll" "MessageBoxA" com
+      \ A janela do programa e
+      \ "Abrir clicado!" e
+      \ "Menu" e
+      \ 0;
+    \ Atribua 0 para EAX;
+    \ Retorne.
+  \ Se a mensagem for o WM_COMMAND e o wParam for o IDM_SALVAR,
+    \ Processe "user32.dll" "MessageBoxA" com
+      \ A janela do programa e
+      \ "Salvar clicado!" e
+      \ "Menu" e
+      \ 0;
+    \ Atribua 0 para EAX;
+    \ Retorne.
+  \ Se a mensagem for o WM_COMMAND e o wParam for o IDM_FECHAR,
+    \ Processe "user32.dll" "SendMessageA" com
+      \ A janela do programa e
+      \ o WM_CLOSE e
+      \ 0 e
+      \ 0;
+    \ Atribua 0 para EAX;
+    \ Retorne.
+  \ Se a mensagem for o WM_COMMAND e o wParam for o IDM_SELECIONAR_TUDO,
+    \ Processe "user32.dll" "MessageBoxA" com
+      \ A janela do programa e
+      \ "Selecionar tudo clicado!" e
+      \ "Menu" e
+      \ 0;
+    \ Atribua 0 para EAX;
+    \ Retorne.
+  \ Se a mensagem for o WM_COMMAND e o wParam for o IDM_RECORTAR,
+    \ Processe "user32.dll" "MessageBoxA" com
+      \ A janela do programa e
+      \ "Recortar clicado!" e
+      \ "Menu" e
+      \ 0;
+    \ Atribua 0 para EAX;
+    \ Retorne.
+  \ Se a mensagem for o WM_COMMAND e o wParam for o IDM_COPIAR,
+    \ Processe "user32.dll" "MessageBoxA" com
+      \ A janela do programa e
+      \ "Copiar clicado!" e
+      \ "Menu" e
+      \ 0;
+    \ Atribua 0 para EAX;
+    \ Retorne.
+  \ Se a mensagem for o WM_COMMAND e o wParam for o IDM_COLAR,
+    \ Processe "user32.dll" "MessageBoxA" com
+      \ A janela do programa e
+      \ "Colar clicado!" e
+      \ "Menu" e
+      \ 0;
+    \ Atribua 0 para EAX;
+    \ Retorne.
+  \ Se a mensagem for o WM_COMMAND e o wParam for o IDM_DOCUMENTACAO,
+    \ Processe "user32.dll" "MessageBoxA" com
+      \ A janela do programa e
+      \ "Documentação clicada!" e
+      \ "Menu" e
+      \ 0;
+    \ Atribua 0 para EAX;
+    \ Retorne.
+  \ Se a mensagem for o WM_COMMAND e o wParam for o IDM_SOBRE,
+    \ Processe "user32.dll" "MessageBoxA" com
+      \ A janela do programa e
+      \ "Sobre clicado!" e
+      \ "Menu" e
+      \ 0;
+    \ Atribua 0 para EAX;
+    \ Retorne.
+  Se a mensagem for o WM_DESTROY,
+    Processe "user32.dll" "PostQuitMessage" com
+      0;
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for o WM_CREATE,
+    \\ Aqui você pode adicionar inicializações específicas para a criação da janela
+    Atribua 0 para EAX;
+    Retorne.
+  Se a mensagem for o WM_PAINT,
+    \\ Declaração de variáveis locais com tipos estruturados
+    \Uma ps é uma PAINTSTRUCT.
+    \ Um hdc é um número.
+    Processe "user32.dll" "BeginPaint" com
+      A janela do programa e
+      O endereçamento duma PAINTSTRUCT
+      Retornando um hdc;
+    \ Atualize a tela;
+    \\ Desenhe aqui, se necessário
+    Processe "user32.dll" "EndPaint" com
+      A janela do programa e
+      O endereçamento desta PAINTSTRUCT;
+    \ Atualize a tela;
+    Atribua 0 para EAX;
+    Retorne.
+  \\ Caso o valor da MSG seja outro:
+  Processe "user32.dll" "DefWindowProcA" com
+    A janela do programa e
+    A mensagem e
+    O wParam e
+    O lParam
+    Retornando um número. \\ Retorna o resultado do procedimento de janela padrão.
+  Atribua o número para EAX.
+
+Um hMenuArquivo é um número identificador.
+
+O &Ajuda é uma string igual a "&Ajuda".
+O Sobre é uma string igual a "Sobre".
+O Documentação é uma string igual a "Documentação".
+O &Arquivo é uma string igual a "A&rquivo".
+O &Editar é uma string igual a "E&ditar".
+O Colar é uma string igual a "Colar".
+O Copiar é uma string igual a "Copiar".
+O Recortar é uma string igual a "Reco&rtar".
+O Selecionar tudo é uma string igual a "Selecionar".
+O Fechar é uma string igual a "Fechar".
+O Salvar é uma string igual a "Salvar".
+O Abrir é uma string igual a "&Abrir".
+
+Rotina para que se prepare as strings:
+  Anexe o caractere NULL após o &Ajuda.
+  Anexe o caractere NULL após o Sobre.
+  Anexe o caractere NULL após o Documentação.
+  Anexe o caractere NULL após o &Editar.
+  Anexe o caractere NULL após o Colar.
+  Anexe o caractere NULL após o Copiar.
+  Anexe o caractere NULL após o Recortar.
+  Anexe o caractere NULL após o Selecionar tudo.
+  Anexe o caractere NULL após o &Arquivo.
+  Anexe o caractere NULL após o Fechar.
+  Anexe o caractere NULL após o Salvar.
+  Anexe o caractere NULL após o Abrir.
+
+Um hMenuEditar é um número identificador.
+Um hMenuAjuda é um número.
+
+\\ Rotina para criação do menu principal
+Rotina para que se crie o menu principal retornando um hMenuPrincipal:
+  \\ Cria o menu principal
+  Prepare as strings.
+  Processe "user32.dll" "CreateMenu" retornando o hMenuPrincipal.
+  \\ Cria o menu Arquivo
+  \\ Declaração de variável local
+  Processe "user32.dll" "CreatePopupMenu" retornando um hMenuArquivo.
+  Atribua "Novo Arquivo" para uma string denominada novo arquivo.
+  Anexe o caractere NULL após o novo arquivo.
+  Processe "user32.dll" "AppendMenuA" com
+    O hMenuArquivo e
+    O MF_STRING e
+    O IDM_NOVO_ARQUIVO e
+    O caractere inicial deste novo arquivo.
+  Processe "user32.dll" "AppendMenuA" com
+    O hMenuArquivo e
+    O MF_STRING e
+    O IDM_ABRIR e
+    O caractere inicial deste Abrir.
+  Processe "user32.dll" "AppendMenuA" com
+    O hMenuArquivo e
+    O MF_STRING e
+    O IDM_SALVAR e
+    O caractere inicial deste Salvar.
+  Processe "user32.dll" "AppendMenuA" com
+    O hMenuArquivo e
+    O MF_SEPARATOR e
+    0 e
+    0.
+  Processe "user32.dll" "AppendMenuA" com
+    O hMenuArquivo e
+    O MF_STRING e
+    O IDM_FECHAR e
+    O caractere inicial deste Fechar.
+  \\ Adiciona o menu Arquivo ao menu principal
+  Processe "user32.dll" "AppendMenuA" com
+    O hMenuPrincipal e
+    O MF_POPUP e
+    O hMenuArquivo e
+    O caractere inicial deste &Arquivo.
+  \\ Cria o menu Editar
+  \\ Declaração de variável local
+  Processe "user32.dll" "CreatePopupMenu" retornando um hMenuEditar.
+  Processe "user32.dll" "AppendMenuA" com
+    O hMenuEditar e
+    O MF_STRING e
+    O IDM_SELECIONAR_TUDO e
+    O caractere inicial deste Selecionar tudo.
+  Processe "user32.dll" "AppendMenuA" com
+    O hMenuEditar e
+    O MF_STRING e
+    O IDM_RECORTAR e
+    O caractere inicial deste Recortar.
+  Processe "user32.dll" "AppendMenuA" com
+    O hMenuEditar e
+    O MF_STRING e
+    O IDM_COPIAR e
+    O caractere inicial deste Copiar.
+  Processe "user32.dll" "AppendMenuA" com
+    O hMenuEditar e
+    O MF_STRING e
+    O IDM_COLAR e
+    O caractere inicial deste Colar.
+  \\ Adiciona o menu Editar ao menu principal
+  Processe "user32.dll" "AppendMenuA" com
+    O hMenuPrincipal e
+    O MF_POPUP e
+    O hMenuEditar e
+    O caractere inicial deste &Editar.
+  \\ Cria o menu Ajuda
+  \\ Declaração de variável local  
+  Processe "user32.dll" "CreatePopupMenu" retornando um hMenuAjuda.
+  Processe "user32.dll" "AppendMenuA" com
+    O hMenuAjuda e
+    O MF_STRING e
+    O IDM_DOCUMENTACAO e
+    O caractere inicial deste Documentação.
+  Processe "user32.dll" "AppendMenuA" com
+    O hMenuAjuda e
+    O MF_STRING e
+    O IDM_SOBRE e
+    O caractere inicial deste Sobre.
+  \\ Adiciona o menu Ajuda ao menu principal
+  Processe "user32.dll" "AppendMenuA" com
+    O hMenuPrincipal e
+    O MF_POPUP e
+    O hMenuAjuda e
+    O caractere inicial deste &Ajuda.
+  \\ Retorna o handle do menu principal criado
+  \Retorne o hMenuPrincipal.

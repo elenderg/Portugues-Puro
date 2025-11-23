@@ -1,0 +1,560 @@
+Rotina para que se associe um ponteiro usando um número denominado quantidade de bytes:\ Aloque memória RAM para um ponteiro
+  Se a quantidade de bytes for 0,
+    Esvazie o ponteiro;
+    Retorne.
+  Preserve a quantidade de bytes.
+  Arredonde a quantidade de bytes para cima usando a próxima potência de dois.
+  Processe "kernel32.dll" "HeapAlloc" com \ Aloca um bloco de memória de um heap.
+  \ Documentação: ->  https://learn.microsoft.com/pt-br/windows/win32/api/heapapi/nf-heapapi-heapalloc
+    O endereço heap [hHeap] e
+    8 [dwFlags ]  [8 = HEAP_ZERO_MEMORY] e
+    A quantidade de bytes [dwBytes]
+    Retornando o ponteiro. [LPVOID ]
+  Se o ponteiro não for inexistente,
+    Adicione 1 para a contagem do heap;
+    Retorne.
+
+Rotina para que se desassocie um ponteiro:
+  Se o ponteiro for inexistente, retorne.
+  Processe "kernel32.dll" "HeapFree" com  \ https://learn.microsoft.com/pt-br/windows/win32/api/heapapi/nf-heapapi-heapfree
+  \Libera um bloco de memória alocado de um heap pela função HeapAlloc ou HeapReAlloc.
+    O endereço heap [hHeap] E \ Obtido através da função HeapCreate ou GetProcessHeap.
+    0 [dwFlags no options] e  \Opções de liberação de heap.
+    O ponteiro [lpMem] \ Bloco de memória a ser liberado. Obtido através da função HeapAlloc ou HeapReAlloc. Pode ser NULL.
+    Retornando um número. \ Se a função for bem-sucedida, o valor de retorno será diferente de zero.
+  Se o número for 0, retorne. \Se a função falhar, o valor de retorno é zero.
+  Esvazie o ponteiro.
+  Subtraia 1 desde a contagem do heap.
+
+Rotina para que se atribua uma string para uma segunda string:
+  Atribua a quantidade de caracteres desta string para um número denominado quantidade de caracteres armazenados.
+  Associe um ponteiro usando a quantidade de caracteres armazenados.
+  Copie bytes desde o caractere inicial desta string para o ponteiro usando a quantidade de caracteres armazenados.
+  Desassocie o caractere inicial desta segunda string.
+  Atribua o ponteiro ao caractere inicial desta segunda string.
+  Atribua o caractere inicial desta segunda string mais a quantidade de caracteres armazenados menos 1 ao caractere final desta segunda string.
+
+Rotina para que se inicialize antes da execução:
+  Processe "user32.dll" "DisableProcessWindowsGhosting". 
+  \ Desativa o recurso de imagem fantasma da janela para o processo de chamada da GUI.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-disableprocesswindowsghosting
+  Processe "kernel32.dll" "GetProcessHeap"
+  \ Recupera um identificador para o heap padrão do processo de chamada.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/heapapi/nf-heapapi-getprocessheap
+    Retornando o endereço heap.
+  Atribua "kernel32.dll" para uma string denominada nome da biblioteca.
+  Atribua "HeapSetInformation" para uma string denominada nome do processo.
+  Processe "kernel32.dll" "LoadLibraryA" com
+   \ Carrega o módulo especificado no espaço de endereço do processo de chamada.
+   \Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibrarya
+    O caractere inicial deste nome da biblioteca [lpLibFileName]
+   Retornando um número denominado número identificador do processo.
+  Se o número identificador do processo não for 0,
+    Processe "kernel32.dll" "GetProcAddress" com 
+    \ Recupera o endereço de uma função ou variável exportada da biblioteca de vínculo dinâmico (DLL) especificada.
+    \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/libloaderapi/nf-libloaderapi-getprocaddress
+      O número identificador do processo [hModule]
+      e o caractere inicial deste nome do processo [lpProcName]
+      Retornando um ponteiro. \ -> equivalente ao endereço do processo 
+  Se o ponteiro não for inexistente,
+    Atribua 1 para um número denominado novo número;
+    Processe o ponteiro [o endereço da função] com
+    \ Habilita os recursos de heap
+    \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/heapapi/nf-heapapi-heapsetinformation
+      O endereço heap [ HeapHandle => heap padrão do processo de chamada]
+      e 0 [HeapInformationClass = HeapCompatibilityInformation]
+      e O endereçamento deste novo número [HeapInformation => buffer que contém informações de heap]
+      e 4. [HeapInformationLength]
+
+Rotina para que se reaponte um ponteiro usando um número denominado quantidade de bytes:
+  Se o ponteiro for inexistente,
+    Associe o ponteiro usando a quantidade de bytes;
+    Retorne.
+  Se a quantidade de bytes for 0,
+    Desassocie o ponteiro;
+    Retorne.
+  Preserve a quantidade de bytes.
+  Arredonde para cima a quantidade de bytes usando a potência de dois.
+  Processe "kernel32.dll" "HeapReAlloc" com \Realoca um bloco de memória de um heap.
+ \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/heapapi/nf-heapapi-heaprealloc
+    O endereço heap [hHeap]
+    e 8 [8 = HEAP_ZERO_MEMORY]  [dwFlags]
+    e O ponteiro [lpMem]
+    e A quantidade de bytes [dwBytes]
+  Retornando o ponteiro.
+
+Rotina para que se inicialize o Component Object Model:
+  Processe "ole32.dll" "CoInitializeEx" com
+  \ Inicializa a biblioteca COM
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/combaseapi/nf-combaseapi-coinitializeex
+    0 [pvReserved] e
+    2. [dwCoInit = COINIT_APARTMENTTHREADED] 
+    \ Inicializa o thread para simultaneidade de objeto apartment-threaded 
+    \ Para mais informações, consulte https://learn.microsoft.com/pt-br/windows/win32/api/objbase/ne-objbase-coinit
+
+Rotina para que se inicialize a infraestrutura WinSock:
+  Processe "ws2_32.dll" "WSAStartup" com 
+  \ Inicia o uso da DLL Winsock por um processo.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winsock/nf-winsock-wsastartup
+    2 [wVersionRequired] e
+    O endereçamento dum WSADATA. [lpWSAData]
+
+Rotina para que se inicialize o GDI+:
+  Atribua 1 ao GdiplusVersion dum GdiplusStartupInput.
+  Processe "gdiplus.dll" "GdiplusStartup" com 
+  \ Inicializa o Windows GDI +.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/gdiplusinit/nf-gdiplusinit-gdiplusstartup
+    O endereçamento deste gpToken [*token]  e 
+    \ Consulte https://learn.microsoft.com/pt-br/windows/desktop/api/gdiplusinit/nf-gdiplusinit-gdiplusshutdown
+    O endereçamento deste GdiplusStartupInput e [*input] 
+    \ https://learn.microsoft.com/pt-br/windows/win32/api/gdiplusinit/ns-gdiplusinit-gdiplusstartupinput
+    0. [*output] 
+    \ https://learn.microsoft.com/pt-br/windows/win32/api/gdiplusinit/ns-gdiplusinit-gdiplusstartupoutput
+
+Rotina para que se produza o relatório de falhas usando um relatório;
+Rotina para que se produza o relatório de panes usando um relatório;
+Rotina para que se produza o relatório de erros usando um relatório;
+Rotina para que se produza o relatório de bugs usando um relatório;
+Rotina para que se produza o relatório de informações usando um relatório:
+  Preserve o relatório.
+  Anexe o caractere NULL após o relatório.
+  Atribua "Detalhes: " para um relatório denominado relatório de erros.
+  Processe "user32.dll" "MessageBoxA" com \Exibe uma caixa de diálogo com uma mensagem
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-messageboxa
+    0 [hWnd] e
+    O caractere inicial deste relatório [lpText] e 
+    O caractere inicial deste relatório de erros [lpCaption] e 
+    0. [uType]
+
+\ To decide if a key was down:
+Função para que se determine se uma tecla está para baixo:
+\ foi pressionada \ estava pra baixo
+  Processe "user32.dll" "GetKeyState" com \Recupera o status da tecla virtual especificada.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getkeystate
+    A tecla [nVirtKey]
+  Retornando um word.
+  Atribua a word para um número.
+  Se o número for menor do que 0, diga sim.
+  Diga não.
+
+Função para que se determine se uma tecla com um lParam é alguma tecla de cancelamento ou tecla modificadora:
+  Atribua o lParam para um número.
+  Conjuncione logicamente o número com 1073741824 [0x40000000].
+  Se o número for 0, diga não.
+  Se a tecla for a tecla Esc, diga sim.
+  Se a tecla for algum tecla modificadora, diga sim.
+  Diga não.
+
+
+Rotina para que se converta um lParam para uma tecla:
+  \ assumes lParam from wm_char mensagem
+  Atribua o lParam à tecla.
+  Desloque a tecla 16 bits para a direita .
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/virtual-key-codes
+  Conjuncione logicamente a tecla com 255. \11111111 ou FF
+  Processe "user32.dll" "MapVirtualKeyA" com \ Mapeia um código de tecla virtual em um código de varredura e vice-versa
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-mapvirtualkeya
+    A tecla [uCode]
+    e 1 [uMapType MAPVK_VSC_TO_VK]
+  Retornando a tecla.
+  Se a tecla NumLock não estiver ativada,
+    Retorne.
+  Se a tecla for a tecla Insert,
+    Atribua a Tecla Zero do teclado numérico à tecla;
+    Retorne.
+  Se a tecla for a tecla Delete,
+    Atribua o Ponto do teclado numérico à tecla;
+    Retorne.
+  Se a tecla for a tecla Home,
+    Atribua a Tecla Sete do teclado numérico à tecla;
+    Retorne.
+  Se a tecla for a tecla End,
+    Atribua a Tecla End do teclado numérico à tecla;
+    Retorne.
+  Se a tecla for a tecla Page Up,
+    Atribua a Tecla Nove do teclado numérico à tecla;
+    Retorne.
+  Se a tecla for a tecla Page Down,
+    Atribua a Tecla Três do teclado numérico à tecla;
+    Retorne.
+  Se a tecla for a seta pra esquerda,
+    Atribua a Tecla Quatro do teclado numérico à tecla;
+    Retorne.
+  Se a tecla for a seta pra direita,
+    Atribua a Tecla Seis do teclado numérico à tecla;
+    Retorne.
+  Se a tecla for a seta pra cima,
+    Atribua a Tecla Oito do teclado numérico à tecla;
+    Retorne.  
+  Se a tecla for a seta pra baixo,
+    Atribua a Tecla Dois do teclado numérico à tecla;
+    Retorne.
+  Se a tecla for a tecla Clear, \ Shift + NumPad 5 (usado nos teclados de Macintosh)
+    Atribua a Tecla Cinco do teclado numérico à tecla;
+    Retorne.
+
+Rotina para que se converta um lParam para uma localização:
+  Subdivida o lParam em uma word e uma segunda word.
+  Atribua a word à coordenada Y desta localização.
+  Atribua a segunda word à coordenada X desta localização.
+  Multiplique a localização pelo quantidade de twips/pixel .
+
+Função para que se determine se uma tecla está ligada;
+Função para que se determine se uma tecla está alternada;
+Função para que se determine se uma tecla está ativada:
+  Processe "user32.dll" "GetKeyState" com
+    A tecla [nVirtKey]
+  Retornando um word.
+  Atribua a word para um número.
+  Conjuncione logicamente o número com 1.
+  Se o número for 1, diga sim.
+  Diga não.
+
+Função para que se determine se uma tecla é alguma tecla do tipo WM_CHAR:
+  Se a tecla não for alguma tecla imprimível , diga não.
+  Se a tecla Alt estiver para baixo, diga não.
+  Se a tecla Ctrl estiver para baixo, diga não.
+  Diga sim.
+
+\To decide if a key is down:
+Função para que se determine se uma tecla [ou botão do mouse] está sendo pressionado; 
+Função para que se determine se uma tecla está sendo pressionada:
+  Processe "user32.dll" "GetAsyncKeyState" com 
+  \ Determina se uma tecla está ativada ou desativada no momento 
+  \ e se a tecla foi pressionada após uma chamada anterior para GetAsyncKeyState.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getasynckeystate
+    A tecla [vKey] \ Consulte https://learn.microsoft.com/pt-br/windows/desktop/inputdev/virtual-key-codes
+    Retornando uma word.
+  Atribua a word para um número.
+  Se o número for menor do que 0, diga sim.
+  Diga não.
+
+Rotina para que se atribua uma segunda localização para uma localização;
+Rotina para que se atribua a localização deste mouse para uma localização:
+  Processe "user32.dll" "GetCursorPos" com 
+  \ Recupera a posição do cursor do mouse, retornando as coordenadas da tela.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getcursorpos
+    O endereçamento desta localização. [lpPoint] 
+    \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/windef/ns-windef-point
+  Processe "user32.dll" "ScreenToClient" com 
+  \ Converte as coordenadas de um ponto na tela  em coordenadas da área do cliente.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-screentoclient
+    A janela principal do programa [hWnd] 
+    e O endereçamento desta localização. \ Necessário caso a janela esteja em um segundo monitor.
+  Processe "gdi32.dll" "DPtoLP" com 
+  \ Converte as coordenadas do dispositivo em coordenadas lógicas.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-dptolp
+    O canvas da tela [hdc] \ Contexto do dispositivo.
+    e O endereçamento desta localização [lppt]
+    e 1. [c] \ O número de pontos na matriz.
+
+Rotina para que se inicialize as fontes:
+  Processe "gdi32.dll" "GetStockObject" com \ Recupera um identificador para uma das canetas, pincéis, fontes ou paletas de estoque.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-getstockobject
+  11 [i = ANSI_FIXED_FONT 0x0000000B]
+  Retornando o número da fonte null.
+  Processe "gdi32.dll" "AddFontMemResourceEx" com 
+    O caractere inicial desta fonte osmosiana e
+    A quantidade de caracteres desta fonte osmosiana e
+    0 e 
+    O endereçamento dum número 
+    Retornando o recurso de fonte osmosiana.
+  \Processe "gdi32.dll" "AddFontMemResourceEx" com o caractere inicial desta fonte Segoe UI e a quantidade de caracteres desta fonte Segoe UI e 0 e o endereçamento dum número retornando o Segoe UI resource.
+  \Processe "gdi32.dll" "AddFontMemResourceEx" com \ Adiciona o recurso de fonte de uma imagem de memória ao sistema.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-addfontmemresourceex
+    \O caractere inicial desta fonte Tahoma [pFileView]
+    \e A quantidade de caracteres desta fonte Tahoma [cjSize]
+    \e 0 [pvResrved]
+    \e O endereçamento dum número [*pNumFonts]
+  \Retornando o recurso de fonte Tahoma.
+  \Atribua "Segoe UI" e 1/6 polegada à fonte padrão.
+  Atribua "Segoe UI" e 24 pixels à fonte padrão.
+  \Atribua "Tahoma" e 20 pixels à fonte padrão.
+  \ stroked fontes abaixo
+  Atribua 12 pixels ao tamanho de letra pequena.
+  Atribua 24 pixels ao tamanho de letra médio.
+  Atribua 48 pixels ao tamanho de letra grande.
+
+Rotina para que se inicialize os cursores:
+  Inicialize os cursores (seta do mouse).
+  Inicialize os cursores (cursor de mão).
+  Inicialize os cursores (cursor de digitação).
+  \Oculte o cursor.
+
+Rotina para que se inicialize os cursores (seta do mouse):
+  Acrescente $00000000000000004000000060000000 para uma máscara de disjunção exclusiva.
+  Acrescente $70000000780000007C0000007E000000 para a máscara de disjunção exclusiva.
+  Acrescente $7F0000007F8000007C0000006C000000 para a máscara de disjunção exclusiva.
+  Acrescente $46000000060000000300000003000000 para a máscara de disjunção exclusiva.
+  Acrescente $01800000018000000000000000000000 para a máscara de disjunção exclusiva.
+  Acrescente $00 para a máscara de disjunção exclusiva usando 48.
+  Acrescente $7FFFFFFF3FFFFFFF1FFFFFFF0FFFFFFF para uma máscara de conjunção lógica.
+  Acrescente $07FFFFFF03FFFFFF01FFFFFF00FFFFFF para a máscara de conjunção lógica.
+  Acrescente $007FFFFF003FFFFF001FFFFF01FFFFFF para a máscara de conjunção lógica.
+  Acrescente $10FFFFFF30FFFFFF787FFFFFF87FFFFF para a máscara de conjunção lógica.
+  Acrescente $FC3FFFFFFC3FFFFFFE7FFFFFFFFFFFFF para a máscara de conjunção lógica.
+  Acrescente $FF para a máscara de conjunção lógica usando 48.
+  Processe "user32.dll" "CreateCursor" com \ Cria um cursor com o tamanho, padrões de bits e ponto de acesso especificados.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-createcursor
+    O número identificador deste módulo [hInst] e
+    0 [xHotSpot] e
+    0 [yHotSpot] e
+    32 [nWidth] e
+    32 [nHeight] e
+    O caractere inicial desta máscara de conjunção lógica [*pvANDPlane] e
+    O caractere inicial desta máscara de disjunção exclusiva [*pvXORPlane]
+  Retornando a seta do mouse.
+
+Rotina para que se inicialize os cursores (cursor de mão):
+  Acrescente $000000000180000019B0000019B00000 para uma máscara de disjunção exclusiva.
+  Acrescente $0DB200000DB6000007F6000067FE0000 para a máscara de disjunção exclusiva.
+  Acrescente $7FFC00003FFC00001FFC00001FF80000 para a máscara de disjunção exclusiva.
+  Acrescente $0FF8000007F0000003F0000003F00000 para a máscara de disjunção exclusiva.
+  Acrescente $00 para a máscara de disjunção exclusiva usando 64.
+  Acrescente $FE7FFFFFE40FFFFFC007FFFFC005FFFF para uma máscara de conjunção lógica.
+  Acrescente $E000FFFFE000FFFF9000FFFF0000FFFF para a máscara de conjunção lógica.
+  Acrescente $0001FFFF8001FFFFC001FFFFC003FFFF para a máscara de conjunção lógica.
+  Acrescente $E003FFFFF007FFFFF807FFFFF807FFFF para a máscara de conjunção lógica.
+  Acrescente $FF para a máscara de conjunção lógica usando 64.
+  Processe "user32.dll" "CreateCursor" com
+    O número identificador deste módulo e
+    2 [xHotSpot] e
+    1 [yHotSpot] e
+    32 [nWidth] e
+    32 [nHeight] e
+    O caractere inicial desta máscara de conjunção lógica [*pvANDPlane] e
+    O caractere inicial desta máscara de disjunção exclusiva [*pvXORPlane]
+    Retornando o cursor de mão.
+
+Rotina para que se inicialize os cursores (cursor de digitação):
+  Acrescente $EE000000100000001000000010000000 para uma máscara de disjunção exclusiva.
+  Acrescente $10000000100000001000000010000000 para a máscara de disjunção exclusiva.
+  Acrescente $10000000100000001000000010000000 para a máscara de disjunção exclusiva.
+  Acrescente $100000001000000010000000EE000000 para a máscara de disjunção exclusiva.
+  Acrescente $00 para o máscara de disjunção exclusiva usando 64.
+  Acrescente $FF para um máscara de conjunção lógica usando 128.
+  Processe "user32.dll" "CreateCursor" com
+    O número identificador deste módulo [hInst] e
+    3 [xHotSpot] e
+    7 [yHotSpot] e
+    32 [nWidth] e
+    32 [nHeight] e
+    O caractere inicial desta máscara de conjunção lógica [*pvANDPlane] e
+    O caractere inicial desta máscara de disjunção exclusiva [*pvXORPlane]
+    Retornando o cursor de digitação.
+
+Rotina para que se oculte o cursor:
+  [Itere.]
+    Processe "user32.dll" "ShowCursor" com \ Exibe (ou oculta) o cursor.
+      \ https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-showcursor
+      0 [bShow]
+      Retornando um número.
+    Se o número for menor do que 0, retorne.
+  Reitere.
+
+Rotina para que se inicialize o mouse:
+  Atribua 1 ao botão esquerdo deste mouse.
+  Atribua 2 ao botão direito deste mouse.
+  Processe "user32.dll" "GetSystemMetrics" com \Recupera a métrica do sistema especificada ou a definição de configuração do sistema.
+  \ https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getsystemmetrics
+    23 [nIndex = SM_SWAPBUTTON]
+    Retornando um número.
+  Se o número for 0, retorne.
+  Permute o botão esquerdo deste mouse com o botão direito deste mouse.
+
+Rotina para que se inicialize os contextos de dispositivo:
+  Inicialize o canvas da tela.
+  Inicialize o contexto de dispositivo de memória.
+  Atribua o contexto de dispositivo de memória ao contexto do dispositivo atual.
+
+Rotina para que se inicialize o canvas da tela:
+  Processe "user32.dll" "GetDC" com \ Retorna o identificador do "contexto de dispositivo" (DC) de uma janela da tela inteira.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getdc
+    A janela principal do programa [hWnd]
+  Retornando o canvas da tela.
+  Normalize o canvas da tela.
+
+
+Rotina para que se normalize um canvas:
+  Processe "gdi32.dll" "SetGraphicsMode" com 
+  \ Define o modo gráfico para o contexto de dispositivo especificado.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setgraphicsmode
+    O canvas [hdc] e
+    2. [iMode = GM_ADVANCED]
+  Processe "gdi32.dll" "SetBkMode" com 
+  \ Define o modo de mistura de plano de fundo do contexto de dispositivo especificado.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setbkmode
+    O canvas [hdc] e
+    1. [mode = TRANSPARENT]
+  Processe "gdi32.dll" "SetMapMode" com 
+  \ Define o modo de mapeamento do contexto de dispositivo especificado.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setmapmode
+    O canvas [hdc] e
+    8. [iMode = MM_ANISOTROPIC ]
+  Processe "gdi32.dll" "SetViewportOrgEx" com 
+  \ Especifica qual ponto do dispositivo mapeia para a origem da janela (0,0).
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setviewportorgex
+    O canvas [hdc] e
+    0 [x] e
+    0 [y] e
+    nil. [lppt] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/api/windef/ns-windef-point
+  Processe "gdi32.dll" "SetViewportExtEx" com 
+  \ Define a extensão horizontal e vertical da janela de visualização de um contexto de dispositivo
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setviewportextex
+    O canvas [hdc] e
+    O ppi [x] e
+    O ppi [y] e
+    nil. [lpsz] \ Consulte https://learn.microsoft.com/pt-br/previous-versions/dd145106(v=vs.85)
+  Processe "gdi32.dll" "SetWindowOrgEx" com
+    O canvas [hdc] e
+    0 [x] e
+    0 [y] e
+    nil. [lppt]
+  Processe "gdi32.dll" "SetWindowExtEx" com 
+  \ Define a extensão horizontal e vertical da janela de um contexto de dispositivo
+  \ https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-setwindowextex
+    O canvas [hdc] e
+    O tpi [x] e
+    O tpi [y] e
+    nil. [lpsz]
+
+
+Rotina para que se inicialize o contexto de dispositivo de memória:
+  Processe "gdi32.dll" "CreateCompatibleDC" com 
+  \ Cria um contexto de dispositivo de memória (DC) compatível com o dispositivo especificado.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-createcompatibledc
+    O canvas da tela [hdc]
+    Retornando o contexto de dispositivo de memória.
+  Processe "gdi32.dll" "GetCurrentObject" com 
+  \ Retorna um identificador do objeto atual
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-getcurrentobject
+    O contexto de dispositivo de memória [hDC] e
+    7 [OBJ_BITMAP]
+    Retornando o identificador do objeto BitMap. [h]
+  Processe "gdi32.dll" "CreateCompatibleBitmap" com 
+  \ Cria um bitmap compatível com o dispositivo que está associado ao contexto de dispositivo especificado.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-createcompatiblebitmap
+    O canvas da tela [hdc] e
+    A largura do pixel desta tela [cx] e
+    A altura do pixel desta tela [xy]
+    Retornando um hBitMap.
+  Processe "gdi32.dll" "SelectObject" com 
+  \ Seleciona um objeto no contexto de dispositivo (DC) especificado.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-selectobject
+    O contexto de dispositivo de memória [hdc] e
+    O hBitMap. [h]
+  Normalize o contexto de dispositivo de memória.
+
+Rotina para que se inicialize um contexto:
+  Aloque memória para o contexto.
+  Atribua o centro desta tela à localização deste contexto.
+  Atribua 0 à orientação deste contexto.
+  Atribua a cor verde à cor deste contexto.
+  Atribua o tamanho de letra pequena à tamanho da letra deste contexto.
+  \Atribua 1/60 segundos ao delay. ***
+  Semeie o gerador de números aleatórios.
+
+Rotina para que se atribua a contagem de intervalos do sistema para uns intervalos:
+  \ reinicia a cada 24 dias, 19 horas e 12 minutos aproximadamente (32 bits)
+  Processe "kernel32.dll" "GetTickCount" retornando os intervalos. 
+  \Recupera o número de milissegundos decorridos desde que o sistema foi iniciado, até 49 dias, 16 horas e 48 minutos
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/sysinfoapi/nf-sysinfoapi-gettickcount
+  Conjuncione logicamente os intervalos com o maior número.
+
+
+Rotina para que se finalize o contexto de dispositivo de memória:
+  Processe "gdi32.dll" "SelectObject" com \A função SelectObject seleciona um objeto no contexto de dispositivo (Device Context) especificado.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-selectobject
+    O contexto de dispositivo de memória [HDC]
+    e O identificador do objeto BitMap [hGdiObj ]
+  Retornando um hBitMap. [hGdiObj]
+  Processe "gdi32.dll" "DeleteObject" com \ Exclui o canvas, liberando todos os recursos do sistema associados ao objeto.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-deleteobject
+    O hBitMap. [hGdiObj ]
+  Processe "gdi32.dll" "DeleteDC" com \ Exclui o contexto de dispositivo especificado (DC).
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-deletedc
+    O contexto de dispositivo de memória. [hdc]
+
+Rotina para que se finalize os cursores:
+  Processe "user32.dll" "DestroyCursor" com \A função DestroyCursor destrói um cursor e libera qualquer memória ocupada por ele.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-destroycursor
+    O cursor de digitação. [hCursor] \ O identificador do cursor a ser destruída.
+  Processe "user32.dll" "DestroyCursor" com
+    O cursor de mão. [hCursor]
+  Processe "user32.dll" "DestroyCursor" com
+    A seta do mouse. [hCursor]
+
+Rotina para que se finalize as fontes:
+  Processe "gdi32.dll" "RemoveFontMemResourceEx" com o recurso de fonte osmosiana.
+  \Processe "gdi32.dll" "RemoveFontMemResourceEx" com o Segoe UI resource.
+  \Processe "gdi32.dll" "RemoveFontMemResourceEx" com \Remove as fontes que foram adicionadas a partir de um arquivo de imagem de memória.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-RemoveFontMemResourceEx
+    \O recurso de fonte Tahoma. [h]
+
+Rotina para que se finalize o janela do programa:
+  Processe "user32.dll" "DestroyWindow" com 
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-destroywindow
+    A janela principal do programa. [hWnd]
+  Itere.
+    Processe "user32.dll" "GetMessageA" com 
+    \ Obtém uma mensagem da fila de mensagens do thread de chamada.
+      \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getmessagea
+      O endereçamento duma MSG [lpMsg] \ Consulte https://learn.microsoft.com/pt-br/windows/desktop/api/winuser/ns-winuser-MSG
+      e 0 [hWnd]
+      e 0 [wMsgFilterMin]
+      e 0 [wMsgFilterMax]
+      Retornando um número.
+    Se o número for menor do que 1, pare.
+    Processe "user32.dll" "TranslateMessage" com 
+    \ Traduz mensagens de teclas virtuais em mensagens de caracteres.
+    \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-translatemessage
+      O endereçamento desta MSG. [*lpMsg]
+    Processe "user32.dll" "DispatchMessageA" com 
+    \ Usado para despachar uma mensagem obtida pela função GetMessage.
+    \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-dispatchmessagea
+      O endereçamento desta MSG.[*lpMsg]
+
+Rotina para que se finalize o GDI+:
+  Processe "gdiplus.dll" "GdiplusShutdown" com 
+  \ Llimpa os recursos usados pelo Windows GDI +.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/gdiplusinit/nf-gdiplusinit-gdiplusshutdown
+    O gpToken. [token]
+
+Rotina para que se finalize winsock:
+  Processe "ws2_32.dll" "WSACleanup". 
+  \ Encerra o uso da DLL Winsock 2 (Ws2_32.dll).
+  \ Documentação: ->https://learn.microsoft.com/pt-br/windows/win32/api/winsock/nf-winsock-wsacleanup
+
+Rotina para que se finalize o Component Object Model:
+  Processe "ole32.dll" "CoUninitialize". \ Decha a biblioteca COM no thread atual
+  \ Descarrega todas as DLLs carregadas pelo thread,
+  \ Libera quaisquer outros recursos que o thread mantém e
+  \ Força o fechamento de todas as conexões RPC no thread.
+  \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/combaseapi/nf-combaseapi-couninitialize
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

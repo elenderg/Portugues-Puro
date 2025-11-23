@@ -1,0 +1,64 @@
+Rotina para que se atribua o módulo duma fração para uma segunda fração:
+Rotina para que se atribua a string dum grupo data-hora para uma string:
+Rotina para que se atribua a contagem dum catálogo para uma contagem:
+Rotina para que se atribua a used contagem de recipientes dum catálogo para uma contagem:
+Rotina para que se atribua o módulo dum número para um segundo número:
+Rotina para que se atribua o módulo dum par de números para um segundo par de números:
+Rotina para que se atribua o working string duma linha de texto para um subtexto:
+Rotina para que se atribua a largura duma string para uma largura: \ unidade "e.m"?
+Rotina para que se atribua a primeira linha reta duma caixa de texto para uma string:
+Rotina para que se atribua a primeira linha reta contendo texto duma caixa de texto para uma string:
+Rotina para que se atribua a globalized origem duma caixa de texto para uma localização:
+Rotina para que se atribua a malha quadriculada duma caixa de texto para uma malha quadriculada:
+Rotina para que se atribua a normalized seleção duma caixa de texto para uma seleção:
+Rotina para que se atribua a contagem de linhas duma caixa de texto para uma contagem:
+Rotina para que se atribua a altura da linha duma caixa de texto para uma altura:
+Rotina para que se atribua as linhas de texto/box duma caixa de texto para uma contagem:
+Rotina para que se atribua a quantidade de caracteres selecionados duma caixa de texto para uma contagem:
+Rotina para que se atribua a selecionado contagem de linhas duma caixa de texto para uma contagem:
+Rotina para que se atribua o painel de informações string duma caixa de texto para uma string:
+Rotina para que se atribua a contagem dumas listas para uma contagem:
+Rotina para que se atribua a string dum temporizador para uma string:
+Rotina para que se atribua os intervalos dum temporizador para uns intervalos:
+Rotina para que se atribua a adjusted altura duma fonte para uma altura:
+Rotina para que se atribua o centro dum polígono para uma localização:
+Rotina para que se atribua o centro inferior dum polígono para uma localização:
+Rotina para que se atribua o centro superior dum polígono para uma localização:
+Rotina para que se atribua a altura dum polígono para uma altura:
+Rotina para que se atribua o canto inferior esquerdo dum polígono para uma localização:
+Rotina para que se atribua o centro esquerdo dum polígono para uma localização:
+Rotina para que se atribua o canto superior esquerdo dum polígono para uma localização:
+Rotina para que se atribua o canto inferior direito dum polígono para uma localização:
+Rotina para que se atribua o centro direito dum polígono para uma localização:
+Rotina para que se atribua o canto superior direito dum polígono para uma localização:
+Rotina para que se atribua a largura dum polígono para uma largura:
+Rotina para que se atribua o x-extent dum polígono para uma largura:
+Rotina para que se atribua o y-extent dum polígono para uma altura:
+Rotina para que se atribua a caixa dum polígono para uma caixa:
+Rotina para que se atribua a base duma linha reta para uma coordenada:
+Rotina para que se atribua a caixa duma linha reta para uma caixa:
+Rotina para que se atribua o centro duma linha reta para uma localização:
+Rotina para que se atribua a coordenada X1 duma linha reta para uma coordenada:
+Rotina para que se atribua o lado direito duma linha reta para uma coordenada:
+Rotina para que se atribua o topo duma linha reta para uma coordenada:
+Rotina para que se atribua o GpRect dum GpImage para um GpRect:
+Rotina para que se atribua a altura dum GpImage para uma altura:
+Rotina para que se atribua a largura dum GpImage para uma largura:
+Rotina para que se atribua a linha de baixo duma caixa para uma linha reta horizontal:
+Rotina para que se atribua o centro inferior duma caixa para uma localização:
+Rotina para que se atribua o centro duma caixa para uma localização:
+\ Rotina para que se atribua o centro inferior duma caixa para uma localização:
+Rotina para que se atribua o centro superior duma caixa para uma localização:
+Rotina para que se atribua a altura duma caixa para uma altura: \ OK
+Rotina para que se atribua a linha reta do lado esquerdo duma caixa para uma linha reta:
+Rotina para que se atribua a canto inferior esquerdo duma caixa para uma localização:
+Rotina para que se atribua o centro esquerdo duma caixa para uma localização:
+Rotina para que se atribua o linha reta do lado direito duma caixa para uma linha reta:
+Rotina para que se atribua o centro direito duma caixa para uma localização:
+Rotina para que se atribua o canto superior direito duma caixa para uma localização:
+Rotina para que se atribua a linha de cima duma caixa para uma linha reta horizontal:
+\Rotina para que se atribua o centro superior duma caixa para uma localização:
+Rotina para que se atribua a largura duma caixa para uma largura:
+Rotina para que se atribua o x-extent duma caixa para uma largura:
+Rotina para que se atribua o y-extent duma caixa para uma altura:
+Rotina para que se atribua a quantidade de caracteres duma string para uma quantidade de caracteres:
