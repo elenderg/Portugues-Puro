@@ -2604,6 +2604,10 @@ Rotina para que se atribua uma fração para uma segunda fração:
   Atribua o numerador desta fração ao numerador desta segunda fração.
   Atribua o denominador desta fração ao denominador desta segunda fração.
 
+Rotina para que se atribua um número uma proporção para uma segunda proporção:
+  Atribua a proporção para a segunda proporção.
+  Adicione o número para a segunda proporção.
+
 Rotina para que se atribua uma fração para uma string;
 Rotina para que se converta uma fração para uma string:
   Limpe a string.
