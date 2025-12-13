@@ -1,0 +1,66 @@
+NPP_SAVE
+
+// -----------------------------------------------------------------------------
+// Habilita console local apenas para captura de saída
+// -----------------------------------------------------------------------------
+npp_console local v+
+
+// -----------------------------------------------------------------------------
+// Obtém data e hora em formato estável: YYYYMMDDhhmmss
+// -----------------------------------------------------------------------------
+cmd /c wmic os get localdatetime /value
+set local DATETIME = $(OUTPUTL)
+
+// Extrai componentes
+set local ANO    ~ substr 0 4  $(DATETIME)
+set local MES    ~ substr 4 2  $(DATETIME)
+set local DIA    ~ substr 6 2  $(DATETIME)
+set local HORA   ~ substr 8 2  $(DATETIME)
+set local MINUTO ~ substr 10 2 $(DATETIME)
+
+// -----------------------------------------------------------------------------
+// Normaliza diretório atual (remove barra final, se existir)
+// -----------------------------------------------------------------------------
+set local DIR = $(CURRENT_DIRECTORY)
+set local LAST_CHAR ~ substr -1 1 $(DIR)
+
+if "$(LAST_CHAR)" == "\" then
+  set local DIR ~ substr 0 -1 $(DIR)
+else if "$(LAST_CHAR)" == "/" then
+  set local DIR ~ substr 0 -1 $(DIR)
+endif
+
+// -----------------------------------------------------------------------------
+// Extrai apenas o nome da pasta atual
+// -----------------------------------------------------------------------------
+set local POS_BACK  ~ strrfind "$(DIR)" \
+set local POS_SLASH ~ strrfind "$(DIR)" /
+
+if $(POS_BACK) > $(POS_SLASH) then
+  set local START ~ $(POS_BACK) + 1
+else
+  set local START ~ $(POS_SLASH) + 1
+endif
+
+set local NOME_DA_PASTA ~ substr $(START) - $(DIR)
+
+// -----------------------------------------------------------------------------
+// Desativa console local antes da compilação
+// -----------------------------------------------------------------------------
+npp_console local -
+
+// -----------------------------------------------------------------------------
+// Compila o projeto
+// -----------------------------------------------------------------------------
+C:\compilador.exe $(CURRENT_DIRECTORY)
+
+// -----------------------------------------------------------------------------
+// Renomeia o executável com timestamp
+// -----------------------------------------------------------------------------
+cmd /c ren "$(CURRENT_DIRECTORY)\$(NOME_DA_PASTA).exe" ^
+  "COMPILADOR-$(DIA)-$(MES)-$(ANO)-$(HORA)-$(MINUTO).exe"
+
+// -----------------------------------------------------------------------------
+// Execução opcional
+// -----------------------------------------------------------------------------
+// "$(CURRENT_DIRECTORY)\COMPILADOR-$(DIA)-$(MES)-$(ANO)-$(HORA)-$(MINUTO).exe"
