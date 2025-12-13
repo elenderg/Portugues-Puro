@@ -1341,20 +1341,20 @@ Função para que se determine se uma string é algum artigo indefinido:
 Função para que se determine se uma string é algum pronome demonstrativo abrangente:
   Se a string for "esse", diga sim.
   Se a string for "essa", diga sim.
-  Se a string for "aquele", diga sim.
-  Se a string for "aquela", diga sim.
   Se a string for "esses", diga sim.
   Se a string for "essas", diga sim.
-  Se a string for "aqueles", diga sim.
-  Se a string for "aquelas", diga sim.
-  Se a string for "certo", diga sim.
-  Se a string for "certa", diga sim.
-  Se a string for "certos", diga sim.
-  Se a string for "certas", diga sim.
-  Se a string for "determinado", diga sim.
-  Se a string for "determinada", diga sim.
-  Se a string for "determinados", diga sim.
-  Se a string for "determinadas", diga sim.
+  \ Se a string for "aquele", diga sim.
+  \ Se a string for "aquela", diga sim.
+  \ Se a string for "aqueles", diga sim.
+  \ Se a string for "aquelas", diga sim.
+  \ Se a string for "certo", diga sim.
+  \ Se a string for "certa", diga sim.
+  \ Se a string for "certos", diga sim.
+  \ Se a string for "certas", diga sim.
+  \ Se a string for "determinado", diga sim.
+  \ Se a string for "determinada", diga sim.
+  \ Se a string for "determinados", diga sim.
+  \ Se a string for "determinadas", diga sim.
   Diga não.
 
 \ --------------------------------------------------------------------- VALIDAÇÃO DA SINTAXE DOS TIPOS ----------------------------------------------------------------
@@ -2504,8 +2504,8 @@ Rotina para que se examine algum dado complementar para um tipo usando um percor
 Rotina para que se examine algum dado complementar para um tipo usando um percorredor (ponteiros):
   Mova o percorredor (usando diretrizes de compilação).
   Se o segmento inicial deste percorredor não for algum artigo indefinido,
-    Apresente uma mensagem de erro contendo 
-      "Código de Erro #024. Esperava encontrar 'Aponte para UM/UMA'. Encontrado: '" 
+    Apresente uma mensagem de erro contendo \ aponte? 
+      "Código de Erro #024. Esperava encontrar 'para UM/UMA'. Encontrado: '" 
       junto com o segmento inicial deste percorredor seguido de "'." junto com o texto CRLF e o percorredor;
     Retorne.
   Mova o percorredor (usando diretrizes de compilação).
@@ -5974,6 +5974,9 @@ Rotina para que se compile a próxima instrução usando um percorredor (demais clá
   Se o segmento inicial deste percorredor for "Decodifique",
     Compile a próxima instrução usando o percorredor (cláusula de decodificação);
     Retorne.
+  Se o segmento inicial deste percorredor for "Empilhe", \ traduzir para "Empilhe"
+    Compile a próxima instrução usando o percorredor (cláusula de empilhamento);
+    Retorne.
   Se o segmento inicial deste percorredor for "Push", \ traduzir para "Empilhe"
     Compile a próxima instrução usando o percorredor (cláusula de empilhamento);
     Retorne.
@@ -6355,11 +6358,11 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
     Retorne.
   Se a categoria deste termo for "valor literal",
     Apresente a mensagem de erro contendo 
-      "Código de Erro #152. Identificado valor literal na categoria deste termo." 
+      "Código de Erro #152. Encontrado um valor literal na categoria deste termo." 
       junto com o texto CRLF e o percorredor.
   Se a quantidade de caracteres deste tipo deste termo não for 4,
     Apresente a mensagem de erro contendo 
-      "Código de Erro #153. Variável de tamanho diferente de 32 bits." 
+      "Código de Erro #153. Esta ponteiro possui um tamanho diferente de 32 bits." 
       junto com o texto CRLF e o percorredor.
   Se o segmento inicial deste percorredor não for "para",
     Apresente a mensagem de erro contendo 
@@ -6374,6 +6377,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
       "Código de Erro #155. A sintaxe do comando é 'Aponte para a rotina'. Encontrado termo: " 
       junto com o segmento inicial deste percorredor seguido de "." junto com o texto CRLF e o percorredor;
     Retorne.
+  \TODO:  pula o para que se 
   Mova o percorredor (usando diretrizes de compilação).
   Compile uma referência da rotina usando o percorredor.
   Converta a referência da rotina para uma representação interna da rotina.
@@ -6490,8 +6494,8 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
   Mova o percorredor (usando diretrizes de compilação).
 
 Função para que se determine se uma string é algum comando de proteção:
-  Se a string for "isole", diga sim.
-  Se a string for "conserve", diga sim.
+  \Se a string for "isole", diga sim.
+  \Se a string for "conserve", diga sim.
   Se a string for "preserve", diga sim.
   \Se a string for "derive", diga sim.
   Diga não.
