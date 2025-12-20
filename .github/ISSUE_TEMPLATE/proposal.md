@@ -1,6 +1,6 @@
 ---
 name: "Proposta de Mudança de Sintaxe"
-about: 'Proponha sua mudança abaixo'. 
+about: "Proponha sua mudança abaixo.". 
 description: "Proponha uma mudança ou adição de sintaxe na linguagem de programação Português Puro."
 labels: ["melhoria", "sintaxe"]
 ---
