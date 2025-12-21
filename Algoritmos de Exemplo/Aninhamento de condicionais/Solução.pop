@@ -1,0 +1,38 @@
+Rotina para que se estabeleça uma taxa para uma idade e uma renda:
+  Se a idade for menor do que 60,
+    Calcule a taxa para pessoas jovens usando a renda;
+    Retorne.
+  Se a idade estiver entre 60 e 79,
+    Calcule a taxa para pessoas velhas usando a renda;
+    Retorne.
+  Se a renda for menor do que ou igual a 500000,
+    Atribua 0 para a taxa,
+    Retorne.
+  Se a renda estiver entre 500001 e 500000,
+    Atribua 2/1000 para a taxa;
+    Retorne.
+  Atribua 3/1000 para a taxa.
+
+Rotina para que se calcule uma taxa para pessoas jovens usando uma renda:
+  Se a renda for menor do que ou igual a 250000,
+    Atribua 0 para a taxa,
+    Retorne.
+  Se a renda estiver entre 250001 e 500000,
+    Atribua 1/1000 para a taxa;
+    Retorne.
+  Se a renda estiver entre 500001 e 1000000,
+    Atribua 2/1000 para a taxa;
+    Retorne.
+  Atribua 3/1000 para a taxa.
+
+Rotina para que se calcule uma taxa para pessoas velhas usando uma renda:
+  Se a renda for menor do que ou igual a 300000,
+    Atribua 0 para a taxa,
+    Retorne.
+  Se a renda estiver entre 300001 e 500000,
+    Atribua 1/1000 para a taxa;
+    Retorne.
+  Se a renda estiver entre 500001 e 1000000,
+    Atribua 2/1000 para a taxa;
+    Retorne.
+  Atribua 3/1000 para a taxa.

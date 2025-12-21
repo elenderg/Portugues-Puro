@@ -1,0 +1,38 @@
+To get a tax rate for an age and an income:
+  If the age is less than 60,
+    Get the tax rate for young people with the income;
+    Exit.
+  If the age is between 60 and 79,
+    Get the tax rate for old folks with the income;
+    Exit.
+  If the income is less than or equal to 500000,
+    Put 0 into the tax rate,
+    Exit.
+  If the income is between 500001 and 500000,
+    Put 2/1000 into the tax rate;
+    Exit.
+  Put 3/1000 into the tax rate.
+
+To get a tax rate for young people given an income:
+  If the income is less than or equal to 250000,
+    Put 0 into the tax rate,
+    Exit.
+  If the income is between 250001 and 500000,
+    Put 1/1000 into the tax rate;
+    Exit.
+  If the income is between 500001 and 1000000,
+    Put 2/1000 into the tax rate;
+    Exit.
+  Put 3/1000 into the tax rate.
+
+To get a tax rate for old folks given an income:
+  If the income is less than or equal to 300000,
+    Put 0 into the tax rate,
+    Exit.
+  If the income is between 300001 and 500000,
+    Put 1/1000 into the tax rate;
+    Exit.
+  If the income is between 500001 and 1000000,
+    Put 2/1000 into the tax rate;
+    Exit.
+  Put 3/1000 into the tax rate.
