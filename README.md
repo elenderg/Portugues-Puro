@@ -90,20 +90,18 @@ Você pode contribuir de várias formas:
 * Melhorando a documentação
 * Criando exemplos
 
-Antes de contribuir, consulte o guia:
-📄 [https://github.com/elenderg/Portugues-Puro/blob/main/CONTRIBUTING.md](https://github.com/elenderg/Portugues-Puro/blob/main/CONTRIBUTING.md)
+Antes de contribuir, consulte o 📄 [guia](https://github.com/elenderg/Portugues-Puro/blob/main/CONTRIBUTING.md)
 
 O projeto busca ser **acolhedor para novos contribuidores**, inclusive aqueles que estão aprendendo sobre compiladores ou linguagens.
 
 ## 🆘 Suporte
 
-Dúvidas, sugestões ou problemas podem ser enviados através das *issues*:
-👉 [https://github.com/elenderg/Portugues-Puro/issues/new/choose](https://github.com/elenderg/Portugues-Puro/issues/new/choose)
+Dúvidas, sugestões ou problemas podem ser enviados através das [issues](https://github.com/elenderg/Portugues-Puro/issues/new/choose)
 
 ## 📜 Código de Conduta
 
 Este projeto segue um código de conduta para garantir um ambiente respeitoso e colaborativo.
-📄 [https://github.com/elenderg/Portugues-Puro/blob/main/CODE_OF_CONDUCT.md](https://github.com/elenderg/Portugues-Puro/blob/main/CODE_OF_CONDUCT.md)
+📄 [Código de Conduta](https://github.com/elenderg/Portugues-Puro/blob/main/CODE_OF_CONDUCT.md)
 
 ## 👤 Autor
 [Elender Góis Gallas](https://www.linkedin.com/in/elender/)
