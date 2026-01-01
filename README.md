@@ -2,48 +2,127 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![Contribuidores](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contribuidores-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-Repositório Oficial do Compilador da Linguagem de Programação Português Puro.
+Repositório oficial do **Compilador da Linguagem de Programação Português Puro**.
 
-[Documentação Oficial da Linguagem](https://portugues-puro.gitbook.io/documentacao/)
+Português Puro é uma linguagem projetada com foco em **clareza, legibilidade e estrutura explícita**, buscando tornar o código compreensível mesmo para quem está dando os primeiros passos em programação — sem abrir mão de conceitos reais de linguagens compiladas.
 
-## Instalação
-Não é necessário qualquer instalação, bastando invocar o compilador através da linha de comando.
+📘 **Documentação oficial da linguagem:**
+[https://portugues-puro.gitbook.io/documentacao/](https://portugues-puro.gitbook.io/documentacao/)
 
-## Uso
-Para compilar um projeto, abra o seu terminal seguindo o modelo constante no exemplo abaixo:
+---
+
+## 🎯 Objetivo do projeto
+
+Este projeto existe para:
+
+* Oferecer uma linguagem **didática**, mas **real**, não um “pseudo-código”
+* Incentivar boas práticas como:
+
+  * Código legível
+  * Fluxo de controle explícito
+  * Estrutura sequencial clara
+* Servir como base para estudos de:
+
+  * Compiladores
+  * Design de linguagens
+  * Ferramentas de desenvolvimento
+
+O compilador é desenvolvido com a preocupação de ser **compreensível e aperfeiçoável**, inclusive por novos contribuidores.
+
+---
+
+## 📦 Instalação
+Não é necessário qualquer processo de instalação.
+
+O compilador é distribuído como um executável e pode ser invocado diretamente pela linha de comando.
+
+## ▶️ Uso
+Para compilar um projeto, abra o terminal e execute o compilador informando o diretório do projeto:
 
 ```
 C:\path_do_compilador.exe C:\path_do_projeto_a_ser_compilado\
 ```
 ![Captura de tela expondo o processo de compilação](https://raw.githubusercontent.com/elenderg/Portugues-Puro/refs/heads/main/Algoritmos%20de%20Exemplo/Processo%20de%20Compilacao.png)
 
-Lembre-se de substuir `C:\path_do_compilador.exe` pelo caminho para o executável do seu compilador e `C:\path_do_projeto_a_ser_compilado\` pelo caminho para o diretório do projeto que você deseja compilar.  
-Caso esteja utilizando o Windows 8 e anteriores, certifique-se de rodar o prompt de comando com permissões de Administrador, caso contrário o codepage não poderá ser definido corretamente e caracteres estranhos aparecerão nas mensagens de erro.
-Caso você esteja utilizando o Powershell, certifique-se de ajustar corretamente o PATH do projeto ao invocar o compilador.
+Substitua:
+
+* `C:\path_do_compilador.exe` pelo caminho completo do executável do compilador
+* `C:\path_do_projeto_a_ser_compilado\` pelo diretório do projeto a ser compilado
+ 
+### Observações sobre o ambiente
+
+* **Windows 8 ou anterior**:
+  Execute o prompt de comando como Administrador. Caso contrário, o *codepage* não poderá ser definido corretamente, resultando em caracteres incorretos nas mensagens de erro.
+
+* **PowerShell**:
+  Certifique-se de ajustar corretamente o `PATH` ao invocar o compilador.
+
+Essas limitações são conhecidas e documentadas para evitar confusão durante o uso inicial.
 
 
-## Observações
-Certifique-se de incluir o arquivo que contém a biblioteca padrão no mesmo diretório que o projeto a ser compilado. Assim como em outras linguagens de programação, é necessário incluir a biblioteca padrão para fazer uso completo das funcionalidades oferecidas pelo compilador.
+## 📌 Outras Observações importantes
 
-## Contribuição
-Se você deseja contribuir para o desenvolvimento do Compilador, fique à vontade para reportar problemas (issues) e enviar suas contribuições (pull requests) neste repositório. Estamos ansiosos para receber seu feedback e [colaboração!](https://github.com/elenderg/Portugues-Puro/blob/main/CONTRIBUTING.md)  
+Assim como em outras linguagens de programação, o projeto a ser compilado deve incluir a **biblioteca padrão**.
 
-## Suporte
-Envie suas dúvidas [aqui](https://github.com/elenderg/Portugues-Puro/issues/new/choose)
+Certifique-se de que o arquivo que contém a biblioteca padrão esteja no **mesmo diretório** do projeto.
+Sem isso, algumas funcionalidades da linguagem não estarão disponíveis.
 
-## Código de Conduta
-Disponível [aqui](https://github.com/elenderg/Portugues-Puro/blob/main/CODE_OF_CONDUCT.md  )
+Essa decisão foi tomada para manter o modelo de compilação simples e explícito, especialmente para fins educacionais.
 
-## Autor
+---
+
+## 🧱 Organização e filosofia do código
+
+O código do compilador segue alguns princípios básicos:
+
+* Estrutura clara e previsível
+* Evitar “mágica” implícita
+* Preferir código legível a soluções excessivamente compactas
+* Separação explícita de responsabilidades
+
+O objetivo não é apenas **funcionar**, mas também **ser compreendido**.
+
+Novos contribuidores são incentivados a ler o código com calma e questionar decisões — muitas delas são resultado de trade-offs conscientes.
+
+---
+
+## 🤝 Contribuição
+
+Contribuições são muito bem-vindas.
+
+Você pode contribuir de várias formas:
+
+* Reportando problemas (issues)
+* Sugerindo melhorias
+* Enviando *pull requests*
+* Melhorando a documentação
+* Criando exemplos
+
+Antes de contribuir, consulte o guia:
+📄 [https://github.com/elenderg/Portugues-Puro/blob/main/CONTRIBUTING.md](https://github.com/elenderg/Portugues-Puro/blob/main/CONTRIBUTING.md)
+
+O projeto busca ser **acolhedor para novos contribuidores**, inclusive aqueles que estão aprendendo sobre compiladores ou linguagens.
+
+## 🆘 Suporte
+
+Dúvidas, sugestões ou problemas podem ser enviados através das *issues*:
+👉 [https://github.com/elenderg/Portugues-Puro/issues/new/choose](https://github.com/elenderg/Portugues-Puro/issues/new/choose)
+
+## 📜 Código de Conduta
+
+Este projeto segue um código de conduta para garantir um ambiente respeitoso e colaborativo.
+📄 [https://github.com/elenderg/Portugues-Puro/blob/main/CODE_OF_CONDUCT.md](https://github.com/elenderg/Portugues-Puro/blob/main/CODE_OF_CONDUCT.md)
+
+## 👤 Autor
 [Elender Góis Gallas](https://www.linkedin.com/in/elender/)
 
-## Licença
+## 📄 Licença
 
 Este projeto está licenciado sob a [Unlicense](https://github.com/elenderg/Portugues-Puro/blob/main/LICENSE) - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
 
 <hr>
 
-## Contribuidores ✨
+## ✨ Contribuidores
 
 Agradecemos às seguintes pessoas pela colaboração direta e indireta neste projeto:  
 
