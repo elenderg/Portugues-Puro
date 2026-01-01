@@ -9,8 +9,6 @@ Português Puro é uma linguagem projetada com foco em **clareza, legibilidade e
 📘 **Documentação oficial da linguagem:**
 [https://portugues-puro.gitbook.io/documentacao/](https://portugues-puro.gitbook.io/documentacao/)
 
----
-
 ## 🎯 Objetivo do projeto
 
 Este projeto existe para:
@@ -28,8 +26,6 @@ Este projeto existe para:
   * Ferramentas de desenvolvimento
 
 O compilador é desenvolvido com a preocupação de ser **compreensível e aperfeiçoável**, inclusive por novos contribuidores.
-
----
 
 ## 📦 Instalação
 Não é necessário qualquer processo de instalação.
@@ -69,8 +65,6 @@ Sem isso, algumas funcionalidades da linguagem não estarão disponíveis.
 
 Essa decisão foi tomada para manter o modelo de compilação simples e explícito, especialmente para fins educacionais.
 
----
-
 ## 🧱 Organização e filosofia do código
 
 O código do compilador segue alguns princípios básicos:
@@ -83,8 +77,6 @@ O código do compilador segue alguns princípios básicos:
 O objetivo não é apenas **funcionar**, mas também **ser compreendido**.
 
 Novos contribuidores são incentivados a ler o código com calma e questionar decisões — muitas delas são resultado de trade-offs conscientes.
-
----
 
 ## 🤝 Contribuição
 
@@ -120,8 +112,6 @@ Este projeto segue um código de conduta para garantir um ambiente respeitoso e 
 
 Este projeto está licenciado sob a [Unlicense](https://github.com/elenderg/Portugues-Puro/blob/main/LICENSE) - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
 
-<hr>
-
 ## ✨ Contribuidores
 
 Agradecemos às seguintes pessoas pela colaboração direta e indireta neste projeto:  
@@ -134,8 +124,6 @@ Dan Rzeppa
 [Élisson Góis Gallas](https://github.com/elisson-zlq3x)  
 [Mike Gonta](https://github.com/mikegonta)  
 
-
----
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
