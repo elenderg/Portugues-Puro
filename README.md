@@ -90,7 +90,7 @@ Você pode contribuir de várias formas:
 * Melhorando a documentação
 * Criando exemplos
 
-Antes de contribuir, consulte o 📄 [guia](https://github.com/elenderg/Portugues-Puro/blob/main/CONTRIBUTING.md)
+Antes de contribuir, consulte o [Guia de Contribuição](https://github.com/elenderg/Portugues-Puro/blob/main/CONTRIBUTING.md)
 
 O projeto busca ser **acolhedor para novos contribuidores**, inclusive aqueles que estão aprendendo sobre compiladores ou linguagens.
 
@@ -100,7 +100,7 @@ Dúvidas, sugestões ou problemas podem ser enviados através das [issues](https
 
 ## 📜 Código de Conduta
 
-Este projeto segue um código de conduta para garantir um ambiente respeitoso e colaborativo.
+Este projeto segue um código de conduta para garantir um ambiente respeitoso e colaborativo.  
 📄 [Código de Conduta](https://github.com/elenderg/Portugues-Puro/blob/main/CODE_OF_CONDUCT.md)
 
 ## 👤 Autor
