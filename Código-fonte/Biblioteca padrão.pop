@@ -5289,7 +5289,7 @@ Função para que se determine se um byte é algum dígito:
   Se o byte for maior do que o número nove, diga não.
   Diga sim.
 
-Função para que se determine se um byte é algum letra:
+Função para que se determine se um byte é alguma letra:
   Se o byte estiver entre o 'A' maiúsculo e o Z maiúsculo, diga sim.
   Se o byte estiver entre o 'a' minúsculo e o z minúsculo, diga sim.
   Se o byte for 131 ou 138, diga sim.
