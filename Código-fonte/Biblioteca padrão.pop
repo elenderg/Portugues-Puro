@@ -2604,6 +2604,10 @@ Rotina para que se atribua uma fração para uma segunda fração:
   Atribua o numerador desta fração ao numerador desta segunda fração.
   Atribua o denominador desta fração ao denominador desta segunda fração.
 
+Rotina para que se atribua um número uma proporção para uma fração:
+  Atribua a proporção para a fração.
+  Adicione o número para a fração.
+
 Rotina para que se atribua um número uma proporção para uma segunda proporção:
   Atribua a proporção para a segunda proporção.
   Adicione o número para a segunda proporção.
@@ -11079,7 +11083,7 @@ Rotina para que se atribua uma string sobre a área de transferência do Windows:
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-globallock
     O número identificador [hMem]
     Retornando um ponteiro.
-  \Copie os bytes contidos desde [intervalo inicial] até o [intervalo final] para o [endereço de destino] .
+  \Copie os bytes presentes entre [intervalo inicial] e o [intervalo final] para o [endereço de destino] .
   Copie bytes desde o caractere inicial desta string para o ponteiro pelo quantidade de caracteres desta string.
   Processe "kernel32.dll" "GlobalUnlock" com
   \ Diminui a contagem de bloqueios associada para um objeto de memória que foi alocado com GMEM_MOVEABLE.
