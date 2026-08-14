@@ -7656,7 +7656,7 @@ Rotina para que se finalize o CGI:
 \Rotina para que se finalize as cores:
 
 Rotina para que se finalize o Component Object Model:
-  Processe "ole32.dll" "CoUninitialize". \ Decha a biblioteca COM no thread atual
+  Processe "ole32.dll" "CoUninitialize". \ Fecha a biblioteca COM no thread atual
   \ Descarrega todas as DLLs carregadas pelo thread,
   \ Libera quaisquer outros recursos que o thread mantém e
   \ Força o fechamento de todas as conexões RPC no thread.
