@@ -1,0 +1,8 @@
+{
+    "[pop]": {
+        "files.eol": "\r\n",
+        "editor.tabSize": 2,
+        "editor.mouseWheelZoom": true,
+        "files.autoGuessEncoding": false
+    }
+}
