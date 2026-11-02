@@ -1,0 +1,63 @@
+Um cabeçalho é uma string.
+Um corpo é uma string.
+Uma linha é uma string.
+Uma posição é um número.
+\Um tamanho é um número.
+O tamanho do cabeçalho é um número igual a 8192.
+
+
+Rotina para que se leia um byte desde STDIN:
+  Atribua 0 para um número denominado quantidade.
+  Atribua 0 para um número denominado quantidade de caracteres NULL restantes.
+  Processe "kernel32.dll" "ReadFile" com
+    O número identificador do fluxo de entrada padrão [hFile] e
+    O endereçamento deste byte [lpBuffer] e
+    1 [nNumberOfBytesToRead] e 
+    O endereçamento desta quantidade [lpNumberOfBytesRead] \ O número de bytes lidos ao usar o parâmetro hFile síncrono.
+    e 0 [lpOverlapped = NULL] 
+    Retornando um status de erro.
+  Se o status de erro for 0 [NULL], 
+    Escreva "Erro ao ler do Console." junto com o texto CRLF para STDOUT.
+  Se a quantidade for maior do que 1,
+    Escreva "Quantidade de bytes maior do que o esperado." junto com o texto CRLF para STDOUT.
+
+Rotina para que se leia alguns bytes:
+  Itere.
+    Leia um byte denominado caractere desde STDIN.
+    Se o caractere for o ponto final, pare.
+    Escreva "O byte digitado foi: " junto com o caractere junto com o texto CRLF para STDOUT.
+    \Se o caractere for o ponto final, pare.
+  Reitere.
+
+Rotina para que se execute o programa: 
+  Defina "console" como o tipo da aplicação.
+  Leia alguns bytes.
+  Feche o nosso programa.
+
+Rotina para que se leia um cabecalho retornando uma string:
+  Atribua "" para a string.
+    Atribua "" para uma string denominada últimos caracteres.
+  Atribua 0 para um caractere.
+  Itere.
+    Leia o caractere desde STDIN.
+    Acrescente o caractere no final dessa string.
+    Acrescente o caractere no final desses últimos caracteres.
+    Se a quantidade de caracteres destes últimos caracteres for maior do que 4,
+    Atribua a quantidade de caracteres destes últimos caracteres menos 4 para uma contagem denominada sobra.
+    Remova os bytes iniciais desses últimos caracteres usando a sobra.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
