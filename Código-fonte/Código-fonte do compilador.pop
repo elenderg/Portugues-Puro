@@ -5893,7 +5893,8 @@ Rotina para que se remova alguns termos negativos desde umas unidades semânticas
     Acrescente a unidade semântica para as unidades semânticas.
     Se a string desta unidade semântica for "nothing",
       Inverta o sinalizador;
-      Atribua "something" à string desta unidade semântica; Reitere.
+      Atribua "something" à string desta unidade semântica;
+      Reitere.
     Se a string desta unidade semântica for "nada",
       Inverta o sinalizador;
       Atribua "something" à string desta unidade semântica; 
@@ -6098,7 +6099,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
   Se o segmento inicial deste percorredor não for algum valor hexadecimal literal,
     Apresente uma mensagem de erro contendo 
       "Código de Erro #139. Encontrado '"junto com o segmento inicial deste percorredor 
-      seguido de "'. O compilador esperava encontrar um valor hexadecimal, por exemplo $DEADCODE ou &C0C0FEDE" junto com o texto CRLF e o percorredor;
+      seguido de "'. O compilador esperava encontrar um valor hexadecimal, por exemplo $DEADC0DE ou &C0C0FEDE" junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione um fragmento usando a etiqueta de decodificação.
   Atribua o segmento inicial deste percorredor para um parte da cifra binária.
@@ -6116,14 +6117,14 @@ Rotina para que se compile a próxima instrução usando um percorredor (cláusula d
     "Código de Erro #140. Comando de empilhamento inválido devido a variável '" 
     junto com a frase desta expressão matemática seguido de "' ser inexistente." junto com o texto CRLF e o percorredor;
     Retorne.
-  Se o tipo desta expressão matemática não for valor empilhável,
+  Se o tipo desta expressão matemática não for algum valor empilhável,
     Apresente a mensagem de erro contendo 
-      "Código de Erro #141. Valores do tipo: " junto com o nome deste tipo desta expressão matemática 
+      "Código de Erro #141. Valores do tipo: '" junto com o nome deste tipo desta expressão matemática 
       seguido de "' não podem ser empilhados." junto com o texto CRLF e o percorredor;
     Retorne.
   Adicione um fragmento usando a etiqueta de inserção de valor [na stack] e a variável desta expressão matemática.
 
-Função para que se determine se um tipo é valor empilhável:
+Função para que se determine se um tipo é algum valor empilhável:
   Se o tipo for inexistente, diga não.
   Se a quantidade de caracteres deste tipo for 4, diga sim.
   Se a quantidade de caracteres deste tipo for 2, diga sim.
@@ -6232,10 +6233,10 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
       junto com a frase desta expressão matemática 
       seguido de "' é inexistente." junto com o texto CRLF e o percorredor;
     Retorne.
-  Se o tipo desta expressão matemática não for valor empilhável,
+  Se o tipo desta expressão matemática não for algum valor empilhável,
     Apresente a mensagem de erro contendo 
       "Código de Erro #145. O tipo '" junto com o nome deste tipo desta expressão matemática 
-      seguido de "' da expressão matemática não é um valor empilhável." junto com o texto CRLF e o percorredor;
+      seguido de "' da expressão matemática não é um algum valor empilhável." junto com o texto CRLF e o percorredor;
     Retorne.
   Se o segmento inicial deste percorredor for algum operador de continuidade, 
     Compile a próxima instrução usando o percorredor (palavra-chave 'processe' - cláusula com). \ RECURSÃO
@@ -6260,7 +6261,7 @@ Rotina para que se compile a próxima instrução usando um percorredor retornando 
       "Código de Erro #146. O termo da variável: '" junto com a frase deste termo 
       seguido de "'. aparenta estar vazio." junto com o texto CRLF e o percorredor;
     Retorne.
-  Se o tipo deste termo não for valor empilhável, 
+  Se o tipo deste termo não for algum valor empilhável, 
     Apresente a mensagem de erro contendo 
       "Código de Erro #147. Uma varíavel de 1, 2, ou 4 bytes é necessária na cláusula de devolução." 
       junto com o texto CRLF e o percorredor.
