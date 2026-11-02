@@ -246,7 +246,7 @@ Um contexto é uma lista com
   Uma cor,
   Uma canetinha sob a cor,
   Um número e
-  Uma grossura da canetinha. \ check
+  Um número denominado grossura da canetinha. \ check
 
 Um byte# é um número.
 Um canvas é um hDC. \ hDC = handle to device context
@@ -383,7 +383,7 @@ Uma string singular é uma string.
 
 Uma fração é uma estrutura com
   Um número denominado numerador e
-  Um número denominado denominador, e
+  Um número denominado denominador,
   Um número denominado número de cima sob o numerador e
   Um número denominado número de baixo sob o denominador.
 
@@ -537,7 +537,7 @@ Uma caixa arredondada é uma caixa com
   Uma coordenada denominada coordenada X2,
   Uma coordenada denominada coordenada Y2,
   Uma localização denominada canto superior esquerdo sob a coordenada X1 ,
-  Uma localização denominada canto inferior direito sob a coordenada X2, e
+  Uma localização denominada canto inferior direito sob a coordenada X2 e
   Um raio.
 
 
@@ -565,6 +565,9 @@ Um terminal é uma lista com
   Uma cor denominada cor de entrada e
   Uma string denominada retorno de consulta.
 
+Um intervalo inicial é um número.
+Um intervalo total é um número.
+
 Um temporizador é uma estrutura com
   Uma contagem,
   Uns intervalos iniciais e
@@ -573,16 +576,17 @@ Um temporizador é uma estrutura com
 \Umas vezes é um número. \ TODO: verificar se é necessário. Rotina:  "suavize um polígono umas vezes"
 Um número de porta é um número.
 Um nome de protocolo é uma string.
+Um nome do protocolo é uma string.
 Um nome de host é uma string.
 Um parâmetro de consulta é uma string.
 Um endereço de recurso é uma string.
 
 Uma URL simplificada é uma estrutura com
-  Um nome do protocolo,\ lpszScheme? -> exemplo: http / ftp / https / etc. e as dwFlags?
-  Um nome de host, \ lpszHostName ?  -> exemplo: www.google.com ou mail.stackoverflow.com
-  Um endereço de recurso, \ lpszUrlPath? -> exemplo: index.html ou /css/style.css ou questions/SubmitQuestion.aspx
-  Um parâmetro de consulta, \ lpszExtraInfo? -> exemplo: ?useLiveData=1&internal=0
-  Um número de porta. \ nPort? -> números de porta ocupam (geralmente) 16 bits
+  Uma string denominada nome do protocolo,\ lpszScheme? -> exemplo: http / ftp / https / etc. e as dwFlags?
+  Um string denominada nome de host, \ lpszHostName ?  -> exemplo: www.google.com ou mail.stackoverflow.com
+  Um string denominada endereço de recurso, \ lpszUrlPath? -> exemplo: index.html ou /css/style.css ou questions/SubmitQuestion.aspx
+  Um string denominada parâmetro de consulta, \ lpszExtraInfo? -> exemplo: ?useLiveData=1&internal=0
+  Um número denominado número de porta. \ nPort? -> números de porta ocupam (geralmente) 16 bits
 
 Um série de vértices é um ponteiro [que aponta] para uma série de vértices conjunto.
 Uma quantidade de vértices é um número.
@@ -722,8 +726,8 @@ Um pdf state é uma estrutura com
   Um conteúdos atuais (referência),
   Um objeto pdf denominado página atual (referência),
   Uma altura atual,
-  Uma cor da borda atual,
-  Uma cor de preenchimento atual,
+  Uma cor denominada cor da borda atual,
+  Uma cor denominada cor de preenchimento atual,
   Um catálogo denominado catálogo de fontes.
 
 [API WIN32]
@@ -1477,7 +1481,6 @@ A contagem total é um número igual a 0.
 O sinalizador de ignição é um sinalizador igual a 1.
 O sinal de desligamento é um sinalizador igual a 0.
 
-A Bíblia é uma lista com uns versículos.
 As alternativas são umas alternativas.
 O contexto é um contexto.
 A pilha de contextos é [composta de] uns contextos.
@@ -1486,6 +1489,7 @@ O console é um console.
 
 O contexto do dispositivo atual é um canvas.
 
+A Bíblia é uma lista com uns versículos.
 O evento atual é um evento.
 A fonte padrão é uma fonte.
 
@@ -3653,7 +3657,7 @@ Rotina para que se limpe umas listas:
   Esvazie a lista final destas listas.
 
 Rotina para que se limpe uma word:
-  Atribua 0 ao word.
+  Atribua 0 para a word.
 
 Rotina para que se feche um arquivo:
   Processe "kernel32.dll" "CloseHandle" com
@@ -3911,7 +3915,7 @@ Rotina para que se converta uma fonte para um número da fonte:
   Processe "gdi32.dll" "CreateFontA" com
   \ Cria uma fonte lógica com as características especificadas.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-createfonta
-   - A altura desta fonte vezes 3 dividido por 4 [cHeight]
+   - A altura desta fonte vezes 3 dividido por 4 [cHeight] \ × ÷
     e 0 [cWidth]
     e 0 [cEscapement]
     e 0 [cOrientation]
@@ -5015,7 +5019,7 @@ Rotina para que se crie uma série de vértices usando uma contagem:
   Preserve a contagem.
   Aloque memória para a série de vértices.
   Atribua a contagem à quantidade de vértices desta série de vértices.
-  Multiplique a contagem pela magnitude dum localização.
+  Multiplique a contagem pela magnitude duma localização.
   Associe o ponteiro da localização desta série de vértices usando a contagem.
 
 Rotina para que se crie uma série de vértices usando uns vértices:
@@ -6492,16 +6496,13 @@ Função para que se determine se o usuário clicou em umas alternativas:
   Se a alternativa não puder ser encontrada, diga não.
   Diga sim.
 
+Função para que se determine se um ponteiro está preenchido;
+Função para que se determine se um ponteiro é localizável;
+Função para que se determine se podemos encontrar um ponteiro;
+Função para que se determine se we could encontre um ponteiro;
+Função para que se determine se we did encontre um ponteiro;
 Função para que se determine se we pode encontre um ponteiro:
   \ deveria ser "can" not "ca", compilador bug
-  Se o ponteiro for inexistente, diga não.
-  Diga sim.
-
-Função para que se determine se we could encontre um ponteiro:
-  Se o ponteiro for inexistente, diga não.
-  Diga sim.
-
-Função para que se determine se we did encontre um ponteiro:
   Se o ponteiro for inexistente, diga não.
   Diga sim.
 
@@ -9537,7 +9538,7 @@ Rotina para que se crie uma figura geométrica usando uma string e um centro loca
   Ignore os caracteres ignoráveis no início no subtexto.
   Se a quantidade de caracteres deste subtexto for menor do que 2, retorne.
   Atribua o conteúdo deste caractere inicial deste subtexto para um byte.
-  Atribua o byte menos o 'a' minúsculo ao y dum localização.
+  Atribua o byte menos o 'a' minúsculo à coordenada Y duma localização.
   Adicione 1 para o caractere inicial deste subtexto.
   Atribua o conteúdo deste caractere inicial deste subtexto ao byte.
   Atribua o byte menos o 'a' minúsculo à coordenada X desta localização.
@@ -9623,12 +9624,12 @@ Rotina para que se faça uma localização com uma coordenada X e uma coordenada Y:
 Rotina para que se recue as linhas de texto selecionadas em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
   Itere.
-  Obtenha uma linha de texto desde as linhas de texto desta caixa de texto.
-  Se a linha de texto for inexistente, retorne.
-  Se a linha de texto na caixa de texto não estiver selecionado, reitere.
-  Se a linha de texto estiver em branco, reitere.
-  Anteponha o caractere de espaço para a string desta linha de texto.
-  Anteponha o caractere de espaço para a string desta linha de texto.
+    Obtenha uma linha de texto desde as linhas de texto desta caixa de texto.
+    Se a linha de texto for inexistente, retorne.
+    Se a linha de texto na caixa de texto não estiver selecionado, reitere.
+    Se a linha de texto estiver em branco, reitere.
+    Anteponha o caractere de espaço para a string desta linha de texto.
+    Anteponha o caractere de espaço para a string desta linha de texto.
   Reitere.
 
 \Rotina para que se catalogue uma lista usando uma string e um catálogo;
@@ -10266,12 +10267,12 @@ Rotina para que se carregue o dicionário léxico usando um trecho:
   Reitere.
 
 Rotina para que se carregue o dicionário léxico usando um endereço completo:
-  Obtenha um item desde o endereço completo.
-  Se o item não for encontrado, retorne.
-  Se a categoria deste item não for "arquivo", reitere.
-  Leia o endereço completo deste item para um trecho.
-  Se o erro do fluxo de entrada/saída não estiver em branco, reitere.
-  Carregue o dicionário léxico usando o trecho.
+    Obtenha um item desde o endereço completo.
+    Se o item não for encontrado, retorne.
+    Se a categoria deste item não for "arquivo", reitere.
+    Leia o endereço completo deste item para um trecho.
+    Se o erro do fluxo de entrada/saída não estiver em branco, reitere.
+    Carregue o dicionário léxico usando o trecho.
   Reitere.
 
 Rotina para que se localize uma caixa usando um par de números:
@@ -12568,9 +12569,9 @@ Rotina para que se suavize um polígono:
   Destrua o último vértice deste polígono usando o polígono.
 
 Rotina para que se suavize um polígono umas vezes: 
-  Preserve o vezes.
+  Preserve as vezes.
   Itere.
-    Se o vezes for 0, retorne.
+    Se as vezes forem 0, retorne.
     Suavize o polígono.
     Subtraia 1 desde as vezes.
   Reitere.
