@@ -148,13 +148,15 @@ Um resto é um número.
 Um quociente é um número.
 Uma razão de escala é uma proporção. \ usado em formas geométricas
 Um fator de escala é uma fração. \ usado em caixas de texto
-Um raio é [composto de] uns twips.
+Um raio é uns twips.
 
 Um número aleatório é um número.
 Um par de números racionais é um par de números fracionários.
 Um múltiplo é um número.
 Uma cópia é um número.
 Um intervalo é um número.
+
+Umas linhas de texto selecionadas são uma linha de texto.
 
 Uma caixa de texto é uma lista com
   Uma caixa,
@@ -604,8 +606,8 @@ Um vértice é uma lista com
 
 Um arquivo de som é um endereço completo.
 Um wave é um texto hexadecimal.
-Uma largura é [composta de] uns twips.
-
+Uma largura é uns twips.
+Uma largura inicial é uma largura.
 [FONTES TIPOGRÁFICAS]
 
 Um POutlineTextmetric é um ponteiro [que aponta] para uma [estrutura] OutlineTextmetric.
