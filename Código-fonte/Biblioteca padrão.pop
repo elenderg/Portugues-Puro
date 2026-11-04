@@ -78,6 +78,14 @@ Um par de números é uma estrutura com
   Um número denominado número X e
   Um número denominado número Y.
 
+Uma coordenada X1 é uma coordenada.
+Uma coordenada X2 é uma coordenada.
+Uma coordenada Y1 é uma coordenada.
+Uma coordenada Y2 é uma coordenada.
+
+Uma lista anterior é uma lista.
+Uma lista posterior é uma lista.
+
 Uma caixa é uma estrutura com
   Uma coordenada denominada coordenada X1, [left]
   Uma coordenada denominada coordenada Y1, [top]
