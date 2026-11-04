@@ -473,6 +473,9 @@ Uma linha reta é uma estrutura com \ linha, traço, risco, traçado, listra
   Uma localização inicial e
   Uma localização final.
 
+Uma linha reta vertical é uma linha reta.
+Uma linha reta horizontal é uma linha reta.
+
 Um margem é um número.
 Um mask é um texto hexadecimal.
 Um offset é um número.
