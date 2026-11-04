@@ -1685,6 +1685,7 @@ Função para que se determine se um percorredor está sobre alguma preposição:
   Se o subtexto for "via", diga sim.
   Se o subtexto for "voltada", diga sim.
   Se o subtexto for "voltado", diga sim.
+  Se o subtexto for "limitando-o", diga sim.
   Diga não.
 
 Função para que se determine se uma string é algum qualificador:
@@ -8116,6 +8117,7 @@ Função para que se determine se uma string é alguma preposição:
   Se a string for "via", diga sim.
   Se a string for "voltada", diga sim.
   Se a string for "voltado", diga sim.
+  Se a string for "limitando-o", diga sim.
   Diga não.
 
 Função para que se determine se uma string é algum possessivo reverso:
