@@ -416,7 +416,8 @@ Um número identificador é um número.
 Um hBitMap é um número identificador.
 Um hBrush é um número identificador.
 Um hDC é um número identificador.
-Uma orientação é [composta de] uns pontos osmosianos.
+Uma orientação é uns pontos osmosianos.
+Uma orientação aleatória é uma orientação.
 A contagem do heap é um número.
 O endereço heap é um ponteiro.
 Um altura é [composta de] uns twips.
