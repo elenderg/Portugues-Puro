@@ -549,7 +549,8 @@ Um região da tela é um par de números com
 Uma caixa de seleção é uma caixa.
 Um remetente é uma string.
 Um folha é uma caixa.
-Um tamanho é[composto de] uns twips.
+Um tamanho é uns twips.
+Um tamanho UPM é um tamanho.
 Umas vezes é um número.
 Um servidor SMTP é uma string.
 Um soquete é um ponteiro.
