@@ -8189,7 +8189,7 @@ Rotina para que se obtenha um número de coluna usando uma linha de texto e uma l
     Retorne.
   \ only happens sobre última linha de texto da caixa de texto
   Crie o número da fonte desse contexto de dispositivo de memória usando a fonte desta caixa de texto.
-  Obtenha uma largura inicial e um subtexto usando a linha de texto e a localização e a caixa de texto (para obter um número de coluna usando uma linha de texto").
+  Obtenha uma largura inicial e um subtexto usando a linha de texto e a localização e a caixa de texto (para obter um número de coluna usando uma linha de texto).
   Itere.
     Se o caractere final deste subtexto é o caractere final desta string desta linha de texto, pare.
     Obtenha uma largura usando o subtexto e o contexto de dispositivo de memória.
@@ -8719,7 +8719,7 @@ Rotina para que se obtenha uma localização usando um posicionamento e uma caixa 
   Obtenha um deslocamento de coordenadas usando a working string desta linha de texto e a caixa e a fonte desta caixa de texto e o alinhamento desta caixa de texto.
   Adicione o número X deste deslocamento de coordenadas para a coordenada X desta localização.
 
-Rotina para que se obtenha uma largura inicial e um subtexto usando uma linha de texto e uma localização e uma caixa de texto (para obter um número de coluna usando uma linha de texto"):
+Rotina para que se obtenha uma largura inicial e um subtexto usando uma linha de texto e uma localização e uma caixa de texto (para obter um número de coluna usando uma linha de texto):
   Limpe a largura inicial.
   Limpe o subtexto.
   Se a caixa de texto for inexistente, retorne.
