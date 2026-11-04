@@ -3856,7 +3856,7 @@ Rotina para que se converta um código da cor para uma cor:
   \ Convert RGB p/ HSL
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/shlwapi/nf-shlwapi-colorrgbtohls
     O código da cor e [clrRGB]
-    O endereçamento dum word [*pwHue]
+    O endereçamento duma word [*pwHue]
     e O endereçamento duma segunda word [*pwLuminance]
     e O endereçamento dum terceiro word.[*pwSaturation]
   Atribua a word à matiz desta cor.
@@ -4080,7 +4080,7 @@ Rotina para que se converta um número para um texto hexadecimal:
 
 Rotina para que se converta um ponteiro para uma cifra hexadecimal;
 Rotina para que se converta um número para uma cifra hexadecimal:
-  Subdivida o número em um word e uma segunda word.
+  Subdivida o número em uma word e uma segunda word.
   Converta a word para a cifra hexadecimal.
   Converta a segunda word para uma segunda cifra hexadecimal.
   Acrescente a segunda cifra hexadecimal para a cifra hexadecimal.
@@ -4310,7 +4310,7 @@ Rotina para que se converta uma URL para uma URL simplificada:
   Converta o lpszExtraInfo destes URL_COMPONENTS e o dwExtraInfoLength destes URL_COMPONENTS para a parâmetro de consulta desta URL simplificada.
   Atribua o nPort destes URL_COMPONENTS ao número de porta desta URL simplificada.
 
-Rotina para que se converta um word para uma cifra hexadecimal:
+Rotina para que se converta uma word para uma cifra hexadecimal:
   Subdivida a word em um byte e um segundo byte.
   Converta o byte para a cifra hexadecimal.
   Converta o segundo byte para uma segunda cifra hexadecimal.
@@ -5754,7 +5754,7 @@ Função para que se determine se uma tecla está para baixo:
   \Recupera o status da tecla virtual especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getkeystate
     A tecla [nVirtKey]
-  Retornando um word.
+  Retornando uma word.
   Atribua a word para um número.
   Se o número for menor do que 0, diga sim.
   Diga não.
@@ -5764,7 +5764,7 @@ Função para que se determine se uma tecla está alternada;
 Função para que se determine se uma tecla está ativada:
   Processe "user32.dll" "GetKeyState" com
     A tecla [nVirtKey]
-  Retornando um word.
+  Retornando uma word.
   Atribua a word para um número.
   Conjuncione logicamente o número com 1.
   Se o número for 1, diga sim.
@@ -10988,8 +10988,8 @@ Rotina para que se atribua a used contagem de recipientes dum catálogo para uma 
     Adicione 1 para a contagem.
   Reitere.
 
-Rotina para que se atribua um número para um word big-endian unsigned:
-  Atribua o número para um word.
+Rotina para que se atribua um número para uma word big-endian unsigned:
+  Atribua o número para uma word.
   Atribua a word ao word big-endian unsigned.
 
 Rotina para que se atribua um número para uma string;
@@ -12707,7 +12707,7 @@ Rotina para que se subdivida umas listas em umas listas anteriores e umas listas
   Atribua a lista final destas listas à lista final destas listas posteriores.
   Limpe as listas.
 
-Rotina para que se subdivida um word em um byte e um segundo byte:
+Rotina para que se subdivida uma word em um byte e um segundo byte:
   Preserve a word.
   Desloque a word 8 bits para a direita.
   Atribua a word ao byte.
@@ -21008,8 +21008,8 @@ Rotina para que se desloque um número uns bits para a direita:
   Decodifique $8B8508000000. \ mov eax,[ebp+8] ; -> salva o número (ebp+8) no registrador eax
   Decodifique $D328. \ shr [eax],ecx ; -> efetua o deslocamento do número para a direita (comando shr)
 
-Rotina para que se desloque um word uns bits para a esquerda;
-Rotina para que se desloque um word para a esquerda uns bits:
+Rotina para que se desloque uma word uns bits para a esquerda;
+Rotina para que se desloque uma word para a esquerda uns bits:
   Decodifique $8B8D0C000000. \ mov ecx,[ebp+12] ; -> salva a quantidade de bits informada (ebp+12) no registrador ecx
   Decodifique $8B09. \ mov ecx,[ecx] ; -> ebp-12 é o 2º parâmetro de uma função. ebp+8 é o 1º parâmetro
   Decodifique $8B8508000000. \ mov eax,[ebp+8] \ salva a word (ebp+8) no registrador eax
@@ -21053,24 +21053,24 @@ Rotina para que se atribua uma word para uma segunda word:
   Decodifique $8B9D0C000000. \ mov ebx,[ebp+12] ; -> salva a 2ª word (ebp+12) no registrador ebx
   Decodifique $668903. \ mov [ebx],ax ; -> Atribui o endereço da 1ª word para a 2ª word
 
-Rotina para que se atribua um word para um word big-endian unsigned:
+Rotina para que se atribua uma word para uma word big-endian unsigned:
   Decodifique $8B8508000000. \ mov eax,[ebp+8] ; -> salva a word (ebp+8) no registrador eax
   Decodifique $668B00. \ mov ax,word ptr [eax]  ; -> ebp+8 é o 1º parâmetro da função.
   Decodifique $86E0. \ xchg al,ah ; -> ebp+12 é o 2º parâmetro da função
   Decodifique $8B9D0C000000. \ mov ebx,[ebp+12] ; -> salva a a word big-endian unsigned  (ebp+12) no registrador ebx
   Decodifique $668903. \ mov word ptr [ebx],ax
 
-Rotina para que se atribua um word para um byte:
+Rotina para que se atribua uma word para um byte:
   Decodifique $8B8508000000. \ mov eax,[ebp+8] ; -> salva a word (ebp+8) no registrador eax
   Decodifique $668B00. \ mov ax,[eax] ; -> ebp+8 é o 1º parâmetro da função. ebp+12 é o 2º parâmetro
   Decodifique $8B9D0C000000. \ mov ebx,[ebp+12] ; -> salva o byte (ebp+12) no registrador ebx
   Decodifique $8803. \ mov [ebx],al
 
-Rotina para que se atribua um word para eax:
+Rotina para que se atribua uma word para eax:
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] ; -> salva a word (ebp+8) no registrador ebx
   Decodifique $0FBF03. \ movsx eax,word ptr [ebx]
 
-Rotina para que se atribua um word para um número:
+Rotina para que se atribua uma word para um número:
   Decodifique $8B8508000000. \ mov eax,[ebp+8] ; -> salva a word (ebp+8) no registrador eax
   Decodifique $0FBF00. \ movsx eax,word ptr [eax] ; -> ebp+8 é o 1º parâmetro da função. ebp+12 é o 2º parâmetro
   Decodifique $8B9D0C000000. \ mov ebx,[ebp+12] ; -> salva o número (ebp+12) no registrador ebx
@@ -21135,7 +21135,7 @@ Rotina para que se atribua eax para um número:
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] ; -> salva o número (ebp+8) no registrador ebx
   Decodifique $8903. \ mov [ebx],eax ; -> atribui eax ao endereço de ebx
 
-Rotina para que se atribua eax para um word:
+Rotina para que se atribua eax para uma word:
   Decodifique $8B9D08000000. \ mov ebx,[ebp+8] ; -> salva a word (ebp+8) no registrador ebx
   Decodifique $668903. \ mov [ebx],ax ; -> atribui o ax para o endereço do ebx
 
