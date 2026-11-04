@@ -8118,6 +8118,7 @@ Função para que se determine se uma string é alguma preposição:
   Se a string for "voltada", diga sim.
   Se a string for "voltado", diga sim.
   Se a string for "limitando-o", diga sim.
+  Se a string for "while", diga sim.
   Diga não.
 
 Função para que se determine se uma string é algum possessivo reverso:
