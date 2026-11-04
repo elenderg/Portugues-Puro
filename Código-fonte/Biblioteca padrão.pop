@@ -22,11 +22,11 @@ Um número é uma estrutura com
   Um byte denominado quarto byte, \ 4 bytes = 32 bits
   Uma word de ordem inferior sob o primeiro byte,
   Uma word de ordem superior sob o terceiro byte. \ A word de ordem superior vem depois devido à extremidade (ordenação) dos processadores x86
-
+Um número resultante é um número.
 Um caractere é um byte.
-Um caractere inicial é um ponteiro [que aponta] para um byte. \ TODO: avaliar a possibilidade de substituir "byte" por "caractere".
-Um caractere final é um ponteiro para um byte.
 Um endereço de byte é um ponteiro para um byte.
+Um caractere inicial é um ponteiro para um byte. 
+Um caractere final é um ponteiro para um byte.
 
 Uma string é uma estrutura com
   Um caractere inicial e
@@ -50,12 +50,6 @@ Umas listas são uma estrutura com
   Uma lista denominada lista final.
 
 Uma lista estrutura é uma lista estruturada.
-
-
-
-\Um conjunto de texto é uma lista com uma string.
-
-
 
 Um twip é um número. 
 \ Twips são unidades de medida independentes de tela, 
@@ -2681,16 +2675,16 @@ Rotina para que se multiplique uma fração por um número:
   Multiplique o numerador desta fração pelo número.
   Reduza a fração.
 
- Rotina para que se avance um percorredor até encontrar o próximo espaço;
- Rotina para que se avance um percorredor até o próximo espaço:
+Rotina para que se avance um percorredor até encontrar o próximo espaço;
+Rotina para que se avance um percorredor até o próximo espaço:
   Itere.
     Avance o percorredor.
     Se o conteúdo deste caractere final deste segmento inicial deste percorredor não for o caractere de espaço, reitere.
     Se o conteúdo deste caractere final deste segmento inicial deste percorredor for o caractere de espaço, pare.
   Reitere.
 
- Rotina para que se recue um percorredor até o próximo espaço;
- Rotina para que se recue um percorredor até encontrar o próximo espaço:
+Rotina para que se recue um percorredor até o próximo espaço;
+Rotina para que se recue um percorredor até encontrar o próximo espaço:
   Itere.
     Recue o percorredor.
     Recue o percorredor.
@@ -2858,10 +2852,10 @@ Rotina para que se ajuste espaçamento da fonte usando uma string:
 Rotina para que se alinhe uma caixa de texto usando um alinhamento:
   Atribua o alinhamento ao alinhamento desta caixa de texto.
 
-Rotina para que se retorne um status de erro:
-  Processe "kernel32.dll" "GetLastError" retornando o status de erro.
+\Rotina para que se retorne um status de erro:
+  \Processe "kernel32.dll" "GetLastError" retornando o status de erro.
 
-\ Proposta: Rotina para que se (adicione/insira/acrescente/posponha//etc) um trecho (para/em) [o (fim/final) de]  um arquivo;
+\ Proposta:Rotina para que se (adicione/insira/acrescente/posponha//etc) um trecho (para/em) [o (fim/final) de]  um arquivo;
 \acrescente
 Rotina para que se acrescente um trecho para o final de um arquivo;
 Rotina para que se acrescente um trecho para o fim de um arquivo;
@@ -2943,7 +2937,7 @@ Rotina para que se insira um byte no final de uma string;
 Rotina para que se inclua um byte em uma string;
 Rotina para que se inclua um byte no fim de uma string;
 Rotina para que se inclua um byte no final de uma string:
-  Atribua a quantidade de caracteres desta string para uma quantidade de caracteres armazenados.
+  Atribua a quantidade de caracteres desta string para um número denominado quantidade de caracteres armazenados.
   Reaponte o caractere inicial desta string usando a quantidade de caracteres desta string mais 1.
   Atribua o caractere inicial desta string mais a quantidade de caracteres armazenados ao caractere final desta string.
   Atribua o byte para o conteúdo deste caractere final desta string.
@@ -7908,7 +7902,7 @@ Rotina para que se encontre um conjunto de texto usando uma string e uns conjunt
   Itere.
     Obtenha o conjunto de texto usando os conjuntos de texto.
     Se o conjunto de texto for inexistente, pare.
-    Se a string deste conjunto de texto é a string, pare.
+    Se a string deste conjunto de texto for a string, pare.
   Reitere.
 
 Rotina para que se encontre um subtexto em uma string usando uma segunda string:
@@ -8873,10 +8867,10 @@ Rotina para que se obtenha uma coordenada X usando uma string e uma caixa (rápid
   Atribua a largura menos o abcA menos o abcC ao largura.
   Atribua a largura desta caixa menos a largura menos o abcA à coordenada X.
 
-\ Rotina para que se globalize uma caixa usando um par de números:
+\Rotina para que se globalize uma caixa usando um par de números:
   \ Mova a caixa usando o par de números.
 
-\ Rotina para que se globalize uma localização usando um par de números:
+\Rotina para que se globalize uma localização usando um par de números:
   \ Mova a localização usando o par de números.
 
 Rotina para que se volte para o começo:
@@ -11251,7 +11245,7 @@ Rotina para que se atribua o painel de informações string duma caixa de texto pa
   Acrescente o cursor da coluna desta seleção desta caixa de texto para a string.
 
 \Rotina para que se coloque uma lista no fim de umas listas;
-Rotina para que se acrescente uma lista em umas listas:
+Rotina para que se acrescente uma lista para umas listas:
   Se a lista for inexistente, retorne.
   Atribua a lista final destas listas à lista anterior desta lista.
   Se as listas não estiverem vazias, 
@@ -18262,7 +18256,7 @@ Rotina para que se atribua o centro duma caixa para uma localização:
   Atribua a coordenada Y1 desta caixa mais a coordenada Y2 desta caixa à coordenada Y desta localização.
   Divida a localização por 2.
 
-\ Rotina para que se atribua o centro inferior duma caixa para uma localização:
+\Rotina para que se atribua o centro inferior duma caixa para uma localização:
   \ Atribua a coordenada X deste centro desta caixa à coordenada X desta localização.
   \ Atribua a coordenada Y2 desta caixa à coordenada Y desta localização.
 

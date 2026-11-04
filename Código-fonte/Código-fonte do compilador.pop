@@ -6324,7 +6324,7 @@ Rotina para que se compile a próxima instrução usando um percorredor (palavra-ch
       junto com o texto CRLF e o percorredor.
   Se a quantidade de caracteres deste tipo deste termo não for 4,
     Apresente a mensagem de erro contendo 
-      "Código de Erro #153. Esta ponteiro possui um tamanho diferente de 32 bits." 
+      "Código de Erro #153. Este ponteiro possui um tamanho diferente de 32 bits." 
       junto com o texto CRLF e o percorredor.
   Se o segmento inicial deste percorredor não for "para",
     Apresente a mensagem de erro contendo 
