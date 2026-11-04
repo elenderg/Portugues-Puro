@@ -3618,7 +3618,7 @@ Rotina para que se limpe a tela usando a cor branca:
   \ \ needs special handling
   Exponha tudo.
   Pinte a caixa desta tela com a cor branca e a cor branca.
-  Atualize o tela.
+  Atualize a tela.
   Atribua a caixa desta tela à caixa deste contexto.
 
 Rotina para que se limpe a tela sem atualizá-la:
