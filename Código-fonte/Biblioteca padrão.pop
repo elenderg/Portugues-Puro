@@ -3630,9 +3630,9 @@ Rotina para que se limpe uma seleção:
   Limpe a âncora desta seleção.
   Limpe o cursor de texto desta seleção.
 
-Rotina para que se limpe o stack:
+Rotina para que se limpe a stack:
   \ necessário aprimoramentos
-  Destrua o stack.
+  Destrua a stack.
 
 Rotina para que se limpe uma string:
   Desassocie o caractere inicial desta string.
@@ -6228,7 +6228,7 @@ Função para que se determine se uma localização está dentre uns twips em uma cai
   Se a localização estiver dentre a caixa [recuada], diga sim.
   Diga não.
 
-Função para que se determine se o stack possui just one coisa sobre it:
+Função para que se determine se a stack possui just one coisa sobre it:
   Se a contagem deste stack for 1, diga sim.
   Diga não.
 
@@ -8402,7 +8402,7 @@ Rotina para que se obtenha uma letra desde o alfabeto:
 
 Rotina para que se obtenha um número desde a stack:
   Atribua 0 ao número.
-  Obtenha um elemento da stack desde o stack.
+  Obtenha um elemento da stack desde a stack.
   Se o elemento da stack for inexistente, retorne.
   Converta a string deste elemento da stack para o número.
   Remova o elemento da stack desde a stack.
@@ -8739,14 +8739,14 @@ Rotina para que se obtenha uma largura inicial e um subtexto usando uma linha de
   Reitere.
   Atribua o caractere inicial deste subtexto ao caractere final deste subtexto.
 
-Rotina para que se obtenha uma string desde o stack:
+Rotina para que se obtenha uma string desde a stack:
   Limpe a string.
-  Obtenha um elemento da stack desde o stack.
+  Obtenha um elemento da stack desde a stack.
   Se o elemento da stack for inexistente,
     Atribua "ERRO" à string;
     Retorne.
   Atribua a string deste elemento da stack para a string.
-  Remova o elemento da stack desde o stack.
+  Remova o elemento da stack desde a stack.
   Destrua o elemento da stack.
 
 Rotina para que se obtenha uma string desde a área de transferência do Windows:
@@ -11008,9 +11008,9 @@ Rotina para que se converta um número para uma string:
   Se o número original for menor do que 0, 
     Anteponha o hífen para a string.
 
-Rotina para que se atribua um número sobre o stack:
+Rotina para que se atribua um número sobre a stack:
   Converta o número para um segmento inicial.
-  Atribua o segmento inicial sobre o stack.
+  Atribua o segmento inicial sobre a stack.
 
 Rotina para que se atribua o módulo dum número para um segundo número:
   Atribua o número ao segundo número.
@@ -11281,10 +11281,10 @@ Rotina para que se atribua os intervalos dum temporizador para uns intervalos:
   Subtraia os intervalos iniciais deste temporizador desde os intervalos de temporização.
   Adicione os intervalos de temporização para os intervalos.
 
-Rotina para que se atribua um segmento inicial sobre o stack:
+Rotina para que se atribua um segmento inicial sobre a stack:
   Aloque memória para um elemento da stack.
   Atribua o segmento inicial à string deste elemento da stack.
-  Anteponha o elemento da stack para o stack.
+  Anteponha o elemento da stack para a stack.
 
 Rotina para que se quit;
 Rotina para que se repasse o controle;
@@ -12440,7 +12440,7 @@ Rotina para que se feche nosso programa;
 Rotina para que se feche tudo;
 Rotina para que se desligue:
   Destrua a Bíblia.
-  Destrua o stack.
+  Destrua a stack.
   Destrua o dicionário léxico.
   Destrua o console.
   Destrua o terminal.
