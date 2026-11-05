@@ -6283,7 +6283,7 @@ Função para que se determine se uma string é uma segunda string (comparação de c
 
 Função para que se determine se uma string é igual a uma segunda string;
 Função para que se determine se uma string é uma segunda string:
-  Compare a string para a segunda string usando a quantidade de caracteres desta string e a quantidade de caracteres desta segunda string e o tabela de caracteres minúsculos ascii (iguais somente).
+  Compare a string para a segunda string usando a quantidade de caracteres desta string e a quantidade de caracteres desta segunda string e a tabela de caracteres minúsculos ascii (iguais somente).
 
 Função para que se determine se uma string é uma segunda string ou uma terceira string:
   Se a string for a segunda string, diga sim.
