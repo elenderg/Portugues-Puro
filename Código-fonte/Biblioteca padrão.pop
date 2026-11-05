@@ -2497,7 +2497,6 @@ Rotina para que se obtenha o modo do console:
      \Escreva "Modo do console: " junto com o modo do console junto com o texto CRLF para STDOUT.
 
 Rotina para que se leia um trecho a partir da STDIN;
-Rotina para que se leia um trecho da STDIN;
 Rotina para que se leia um trecho desde a STDIN:
   Atribua 0 para um número denominado lpNumberOfBytesRead.
   Atribua 0 para um número denominado quantidade de caracteres NULL restantes.
@@ -2834,7 +2833,7 @@ Rotina para que se adicione um par de números para um segundo par de números:
 Rotina para que se adicione um quora para um terminal:
   Crie o quora.
   Acrescente o quora para o quora deste terminal.
-  Se o terminal não estiver totalmente preenchido, retorne.
+  Se o terminal não estiver preenchido, retorne.
   Atribua o primeiro quora destes quoras deste terminal para um quora descartável.
   Remova o quora descartável desde os quoras deste terminal.
   Destrua o quora descartável.
