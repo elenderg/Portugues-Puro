@@ -2931,7 +2931,7 @@ Rotina para que se ajuste espaçamento da fonte usando uma string:
     A área de impressão [hDC] 
     e O número
     retornando o status de erro.
-  Se o status de erro for 2147483648 [0x80000000],
+  Se o status de erro for -2147483648 [0x80000000],
       Escreva "Erro. A Função SetTextCharacterExtra (gdi32.dll) reportou falha ao aplicar ajuste final de espaçamento de caracteres. " junto com o texto CRLF para StdOut;
       Retorne.
 
