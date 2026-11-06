@@ -466,7 +466,7 @@ Um lParam é um número.
 Um mínimo múltiplo comum é um número.
 Um input é um evento.
 Um clique é um input.
-Uma quantidade de caracteres é [composta de] uns twips.
+Uma quantidade de caracteres é uns twips.
 Um tamanho da letra é [composto de] uns twips. \ indica a altura real de uma letra maiúscula
 Uma letra é um byte.
 Uma localização inicial é uma localização.
