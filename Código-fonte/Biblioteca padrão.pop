@@ -3172,8 +3172,8 @@ Rotina para que se acrescente uma localização para um polígono:
 Rotina para que se acrescente um texto hexadecimal para um segundo texto hexadecimal;
 Rotina para que se acrescente uma string para uma segunda string:
   Se a string estiver em branco, retorne.
-  Atribua a quantidade de caracteres desta string para um número denominado quantidade de caracteres agrupados.
-  Atribua a quantidade de caracteres desta segunda string para um número denominado quantidade de caracteres armazenados.
+  Atribua a quantidade de caracteres desta string para uma quantidade de caracteres denominada quantidade de caracteres agrupados.
+  Atribua a quantidade de caracteres desta segunda string para uma quantidade de caracteres denominada quantidade de caracteres armazenados.
   Adicione a quantidade de caracteres armazenados para a quantidade de caracteres agrupados.
   Reaponte o caractere inicial desta segunda string usando a quantidade de caracteres agrupados.
   Atribua o caractere inicial desta segunda string mais a quantidade de caracteres armazenados para um ponteiro.
