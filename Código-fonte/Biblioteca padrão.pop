@@ -63,7 +63,7 @@ Um twip é um número.
 \ Para referência, 1 twip é aproximadamente 1,7638 milímetros. 
 \ Assim, 900.000 twips equivalem a 625 polegadas, e 1 centímetro corresponde a 56693/100 twips.
 Um semicírculo é uma figura geométrica.
-Uma coordenada é [composta de] uns twips.
+Uma coordenada é uns twips.
 
 Uma localização é um par de números com
   Uma coordenada denominada coordenada X [left] e
@@ -462,7 +462,8 @@ Um item é uma estrutura com
 Uma key é um número.
 Uma categoria é uma string.
 Um lParam é um número.
-\Uma folha no modo paisagem é uma folha.
+Uma folha é uma caixa.
+\Uma folha modo paisagem é uma folha.
 Um mínimo múltiplo comum é um número.
 Um input é um evento.
 Um clique é um input.
@@ -600,8 +601,8 @@ Um série de vértices conjunto é uma estrutura com
   Uma ponteiro da localização.
 
 Um vértice é uma lista com
-  Uma coordenada X,
-  Uma coordenada Y,
+  Uma coordenada denominada coordenada X,
+  Uma coordenada denominada coordenada Y,
   Uma localização sob a coordenada X.
 
 Um arquivo de som é um endereço completo.
@@ -1472,7 +1473,7 @@ O número pi é uma fração igual a 2147483647/683565275.
 \A proporção dourada é uma fração igual a 1618033988/1000000000.
 
 O tpi [quantidade de twips por polegada] é [composta de] uns twips igual a 1440.
-A quantidade de twips/pixel é [composta de] uns twips.
+A quantidade de twips/pixel é uns twips.
 O ppi [quantidade de pixels por polegada] é [composta de] uns twips.
 
 A direita é uma fração igual a 1/4.
@@ -3500,7 +3501,7 @@ Rotina para que se centralize um polígono em uma caixa (horizontalmente):
 
 Rotina para que se centralize um polígono em uma caixa (verticalmente):
   Se o polígono for inexistente, retorne.
-  Atribua o y deste centro desta caixa menos o y deste centro desta caixa deste polígono para um número.
+  Atribua a coordenada Y deste centro desta caixa menos a coordenada Y deste centro desta caixa deste polígono para um número.
   Arredonde o número usando o múltiplo imediato dessa quantidade de twips/pixel .
   Mova o polígono usando 0 e o número.
 
