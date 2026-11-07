@@ -3685,10 +3685,9 @@ Rotina para que se avise:
   Toque o som de aviso.
 
 Rotina para que se compare uma string para uma segunda string usando uma quantidade de caracteres e uma segunda quantidade de caracteres retornando um número:
-  Compare a string para a segunda string usando a quantidade de caracteres e a segunda quantidade de caracteres e o tabela de caracteres minúsculos ascii retornando o número.
-  \Compare a string para a segunda string usando a quantidade de caracteres e a segunda quantidade de caracteres e o tabela ascii de caracteres minúsculos s/acento  retornando o número.
+  Compare a string para [com] a segunda string usando a quantidade de caracteres e a segunda quantidade de caracteres e a tabela de caracteres minúsculos ascii retornando o número.
 
-Rotina para que se compativelmente handle alguma mensagem com uma janela do programa um mensagem número um wParam e um lParam:
+Rotina para que se compativelmente handle alguma mensagem com uma janela do programa um número denominado mensagem um wParam e um lParam:
   Se a mensagem for 006 [WM_ACTIVATE], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/wm-activate
     Execute algum WM_ACTIVATE com
       O wParam; [Ativada/Desativa a janela]
