@@ -3902,12 +3902,12 @@ Rotina para que se converta um código da cor para uma cor:
   \ Convert RGB p/ HSL
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/shlwapi/nf-shlwapi-colorrgbtohls
     O código da cor e [clrRGB]
-    O endereçamento duma word [*pwHue]
-    e O endereçamento duma segunda word [*pwLuminance]
-    e O endereçamento duma terceira word.[*pwSaturation]
-  Atribua a word à matiz desta cor.
-  Atribua a segunda word à luminosidade desta cor.
-  Atribua a terceira word à saturação desta cor.
+    O endereçamento duma word denominada matiz [*pwHue]
+    e O endereçamento duma word denominada luminosidade [*pwLuminance]
+    e O endereçamento duma word denominada saturação.[*pwSaturation]
+  Atribua a matiz à matiz desta cor.
+  Atribua a luminosidade à luminosidade desta cor.
+  Atribua a saturação à saturação desta cor.
   Redimensione proporcionalmente a matiz desta cor usando 3600/240.
   Delimite a matiz desta cor para 0 e 3600.
   Redimensione proporcionalmente a saturação desta cor usando 1000/240.
