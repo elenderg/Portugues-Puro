@@ -3388,7 +3388,7 @@ Rotina para que se inicie uma folha:
   Inicie a folha tal como uma folha no modo retrato.
 
 Rotina para que se inicie uma folha usando um título de índice remissivo:
-  Inicie uma folha no modo retrato usando o título de índice remissivo.
+  Inicie a folha no modo retrato usando o título de índice remissivo.
 
 \Rotina para que se avance um byte limitando-a para um segundo byte e um terceiro byte;
 Rotina para que se avance um byte limitando-o para um segundo byte e um terceiro byte:
