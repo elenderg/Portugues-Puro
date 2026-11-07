@@ -3553,7 +3553,7 @@ Rotina para que se modifique uma caixa de texto usando uma altura da fonte;
 Rotina para que se altere uma caixa de texto usando uma altura da fonte;
 Rotina para que se mude uma caixa de texto usando uma altura da fonte:
   Se a caixa de texto for inexistente, retorne.
-  Subtraia a margem desta caixa de texto desde a coordenada X desta caixa desta caixa de texto.
+  Subtraia a margem desta caixa de texto desde a coordenada X deste canto superior esquerdo desta caixa desta caixa de texto.
   Atribua a origem desta caixa de texto dividido pela malha quadriculada desta caixa de texto para um par de números. \ calculated field
   Atribua a altura da fonte à altura desta fonte desta caixa de texto.
   Redimensione proporcionalmente a altura desta fonte desta caixa de texto usando o fator de escala desta caixa de texto.
