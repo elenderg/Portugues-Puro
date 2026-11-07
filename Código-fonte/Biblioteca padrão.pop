@@ -14924,6 +14924,8 @@ Rotina para que se post um data string para uma URL e receba um response string:
     Retorne.
   Destrua a requisição WinHTTP.
 
+[OPERAÇÕES COM LETRAS]
+
 Rotina para que se use letras de tamanho grande;
 Rotina para que se escreva com letras grandes;
 Rotina para que se escreva com letras de tamanho grande;
@@ -17954,6 +17956,8 @@ Rotina para que se escolha aleatoriamente um tamanho da letra entre uns twips e 
   Atribua o número aleatório ao tamanho da letra.
   Atribua o número aleatório à tamanho da letra deste contexto.
 
+[OPERAÇÕES COM FORMAS GEOMÉTRICAS]
+
 Rotina para que se atribua o topo de uma caixa para uma linha reta horizontal;
 Rotina para que se atribua o topo edge de uma caixa para uma linha reta horizontal;
 Rotina para que se atribua o topo lado de uma caixa para uma linha reta horizontal:
@@ -18763,6 +18767,8 @@ Rotina para que se inverta horizontalmente um polígono:
     Subtraia a coordenada X1 desta caixa desde a coordenada X deste vértice.
     Atribua a coordenada X2 desta caixa menos a coordenada X deste vértice à coordenada X deste vértice.
   Reitere.
+
+[OPERAÇÕES COM PDF]
 
 \Rotina para que se transcreva a borda do pdf usando uma cor:
 \  Se a cor for a cor da borda atual deste pdf state, retorne.
@@ -19765,6 +19771,8 @@ Rotina para que se end uma folha:
     A área de impressão. [hdc]
   Atribua o contexto de dispositivo de memória ao contexto do dispositivo atual.
   Atribua o quantidade armazenada de twips/pixel à quantidade de twips/pixel .
+
+[OPERAÇÕES COM CORES]
 
 Rotina para que se atribua uma matiz e uma saturação e uma luminosidade para uma cor:
   Atribua a matiz à matiz desta cor. \ -> this.Color.Hue = Hue/
@@ -20892,6 +20900,8 @@ Rotina para que se escolha aleatoriamente uma cor vibrante:
   Escolha aleatoriamente a luminosidade desta cor entre 0 e 1000.
   Atribua a cor à cor deste contexto.
 
+[OPERAÇÕES NUMÉRICAS]
+
 Rotina para que se desassocie um ponteiro:
   Se o ponteiro for inexistente, retorne.
   Processe "kernel32.dll" "HeapFree" com  \ https://learn.microsoft.com/pt-br/windows/win32/api/heapapi/nf-heapapi-heapfree
@@ -20938,6 +20948,8 @@ Rotina para que se subtraia um número desde um par de números:
 Rotina para que se subtraia um par de números desde um segundo par de números:
   Subtraia o número X deste par de números desde o número X deste segundo par de números.
   Subtraia o número Y deste par de números desde o número Y deste segundo par de números.
+
+[ROTINAS COM ASSEMBLY]
 
 \ CONCEITOS GERAIS DE ASSEMBLY:
 \ ANTES DE SE TRABALHAR COM UM VALOR, DEVE-SE MOVÊ-LO PARA UM REGISTRADOR.
