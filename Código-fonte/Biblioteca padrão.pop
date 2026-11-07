@@ -3536,7 +3536,7 @@ Rotina para que se centralize uma localização em uma caixa (horizontalmente):
   Mova a localização usando o número e 0.
 
 Rotina para que se centralize uma localização em uma caixa (verticalmente):
-  Atribua o y deste centro desta caixa menos a coordenada Y desta localização para um número.
+  Atribua a coordenada Y deste centro desta caixa menos a coordenada Y desta localização para um número.
   Arredonde o número usando o múltiplo imediato dessa quantidade de twips/pixel .
   Mova a localização usando 0 e o número.
 
@@ -8277,9 +8277,9 @@ Rotina para que se calcule um valor da diferença entre um par de números e um se
   Arredonde o valor da diferença para a malha quadriculada de par de números.
 
 Rotina para que se obtenha uma distância entre uma localização e uma segunda localização (valores aproximados):
-  Atribua a coordenada X desta localização menos o x desta segunda localização para um número.
+  Atribua a coordenada X desta localização menos a coordenada X desta segunda localização para um número.
   Remova o sinal desde o número.
-  Atribua a coordenada Y desta localização menos o y desta segunda localização para um segundo número.
+  Atribua a coordenada Y desta localização menos a coordenada Y desta segunda localização para um segundo número.
   Remova o sinal desde o segundo número.
   Atribua o número vezes o número à distância.
   Adicione o segundo número vezes o segundo número para a distância.
@@ -9582,8 +9582,8 @@ Rotina para que se crie uma figura geométrica usando uma string e um centro loca
   Atribua o conteúdo deste caractere inicial deste subtexto ao byte.
   Atribua o byte menos o 'a' minúsculo à coordenada X desta localização.
   Multiplique a localização por 24 px.
-  Adicione o x deste centro localização menos 299 pixels para a coordenada X desta localização.
-  Adicione o y deste centro localização menos 299 pixels para a coordenada Y desta localização.
+  Adicione a coordenada X deste centro localização menos 299 pixels para a coordenada X desta localização.
+  Adicione a coordenada Y deste centro localização menos 299 pixels para a coordenada Y desta localização.
   Acrescente a localização para a figura geométrica.
   Adicione 1 para o caractere inicial deste subtexto.
   Reitere.
@@ -9618,8 +9618,8 @@ Rotina para que se imagine uma linha reta através do centro de uma caixa;
 Rotina para que se faça uma linha reta através do centro de uma caixa:
   Atribua a coordenada X1 desta caixa à coordenada X desta localização inicial desta linha reta.
   Atribua a coordenada X2 desta caixa à coordenada X desta localização final desta linha reta.
-  Atribua o y deste centro desta caixa à coordenada Y desta localização inicial desta linha reta.
-  Atribua o y deste centro desta caixa à coordenada Y desta localização final desta linha reta.
+  Atribua a coordenada Y deste centro desta caixa à coordenada Y desta localização inicial desta linha reta.
+  Atribua a coordenada Y deste centro desta caixa à coordenada Y desta localização final desta linha reta.
 
 Rotina para que se imagine uma linha reta uns twips para cima desde a base de uma caixa;
 Rotina para que se faça uma linha reta uns twips para cima desde a base de uma caixa:
@@ -12862,7 +12862,7 @@ Rotina para que se comece no meio do lado esquerdo de uma caixa voltada para o e
 Rotina para que se comece sob o centro do lado esquerdo de uma caixa voltada para o east;
 Rotina para que se comece no centro do lado esquerdo de uma caixa voltada para o east:
   Atribua a coordenada X1 desta caixa à coordenada X desta localização deste contexto.
-  Atribua o y deste centro desta caixa à coordenada Y desta localização deste contexto.
+  Atribua a coordenada Y deste centro desta caixa à coordenada Y desta localização deste contexto.
   Face east.
 
 Rotina para que se comece sob o meio do lado esquerdo de uma caixa voltada para o north;
@@ -12870,7 +12870,7 @@ Rotina para que se comece no meio do lado esquerdo de uma caixa voltada para o n
 Rotina para que se comece sob o centro do lado esquerdo de uma caixa voltada para o north;
 Rotina para que se comece no centro do lado esquerdo de uma caixa voltada para o north:
   Atribua a coordenada X1 desta caixa à coordenada X desta localização deste contexto.
-  Atribua o y deste centro desta caixa à coordenada Y desta localização deste contexto.
+  Atribua a coordenada Y deste centro desta caixa à coordenada Y desta localização deste contexto.
   Vire para cima.
 
 Rotina para que se comece sob o meio do lado esquerdo de uma caixa voltada para o south;
@@ -12878,7 +12878,7 @@ Rotina para que se comece no meio do lado esquerdo de uma caixa voltada para o s
 Rotina para que se comece sob o centro do lado esquerdo de uma caixa voltada para o south;
 Rotina para que se comece no centro do lado esquerdo de uma caixa voltada para o south:
   Atribua a coordenada X1 desta caixa à coordenada X desta localização deste contexto.
-  Atribua o y deste centro desta caixa à coordenada Y desta localização deste contexto.
+  Atribua a coordenada Y deste centro desta caixa à coordenada Y desta localização deste contexto.
   Vire para baixo.
 
 Rotina para que se comece sob o meio do lado esquerdo de uma caixa voltada para o west;
@@ -12886,7 +12886,7 @@ Rotina para que se comece no meio do lado esquerdo de uma caixa voltada para o w
 Rotina para que se comece sob o centro do lado esquerdo de uma caixa voltada para o west;
 Rotina para que se comece no centro do lado esquerdo de uma caixa voltada para o west:
   Atribua a coordenada X1 desta caixa à coordenada X desta localização deste contexto.
-  Atribua o y deste centro desta caixa à coordenada Y desta localização deste contexto.
+  Atribua a coordenada Y deste centro desta caixa à coordenada Y desta localização deste contexto.
   Face west.
 
 Rotina para que se comece sob o meio do lado direito de uma caixa voltada para o east;
@@ -12894,7 +12894,7 @@ Rotina para que se comece no meio do lado direito de uma caixa voltada para o ea
 Rotina para que se comece sob o centro do lado direito de uma caixa voltada para o east;
 Rotina para que se comece no centro do lado direito de uma caixa voltada para o east:
   Atribua a coordenada X2 desta caixa à coordenada X desta localização deste contexto.
-  Atribua o y deste centro desta caixa à coordenada Y desta localização deste contexto.
+  Atribua a coordenada Y deste centro desta caixa à coordenada Y desta localização deste contexto.
   Face east.
 
 Rotina para que se comece sob o meio do lado direito de uma caixa voltada para o north;
@@ -12902,7 +12902,7 @@ Rotina para que se comece no meio do lado direito de uma caixa voltada para o no
 Rotina para que se comece sob o centro do lado direito de uma caixa voltada para o north;
 Rotina para que se comece no centro do lado direito de uma caixa voltada para o north:
   Atribua a coordenada X2 desta caixa à coordenada X desta localização deste contexto.
-  Atribua o y deste centro desta caixa à coordenada Y desta localização deste contexto.
+  Atribua a coordenada Y deste centro desta caixa à coordenada Y desta localização deste contexto.
   Vire para cima.
 
 Rotina para que se comece sob o meio do lado direito de uma caixa voltada para o south;
@@ -12910,7 +12910,7 @@ Rotina para que se comece no meio do lado direito de uma caixa voltada para o so
 Rotina para que se comece sob o centro do lado direito de uma caixa voltada para o south;
 Rotina para que se comece no centro do lado direito de uma caixa voltada para o south:
   Atribua a coordenada X2 desta caixa à coordenada X desta localização deste contexto.
-  Atribua o y deste centro desta caixa à coordenada Y desta localização deste contexto.
+  Atribua a coordenada Y deste centro desta caixa à coordenada Y desta localização deste contexto.
   Vire para baixo.
 
 Rotina para que se comece sob o meio do lado direito de uma caixa voltada para o west;
@@ -12918,7 +12918,7 @@ Rotina para que se comece no meio do lado direito de uma caixa voltada para o we
 Rotina para que se comece sob o centro do lado direito de uma caixa voltada para o west;
 Rotina para que se comece no centro do lado direito de uma caixa voltada para o west:
   Atribua a coordenada X2 desta caixa à coordenada X desta localização deste contexto.
-  Atribua o y deste centro desta caixa à coordenada Y desta localização deste contexto.
+  Atribua a coordenada Y deste centro desta caixa à coordenada Y desta localização deste contexto.
   Face west.
 
 Rotina para que se comece sob o meio do topo de uma caixa;
@@ -18234,7 +18234,7 @@ Rotina para que se atribua a largura dum GpImage para uma largura:
 
 Rotina para que se atribua um GpRect para um segundo GpRect:
   Atribua o x deste GpRect ao x deste segundo GpRect.
-  Atribua o y deste GpRect ao y deste segundo GpRect.
+  Atribua a coordenada Y deste GpRect ao y deste segundo GpRect.
   Atribua a largura deste GpRect ao largura deste segundo GpRect.
   Atribua a altura deste GpRect à altura deste segundo GpRect.
 
@@ -18377,7 +18377,7 @@ Rotina para que se escolha aleatoriamente uma localização no interior de uma cai
 
 Rotina para que se escolha aleatoriamente uma localização no meio de uma fração em uma caixa:
   Preserve a caixa.
-  Atribua o y deste centro desta caixa para uma coordenada.
+  Atribua a coordenada Y deste centro desta caixa para uma coordenada.
   Atribua a altura desta caixa vezes a fração dividido por 2 para um número.
   Atribua a coordenada menos o número à coordenada Y1 desta caixa.
   Atribua a coordenada mais o número à coordenada Y2 desta caixa.
@@ -18385,20 +18385,20 @@ Rotina para que se escolha aleatoriamente uma localização no meio de uma fração 
 
 Rotina para que se escolha aleatoriamente uma localização no topo half de uma caixa:
   Preserve a caixa.
-  Atribua o y deste centro desta caixa à coordenada Y2 desta caixa.
+  Atribua a coordenada Y deste centro desta caixa à coordenada Y2 desta caixa.
   Escolha aleatoriamente a localização na caixa.
 
 Rotina para que se escolha aleatoriamente uma localização na metade de cima de uma fração em uma caixa:
   Preserve a caixa.
-  Atribua o y deste centro desta caixa para uma coordenada.
+  Atribua a coordenada Y deste centro desta caixa para uma coordenada.
   Atribua a altura desta caixa vezes a fração para um número.
   Atribua a coordenada menos o número à coordenada Y1 desta caixa.
   Atribua a coordenada à coordenada Y2 desta caixa.
   Escolha aleatoriamente a localização na caixa.
 
 Rotina para que se escolha aleatoriamente uma localização sobre um linha reta horizontal:
-  Escolha aleatoriamente a coordenada X desta localização entre o horizontal x desta localização inicial desta linha reta e o x desta localização final desta linha reta horizontal.
-  Atribua o y desta linha reta horizontal à coordenada Y desta localização.
+  Escolha aleatoriamente a coordenada X desta localização entre a coordenada X desta localização inicial desta linha reta e a coordenada X desta localização final desta linha reta horizontal.
+  Atribua a coordenada Y desta linha reta horizontal à coordenada Y desta localização.
 
 Rotina para que se escolha aleatoriamente uma localização em uma caixa:
   Escolha aleatoriamente a coordenada X desta localização entre a coordenada X1 desta caixa e a coordenada X2 desta caixa.
@@ -18408,26 +18408,26 @@ Rotina para que se escolha aleatoriamente uma localização em uma caixa:
 Rotina para que se escolha aleatoriamente uma localização em uma caixa aproximadamente uns twips acima do centro:
   Atribua a caixa para um bounding caixa.
   Atribua os twips dividido por 2 a uns outros twips.
-  Atribua o y deste centro desta caixa menos os outros twips à coordenada Y2 desta bounding caixa.
+  Atribua a coordenada Y deste centro desta caixa menos os outros twips à coordenada Y2 desta bounding caixa.
   Atribua a coordenada Y2 desta bounding caixa menos os twips à coordenada Y1 desta bounding caixa.
   Escolha aleatoriamente a localização na bounding caixa.
 
 Rotina para que se escolha aleatoriamente uma localização em uma caixa aproximadamente uns twips debaixo do centro:
   Atribua a caixa para um bounding caixa.
   Atribua os twips dividido por 2 a uns outros twips.
-  Atribua o y deste centro desta caixa mais os outros twips à coordenada Y1 desta bounding caixa.
+  Atribua a coordenada Y deste centro desta caixa mais os outros twips à coordenada Y1 desta bounding caixa.
   Atribua a coordenada Y1 desta bounding caixa mais os twips à coordenada Y2 desta bounding caixa.
   Escolha aleatoriamente a localização na bounding caixa.
 
 Rotina para que se escolha aleatoriamente uma localização em uma caixa uns twips para uns outros twips acima do centro:
   Atribua a caixa para um bounding caixa.
-  Atribua o y deste centro desta caixa menos os twips à coordenada Y2 desta bounding caixa.
+  Atribua a coordenada Y deste centro desta caixa menos os twips à coordenada Y2 desta bounding caixa.
   Atribua a coordenada Y2 desta bounding caixa menos os outros twips à coordenada Y1 desta bounding caixa.
   Escolha aleatoriamente a localização na bounding caixa.
 
 Rotina para que se escolha aleatoriamente uma localização em uma caixa uns twips para uns outros twips debaixo do centro:
   Atribua a caixa para um bounding caixa.
-  Atribua o y deste centro desta caixa mais os twips à coordenada Y1 desta bounding caixa.
+  Atribua a coordenada Y deste centro desta caixa mais os twips à coordenada Y1 desta bounding caixa.
   Atribua a coordenada Y1 desta bounding caixa mais os outros twips à coordenada Y2 desta bounding caixa.
   Escolha aleatoriamente a localização na bounding caixa.
 
@@ -18636,7 +18636,7 @@ Rotina para que se mova uma linha reta para baixo uns twips:
   Mova a linha reta usando 0 e os twips.
 
 Rotina para que se mova uma linha reta usando um par de números:
-  Mova a linha reta usando o x deste par de números e o y deste par de números.
+  Mova a linha reta usando o número X deste par de números e o número Y deste par de números.
 
 Rotina para que se mova uma linha reta usando uns x-twips e uns y-twips:
   Adicione o x-twips para a coordenada X desta localização inicial desta linha reta.
@@ -18672,7 +18672,7 @@ Rotina para que se mova uma elipse para baixo uns twips:
   Mova a elipse usando 0 e os twips.
 
 Rotina para que se mova uma elipse usando um par de números:
-  Mova a elipse usando o x deste par de números e o y deste par de números.
+  Mova a elipse usando o número X deste par de números e o número Y deste par de números.
 
 Rotina para que se mova uma elipse usando uns x-twips e uns y-twips:
   Mova a caixa desta elipse usando o x-twips e o y-twips.
@@ -20935,8 +20935,8 @@ Rotina para que se subtraia uma fração desde uma segunda fração:
   Reduza a segunda fração.
 
 Rotina para que se subtraia um número e um segundo número desde um par de números:
-  Subtraia o número desde o x deste par de números.
-  Subtraia o segundo número desde o y deste par de números.
+  Subtraia o número desde o número X deste par de números.
+  Subtraia o segundo número desde o número Y deste par de números.
 
 Rotina para que se subtraia um número desde uma fração:
   Subtraia o número / 1 desde a fração.
