@@ -3203,7 +3203,7 @@ Rotina para que se acrescente uma string para uma segunda string:
   Adicione a quantidade de caracteres armazenados para a quantidade de caracteres agrupados.
   Reaponte o caractere inicial desta segunda string usando a quantidade de caracteres agrupados.
   Atribua o caractere inicial desta segunda string mais a quantidade de caracteres armazenados para um ponteiro.
-  Copie bytes desde o caractere inicial desta string para o ponteiro pelo quantidade de caracteres desta string.
+  Copie bytes desde o caractere inicial desta string para o ponteiro pela quantidade de caracteres desta string.
   Atribua o caractere inicial desta segunda string mais a quantidade de caracteres agrupados menos 1 ao caractere final desta segunda string.
 
 \acrescente
@@ -4066,7 +4066,7 @@ Rotina para que se converta um lParam para uma localização:
   Subdivida o lParam em uma word e uma segunda word.
   Atribua a word à coordenada Y desta localização.
   Atribua a segunda word à coordenada X desta localização.
-  Multiplique a localização pelo quantidade de twips/pixel .
+  Multiplique a localização pela quantidade de twips/pixel .
 
 Rotina para que se converta um numeral misto para uma fração:
   Atribua o fração deste numeral misto à fração.
@@ -4115,7 +4115,7 @@ Rotina para que se converta um ponteiro e uma quantidade de caracteres para uma 
   Se o ponteiro for inexistente, retorne.
   Se a quantidade de caracteres for 0, retorne.
   Reaponte o caractere inicial desta string usando a quantidade de caracteres.
-  Copie bytes desde o ponteiro para o caractere inicial desta string pelo quantidade de caracteres.
+  Copie bytes desde o ponteiro para o caractere inicial desta string pela quantidade de caracteres.
   Atribua o caractere inicial desta string mais a quantidade de caracteres menos 1 ao caractere final desta string.
 
 Rotina para que se converta um ponteiro para um texto hexadecimal;
@@ -4663,7 +4663,7 @@ Rotina para que se crie um gpBitmap usando um trecho:
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-globallock
     O número identificador [hMem]
   Retornando um ponteiro.
-  Copie bytes desde o caractere inicial deste trecho para o ponteiro pelo quantidade de caracteres deste trecho.
+  Copie bytes desde o caractere inicial deste trecho para o ponteiro pela quantidade de caracteres deste trecho.
   Processe "kernel32.dll" "GlobalUnlock" com  \Diminui a contagem de bloqueios associada para um objeto de memória
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-globalunlock
     O número identificador. [hMem]
@@ -6073,7 +6073,7 @@ Função para que se determine se uma localização está debaixo de um linha reta ho
 Função para que se determine se uma localização está em uma elipse:
   Crie uma hRgn usando a elipse.
   Preserve a localização.
-  Divida a localização pelo quantidade de twips/pixel .
+  Divida a localização pela quantidade de twips/pixel .
   Processe "gdi32.dll" "PtInRegion" com
   \ Determina se o ponto especificado está dentro da região especificada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-ptinregion
@@ -7046,7 +7046,7 @@ Rotina para que se pinte uma linha reta uns twips em comprimento:
   \Se o delay for positivo, atualize o tela.
 
 Rotina para que se pinte uma linha reta usando uns twips como a quantidade de caracteres;
-Rotina para que se pinte uma linha reta usando uns twips pelo quantidade de caracteres:
+Rotina para que se pinte uma linha reta usando uns twips pela quantidade de caracteres:
   Pinte os twips.
 
 Rotina para que se pinte uma linha reta com uma cor aproximadamente uns twips em comprimento:\ "aproximadamente" é significant here
@@ -7580,8 +7580,8 @@ Rotina para que se extraia um nome do arquivo s/ extensão desde um endereço comp
   Remova os bytes finais desde o nome do arquivo s/ extensão usando a quantidade de caracteres desta extensão.
 
 Rotina para que se extraia uma imagem usando uma caixa:
-  Atribua a largura desta caixa dividido pelo quantidade de twips/pixel para uma largura.
-  Atribua a altura desta caixa dividido pelo quantidade de twips/pixel para uma altura.
+  Atribua a largura desta caixa dividido pela quantidade de twips/pixel para uma largura.
+  Atribua a altura desta caixa dividido pela quantidade de twips/pixel para uma altura.
   Processe "gdiplus.dll" "GdipCreateBitmapFromScan0" com
   \ Cria um objeto Bitmap com base em uma matriz de bytes junto com informações de tamanho e formato.
   \ Documentação: -> https://learn.microsoft.com/en-us/windows/win32/gdiplus/-gdiplus-bitmap-flat
@@ -10062,11 +10062,11 @@ Rotina para que se insira uma string Para uma segunda string antes de um byte#: 
   Atribua a quantidade de caracteres desta segunda string mais a quantidade de caracteres desta string para um número denominado quantidade de caracteres agrupados.
   Reaponte um ponteiro usando a quantidade de caracteres agrupados.
   Atribua o ponteiro ao caractere inicial dum terceiro subtexto.
-  Copie bytes desde o caractere inicial deste subtexto para o caractere inicial deste terceiro subtexto pelo quantidade de caracteres deste subtexto.
+  Copie bytes desde o caractere inicial deste subtexto para o caractere inicial deste terceiro subtexto pela quantidade de caracteres deste subtexto.
   Adicione a quantidade de caracteres deste subtexto para o caractere inicial deste terceiro subtexto.
-  Copie bytes desde o caractere inicial desta string para o caractere inicial deste terceiro subtexto pelo quantidade de caracteres desta string.
+  Copie bytes desde o caractere inicial desta string para o caractere inicial deste terceiro subtexto pela quantidade de caracteres desta string.
   Adicione a quantidade de caracteres desta string para o caractere inicial deste terceiro subtexto.
-  Copie bytes desde o caractere inicial deste segundo subtexto para o caractere inicial deste terceiro subtexto pelo quantidade de caracteres deste segundo subtexto.
+  Copie bytes desde o caractere inicial deste segundo subtexto para o caractere inicial deste terceiro subtexto pela quantidade de caracteres deste segundo subtexto.
   Desassocie o caractere inicial desta segunda string. \ Não se utilizou a rotina atribua uma string para uma segunda string para prevenir alocação e cópias desnecessárias
   Atribua o ponteiro ao caractere inicial desta segunda string.
   Atribua o caractere inicial desta segunda string mais a quantidade de caracteres agrupados menos 1 ao caractere final desta segunda string.
@@ -11124,7 +11124,7 @@ Rotina para que se atribua uma string sobre a área de transferência do Windows:
     O número identificador [hMem]
     Retornando um ponteiro.
   \Copie os bytes presentes entre [intervalo inicial] e o [intervalo final] para o [endereço de destino] .
-  Copie bytes desde o caractere inicial desta string para o ponteiro pelo quantidade de caracteres desta string.
+  Copie bytes desde o caractere inicial desta string para o ponteiro pela quantidade de caracteres desta string.
   Processe "kernel32.dll" "GlobalUnlock" com
   \ Diminui a contagem de bloqueios associada para um objeto de memória que foi alocado com GMEM_MOVEABLE.
   \ Documentação: ->  https://learn.microsoft.com/pt-br/windows/win32/api/winbase/nf-winbase-globalunlock
@@ -11643,8 +11643,8 @@ Rotina para que se redimensione uma linha reta usando um twip par de números:
 \Rotina para que se redimensione uma imagem deixando-a com uma largura por uma altura;
 Rotina para que se redimensione uma imagem para uma largura por uma altura:
   Se a imagem for inexistente, retorne.
-  Atribua a largura dividido pelo quantidade de twips/pixel para uma largura denominada largura do pixel.
-  Atribua a altura dividido pelo quantidade de twips/pixel para uma altura denominada altura do pixel.
+  Atribua a largura dividido pela quantidade de twips/pixel para uma largura denominada largura do pixel.
+  Atribua a altura dividido pela quantidade de twips/pixel para uma altura denominada altura do pixel.
   Processe "gdiplus.dll" "GdipCreateBitmapFromScan0" com
   \Cria um objeto Bitmap com base em uma matriz de bytes junto com informações de tamanho e formato.
     A largura do pixel [width] e 
@@ -14107,13 +14107,13 @@ Rotina para que se mova um percorredor usando uma caixa (word wrapping rules):
       Avance o percorredor;
       Retorne.
     Se o conteúdo deste caractere inicial deste segmento inicial deste segundo percorredor for algum espaço em branco,
-      Avance o percorredor pelo quantidade de caracteres deste segmento inicial deste segundo percorredor;
+      Avance o percorredor pela quantidade de caracteres deste segmento inicial deste segundo percorredor;
       Reitere.
     Se o segmento inicial deste percorredor estiver em branco,
-      Avance o percorredor pelo quantidade de caracteres deste segmento inicial deste segundo percorredor;
+      Avance o percorredor pela quantidade de caracteres deste segmento inicial deste segundo percorredor;
       Reitere.
     Se o segmento inicial deste percorredor junto com o segmento inicial deste segundo percorredor forem wider do que a caixa, retorne.
-    Avance o percorredor pelo quantidade de caracteres deste segmento inicial deste segundo percorredor.
+    Avance o percorredor pela quantidade de caracteres deste segmento inicial deste segundo percorredor.
   Reitere.
 
 Rotina para que se mova um percorredor usando um separator byte:
@@ -14145,7 +14145,7 @@ Rotina para que se atribua um byte para uma string:
 Rotina para que se atribua uma string para uma segunda string:
   Atribua a quantidade de caracteres desta string para uma quantidade de caracteres armazenados.
   Associe um ponteiro usando a quantidade de caracteres armazenados.
-  Copie bytes desde o caractere inicial desta string para o ponteiro pelo quantidade de caracteres armazenados.
+  Copie bytes desde o caractere inicial desta string para o ponteiro pela quantidade de caracteres armazenados.
   Desassocie o caractere inicial desta segunda string.
   Atribua o ponteiro ao caractere inicial desta segunda string.
   Atribua o caractere inicial desta segunda string mais a quantidade de caracteres armazenados menos 1 ao caractere final desta segunda string.
@@ -14188,7 +14188,7 @@ Rotina para que se uppercase um byte:
 Rotina para que se anteponha um byte para uma string:
   Atribua a quantidade de caracteres desta string para uma quantidade de caracteres armazenados.
   Reaponte o caractere inicial desta string usando a quantidade de caracteres desta string mais 1.
-  Copie bytes desde o caractere inicial desta string para o caractere inicial desta string mais 1 pelo quantidade de caracteres armazenados.
+  Copie bytes desde o caractere inicial desta string para o caractere inicial desta string mais 1 pela quantidade de caracteres armazenados.
   Atribua o caractere inicial desta string mais a quantidade de caracteres armazenados ao caractere final desta string.
   Atribua o byte ao conteúdo deste caractere inicial desta string.
 
@@ -14196,9 +14196,9 @@ Rotina para que se anteponha uma string para uma segunda string:
   Atribua a quantidade de caracteres desta segunda string mais a quantidade de caracteres desta string para um número denominado quantidade de caracteres agrupados.
   Reaponte um ponteiro usando a quantidade de caracteres agrupados.
   Atribua o ponteiro ao caractere inicial dum subtexto.
-  Copie bytes desde o caractere inicial desta string para o caractere inicial deste subtexto pelo quantidade de caracteres desta string.
+  Copie bytes desde o caractere inicial desta string para o caractere inicial deste subtexto pela quantidade de caracteres desta string.
   Adicione a quantidade de caracteres desta string para o caractere inicial deste subtexto.
-  Copie bytes desde o caractere inicial desta segunda string para o caractere inicial deste subtexto pelo quantidade de caracteres desta segunda string.
+  Copie bytes desde o caractere inicial desta segunda string para o caractere inicial deste subtexto pela quantidade de caracteres desta segunda string.
   Desassocie o caractere inicial desta segunda string. \ para que se esvazie extra allocates e copies
   Atribua o ponteiro ao caractere inicial desta segunda string.
   Atribua o caractere inicial desta segunda string mais a quantidade de caracteres agrupados menos 1 ao caractere final desta segunda string.
@@ -19244,7 +19244,7 @@ Rotina para que se pinte uma imagem (modo pdf):
   Atribua
     A coordenada Y1 desta caixa desta imagem
     Menos a coordenada Y1 desta caixa intacta desta imagem
-    Dividido pelo quantidade de twips/pixel para um número Y.
+    Dividido pela quantidade de twips/pixel para um número Y.
   Atribua a largura desta caixa desta imagem dividido pela quantidade de twips/pixel para uma largura.
   Atribua a altura desta caixa desta imagem dividido pela quantidade de twips/pixel para uma altura.
   Processe "gdiplus.dll" "GdipCreateBitmapFromScan0" com

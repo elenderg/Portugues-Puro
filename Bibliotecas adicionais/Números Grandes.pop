@@ -10,24 +10,24 @@ Um número inferior é um número.
 Um número superior é um número.
 
 Um número grande é uma estrutura com
-  Um primeiro byte,
-  Um segundo byte,
-  Um terceiro byte,
-  Um quarto byte,
-  Um quinto byte,
-  Um sexto byte,
-  Um sétimo byte,
-  Um oitavo byte,
-  Um byte inferior sob o primeiro byte,
-  Um byte superior sob o oitavo byte,
-  Uma primeira word sob o primeiro byte,
-  Uma segunda word sob o terceiro byte,
-  Uma terceira word sob o quinto byte,
-  Uma quarta word sob o sétimo byte,
-  Uma word de ordem inferior sob o primeiro byte, 
-  Uma word de ordem superior sob o sétimo byte, 
-  Um número inferior sob o primeiro byte, e \ unsigned. Vai de 0 até o maior número menos o menor número.
-  Um número superior sob o quinto byte.
+  Um byte denominado primeiro byte,
+  Um byte denominado segundo byte,
+  Um byte denominado terceiro byte,
+  Um byte denominado quarto byte,
+  Um byte denominado quinto byte,
+  Um byte denominado sexto byte,
+  Um byte denominado sétimo byte,
+  Um byte denominado oitavo byte,
+  Um byte denominado byte inferior sob o primeiro byte,
+  Um byte denominado byte superior sob o oitavo byte,
+  Uma word denominada primeira word sob o primeiro byte,
+  Uma word denominada segunda word sob o terceiro byte,
+  Uma word denominada terceira word sob o quinto byte,
+  Uma word denominada quarta word sob o sétimo byte,
+  Uma word denominada word de ordem inferior sob o primeiro byte, 
+  Uma word denominada word de ordem superior sob o sétimo byte, 
+  Um número denominado número inferior sob o primeiro byte e \ unsigned. Vai de 0 até o maior número menos o menor número.
+  Um número denominado número superior sob o quinto byte.
 
 \ Um premix pode armazenar um conjunto misto como um número grande, medido em denominadores da parcela.
 \ Ou seja, ele é uma proporção implícita do número grande dividido por / (43200*43200). (1866240000)

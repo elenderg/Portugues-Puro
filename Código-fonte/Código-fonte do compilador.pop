@@ -3874,13 +3874,13 @@ Rotina para que se acrescente uma string e uma segunda string e uma terceira str
   Adicione a quantidade de caracteres desta terceira string para a quantidade de caracteres. 
   Reaponte um ponteiro usando a quantidade de caracteres.
   Atribua o ponteiro para um endereço de byte .
-  Copie bytes desde o caractere inicial desta quarta string para o endereço de byte pelo quantidade de caracteres desta quarta string.
+  Copie bytes desde o caractere inicial desta quarta string para o endereço de byte pela quantidade de caracteres desta quarta string.
   Adicione a quantidade de caracteres desta quarta string para o endereço de byte .
-  Copie bytes desde o caractere inicial desta string para o endereço de byte pelo quantidade de caracteres desta string.
+  Copie bytes desde o caractere inicial desta string para o endereço de byte pela quantidade de caracteres desta string.
   Adicione a quantidade de caracteres desta string para o endereço de byte .
-  Copie bytes desde o caractere inicial desta segunda string para o endereço de byte pelo quantidade de caracteres desta segunda string.
+  Copie bytes desde o caractere inicial desta segunda string para o endereço de byte pela quantidade de caracteres desta segunda string.
   Adicione a quantidade de caracteres desta segunda string para o endereço de byte .
-  Copie bytes desde o caractere inicial desta terceira string para o endereço de byte pelo quantidade de caracteres desta terceira string.
+  Copie bytes desde o caractere inicial desta terceira string para o endereço de byte pela quantidade de caracteres desta terceira string.
   Desassocie o caractere inicial desta quarta string.
   Atribua o ponteiro ao caractere inicial desta quarta string.
   Atribua o ponteiro mais a quantidade de caracteres menos 1 ao caractere final desta quarta string.
@@ -7501,7 +7501,7 @@ Rotina para que se disponibilize um cabeçalho DOS para um trecho:
 
 Rotina para que se disponibilize bytes usando um ponteiro e uma quantidade de caracteres e um trecho e um deslocamento:
   Atribua o caractere inicial deste trecho mais o deslocamento para um segundo ponteiro.
-  Copie bytes desde o ponteiro para o segundo ponteiro pelo quantidade de caracteres.
+  Copie bytes desde o ponteiro para o segundo ponteiro pela quantidade de caracteres.
 
 Rotina para que se disponibilize um Cabeçalho PE para um trecho:
   Disponibilize bytes usando o endereçamento deste Cabeçalho PE e a magnitude deste Cabeçalho PE e o trecho e 256.
