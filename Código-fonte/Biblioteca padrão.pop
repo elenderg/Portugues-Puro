@@ -3370,7 +3370,7 @@ Rotina para que se inicie uma folha no modo paisagem:
 
 Rotina para que se inicie uma folha no modo retrato:
   Faça a folha 816 pixels por 1056 pixels.
-  \para referência, uma folha A4 possui 3508 x 2480 px, praticamente 10x maio
+  \para referência, uma folha A4 possui 3508 x 2480 px, praticamente 10x maior
   Inicie a folha usando a folha. 
 
 Rotina para que se inicie a impressão:
