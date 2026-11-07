@@ -5,9 +5,20 @@
 \ Um byte tem 8 bits.
 \ Uma estrutura ocupa a soma do tamanho de seus campos. Uma estrutura vazia ocupa 0 bytes.
 \ Todos os tipos são derivados dos tipos base "byte" e "estrutura".
+[TIPOS DE DADOS]
+
+[BYTE]
+Um caractere é um byte.
+Um endereço de byte é um ponteiro para um byte.
+Um caractere inicial é um ponteiro para um byte. 
+Um caractere final é um ponteiro para um byte.
+
+
+[PONTEIROS]
 Um ponteiro é uma estrutura com 4 bytes. \ 32 bits
 Uma word big-endian unsigned é uma estrutura com 2 bytes.
 
+[WORD]
 Uma word é uma estrutura com
   Um byte denominado byte inicial [high byte] e
   Um byte denominado byte final [low byte].
@@ -15,27 +26,12 @@ Uma word é uma estrutura com
 Uma word de ordem inferior é uma word.
 Uma word de ordem superior é uma word.
 
-Um número é uma estrutura com
-  Um byte denominado primeiro byte,
-  Um byte denominado segundo byte,
-  Um byte denominado terceiro byte,
-  Um byte denominado quarto byte, \ 4 bytes = 32 bits
-  Uma word de ordem inferior sob o primeiro byte,
-  Uma word de ordem superior sob o terceiro byte. \ A word de ordem superior vem depois devido à extremidade (ordenação) dos processadores x86
-Um número resultante é um número.
-Um caractere é um byte.
-Um endereço de byte é um ponteiro para um byte.
-Um caractere inicial é um ponteiro para um byte. 
-Um caractere final é um ponteiro para um byte.
-
-Uma string é uma estrutura com
-  Um caractere inicial e
-  Um caractere final.
-
+[ARRAY]
 Um array é uma estrutura com
   Um ponteiro denominado endereço,
   Um número denominado tamanho.
 
+[LISTA]
 \A thing is a pointer to a thing record.
 Uma lista é um ponteiro [que aponta] para uma lista estruturada.
 
@@ -44,12 +40,32 @@ Uma lista estruturada é uma estrutura com
   Uma lista denominada lista posterior e
   Uma lista denominada lista anterior.
 
+Uma lista anterior é uma lista.
+Uma lista posterior é uma lista.
+
 \Some things are a record with a first thing and a last thing.
 Umas listas são uma estrutura com
   Uma lista denominada lista inicial e
   Uma lista denominada lista final.
 
 Uma lista estrutura é uma lista estruturada.
+
+[NÚMEROS]
+Um número é uma estrutura com
+  Um byte denominado primeiro byte,
+  Um byte denominado segundo byte,
+  Um byte denominado terceiro byte,
+  Um byte denominado quarto byte, \ 4 bytes = 32 bits
+  Uma word de ordem inferior sob o primeiro byte,
+  Uma word de ordem superior sob o terceiro byte. \ A word de ordem superior vem depois devido à extremidade (ordenação) dos processadores x86
+
+Um número resultante é um número.
+
+Um número aleatório é um número.
+Um par de números racionais é um par de números fracionários.
+Um múltiplo é um número.
+Uma cópia é um número.
+Um intervalo é um número.
 
 Um twip é um número. 
 \ Twips são unidades de medida independentes de tela, 
@@ -62,8 +78,39 @@ Um twip é um número.
 \ Além disso, 567 twips correspondem a 1 centímetro, embora o valor exato seja 566,93 twips.
 \ Para referência, 1 twip é aproximadamente 1,7638 milímetros. 
 \ Assim, 900.000 twips equivalem a 625 polegadas, e 1 centímetro corresponde a 56693/100 twips.
+
+
+Uma fração é uma estrutura com
+  Um número denominado numerador e
+  Um número denominado denominador,
+  Um número denominado número de cima sob o numerador e
+  Um número denominado número de baixo sob o denominador.
+
+Um numeral misto é uma estrutura com
+  Um número denominado número inteiro,
+  Uma proporção e
+  Uma fração sob a proporção.
+
+
+Uma proporção é uma fração.
+
+Um par de números fracionários é uma estrutura com
+  Uma fração e
+  Uma segunda fração.
+
+[GEOMETRIA]
 Um semicírculo é uma figura geométrica.
+
 Uma coordenada é uns twips.
+
+Uma coordenada X1 é uma coordenada.
+Uma coordenada X2 é uma coordenada.
+Uma coordenada Y1 é uma coordenada.
+Uma coordenada Y2 é uma coordenada.
+
+Um par de números é uma estrutura com
+  Um número denominado número X e
+  Um número denominado número Y.
 
 Uma localização é um par de números com
   Uma coordenada denominada coordenada X [left] e
@@ -74,21 +121,6 @@ Uma localização é um par de números com
 \Um topo é [composto de] uns twips.
 \Uma left é [composto de] uns twips. \ IMPORTANTE
 
-Um par de números é uma estrutura com
-  Um número denominado número X e
-  Um número denominado número Y.
-
-Uma coordenada X1 é uma coordenada.
-Uma coordenada X2 é uma coordenada.
-Uma coordenada Y1 é uma coordenada.
-Uma coordenada Y2 é uma coordenada.
-
-Uma lista anterior é uma lista.
-Uma lista posterior é uma lista.
-
-Um subtexto anterior é um subtexto.
-Um subtexto posterior é um subtexto.
-
 Uma caixa é uma estrutura com
   Uma coordenada denominada coordenada X1, [left]
   Uma coordenada denominada coordenada Y1, [top]
@@ -98,14 +130,9 @@ Uma caixa é uma estrutura com
   Uma localização denominada canto inferior direito sob a coordenada X2, [right-bottom]
   Uma localização denominada canto esquerdo superior sob a coordenada X1, [top-left]
   Uma localização denominada canto direito inferior sob a coordenada X2. [bottom-right]
-
-Uma proporção é uma fração.
-
-Um numeral misto é uma estrutura com
-  Um número denominado número inteiro,
-  Uma proporção e
-  Uma fração sob a proporção.
  
+[UNIDADES DE MEDIDA]
+
 Um pixel são 15 twips.
 Uns pixels são 15 twips.
 \Uns píxeis são 15 twips.
@@ -150,13 +177,6 @@ Uma razão de escala é uma proporção. \ usado em formas geométricas
 Um fator de escala é uma fração. \ usado em caixas de texto
 Um raio é uns twips.
 
-Um número aleatório é um número.
-Um par de números racionais é um par de números fracionários.
-Um múltiplo é um número.
-Uma cópia é um número.
-Um intervalo é um número.
-
-Umas linhas de texto selecionadas são uma linha de texto.
 
 Uma caixa de texto é uma lista com
   Uma caixa,
@@ -214,6 +234,8 @@ Uma linha de texto é uma lista com
   Um número da linha e
   Uma string.
 
+Umas linhas de texto selecionadas são uma linha de texto.
+
 Uma referência é uma lista com
   Uma string e
   Um ponteiro (referência).
@@ -251,17 +273,6 @@ Um byte# é um número.
 Um canvas é um hDC. \ hDC = handle to device context
 Um recipiente# é um número.
 Um bit é uma unidade.
-
-Um percorredor é uma estrutura com 
-\ Necessário alterar as rotinas "avance um percorredor" e "recue um percorredor" ao alterar a ordem dos membros desta estrutura
-  Um cópia da string original,
-  Um segmento final, \ Armazena a última parte da string, porém inicialmente ele é igual à string original
-  \ (Ele diminui de tamanho a cada vez que o percorredor é movido)
-  Um segmento inicial. \ Armazena a primeira/próxima palavra da string (quando o percorredor é movido). Inicialmente vazio 
-
-Uma cópia da string original é um subtexto.
-Um segmento inicial é um subtexto.
-Um segmento final é um subtexto.
 
 Um posicionamento absoluto é um número.
 
@@ -380,15 +391,6 @@ Um pé são 12 polegadas.
 Uma string plural é uma string.
 Uma string singular é uma string.
 
-Uma fração é uma estrutura com
-  Um número denominado numerador e
-  Um número denominado denominador,
-  Um número denominado número de cima sob o numerador e
-  Um número denominado número de baixo sob o denominador.
-
-Um par de números fracionários é uma estrutura com
-  Uma fração e
-  Uma segunda fração.
 
 Um máximo divisor comum é um número.
 Um nome de dll é uma string.
@@ -613,16 +615,37 @@ Uma largura inicial é uma largura.
 
 Um POutlineTextmetric é um ponteiro [que aponta] para uma [estrutura] OutlineTextmetric.
 
+[STRING]
+Uma string é uma estrutura com
+  Um caractere inicial e
+  Um caractere final.
+
+
+Um subtexto é uma string.
+Um subtexto anterior é um subtexto.
+Um subtexto posterior é um subtexto.
+
+
 [MANIPULAÇÃO DE STRINGS]
 
 Uma string de caracteres amplos é uma string.
-Um subtexto é uma string.
 Um destinatário é uma string.
 Uma mensagem é uma string.
 Uma palavra é um subtexto. \ não confundir com word
 
 Um conjunto de texto é uma lista com uma string.
 Um nome é uma string.
+
+Um percorredor é uma estrutura com 
+\ Necessário alterar as rotinas "avance um percorredor" e "recue um percorredor" ao alterar a ordem dos membros desta estrutura
+  Um cópia da string original,
+  Um segmento final, \ Armazena a última parte da string, porém inicialmente ele é igual à string original
+  \ (Ele diminui de tamanho a cada vez que o percorredor é movido)
+  Um segmento inicial. \ Armazena a primeira/próxima palavra da string (quando o percorredor é movido). Inicialmente vazio 
+
+Uma cópia da string original é um subtexto.
+Um segmento inicial é um subtexto.
+Um segmento final é um subtexto.
 
 [PROTOCOLOS DE REDE]
 Uma URL é uma string.
@@ -1445,6 +1468,8 @@ Uma cifra hexadecimal é uma string. \ Exemplo: $0010A0… O cifrão serve para indi
  \Em outras linguagens costuma-se usar um # (como no css #a1b2e3; ou um 0x, por exemplo 0xA1B2FF…
 
 Uma máscara de disjunção exclusiva é uma mask.
+
+[VARIÁVEIS GLOBAIS]
 
 \A raiz de dois é uma fração igual a 99/70.
 \A raiz de dois é uma fração igual a 1414213562/1000000000.
