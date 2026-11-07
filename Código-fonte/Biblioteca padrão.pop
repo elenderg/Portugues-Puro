@@ -2482,7 +2482,7 @@ A fonte osmosiana é um texto hexadecimal igual a $00010000000B0080000300304F532F
 
 
 O STD_INPUT_HANDLE é um número igual a -10.
-O CodePage é um número igual a 1252.
+O CodePage é um número igual a 1252. \ 65001 para UTF-8 ou 1252 para Windows-1252
 O INVALID_HANDLE_VALUE é um número igual a -1.
 
 Rotina para que se obtenha o Número Identificador do Fluxo de Entrada Padrão:
