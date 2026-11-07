@@ -20895,9 +20895,9 @@ Rotina para que se escolha aleatoriamente uma cor turva:
   Atribua a cor à cor deste contexto.
 
 Rotina para que se escolha aleatoriamente uma cor vibrante:
-  Escolha aleatoriamente a matiz desta cor entre 0 e 3600.
-  Escolha aleatoriamente a saturação desta cor entre 0 e 1000.
-  Escolha aleatoriamente a luminosidade desta cor entre 0 e 1000.
+  Escolha aleatoriamente a matiz desta cor vibrante entre 0 e 3600.
+  Escolha aleatoriamente a saturação desta cor vibrante entre 0 e 1000.
+  Escolha aleatoriamente a luminosidade desta cor vibrante entre 0 e 1000.
   Atribua a cor à cor deste contexto.
 
 [OPERAÇÕES NUMÉRICAS]
