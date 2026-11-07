@@ -7043,7 +7043,7 @@ Rotina para que se pinte uma linha reta uns twips em comprimento:
   Adicione o deslocamento vertical vezes os twips dividido por 10000 para a coordenada Y desta localização final desta linha reta.
   Atribua a localização final desta linha reta à localização deste contexto.
   Pinte a linha reta com a cor deste contexto.
-  \Se o delay for positivo, atualize o tela.
+  \Se o delay for positivo, atualize a tela.
 
 Rotina para que se pinte uma linha reta usando uns twips como a quantidade de caracteres;
 Rotina para que se pinte uma linha reta usando uns twips pela quantidade de caracteres:
@@ -12447,7 +12447,7 @@ Rotina para que se mostre um console:
   Se o console for inexistente, retorne.
   Salve o contexto do dispositivo atual.
   Pinte o console.
-  Atualize o tela usando a caixa deste console.
+  Atualize a tela usando a caixa deste console.
   Restaure o contexto do dispositivo atual.
 
 Rotina para que se mostre um cursor:
@@ -12467,7 +12467,7 @@ Rotina para que se mostre um terminal:
   Se o terminal for inexistente, retorne.
   Salve o contexto do dispositivo atual.
   Pinte o terminal.
-  Atualize o tela usando a caixa deste terminal.
+  Atualize a tela usando a caixa deste terminal.
   Restaure o contexto do dispositivo atual.
 
 Rotina para que se encolha uma caixa por uns twips; \indent
@@ -14299,7 +14299,7 @@ Rotina para que se pinte uma string no meio de uma caixa:
 
 Rotina para que se escreva uma string no meio da tela:
   Pinte a string no meio dessa caixa desta tela.
-  Atualize o tela.
+  Atualize a tela.
 
 Rotina para que se escreva uma string sobre um terminal:
   Se o terminal for inexistente, retorne.
