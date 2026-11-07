@@ -12695,7 +12695,7 @@ Rotina para que se subdivida as linhas de texto de uma caixa de texto em umas li
     Acrescente a linha de texto para as linhas de texto.
   Reitere.
 
-Rotina para que se subdivida uma string em um subtexto anterior e um subtexto posterior usando um separator byte:
+Rotina para que se subdivida uma string em um subtexto denominado subtexto anterior e um subtexto denominado subtexto posterior usando um byte denominado byte separador:
   Limpe o subtexto anterior.
   Limpe o subtexto posterior.
   Se a string estiver em branco, retorne.
@@ -12704,23 +12704,23 @@ Rotina para que se subdivida uma string em um subtexto anterior e um subtexto po
   Itere.
     Se o caractere final deste subtexto for maior do que o caractere final desta string, retorne.
     Adicione 1 para o caractere final deste subtexto.
-    Se o conteúdo deste caractere final deste subtexto for o separator byte, pare.
+    Se o conteúdo deste caractere final deste subtexto for o byte separador, pare.
   Reitere.
   Atribua o caractere inicial deste subtexto ao caractere inicial deste subtexto anterior.
   Atribua o caractere final deste subtexto menos 1 ao caractere final deste subtexto anterior.
   Atribua o caractere final deste subtexto mais 1 ao caractere inicial deste subtexto posterior.
   Atribua o caractere final desta string ao caractere final deste subtexto posterior.
 
-Rotina para que se subdivida uma string em uns conjuntos de texto usando um separator byte:
+Rotina para que se subdivida uma string em uns conjuntos de texto usando um byte denominado byte separador:
   Destrua os conjuntos de texto.
   Se a string estiver em branco, retorne.
   Lance um percorredor sobre a string.
   Itere.
-    Mova o percorredor usando o separator byte.
+    Mova o percorredor usando o byte separador.
     Adicione o segmento inicial deste percorredor para os conjuntos de texto.
     Se o segmento final deste percorredor estiver em branco, pare.
   Reitere.
-  Se o conteúdo deste caractere final desta string não for o separator byte, retorne.
+  Se o conteúdo deste caractere final desta string não for o byte separador, retorne.
   Adicione "" para os conjuntos de texto.
 
 Rotina para que se subdivida umas listas em umas listas anteriores e umas listas posteriores:
@@ -14116,11 +14116,11 @@ Rotina para que se mova um percorredor usando uma caixa (word wrapping rules):
     Avance o percorredor pela quantidade de caracteres deste segmento inicial deste segundo percorredor.
   Reitere.
 
-Rotina para que se mova um percorredor usando um separator byte:
+Rotina para que se mova um percorredor usando um byte denominado byte separador:
   Posicione o segmento inicial deste percorredor sobre o segmento final deste percorredor.
   Itere.
     Se o segmento final deste percorredor estiver em branco, retorne.
-    Se o conteúdo deste caractere inicial deste segmento final deste percorredor for o separator byte,
+    Se o conteúdo deste caractere inicial deste segmento final deste percorredor for o byte separador,
       Adicione 1 para o caractere inicial deste segmento final deste percorredor;
       Retorne.
     Avance o percorredor.
