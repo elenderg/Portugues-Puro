@@ -3687,7 +3687,7 @@ Rotina para que se avise:
 Rotina para que se compare uma string para uma segunda string usando uma quantidade de caracteres e uma segunda quantidade de caracteres retornando um número:
   Compare a string para [com] a segunda string usando a quantidade de caracteres e a segunda quantidade de caracteres e a tabela de caracteres minúsculos ascii retornando o número.
 
-Rotina para que se compativelmente handle alguma mensagem com uma janela do programa um número denominado mensagem um wParam e um lParam:
+Rotina para que se compativelmente gerencie as mensagens do Windows usando uma janela do programa e um número denominado mensagem e um wParam e um lParam:
   Se a mensagem for 006 [WM_ACTIVATE], \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/inputdev/wm-activate
     Execute algum WM_ACTIVATE com
       O wParam; [Ativada/Desativa a janela]
@@ -9971,7 +9971,7 @@ Rotina para que se inicialize a janela do programa:
   Atribua a magnitude [tamanho em bytes] duma WNDCLASS [estrutura] ao cbSize desta classe da janela.
   Atribua 40 [CS_OWNDC + CS_DBLCLKS] ao style desta classe da janela.
   \ Consulte https://learn.microsoft.com/pt-br/windows/win32/winmsg/window-class-styles
-  Redirecione o lpfnWndProc desta classe da janela para a rotina handle alguma mensagem com uma janela do programa um mensagem número um wParam e um lParam.
+  Redirecione o lpfnWndProc desta classe da janela para a rotina gerencie as mensagens do Windows usando uma janela do programa e um número denominado mensagem e um wParam e um lParam.
   \ Define o procedimento da classe da janela como sendo WndProc
   Atribua o número identificador deste módulo ao hInstance desta classe da janela.
   Atribua o caractere inicial deste nome deste módulo ao lpszClassName desta classe da janela.
