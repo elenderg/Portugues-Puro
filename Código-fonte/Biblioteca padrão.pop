@@ -20961,19 +20961,19 @@ Rotina para que se subtraia um par de números desde um segundo par de números:
 \Todas as convenções de chamada x86 definem ebp como sendo preservado nas chamadas de função.
 \O próprio ebp aponta, na verdade, para o ponteiro de base do quadro anterior, o que permite o funcionamento da pilha em um depurador e a visualização de outras variáveis locais de quadros.
 \ESP é o ponteiro da pilha atual, que mudará sempre que uma palavra ou endereço for inserido ou colocado na / fora da pilha.
-\EBP é uma maneira mais conveniente para o compilador controlar os parâmetros de uma função e as variáveis locais do que usar o ESPdiretamente.
+\EBP é uma maneira mais conveniente para o compilador controlar os parâmetros de uma função e as variáveis locais do que usar o ESP diretamente.
 \Geralmente (e isso pode variar de compilador para compilador), todos os argumentos para uma função sendo chamada são colocados na pilha pela função de chamada
 \(geralmente na ordem inversa em que são declarados no protótipo da função, mas isso varia) .
-\Em seguida, a função é chamada, o que coloca o endereço de retorno ( EIP) na pilha.
-\Ao entrar na função, o EBPvalor antigo é colocado na pilha e EBPé definido como o valor de ESP.
-\Em seguida, o ESPé diminuído (porque a pilha cresce para baixo na memória) para alocar espaço para as variáveis locais e temporárias da função.
+\Em seguida, a função é chamada, o que coloca o endereço de retorno (EIP) na pilha.
+\Ao entrar na função, o EBP valor antigo é colocado na pilha e EBPé definido como o valor de ESP.
+\Em seguida, o ESP é diminuído (porque a pilha cresce para baixo na memória) para alocar espaço para as variáveis locais e temporárias da função.
 \A partir dum ponto, durante a execução da função, os argumentos para a função estão localizados na pilha em deslocamentos positivos de EBP
 \(porque foram empurrados antes da chamada da função), e as variáveis locais estão localizadas em deslocamentos negativos de EBP
 \(porque eles foram alocados na pilha após a entrada da função).
-\É por isso que EBPé chamado de Ponteiro de Quadro , porque aponta para o centro do quadro de chamada de função .
-\Ao sair, tudo que a função precisa fazer é definir ESPo valor de EBP(que desaloca as variáveis locais da pilha e expõe a entrada EBPno topo da pilha),
-\em seguida, retirar o EBPvalor antigo da pilha e, em seguida, a função retornos (estalar o endereço de retorno em EIP).
-\Ao retornar à função de chamada, ele pode incrementar ESPpara remover os argumentos da função que colocou na pilha antes de chamar a outra função.
+\É por isso que EBP é chamado de Ponteiro de Quadro , porque aponta para o centro do quadro de chamada de função .
+\Ao sair, tudo que a função precisa fazer é definir ESP o valor de EBP (que desaloca as variáveis locais da pilha e expõe a entrada EBP no topo da pilha),
+\em seguida, retirar o EBP valor antigo da pilha e, em seguida, a função retornos (estalar o endereço de retorno em EIP).
+\Ao retornar à função de chamada, ele pode incrementar ESP para remover os argumentos da função que colocou na pilha antes de chamar a outra função.
 \Neste ponto, a pilha está de volta ao mesmo estado em que estava antes de invocar a função chamada.
 
 Rotina para que se subtraia um byte desde um segundo byte:
