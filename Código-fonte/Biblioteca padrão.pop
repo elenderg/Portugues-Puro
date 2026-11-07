@@ -3272,7 +3272,7 @@ Rotina para que se acrescente zeros para uma string até chegar em um número:
     Acrescente "0" para a string.
   Reitere.
 
-Rotina para que se associe um ponteiro usando um quantidade de bytes:\ Aloque memória RAM para um ponteiro
+Rotina para que se associe um ponteiro usando uma quantidade de bytes:\ Aloque memória RAM para um ponteiro
   Se a quantidade de bytes for 0,
     Esvazie o ponteiro;
     Retorne.
@@ -21259,7 +21259,7 @@ Rotina para que se converta um sinalizador para uma string:
   \ Se o sinalizador não estiver ativo,
   Atribua "NÃO" à string.
 
-Rotina para que se reaponte um ponteiro usando um quantidade de bytes:
+Rotina para que se reaponte um ponteiro usando uma quantidade de bytes:
   Se o ponteiro for inexistente,
     Associe o ponteiro usando a quantidade de bytes;
     Retorne.
@@ -21652,7 +21652,7 @@ Função para que se determine se uma string está em branco:
   Decodifique $B800000000. \ mov eax,0
   \ FIM:
 
-Rotina para que se preencha bytes com um byte começando sob um ponteiro por um quantidade de bytes:
+Rotina para que se preencha bytes com um byte começando sob um ponteiro por uma quantidade de bytes:
   Decodifique $8BBD0C000000. \ mov edi,[ebp+12] \ o ponteiro
   Decodifique $8B3F. \ mov edi,[edi]
   Decodifique $8B8D10000000. \ mov ecx,[ebp+16] \ a contagem
