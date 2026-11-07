@@ -3987,7 +3987,7 @@ Rotina para que se converta um texto hexadecimal para um número:
   Se a quantidade de caracteres deste texto hexadecimal não for a magnitude deste número,
     Limpe o número;
     Retorne.
-  Copie bytes desde o caractere inicial deste texto hexadecimal para o endereçamento destte número pela magnitude deste número.
+  Copie bytes desde o caractere inicial deste texto hexadecimal para o endereçamento deste número pela magnitude deste número.
 
 Rotina para que se converta um lParam para uma tecla:
   \ assumes lParam from wm_char mensagem
