@@ -6910,8 +6910,8 @@ Rotina para que se pinte um círculo uns twips em largura (counterclockwise):
 Rotina para que se pinte um console:
   Se o console for inexistente, retorne.
   Salve o contexto do dispositivo atual.
-  Cubra somente fora dessa tela desta console .
-  Pinte a tela desta console com a cor da borda deste console e a cor de preenchimento deste console.
+  Cubra somente fora dessa tela deste console .
+  Pinte a tela deste console com a cor da borda deste console e a cor de preenchimento deste console.
   Atribua a cor branca à cor da canetinha desta caixa de texto deste console.
   Pinte a caixa de texto deste console.
   Restaure o contexto do dispositivo atual.
