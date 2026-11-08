@@ -13368,11 +13368,11 @@ Rotina para que se exponha exterior de uma hRgn:
   \ Combina a região especificada com a região de recorte atual usando o modo especificado.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-extselectcliprgn
     O contexto do dispositivo atual e [hdc]
-    e O hRgn [hrgn]
+    O hRgn [hrgn]
     e 4. [RGN_DIFF]
   Processe "gdi32.dll" "ExtSelectClipRgn" com
     O contexto do dispositivo atual e [hdc]
-    e A old hRgn [hrgn]
+    A old hRgn [hrgn]
     e 2. [mode = RGN_OR]
   Destrua a old hRgn.
 
