@@ -5970,7 +5970,7 @@ Função para que se determine se um endereço completo está no sistema de arquivos
   Se o número for menor do que 0, diga não.
   Diga sim.
 
-Função para que se determine se um endereço completo está protegido contra gravação:
+Função para que se determine se um endereço completo está protegido contra gravação;
 Função para que se determine se um endereço completo é somente leitura:
   Preserve o endereço completo.
   Anexe o caractere NULL após o endereço completo.
