@@ -33,7 +33,7 @@ Um array é uma estrutura com
 
 [LISTA]
 \A thing is a pointer to a thing record.
-Uma lista é um ponteiro [que aponta] para uma lista estruturada.
+Uma lista é um ponteiro para uma lista estruturada.
 
 \A thing record has a next thing and a previous thing.
 Uma lista estruturada é uma estrutura com
@@ -354,7 +354,7 @@ Uma unidade de disco é uma string. \ Exemplo: c:\ ou  \\NomeDoPC\DiretórioCompar
 Uma unidade de rede é uma string. \ é basicamente a cópia da variável anterior. Nome diferente pra evitar confusão.
 Uma categoria da unidade de disco é uma string. \HD, Pen-drive, Disquete, DVD, etc
 Um nome da unidade de disco é uma string.
-Uma distância é [composta de] uns twips.
+Uma distância é uns twips.
 Uma descrição de dispositivo é uma string.
 \Um DOCINFO é uma estrutura com
 \Um número denominado cbSize,
@@ -374,7 +374,7 @@ Um email é uma estrutura com
   Um assunto,
   Uma mensagem.
 
-Uma fila de eventos é [composta de] uns eventos.
+Uma fila de eventos é uns eventos.
 Uns extra pontos osmosianos são uns pontos osmosianos.
 Um delta é um número.
 Um número quadrado é um número.
@@ -385,7 +385,7 @@ Uma fonte é uma estrutura com
   Um nome e
   Uma altura.
 
-Um altura da fonte é [composta de] uns twips. \ indica a altura da linha - as letras devem encaixar-se sem problemas na altura da fonte
+Um altura da fonte é uns twips. \ indica a altura da linha - as letras devem encaixar-se sem problemas na altura da fonte
 Um identificador de fonte é um número identificador.
 Um pé são 12 polegadas.
 Uma string plural é uma string.
@@ -424,7 +424,7 @@ Uma orientação é uns pontos osmosianos.
 Uma orientação aleatória é uma orientação.
 A contagem do heap é um número.
 O endereço heap é um ponteiro.
-Um altura é [composta de] uns twips.
+Um altura é uns twips.
 Um texto hexadecimal é uma string.
 Um número da fonte é um número identificador.
 Um hIcon é um número identificador.
@@ -470,7 +470,7 @@ Um mínimo múltiplo comum é um número.
 Um input é um evento.
 Um clique é um input.
 Uma quantidade de caracteres é uns twips.
-Um tamanho da letra é [composto de] uns twips. \ indica a altura real de uma letra maiúscula
+Um tamanho da letra é uns twips. \ indica a altura real de uma letra maiúscula
 Uma letra é um byte.
 Uma localização inicial é uma localização.
 Uma localização final é uma localização.
@@ -507,7 +507,7 @@ Uma imagem é uma lista com \FIGURA?
   Um gpBitmap.
 
 Um processo é um número identificador.
-Um ponteiro de processo é um ponteiro [que aponta] para um processo.
+Um ponteiro de processo é um ponteiro para um processo.
 
 Um quora é uma lista com \ quora parece ser abreviação de "question or answer"
   Uma string e \ aparenta ser usado para apresetar uma lista de inputs no terminal com determinada cor
@@ -595,7 +595,7 @@ Uma URL simplificada é uma estrutura com
   Um string denominada parâmetro de consulta, \ lpszExtraInfo? -> exemplo: ?useLiveData=1&internal=0
   Um número denominado número de porta. \ nPort? -> números de porta ocupam (geralmente) 16 bits
 
-Um série de vértices é um ponteiro [que aponta] para uma série de vértices conjunto.
+Um série de vértices é um ponteiro para uma série de vértices conjunto.
 Uma quantidade de vértices é um número.
 
 Um série de vértices conjunto é uma estrutura com
@@ -613,7 +613,7 @@ Uma largura é uns twips.
 Uma largura inicial é uma largura.
 [FONTES TIPOGRÁFICAS]
 
-Um POutlineTextmetric é um ponteiro [que aponta] para uma [estrutura] OutlineTextmetric.
+Um POutlineTextmetric é um ponteiro para um OutlineTextmetric.
 
 [STRING]
 Uma string é uma estrutura com
@@ -694,7 +694,7 @@ Um objeto pai é um objeto pdf.
 Uma destinação numérica é um número.
 Uma string formatada é uma string. \ string surrounded by ( ) and has \( for (, \) for ), \\ for backslash
 Um pdf é um trecho.
-Um endereço pdf é um ponteiro [que aponta] para um pdf.
+Um endereço pdf é um ponteiro para um pdf.
 
 Umas larguras de fonte é uma lista com \ usado para conversão pdf
   Uma fonte,
@@ -778,9 +778,9 @@ Um ABC é uma estrutura com \ Define a largura de um caractere em uma fonte TrueT
   Um abcC.\ O espaçamento C é a distância adicionada p/ fornecer um espaço em branco à direita do caractere.
   \ A largura total de um caractere é a soma dos espaços A, B e C. O espaço A e o C podem ser negativos para indicar cavidades ou saliências.
 
-Um pABC é um ponteiro [que aponta] para um ABC.
+Um pABC é um ponteiro para um ABC.
 
-Um endereço do ABC é um ponteiro [que aponta] para um ABC.
+Um endereço do ABC é um ponteiro para um ABC.
  \ Documentação :-> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/ns-wingdi-ABC
   \ https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-getcharabcwidthsa
 
@@ -873,20 +873,20 @@ Um In_Addr é uma estrutura com \ representa um endereço IPv4. -> Internet Adress
   Um byte denominado s_byte2,
   Um byte denominado s_byte3,
   Um byte denominado s_byte4,
-  Uma word [unsigned] denominado s_word1 sob o s_byte1, \O endereço IPv4 do host formatado como dois u_shorts.
-  Uma word [unsigned] denominado s_word2 sob o s_byte3,
+  Uma word [unsigned] denominada s_word1 sob o s_byte1, \O endereço IPv4 do host formatado como dois u_shorts.
+  Uma word [unsigned] denominada s_word2 sob o s_byte3,
   Um número denominado s_addr sob o s_byte1. \Endereço do host formatado como u_long.
 
-Um istream é um ponteiro [que aponta] para um istream object.
+Um istream é um ponteiro para um istream object.
 
 Um istream object é uma estrutura com um istream VTable denominado VTable.
 
-Um istream VTable é um ponteiro [que aponta] para um istream VTable conjunto.
+Um istream VTable é um ponteiro para um istream VTable conjunto.
   \Uma VTable (tabela de método virtual) é uma tabela de ponteiros de função.
   \O VTable é como o COM vincula uma chamada de método à sua implementação em tempo de execução. N
   \Não por coincidência, vtables são a forma como a maioria dos compiladores C ++ implementa métodos virtuais.
   Um istream VTable conjunto é uma estrutura com
-  \ iunknown
+  \ iUnknown
   \ https://learn.microsoft.com/pt-br/windows/win32/api/objidl/nn-objidl-istream
   Um ponteiro denominado queryinterface,
   \ https://learn.microsoft.com/pt-br/windows/win32/com/queryinterface--navigating-in-an-object
@@ -1318,9 +1318,9 @@ Uma cor é uma estrutura com
 Uma cor da borda é uma cor.
 Uma cor de preenchimento é uma cor.
 
-Uma matiz é [composta de] uns graus. [que vão desde o número 0 até o número 3599]
+Uma matiz é uns graus. [que vão desde o número 0 até o número 3599]
 Uma luminosidade é um número. [que vai desde o número 0 até o número 1000]
-Uma tonalidade é [composta de] uns graus. [que vão desde o número 0 até o número 3599]
+Uma tonalidade é uns graus. [que vão desde o número 0 até o número 3599]
 
 Um código da cor é um número [exemplo: $00BBGGRR].
 
@@ -1497,18 +1497,18 @@ O número pi é uma fração igual a 2147483647/683565275.
 \O número neperiano é uma fração igual a 271828182846/1000000000.
 \A proporção dourada é uma fração igual a 1618033988/1000000000.
 
-O tpi [quantidade de twips por polegada] é [composta de] uns twips igual a 1440.
+O tpi [quantidade de twips por polegada] é uns twips igual a 1440.
 A quantidade de twips/pixel é uns twips.
-O ppi [quantidade de pixels por polegada] é [composta de] uns twips.
+O ppi [quantidade de pixels por polegada] é uns twips.
 
 A direita é uma fração igual a 1/4.
 O lado direito é uma fração igual a 1/4.
 A esquerda é uma fração igual a -1/4.
 O lado esquerdo é uma fração igual a -1/4.
 O menor número é -2147483648. \ número de 4 bytes/32 bits
-O tamanho do quadrado é [igual a] uns twips.
+O tamanho do quadrado é uns twips.
 \Os campos de textos são uns campos de texto.
-A stack é [composta de] uns elementos das stacks.
+A stack é uns elementos das stacks.
 A contagem total é um número igual a 0. 
 
 O sinalizador de ignição é um sinalizador igual a 1.
@@ -1516,7 +1516,7 @@ O sinal de desligamento é um sinalizador igual a 0.
 
 As alternativas são umas alternativas.
 O contexto é um contexto.
-A pilha de contextos é [composta de] uns contextos.
+A pilha de contextos é uns contextos.
 O nome do provedor criptográfico é uma string.
 O console é um console.
 
