@@ -5898,7 +5898,7 @@ Rotina para que se remova alguns termos negativos desde umas unidades semânticas
       Reitere.
     Se a string desta unidade semântica for "nada",
       Inverta o sinalizador;
-      Atribua "something" à string desta unidade semântica; 
+      Atribua "algo" à string desta unidade semântica; 
       Reitere.
   Reitere.
 
