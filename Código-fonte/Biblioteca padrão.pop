@@ -603,8 +603,8 @@ Um série de vértices conjunto é uma estrutura com
   Uma ponteiro da localização.
 
 Um vértice é uma lista com
-  Uma coordenada denominada coordenada X,
-  Uma coordenada denominada coordenada Y,
+  Uma coordenada denominada ordenada X,
+  Uma coordenada denominada ordenada Y,
   Uma localização sob a coordenada X.
 
 Um arquivo de som é um endereço completo.
@@ -4460,8 +4460,8 @@ Rotina para que se copie um vértice Para um segundo vértice:
     Esvazie o segundo vértice;
     Retorne.
   Aloque memória para o segundo vértice.
-  Atribua a coordenada X deste vértice à coordenada X deste segundo vértice.
-  Atribua a coordenada Y deste vértice à coordenada Y deste segundo vértice.
+  Atribua a ordenada X deste vértice à ordenada X deste segundo vértice.
+  Atribua a ordenada Y deste vértice à ordenada Y deste segundo vértice.
 
 Rotina para que se copie uns vértices Para uns segundo vértices:
   Destrua os segundo vértices.
@@ -5077,8 +5077,8 @@ Rotina para que se crie um vértice usando uma localização:
 
 Rotina para que se crie um vértice usando uma coordenada X e uma coordenada Y:
   Aloque memória para o vértice.
-  Atribua a coordenada X à coordenada X deste vértice.
-  Atribua a coordenada Y à coordenada Y deste vértice.
+  Atribua a coordenada X à ordenada X deste vértice.
+  Atribua a coordenada Y à ordenada Y deste vértice.
 
 Rotina para que se crie uma requisição WinHTTP por posting para uma URL:
   Aloque memória para a requisição WinHTTP.
@@ -7124,8 +7124,8 @@ Rotina para que se pinte um polígono com uma cor (apenas na borda):
   \ Atualiza a posição atual para o ponto especificado e, opcionalmente, retorna a posição anterior.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-movetoex
     O contexto do dispositivo atual [hdc]
-    e A coordenada X deste vértice [x]
-    e A coordenada Y deste vértice [y]
+    e A ordenada X deste vértice [x]
+    e A ordenada Y deste vértice [y]
     e nil. [lppt] \ Consulte https://learn.microsoft.com/pt-br/windows/win32/api/windef/ns-windef-point
   Itere.
     Obtenha o vértice desde os vértices deste polígono.
@@ -7134,8 +7134,8 @@ Rotina para que se pinte um polígono com uma cor (apenas na borda):
   \ Desenha uma linha da posição atual até, mas não incluindo, o ponto especificado.
     \ Documentação: -> \https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/nf-wingdi-lineto
       O contexto do dispositivo atual [hdc]
-      e A coordenada X deste vértice [x]
-      e A coordenada Y deste vértice.[y]
+      e A ordenada X deste vértice [x]
+      e A ordenada Y deste vértice.[y]
   Reitere.
   Destrua o hPen desse contexto do dispositivo atual.
   Se a localização deste primeiro vértice destes vértices deste polígono for a localização deste último vértice destes vértices deste polígono, retorne.
@@ -8014,8 +8014,8 @@ Rotina para que se inverta verticalmente um polígono:
   Itere.
     Obtenha um vértice desde os vértices deste polígono.
     Se o vértice for inexistente, retorne.
-    Subtraia a coordenada Y1 desta caixa desde a coordenada Y deste vértice.
-    Atribua a coordenada Y2 desta caixa menos a coordenada Y deste vértice à coordenada Y deste vértice.
+    Subtraia a coordenada Y1 desta caixa desde a ordenada Y deste vértice.
+    Atribua a coordenada Y2 desta caixa menos a ordenada Y deste vértice à ordenada Y deste vértice.
   Reitere.
 
 Rotina para que se desmanche todos os eventos:
@@ -12085,8 +12085,8 @@ Rotina para que se redimensione proporcionalmente um vértice usando uma proporçã
 Rotina para que se redimensione proporcionalmente um vértice usando uma fração:
   Se o vértice for inexistente, retorne.
   Se a fração for 1/1, retorne.
-  Redimensione proporcionalmente a coordenada X deste vértice usando a fração.
-  Redimensione proporcionalmente a coordenada Y deste vértice usando a fração.
+  Redimensione proporcionalmente a ordenada X deste vértice usando a fração.
+  Redimensione proporcionalmente a ordenada Y deste vértice usando a fração.
 
 Rotina para que se role um console usando um evento:
   Se o console for inexistente, retorne.
@@ -18115,14 +18115,14 @@ Rotina para que se atribua a caixa dum polígono para uma caixa:
   Itere.
     Obtenha um vértice desde os vértices deste polígono.
     Se o vértice for inexistente, pare.
-    Se a coordenada X deste vértice for menor do que a coordenada X1 desta caixa, 
-      Atribua a coordenada X deste vértice à coordenada X1 desta caixa.
-    Se a coordenada Y deste vértice for menor do que a coordenada Y1 desta caixa, 
-      Atribua a coordenada Y deste vértice à coordenada Y1 desta caixa.
-    Se a coordenada X deste vértice for maior do que a coordenada X2 desta caixa, 
-      Atribua a coordenada X deste vértice à coordenada X2 desta caixa.
-    Se a coordenada Y deste vértice for maior do que a coordenada Y2 desta caixa, 
-      Atribua a coordenada Y deste vértice à coordenada Y2 desta caixa.
+    Se a ordenada X deste vértice for menor do que a coordenada X1 desta caixa, 
+      Atribua a ordenada X deste vértice à coordenada X1 desta caixa.
+    Se a ordenada Y deste vértice for menor do que a coordenada Y1 desta caixa, 
+      Atribua a ordenada Y deste vértice à coordenada Y1 desta caixa.
+    Se a ordenada X deste vértice for maior do que a coordenada X2 desta caixa, 
+      Atribua a ordenada X deste vértice à coordenada X2 desta caixa.
+    Se a ordenada Y deste vértice for maior do que a coordenada Y2 desta caixa, 
+      Atribua a ordenada Y deste vértice à coordenada Y2 desta caixa.
   Reitere.
 
 Rotina para que se atribua o meio de uma linha reta sobre uma localização;
@@ -18497,8 +18497,8 @@ Rotina para que se mova um vértice usando um par de números:
 
 Rotina para que se mova um vértice usando uns x-twips e uns y-twips:
   Se o vértice for inexistente, retorne.
-  Adicione o x-twips para a coordenada X deste vértice.
-  Adicione o y-twips para a coordenada Y deste vértice.
+  Adicione o x-twips para a ordenada X deste vértice.
+  Adicione o y-twips para a ordenada Y deste vértice.
 
 Rotina para que se mova uma caixa de texto para baixo uns twips:
   Mova a caixa de texto usando 0 e os twips.
@@ -18764,8 +18764,8 @@ Rotina para que se inverta horizontalmente um polígono:
   Itere.
     Obtenha um vértice desde os vértices deste polígono.
     Se o vértice for inexistente, retorne.
-    Subtraia a coordenada X1 desta caixa desde a coordenada X deste vértice.
-    Atribua a coordenada X2 desta caixa menos a coordenada X deste vértice à coordenada X deste vértice.
+    Subtraia a coordenada X1 desta caixa desde a ordenada X deste vértice.
+    Atribua a coordenada X2 desta caixa menos a ordenada X deste vértice à ordenada X deste vértice.
   Reitere.
 
 [OPERAÇÕES COM PDF]
