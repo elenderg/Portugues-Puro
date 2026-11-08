@@ -498,8 +498,8 @@ Um pDevMode é um ponteiro [que aponta] para um DEVMODE.
 
 Uma imagem é uma lista com \FIGURA?
   \ as caixas estão em twits
-  Uma caixa [localização da imagem cortada sobre a página],
-  Uma caixa intacta [localização da imagem inteira sobre a página],
+  Uma caixa denominada caixa [localização da imagem cortada sobre a página],
+  Uma caixa denominada caixa intacta [localização da imagem inteira sobre a página],
   Um sinalizador denominado sinalizador de escala de cinza,
   Um sinalizador denominado espelhamento horizontal,
   Um ângulo de rotação, \ sentido horário
@@ -10002,7 +10002,7 @@ Rotina para que se inicialize a janela do programa:
   Atribua o caractere inicial deste nome deste módulo ao lpszClassName desta classe da janela.
   Processe "user32.dll" "RegisterClassExA" \ Registra uma classe de janela.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-registerclassexa
-  Com o endereçamento desta classe da janela. [*unnamedParam1]
+  com o endereçamento desta classe da janela. [*unnamedParam1]
   Processe "user32.dll" "CreateWindowExA" com
   \ Cria a janela
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-createwindowexa
@@ -10643,7 +10643,7 @@ Rotina para que se mova uma imagem para a direita uns twips:
 
 Rotina para que se mova uma imagem para uma localização:
   Se a imagem for inexistente, retorne.
-  Calcule um valor da diferença entre a localização e o canto superior esquerdo desta imagem.
+  Calcule um valor da diferença entre a localização e o canto superior esquerdo desta caixa desta imagem.
   Mova a imagem usando o valor da diferença.
 
 Rotina para que se mova uma imagem para cima uns twips:
