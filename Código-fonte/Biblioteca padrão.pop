@@ -20647,6 +20647,42 @@ Rotina para que se subtraia um par de números desde um segundo par de números:
   Subtraia o número X deste par de números desde o número X deste segundo par de números.
   Subtraia o número Y deste par de números desde o número Y deste segundo par de números.
 
+
+Rotina para que se negate um par de números:
+Rotina para que se inverta o sinal de um par de números:
+  Inverta o sinal desse número X deste par de números.
+  Inverta o sinal desse número Y deste par de números.
+
+Rotina para que se negate uma fração;
+Rotina para que se inverta o sinal de uma fração:
+  Inverta o sinal desse numerador desta fração.
+
+Rotina para que se atribua um sinalizador para uma string;
+Rotina para que se converta um sinalizador para uma string:
+  Se o sinalizador estiver ativo,
+    Atribua "SIM" à string;
+    Retorne.
+  \ Se o sinalizador não estiver ativo,
+  Atribua "NÃO" à string.
+
+Rotina para que se reaponte um ponteiro usando uma quantidade de bytes:
+  Se o ponteiro for inexistente,
+    Associe o ponteiro usando a quantidade de bytes;
+    Retorne.
+  Se a quantidade de bytes for 0,
+    Desassocie o ponteiro;
+    Retorne.
+  Preserve a quantidade de bytes.
+  Arredonde para cima a quantidade de bytes usando a potência de dois.
+  Processe "kernel32.dll" "HeapReAlloc" com
+  \Realoca um bloco de memória de um heap.
+ \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/heapapi/nf-heapapi-heaprealloc
+    O endereço heap [hHeap]
+    e 8 [8 = HEAP_ZERO_MEMORY]  [dwFlags]
+    e O ponteiro [lpMem]
+    e A quantidade de bytes [dwBytes]
+  Retornando o ponteiro.
+
 [ROTINAS COM ASSEMBLY]
 
 \ CONCEITOS GERAIS DE ASSEMBLY:
@@ -20976,40 +21012,6 @@ Rotina para que se inverta o sinal de um número:
   Decodifique $8B8508000000. \ mov eax,[ebp+8] \ o número
   Decodifique $F718.\ neg [eax]
 
-Rotina para que se negate um par de números:
-Rotina para que se inverta o sinal de um par de números:
-  Inverta o sinal desse número X deste par de números.
-  Inverta o sinal desse número Y deste par de números.
-
-Rotina para que se negate uma fração;
-Rotina para que se inverta o sinal de uma fração:
-  Inverta o sinal desse numerador desta fração.
-
-Rotina para que se atribua um sinalizador para uma string;
-Rotina para que se converta um sinalizador para uma string:
-  Se o sinalizador estiver ativo,
-    Atribua "SIM" à string;
-    Retorne.
-  \ Se o sinalizador não estiver ativo,
-  Atribua "NÃO" à string.
-
-Rotina para que se reaponte um ponteiro usando uma quantidade de bytes:
-  Se o ponteiro for inexistente,
-    Associe o ponteiro usando a quantidade de bytes;
-    Retorne.
-  Se a quantidade de bytes for 0,
-    Desassocie o ponteiro;
-    Retorne.
-  Preserve a quantidade de bytes.
-  Arredonde para cima a quantidade de bytes usando a potência de dois.
-  Processe "kernel32.dll" "HeapReAlloc" com
-  \Realoca um bloco de memória de um heap.
- \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/heapapi/nf-heapapi-heaprealloc
-    O endereço heap [hHeap]
-    e 8 [8 = HEAP_ZERO_MEMORY]  [dwFlags]
-    e O ponteiro [lpMem]
-    e A quantidade de bytes [dwBytes]
-  Retornando o ponteiro.
 
 Rotina para que se mostre olá mundo no console:
   Decodifique $B403. \mov ah,0x3

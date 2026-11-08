@@ -3626,9 +3626,9 @@ Rotina para que se adicione uma unidade semântica para umas unidades semânticas 
   Crie a unidade semântica.
   Acrescente a unidade semântica para as unidades semânticas.
   \-------------------------------------------------------------- VERBO SER -------------------------------------------------------
-  Se a string for "é",
-    Atribua "é" à string desta unidade semântica;
-    Retorne.
+  \Se a string for "é",
+    \Atribua "é" à string desta unidade semântica;
+   \Retorne.
   Se a string for "for",
     Atribua "é" à string desta unidade semântica;
     Retorne.
@@ -3742,19 +3742,19 @@ Rotina para que se adicione uma unidade semântica para umas unidades semânticas 
     Atribua "para" à string desta unidade semântica;
     Retorne. 
   \---------------------------------------------------------------------- CONTRAÇÕES ------------------------------------------------------
-  Se a string for "pelo",
-    Atribua "por o" à string desta unidade semântica;
-    Retorne.
-  Se a string for "pela",
-    Atribua "por o" à string desta unidade semântica;
-    Retorne.
+  \Se a string for "pelo",
+    \Atribua "por o" à string desta unidade semântica;
+    \Retorne.
+  \Se a string for "pela",
+    \Atribua "por o" à string desta unidade semântica;
+    \Retorne.
   \ sobre
-  Se a string for "sob",
-    Atribua "sobre" à string desta unidade semântica;
-    Retorne.
-  Se a string for "sobre",
-    Atribua "sobre" à string desta unidade semântica;
-    Retorne.
+  \Se a string for "sob",
+   \ Atribua "sob" à string desta unidade semântica;
+    \Retorne.
+  \Se a string for "sobre",
+    \Atribua "sobre" à string desta unidade semântica;
+    \Retorne.
   Se a string for "parde", 
   \ contração de "para" com "de, usada internamente pelo compilador para distinguir a preposição "de" 
     Atribua "de" à string desta unidade semântica;
