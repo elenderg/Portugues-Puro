@@ -5037,8 +5037,8 @@ Rotina para que se crie um conjunto de texto usando uma string:
 Rotina para que se crie um terminal em uma caixa:
   Aloque memória para o terminal.
   Atribua a caixa à caixa deste terminal.
-  Atribua a cor verde ao cor de saída deste terminal.
-  Atribua a cor verde claríssimo ao cor de entrada deste terminal.
+  Atribua a cor verde à cor de saída deste terminal.
+  Atribua a cor verde claríssimo à cor de entrada deste terminal.
 
 Rotina para que se crie uma caixa de texto:
   Aloque memória para a caixa de texto.
@@ -6912,7 +6912,7 @@ Rotina para que se pinte um console:
   Salve o contexto do dispositivo atual.
   Cubra somente fora dessa tela desta console .
   Pinte a tela desta console com a cor da borda deste console e a cor de preenchimento deste console.
-  Atribua a cor branca ao cor da canetinha desta caixa de texto deste console.
+  Atribua a cor branca à cor da canetinha desta caixa de texto deste console.
   Pinte a caixa de texto deste console.
   Restaure o contexto do dispositivo atual.
 
@@ -19600,7 +19600,7 @@ Rotina para que se inicie uma folha usando uma caixa e um título de índice remis
 
 Rotina para que se inicie uma folha usando uma caixa e um título de índice remissivo (modo pdf):
   Ative a sinalizador de páginas deste pdf state.
-  Atribua a cor preta ao cor da borda atual deste pdf state.
+  Atribua a cor preta à cor da borda atual deste pdf state.
   Atribua a cor preta à cor de preenchimento atual deste pdf state.
   Inicie a folha usando a caixa e o título de índice remissivo (pdf style - comece o página atual).
   Se o título de índice remissivo estiver em branco, retorne.
@@ -20295,8 +20295,8 @@ Rotina para que se inicialize as cores:
   Atribua a cor laranja muito escuro à cor marrom escuro.
   Atribua a cor laranja escuríssimo à cor marrom muito escuro.
   Atribua a cor laranja escuríssimo à cor marrom escuríssimo.
-  Atribua a cor vermelho claríssimo ao cor pink.
-  Atribua a cor vermelho muito claro ao cor pink escuro.
+  Atribua a cor vermelho claríssimo à cor pink.
+  Atribua a cor vermelho muito claro à cor pink escuro.
   \ cores dos pincéis
   Atribua a cor preta à canetinha preto.
   Atribua a cor branca à canetinha branco.
@@ -20476,17 +20476,17 @@ Rotina para que se escolha aleatoriamente uma cor do arco-íris:
   Se o número atual da cor do arco-íris for maior do que 6, 
     Atribua 1 ao número atual da cor do arco-íris.
   Se o número atual da cor do arco-íris for 1, 
-    Atribua a cor vermelha ao cor do arco-íris.
+    Atribua a cor vermelha à cor do arco-íris.
   Se o número atual da cor do arco-íris for 2, 
-    Atribua a cor laranja ao cor do arco-íris.
+    Atribua a cor laranja à cor do arco-íris.
   Se o número atual da cor do arco-íris for 3, 
-    Atribua a cor amarela ao cor do arco-íris.
+    Atribua a cor amarela à cor do arco-íris.
   Se o número atual da cor do arco-íris for 4, 
-    Atribua a cor verde ao cor do arco-íris.
+    Atribua a cor verde à cor do arco-íris.
   Se o número atual da cor do arco-íris for 5, 
-    Atribua a cor azul ao cor do arco-íris.
+    Atribua a cor azul à cor do arco-íris.
   Se o número atual da cor do arco-íris for 6, 
-    Atribua a cor púrpura ao cor do arco-íris.
+    Atribua a cor púrpura à cor do arco-íris.
   Atribua a cor do arco-íris à cor deste contexto.
 
 Rotina para que se redefina as cores do arco-íris:
