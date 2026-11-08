@@ -311,10 +311,10 @@ Uma alternativa é uma lista com
   Uma caixa.
 
 Um console é uma lista com
-  Uma caixa,
+  Uma caixa denominada tela,
   Uma cor da borda,
   Uma cor de preenchimento,
-  Uma caixa de texto,
+  Uma caixa de texto, \ tem um campo caixa dentro
   Uma malha quadriculada,
   Um texto retornado.
 
@@ -4492,7 +4492,7 @@ Rotina para que se crie um console:
   Aloque memória para o console.
   Atribua a cor de borda de janela à cor da borda deste console.
   Atribua a cor preta à cor de preenchimento deste console.
-  Atribua a caixa desta tela à caixa deste console.
+  Atribua a caixa desta tela à tela desta console.
   Atribua a caixa desta tela para uma caixa.
   Subtraia a altura desta fonte padrão desde a coordenada Y2 desta caixa.
   Atribua a altura desta caixa dividido pela altura desta fonte padrão vezes a altura desta fonte padrão para uma altura.
@@ -6910,8 +6910,8 @@ Rotina para que se pinte um círculo uns twips em largura (counterclockwise):
 Rotina para que se pinte um console:
   Se o console for inexistente, retorne.
   Salve o contexto do dispositivo atual.
-  Cubra somente fora dessa caixa deste console .
-  Pinte a caixa deste console com a cor da borda deste console e a cor de preenchimento deste console.
+  Cubra somente fora dessa tela desta console .
+  Pinte a tela desta console com a cor da borda deste console e a cor de preenchimento deste console.
   Atribua a cor branca ao cor da canetinha desta caixa de texto deste console.
   Pinte a caixa de texto deste console.
   Restaure o contexto do dispositivo atual.
@@ -12447,7 +12447,7 @@ Rotina para que se mostre um console:
   Se o console for inexistente, retorne.
   Salve o contexto do dispositivo atual.
   Pinte o console.
-  Atualize a tela usando a caixa deste console.
+  Atualize a tela usando a tela desta console.
   Restaure o contexto do dispositivo atual.
 
 Rotina para que se mostre um cursor:
@@ -20581,7 +20581,7 @@ Rotina para que se escureça uma cor por um quantia:
 Rotina para que se escureça uma cor em uns percentual;
 Rotina para que se escureça uma cor aproximadamente uns percentual;
 Rotina para que se escureça uma cor em aproximadamente uns percentual;
-Rotina para que se escureça uma cor uns percentual:\ testar percentuais aqui pra ver se vai
+Rotina para que se escureça uma cor uns percentual:\ TODO: Verificar se percentual é um tipo escalar
   Atribua a luminosidade desta cor menos o percentual à luminosidade desta cor.
   Delimite a luminosidade desta cor para 0 e 1000.
 
