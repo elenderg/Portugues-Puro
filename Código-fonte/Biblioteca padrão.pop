@@ -6303,10 +6303,12 @@ Função para que se determine se uma string termina com um byte: \ adicionado por
   Diga não.
 
 Função para que se determine se uma string é uma segunda string (comparação de caracteres acentuados):
+  Decodifique $90.
   Compare a string para a segunda string usando a quantidade de caracteres desta string e a quantidade de caracteres desta segunda string e o tabela de caracteres minúsculos s/ acento ascii (iguais somente).
 
 Função para que se determine se uma string é igual a uma segunda string;
 Função para que se determine se uma string é uma segunda string:
+  Decodifique $90.
   Compare a string para a segunda string usando a quantidade de caracteres desta string e a quantidade de caracteres desta segunda string e a tabela de caracteres minúsculos ascii (iguais somente).
 
 Função para que se determine se uma string é uma segunda string ou uma terceira string:
@@ -6889,22 +6891,24 @@ Rotina para que se pinte o cursor de texto em uma caixa de texto:
 
 Rotina para que se pinte um círculo usando uma largura;
 Rotina para que se pinte um círculo uns twips em largura:
-  Atribua os twips vezes o número pi dividido por 48 para uma quantidade de caracteres do segmento.
+  Atribua os twips vezes o número pi dividido por 48 para um twip denominado quantidade de caracteres do segmento.
   Adicione 1 para a quantidade de caracteres do segmento.
   Itere.
     Pinte a quantidade de caracteres do segmento.
     Vire para 1/48.
-    Adicione 1 para uma contagem. Se a contagem for 48, pare.
+    Adicione 1 para uma contagem.
+    Se a contagem for 48, pare.
   Reitere.
 
 Rotina para que se pinte um círculo uns twips em largura (regressivamente);
 Rotina para que se pinte um círculo uns twips em largura (counterclockwise):
-  Atribua os twips vezes o número pi dividido por 48 para uma quantidade de caracteres do segmento.
+  Atribua os twips vezes o número pi dividido por 48 para um twip denominado quantidade de caracteres do segmento.
   Adicione 1 para a quantidade de caracteres do segmento.
   Itere.
     Pinte a quantidade de caracteres do segmento.
     Vire para a esquerda.
-    Adicione 1 para uma contagem. Se a contagem for 48, pare.
+    Adicione 1 para uma contagem. 
+    Se a contagem for 48, pare.
   Reitere.
 
 Rotina para que se pinte um console:
@@ -6955,7 +6959,7 @@ Rotina para que se pinte um figura geométrica com uma cor:
 
 Rotina para que se pinte um figura geométrica com uns lados aproximadamente uns twips em largura:
   Atribua 1 e o lado contagem para uma fração.
-  Atribua os twips vezes o número pi dividido pelo lados para uma quantidade de caracteres do segmento.
+  Atribua os twips vezes o número pi dividido pelo lados para um twip denominado quantidade de caracteres do segmento.
   Se os lados forem 4, 
     Atribua os twips vezes 7/8 à quantidade de caracteres do segmento. \ ??? ***
   Itere.
@@ -6982,7 +6986,7 @@ Rotina para que se pinte um figura geométrica com uns lados e uns twips usando u
 
 Rotina para que se pinte um semicírculo aproximadamente uns twips em largura;
 Rotina para que se pinte um semicírculo usando um tamanho:
-  Atribua o tamanho vezes o número pi dividido por 48 para uma quantidade de caracteres do segmento.
+  Atribua o tamanho vezes o número pi dividido por 48 para um twip denominado quantidade de caracteres do segmento.
   Adicione 1 para a quantidade de caracteres do segmento.
   Itere.
     Pinte a quantidade de caracteres do segmento.
@@ -6993,7 +6997,7 @@ Rotina para que se pinte um semicírculo usando um tamanho:
 
 Rotina para que se pinte um semicírculo usando um tamanho (regressivamente);
 Rotina para que se pinte um semicírculo usando um tamanho (counterclockwise):
-  Atribua o tamanho vezes o número pi dividido por 48 para uma quantidade de caracteres do segmento.
+  Atribua o tamanho vezes o número pi dividido por 48 para um twip denominado quantidade de caracteres do segmento.
   Adicione 1 para a quantidade de caracteres do segmento.
   Itere.
     Pinte a quantidade de caracteres do segmento.
@@ -7170,7 +7174,7 @@ Rotina para que se pinte um polígono com uma cor (apenas no interior):
 
 Rotina para que se pinte um quadrante circular aproximadamente uns twips em largura;
 Rotina para que se pinte um quadrante circular usando um tamanho:
-  Atribua o tamanho vezes o número pi dividido por 48 para uma quantidade de caracteres do segmento.
+  Atribua o tamanho vezes o número pi dividido por 48 para um twip denominado quantidade de caracteres do segmento.
   Adicione 1 para a quantidade de caracteres do segmento.
   Itere.
     Pinte a quantidade de caracteres do segmento.
@@ -7184,7 +7188,7 @@ Rotina para que se pinte um quadrante circular entre uns twips e uns outros twip
   Pinte um quadrante circular usando o terceiro twips.
 
 Rotina para que se pinte um quadrante circular usando um tamanho (counterclockwise):
-  Atribua o tamanho vezes o número pi dividido por 48 para uma quantidade de caracteres do segmento.
+  Atribua o tamanho vezes o número pi dividido por 48 para um twip denominado quantidade de caracteres do segmento.
   Adicione 1 para a quantidade de caracteres do segmento.
   Itere.
     Pinte a quantidade de caracteres do segmento.
