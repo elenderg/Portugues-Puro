@@ -1851,8 +1851,8 @@ Rotina para que se aplique o plural adequado para uma string:
   \# advérbios principais
   Se a string for "muito", retorne.
   Se a string for "pouco", retorne.
-  Se a string for "mais", retorne.
-  Se a string for "menos", retorne.
+  \Se a string for "mais", retorne.
+  \Se a string for "menos", retorne.
   Se a string for "bastante", retorne.
   Se a string for "quase", retorne.
   Se a string for "demais", retorne.
@@ -3594,6 +3594,7 @@ Rotina para que se compile o cabeçalho próprio para uma rotina usando um percorr
 Função para que se determine se uma string é algum comando condicional:
   Se a string for "se", diga sim.
   Se a string for "quando", diga sim.
+  \Se a string for "enquanto", diga sim.
   Diga não.
 
 Rotina para que se compile umas unidades semânticas e uns parâmetros usando um percorredor:
@@ -8118,7 +8119,6 @@ Função para que se determine se uma string é alguma preposição:
   Se a string for "voltada", diga sim.
   Se a string for "voltado", diga sim.
   Se a string for "limitando-o", diga sim.
-  Se a string for "while", diga sim.
   Se a string for "ultrapassou", diga sim.
   Diga não.
 

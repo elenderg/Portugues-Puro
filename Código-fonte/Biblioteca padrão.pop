@@ -294,9 +294,9 @@ Um versículo é uma lista com uma string.
 
 Um código binário é uma string.
 Um brilho é uma luminosidade.
-Um contagem de recipientes é uma contagem.
+Uma contagem de recipientes é uma contagem.
 Um conjunto de recipientes é uma estrutura com umas referências.
-Um recipiente é um ponteiro [que aponta] para um conjunto de recipientes.
+Um recipiente é um ponteiro para um conjunto de recipientes.
 Um trecho é uma string.
 Uma quantidade de bytes é uma contagem.
 Um cursor de texto é um posicionamento.
@@ -8183,7 +8183,7 @@ Rotina para que se obtenha um recipiente usando uma string e um catálogo:
 
 Rotina para que se obtenha um recipiente# usando uma string e um catálogo:
   \ baseado no algoritmo djb2 de Daniel J. Bernstein
-  \ Se o catálogo for inexistente,    atribua 0 ao recipiente#;    Retorne.  \ para deixar o compilador mais rápido
+  \ Se o catálogo for inexistente,    atribua 0 ao recipiente#;    Retorne.  [era usado para deixar o compilador mais rápido]
   Atribua a quantidade de caracteres desta string ao recipiente#.
   Se o recipiente# for 0, retorne.
   Adicione 5381 para o recipiente#. \ pode ser qualquer valor,
@@ -14312,14 +14312,15 @@ Rotina para que se escreva uma string sobre um terminal:
   Atribua a cor de saída deste terminal à cor deste quora.
   Mostre o terminal.
 
-Rotina para que se pinte uma string while turning uma fração:
+Rotina para que se pinte uma string e gire uma fração:
   Preserve a string.
   Itere.
     Se a string estiver em branco, retorne.
     Obtenha um byte desde a string.
     Pinte o byte.
     Vire a fração.
-    Se a string não estiver em branco, providencie espaçamento adequado entre caracteres.
+    Se a string não estiver em branco,
+      Providencie espaçamento adequado entre caracteres.
   Reitere.
 
 Rotina para que se escreva uma string com uma cor;
