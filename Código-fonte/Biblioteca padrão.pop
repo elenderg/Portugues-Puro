@@ -2887,7 +2887,8 @@ Rotina para que se ajuste um item:
   \ linha adicionada para classificação de e-mails.
   Atribua o endereçamento deste cFileName deste WIN32FINDDATA deste item para um endereço do caractere.
   Converta o endereço do caractere para o designador deste item.
-  Se a categoria deste item for "endereço de pasta", acrescente "\" para o designador deste item.
+  Se a categoria deste item for "endereço de pasta",
+    Acrescente "\" para o designador deste item.
   Atribua o endereço da pasta deste item junto com o designador deste item ao endereço completo deste item.
   Extraia a extensão deste item desde o designador deste item tal como um endereço completo.
   Atribua o nFileSizeLow deste WIN32FINDDATA deste item ao tamanho deste item.
