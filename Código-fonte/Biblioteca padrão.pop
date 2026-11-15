@@ -99,8 +99,7 @@ Um par de números fracionários é uma estrutura com
   Uma segunda fração.
 
 [GEOMETRIA]
-Um semicírculo é uma figura geométrica.
-Um quadrante circular é uma figura geométrica.
+
 Uma coordenada é uns twips.
 
 Uma coordenada X1 é uma coordenada.
@@ -428,7 +427,6 @@ Um altura é uns twips.
 Um texto hexadecimal é uma string.
 Um número da fonte é um número identificador.
 Um hIcon é um número identificador.
-Um linha reta horizontal é uma linha reta.
 Um hPen é um número identificador.
 Uma hRgn é um número identificador.
 O cursor de digitação é um cursor.
@@ -554,7 +552,6 @@ Um região da tela é um par de números com
 
 Uma caixa de seleção é uma caixa.
 Um remetente é uma string.
-Um folha é uma caixa.
 Um tamanho é uns twips.
 Um tamanho UPM é um tamanho.
 Umas vezes é um número.
@@ -605,7 +602,7 @@ Um série de vértices conjunto é uma estrutura com
 Um vértice é uma lista com
   Uma coordenada denominada ordenada X,
   Uma coordenada denominada ordenada Y,
-  Uma localização sob a coordenada X.
+  Uma localização sob a ordenada X.
 
 Um arquivo de som é um endereço completo.
 Um wave é um texto hexadecimal.
@@ -671,9 +668,10 @@ Um posicionamento é um par de números com
   Um número de coluna e \\Sugestão: "um número da coluna"
   Um número da linha.
 
-Um hexágono é uma figura geométrica.
 \formas geométricas
 Uma figura geométrica é um polígono.
+Um semicírculo é uma figura geométrica.
+Um hexágono é uma figura geométrica.
 Um flecha estilizada é um figura geométrica.
 Um retângulo é um figura geométrica.
 Um arco é um figura geométrica.
@@ -20973,7 +20971,7 @@ Rotina para que se posicione um subtexto sobre uma string:
   Decodifique $49. \ dec ecx
   Decodifique $898804000000. \ mov [eax+4],ecx \ o caractere final deste subtexto
 
-Rotina para que se escolha aleatoriamente uns twips entre uns twips e uns outros twips; \ precisa de tudo isso? ***
+Rotina para que se escolha aleatoriamente uns twips entre uns segundo twips e uns terceiro twips; \ precisa de tudo isso? ***
 Rotina para que se escolha aleatoriamente um número entre uns twips e uns outros twips;
 Rotina para que se escolha aleatoriamente um número desde um segundo número para um terceiro número;
 Rotina para que se defina um número para algo entre um segundo número e um terceiro número;
