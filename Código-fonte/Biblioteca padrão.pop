@@ -19453,7 +19453,7 @@ Rotina para que se pinte uma caixa com uma cor da borda e uma cor de preenchimen
   Transcreva "re".
   Transcreva stroke e preencha usando a cor da borda e a cor de preenchimento.
 
-Rotina para que se pinte uma caixa com uma cor da borda e uma cor de preenchimento:
+Rotina para que se pinte uma caixa com uma cor denominada cor da borda e uma cor denominada cor de preenchimento:
   Se a sinalizador de páginas deste pdf state estiver ativo,
     Pinte a caixa com a cor da borda e a cor de preenchimento (modo pdf);
     Retorne.
