@@ -9602,7 +9602,7 @@ Rotina para que se faça uma linha reta horizontal uma fração no caminho para cim
 
 Rotina para que se imagine uma linha reta através da base de uma caixa;
 Rotina para que se faça uma linha reta através da base de uma caixa:
-  Atribua a coordenada Y2 desta caixa linha reta para a linha reta.
+  Atribua a linha de baixo desta caixa para a linha reta.
 
 Rotina para que se imagine uma linha reta através de uma caixa uma fração no caminho para cima desde a base;
 Rotina para que se faça uma linha reta através de uma caixa uma fração no caminho para cima desde a base:
@@ -9614,7 +9614,7 @@ Rotina para que se faça uma linha reta através de uma caixa uma fração no caminh
 
 Rotina para que se imagine uma linha reta através do topo de uma caixa;
 Rotina para que se faça uma linha reta através do topo de uma caixa:
-  Atribua a coordenada Y1 desta caixa linha reta para a linha reta.
+  Atribua a linha de cima desta caixa para a linha reta.
 
 Rotina para que se imagine uma linha reta no meio de uma caixa;
 Rotina para que se faça uma linha reta no meio de uma caixa;
