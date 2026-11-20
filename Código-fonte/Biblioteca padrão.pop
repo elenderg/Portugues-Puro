@@ -6221,7 +6221,7 @@ Função para que se determine se uma localização está sobre uma linha reta:
     Obtenha a distância entre a localização e o centro desta linha reta (trigonometria racional).
     Obtenha uma segunda distância entre a localização e o centro desta segunda linha reta (trigonometria racional).
     Se a distância for maior do que a segunda distância, 
-      Atribua a segunda linha reta ao linha reta.
+      Atribua a segunda linha reta para a linha reta.
   Reitere.
 
 Função para que se determine se uma localização está sobre uma imagem:
@@ -9602,7 +9602,7 @@ Rotina para que se faça um linha reta horizontal uma fração no caminho para cima
 
 Rotina para que se imagine uma linha reta através da base de uma caixa;
 Rotina para que se faça uma linha reta através da base de uma caixa:
-  Atribua a coordenada Y2 desta caixa linha reta ao linha reta.
+  Atribua a coordenada Y2 desta caixa linha reta para a linha reta.
 
 Rotina para que se imagine uma linha reta através de uma caixa uma fração no caminho para cima desde a base;
 Rotina para que se faça uma linha reta através de uma caixa uma fração no caminho para cima desde a base:
@@ -9614,7 +9614,7 @@ Rotina para que se faça uma linha reta através de uma caixa uma fração no caminh
 
 Rotina para que se imagine uma linha reta através do topo de uma caixa;
 Rotina para que se faça uma linha reta através do topo de uma caixa:
-  Atribua a coordenada Y1 desta caixa linha reta ao linha reta.
+  Atribua a coordenada Y1 desta caixa linha reta para a linha reta.
 
 Rotina para que se imagine uma linha reta no meio de uma caixa;
 Rotina para que se faça uma linha reta no meio de uma caixa;
@@ -9638,11 +9638,11 @@ Rotina para que se faça uma linha reta uns twips para cima desde a base de uma c
 
 Rotina para que se imagine uma linha reta com uma localização e uma segunda localização;
 Rotina para que se faça uma linha reta com uma localização e uma segunda localização:
-  Atribua a localização e a segunda localização ao linha reta.
+  Atribua a localização e a segunda localização para a linha reta.
 
 Rotina para que se imagine uma linha reta com uma coordenada X e uma coordenada Y e uma segunda coordenada X e uma segunda coordenada Y;
 Rotina para que se faça uma linha reta com uma coordenada X e uma coordenada Y e uma segunda coordenada X e uma segunda coordenada Y:
-  Atribua a coordenada X e a coordenada Y e a segunda coordenada X e a segunda coordenada Y ao linha reta.
+  Atribua a coordenada X e a coordenada Y e a segunda coordenada X e a segunda coordenada Y para a linha reta.
 
 Rotina para que se imagine uma caixa arredondada desde uma caixa e um raio;
 Rotina para que se faça uma caixa arredondada desde uma caixa e um raio:
