@@ -10800,8 +10800,8 @@ Rotina para que se normalize uma orientação:
     Adicione 3840 para a orientação.
 
 Rotina para que se normalize um linha reta horizontal:
-  Se a localização final desta linha reta for menor do que a localização inicial desta linha reta, 
-    Permute a localização final desta linha reta com a localização inicial desta linha reta.
+  Se a localização final desta linha reta for menor do que a localização inicial desta linha reta horizontal, 
+    Permute a localização final desta linha reta com a localização inicial desta linha reta horizontal.
 
 Rotina para que se normalize uma matiz:
   Divida a matiz por 3600 usando um quociente e um resto.
