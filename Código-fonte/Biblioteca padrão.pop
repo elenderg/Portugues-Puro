@@ -6058,7 +6058,7 @@ Função para que se determine se uma localização está acima de uma caixa:
   Diga não.
 
 Função para que se determine se uma localização está acima de um linha reta horizontal:
-  Se a coordenada Y desta localização for menor do que o horizontal y desta localização inicial desta linha reta, diga sim.
+  Se a coordenada Y desta localização for menor do que o coordenada Y desta localização inicial desta linha reta, diga sim.
   Diga não.
 
 Função para que se determine se uma localização está em cima ou em baixo de uma caixa:
@@ -6071,7 +6071,7 @@ Função para que se determine se uma localização está debaixo de uma caixa:
   Diga não.
 
 Função para que se determine se uma localização está debaixo de um linha reta horizontal:
-  Se a coordenada Y desta localização for maior do que o horizontal y desta localização inicial desta linha reta, diga sim.
+  Se a coordenada Y desta localização for maior do que o coordenada Y desta localização inicial desta linha reta, diga sim.
   Diga não.
 
 Função para que se determine se uma localização está em uma elipse:
