@@ -3850,7 +3850,7 @@ Rotina para que se converta uma caixa para uma string:
   Acrescente a coordenada Y2 desta caixa para a string.
 
 Rotina para que se converta um byte para uma cifra binária:
-  Atribua o byte à cifra binária tal como um byte.
+  Atribua o byte à cifra binária tal como um byte denominado novo byte.
   Uppercase a cifra binária.
   Se a cifra binária for maior do que o número nove, \ 57
     Subtraia 7 desde a cifra binária.
@@ -5322,7 +5322,7 @@ Função para que se determine se uma caixa está tocando uma segunda caixa:
   Diga sim.
 
 Função para que se determine se um byte é alfanumérico:
-  Se o byte for algum letra, diga sim.
+  Se o byte for alguma letra, diga sim.
   Se o byte for algum dígito, diga sim.
   Diga não.
 
