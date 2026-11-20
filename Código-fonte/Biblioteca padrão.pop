@@ -6176,7 +6176,7 @@ Função para que se determine se uma localização está para o lado esquerdo de uma
 
 Função para que se determine se uma localização está para a direita ou para a esquerda de uma caixa;
 Função para que se determine se uma localização está para a esquerda ou para a direita de uma caixa;
-\Função para que se determine se uma localização está no lado esquerdo ou no lado direito de uma caixa;
+Função para que se determine se uma localização está no lado direito ou no lado esquerdo de uma caixa;
 Função para que se determine se uma localização está no lado esquerdo ou no lado direito de uma caixa:
   Se a localização estiver ao lado esquerdo dessa caixa, diga sim.
   Se a localização estiver ao lado direito dessa caixa, diga sim.
