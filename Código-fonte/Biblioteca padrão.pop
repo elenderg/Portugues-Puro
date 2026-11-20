@@ -407,7 +407,7 @@ Um GpRect é uma estrutura com
   Um número denominado largura,
   Um número denominado altura.
 
-O gpToken é um gpToken.
+
 Um gpToken é um número.
 Uma malha quadriculada é um par de números.
 
@@ -429,7 +429,7 @@ Um número da fonte é um número identificador.
 Um hIcon é um número identificador.
 Um hPen é um número identificador.
 Uma hRgn é um número identificador.
-O cursor de digitação é um cursor.
+
 Um IID é um UUID. \ Um interface identifier é um Identificador único universal de Interface
 Um quantidade de espaços é uma contagem.
 
@@ -1222,7 +1222,7 @@ Uma WNDCLASS é uma estrutura com \Contém informações de classe de janela.
   \ Um identificador para um pequeno ícone associado à classe da janela.
   \ Se este membro for NULL, o sistema pesquisa o recurso de ícone especificado pelo membro hIcon para um ícone do tamanho apropriado para usar como o ícone pequeno.
 
-A classe da janela é uma WNDCLASS.
+
 
 Uma janela do programa é um número identificador.
 
@@ -1438,9 +1438,25 @@ Uma cor vistosa é uma cor.
 Um tom de cor vivo é uma cor.
 Uma cor viva é uma cor.
 Um tom de cor vívido é uma cor.
-\Uma cor vívida é uma cor.
+Uma canetinha é uma cor.
+
 \Uma cor escura é uma cor.
 \Uma cor esverdeada é uma cor.
+Uma cor clara é uma cor.
+Uma cor muito clara é uma cor.
+Uma cor claríssima é uma cor.
+Uma cor bem clara é uma cor.
+Uma cor escura é uma cor.
+Uma cor muito escura é uma cor.
+Uma cor bem escura é uma cor.
+Uma cor escuríssima é uma cor.
+Uma cor muitísssimo escura é uma cor.
+Uma cor esverdeada é uma cor.
+Uma cor amarronzada é uma cor.
+Uma cor pastel é uma cor.
+Uma cor do arco-íris é uma cor.
+Uma cor vívida é uma cor.
+
 
 [MANIPULAÇÃO DE BITS]
 
@@ -1468,7 +1484,9 @@ Uma cifra hexadecimal é uma string. \ Exemplo: $0010A0… O cifrão serve para indi
 Uma máscara de disjunção exclusiva é uma mask.
 
 [VARIÁVEIS GLOBAIS]
-
+O gpToken é um gpToken.
+O cursor de digitação é um cursor.
+A classe da janela é uma WNDCLASS.
 \A raiz de dois é uma fração igual a 99/70.
 \A raiz de dois é uma fração igual a 1414213562/1000000000.
 \A raiz de três é uma fração igual a 1732050807/1000000000.
@@ -2190,20 +2208,7 @@ A cor de realce é uma cor.
 A cor dourada é uma cor.
 A cor hilite é uma cor.
 A cor de borda de janela é uma cor.
-Uma cor clara é uma cor.
-Uma cor muito clara é uma cor.
-Uma cor claríssima é uma cor.
-Uma cor bem clara é uma cor.
-Uma cor escura é uma cor.
-Uma cor muito escura é uma cor.
-Uma cor bem escura é uma cor.
-Uma cor escuríssima é uma cor.
-Uma cor muitísssimo escura é uma cor.
-Uma cor esverdeada é uma cor.
-Uma cor amarronzada é uma cor.
-Uma cor pastel é uma cor.
-Uma cor do arco-íris é uma cor.
-Uma cor vívida é uma cor.
+
 
 \CORES CLARAS
 A cor vermelho claro é uma cor.
@@ -2307,7 +2312,7 @@ A cor verde limão escuríssimo é uma cor.
 A cor verde menta escuríssimo é uma cor.
 
 \CANETAS
-Uma canetinha é uma cor.
+
 
 A canetinha vermelho é uma canetinha.
 A canetinha amarelo é uma canetinha.
