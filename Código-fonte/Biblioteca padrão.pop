@@ -8679,7 +8679,7 @@ Rotina para que se obtenha uma caixa de seleção usando uma linha de texto e uma 
   Se a caixa de texto for inexistente, retorne.
   Se a linha de texto for inexistente, retorne.
   Obtenha uma caixa usando a linha de texto e a caixa de texto.
-  Atribua a caixa ao caixa de seleção.
+  Atribua a caixa para a caixa de seleção.
   Obtenha a caixa de seleção usando a linha de texto e a caixa de texto (lado esquerdo).
   Obtenha a caixa de seleção usando a linha de texto e a caixa de texto (lado direito).
 
@@ -9295,7 +9295,7 @@ Rotina para que se execute um evento usando uma caixa de texto (tecla Enter):
   Se a caixa de texto for inexistente, retorne.
   Relembre a caixa de texto com "insert return".
   Remova qualquer trecho selecionado na caixa de texto.
-  Insira o retorno de carro ao caixa de texto.
+  Insira o retorno de carro para a caixa de texto.
   Selecione o texto na caixa de texto.
   Role a caixa de texto para o cursor de texto.
 
@@ -9350,7 +9350,7 @@ Rotina para que se execute um evento usando uma caixa de texto (tecla Page Up):
 Rotina para que se execute um evento usando uma caixa de texto (caracteres gráficos):
   Relembre a caixa de texto com "insert".
   Remova qualquer trecho selecionado na caixa de texto.
-  Insira o byte deste evento ao caixa de texto.
+  Insira o byte deste evento para a caixa de texto.
   Selecione o texto na caixa de texto.
   Role a caixa de texto para o cursor de texto.
 
@@ -9369,10 +9369,10 @@ Rotina para que se execute um evento usando uma caixa de texto (tecla Tab):
   Se a caixa de texto for inexistente, retorne.
   Relembre a caixa de texto com "insert".
   Remova qualquer trecho selecionado na caixa de texto.
-  Insira o caractere de espaço ao caixa de texto.
+  Insira o caractere de espaço para a caixa de texto.
   Divida o cursor da coluna desta seleção desta caixa de texto por 2 usando um quociente e um resto.
   Se o resto for 0, 
-    Insira o caractere de espaço ao caixa de texto.
+    Insira o caractere de espaço para a caixa de texto.
   Role a caixa de texto para o cursor de texto.
 
 Rotina para que se execute um evento usando uma caixa de texto (seta pra cima):
@@ -9444,7 +9444,7 @@ Rotina para que se cole o item usando uma caixa de texto:
   Relembre a caixa de texto.
   Remova qualquer trecho selecionado na caixa de texto.
   Obtenha uma string desde o área de transferência do Windows.
-  Insira a string ao caixa de texto.
+  Insira a string para a caixa de texto.
   Selecione o texto na caixa de texto.
   Role a caixa de texto para o cursor de texto.
 
@@ -9538,11 +9538,11 @@ Rotina para que se faça uma caixa com uma coordenada X1 e uma coordenada Y1 e um
 
 Rotina para que se imagine uma caixa com uma localização e uma segunda localização;
 Rotina para que se faça uma caixa com uma localização e uma segunda localização:
-  Atribua a localização e a segunda localização ao caixa.
+  Atribua a localização e a segunda localização para a caixa.
 
 Rotina para que se imagine uma cor desde uma matiz e um saturação e um luminosidade;
 Rotina para que se faça uma cor desde uma matiz e um saturação e um luminosidade:
-  Atribua a matiz e o saturação e o luminosidade à cor.
+  Atribua a matiz e a saturação e a luminosidade à cor.
 
 Rotina para que se imagine um ponto circular aproximadamente uns twips em largura;
 Rotina para que se faça um ponto circular aproximadamente uns twips em largura;
@@ -9598,7 +9598,7 @@ Rotina para que se crie uma figura geométrica usando uma string e um centro loca
 
 Rotina para que se imagine um linha reta horizontal uma fração no caminho para cima desde a base de uma caixa;
 Rotina para que se faça um linha reta horizontal uma fração no caminho para cima desde a base de uma caixa:
-  Imagine o linha reta horizontal através dessa caixa a fração no caminho para cima desde a base.
+  Imagine a linha reta horizontal através dessa caixa a fração no caminho para cima desde a base.
 
 Rotina para que se imagine uma linha reta através da base de uma caixa;
 Rotina para que se faça uma linha reta através da base de uma caixa:
@@ -9646,7 +9646,7 @@ Rotina para que se faça uma linha reta com uma coordenada X e uma coordenada Y e
 
 Rotina para que se imagine uma caixa arredondada desde uma caixa e um raio;
 Rotina para que se faça uma caixa arredondada desde uma caixa e um raio:
-  Atribua a caixa e o raio ao caixa arredondada.
+  Atribua a caixa e o raio para a caixa arredondada.
 
 Rotina para que se imagine uma caixa arredondada uns twips por uns outros twips;
 Rotina para que se faça uma caixa arredondada uns twips por uns outros twips com um raio:
@@ -9658,11 +9658,11 @@ Rotina para que se faça uma caixa arredondada uns twips por uns outros twips com
 
 Rotina para que se imagine uma caixa arredondada com uma coordenada X1 e uma coordenada Y1 e uma coordenada X2 e uma coordenada Y2 e um raio;
 Rotina para que se faça uma caixa arredondada com uma coordenada X1 e uma coordenada Y1 e uma coordenada X2 e uma coordenada Y2 e um raio:
-  Atribua a coordenada X1 e a coordenada Y1 e a coordenada X2 e a coordenada Y2 e o raio ao caixa arredondada.
+  Atribua a coordenada X1 e a coordenada Y1 e a coordenada X2 e a coordenada Y2 e o raio para a caixa arredondada.
 
 Rotina para que se imagine uma caixa arredondada com uma localização e uma segunda localização e um raio;
 Rotina para que se faça uma caixa arredondada com uma localização e uma segunda localização e um raio:
-  Atribua a localização e a segunda localização e o raio ao caixa arredondada.
+  Atribua a localização e a segunda localização e o raio para a caixa arredondada.
 
 Rotina para que se imagine uma localização com uma coordenada X e uma coordenada Y;
 Rotina para que se faça uma localização com uma coordenada X e uma coordenada Y:
@@ -11462,7 +11462,7 @@ Rotina para que se remova bytes de uma caixa de texto (Tecla Del):
 
 Rotina para que se remova cada byte em uma caixa de texto:
   Se a caixa de texto for inexistente, retorne.
-  Atribua "" ao caixa de texto.
+  Atribua "" para a caixa de texto.
 
 Rotina para que se remova o primeiro caractere desde uma string:
   Lance um subtexto sobre o primeiro caractere dessa string.
@@ -12784,7 +12784,7 @@ Rotina para que se comece aleatoriamente em uma caixa:
   Escolha aleatoriamente a localização deste contexto na caixa.
 
 Rotina para que se comece aleatoriamente sobre um linha reta horizontal:
-  Escolha aleatoriamente uma localização sobre o linha reta horizontal.
+  Escolha aleatoriamente uma localização sobre a linha reta horizontal.
   Atribua a localização à localização deste contexto.
 
 Rotina para que se comece sob o canto inferior esquerdo de uma caixa voltada para o east:
@@ -18340,7 +18340,7 @@ Rotina para que se atribua o centro esquerdo duma caixa para uma localização:
   Atribua a coordenada X1 desta caixa à coordenada X desta localização.
   Atribua a coordenada Y deste centro desta caixa à coordenada Y desta localização.
 
-Rotina para que se atribua o linha reta do lado direito duma caixa para uma linha reta:
+Rotina para que se atribua a linha reta do lado direito duma caixa para uma linha reta:
   Atribua a coordenada X2 desta caixa e a coordenada Y1 desta caixa à localização inicial desta linha reta.
   Atribua a coordenada X2 desta caixa e a coordenada Y2 desta caixa à localização final desta linha reta.
 
