@@ -6581,7 +6581,7 @@ Função para que se determine se estamos debaixo de uma coordenada:
   Diga não.
 
 Função para que se determine se estamos debaixo de uma linha reta horizontal:
-  Se a localização deste contexto é debaixo dessa linha reta horizontal, diga sim.
+  Se a localização deste contexto estiver debaixo dessa linha reta horizontal, diga sim.
   Diga não.
 
 Função para que se determine se estamos debaixo de uma localização:
