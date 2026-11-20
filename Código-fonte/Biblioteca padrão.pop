@@ -6251,7 +6251,7 @@ Função para que se determine se uma localização está sobre uma caixa arredondada
   Diga sim.
 
 Função para que se determine se uma localização está fora de uma caixa:
-  Se a localização é dentro dessa caixa, diga não.
+  Se a localização estiver dentro dessa caixa, diga não.
   Diga sim.
 
 Função para que se determine se uma localização está para o lado direito de uma caixa:
