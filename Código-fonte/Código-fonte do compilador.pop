@@ -1801,7 +1801,8 @@ Rotina para que se pluralize uma string:
   Reitere.
   Atribua a string pluralizada à string.
 
-Rotina para que se mova um percorredor (palavras plurais): \ talvez aqui conserte o comando "subtraia"
+Rotina para que se mova um percorredor (palavras plurais): 
+\ talvez aqui conserte o comando "subtraia"
   [Itere.]
     Se o sinalizador de erros deste compilador estiver ativo,
        Limpe o segmento inicial deste percorredor;
