@@ -3599,7 +3599,7 @@ Rotina para que se mude uma caixa de texto usando um nome da fonte:
   Selecione o texto na caixa de texto.
 
 Rotina para que se limpe uma caixa:
-  Atribua 0 e 0 e 0 e 0 ao caixa. \ usado no editor de documentos. Redefine as coordenadas da caixa
+  Atribua 0 e 0 e 0 e 0 para a caixa. \ usado no editor de documentos. Redefine as coordenadas da caixa
 
 Rotina para que se limpe um byte:
   Atribua o caractere null ao byte.
@@ -8139,7 +8139,7 @@ Rotina para que se obtenha uma caixa pelo cursor de texto em uma caixa de texto:
     Zero a caixa;
     Retorne.
   Obtenha uma localização usando o cursor de texto desta seleção desta caixa de texto e a caixa de texto.
-  Atribua a localização e a localização ao caixa.
+  Atribua a localização e a localização para a caixa.
   Adicione a altura da linha desta caixa de texto para a coordenada Y2 desta caixa.\ calculated field
   Ajuste a caixa usando 0 e a quantidade de twips/pixel e 0 e - a quantidade de twips/pixel .
   Atribua a globalized origem desta caixa de texto para um origem. \ calculated field
@@ -9524,20 +9524,20 @@ Rotina para que se faça uma caixa uns twips por uns outros twips:
 
 \Rotina para que se imagine uma caixa uns twips por uns outros twips;
 \Rotina para que se faça uma caixa uns twips por uns outros twips:
-  \Atribua 0 e 0 e os outros twips e os twips ao caixa.
+  \Atribua 0 e 0 e os outros twips e os twips para a caixa.
 
 Rotina para que se imagine uma caixa uns twips menores do que uma segunda caixa;
 Rotina para que se faça uma caixa uns twips menores do que uma segunda caixa:
-  Atribua a segunda caixa ao caixa.
+  Atribua a segunda caixa para a caixa.
   Encolha a caixa pelo twips dividido por 2.
 
 Rotina para que se imagine uma caixa uns twips menores do que uma segunda caixa sobre cada lado:
-  Atribua a segunda caixa ao caixa.
+  Atribua a segunda caixa para a caixa.
   Encolha a caixa pelo twips.
 
 Rotina para que se imagine uma caixa com uma coordenada X1 e uma coordenada Y1 e uma coordenada X2 e uma coordenada Y2;
 Rotina para que se faça uma caixa com uma coordenada X1 e uma coordenada Y1 e uma coordenada X2 e uma coordenada Y2:
-  Atribua a coordenada X1 e a coordenada Y1 e a coordenada X2 e a coordenada Y2 ao caixa.
+  Atribua a coordenada X1 e a coordenada Y1 e a coordenada X2 e a coordenada Y2 para a caixa.
 
 Rotina para que se imagine uma caixa com uma localização e uma segunda localização;
 Rotina para que se faça uma caixa com uma localização e uma segunda localização:
@@ -9585,18 +9585,18 @@ Rotina para que se crie uma figura geométrica usando uma string e um centro loca
   Lowercase a string.
   Lance um subtexto sobre a string.
   Itere.
-  Ignore os caracteres ignoráveis no início no subtexto.
-  Se a quantidade de caracteres deste subtexto for menor do que 2, retorne.
-  Atribua o conteúdo deste caractere inicial deste subtexto para um byte.
-  Atribua o byte menos o 'a' minúsculo à coordenada Y duma localização.
-  Adicione 1 para o caractere inicial deste subtexto.
-  Atribua o conteúdo deste caractere inicial deste subtexto ao byte.
-  Atribua o byte menos o 'a' minúsculo à coordenada X desta localização.
-  Multiplique a localização por 24 px.
-  Adicione a coordenada X deste centro localização menos 299 pixels para a coordenada X desta localização.
-  Adicione a coordenada Y deste centro localização menos 299 pixels para a coordenada Y desta localização.
-  Acrescente a localização para a figura geométrica.
-  Adicione 1 para o caractere inicial deste subtexto.
+    Ignore os caracteres ignoráveis no início no subtexto.
+    Se a quantidade de caracteres deste subtexto for menor do que 2, retorne.
+    Atribua o conteúdo deste caractere inicial deste subtexto para um byte.
+    Atribua o byte menos o 'a' minúsculo à coordenada Y duma localização.
+    Adicione 1 para o caractere inicial deste subtexto.
+    Atribua o conteúdo deste caractere inicial deste subtexto ao byte.
+    Atribua o byte menos o 'a' minúsculo à coordenada X desta localização.
+    Multiplique a localização por 24 px.
+    Adicione a coordenada X deste centro localização menos 299 pixels para a coordenada X desta localização.
+    Adicione a coordenada Y deste centro localização menos 299 pixels para a coordenada Y desta localização.
+    Acrescente a localização para a figura geométrica.
+    Adicione 1 para o caractere inicial deste subtexto.
   Reitere.
 
 Rotina para que se imagine uma linha reta horizontal uma fração no caminho para cima desde a base de uma caixa;
@@ -10254,7 +10254,7 @@ Rotina para que se delimite a origem de uma caixa de texto:
 
 Rotina para que se delimite uma localização para uma caixa:
   Se a coordenada X desta localização for menor do que a coordenada X1 desta caixa, 
-    Aatribua a coordenada X1 desta caixa à coordenada X desta localização.
+    Atribua a coordenada X1 desta caixa à coordenada X desta localização.
   Se a coordenada Y desta localização for menor do que a coordenada Y1 desta caixa, 
     Atribua a coordenada Y1 desta caixa à coordenada Y desta localização.
   Se a coordenada X desta localização for maior do que a coordenada X2 desta caixa, 
@@ -18123,7 +18123,7 @@ Rotina para que se atribua a caixa dum polígono para uma caixa:
   Se os vértices deste polígono estiverem vazios,
     Zero a caixa;
     Retorne.
-  Atribua o maior número e o maior número e o menor número e o menor número ao caixa.
+  Atribua o maior número e o maior número e o menor número e o menor número para a caixa.
   Itere.
     Obtenha um vértice desde os vértices deste polígono.
     Se o vértice for inexistente, pare.
