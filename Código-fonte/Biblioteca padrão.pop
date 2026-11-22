@@ -4282,12 +4282,12 @@ Rotina para que se converta uma string para um ponteiro:
   Converta a string tal como uma cifra hexadecimal para um texto hexadecimal.
   Esvazie o ponteiro.
   Lance um subtexto sobre o texto hexadecimal.
-  Atribua 24 para uma contagem de deslocamentos.
+  Atribua 24 para uns bits denominados contagem de deslocamentos.
   Itere.
     Se o subtexto estiver em branco, retorne.
     Se a contagem de deslocamentos for menor do que 0, retorne.
     Atribua o conteúdo deste caractere inicial deste subtexto para um número.
-    Desloque o número para a esquerda a contagem de deslocamentos.
+    Desloque o número para a esquerda [usando] a contagem de deslocamentos.
     Disjuncione logicamente o ponteiro tal como um número com o número.
     Adicione 1 para o caractere inicial deste subtexto.
     Subtraia 8 desde a contagem de deslocamentos.
