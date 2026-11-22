@@ -4676,7 +4676,7 @@ Rotina para que se crie um gpBitmap usando um trecho:
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/combaseapi/nf-combaseapi-createstreamonhglobal
     O número identificador [hGlobal]
     e 1 [fDeleteOnRelease = TRUE]
-    e O endereçamento dum istream. [*ppstm]
+    e O endereçamento dum IStream. [*ppstm]
   Processe "gdiplus.dll" "GdipCreateBitmapFromStream" com
   \Cria um objeto Bitmapbaseado em um um stream.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/objidl/nn-objidl-istream
