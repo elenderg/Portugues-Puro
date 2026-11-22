@@ -1698,7 +1698,7 @@ O & comercial é um byte igual a 38. \&
 O símbolo & é um byte igual a 38.
 O sinal & é um byte igual a 38.
 O & é um byte igual a 38.
-O sinal tironiano é um byte igual a 38. \&
+\O sinal tironiano é um byte igual a 38. \&
 O apóstrofo é um byte igual a 39.
 O parênteses esquerdo é um byte igual a 40.
 O parênteses direito é um byte igual a 41.
@@ -4482,7 +4482,7 @@ Rotina para que se crie o identificador de conexão de uma requisição WinHTTP usa
   Processe "winhttp.dll" "WinHttpConnect" com
   \ Especifica o servidor de uma solicitação HTTP e retorna um identificador HINTERNET de uma sessão HTTP do destino inicial
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/WinHTTP/nf-WinHTTP-winhttpconnect
-    O número identificador de sessão deste número identificador de requisição desta requisição WinHTTP [hSession]
+    O número identificador de sessão desta requisição WinHTTP [hSession]
     e O caractere inicial deste nome amplificado do host [pswzServerName]
     e O número de porta desta URL simplificada [nServerPort]
     e 0 [dwReserved]
