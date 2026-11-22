@@ -5639,7 +5639,7 @@ Função para que se determine se uma fração é uma segunda fração:
   Preserve a fração.
   Preserve a segunda fração.
   Normalize a fração e a segunda fração.
-  Se o numerador desta fração é o numerador desta segunda fração, diga sim.
+  Se o numerador desta fração for o numerador desta segunda fração, diga sim.
   Diga não.
 
 Função para que se determine se uma fração é maior que uma segunda fração;

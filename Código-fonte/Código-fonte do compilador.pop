@@ -5693,8 +5693,6 @@ Rotina para que se compile uma expressão matemática usando um percorredor (opera
   Atribua a variável intermediária à variável desta expressão matemática.
   Limpe a frase desta expressão matemática.
 
-
-
 Rotina para que se compile uma expressão matemática usando um percorredor (operador de concatenação):
   Se existir algum problema de compilação, retorne.
   Mova o percorredor (usando diretrizes de compilação).
