@@ -4114,7 +4114,7 @@ Rotina para que se converta um endereço do caractere para uma string:
     Adicione 1 para o endereço do caractere.
   Reitere.
 
-Rotina para que se converta um ponteiro e uma quantidade de caracteres para uma string:
+Rotina para que se converta um ponteiro e um número denominado quantidade de caracteres para uma string:
   Limpe a string.
   Se o ponteiro for inexistente, retorne.
   Se a quantidade de caracteres for 0, retorne.
