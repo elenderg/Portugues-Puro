@@ -4278,7 +4278,7 @@ Rotina para que se converta uma string para um número entre um segundo número e 
   Delimite o número para o segundo número e o terceiro número.
 
 Rotina para que se converta uma string para um ponteiro:
-  \ presume que o ponteiro está no formato de cifra binária 
+  \ presume que o ponteiro esteja no formato de cifra binária 
   Converta a string tal como uma cifra hexadecimal para um texto hexadecimal.
   Esvazie o ponteiro.
   Lance um subtexto sobre o texto hexadecimal.
