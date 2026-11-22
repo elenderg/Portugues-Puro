@@ -559,7 +559,7 @@ Um servidor SMTP é uma string.
 Um soquete é um ponteiro.
 Um subtexto de denominação é um subtexto.
 Um subtexto de consulta é um subtexto.
-Uma ponteiro da localização é um ponteiro [que aponta] para uma localização.
+Um ponteiro da localização é um ponteiro para uma localização.
 Um assunto é uma string.
 
 Um terminal é uma lista com
@@ -597,7 +597,7 @@ Uma quantidade de vértices é um número.
 
 Um série de vértices conjunto é uma estrutura com
   Uma quantidade de vértices e
-  Uma ponteiro da localização.
+  Um ponteiro da localização.
 
 Um vértice é uma lista com
   Uma coordenada denominada ordenada X,
