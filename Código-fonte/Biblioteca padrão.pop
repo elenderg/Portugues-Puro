@@ -3370,7 +3370,7 @@ Rotina para que se emita um bipe:
 
 Rotina para que se inicie uma folha no modo paisagem:
   Faça a folha 1056 pixels por 816 pixels. \ Configura a página no modo paisagem usando as dimensões de 1056 pixels de largura por 816 pixels de altura.
-  Inicie uma folha usando a folha.
+  Inicie uma nova folha usando a folha.
 
 Rotina para que se inicie uma folha no modo retrato:
   Faça a folha 816 pixels por 1056 pixels.
@@ -3387,9 +3387,9 @@ Rotina para que se inicie a impressão:
     A área de impressão [hDC]
     e O endereçamento deste DOCINFO. [*lpdi]
 
-Rotina para que se selecione uma folha para impressão;
-Rotina para que se inicie uma folha:
-  Inicie a folha tal como uma folha no modo retrato.
+Rotina para que se selecione uma folha denominada nova folha para impressão;
+Rotina para que se inicie uma folha denominada nova folha:
+  Inicie a nova folha tal como uma folha no modo retrato.
 
 Rotina para que se inicie uma folha usando um título de índice remissivo:
   Inicie a folha no modo retrato usando o título de índice remissivo.
@@ -4851,21 +4851,23 @@ Rotina para que se crie o número identificador de abertura de uma requisição Win
     e 0 [pszProxyW = WINHTTP_NO_PROXY_NAME]
     e 0 [pszProxyBypassW = WINHTTP_NO_PROXY_BYPASS]
     e 0 [dwFlags]
-  Retornando o número identificador de sessão deste número identificador de requisição desta requisição WinHTTP.
-  Se o número identificador de sessão deste número identificador de requisição desta requisição WinHTTP for 0,
+  Retornando o número identificador de sessão desta requisição WinHTTP.
+  Se o número identificador de sessão desta requisição WinHTTP for 0,
     Atribua "Erro. Não foi possível iniciar a conexão." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
 
 Rotina para que se crie um endereço completo no sistema de arquivos:
   Se o endereço completo for do tipo pasta,
-    Crie o endereço completo no sistema de arquivos (pasta) [endereço ];
+    Crie o endereço completo no sistema de arquivos (pasta);
+    [endereço ]
     Retorne.
   Se o endereço completo for do tipo arquivo,
     Crie o endereço completo no sistema de arquivos (arquivo);
     Retorne.
 
-Rotina para que se crie um endereço completo no sistema de arquivos (pasta)[endereço]:
+Rotina para que se crie um endereço completo no sistema de arquivos (pasta):
+  [endereço]
   Preserve o endereço completo.
   Remova alguma barra invertida final desde o endereço completo.
   Anexe o caractere NULL após o endereço completo.
@@ -4977,10 +4979,11 @@ Rotina para que se crie uma linha de texto usando uma string:
   Aloque memória para a linha de texto.
   Atribua a string à string desta linha de texto.
 
-Rotina para que se crie um soquete [ipv4] usando uma host string e um número de porta:
+Rotina para que se crie um soquete usando uma host string e um número de porta:
+  [ipv4] 
   \ esta rotina cria, conecta e define o erro se houver um problema
   Limpe o erro do fluxo de entrada/saída.
-  Obtenha um SOCKADDR usando o host.
+  Obtenha um SOCKADDR usando a host string.
   Se o erro do fluxo de entrada/saída não estiver em branco, retorne.
   Atribua 2 [AF_INET ] ao SIn_Family deste SOCKADDR.
   Atribua o port ao SIn_Port deste SOCKADDR.
