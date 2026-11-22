@@ -592,7 +592,7 @@ Uma URL simplificada é uma estrutura com
   Um string denominada parâmetro de consulta, \ lpszExtraInfo? -> exemplo: ?useLiveData=1&internal=0
   Um número denominado número de porta. \ nPort? -> números de porta ocupam (geralmente) 16 bits
 
-Um série de vértices é um ponteiro para uma série de vértices conjunto.
+Uma série de vértices é um ponteiro para uma série de vértices conjunto.
 Uma quantidade de vértices é um número.
 
 Um série de vértices conjunto é uma estrutura com
