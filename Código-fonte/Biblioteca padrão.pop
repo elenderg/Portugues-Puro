@@ -875,34 +875,34 @@ Um In_Addr é uma estrutura com \ representa um endereço IPv4. -> Internet Adress
   Uma word [unsigned] denominada s_word2 sob o s_byte3,
   Um número denominado s_addr sob o s_byte1. \Endereço do host formatado como u_long.
 
-Um istream é um ponteiro para um istream object.
+Um IStream é um ponteiro para um IStream object.
 
-Um istream object é uma estrutura com um istream VTable denominado VTable.
+Um IStream object é uma estrutura com um IStream VTable denominado VTable.
 
-Um istream VTable é um ponteiro para um istream VTable conjunto.
+Um IStream VTable é um ponteiro para um IStream VTable conjunto.
   \Uma VTable (tabela de método virtual) é uma tabela de ponteiros de função.
   \O VTable é como o COM vincula uma chamada de método à sua implementação em tempo de execução. N
   \Não por coincidência, vtables são a forma como a maioria dos compiladores C ++ implementa métodos virtuais.
-  Um istream VTable conjunto é uma estrutura com
+  Um IStream VTable conjunto é uma estrutura com
   \ iUnknown
   \ https://learn.microsoft.com/pt-br/windows/win32/api/objidl/nn-objidl-istream
-  Um ponteiro denominado queryinterface,
+  Um ponteiro denominado QueryInterface,
   \ https://learn.microsoft.com/pt-br/windows/win32/com/queryinterface--navigating-in-an-object
-  Um ponteiro denominado addref, \Incrementa a contagem de referência de um ponteiro de interface para um objeto COM.
-  Um ponteiro denominado release, \ Diminui a contagem de referência para uma interface em um objeto COM.\function(this:istream):number; stdcall;
+  Um ponteiro denominado AddRef, \Incrementa a contagem de referência de um ponteiro de interface para um objeto COM.
+  Um ponteiro denominado Release, \ Diminui a contagem de referência para uma interface em um objeto COM.\function(this:istream):number; stdcall;
   \ istream
-  Um ponteiro denominado read,\O método Read lê um número especificado de bytes do objeto stream para a memória, começando no ponteiro de busca atual.
-  Um ponteiro denominado write,\O método Write grava um número especificado de bytes no objeto de fluxo, começando no ponteiro de busca atual.
-  Um ponteiro denominado seek, \Muda o ponteiro de busca para um novo local. O novo local é relativo ao início, ao final do fluxo ou ao ponteiro de busca atual.
-  Um ponteiro denominado setsize, \Altera o tamanho do objeto de fluxo.
-  Um ponteiro denominado copyto, \Copia um número especificado de bytes do ponteiro de busca atual no fluxo para o ponteiro de busca atual em outro fluxo.
-  Um ponteiro denominado commit, \O método Commit garante que todas as alterações feitas em um objeto de fluxo aberto no modo transacionado sejam refletidas no armazenamento pai.
-  Um ponteiro denominado revert, \O método Revert descarta todas as alterações feitas em um fluxo transacionado desde a última chamada IStream :: Commit.
+  Um ponteiro denominado Read,\O método Read lê um número especificado de bytes do objeto stream para a memória, começando no ponteiro de busca atual.
+  Um ponteiro denominado Write,\O método Write grava um número especificado de bytes no objeto de fluxo, começando no ponteiro de busca atual.
+  Um ponteiro denominado Seek, \Muda o ponteiro de busca para um novo local. O novo local é relativo ao início, ao final do fluxo ou ao ponteiro de busca atual.
+  Um ponteiro denominado SetSize, \Altera o tamanho do objeto de fluxo.
+  Um ponteiro denominado CopyTo, \Copia um número especificado de bytes do ponteiro de busca atual no fluxo para o ponteiro de busca atual em outro fluxo.
+  Um ponteiro denominado Commit, \O método Commit garante que todas as alterações feitas em um objeto de fluxo aberto no modo transacionado sejam refletidas no armazenamento pai.
+  Um ponteiro denominado Revert, \O método Revert descarta todas as alterações feitas em um fluxo transacionado desde a última chamada IStream :: Commit.
   \Em fluxos abertos em modo direto e fluxos usando a implementação de arquivo composto COM de IStream :: Revert, este método não tem efeito.
-  Um ponteiro denominado lockregion, \O método LockRegion restringe o acesso para um intervalo especificado de bytes no fluxo.
-  Um ponteiro denominado unlockregion,\O método UnlockRegion remove a restrição de acesso em um intervalo de bytes anteriormente restrito com IStream :: LockRegion.
-  Um ponteiro denominado stat,\O método Stat recupera a estrutura STATSTG para este fluxo.
-  Um ponteiro denominado clone. \O método Clone cria um novo objeto de fluxo com seu próprio ponteiro de busca que faz referência aos mesmos bytes que o fluxo original.
+  Um ponteiro denominado LockRegion, \O método LockRegion restringe o acesso para um intervalo especificado de bytes no fluxo.
+  Um ponteiro denominado UnlockRegion,\O método UnlockRegion remove a restrição de acesso em um intervalo de bytes anteriormente restrito com IStream :: LockRegion.
+  Um ponteiro denominado Stat,\O método Stat recupera a estrutura STATSTG para este fluxo.
+  Um ponteiro denominado Clone. \O método Clone cria um novo objeto de fluxo com seu próprio ponteiro de busca que faz referência aos mesmos bytes que o fluxo original.
 
 Um OUTLINETEXTMETRIC é uma estrutura com \ Descreve uma fonte TrueType.
 \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/wingdi/ns-wingdi-outlinetextmetrica
@@ -4681,14 +4681,14 @@ Rotina para que se crie um gpBitmap usando um trecho:
   \Cria um objeto Bitmapbaseado em um um stream.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/objidl/nn-objidl-istream
   \ https://learn.microsoft.com/pt-br/windows/win32/api/gdiplusheaders/nf-gdiplusheaders-bitmap-bitmap(istream_bool)
-    O istream [stream]
+    O IStream [stream]
     e O endereçamento deste gpBitmap [**bitmap]
   Retornando um número.
   Se o número não for 0,
     Atribua "Não sei como processar este tipo de imagem." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Esvazie o gpBitmap.
-  Processe o release deste VTable deste istream com o istream. \ monet
+  Processe o Release deste VTable deste IStream com o IStream. \ monet
 
 Rotina para que se crie um GpImageAttributes (escala de cinza):
   Processe "gdiplus.dll" "GdipCreateImageAttributes" com
