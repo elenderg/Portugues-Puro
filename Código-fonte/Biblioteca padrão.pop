@@ -4232,17 +4232,17 @@ Rotina para que se converta uma string para uma fração:
   Se o subtexto numérico estiver em branco, 
     Atribua o subtexto ao subtexto fracionário.
   Subdivida a subtexto fracionário em um numerador textual e um denominador textual usando a barra inclinada.
-  Converta o subtexto numérico para um número inteiro.
-  Converta o numerador textual para um numerador número.
-  Converta o denominador textual para um denominador número.
+  Converta o subtexto numérico para um número denominado número inteiro.
+  Converta o numerador textual para um número denominado numerador.
+  Converta o denominador textual para um número denominado denominador.
   Se o número inteiro for negativo, retorne.
-  Se o numerador número for negativo, retorne.
-  Se o denominador número for negativo, retorne.
-  Se o denominador número for 0, retorne.
+  Se o numerador for negativo, retorne.
+  Se o denominador for negativo, retorne.
+  Se o denominador for 0, retorne.
   Se o número inteiro não for 0, 
-    Adicione o denominador número vezes o número inteiro para o numerador número.
-  Atribua o numerador número ao numerador desta fração.
-  Atribua o denominador número ao denominador desta fração.
+    Adicione o denominador vezes o número inteiro para o numerador.
+  Atribua o numerador ao numerador desta fração.
+  Atribua o denominador ao denominador desta fração.
   Se o conteúdo deste caractere inicial desta string for o hífen, 
     Inverta o sinal dessa fração.
 
