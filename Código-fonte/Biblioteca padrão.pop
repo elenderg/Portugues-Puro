@@ -799,7 +799,7 @@ Um AddrInfo é uma estrutura com  \ Armazena informações de endereço de host.
   Um SockAddrPtr denominado AI_Addr,
   Um AddrInfoPtr denominado AI_Next.
 
-Um AddrInfoPtr é um ponteiro [que aponta] para um AddrInfo.
+Um AddrInfoPtr é um ponteiro para um AddrInfo.
 
 Umas rotinas da função AddrInfo são uma estrutura com
   Um ponteiro da função GetAddrInfo, \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/ws2tcpip/nf-ws2tcpip-getaddrinfo
@@ -8766,7 +8766,7 @@ Rotina para que se obtenha um SockAddr usando um host string:
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
   Atribua o conteúdo deste AI_Addr deste AddrInfoPtr ao SOCKADDR.
-  Processe o FeeAddrInfo ponteiro destas rotinas da função AddrInfo com o AddrInfoPtr.
+  Processe o ponteiro da função FreeAddrInfo destas rotinas da função AddrInfo com o AddrInfoPtr.
 
 Rotina para que se obtenha uma localização usando um posicionamento e uma caixa de texto:
   Limpe a localização.
