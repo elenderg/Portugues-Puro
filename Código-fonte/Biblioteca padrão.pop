@@ -9583,7 +9583,7 @@ Rotina para que se faça uma elipse com uma localização e uma segunda localização
 
 Rotina para que se imagine uma figura geométrica usando uma string e uma localização;
 Rotina para que se faça uma figura geométrica usando uma string e uma localização;
-Rotina para que se crie uma figura geométrica usando uma string e um centro localização:
+Rotina para que se crie uma figura geométrica usando uma string e uma localização denominada centro:
   Crie a figura geométrica.
   Acrescente a figura geométrica para as figuras geométricas.
   Preserve a string.
@@ -9597,9 +9597,9 @@ Rotina para que se crie uma figura geométrica usando uma string e um centro loca
     Adicione 1 para o caractere inicial deste subtexto.
     Atribua o conteúdo deste caractere inicial deste subtexto ao byte.
     Atribua o byte menos o 'a' minúsculo à coordenada X desta localização.
-    Multiplique a localização por 24 px.
-    Adicione a coordenada X deste centro localização menos 299 pixels para a coordenada X desta localização.
-    Adicione a coordenada Y deste centro localização menos 299 pixels para a coordenada Y desta localização.
+    Multiplique a localização por 24 pixels.
+    Adicione a coordenada X deste centro menos 299 pixels para a coordenada X desta localização.
+    Adicione a coordenada Y deste centro menos 299 pixels para a coordenada Y desta localização.
     Acrescente a localização para a figura geométrica.
     Adicione 1 para o caractere inicial deste subtexto.
   Reitere.
