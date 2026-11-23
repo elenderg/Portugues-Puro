@@ -8636,29 +8636,29 @@ Rotina para que se obtenha um deslocamento vertical e um deslocamento horizontal
     Pare.  \ 45 degraus = 8/64 do caminho
   Reitere. 
   \ ajuste por segunda eighths do círculo
-  Se o orientação original estiver entre 0 e 480,
+  Se a orientação original estiver entre 0 e 480,
     Inverta o sinal desse deslocamento vertical;
     Retorne. \ 1st eighth (12:00 para 1:30) -> negative
-  Se o orientação original estiver entre 480 e 960,
+  Se a orientação original estiver entre 480 e 960,
     Permute o deslocamento horizontal com o deslocamento vertical;
     Inverta o sinal desse deslocamento vertical;
     Retorne. \ 2nd eighth (1:30 para 3:00)
-  Se o orientação original estiver entre 960 e 1440,
+  Se a orientação original estiver entre 960 e 1440,
     Permute o deslocamento horizontal com o deslocamento vertical;
     Retorne. \ 3rd eighth (3:00 para 4:30)
-  Se o orientação original estiver entre 1440 e 1920, retorne. \ 4th eighth (4:30 para 6:00)
-  Se o orientação original estiver entre 1920 e 2400,
+  Se a orientação original estiver entre 1440 e 1920, retorne. \ 4th eighth (4:30 para 6:00)
+  Se a orientação original estiver entre 1920 e 2400,
     Inverta o sinal desse deslocamento horizontal;
     Retorne. \ 5th eighth (6:00 para 7:30)
-  Se o orientação original estiver entre 2400 e 2880,
+  Se a orientação original estiver entre 2400 e 2880,
     Permute o deslocamento horizontal com o deslocamento vertical;
     Inverta o sinal desse deslocamento horizontal;
     Retorne. \ 6th eighth (7:30 para 9:00)
-  Se o orientação original estiver entre 2880 e 3360,
+  Se a orientação original estiver entre 2880 e 3360,
     Permute o deslocamento horizontal com o deslocamento vertical;
     Inverta o sinal desse deslocamento horizontal; Inverta o sinal desse deslocamento vertical;
     Retorne. \ 7th eighth (9:00 para 10:30)
-  Se o orientação original estiver entre 3360 e 3840,
+  Se a orientação original estiver entre 3360 e 3840,
     Inverta o sinal desse deslocamento horizontal;
     Inverta o sinal desse deslocamento vertical;
     Retorne. \ 8th eighth (10:30 para 12:00)
