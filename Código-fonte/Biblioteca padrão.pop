@@ -9451,8 +9451,8 @@ Rotina para que se cole o item usando uma caixa de texto:
   Se não existir caixa de texto sobre a área de transferência do Windows, retorne.
   Relembre a caixa de texto.
   Remova qualquer trecho selecionado na caixa de texto.
-  Obtenha uma string desde o área de transferência do Windows.
-  Insira a string para a caixa de texto.
+  Obtenha uma string desde a área de transferência do Windows.
+  Insira a string na caixa de texto.
   Selecione o texto na caixa de texto.
   Role a caixa de texto para o cursor de texto.
 
