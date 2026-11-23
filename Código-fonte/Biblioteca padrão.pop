@@ -19239,7 +19239,7 @@ Rotina para que se pinte um polígono com uma cor denominada cor da borda e uma c
   Pinte o polígono com a cor de preenchimento (apenas no interior).
   Pinte o polígono com a cor da borda (apenas na borda).
 
-Rotina para que se pinte um polígono com uma cor da borda e uma cor de preenchimento (modo pdf):
+Rotina para que se pinte um polígono com uma cor denominada cor da borda e uma cor denominada cor de preenchimento (modo pdf):
   Se o polígono for inexistente, retorne.
   Se a cor da borda e a cor de preenchimento são clear, retorne.
   Transcreva setcolor usando a cor da borda e a cor de preenchimento.
