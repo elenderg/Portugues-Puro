@@ -9229,7 +9229,7 @@ Rotina para que se execute um evento usando um terminal (tecla backspace):
   Se o texto retornado deste terminal estiver em branco, retorne.
   Se o evento foi alterado, retorne.
   Remova o último caractere desde o texto retornado deste terminal.
-  Remova o último caractere desde a string desta último string deste quora deste terminal.
+  Remova o último caractere desde a string deste último quora destes quoras deste terminal.
   Mostre o terminal.
 
 Rotina para que se execute um evento usando um terminal (tecla Enter):
@@ -9244,7 +9244,7 @@ Rotina para que se execute um evento usando um terminal (pressionamento de tecla
     Retorne.
   Se o byte deste evento não for imprimível, retorne.
   Acrescente o byte deste evento para o texto retornado deste terminal.
-  Acrescente o byte deste evento para a string desta último string deste quora deste terminal.
+  Acrescente o byte deste evento para a string deste último quora destes quoras deste terminal.
   Mostre o terminal.
 
 Rotina para que se execute um evento usando um terminal (atualização de tela):
