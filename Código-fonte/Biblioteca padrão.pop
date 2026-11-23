@@ -7698,7 +7698,7 @@ Rotina para que se exiba a contagem de elementos presentes no heap;
 Rotina para que se finalize após execução:
   Se a contagem do heap for 0, retorne.
   Atribua a contagem do heap para uma contagem.
-  Atribua "Aviso: Você esqueceu de destruir " junto com a contagem seguido de " elemento(s) no heap." para uma string.
+  Atribua "Aviso: Você esqueceu de destruir " junto com a contagem seguido de " elemento(s) no heap." para um relatório denominado string.
   Produza o relatório de informações usando a string.
 
 Rotina para que se finalize os contextos de dispositivo:
