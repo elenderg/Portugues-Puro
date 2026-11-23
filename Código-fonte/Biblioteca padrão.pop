@@ -144,8 +144,10 @@ Uma polegada são 1440 twips. \  56,7
 Uma unidade numérica é um número.
 Um kilobyte são 1024 unidades numéricas.
 Um megabyte são 1024 kilobytes. 
-Um cm são 254/100 polegadas.
-Um centímetro são 254/100 polegadas.
+Um cm são 1440/254 twips. \ ~ 567.
+Um centímetro são 1440/254 twips. \ ~ 567.
+\Um cm são 9600/254 pixels.
+\Um centímetro são 9600/254 pixels.
 Um mm é 1/10 centímetros. 
 Um milímetro é 1/10 centímetros. \
 Um micrômetro é 1/1000 milímetros.
@@ -19229,7 +19231,7 @@ Rotina para que se pinte uma caixa arredondada com uma cor da borda e uma cor de
   Destrua o hBrush desse contexto do dispositivo atual.
   Destrua o hPen desse contexto do dispositivo atual.
 
-Rotina para que se pinte um polígono com uma cor da borda e uma cor de preenchimento:
+Rotina para que se pinte um polígono com uma cor denominada cor da borda e uma cor denominada cor de preenchimento:
   Se a sinalizador de páginas deste pdf state estiver ativo,
     Pinte o polígono com a cor da borda e a cor de preenchimento (modo pdf);
     Retorne.
