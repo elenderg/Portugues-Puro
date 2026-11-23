@@ -569,7 +569,7 @@ Um terminal é uma lista com
   Uns quoras,
   Uma cor denominada cor de saída,
   Uma cor denominada cor de entrada e
-  Uma string denominada retorno de consulta.
+  Uma string denominada texto retornado.
 
 Um intervalo inicial é um número.
 Um intervalo total é um número.
