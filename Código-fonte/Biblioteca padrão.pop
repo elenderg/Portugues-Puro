@@ -10938,7 +10938,7 @@ Rotina para que se transcreva um número sem passar pra próxima linha:
   Transcreva a string sem passar pra próxima linha.
   Transcreva " " sem passar pra próxima linha.
 
-Rotina para que se transcreva stroke e preencha usando uma cor da borda e uma cor de preenchimento:
+Rotina para que se transcreva stroke e preencha usando uma cor denominada cor da borda e uma cor denominada cor de preenchimento:
   Atribua "B" para uma string. \ stroke e preencha
   Se a cor de preenchimento estiver clear, atribua "S" à string. \ stroke
   Se a cor da borda estiver clear, atribua "f" à string. \ fill
@@ -18839,7 +18839,7 @@ Rotina para que se transcreva o preenchimento do pdf usando uma cor:
   Transcreva " rg".
   Atribua a cor à cor de preenchimento atual deste pdf state.
 
-Rotina para que se transcreva setcolor usando uma cor da borda e uma cor de preenchimento:
+Rotina para que se transcreva setcolor usando uma cor denominada cor da borda e uma cor denominada cor de preenchimento:
   Se a cor de preenchimento não estiver clear,
     Transcreva o preenchimento do pdf usando a cor de preenchimento.
   Se a cor da borda não estiver clear,
