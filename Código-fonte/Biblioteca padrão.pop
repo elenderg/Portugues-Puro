@@ -4862,14 +4862,12 @@ Rotina para que se crie o número identificador de abertura de uma requisição Win
 Rotina para que se crie um endereço completo no sistema de arquivos:
   Se o endereço completo for do tipo pasta,
     Crie o endereço completo no sistema de arquivos (pasta);
-    [endereço ]
     Retorne.
   Se o endereço completo for do tipo arquivo,
     Crie o endereço completo no sistema de arquivos (arquivo);
     Retorne.
 
 Rotina para que se crie um endereço completo no sistema de arquivos (pasta):
-  [endereço]
   Preserve o endereço completo.
   Remova alguma barra invertida final desde o endereço completo.
   Anexe o caractere NULL após o endereço completo.
@@ -6737,11 +6735,11 @@ Rotina para que se destrua um catálogo:
 Rotina para que se destrua um endereço completo no sistema de arquivos:
   Defina o endereço completo para modo de leitura&gravação.
   Se o endereço completo for do tipo pasta, 
-    Destrua o endereço completo no sistema de arquivos (pasta)[endereço].
+    Destrua o endereço completo no sistema de arquivos (pasta).
   Se o endereço completo for do tipo arquivo, 
     Destrua o endereço completo no sistema de arquivos (arquivo).
 
-Rotina para que se destrua um endereço completo no sistema de arquivos (pasta)[endereço]:
+Rotina para que se destrua um endereço completo no sistema de arquivos (pasta):
   Itere. \ Primeiramente é necessário excluir os arquivos da pasta.
     Obtenha um item desde o endereço completo.
     Se o item não for encontrado, pare.
@@ -7397,11 +7395,11 @@ Rotina para que se pinte uma caixa de texto (edição):
 
 Rotina para que se duplique um endereço completo para uma segunda endereço completo no sistema de arquivos:
   Se o endereço completo for do tipo pasta, 
-    Duplique o endereço completo para a segunda endereço completo no sistema de arquivos (pasta)[endereço].
+    Duplique o endereço completo para a segunda endereço completo no sistema de arquivos (pasta).
   Se o endereço completo for do tipo arquivo, 
     Duplique o endereço completo para a segunda endereço completo no sistema de arquivos (arquivo).
 
-Rotina para que se duplique um endereço completo para um segundo endereço completo no sistema de arquivos (pasta)[endereço]:
+Rotina para que se duplique um endereço completo para um segundo endereço completo no sistema de arquivos (pasta):
   Se o endereço completo estiver no segundo endereço completo,
     Atribua "Erro ao duplicar a pasta: " junto com o endereço completo seguido de ". - erro de recursão inválida." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
@@ -8711,11 +8709,11 @@ Rotina para que se obtenha uma caixa de seleção usando uma linha de texto e uma 
 
 Rotina para que se obtenha um tamanho usando um endereço completo no sistema de arquivos:
   Se o endereço completo for do tipo pasta, 
-    Obtenha o tamanho usando o endereço completo no sistema de arquivos (pasta)[endereço].
+    Obtenha o tamanho usando o endereço completo no sistema de arquivos (pasta).
   Se o endereço completo for do tipo arquivo, 
     Obtenha o tamanho usando o endereço completo no sistema de arquivos (arquivo).
 
-Rotina para que se obtenha um tamanho usando um endereço completo no sistema de arquivos (pasta)[endereço]:
+Rotina para que se obtenha um tamanho usando um endereço completo no sistema de arquivos (pasta):
   Atribua 0 ao tamanho.
   Itere.
     Obtenha um item desde o endereço completo.
