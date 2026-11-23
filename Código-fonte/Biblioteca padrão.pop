@@ -6962,7 +6962,7 @@ Rotina para que se pinte uma flecha estilizada uns twips em comprimento com uma 
   Mova os twips dividido por 8.
   Salve o contexto.
   Vire para a esquerda 1/8.
-  Pinte um espiral começando com os twips dividido por 4.
+  Pinte uma espiral começando com os twips dividido por 4.
   Restaure o contexto.
   Vire para 1/8.
   Pinte uma segunda espiral regressivamente começando com os twips dividido por 4.
@@ -7247,8 +7247,6 @@ Rotina para que se pinte a caixa de seleção por uma linha de texto em uma caixa 
   Obtenha uma caixa de seleção usando a linha de texto e a caixa de texto.
   Pinte a caixa de seleção com o cor hilite e o cor hilite.
 
-
-
 Rotina para que se pinte uma espiral regressivamente usando uns twips;
 Rotina para que se pinte uma espiral regressivamente começando com uns twips;
 Rotina para que se pinte uma espiral usando um tamanho (regressivamente):
@@ -7260,8 +7258,8 @@ Rotina para que se pinte uma espiral usando um tamanho (regressivamente):
     Se a contagem for 5, pare.
   Reitere.
 
-Rotina para que se pinte um espiral começando com uns twips;
-Rotina para que se pinte um espiral usando um tamanho:
+Rotina para que se pinte uma espiral começando com uns twips;
+Rotina para que se pinte uma espiral usando um tamanho:
   Preserve o tamanho.
   Itere.
     Pinte um semicírculo usando o tamanho.
