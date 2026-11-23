@@ -5990,6 +5990,7 @@ Função para que se determine se um endereço completo é somente leitura:
   Se o número não for 0, diga sim.
   Diga não.
 
+Função para que se determine se um ponteiro pode ser encontrada;
 Função para que se determine se um ponteiro pode ser encontrado;
 Função para que se determine se um ponteiro foi encontrado;
 Função para que se determine se um ponteiro existe:
@@ -6054,7 +6055,10 @@ Função para que se determine se uma seleção é uma segunda seleção:
 
 Função para que se determine se existe something selecionado em uma caixa de texto;
 Função para que se determine se há something selecionado em uma caixa de texto;
-Função para que se determine se something está selecionado em uma caixa de texto:
+Função para que se determine se something está selecionado em uma caixa de texto;
+Função para que se determine se existe algo selecionado em uma caixa de texto;
+Função para que se determine se há algo selecionado em uma caixa de texto;
+Função para que se determine se algo está selecionado em uma caixa de texto:
   Se a âncora desta seleção desta caixa de texto for o cursor de texto desta seleção desta caixa de texto, diga não.
   Diga sim.
 
@@ -6374,7 +6378,7 @@ Função para que se determine se uma string é alguma palavra:
   Itere.
     Adicione 1 para o caractere inicial deste subtexto.
     Se o subtexto estiver em branco, diga sim.
-    Se o conteúdo deste caractere inicial deste subtexto for algum letra, reitere.
+    Se o conteúdo deste caractere inicial deste subtexto for alguma letra, reitere.
     Se o conteúdo deste caractere inicial deste subtexto for o apóstrofo, reitere.
   Diga não.
 
@@ -6470,7 +6474,7 @@ Função para que se determine se um subtexto está sobre alguma espécie de contraç
   Atribua o caractere inicial deste subtexto mais 1 para um endereço de byte .
   Se o endereço de byte for maior do que o caractere final deste subtexto, diga não.
   Se o conteúdo deste caractere inicial deste subtexto não for o apóstrofo, diga não.
-  Se o conteúdo deste endereço de byte não for algum letra, diga não.
+  Se o conteúdo deste endereço de byte não for alguma letra, diga não.
   Diga sim.
 
 Função para que se determine se um terminal está totalmente prenchido:
