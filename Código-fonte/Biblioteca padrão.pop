@@ -10865,16 +10865,16 @@ Rotina para que se reduza o nível de identação das linhas de texto selecionadas 
 Rotina para que se contorne uma caixa com uma cor:
   Pinte a caixa com a cor e a cor preta.
 
-Rotina para que se transcreva o arco de uma elipse usando uma string: \\ interessante.
-  Atribua 2761/10000 para uma fração. \ (sqrt(2) -1 ) * (2/3)   = 0,2761423749153967
-  Atribua o centro desta elipse para um centro localização.
+Rotina para que se transcreva o arco de uma elipse usando uma string:
+  Atribua 2761/10000 para uma fração. [ (sqrt(2) -1 ) * (2/3)   = 0,2761423749153967]
+  Atribua o centro desta elipse para uma localização denominada centro.
   Atribua o x-extent desta elipse dividido por 2 para uma half largura.
   Atribua o y-extent desta elipse dividido por 2 para uma half altura.
   Atribua o x-extent desta elipse vezes a fração para um x-offset.
   Atribua o y-extent desta elipse vezes a fração para um y-offset.
   \ control point 1
   Se a string for "canto superior esquerdo", 
-    Atribua a coordenada X1 desta elipse e a coordenada Y deste centro menos o y-offset para um primeiro control localização.
+    Atribua a coordenada X1 desta elipse e a coordenada Y deste centro menos o y-offset para uma localização denominada primeiro control localização.
   Se a string for "canto superior direito", 
     Atribua a coordenada X deste centro mais o x-offset e a coordenada Y1 desta elipse ao primeiro control localização.
   Se a string for "canto inferior direito", 
@@ -10883,7 +10883,7 @@ Rotina para que se transcreva o arco de uma elipse usando uma string: \\ interes
     Atribua a coordenada X deste centro menos o x-offset e a coordenada Y2 desta elipse ao primeiro control localização.
   \ control point 2
   Se a string for "canto superior esquerdo", 
-    Atribua a coordenada X deste centro menos o x-offset e a coordenada Y1 desta elipse para um segundo control localização.
+    Atribua a coordenada X deste centro menos o x-offset e a coordenada Y1 desta elipse para uma localização denominada segundo control localização.
   Se a string for "canto superior direito", 
     Atribua a coordenada X2 desta elipse e a coordenada Y deste centro menos o y-offset ao segundo control localização.
   Se a string for "canto inferior direito", 
@@ -10892,7 +10892,7 @@ Rotina para que se transcreva o arco de uma elipse usando uma string: \\ interes
     Atribua a coordenada X1 desta elipse e a coordenada Y deste centro mais o y-offset ao segundo control localização.
   \ ending point
   Se a string for "canto superior esquerdo", 
-    Atribua a coordenada X1 desta elipse mais o half largura e a coordenada Y1 desta elipse para uma ending localização.
+    Atribua a coordenada X1 desta elipse mais o half largura e a coordenada Y1 desta elipse para uma localização denominada ending localização.
   Se a string for "canto superior direito", 
     Atribua a coordenada X2 desta elipse e a coordenada Y1 desta elipse mais o half altura para a ending localização.
   Se a string for "canto inferior direito", 
