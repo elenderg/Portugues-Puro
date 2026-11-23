@@ -7201,7 +7201,7 @@ Rotina para que se pinte um quadrante circular usando um tamanho:
 
 Rotina para que se pinte um quadrante circular entre uns twips e uns outros twips em largura:
   Escolha aleatoriamente uns terceiro twips entre os twips e os outros twips.
-  Pinte um quadrante circular usando o terceiro twips.
+  Pinte o quadrante circular usando os terceiro twips.
 
 Rotina para que se pinte um quadrante circular usando um tamanho (counterclockwise):
   Atribua o tamanho vezes o número pi dividido por 48 para um twip denominado quantidade de caracteres do segmento.
