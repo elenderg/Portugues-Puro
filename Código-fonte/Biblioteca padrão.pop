@@ -6954,19 +6954,6 @@ Rotina para que se pinte uma elipse sobre uma localização com uma cor:
 Rotina para que se pinte uma elipse com uma cor:
   Pinte a elipse com a cor e a cor.
 
-Rotina para que se pinte uma elipse com uma cor denominada cor da borda e uma cor denominada cor de preenchimento:
-  Se o sinalizador de páginas deste PDF state estiver ativado,
-    Pinte a elipse com a cor da borda e a cor de preenchimento (modo pdf);
-    Retorne.
-  Preserve a elipse.
-  Crie o hPen desse canvas atual usando a cor da borda.
-  Crie o hBrush desse canvas atual usando a cor de preenchimento.
-  Se a borda for clear,
-    Adicione a quantidade de twips/pixel para o canto superior esquerdo desta elipse.
- Processe "gdi32.dll" "Ellipse" com o canvas atual e a coordenada X1  desta elipse e a coordenada Y1 desta elipse e a coordenada X2 desta elipse e a coordenada Y2 desta elipse.
- Destrua o hBrush desse canvas atual.
- Destrua o hPen desse canvas atual.
-
 Rotina para que se pinte uma flecha estilizada uns twips em comprimento com uma cor:
   Atribua a cor à cor deste contexto.
   Salve o contexto.
@@ -19440,7 +19427,7 @@ Rotina para que se pinte um gpBitmap sob uma localização (modo pdf):
   Transcreva "/" junto com o nome seguido de " Do".
   Transcreva "Q".
 
-Rotina para que se pinte uma elipse com uma cor da borda e uma cor de preenchimento (modo pdf):
+Rotina para que se pinte uma elipse com uma cor denominada cor da borda e uma cor denominada cor de preenchimento (modo pdf):
   Se a cor da borda e a cor de preenchimento são clear, retorne.
   Transcreva setcolor usando a cor da borda e a cor de preenchimento.
   Atribua a coordenada X1 desta elipse e a coordenada Y1 desta elipse para uma localização.
@@ -19452,7 +19439,7 @@ Rotina para que se pinte uma elipse com uma cor da borda e uma cor de preenchime
   Transcreva o arco dessa elipse usando "canto inferior esquerdo ".
   Transcreva stroke e preencha usando a cor da borda e a cor de preenchimento.
 
-Rotina para que se pinte uma elipse com uma cor da borda e uma cor de preenchimento:
+Rotina para que se pinte uma elipse com uma cor denominada cor da borda e uma cor denominada cor de preenchimento:
   Se a sinalizador de páginas deste pdf state estiver ativo,
     Pinte a elipse com a cor da borda e a cor de preenchimento (modo pdf);
     Retorne.
