@@ -11348,7 +11348,7 @@ Rotina para que se atribua a string dum temporizador para uma string:
 Rotina para que se atribua os intervalos dum temporizador para uns intervalos:
   Atribua os intervalos totais deste temporizador aos intervalos.
   Se a contagem deste temporizador for 0, retorne.
-  Atribua a contagem de intervalos do sistema a uns intervalos de temporização.
+  Atribua a contagem de intervalos do sistema para uns intervalos denominados intervalos de temporização.
   Subtraia os intervalos iniciais deste temporizador desde os intervalos de temporização.
   Adicione os intervalos de temporização para os intervalos.
 
