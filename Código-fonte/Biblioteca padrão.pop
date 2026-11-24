@@ -10112,7 +10112,7 @@ Rotina para que se insira uma lista em umas listas após uma segunda lista:
   Se a segunda lista for inexistente,
     Anteponha a lista para as listas;
     Retorne.
-  Insira a lista a as listas antes dessa lista posterior desta segunda lista.
+  Insira a lista para as listas antes dessa lista posterior desta segunda lista.
 
 Rotina para que se insira uma lista em umas listas antes de uma segunda lista:
   Se a lista for inexistente, retorne.
