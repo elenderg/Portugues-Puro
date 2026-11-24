@@ -11862,9 +11862,9 @@ Rotina para que se rotacione uma imagem:
   Atribua o centro desta caixa desta imagem para uma localização denominada centro.
   Atribua o centro desta caixa intacta desta imagem para uma localização denominada segundo centro .
   Atribua a coordenada Y deste centro menos a coordenada Y desta segundo centro mais a coordenada X deste centro ao número X dum twip par de números.
-  Subtraia a coordenada X desta segundo centro desde o número X deste twip par de números.
+  Subtraia a coordenada X deste segundo centro desde o número X deste twip par de números.
   Atribua a coordenada Y deste centro mais a coordenada X desta segundo centro menos a coordenada X deste centro ao número Y deste twip par de números.
-  Subtraia a coordenada Y desta segundo centro desde o número Y deste twip par de números.
+  Subtraia a coordenada Y deste segundo centro desde o número Y deste twip par de números.
   Mova a caixa intacta desta imagem usando o twip par de números.
   Rotacione o gpBitmap desta imagem.
 
