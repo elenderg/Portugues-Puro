@@ -11964,9 +11964,9 @@ Rotina para que se sintetize a fala de uma string:
   Se a string estiver em branco, retorne.
   Converta a string para uma string de caracteres amplos.
   Anexe o caractere NULL após a string de caracteres amplos.
-  Processe o speak [o método speak] desta VTable [SpVoice] deste Talker com
+  Processe o Speak [o método speak] desta VTable [SpVoice] deste sintetizador de voz com
   \O método Speak inicia a fala de uma string de texto, um arquivo de texto ou um arquivo de onda pela voz. SpVoice Speak method (SAPI 5.3)
-    O Talker
+    O sintetizador de voz
     e O caractere inicial desta string de caracteres amplos
     e 17 [SVSFDefault Especifica que as configurações padrão devem ser usadas.]
     [SVSFlagsAsync Especifica que a chamada de fala deve ser assíncrona. Ou seja, ele retornará imediatamente após a solicitação de fala ser colocada na fila.]
