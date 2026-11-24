@@ -2491,6 +2491,13 @@ O STD_INPUT_HANDLE é um número igual a -10.
 O CodePage é um número igual a 1252. \ 65001 para UTF-8 ou 1252 para Windows-1252
 O INVALID_HANDLE_VALUE é um número igual a -1.
 
+Função para que se determine se um par de números é menor do que um segundo par de números:
+  Se o número X deste par de números for maior do que o número X deste segundo par de números, 
+    Diga não.
+  Se o número Y deste par de números for maior do que o número Y deste segundo par de números, 
+    Diga não.
+  Diga sim.
+
 Rotina para que se obtenha o Número Identificador do Fluxo de Entrada Padrão:
   Processe "kernel32.dll" "GetStdHandle" com 
     O STD_INPUT_HANDLE [nStdHandle = STD_INPUT_HANDLE]
@@ -10809,8 +10816,9 @@ Rotina para que se normalize uma orientação:
     Adicione 3840 para a orientação.
 
 Rotina para que se normalize uma linha reta horizontal:
-  Se a localização final desta linha reta for menor do que a localização inicial desta linha reta horizontal, 
-    Permute a localização final desta linha reta com a localização inicial desta linha reta horizontal.
+  Se a localização final desta linha reta horizontal for menor do que a localização inicial desta linha reta horizontal, 
+    Permute a localização final desta linha reta horizontal com a localização inicial desta linha reta horizontal.
+  Retorne.
 
 Rotina para que se normalize uma matiz:
   Divida a matiz por 3600 usando um quociente e um resto.
@@ -11807,7 +11815,7 @@ Rotina para que se reverta umas listas:
   Reitere.
 
 Rotina para que se rotacione uma caixa:
-  Atribua o centro desta caixa para um centro localização.
+  Atribua o centro desta caixa para uma localização denominada centro.
   Atribua a caixa para uma segunda caixa.
   Atribua a coordenada Y deste centro menos a coordenada Y1 desta segunda caixa mais a coordenada X deste centro à coordenada X2 desta caixa.
   Atribua a coordenada X1 desta segunda caixa menos a coordenada X deste centro mais a coordenada Y deste centro à coordenada Y1 desta caixa.
@@ -11839,7 +11847,7 @@ Rotina para que se rotacione um GpImage usando um ângulo:
     e O número.
 
 Rotina para que se rotacione uma linha reta:
-  Atribua o centro desta linha reta para um centro localização.
+  Atribua o centro desta linha reta para uma localização denominada centro.
   Rotacione a localização inicial desta linha reta em direção ao centro.
   Rotacione a localização final desta linha reta em direção ao centro.
 
@@ -11851,25 +11859,25 @@ Rotina para que se rotacione uma imagem:
   Normalize o ângulo de rotação desta imagem.
   Rotacione a caixa desta imagem.
   Rotacione a caixa intacta desta imagem.
-  Atribua o centro desta caixa desta imagem para um centro localização.
-  Atribua o centro desta caixa intacta desta imagem para uma segunda centro localização.
-  Atribua a coordenada Y deste centro menos a coordenada Y desta segunda centro mais a coordenada X deste centro ao número X dum twip par de números.
-  Subtraia a coordenada X desta segunda centro desde o número X deste twip par de números.
-  Atribua a coordenada Y deste centro mais a coordenada X desta segunda centro menos a coordenada X deste centro ao número Y deste twip par de números.
-  Subtraia a coordenada Y desta segunda centro desde o número Y deste twip par de números.
+  Atribua o centro desta caixa desta imagem para uma localização denominada centro.
+  Atribua o centro desta caixa intacta desta imagem para uma localização denominada segundo centro .
+  Atribua a coordenada Y deste centro menos a coordenada Y desta segundo centro mais a coordenada X deste centro ao número X dum twip par de números.
+  Subtraia a coordenada X desta segundo centro desde o número X deste twip par de números.
+  Atribua a coordenada Y deste centro mais a coordenada X desta segundo centro menos a coordenada X deste centro ao número Y deste twip par de números.
+  Subtraia a coordenada Y desta segundo centro desde o número Y deste twip par de números.
   Mova a caixa intacta desta imagem usando o twip par de números.
   Rotacione o gpBitmap desta imagem.
 
 Rotina para que se rotacione um polígono:
   Se o polígono for inexistente, retorne.
-  Atribua o centro deste polígono para um centro localização.
+  Atribua o centro deste polígono para uma localização denominada centro.
   Itere.
     Obtenha um vértice desde os vértices deste polígono.
     Se o vértice for inexistente, retorne.
     Rotacione a localização deste vértice em direção ao centro.
   Reitere.
 
-Rotina para que se rotacione uma localização em direção para um centro localização:
+Rotina para que se rotacione uma localização em direção para uma localização denominada centro:
   Atribua a localização para uma segunda localização.
   Atribua a coordenada Y deste centro menos a coordenada Y desta segunda localização mais a coordenada X deste centro à coordenada X desta localização.
   Atribua a coordenada X desta segunda localização menos a coordenada X deste centro mais a coordenada Y deste centro à coordenada Y desta localização.
@@ -12683,7 +12691,7 @@ Rotina para que se subdivida um byte em uma cifra binária e uma segunda cifra bi
 
 Rotina para que se subdivida uma linha reta em uma segunda linha reta e uma terceira linha reta:
   Preserve a linha reta.
-  Atribua o centro desta linha reta para um centro localização.
+  Atribua o centro desta linha reta para uma localização denominada centro.
   Atribua a localização inicial desta linha reta e o centro à segunda linha reta.
   Atribua o centro e a localização final desta linha reta à terceira linha reta.
 
@@ -18251,8 +18259,8 @@ Rotina para que se atribua a largura dum GpImage para uma largura:
     e O endereçamento desta largura. [*width]
 
 Rotina para que se atribua um GpRect para um segundo GpRect:
-  Atribua o x deste GpRect ao x deste segundo GpRect.
-  Atribua a coordenada Y deste GpRect ao y deste segundo GpRect.
+  Atribua o X deste GpRect ao X deste segundo GpRect.
+  Atribua o Y deste GpRect ao Y deste segundo GpRect.
   Atribua a largura deste GpRect ao largura deste segundo GpRect.
   Atribua a altura deste GpRect à altura deste segundo GpRect.
 
