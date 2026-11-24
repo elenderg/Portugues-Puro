@@ -347,6 +347,7 @@ Um nome do arquivo é uma string. \ é o nome que vem depois da barra / até o fina
 Um nome do arquivo s/ extensão é uma string. \ Auto explicativo.
 Um extensão é uma string. \ Contém o ponto. Exemplo: .txt
 Um endereço da pasta é um endereço completo. \ Exemplo: c:\pasta1\pasta2\
+Um root endereço da pasta é um endereço completo. 
 Um endereço completo é uma string. \Endereço completo do arquivo. Exemplo: c:\pasta1\pasta2\arquivo.txt
 Um nome do diretório é uma string. \ nome da pasta com a barra no final. Exemplo = pasta2\
 Um designador é uma string. \  pode ser igual ao nome do diretório ou igual ao nome do arquivo, se houver
