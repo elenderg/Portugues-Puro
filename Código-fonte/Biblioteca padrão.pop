@@ -12748,7 +12748,7 @@ Rotina para que se subdivida uma string em uns conjuntos de texto usando um byte
   Se o conteúdo deste caractere final desta string não for o byte separador, retorne.
   Adicione "" para os conjuntos de texto.
 
-Rotina para que se subdivida umas listas em umas listas anteriores e umas listas posteriores:
+Rotina para que se subdivida umas listas em umas listas denominadas listas anteriores e umas listas denominadas listas posteriores:
   Se as listas estiverem vazias,
     Limpe as listas anteriores;
     Limpe as listas posteriores;
@@ -12761,7 +12761,7 @@ Rotina para que se subdivida umas listas em umas listas anteriores e umas listas
     Reitere.
     Subdivida as listas em as listas anteriores e as listas posteriores sob a lista.
 
-Rotina para que se subdivida umas listas em umas listas anteriores e umas listas posteriores sob uma lista:
+Rotina para que se subdivida umas listas em umas listas denominadas listas anteriores e umas listas denominadas listas posteriores sob uma lista:
   Limpe as listas anteriores.
   Limpe as listas posteriores.
   Se a lista for inexistente,
