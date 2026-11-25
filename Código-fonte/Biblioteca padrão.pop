@@ -12616,14 +12616,14 @@ Rotina para que se suavize um polígono:
   Itere.
     Se o próximo vértice deste vértice esquerdo for inexistente, pare.
     Atribua o próximo vértice deste vértice esquerdo para um direito vértice.
-    Obtenha um centro localização usando a localização deste vértice esquerdo e a localização deste direito vértice.
-    Insira o centro ao polígono após o vértice esquerdo.
+    Obtenha uma localização denominada centro usando a localização deste vértice esquerdo e a localização deste direito vértice.
+    Insira o centro no polígono após o vértice esquerdo.
     Atribua o próximo vértice deste vértice esquerdo para um novo vértice.
     Se o vértice anterior deste vértice esquerdo for inexistente,
     Atribua o direito vértice ao vértice esquerdo;
     Reitere.
-    Obtenha uma segunda centro localização usando a localização deste vértice anterior deste vértice esquerdo e a localização deste novo vértice.
-    Calcule um valor da diferença entre a segunda centro e a localização deste vértice esquerdo.
+    Obtenha uma localização denominada segundo centro  usando a localização deste vértice anterior deste vértice esquerdo e a localização deste novo vértice.
+    Calcule um valor da diferença entre a segundo centro e a localização deste vértice esquerdo.
     Divida o valor da diferença por 2.
     Adicione o valor da diferença para a localização deste vértice esquerdo.
     Atribua o direito vértice ao vértice esquerdo.
