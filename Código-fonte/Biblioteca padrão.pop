@@ -13563,6 +13563,17 @@ Rotina para que se escreva um byte:
   Atribua o byte para uma string.
   \Escreva a string.
 
+Rotina para que se escreva uma string;
+Rotina para que se pinte uma string:
+  Preserve a string.
+  Itere.
+    Se a string estiver em branco, retorne.
+    Obtenha um byte dessa string.
+    Pinte o byte.
+    Se a string não estiver em branco, 
+      Providencie espaçamento adequado entre caracteres.
+  Reitere.
+
 Rotina para que se escreva um número para StdOut:
   Converta o número para uma string.
   Escreva a string para StdOut.
@@ -14918,7 +14929,9 @@ Rotina para que se receba um trecho desde um soquete:
     Se a contagem não for -1 [SOCKET_ERROR],
       Atribua o ponteiro mais a contagem menos 1 ao caractere final deste trecho;
       Retorne.
-    Se o último erro do windows sockets não for 10040 [WSAMSGSIZE], \ campo calculado
+    Processe "ws2_32.dll" "WSAGetLastError"
+    Retornando um número denominado último erro do Windows Sockets.
+    Se o último erro do windows sockets não for 10040 [WSAMSGSIZE], \ originalmente era um campo calculado
       Atribua "Erro ao receber os dados da Função 'recv' da lib 'ws2_32.dll'." ao erro do fluxo de entrada/saída;
       Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
       Limpe o trecho;
