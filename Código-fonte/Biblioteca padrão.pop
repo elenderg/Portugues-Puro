@@ -12401,7 +12401,7 @@ Rotina para que se envie um mensagem para um destinatário desde um remetente com
   Atribua o mensagem à mensagem deste email.
   Envie o email.
 
-Rotina para que se envie uma string para um soquete e receba um response string:
+Rotina para que se envie uma string para um soquete e receba uma response string:
   Limpe a response string.
   Envie a string para o soquete.
   Se o erro do fluxo de entrada/saída não estiver em branco, retorne.
