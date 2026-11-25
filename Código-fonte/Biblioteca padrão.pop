@@ -14729,7 +14729,7 @@ Rotina para que se leia um console para uma string:
   Desmanche todos os eventos.
   Atualize o cursor.
 
-Rotina para que se atribua a localização deste mouse para uma localização:
+Função para que se atribua a localização deste mouse para uma localização:
   Processe "user32.dll" "GetCursorPos" com
   \ Recupera a posição do cursor do mouse, retornando as coordenadas da tela.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winuser/nf-winuser-getcursorpos
