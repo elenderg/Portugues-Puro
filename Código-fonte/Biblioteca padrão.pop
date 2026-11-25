@@ -12337,7 +12337,7 @@ Rotina para que se envie um email:
     Elimine os resíduos no erro do fluxo de entrada/saída;
     Destrua o soquete;
     Retorne.
-  Limpe uma temp string.
+  Limpe uma string denominada temp string.
   Acrescente "De: " junto com o remetente deste email junto com o texto CRLF para a temp string.
   Acrescente "Para: " junto com o destinatário deste email junto com o texto CRLF para a temp string.
   Acrescente "Assunto: " junto com o assunto deste email junto com o texto CRLF para a temp string.
