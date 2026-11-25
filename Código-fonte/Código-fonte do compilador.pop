@@ -7443,7 +7443,7 @@ Rotina para que se inicialize um Cabeçalho PE (cabeçalho opcional):
   \O número de bytes a serem vinculados no heap local.
   Atribua 0 ao LoaderFlags deste Cabeçalho PE. \ Esse membro é obsoleto.
 
-Rotina para que se atribua o tamanho do executável deste compilador para um tamanho:
+Função para que se atribua o tamanho do executável deste compilador para um tamanho:
   Atribua 4096 [section base] ao tamanho.
   Adicione o tamanho desta seção de DLLs para o tamanho.
   Adicione o tamanho desta região de dados para o tamanho.
@@ -7605,7 +7605,7 @@ Rotina para que se compile um endereço da pasta (etapa final): \ #016
     Escreva o erro do fluxo de entrada/saída para StdOut.
   Suspenda o temporizador de escrita.
 
-Rotina para que se atribua o endereço EXE completo deste compilador para um endereço completo:
+Função para que se atribua o endereço EXE completo deste compilador para um endereço completo:
   Extraia um designador desde o endereço da pasta deste compilador.
   Remova alguma barra invertida final desde o designador.
   Atribua o endereço da pasta deste compilador junto com o designador seguido de ".exe" ao endereço completo.
@@ -7753,7 +7753,7 @@ Rotina para que se liste tudo:
   Liste os temporizadores depois de "TEMPORIZADORES:" na trecho de listagem deste compilador.
   Escreva o trecho de listagem deste compilador para o listagem endereço completo deste compilador.
 
-Rotina para que se atribua o listagem endereço completo deste compilador para um endereço completo:
+Função para que se atribua o listagem endereço completo deste compilador para um endereço completo:
   Extraia um designador desde o endereço da pasta deste compilador.
   Remova alguma barra invertida final desde o designador.
   Atribua o endereço da pasta deste compilador junto com o designador seguido de ".lst" ao endereço completo.
