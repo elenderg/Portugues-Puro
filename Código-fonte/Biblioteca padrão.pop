@@ -12618,7 +12618,7 @@ Rotina para que se suavize um polígono:
     Atribua o próximo vértice deste vértice esquerdo para um vértice denominado direito vértice.
     Obtenha uma localização denominada centro usando a localização deste vértice esquerdo e a localização deste direito vértice.
     Insira o centro no polígono após o vértice esquerdo.
-    Atribua o próximo vértice deste vértice esquerdo para um novo vértice.
+    Atribua o próximo vértice deste vértice esquerdo para um vértice denominado novo vértice.
     Se o vértice anterior deste vértice esquerdo for inexistente,
     Atribua o direito vértice ao vértice esquerdo;
     Reitere.
