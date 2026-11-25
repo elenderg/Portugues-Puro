@@ -12655,17 +12655,17 @@ Rotina para que se classifique umas linhas de texto:
   Classifique as linhas de texto anteriores.
   Classifique as linhas de texto posteriores.
   Itere.
-    Atribua a primeira linha de texto destas linhas de texto anteriores para uma linha de texto anterior.
-    Atribua a primeira linha de texto destas linhas de texto posteriores para uma linha de texto posterior.
+    Atribua a primeira linha de texto destas linhas de texto anteriores para uma linha de texto denominada linha de texto anterior.
+    Atribua a primeira linha de texto destas linhas de texto posteriores para uma linha de texto denominada linha de texto posterior.
     Se a linha de texto anterior for inexistente,
-    Acrescente as linhas de texto posteriores para as linhas de texto;
-    Retorne.
+      Acrescente as linhas de texto posteriores para as linhas de texto;
+      Retorne.
     Se a linha de texto posterior for inexistente,
-    Acrescente as linhas de texto anteriores para as linhas de texto;
-    Retorne.
+      Acrescente as linhas de texto anteriores para as linhas de texto;
+      Retorne.
     Se a string desta linha de texto anterior for maior do que a string desta linha de texto posterior,
-    Mova a linha de texto posterior desde as linhas de texto posteriores para as linhas de texto;
-    Reitere.
+      Mova a linha de texto posterior desde as linhas de texto posteriores para as linhas de texto;
+      Reitere.
     Mova a linha de texto anterior desde as linhas de texto anteriores para as linhas de texto.
   Reitere.
 
