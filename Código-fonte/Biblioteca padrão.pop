@@ -1483,7 +1483,7 @@ Uma cifra binária é um byte. \ somente são válidos os 4 bits de ordem inferior. 
 
 Uma cifra hexadecimal é uma string. \ Exemplo: $0010A0… O cifrão serve para indicar ao compilador que se trata de um valor hexadecimal.
  \Em outras linguagens costuma-se usar um # (como no css #a1b2e3; ou um 0x, por exemplo 0xA1B2FF…
-
+Uma response string é uma string.
 Uma máscara de disjunção exclusiva é uma mask.
 
 [VARIÁVEIS GLOBAIS]
