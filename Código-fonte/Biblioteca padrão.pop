@@ -12612,7 +12612,7 @@ Rotina para que se suavize um polígono:
   Se o polígono estiver closed,
     Acrescente a localização deste próximo vértice deste primeiro vértice deste polígono para o polígono;
     Ative um sinalizador.
-  Atribua o primeiro vértice deste polígono para um vértice esquerdo.
+  Atribua o primeiro vértice deste polígono para um vértice denominado vértice esquerdo.
   Itere.
     Se o próximo vértice deste vértice esquerdo for inexistente, pare.
     Atribua o próximo vértice deste vértice esquerdo para um direito vértice.
