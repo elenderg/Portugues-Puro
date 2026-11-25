@@ -12651,7 +12651,7 @@ Rotina para que se classifique algumas linhas de texto selecionadas em uma caixa
 
 Rotina para que se classifique umas linhas de texto:
   Se a primeira linha de texto destas linhas de texto for a última linha de texto destas linhas de texto, retorne.
-  Subdivida as linhas de texto em uns linhas de texto anteriores e umas linhas de texto posteriores.
+  Subdivida as linhas de texto em umas linhas de texto denominadas linhas de texto anteriores e umas linhas de texto denominadas linhas de texto posteriores.
   Classifique as linhas de texto anteriores.
   Classifique as linhas de texto posteriores.
   Itere.
