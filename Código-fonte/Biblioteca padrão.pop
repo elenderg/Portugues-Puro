@@ -13206,7 +13206,7 @@ Rotina para que se inicialize os componentes:
   Inicialize o sintetizador de voz.
   Inicialize o módulo.
   Inicialize as cores.
-  Inicialize o tela.
+  Inicialize a tela.
   Inicialize a janela do programa.
   Inicialize as fontes.
   Inicialize os cursors.
@@ -13338,12 +13338,12 @@ Rotina para que se exponha tudo:
 
 Rotina para que se exponha conteúdo de uma caixa:
   Crie uma hRgn usando a caixa.
-  Mostre dentro desse hRgn.
+  Exponha conteúdo desse hRgn.
   Destrua o hRgn.
 
 Rotina para que se exponha conteúdo de uma elipse:
   Crie uma hRgn usando a elipse.
-  Mostre dentro desse hRgn.
+  Exponha conteúdo desse hRgn.
   Destrua o hRgn.
 
 Rotina para que se exponha conteúdo de uma hRgn:
@@ -13356,22 +13356,22 @@ Rotina para que se exponha conteúdo de uma hRgn:
 
 Rotina para que se exponha conteúdo de um polígono:
   Crie uma hRgn usando o polígono.
-  Mostre dentro desse hRgn.
+  Exponha conteúdo desse hRgn.
   Destrua o hRgn.
 
 Rotina para que se exponha conteúdo de uma caixa arredondada:
   Crie uma hRgn usando a caixa arredondada.
-  Mostre dentro desse hRgn.
+  Exponha conteúdo desse hRgn.
   Destrua o hRgn.
 
 Rotina para que se exponha exterior de uma caixa:
   Crie uma hRgn usando a caixa.
-  Mostre fora desse hRgn.
+  Exponha exterior desse hRgn.
   Destrua o hRgn.
 
 Rotina para que se exponha exterior de uma elipse:
   Crie uma hRgn usando a elipse.
-  Mostre fora desse hRgn.
+  Exponha exterior desse hRgn.
   Destrua o hRgn.
 
 Rotina para que se exponha exterior de uma hRgn:
@@ -13403,12 +13403,12 @@ Rotina para que se exponha exterior de uma hRgn:
 
 Rotina para que se exponha exterior de um polígono:
   Crie uma hRgn usando o polígono.
-  Mostre fora desse hRgn.
+  Exponha exterior desse hRgn.
   Destrua o hRgn.
 
 Rotina para que se exponha exterior de uma caixa arredondada:
   Crie uma hRgn usando a caixa arredondada.
-  Mostre fora desse hRgn.
+  Exponha exterior desse hRgn.
   Destrua o hRgn.
 
 Rotina para que se renove a tela;
@@ -13561,7 +13561,7 @@ Rotina para que se escreva um trecho para um endereço completo:
 
 Rotina para que se escreva um byte:
   Atribua o byte para uma string.
-  Escreva a string.
+  \Escreva a string.
 
 Rotina para que se escreva um número para StdOut:
   Converta o número para uma string.
@@ -13925,32 +13925,32 @@ Rotina para que se escreva uma string para StdOut:
 
 Rotina para que se escreva um byte sem passar pra próxima linha:
   Atribua o byte para uma string.
-  Escreva a string sem passar pra próxima linha.
+  \Escreva a string sem passar pra próxima linha.
 
 \ will translate to English because "Converta um sinalizador" é used para transcreva reams pelo caderno
 Rotina para que se escreva um sinalizador:
   Converta o sinalizador para uma string.
-  Escreva a string.
+  \Escreva a string.
 
 Rotina para que se escreva um sinalizador sem passar pra próxima linha:
   Converta o sinalizador para uma string.
-  Escreva a string sem passar pra próxima linha.
+  \Escreva a string sem passar pra próxima linha.
 
 Rotina para que se escreva uma fração:
   Converta a fração para uma string.
-  Escreva a string.
+  \Escreva a string.
 
 Rotina para que se escreva uma fração sem passar pra próxima linha:
   Converta a fração para uma string.
-  Escreva a string sem passar pra próxima linha.
+  \Escreva a string sem passar pra próxima linha.
 
 Rotina para que se escreva um número:
   Converta o número para uma string.
-  Escreva a string.
+  \Escreva a string.
 
 Rotina para que se escreva um número sem passar pra próxima linha:
   Converta o número para uma string.
-  Escreva a string sem passar pra próxima linha.
+  \Escreva a string sem passar pra próxima linha.
 
 Rotina para que se escreva um número sobre um console:
   Converta o número para uma string.
@@ -13958,7 +13958,7 @@ Rotina para que se escreva um número sobre um console:
 
 Rotina para que se escreva uns quoras em uma caixa:
   \Pinte a caixa com a cor vermelha e a cor vermelha. \ temp ***
-  Atribua a caixa para uma quora caixa.
+  Atribua a caixa para uma caixa denominada quora caixa.
   Atribua a coordenada Y1 desta quora caixa mais 24 pixels à coordenada Y2 desta quora caixa.
   Itere.
     Obtenha um quora desde o quoras.
@@ -14168,7 +14168,7 @@ Rotina para que se atribua um byte para uma string:
   Atribua o caractere inicial desta string ao caractere final desta string.
 
 Rotina para que se atribua uma string para uma segunda string:
-  Atribua a quantidade de caracteres desta string para uma quantidade de caracteres armazenados.
+  Atribua a quantidade de caracteres desta string para uma quantidade de caracteres denominada quantidade de caracteres armazenados.
   Associe um ponteiro usando a quantidade de caracteres armazenados.
   Copie bytes desde o caractere inicial desta string para o ponteiro pela quantidade de caracteres armazenados.
   Desassocie o caractere inicial desta segunda string.
@@ -14211,14 +14211,14 @@ Rotina para que se uppercase um byte:
   \ END
 
 Rotina para que se anteponha um byte para uma string:
-  Atribua a quantidade de caracteres desta string para uma quantidade de caracteres armazenados.
+  Atribua a quantidade de caracteres desta string para uma quantidade de caracteres denominada quantidade de caracteres armazenados.
   Reaponte o caractere inicial desta string usando a quantidade de caracteres desta string mais 1.
   Copie bytes desde o caractere inicial desta string para o caractere inicial desta string mais 1 pela quantidade de caracteres armazenados.
   Atribua o caractere inicial desta string mais a quantidade de caracteres armazenados ao caractere final desta string.
   Atribua o byte ao conteúdo deste caractere inicial desta string.
 
 Rotina para que se anteponha uma string para uma segunda string:
-  Atribua a quantidade de caracteres desta segunda string mais a quantidade de caracteres desta string para um número denominado quantidade de caracteres agrupados.
+  Atribua a quantidade de caracteres desta segunda string mais a quantidade de caracteres desta string para uma quantidade de caracteres denominada quantidade de caracteres agrupados.
   Reaponte um ponteiro usando a quantidade de caracteres agrupados.
   Atribua o ponteiro ao caractere inicial dum subtexto.
   Copie bytes desde o caractere inicial desta string para o caractere inicial deste subtexto pela quantidade de caracteres desta string.
@@ -14762,7 +14762,7 @@ Rotina para que se abra um arquivo usando um endereço completo:
     Atribua "A Pasta: " junto com o endereço da pasta seguido de " não existe." ao erro do fluxo de entrada/saída;
     Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
     Retorne.
-  Ative o endereço completo para modo de leitura&gravação.
+  Defina o endereço completo para modo de leitura&gravação.
   Preserve o endereço completo.
   Anexe o caractere NULL após o endereço completo.
   Processe "kernel32.dll" "CreateFileA" com
@@ -14783,7 +14783,7 @@ Rotina para que se abra um arquivo usando um endereço completo:
 Rotina para que se leia uma response string desde uma requisição WinHTTP:
   Se a requisição WinHTTP for inexistente, retorne.
   Limpe a response string.
-  Atribua 8 kilobytes para um trecho tamanho.
+  Atribua 8 kilobytes para um tamanho denominado trecho tamanho.
   Itere.
     Atribua 0 para um tamanho.
     Processe "winhttp.dll" "WinHttpqueryDataAvailable" com
@@ -14797,7 +14797,7 @@ Rotina para que se leia uma response string desde uma requisição WinHTTP:
       Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
       Limpe a response string;
       Pare.
-    Atribua a quantidade de caracteres desta response string para uma quantidade de caracteres armazenados.
+    Atribua a quantidade de caracteres desta response string para uma quantidade de caracteres denominada quantidade de caracteres armazenados.
     Reaponte o caractere inicial desta response string usando a quantidade de caracteres armazenados mais o trecho tamanho.
     Atribua o caractere inicial desta response string mais a quantidade de caracteres armazenados para um ponteiro.
     Processe "winhttp.dll" "WinHttpReadData" com
@@ -14857,9 +14857,9 @@ Rotina para que se leia uma URL para um trecho:
       O número identificador da conexão de internet; [hInternet]
     Retorne.
     \ lê o arquivo
-    Atribua 64 kilobytes para um trecho tamanho.
+    Atribua 64 kilobytes para um tamanho denominado trecho tamanho.
   Itere.
-    Atribua a quantidade de caracteres deste trecho para um número denominado quantidade de caracteres armazenados.
+    Atribua a quantidade de caracteres deste trecho para uma quantidade de caracteres denominada quantidade de caracteres armazenados.
     Reaponte o caractere inicial deste trecho usando a quantidade de caracteres armazenados mais o trecho tamanho.
     Atribua o caractere inicial deste trecho mais a quantidade de caracteres armazenados para um ponteiro.
     Processe "wininet.dll" "InternetReadFile" com
@@ -14900,7 +14900,7 @@ Rotina para que se receba o response string desde uma requisição WinHTTP:
 Rotina para que se receba um trecho desde um soquete:
   Limpe o erro do fluxo de entrada/saída.
   Limpe o trecho.
-  Atribua 8 kilobytes para um trecho tamanho.
+  Atribua 8 kilobytes para um tamanho denominado trecho tamanho.
   Itere.
     Atribua 0 para um tamanho.
     Atribua a quantidade de caracteres deste trecho para um número denominado quantidade de caracteres armazenados.
@@ -14918,8 +14918,8 @@ Rotina para que se receba um trecho desde um soquete:
     Se a contagem não for -1 [SOCKET_ERROR],
       Atribua o ponteiro mais a contagem menos 1 ao caractere final deste trecho;
       Retorne.
-    Se o último erro do windows sockets não for 10040 [WSAMSGSIZE],
-      Atribua "Erro ao receber os dados. Função 'recv' da lib 'ws2_32.dll'." ao erro do fluxo de entrada/saída;
+    Se o último erro do windows sockets não for 10040 [WSAMSGSIZE], \ campo calculado
+      Atribua "Erro ao receber os dados da Função 'recv' da lib 'ws2_32.dll'." ao erro do fluxo de entrada/saída;
       Escreva o erro do fluxo de entrada/saída junto com o texto CRLF para StdOut;
       Limpe o trecho;
       Retorne.
@@ -14936,7 +14936,7 @@ Rotina para que se post um data string para uma URL e receba um response string:
   Limpe o erro do fluxo de entrada/saída.
   Crie uma requisição WinHTTP por posting para a URL.
   Se o erro do fluxo de entrada/saída não estiver em branco, retorne.
-  Envie o data para a requisição WinHTTP.
+  Envie a data string para a requisição WinHTTP.
   Se o erro do fluxo de entrada/saída não estiver em branco,
     Destrua a requisição WinHTTP;
     Retorne.
@@ -15128,7 +15128,7 @@ Rotina para que se pinte um byte:
 Rotina para que se pinte a grade de caracteres :
   \ temporário
   Salve o contexto.
-  Atribua a grossura da canetinha para uma nova grossura da canetinha.
+  Atribua a grossura da canetinha deste contexto para um número denominado nova grossura da canetinha.
   Use a canetinha cinza claro.
   Atribua o tamanho da letra deste contexto dividido por 4 para um tamanho.
   Dê meia volta.
@@ -17975,7 +17975,7 @@ Rotina para que se use um tamanho da letra em  uns twips:
 
 Rotina para que se use small pointy letras:
   \ seria o oposto de  "big roundy letras" | ainda não foi implementado
-  Use small letras.
+  \Use small letras. \ ainda não foi implementado
 
 Rotina para que se escolha aleatoriamente um tamanho da letra entre uns twips e uns outros twips:
   Escolha aleatoriamente um número aleatório entre os twips e os outros twips.
@@ -18766,7 +18766,7 @@ Rotina para que se mova uma caixa para a base de uma segunda caixa:
 Rotina para que se mova uma caixa perto do lado esquerdo de uma segunda caixa;
 Rotina para que se mova uma caixa perto da esquerda de uma segunda caixa:
   Mova a caixa para a esquerda dessa segunda caixa.
-  Escolha aleatoriamente uma quantidade de caracteres entre 0 e a largura desta caixa vezes 3/4.
+  Escolha aleatoriamente uma quantidade de caracteres entre 0 e a largura desta caixa vezes 3/4. \ testar
   Mova a caixa para a direita a quantidade de caracteres.
 
 Rotina para que se mova uma caixa uns twips para baixo;
@@ -18860,7 +18860,7 @@ Rotina para que se include uma fonte no current pdf:
   \ stream
   Atribua a actual data dessa fonte para um trecho.
   Converta o trecho para uma cifra hexadecimal.
-  Adicione um stream objeto pdf usando "font stream".
+  Adicione um stream objeto pdf denominado stream usando "font stream".
   Acrescente o número deste stream seguido de " 0 obj" para o stream.
   Acrescente "<<" para o stream sem passar pra próxima linha.
   Acrescente "/Filter /ASCIIHexDecode" para o stream sem passar pra próxima linha.
@@ -18872,7 +18872,7 @@ Rotina para que se include uma fonte no current pdf:
   Acrescente "endstream" para o stream.
   Acrescente "endobj" para o stream.
   \ descriptor
-  Adicione um descriptor objeto pdf usando "fonte descriptor".
+  Adicione um descriptor objeto pdf denominado descriptor usando "fonte descriptor".
   Atribua "F" junto com o número deste descriptor para um nome da fonte.
   Atribua o nome desta fonte para um nome base da fonte.
   Replace o caractere de espaço com o underline no nome base da fonte.
@@ -18891,7 +18891,7 @@ Rotina para que se include uma fonte no current pdf:
   Acrescente ">>" para o descriptor.
   Acrescente "endobj" para o descriptor.
   \ definition
-  Adicione um definition objeto pdf usando "fonte definition".
+  Adicione um definition objeto pdf denominado definition usando "fonte definition".
   Atribua o nome da fonte ao nome da fonte desta definition.
   Acrescente o número desta definition seguido de " 0 obj" para a definition.
   Acrescente "<<" para a definition.
@@ -18929,20 +18929,20 @@ Rotina para que se encontre um objeto pdf usando um categoria:
     Se a categoria deste objeto pdf for a categoria, pare.
   Reitere.
 
-Rotina para que se end uma folha (modo pdf - finalização da do conteúdo atual):
+Rotina para que se end uma folha (modo pdf - finalização do conteúdo atual):
   Atribua os conteúdos atuais deste pdf state para um content objeto pdf.
   Atribua os data deste content objeto pdf para um trecho.
-  Limpe os data deste content objeto pdf.
-  Acrescente o número deste content objeto pdf seguido de " 0 obj" para o content.
+  Limpe os data trecho deste content objeto pdf.
+  Acrescente o número deste content objeto pdf seguido de " 0 obj" para o content objeto pdf.
   Acrescente "<</Length " junto com a quantidade de caracteres deste trecho seguido de " >>" para o content objeto pdf.
   Acrescente "stream" para o content objeto pdf.
-  Acrescente o trecho para os data deste content objeto pdf.
+  Acrescente o trecho para os data trecho deste content objeto pdf.
   Acrescente "endstream" para o content objeto pdf.
   Acrescente "endobj" para o content objeto pdf.
   Desative a sinalizador de páginas deste pdf state.
 
 Rotina para que se end uma folha (modo pdf - finalização da página atual - fontes):
-  Atribua a página atual deste pdf state para uma página objeto pdf.
+  Atribua a página atual deste pdf state para uma página objeto pdf
   Se as textos de fonte desta página estiverem vazias, retorne.
   Acrescente "/Font <<" para a página sem passar pra próxima linha.
   Itere.
@@ -18956,7 +18956,7 @@ Rotina para que se end uma folha (modo pdf - finalização da página atual - fonte
   Acrescente ">>" para a página.
 
 Rotina para que se end uma folha (modo pdf - finalização da página atual - recursos):
-  Atribua a página atual deste pdf state para uma página objeto pdf.
+  Atribua a página atual deste pdf state para uma página objeto pdf
   Se as textos de imagem desta página estiverem vazias, retorne.
   Acrescente "/XObject <<" para a página sem passar pra próxima linha.
   Itere.
@@ -18970,7 +18970,7 @@ Rotina para que se end uma folha (modo pdf - finalização da página atual - recur
   Acrescente ">>" para a página.
 
 Rotina para que se end uma folha (modo pdf - finalização da página atual):
-  Atribua a página atual deste pdf state para uma página objeto pdf.
+  Atribua a página atual deste pdf state para uma página objeto pdf denominada página.
   Acrescente "/Resources" para a página.
   Acrescente "<<" para a página.
   Acrescente "/ProcSet [/PDF /Text /ImageC]" para a página.
@@ -18982,7 +18982,7 @@ Rotina para que se end uma folha (modo pdf - finalização da página atual):
 
 Rotina para que se end uma folha (modo pdf):
   End a folha (modo pdf - finalização da página atual).
-  End a folha (modo pdf - finalização da do conteúdo atual).
+  End a folha (modo pdf - finalização do conteúdo atual).
 
 Rotina para que se acabe a impressão;
 Rotina para que se conclua a impressão;
@@ -19040,7 +19040,7 @@ Rotina para que se acabe de imprimir um pdf (inserção de marcadores):
   Itere.
     Obtenha um marcador pdf desde os marcadores deste pdf state.
     Se o marcador pdf for inexistente, retorne.
-    Atribua o objeto pdf desta marcador pdf para um object objeto pdf.
+    Atribua o objeto pdf desta marcador pdf para um object objeto pdf denominado object.
     Acrescente o número deste object seguido de " 0 obj" para o object.
     Acrescente "<<" para o object.
     Converta o título de índice remissivo deste marcador pdf para uma string formatada.
@@ -19137,7 +19137,7 @@ Rotina para que se pinte uma string sob uma localização com uma cor e uma fonte 
   Preserve a localização.
   Include a fonte no current pdf.
   Include a fonte na página atual deste pdf state.
-  Encontre um definition objeto pdf usando o nome desta fonte e a catálogo de fontes deste pdf state.
+  Encontre um definition objeto pdf denominado definition usando o nome desta fonte e a catálogo de fontes deste pdf state.
   Se o definition for inexistente, retorne. \ erro
   Crie uma definição da fonte usando a fonte e a string.
   Transcreva o borda do pdf usando a cor.
