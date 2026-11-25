@@ -17988,7 +17988,7 @@ Rotina para que se use um tamanho da letra em  uns twips:
 
 Rotina para que se use small pointy letras:
   \ seria o oposto de  "big roundy letras" | ainda não foi implementado
-  \Use small letras. \ ainda não foi implementado
+  Use letras pequenas \ ainda não foi implementado
 
 Rotina para que se escolha aleatoriamente um tamanho da letra entre uns twips e uns outros twips:
   Escolha aleatoriamente um número aleatório entre os twips e os outros twips.
