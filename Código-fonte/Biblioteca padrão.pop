@@ -18910,7 +18910,7 @@ Rotina para que se include uma fonte no current pdf:
   Acrescente "<<" para a definition.
   Acrescente "/Type /Font" para a definition.
   Acrescente "/Subtype /TrueType" para a definition.
-  Acrescente "/Nomeie /" junto com o nome da fonte para a definition.
+  Acrescente "/Name /" junto com o nome da fonte para a definition.
   Acrescente "/BaseFont /" junto com o nome base da fonte para a definition.
   Acrescente "/Encoding /WinAnsiEncoding" para a definition.
   Acrescente "/FontDescriptor " junto com o número deste descriptor seguido de " 0 R" para a definition.
