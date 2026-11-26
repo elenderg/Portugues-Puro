@@ -8381,7 +8381,7 @@ Rotina para que se obtenha o primeiro-quarto equivalente de uma orientação:
 
 Rotina para que se obtenha novos números aleatórios;
 Rotina para que se semeie o gerador de números aleatórios:
-  Atribua a contagem de intervalos do sistema à semente aleatória.
+  Atribua a contagem de intervalos deste sistema à semente aleatória.
 
 Rotina para que se obtenha um máximo divisor comum usando um número e um segundo número:
   Atribua o número para um dividendo número.
@@ -11185,15 +11185,17 @@ Rotina para que se atribua o grupo data-hora do system para um grupo data-hora:
   Atribua o wSecond deste SYSTEMTIME ao número de segundos deste grupo data-hora.
   Atribua os wMilliseconds deste SYSTEMTIME ao número de milissegundos deste grupo data-hora.
 
-Rotina para que se atribua o último erro do sistema para um número:
+O sistema é uma estrutura.
+
+Rotina para que se atribua o último erro deste sistema para um número:
   Processe "kernel32.dll" "GetLastError" retornando o número. \ Recupera o valor do código do último erro do segmento de chamada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror
 
-Rotina para que se atribua o último erro do windows sockets para um número:
+Rotina para que se atribua o último erro do windows sockets deste sistema para um número:
   Processe "ws2_32.dll" "WSAGetLastError" retornando o número. \ Retorna o status de erro da última operação do Windows Sockets que falhou.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winsock/nf-winsock-wsagetlasterror
 
-Rotina para que se atribua a contagem de intervalos do sistema para uns intervalos:
+Rotina para que se atribua a contagem de intervalos deste sistema para uns intervalos:
   \ reinicia a cada 24 dias, 19 horas e 12 minutos aproximadamente (32 bits)
   Processe "kernel32.dll" "GetTickCount" retornando os intervalos. \Recupera o número de milissegundos decorridos desde que o sistema foi iniciado, até 49 dias, 16 horas e 48 minutos
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/sysinfoapi/nf-sysinfoapi-gettickcount
@@ -11348,7 +11350,7 @@ Função para que se atribua a string dum temporizador para uma string:
 Função para que se atribua os intervalos dum temporizador para uns intervalos:
   Atribua os intervalos totais deste temporizador aos intervalos.
   Se a contagem deste temporizador for 0, retorne.
-  Atribua a contagem de intervalos do sistema para uns intervalos denominados intervalos de temporização.
+  Atribua a contagem de intervalos deste sistema para uns intervalos denominados intervalos de temporização.
   Subtraia os intervalos iniciais deste temporizador desde os intervalos de temporização.
   Adicione os intervalos de temporização para os intervalos.
 
@@ -11738,7 +11740,7 @@ Rotina para que se redimensione uma caixa de texto usando um twip par de números
 Rotina para que se reinicie um temporizador:
   Adicione 1 para a contagem deste temporizador.
   Se a contagem deste temporizador não for 1, retorne.
-  Atribua a contagem de intervalos do sistema aos intervalos iniciais deste temporizador. \ a intervalo contagem deste system
+  Atribua a contagem de intervalos deste sistema aos intervalos iniciais deste temporizador.
 
 Rotina para que se restaure um canvas:
   Processe "gdi32.dll" "RestoreDC" com
@@ -13240,7 +13242,7 @@ Rotina para que se suspenda um temporizador:
   Se a contagem deste temporizador for 0, retorne.
   Subtraia 1 desde a contagem deste temporizador.
   Se a contagem deste temporizador não for 0, retorne.
-  Atribua a contagem de intervalos do sistema a uns intervalos.
+  Atribua a contagem de intervalos deste sistema para uns intervalos.
   Subtraia os intervalos iniciais deste temporizador desde o intervalos.
   Adicione o intervalos para os intervalos totais deste temporizador.
 
