@@ -11171,7 +11171,7 @@ Função para que se atribua a largura duma string para uma largura: \ unidade "e.
 Rotina para que se atribua um subtexto para um segundo subtexto:
   Copie bytes desde o endereçamento deste subtexto para o endereçamento deste segundo subtexto pela magnitude deste subtexto.
 
-Rotina para que se atribua o grupo data-hora do system para um grupo data-hora:
+Rotina para que se atribua o grupo data-hora deste sistema para um grupo data-hora:
   Processe "kernel32.dll" "GetLocalTime" com
   \ Recupera a data e hora atuais no horário local.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/sysinfoapi/nf-sysinfoapi-getlocaltime
