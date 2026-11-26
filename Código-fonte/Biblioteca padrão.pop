@@ -19771,8 +19771,8 @@ Rotina para que se inicie a impressão um pdf (criação do objeto raiz):
   Acrescente "/Type /Catalog" para o objeto da raiz.
 
 Rotina para que se inicie uma folha no modo retrato usando um título de índice remissivo:
-  Se o pdf sinalizador de documentos não estiver ativo,
-    Limpe a folha no modo retrato;
+  Se o sinalizador de documentos deste pdf state não estiver ativo,
+    Limpe a folha;
     Retorne.
   Faça a folha 816 pixels por 1056 pixels.
   Inicie a folha usando a caixa e o título de índice remissivo (modo pdf).
