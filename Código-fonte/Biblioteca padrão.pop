@@ -11187,15 +11187,15 @@ Rotina para que se atribua o grupo data-hora do system para um grupo data-hora:
 
 O sistema é uma estrutura.
 
-Rotina para que se atribua o último erro deste sistema para um número:
+Função para que se atribua o último erro deste sistema para um número:
   Processe "kernel32.dll" "GetLastError" retornando o número. \ Recupera o valor do código do último erro do segmento de chamada.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/errhandlingapi/nf-errhandlingapi-getlasterror
 
-Rotina para que se atribua o último erro do windows sockets deste sistema para um número:
+Função para que se atribua o último erro do windows sockets deste sistema para um número:
   Processe "ws2_32.dll" "WSAGetLastError" retornando o número. \ Retorna o status de erro da última operação do Windows Sockets que falhou.
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/winsock/nf-winsock-wsagetlasterror
 
-Rotina para que se atribua a contagem de intervalos deste sistema para uns intervalos:
+Função para que se atribua a contagem de intervalos deste sistema para uns intervalos:
   \ reinicia a cada 24 dias, 19 horas e 12 minutos aproximadamente (32 bits)
   Processe "kernel32.dll" "GetTickCount" retornando os intervalos. \Recupera o número de milissegundos decorridos desde que o sistema foi iniciado, até 49 dias, 16 horas e 48 minutos
   \ Documentação: -> https://learn.microsoft.com/pt-br/windows/win32/api/sysinfoapi/nf-sysinfoapi-gettickcount
