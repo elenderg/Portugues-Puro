@@ -19778,7 +19778,7 @@ Rotina para que se inicie uma folha no modo retrato usando um título de índice r
   Inicie a folha usando a caixa e o título de índice remissivo (modo pdf).
 
 Rotina para que se inicie uma folha no modo paisagem usando um título de índice remissivo:
-  Se o pdf sinalizador de documentos não estiver ativo,
+  Se o sinalizador de documentos deste pdf state não estiver ativo,
     Limpe a folha;
     Retorne.
   Faça a folha 1056 pixels por 816 pixels.
