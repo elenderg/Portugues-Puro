@@ -11016,7 +11016,7 @@ Rotina para que se atribua um grupo data-hora para uma segunda grupo data-hora:
   Atribua o número do mês deste grupo data-hora ao número do mês desta segunda grupo data-hora.
   Atribua o número do dia da semana deste grupo data-hora ao número do dia da semana desta segunda grupo data-hora.
   Atribua o número do dia deste grupo data-hora ao número do dia desta segunda grupo data-hora.
-  Atribua o número de horas deste grupo data-hora à número de horas desta segunda grupo data-hora.
+  Atribua o número de horas deste grupo data-hora ao número de horas desta segunda grupo data-hora.
   Atribua o número de minutos deste grupo data-hora ao número de minutos desta segunda grupo data-hora.
   Atribua o número de segundos deste grupo data-hora ao número de segundos desta segunda grupo data-hora.
   Atribua o número de milissegundos deste grupo data-hora ao número de milissegundos desta segunda grupo data-hora.
