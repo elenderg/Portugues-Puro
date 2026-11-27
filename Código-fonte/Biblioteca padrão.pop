@@ -11775,8 +11775,8 @@ Rotina para que se inverta as linhas de texto selecionadas em uma caixa de texto
   Acrescente as segundas linhas de texto para as linhas de texto desta caixa de texto.
   Enumere novamente as linhas de texto desta caixa de texto.
 
-Rotina para que se inverta uma cor:
-Rotina para que se inverta a tonalidade de uma cor:
+Rotina para que se inverta uma cor;
+Rotina para que se inverta a tonalidade de uma cor;
 Rotina para que se reverta uma cor:
   Se a cor for a cor preta,
     Atribua a cor branca à cor;
